@@ -565,7 +565,7 @@ window.SUPPLY_CHAIN_DATA = {
       ],
       subprocesses: [
         {
-          name: "Primary Logistics (Plant → CFA / Depot)",
+          name: "Primary Logistics & Plant Dispatch (Factory → CFA / Depot)",
           items: [
             {
               id: "SC-40",
@@ -587,7 +587,7 @@ window.SUPPLY_CHAIN_DATA = {
               persona: "Plant Yard & Dispatch Lead",
               mandate: "Parses truck GPS, gate-in scans, and loading bay queues to eliminate detention and line starvation.",
               impact: "Cuts plant truck detention by 40%",
-              agent: "Yard Disruption Agent",
+              agent: "Yard Disruption & Detention Sentinel",
               buildMode: "Low-Code Agent Studio",
               sources: ["GPS / FASTag Feeds", "YMS Gate Logs", "Bay Matrix"],
               promptHint: "Detect inbound FTL delays >45 mins and dynamically reassign plant loading bay slots to prevent idle crews.",
@@ -602,7 +602,7 @@ window.SUPPLY_CHAIN_DATA = {
               persona: "Cold-Chain & Transit QA Lead",
               mandate: "Monitors reefer IoT telemetry and ambient humidity across food, dairy, and beverage primary lanes.",
               impact: "Prevents perishable CPG spoilage",
-              agent: "Cold-Chain Auditor",
+              agent: "Cold-Chain Thermal Auditor",
               buildMode: "Low-Code Agent Studio",
               sources: ["Reefer IoT", "Thermal Curves", "Carrier SLAs"],
               promptHint: "Monitor real-time trailer temperature telemetry, alert drivers on thermal excursions, and compile QA hold logs.",
@@ -615,21 +615,21 @@ window.SUPPLY_CHAIN_DATA = {
           ]
         },
         {
-          name: "Depot / CFA & Channel Fulfillment",
+          name: "CFA / Depot Operations & Stock Allocation",
           items: [
             {
               id: "SC-43",
               persona: "Depot / CFA Operations Manager",
               mandate: "Orchestrates inbound plant receipts, batch FEFO staging, and outbound distributor dispatch waves.",
               impact: "30% faster CFA dock turnaround",
-              agent: "CFA Wave Orchestrator",
+              agent: "CFA Wave & Bay Orchestrator",
               buildMode: "Low-Code Agent Studio",
               sources: ["WMS / CFA Portal", "SAP GRN", "Vehicle Queue"],
               promptHint: "Balance CFA unloading and distributor dispatch waves to protect same-day primary billing cutoffs.",
               dayJourney: [
                 { time: "Morning (07:30–09:30)", agent: "CFA Morning Bay & Labor Planner Gem", mode: "No-Code Gemini Gem", desc: "Prioritizes inbound factory trucks carrying backordered SKUs and assigns cross-docking teams for direct WD loading." },
                 { time: "Midday (10:30–15:00)", agent: "FEFO Batch & Damage Triage Agent", mode: "Multimodal Vision", desc: "Scans inbound pallet photos for crushed cartons and enforces First-Expired-First-Out (FEFO) bin placement." },
-                { time: "Evening (16:00–19:00)", agent: "EOD Cutoff & Pending Indent Closer", mode: "Low-Code Agent Studio", desc: "Audits unbilled distributor orders at 5:30 PM and dynamically reallocates dock loaders to clear 100% of same-day dispatches." }
+                { time: "Evening (16:00–19:00)", agent: "CFA Wave & Bay Orchestrator", mode: "Low-Code Agent Studio", desc: "Audits unbilled distributor orders at 5:30 PM and dynamically reallocates dock loaders to clear 100% of same-day dispatches." }
               ]
             },
             {
@@ -637,19 +637,39 @@ window.SUPPLY_CHAIN_DATA = {
               persona: "Customer Service & Logistics (CS&L) Lead",
               mandate: "Executes fair-share stock allocation across Wholesale Dealers during peak season or supply shortages.",
               impact: "Protects distributor fill-rate equity",
-              agent: "Fair-Share Allocation Agent",
+              agent: "Fair-Share Stock Allocation Agent",
               buildMode: "Low-Code Agent Studio",
               sources: ["CFA ATP Inventory", "WD Run-Rates", "Channel Priority"],
               promptHint: "Compute equitable fair-share SKU allocations across distributors when CFA stock falls short of total indents.",
               dayJourney: [
                 { time: "Morning (08:30–10:00)", agent: "Morning Short-Supply & Fill-Rate Pulse", mode: "No-Code Gemini Gem", desc: "Scans overnight WD indents vs. CFA Available-to-Promise (ATP) stock, highlighting top 10 constrained SKUs." },
-                { time: "Midday (11:00–15:00)", agent: "Fair-Share Allocation Simulator", mode: "Low-Code Agent Studio", desc: "Runs proportional allocation across WDs based on 30-day secondary velocity and strategic channel SLAs, posting draft splits to SAP." },
+                { time: "Midday (11:00–15:00)", agent: "Fair-Share Stock Allocation Agent", mode: "Low-Code Agent Studio", desc: "Runs proportional allocation across WDs based on 30-day secondary velocity and strategic channel SLAs, posting draft splits to SAP." },
                 { time: "Evening (16:00–18:30)", agent: "WD Backorder & ETA Communicator", mode: "Low-Code + Messaging", desc: "Sends proactive automated WhatsApp/email updates to distributors detailing allocated quantities and next plant arrival ETA." }
               ]
             },
             {
               id: "SC-45",
-              persona: "Modern Trade & Q-Comm Fulfillment Lead",
+              persona: "Depot Dispatch & Billing Supervisor",
+              mandate: "Manages daily distributor primary invoicing, e-Way Bill generation, credit-block clearances, and loading cutoffs.",
+              impact: "99.2% same-day primary billing",
+              agent: "EOD Billing & Cutoff Closer Agent",
+              buildMode: "Low-Code + SAP OpenAPI",
+              sources: ["SAP Billing", "WD Credit Ledger", "e-Way Bill Portal"],
+              promptHint: "Flag credit-blocked WD indents by 2 PM and automate e-Way Bill + invoice batch release before evening cutoff.",
+              dayJourney: [
+                { time: "Morning (08:00–10:00)", agent: "Credit-Block & Indent Readiness Gem", mode: "No-Code Gemini Gem", desc: "Screens morning WD primary orders against overdue credit ledgers and alerts ASMs before truck staging." },
+                { time: "Midday (11:00–15:00)", agent: "Pick-to-Invoice Variance Reconciler", mode: "Low-Code Agent Studio", desc: "Matches physical bay pick counts against SAP order lines so short-picked invoices are adjusted before truck sealing." },
+                { time: "Evening (16:00–19:00)", agent: "EOD Billing & Cutoff Closer Agent", mode: "Low-Code + SAP OpenAPI", desc: "Auto-generates e-Way Bills and triggers final SAP billing batches before the 7:00 PM dispatch cutoff." }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Channel & Route-to-Market (GT, MT & Q-Commerce)",
+          items: [
+            {
+              id: "SC-46",
+              persona: "Modern Trade & Q-Comm Logistics Lead",
               mandate: "Manages retailer DC appointment slots (DMart, Reliance, Blinkit, Zepto), ASN accuracy, and OTIF compliance.",
               impact: "98.5%+ MT & Q-Comm OTIF compliance",
               agent: "MT / Q-Comm Slot & OTIF Copilot",
@@ -658,64 +678,44 @@ window.SUPPLY_CHAIN_DATA = {
               promptHint: "Match MT/Q-Commerce PO expiry windows against CFA dispatch schedules to prevent OTIF short-ship penalties.",
               dayJourney: [
                 { time: "Morning (08:00–10:00)", agent: "PO Expiry & Slot Conflict Scanner", mode: "No-Code Gemini Gem", desc: "Parses Blinkit/Zepto/DMart POs for strict shelf-life (>75% DTE) and delivery slot deadlines, flagging at-risk orders." },
-                { time: "Midday (10:30–15:30)", agent: "ASN & Appointment Rescheduler Agent", mode: "Low-Code Agent Studio", desc: "Detects transit delays on MT-bound trucks and proactively requests revised dark-store/DC dock slots to avoid penalty fines." },
+                { time: "Midday (10:30–15:30)", agent: "MT / Q-Comm Slot & OTIF Copilot", mode: "Low-Code Agent Studio", desc: "Detects transit delays on MT-bound trucks and proactively requests revised dark-store/DC dock slots to avoid penalty fines." },
                 { time: "Evening (16:00–18:30)", agent: "OTIF Penalty & Fill-Rate Defender", mode: "Multimodal + Agent Studio", desc: "Reconciles stamped MT GRNs against dispatched invoices to dispute unfair short-delivery deductions." }
               ]
-            }
-          ]
-        },
-        {
-          name: "Secondary Distribution (Depot → Trade)",
-          items: [
+            },
             {
-              id: "SC-46",
+              id: "SC-47",
               persona: "Area Distribution / RTM Manager",
               mandate: "Governs territory distributor fill rates, secondary beat coverage, and rural/urban route-to-market expansion.",
               impact: "+4% secondary distribution reach",
-              agent: "Territory RTM Pulse Agent",
+              agent: "Territory RTM Morning Pulse Gem",
               buildMode: "No-Code Gemini Gem",
               sources: ["DMS Secondary Sales", "WD Ledgers", "Beat Geo-Logs"],
               promptHint: "Synthesize MTD secondary fill rates, WD stock-outs, and unbilled outlet beats into a 60-second morning briefing.",
               dayJourney: [
-                { time: "Morning (08:15–09:45)", agent: "Territory Morning Pulse Gem", mode: "No-Code Gemini Gem", desc: "Delivers an 8:15 AM briefing highlighting lagging beats, WD stock-outs on core SKUs, and credit-blocked distributors." },
+                { time: "Morning (08:15–09:45)", agent: "Territory RTM Morning Pulse Gem", mode: "No-Code Gemini Gem", desc: "Delivers an 8:15 AM briefing highlighting lagging beats, WD stock-outs on core SKUs, and credit-blocked distributors." },
                 { time: "Midday (11:00–15:00)", agent: "Distributor JBR & Stock-Health Copilot", mode: "Mobile Voice Gem", desc: "Answers on-the-road voice queries before WD visits: 3-month fill rate, pending claims, and slow-moving NPD stock." },
                 { time: "Evening (16:30–19:00)", agent: "EOD Market Debrief & Action Tracker", mode: "Multimodal Voice + Workspace", desc: "Converts 2-minute market visit voice notes into structured action items, WD portal tickets, and Branch Manager summaries." }
               ]
             },
             {
-              id: "SC-47",
+              id: "SC-48",
               persona: "Wholesale Dealer (WD) / Stockist Ops Mgr",
-              mandate: "Manages distributor warehouse inventory, primary indenting, credit holds, and daily delivery tempo loading.",
+              mandate: "Manages distributor warehouse inventory, primary indenting, credit holds, and daily kirana van/tempo dispatch.",
               impact: "4–6 days reduction in WD DSI",
-              agent: "WD Reorder & Dispatch Copilot",
+              agent: "Predictive WD Reorder & Dispatch Agent",
               buildMode: "Low-Code Agent Studio",
               sources: ["DMS Inventory", "DSR Order Feed", "Festival Calendar"],
               promptHint: "Predict WD stock-outs 5 days ahead based on DSR order velocity and auto-draft optimal primary indents.",
               dayJourney: [
-                { time: "Morning (07:30–09:30)", agent: "Morning Tempo Load & Pick-List Gem", mode: "No-Code Gemini Gem", desc: "Consolidates overnight DSR orders into route-wise tempo/e-rickshaw loading sheets and flags credit-hold outlets." },
-                { time: "Midday (11:00–15:00)", agent: "Predictive WD Reorder Agent", mode: "Low-Code Agent Studio", desc: "Forecasts SKU depletion across upcoming regional festivals and drafts optimal primary indents to the ITC CFA." },
+                { time: "Morning (07:30–09:30)", agent: "Morning Tempo Load & Beat Briefing Gem", mode: "Vernacular Voice Gem", desc: "Consolidates overnight DSR orders into route-wise tempo loading sheets and briefs van teams in regional languages." },
+                { time: "Midday (11:00–15:00)", agent: "Predictive WD Reorder & Dispatch Agent", mode: "Low-Code Agent Studio", desc: "Forecasts festival SKU depletion 5 days ahead and auto-drafts optimal primary indents to the CPG CFA." },
                 { time: "Evening (16:30–19:30)", agent: "Damage Return & Claim Status Bot", mode: "Multimodal + WhatsApp", desc: "Classifies photos of damaged market returns for debit notes and answers instant WhatsApp queries on pending claim payouts." }
-              ]
-            },
-            {
-              id: "SC-48",
-              persona: "Field Van / Beat Delivery Supervisor",
-              mandate: "Coordinates daily DSR & delivery van beats across 35–45 kirana outlets, resolving drops and PODs.",
-              impact: "25% fewer failed kirana drops",
-              agent: "Vernacular Beat Delivery Copilot",
-              buildMode: "Vernacular Voice Gem",
-              sources: ["Beat Route Sheet", "Outlet History", "UPI / Cash Logs"],
-              promptHint: "Guide delivery vans in local vernacular languages with priority outlet drops, collection reminders, and route updates.",
-              dayJourney: [
-                { time: "Morning (08:30–09:30)", agent: "Smart Beat & Collection Briefing Gem", mode: "Vernacular Voice Gem", desc: "Briefs van teams in Hindi/regional languages on priority kirana drops and overdue invoice collections." },
-                { time: "Midday (10:00–16:00)", agent: "In-Field Drop Exception & Reschedule Bot", mode: "Low-Code + Maps API", desc: "When a shop is closed, instantly suggests nearby open outlets on the beat or logs a reschedule window." },
-                { time: "Evening (16:30–18:30)", agent: "EOD Van Cash & Stock Settlement Agent", mode: "No-Code Gemini Gem", desc: "Reconciles delivered cases against UPI/cash/cheque collections at the WD godown in under 5 minutes." }
               ]
             }
           ]
         },
         {
-          name: "Freight, Carrier & Commercials",
+          name: "Fleet, Carrier & Freight Governance",
           items: [
             {
               id: "SC-49",
