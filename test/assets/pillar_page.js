@@ -45,15 +45,15 @@ window.SC_DEMOS = {
     kpis: ["Working Cap Freed: 14%", "Expiry Saved: ₹14.8L", "Regional OOS: 0%"]
   },
   distribution: {
-    title: "Dynamic Rerouter & Fleet Cockpit · Live Agent Simulation",
-    scenario: "Alert: NH-48 highway closure impacts 6 outbound FTLs + Reefer #R-14 reports +4.2°C thermal excursion.",
+    title: "CPG Dispatch & OTIF War-Room · Live Agent Simulation",
+    scenario: "Alert: CFA West stock shortfall on flagship biscuit SKUs + NH-48 closure impacting 4 Modern Trade (Blinkit/DMart) slot deliveries.",
     steps: [
-      { agent: "Dynamic Rerouter", source: "Google Maps API + Truck Specs", text: "Recalculated 6 multi-stop routes avoiding bridge weight limits and closures; saved 118 km and 8.5% fuel." },
-      { agent: "Cold-Chain Auditor", source: "Reefer IoT + Carrier SLA", text: "Identified door-seal excursion on R-14, alerted driver to engage backup compressor, and pre-drafted carrier SLA notice." },
-      { agent: "Delivery Exception Copilot", source: "Carrier Webhooks + WhatsApp", text: "Sent proactive localized reschedule links to 24 affected retail outlets, cutting inbound WISMO calls by 58%." }
+      { agent: "Fair-Share Allocation Agent", source: "CFA ATP Inventory + WD Run-Rates", text: "Executed proportional fair-share split across 38 Wholesale Dealers while protecting 100% of Tier-1 MT/Q-Comm POs." },
+      { agent: "MT / Q-Comm Slot & OTIF Copilot", source: "Retailer EDI Portals + SAP Orders", text: "Detected 90-min transit delay on Blinkit dark-store truck; proactively secured revised 4:30 PM dock slot to avoid OTIF penalty." },
+      { agent: "Dynamic Rerouter", source: "Google Maps API + City Curfew DB", text: "Recalculated 6 multi-drop distributor & MT routes around NH-48 closure and municipal no-entry hours, saving 8.5% fuel." }
     ],
-    decision: "Recommended Action: Push updated Google Maps turn-by-turn waypoints to 6 driver tablets and dispatch proactive store alerts.",
-    kpis: ["Fuel Saved: 8.5%", "Store Window OTIF: 98.6%", "WISMO Calls: -58%"]
+    decision: "Recommended Action: Post fair-share WD allocations to SAP, confirm Blinkit dock reschedule, and push Maps detours to driver tablets.",
+    kpis: ["MT OTIF Protected: 99.1%", "Fuel Saved: 8.5%", "Penalty Avoided: ₹3.8L"]
   },
   reverse: {
     title: "Return Fraud & Circularity Cockpit · Live Agent Simulation",
@@ -112,6 +112,13 @@ window.renderPillarPage = function (pillarId, prevUrl, nextUrl) {
                 '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
                   item.sources.map(function (s) { return '<span style="font:500 11px var(--font-mono);padding:3px 8px;border-radius:6px;background:var(--surface-sunk);border:1px solid var(--border-subtle);">' + s + '</span>'; }).join('') +
                 '</div>' +
+                (item.dayJourney ? (
+                  '<div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border-subtle);">' +
+                    '<a href="javascript:void(0)" class="journey-link" data-persona-id="' + item.id + '" style="display:inline-flex;align-items:center;gap:6px;font:600 13px var(--font-display);color:var(--ti);text-decoration:none;">' +
+                      '📅 View Agentic Journey in a Day (Morning → Evening) →' +
+                    '</a>' +
+                  '</div>'
+                ) : '') +
               '</div>'
             );
           }).join('') +
@@ -184,4 +191,57 @@ window.renderPillarPage = function (pillarId, prevUrl, nextUrl) {
   });
   // Auto-populate first step or run on load for instant presenter readiness
   runSimulation();
+
+  // Day-in-the-Life Agentic Journey Modal (for personas with dayJourney)
+  var journeyOverlay = document.createElement('div');
+  journeyOverlay.id = 'journeyModalBg';
+  journeyOverlay.style.cssText = 'position:fixed;inset:0;background:rgba(18,19,23,.58);backdrop-filter:blur(4px);z-index:120;display:none;align-items:center;justify-content:center;padding:20px;';
+  journeyOverlay.innerHTML =
+    '<div class="' + pillar.cssClass + '" style="background:var(--surface);border:1px solid var(--border-subtle);border-radius:20px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:26px;box-shadow:var(--shadow-lg);position:relative;">' +
+      '<button id="journeyModalClose" style="position:absolute;right:18px;top:18px;border:1px solid var(--border-subtle);background:var(--surface-sunk);color:var(--text);border-radius:999px;width:32px;height:32px;cursor:pointer;font-weight:700;">✕</button>' +
+      '<div id="journeyModalBody"></div>' +
+    '</div>';
+  document.body.appendChild(journeyOverlay);
+
+  var personaLookup = {};
+  pillar.subprocesses.forEach(function (sub) {
+    sub.items.forEach(function (it) { personaLookup[it.id] = { item: it, sub: sub.name }; });
+  });
+
+  main.querySelectorAll('.journey-link').forEach(function (lnk) {
+    lnk.addEventListener('click', function (e) {
+      e.preventDefault();
+      var entry = personaLookup[lnk.dataset.personaId];
+      if (!entry || !entry.item.dayJourney) return;
+      var it = entry.item;
+      var body = document.getElementById('journeyModalBody');
+      body.innerHTML =
+        '<span class="badge-pill">' + it.id + ' · ' + entry.sub + '</span>' +
+        '<h2 style="margin:10px 0 4px;font:600 22px var(--font-display);">' + it.persona + '</h2>' +
+        '<p style="color:var(--text-muted);margin:0 0 18px;font-size:14px;">' + it.mandate + '</p>' +
+        '<div style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--ti);margin-bottom:12px;">Agentic Journey in a Day · Built with Gemini Enterprise (Low-Code / No-Code)</div>' +
+        '<div style="display:grid;gap:12px;">' +
+          it.dayJourney.map(function (step) {
+            return (
+              '<div style="padding:14px 16px;border-radius:14px;background:var(--surface-sunk);border:1px solid var(--border-subtle);border-left:4px solid var(--tc);">' +
+                '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">' +
+                  '<span style="font:600 12px var(--font-mono);color:var(--text);">' + step.time + '</span>' +
+                  '<span class="badge-pill">' + step.mode + '</span>' +
+                '</div>' +
+                '<div style="font:600 15px var(--font-display);color:var(--ti);margin-bottom:4px;">⚡ ' + step.agent + '</div>' +
+                '<div style="font-size:13.5px;line-height:1.5;color:var(--text);">' + step.desc + '</div>' +
+              '</div>'
+            );
+          }).join('') +
+        '</div>';
+      journeyOverlay.style.display = 'flex';
+    });
+  });
+
+  document.getElementById('journeyModalClose').addEventListener('click', function () {
+    journeyOverlay.style.display = 'none';
+  });
+  journeyOverlay.addEventListener('click', function (e) {
+    if (e.target === journeyOverlay) journeyOverlay.style.display = 'none';
+  });
 };
