@@ -157,6 +157,27 @@ export class LiveClient {
     return true;
   }
 
+  public async startTalking(): Promise<void> {
+    if (this.voiceState === 'speaking' || audioPlayer.getIsPlaying()) this.interrupt();
+    if (!micCapture.isCapturing()) {
+      await micCapture.start((buf) => {
+        if (this.ws && this.ws.readyState === WebSocket.OPEN) this.ws.send(buf);
+      });
+    } else {
+      micCapture.enable(true);
+    }
+    this.handlers.onVoiceState?.('listening');
+  }
+
+  public stopTalking(): void {
+    if (this.openMic) return;
+    micCapture.enable(false);
+    if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+      this.ws.send(JSON.stringify({ type: 'audio_end' }));
+    }
+    this.handlers.onVoiceState?.('thinking');
+  }
+
   public async setOpenMic(on: boolean): Promise<void> {
     this.openMic = on;
     if (on) {

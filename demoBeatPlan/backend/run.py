@@ -11,4 +11,6 @@ if __name__ == "__main__":
         reload=False,
         ws_ping_interval=20,
         ws_ping_timeout=20,
+        proxy_headers=True,
+        forwarded_allow_ips="*",
     )

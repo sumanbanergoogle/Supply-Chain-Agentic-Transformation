@@ -388,10 +388,22 @@ async def _run_bidi_stream(
 
 async def run_fallback_session(websocket: WebSocket, inbound: asyncio.Queue, state: dict[str, Any]) -> None:
     await _send(websocket, {"type": "voice_state", "state": "idle"})
+    warned_audio = False
     while True:
         msg = await inbound.get()
         if msg is _CLOSED:
             return
+        if msg.get("bytes"):
+            if not warned_audio:
+                warned_audio = True
+                await _send(
+                    websocket,
+                    {
+                        "type": "error",
+                        "message": "Vertex Gemini Live ADC unavailable — raw PCM audio cannot be streamed; use browser Speech Recognition or type your query.",
+                    },
+                )
+            continue
         if not msg.get("text"):
             continue
         try:

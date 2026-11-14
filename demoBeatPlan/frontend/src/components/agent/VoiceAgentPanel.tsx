@@ -1,6 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
-  AlertTriangle,
   Bot,
   Mic,
   MicOff,
@@ -35,7 +34,6 @@ interface LiveMsg {
   tools?: ToolCallEvent[];
   uiChips?: string[];
   live?: boolean;
-  status?: string;
 }
 
 interface VoiceAgentPanelProps {
@@ -72,6 +70,11 @@ const STORYBOARD_CHIPS: Record<LiveLanguage, string[]> = {
   ],
 };
 
+function getSpeechRecognitionCtor(): any {
+  if (typeof window === 'undefined') return null;
+  return (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition || null;
+}
+
 export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
   outlet,
   city,
@@ -83,12 +86,15 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
 }) => {
   const [messages, setMessages] = useState<LiveMsg[]>([]);
   const [inputPrompt, setInputPrompt] = useState('');
+  const [interimTranscript, setInterimTranscript] = useState('');
   const [language, setLanguage] = useState<LiveLanguage>('english');
   const [isLiveMode, setIsLiveMode] = useState<boolean>(() => isLiveSupported());
   const [liveStatus, setLiveStatus] = useState<LiveStatus>('disconnected');
   const [statusInfo, setStatusInfo] = useState<{ model?: string; message?: string }>({});
   const [voiceState, setVoiceState] = useState<VoiceState>('idle');
   const [isOpenMic, setIsOpenMic] = useState(false);
+  const [isTalking, setIsTalking] = useState(false);
+  const [speechListening, setSpeechListening] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [legacySpeaking, setLegacySpeaking] = useState(false);
@@ -99,6 +105,10 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
   const currentAgentIdRef = useRef<string | null>(null);
   const mutedRef = useRef(isMuted);
   mutedRef.current = isMuted;
+  const isOpenMicRef = useRef(isOpenMic);
+  isOpenMicRef.current = isOpenMic;
+  const recognitionRef = useRef<any>(null);
+  const submitFnRef = useRef<(p?: string) => Promise<void>>(async () => {});
 
   const clientRef = useRef<LiveClient | null>(null);
   if (!clientRef.current) clientRef.current = new LiveClient();
@@ -107,6 +117,20 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  const stopSpeechRecognition = () => {
+    if (recognitionRef.current) {
+      try {
+        recognitionRef.current.onend = null;
+        recognitionRef.current.stop();
+      } catch {
+        /* ignore */
+      }
+      recognitionRef.current = null;
+    }
+    setSpeechListening(false);
+    setInterimTranscript('');
+  };
 
   const speakFallback = (text: string) => {
     if (mutedRef.current || typeof window === 'undefined' || !('speechSynthesis' in window) || !text.trim()) return;
@@ -140,7 +164,7 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                 id: `sys-fb-${Date.now()}`,
                 sender: 'agent',
                 timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                text: info?.message || 'Vertex Live audio unavailable — switched to interactive tool copilot.',
+                text: info?.message || 'Vertex Live audio unavailable — browser voice & tool-grounded copilot active.',
                 live: true,
               },
             ];
@@ -278,28 +302,40 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
         ]);
         speakFallback(msg.text);
       },
-      onError: () => {},
+      onError: (message) => {
+        if (!message) return;
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: `err-${Date.now()}`,
+            sender: 'agent',
+            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+            text: `⚠️ ${message}`,
+          },
+        ]);
+      },
     });
   }, [client, onAgentAction, city]);
 
-  // Listen to global prompt dispatch (from 5-Step Storyboard strip)
   useEffect(() => {
     const onRunPrompt = (e: Event) => {
       const promptText = (e as CustomEvent<string>).detail;
-      if (promptText) void submitMessage(promptText);
+      if (promptText) void submitFnRef.current(promptText);
     };
     window.addEventListener('beatpulse:run_prompt', onRunPrompt);
     return () => window.removeEventListener('beatpulse:run_prompt', onRunPrompt);
-  });
+  }, []);
 
-  // Auto-enable WebSocket connection on load
   useEffect(() => {
     if (isLiveMode) {
       client.connect({ city: city ?? undefined, outlet_id: outlet?.outlet_id, screen: screen ?? undefined, language });
     } else {
       client.disconnect();
     }
-    return () => client.disconnect();
+    return () => {
+      stopSpeechRecognition();
+      client.disconnect();
+    };
   }, [isLiveMode, client]);
 
   useEffect(() => {
@@ -309,18 +345,18 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
   }, [city, outlet?.outlet_id, screen, language, isLiveMode, client]);
 
   const isLiveReady = isLiveMode && (liveStatus === 'connected' || liveStatus === 'resumed');
-  const activeListening = isLiveMode && voiceState === 'listening';
+  const activeListening = speechListening || (isLiveMode && voiceState === 'listening');
   const activeSpeaking = isLiveMode ? voiceState === 'speaking' || legacySpeaking : legacySpeaking;
   const activeThinking = isLiveMode ? voiceState === 'thinking' : isProcessing;
 
   useEffect(() => {
     onStatusChange?.({
       live: isLiveReady,
-      listening: activeListening,
+      listening: activeListening || isTalking,
       speaking: activeSpeaking,
       thinking: activeThinking,
     });
-  }, [isLiveReady, activeListening, activeSpeaking, activeThinking, onStatusChange]);
+  }, [isLiveReady, activeListening, isTalking, activeSpeaking, activeThinking, onStatusChange]);
 
   const submitMessage = async (customPrompt?: string) => {
     const textToSend = (customPrompt ?? inputPrompt).trim();
@@ -378,18 +414,147 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
       setIsProcessing(false);
     }
   };
+  submitFnRef.current = submitMessage;
 
-  const toggleMic = async () => {
-    if (!isMicSupported()) {
-      alert('Browser microphone requires HTTPS or http://localhost (e.g. via ssh -L). Type below or click a Storyboard step!');
+  // Browser SpeechRecognition fallback so Open Mic works even when Vertex ADC isn't logged in!
+  const startSpeechRecognition = (continuous: boolean) => {
+    const Ctor = getSpeechRecognitionCtor();
+    if (!Ctor) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `mic-err-${Date.now()}`,
+          sender: 'agent',
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          text: '⚠️ Browser Speech Recognition is unavailable on non-localhost HTTP. Open via ssh -L 8095:localhost:8095 sumcl.c.googlers.com for mic, or type / click any Storyboard step.',
+        },
+      ]);
+      setIsOpenMic(false);
+      setIsTalking(false);
       return;
     }
-    try {
-      const next = !isOpenMic;
-      await client.setOpenMic(next);
-      setIsOpenMic(next);
-    } catch {
+
+    stopSpeechRecognition();
+    const rec = new Ctor();
+    rec.continuous = continuous;
+    rec.interimResults = true;
+    rec.lang = language === 'hindi' ? 'hi-IN' : 'en-IN';
+    recognitionRef.current = rec;
+    setSpeechListening(true);
+
+    rec.onresult = (event: any) => {
+      let interim = '';
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const res = event.results[i];
+        const transcript = (res[0]?.transcript || '').trim();
+        if (res.isFinal && transcript) {
+          setInterimTranscript('');
+          void submitFnRef.current(transcript);
+        } else {
+          interim += transcript + ' ';
+        }
+      }
+      if (interim.trim()) setInterimTranscript(interim.trim());
+    };
+
+    rec.onerror = (event: any) => {
+      const code = event?.error || 'unknown';
+      if (code === 'no-speech') return;
+      stopSpeechRecognition();
       setIsOpenMic(false);
+      setIsTalking(false);
+      const hint =
+        code === 'not-allowed' || code === 'service-not-allowed'
+          ? 'Microphone permission denied by browser.'
+          : code === 'network'
+            ? 'Chrome Speech Recognition network error (or blocked on HTTP origin). Use localhost via ssh -L, or click any Storyboard step / type below.'
+            : `Microphone error: ${code}`;
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `sr-err-${Date.now()}`,
+          sender: 'agent',
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          text: `⚠️ ${hint}`,
+        },
+      ]);
+    };
+
+    rec.onend = () => {
+      if (continuous && isOpenMicRef.current) {
+        try {
+          rec.start();
+        } catch {
+          stopSpeechRecognition();
+          setIsOpenMic(false);
+        }
+      } else {
+        setSpeechListening(false);
+        setInterimTranscript('');
+      }
+    };
+
+    try {
+      rec.start();
+    } catch {
+      stopSpeechRecognition();
+      setIsOpenMic(false);
+      setIsTalking(false);
+    }
+  };
+
+  const toggleOpenMic = async () => {
+    const next = !isOpenMic;
+    setIsOpenMic(next);
+    isOpenMicRef.current = next;
+
+    if (isLiveReady) {
+      if (!isMicSupported()) {
+        setIsOpenMic(false);
+        alert('Live PCM mic requires HTTPS or http://localhost.');
+        return;
+      }
+      try {
+        await client.setOpenMic(next);
+      } catch {
+        setIsOpenMic(false);
+      }
+      return;
+    }
+
+    // Fallback / Tool Mode -> Browser SpeechRecognition
+    if (next) startSpeechRecognition(true);
+    else stopSpeechRecognition();
+  };
+
+  const startHoldTalk = async () => {
+    if (isLiveReady) {
+      if (!isMicSupported()) return;
+      try {
+        await client.startTalking();
+        setIsTalking(true);
+      } catch {
+        setIsTalking(false);
+      }
+      return;
+    }
+    setIsTalking(true);
+    startSpeechRecognition(false);
+  };
+
+  const stopHoldTalk = () => {
+    if (isLiveReady) {
+      client.stopTalking();
+      setIsTalking(false);
+      return;
+    }
+    setIsTalking(false);
+    if (recognitionRef.current) {
+      try {
+        recognitionRef.current.stop();
+      } catch {
+        /* ignore */
+      }
     }
   };
 
@@ -464,20 +629,24 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
       </div>
 
       {/* Sound Wave Visualizer */}
-      {(activeListening || activeSpeaking) && (
+      {(activeListening || isTalking || activeSpeaking) && (
         <div
-          className={`h-10 border-b px-4 flex items-center justify-between text-xs font-mono ${
-            activeListening ? 'bg-emerald-950/60 border-emerald-800/60' : 'bg-blue-950/40 border-blue-800/40'
+          className={`min-h-10 py-1.5 border-b px-4 flex items-center justify-between text-xs font-mono ${
+            activeListening || isTalking ? 'bg-emerald-950/60 border-emerald-800/60' : 'bg-blue-950/40 border-blue-800/40'
           }`}
         >
-          <span className={activeListening ? 'text-emerald-300' : 'text-blue-300'}>
-            {activeListening ? 'Listening · speak any time' : 'Agent speaking...'}
+          <span className={`truncate mr-2 ${activeListening || isTalking ? 'text-emerald-300' : 'text-blue-300'}`}>
+            {activeListening || isTalking
+              ? interimTranscript
+                ? `🎙️ "${interimTranscript}"`
+                : 'Listening · speak any time'
+              : 'Agent speaking...'}
           </span>
-          <div className="flex items-center gap-1 h-5">
+          <div className="flex items-center gap-1 h-5 shrink-0">
             {[0, 150, 300, 450, 200].map((d, i) => (
               <div
                 key={i}
-                className={`w-1 rounded-full animate-wave ${activeListening ? 'bg-emerald-400' : 'bg-accent'}`}
+                className={`w-1 rounded-full animate-wave ${activeListening || isTalking ? 'bg-emerald-400' : 'bg-accent'}`}
                 style={{ animationDelay: `${d}ms` }}
               />
             ))}
@@ -571,7 +740,7 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
         ))}
       </div>
 
-      {/* Textarea + Open Mic / Voice Bar matching reference repo */}
+      {/* Textarea + Open Mic / Hold to Talk controls */}
       <div className="p-3 border-t border-border bg-surface shrink-0">
         <form
           onSubmit={(e) => {
@@ -584,7 +753,7 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
             <textarea
               ref={composerRef}
               rows={2}
-              value={inputPrompt}
+              value={interimTranscript || inputPrompt}
               onChange={(e) => setInputPrompt(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -592,7 +761,11 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                   void submitMessage();
                 }
               }}
-              placeholder="Ask about Bangalore Q3 health, Beat 4 vs 7, Lakshmi Super Mart, or Beat split..."
+              placeholder={
+                activeListening || isTalking
+                  ? 'Listening to your question...'
+                  : 'Ask about Bangalore Q3 health, Beat 4 vs 7, Lakshmi Super Mart, or Beat split...'
+              }
               className="w-full min-h-[56px] max-h-36 resize-none bg-[#0d1117] border border-border text-[13px] leading-snug pl-3 pr-12 py-2.5 rounded-lg text-white placeholder-textMuted focus:outline-none focus:border-accent font-sans"
             />
             <button
@@ -606,30 +779,48 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
           </div>
 
           <div className="flex items-center gap-2 flex-wrap">
-            {!isMicSupported() ? (
+            {!isMicSupported() && !getSpeechRecognitionCtor() ? (
               <button
                 type="button"
-                onClick={toggleMic}
+                onClick={toggleOpenMic}
                 className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0d1117] text-textMuted border border-border/50 font-mono text-xs hover:text-white"
               >
                 <MicOff className="w-3.5 h-3.5 text-amber-400" />
                 <span>Mic needs localhost/HTTPS</span>
               </button>
             ) : (
-              <button
-                type="button"
-                onClick={toggleMic}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
-                  isOpenMic
-                    ? 'bg-emerald-600/25 text-emerald-200 border border-emerald-500'
-                    : 'bg-[#0d1117] text-emerald-400 hover:text-white border border-emerald-500/50'
-                }`}
-              >
-                <Mic className="w-3.5 h-3.5" />
-                <span>{isOpenMic ? 'Listening · tap to stop' : 'Open mic'}</span>
-              </button>
+              <>
+                <button
+                  type="button"
+                  onClick={toggleOpenMic}
+                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
+                    isOpenMic
+                      ? 'bg-emerald-600/25 text-emerald-200 border border-emerald-500'
+                      : 'bg-[#0d1117] text-emerald-400 hover:text-white border border-emerald-500/50'
+                  }`}
+                >
+                  <Mic className="w-3.5 h-3.5" />
+                  <span>{isOpenMic ? 'Listening · tap to stop' : 'Open mic'}</span>
+                </button>
+                {!isOpenMic && (
+                  <button
+                    type="button"
+                    onPointerDown={startHoldTalk}
+                    onPointerUp={stopHoldTalk}
+                    onPointerLeave={stopHoldTalk}
+                    className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold select-none transition-colors ${
+                      isTalking
+                        ? 'bg-emerald-600 text-white border border-emerald-300 animate-pulse'
+                        : 'bg-[#0d1117] text-emerald-400 hover:text-white border border-emerald-500/50'
+                    }`}
+                  >
+                    <Mic className="w-3.5 h-3.5" />
+                    <span>{isTalking ? 'Listening...' : 'Hold to talk'}</span>
+                  </button>
+                )}
+              </>
             )}
-            <span className="ml-auto text-[10px] font-mono text-textMuted">Enter to send · Shift+Enter new line</span>
+            <span className="ml-auto text-[10px] font-mono text-textMuted">Enter to send</span>
           </div>
         </form>
       </div>
