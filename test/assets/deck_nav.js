@@ -10,15 +10,16 @@
 
 window.SC_SLIDE_DECK = [
   { num: "01", title: "Agentic Transformation in India's Supply Chain", path: "slides/slide_01.html" },
-  { num: "02", title: "Why CPG Supply Chain is Critical & Challenges", path: "slides/slide_02.html" },
-  { num: "03", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
-  { num: "04", title: "From One Agent to an Agentic Organisation", path: "slides/slide_04.html" },
-  { num: "05", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
-  { num: "06", title: "How Agents Are Built (Gemini Enterprise)", path: "pages/build_01_how.html" },
-  { num: "07", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
-  { num: "08", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
-  { num: "09", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
-  { num: "10", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" }
+  { num: "02", title: "Why 'Agentic' Now for ITC TM&D?", path: "slides/slide_02_hook.html" },
+  { num: "03", title: "Why CPG Supply Chain is Critical & Challenges", path: "slides/slide_02.html" },
+  { num: "04", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
+  { num: "05", title: "From One Agent to an Agentic Organisation", path: "slides/slide_04.html" },
+  { num: "06", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
+  { num: "07", title: "How Agents Are Built (Gemini Enterprise)", path: "pages/build_01_how.html" },
+  { num: "08", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
+  { num: "09", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
+  { num: "10", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
+  { num: "11", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" }
 ];
 
 window.initDeckChrome = function (opts) {
@@ -108,7 +109,7 @@ window.initDeckChrome = function (opts) {
   menu.style.cssText = 'position:fixed;bottom:72px;right:24px;width:360px;max-height:72vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;box-shadow:var(--shadow-lg);padding:10px;z-index:9991;display:none;';
   menu.innerHTML =
     '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 8px 8px;border-bottom:1px solid var(--border-subtle);margin-bottom:6px;">' +
-      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">CPG Supply Chain Slides (01–10)</span>' +
+      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">Supply Chain Slides (01–11)</span>' +
       '<a href="' + rootPrefix + 'index.html" style="font:600 12px var(--font-display);color:var(--blue-ink);">Briefing Map ↗</a>' +
     '</div>' +
     window.SC_SLIDE_DECK.map(function (s, idx) {
