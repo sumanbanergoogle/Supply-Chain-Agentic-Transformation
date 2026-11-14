@@ -9,28 +9,24 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css">
 <link rel="stylesheet" href="../assets/deck_nav.css">
-<script src="../assets/deck_nav.js?v=6"></script>
-<script src="../data/supply_chain_data.js?v=6"></script>
+<script src="../assets/deck_nav.js?v=7"></script>
+<script src="../data/supply_chain_data.js?v=7"></script>
 <style>
   :root {
-    --crit-bg:   rgba(252, 65, 61, 0.13);
-    --fric-bg:   rgba(254, 199, 0, 0.20);
-    --base-bg:   #EDF0F6;
-    --hatch:     rgba(90, 98, 117, 0.17);
-    --dotcol:    rgba(90, 98, 117, 0.42);
+    --base-bg: #EDF0F6;
+    --base-bg-2: #DFE4EE;
+    --hatch: rgba(90, 98, 117, 0.17);
   }
   html.theme-dark {
-    --crit-bg:   rgba(252, 65, 61, 0.20);
-    --fric-bg:   rgba(254, 199, 0, 0.16);
-    --base-bg:   #23262E;
-    --hatch:     rgba(168, 175, 192, 0.15);
-    --dotcol:    rgba(168, 175, 192, 0.40);
+    --base-bg: #23262E;
+    --base-bg-2: #2D313B;
+    --hatch: rgba(168, 175, 192, 0.15);
   }
 
   .estate-strip {
     display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
     background: var(--surface); border: 1px solid var(--border-subtle);
-    border-radius: 16px; overflow: hidden; margin: 20px 0 16px; box-shadow: var(--shadow-sm);
+    border-radius: 16px; overflow: hidden; margin: 18px 0 14px; box-shadow: var(--shadow-sm);
   }
   .estate-strip div { padding: 14px 18px; border-left: 1px solid var(--border-subtle); }
   .estate-strip div:first-child { border-left: 0; }
@@ -40,38 +36,32 @@
   .legend-bar {
     display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
     padding: 10px 16px; border-radius: 12px; background: var(--surface);
-    border: 1px solid var(--border-subtle); font-size: 12px; color: var(--text-muted); margin-bottom: 14px;
+    border: 1px solid var(--border-subtle); font-size: 12px; color: var(--text-muted); margin-bottom: 12px;
   }
   .lg-item { display: inline-flex; align-items: center; gap: 7px; }
-  .sw { width: 18px; height: 14px; border-radius: 4px; display: inline-block; }
-  .sw-agent { background: color-mix(in srgb, var(--g-blue) 14%, var(--surface)); border: 1px solid color-mix(in srgb, var(--g-blue) 45%, transparent); }
-  .sw-sys {
-    background: repeating-linear-gradient(-45deg, var(--base-bg), var(--base-bg) 3px, var(--hatch) 3px, var(--hatch) 6px);
-    border: 1px solid var(--border-subtle);
-  }
-  .sw-human {
-    background: radial-gradient(var(--dotcol) 1px, transparent 1px);
-    background-size: 5px 5px;
-    border: 1.5px dashed var(--text-muted);
-  }
-  .rail-red { border-left: 4px solid var(--g-red); padding-left: 6px; font-weight: 600; color: var(--text); }
-  .rail-yel { border-left: 4px solid var(--g-yellow); padding-left: 6px; font-weight: 600; color: var(--text); }
+  .sw { width: 20px; height: 15px; border-radius: 4px; display: inline-block; }
+  .sw-agent { background: var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-blue); }
+  .sw-first { background: repeating-linear-gradient(45deg, rgba(252,65,61,0) 0 3px, rgba(252,65,61,.40) 3px 5px), var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-red); }
+  .sw-next  { background: repeating-linear-gradient(45deg, rgba(254,199,0,0) 0 3px, rgba(254,199,0,.40) 3px 5px), var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-yellow); }
+  .sw-sys   { background: repeating-linear-gradient(135deg, transparent 0 3px, var(--hatch) 3px 4px), var(--surface-sunk); border: 1px solid var(--border-strong); }
+  .sw-human { background: transparent; border: 1.5px dashed var(--text-dim); }
 
-  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 14px; }
-  .filter-pill {
-    font: 500 12px var(--font-display); padding: 6px 13px; border-radius: 999px;
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0; }
+  .filter-pill, .prio-pill {
+    font: 500 12px var(--font-display); padding: 6px 12px; border-radius: 999px;
     border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text);
     cursor: pointer; transition: all .15s;
   }
-  .filter-pill:hover { border-color: var(--g-blue); }
+  .filter-pill:hover, .prio-pill:hover { border-color: var(--g-blue); }
   .filter-pill.active { background: var(--g-blue); color: #FFF; border-color: var(--g-blue); font-weight: 600; }
+  .prio-pill.active { background: var(--surface-sunk); border-color: var(--g-blue); color: var(--blue-ink); font-weight: 600; }
   .search-box {
     margin-left: auto; min-width: 240px; padding: 7px 14px; border-radius: 999px;
     border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text);
     font: 400 13px var(--font-body); outline: none;
   }
 
-  /* Chessboard / Matrix Rows (matching Oil & Gas Persona Map) */
+  /* Chessboard Rows */
   .board { display: flex; flex-direction: column; gap: 8px; }
   .b-row {
     display: grid; grid-template-columns: 330px 1fr; gap: 14px; align-items: center;
@@ -84,33 +74,46 @@
   .b-name { font: 600 14px/1.25 var(--font-display); margin: 2px 0; color: var(--text); }
   .b-impact { font: 500 11.5px var(--font-body); color: var(--text-muted); }
 
-  /* 54x40 Chessboard Tiles */
+  /* 54x40 Exact Reference Chessboard Cells */
   .b-tiles { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .tile-sq {
-    width: 58px; height: 42px; border-radius: 7px; cursor: pointer;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    font: 600 10.5px/1.1 var(--font-mono); position: relative;
-    transition: transform .12s, box-shadow .12s;
+  .bcell { cursor: pointer; display: inline-flex; }
+  .bcell i {
+    font-style: normal;
+    width: 54px; height: 40px; border-radius: 6px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font: 600 10px var(--font-mono); letter-spacing: .01em;
+    color: var(--text-muted);
+    transition: transform .1s, filter .1s, box-shadow .1s;
   }
-  .tile-sq:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,.14); z-index: 2; }
-  .tile-sq small { font: 500 8.5px var(--font-mono); opacity: .78; margin-top: 2px; }
-
-  .t-agent {
-    background: color-mix(in srgb, var(--g-blue) 12%, var(--surface));
-    border: 1px solid color-mix(in srgb, var(--g-blue) 35%, transparent);
-    color: var(--blue-ink);
+  .bcell:hover i { transform: translateY(-2px); filter: brightness(0.97); }
+  .bcell.own-agentic i {
+    background: var(--surface);
+    border: 1px solid rgba(49, 134, 255, .38);
+    border-left: 4px solid var(--g-blue);
   }
-  .t-crit { border-left: 3.5px solid var(--g-red); background: var(--crit-bg); color: var(--text); }
-  .t-fric { border-left: 3.5px solid var(--g-yellow); background: var(--fric-bg); color: var(--text); }
-  .t-sys {
-    background: repeating-linear-gradient(-45deg, var(--base-bg), var(--base-bg) 3px, var(--hatch) 3px, var(--hatch) 6px);
-    border: 1px solid var(--border-subtle); color: var(--text-muted);
+  .bcell.prio-first i {
+    background: repeating-linear-gradient(45deg, rgba(252,65,61,0) 0 4px, rgba(252,65,61,.40) 4px 6px), var(--surface);
+    border: 1px solid rgba(49, 134, 255, .38);
+    border-left: 4px solid var(--g-red);
   }
-  .t-human {
-    background: radial-gradient(var(--dotcol) 1px, transparent 1px);
-    background-size: 5px 5px;
-    border: 1.5px dashed var(--border-strong); color: var(--text-muted);
+  .bcell.prio-next i {
+    background: repeating-linear-gradient(45deg, rgba(254,199,0,0) 0 4px, rgba(254,199,0,.40) 4px 6px), var(--surface);
+    border: 1px solid rgba(49, 134, 255, .38);
+    border-left: 4px solid var(--g-yellow);
   }
+  .bcell.own-system i {
+    background: repeating-linear-gradient(135deg, transparent 0 3px, var(--hatch) 3px 4px), var(--surface-sunk);
+    border: 1px solid var(--border-strong);
+  }
+  .bcell.own-human i {
+    background: transparent;
+    border: 1.5px dashed var(--text-dim);
+  }
+  .bcell.is-open i {
+    border: 2px solid var(--g-blue);
+    box-shadow: 0 0 0 2px rgba(49, 134, 255, .28);
+  }
+  .bcell.dimmed { opacity: .22; }
 
   .row-agent-tag {
     margin-left: auto; font: 600 11.5px var(--font-display); color: var(--ti);
@@ -120,15 +123,19 @@
     cursor: pointer; white-space: nowrap;
   }
 
-  /* Modal Drawer */
-  .modal-bg { position: fixed; inset: 0; background: rgba(18,19,23,.55); backdrop-filter: blur(4px); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 20px; }
-  .modal-bg.open { display: flex; }
-  .modal { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 20px; max-width: 660px; width: 100%; max-height: 86vh; overflow-y: auto; padding: 26px; box-shadow: var(--shadow-lg); position: relative; }
-  .modal-close { position: absolute; right: 18px; top: 18px; border: 1px solid var(--border-subtle); background: var(--surface-sunk); color: var(--text); border-radius: 999px; width: 32px; height: 32px; cursor: pointer; font-weight: 700; }
-  .modal h2 { margin: 8px 0 4px; font: 600 21px var(--font-display); }
-  .modal .sec { margin-top: 14px; }
-  .modal .sec-lbl { font: 600 11px var(--font-mono); text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
-  .modal .prompt-box { background: var(--surface-sunk); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px 14px; font: 400 12.5px/1.5 var(--font-mono); }
+  /* Slide-over Cell Inspector Drawer (matching Oil & Gas reference) */
+  .drawer-bg { position: fixed; inset: 0; background: rgba(18,19,23,.45); backdrop-filter: blur(3px); z-index: 10000; display: none; justify-content: flex-end; }
+  .drawer-bg.open { display: flex; }
+  .drawer {
+    background: var(--surface); border-left: 1px solid var(--border-subtle);
+    width: min(520px, 100%); height: 100%; overflow-y: auto; padding: 26px;
+    box-shadow: -8px 0 32px rgba(0,0,0,.18); position: relative;
+  }
+  .drawer-close { position: absolute; right: 18px; top: 18px; border: 1px solid var(--border-subtle); background: var(--surface-sunk); color: var(--text); border-radius: 999px; width: 32px; height: 32px; cursor: pointer; font-weight: 700; }
+  .drawer h2 { margin: 8px 0 4px; font: 600 21px var(--font-display); }
+  .sec { margin-top: 14px; }
+  .sec-lbl { font: 600 11px var(--font-mono); text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
+  .prompt-box { background: var(--surface-sunk); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px 14px; font: 400 12.5px/1.5 var(--font-mono); }
   .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip { font: 500 11.5px var(--font-mono); padding: 4px 10px; border-radius: 8px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); }
 
@@ -159,22 +166,22 @@
 
 <main class="page-wrap">
   <div class="page-kick"><i></i>Slide 05 · The Agentic Supply Chain Workforce</div>
-  <h1 class="page-h1">Persona Map: 60 Supply Chain Roles &amp; Action Matrix</h1>
-  <p class="page-lede">Every role across the 6 CPG Supply Chain pillars mapped by <b>who runs each step</b> (Agent Prepares, Incumbent ERP/WMS/TMS, or Human Sign-Off) and <b>build priority</b>. Click any tile or row to inspect the Gemini Enterprise blueprint.</p>
+  <h1 class="page-h1">Persona Map: 60 Supply Chain Roles &amp; Vulnerability Board</h1>
+  <p class="page-lede">Every role across the 6 CPG Supply Chain pillars mapped into <b>600 operational workflow cells</b> by ownership (Agent Prepares, Incumbent System, Human Sign-Off) and build priority. Click any cell to inspect its agentic action.</p>
 
   <div class="estate-strip">
-    <div><b>60</b><span>CPG supply chain personas</span></div>
-    <div><b>360</b><span>Operational workflow steps</span></div>
-    <div><b>68%</b><span>Agent prepares, human decides</span></div>
-    <div><b>100%</b><span>Non-invasive over ERP / DMS / WMS</span></div>
+    <div><b>60</b><span>Supply chain personas</span></div>
+    <div><b>600</b><span>Workflow cells mapped</span></div>
+    <div><b>60%</b><span>Agent prepares, human decides</span></div>
+    <div><b>40%</b><span>Incumbent ERP &amp; human gates</span></div>
   </div>
 
   <div class="legend-bar">
-    <span class="lg-item"><span class="sw sw-agent"></span> Agent prepares, human decides</span>
+    <span class="lg-item"><span class="sw sw-first"></span> Build First (Critical)</span>
+    <span class="lg-item"><span class="sw sw-next"></span> Build Next (Friction)</span>
+    <span class="lg-item"><span class="sw sw-agent"></span> Routine Agentic</span>
     <span class="lg-item"><span class="sw sw-sys"></span> Incumbent ERP / WMS / TMS</span>
-    <span class="lg-item"><span class="sw sw-human"></span> Human sign-off / authority</span>
-    <span class="lg-item rail-red">Build First (Critical)</span>
-    <span class="lg-item rail-yel">Build Next (Friction)</span>
+    <span class="lg-item"><span class="sw sw-human"></span> Human Sign-Off</span>
   </div>
 
   <div class="controls">
@@ -186,6 +193,16 @@
     <button class="filter-pill" data-filter="distribution">05 CPG Distribution (12)</button>
     <button class="filter-pill" data-filter="reverse">06 Reverse (9)</button>
     <input class="search-box" id="searchBox" type="search" placeholder="Search persona, agent, or KPI...">
+  </div>
+
+  <div class="controls" style="margin-top:4px;">
+    <span style="font:600 11px var(--font-mono);color:var(--text-muted);text-transform:uppercase;">Highlight:</span>
+    <button class="prio-pill active" data-prio="all">All Cells</button>
+    <button class="prio-pill" data-prio="prio-first">Build First (Red)</button>
+    <button class="prio-pill" data-prio="prio-next">Build Next (Yellow)</button>
+    <button class="prio-pill" data-prio="own-agentic">All Agentic</button>
+    <button class="prio-pill" data-prio="own-system">Incumbent System</button>
+    <button class="prio-pill" data-prio="own-human">Human Only</button>
   </div>
 
   <div id="resultCount" style="font:500 12px var(--font-mono);color:var(--text-muted);margin-bottom:10px;">Showing 60 personas</div>
@@ -201,10 +218,10 @@
   </footer>
 </main>
 
-<div class="modal-bg" id="modalBg">
-  <div class="modal" id="modalCard">
-    <button class="modal-close" id="modalClose">✕</button>
-    <div id="modalBody"></div>
+<div class="drawer-bg" id="drawerBg">
+  <div class="drawer" id="drawerCard">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <div id="drawerBody"></div>
   </div>
 </div>
 
@@ -227,11 +244,34 @@
 
   var params = new URLSearchParams(window.location.search);
   var activeFilter = params.get('pillar') || 'all';
+  var activePrio = 'all';
   var searchQuery = '';
+
+  function buildCells(r) {
+    var s0 = r.sources[0] || 'SAP ERP';
+    var s1 = r.sources[1] || s0;
+    var s2 = r.sources[2] || s1;
+    var dj = r.dayJourney || [];
+    return [
+      { code: 'A01', cls: 'own-agentic prio-first', owner: 'Agent Prepares (Build First)', title: dj[0] ? dj[0].agent : 'Signal Ingestion & Sensing', detail: dj[0] ? dj[0].desc : 'Continuously monitors ' + s0 + ' for anomalies and demand/supply shifts.' },
+      { code: 'A02', cls: 'own-agentic prio-first', owner: 'Agent Prepares (Build First)', title: r.agent, detail: r.mandate + ' (' + r.impact + ')' },
+      { code: 'A03', cls: 'own-agentic prio-next',  owner: 'Agent Prepares (Build Next)',  title: dj[1] ? dj[1].agent : 'Cross-Source Reconciliation', detail: dj[1] ? dj[1].desc : 'Cross-references ' + s1 + ' and ' + s2 + ' to prepare decision options.' },
+      { code: 'A04', cls: 'own-agentic prio-next',  owner: 'Agent Prepares (Build Next)',  title: dj[2] ? dj[2].agent : 'Action Brief & Escalation', detail: dj[2] ? dj[2].desc : 'Drafts executive summary and pre-populates action payloads.' },
+      { code: 'A05', cls: 'own-agentic',            owner: 'Routine Agentic',              title: 'Document & Policy Grounding', detail: 'Retrieves SOPs, contracts, and historical benchmarks via Gemini Enterprise Search.' },
+      { code: 'A06', cls: 'own-agentic',            owner: 'Routine Agentic',              title: 'Automated Alert & Sync', detail: 'Pushes proactive notifications to Workspace, Chat, and mobile surfaces.' },
+      { code: 'S01', cls: 'own-system',             owner: 'Incumbent System of Record',   title: s0 + ' Core Transaction', detail: 'Deterministic ledger posting, master data validation, and compliance logging.' },
+      { code: 'S02', cls: 'own-system',             owner: 'Incumbent System of Record',   title: s1 + ' Batch & Audit', detail: 'Automated EDI/ERP batch synchronization and financial accounting.' },
+      { code: 'H01', cls: 'own-human',              owner: 'Human Sign-Off',               title: 'Commercial / Financial Approval', detail: 'Final human authorization for high-value commitments and policy exceptions.' },
+      { code: 'H02', cls: 'own-human',              owner: 'Human Sign-Off',               title: 'Stakeholder Negotiation', detail: 'Relationship-sensitive partner, carrier, or customer alignment.' }
+    ];
+  }
 
   function syncButtons() {
     document.querySelectorAll('.filter-pill').forEach(function (b) {
       b.classList.toggle('active', b.dataset.filter === activeFilter);
+    });
+    document.querySelectorAll('.prio-pill').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.prio === activePrio);
     });
   }
 
@@ -242,44 +282,55 @@
       if (!q) return true;
       return (r.persona + ' ' + r.agent + ' ' + r.mandate + ' ' + r.impact + ' ' + r.subprocess).toLowerCase().indexOf(q) !== -1;
     });
-    document.getElementById('resultCount').textContent = 'Showing ' + filtered.length + ' of ' + allRows.length + ' supply chain personas';
+    document.getElementById('resultCount').textContent = 'Showing ' + filtered.length + ' of ' + allRows.length + ' supply chain personas (' + (filtered.length * 10) + ' cells)';
     var grid = document.getElementById('boardGrid');
     grid.innerHTML = '';
+
     filtered.forEach(function (r) {
       var row = document.createElement('div');
       row.className = 'b-row ' + r.cssClass;
+      var cells = buildCells(r);
 
-      var tiles = [
-        { code: 'A01', sub: 'Signal', cls: 't-agent t-crit', tip: 'Ingest & Sense: ' + r.sources[0] },
-        { code: 'A02', sub: 'Reason', cls: 't-agent t-crit', tip: r.agent + ': ' + r.mandate },
-        { code: 'A03', sub: 'Draft',  cls: 't-agent t-fric', tip: 'Prepare action / brief for ' + r.persona },
-        { code: 'A04', sub: 'Ground', cls: 't-agent t-fric', tip: 'Cross-check ' + (r.sources[1] || r.sources[0]) },
-        { code: 'S01', sub: 'ERP',    cls: 't-sys',          tip: 'System of Record: ' + r.sources[0] },
-        { code: 'H01', sub: 'Sign',   cls: 't-human',        tip: 'Human Approval: ' + r.impact }
-      ];
+      var tilesWrap = document.createElement('div');
+      tilesWrap.className = 'b-tiles';
 
-      var tilesHtml = tiles.map(function (t) {
-        return '<div class="tile-sq ' + t.cls + '" title="' + t.tip.replace(/"/g, '&quot;') + '"><span>' + t.code + '</span><small>' + t.sub + '</small></div>';
-      }).join('');
+      cells.forEach(function (c) {
+        var sp = document.createElement('span');
+        var isMatch = activePrio === 'all' || c.cls.indexOf(activePrio) !== -1;
+        sp.className = 'bcell ' + c.cls + (isMatch ? '' : ' dimmed');
+        sp.title = c.code + ' · ' + c.title + ' (' + c.owner + ')';
+        sp.innerHTML = '<i>' + c.code + '</i>';
+        sp.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.querySelectorAll('.bcell.is-open').forEach(function (x) { x.classList.remove('is-open'); });
+          sp.classList.add('is-open');
+          openDrawer(r, c);
+        });
+        tilesWrap.appendChild(sp);
+      });
 
-      row.innerHTML =
-        '<div class="b-persona">' +
-          '<div class="b-meta">' + r.id + ' · ' + r.pillarTitle + '</div>' +
-          '<div class="b-name">' + r.persona + '</div>' +
-          '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>' +
-        '</div>' +
-        '<div class="b-tiles">' +
-          tilesHtml +
-          '<span class="row-agent-tag">⚡ ' + r.agent + '</span>' +
-        '</div>';
+      var tag = document.createElement('span');
+      tag.className = 'row-agent-tag';
+      tag.textContent = '⚡ ' + r.agent;
+      tag.addEventListener('click', function () { openDrawer(r, cells[1]); });
+      tilesWrap.appendChild(tag);
 
-      row.addEventListener('click', function () { openModal(r); });
+      var pCol = document.createElement('div');
+      pCol.className = 'b-persona';
+      pCol.innerHTML =
+        '<div class="b-meta">' + r.id + ' · ' + r.pillarTitle + '</div>' +
+        '<div class="b-name">' + r.persona + '</div>' +
+        '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>';
+      pCol.addEventListener('click', function () { openDrawer(r, cells[1]); });
+
+      row.appendChild(pCol);
+      row.appendChild(tilesWrap);
       grid.appendChild(row);
     });
   }
 
-  function openModal(r) {
-    var body = document.getElementById('modalBody');
+  function openDrawer(r, cell) {
+    var body = document.getElementById('drawerBody');
     body.className = r.cssClass;
     var journeyHtml = '';
     if (r.dayJourney && r.dayJourney.length) {
@@ -297,6 +348,13 @@
       '<span class="badge-pill">' + r.pillarNum + ' · ' + r.pillarTitle + ' / ' + r.subprocess + '</span>' +
       '<h2>' + r.persona + '</h2>' +
       '<p style="color:var(--text-muted);margin:4px 0 14px;font-size:14px;">' + r.mandate + '</p>' +
+      (cell ? (
+        '<div style="padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--g-blue) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--g-blue) 30%,transparent);margin-bottom:14px;">' +
+          '<div style="font:600 11px var(--font-mono);color:var(--blue-ink);">SELECTED CELL: ' + cell.code + ' · ' + cell.owner.toUpperCase() + '</div>' +
+          '<div style="font:600 15px var(--font-display);margin:4px 0;">' + cell.title + '</div>' +
+          '<div style="font-size:13px;line-height:1.45;color:var(--text);">' + cell.detail + '</div>' +
+        '</div>'
+      ) : '') +
       '<div class="sec"><div class="sec-lbl">Primary Gemini Enterprise Agent</div>' +
         '<div style="font:600 16px var(--font-display);color:var(--ti);">⚡ ' + r.agent + ' <span class="badge-pill" style="margin-left:8px;">' + r.buildMode + '</span></div>' +
         '<div style="margin-top:6px;font-size:13.5px;"><b>Measurable Value:</b> ' + r.impact + '</div>' +
@@ -308,13 +366,16 @@
       '<div class="sec"><div class="sec-lbl">Low-Code System Prompt Blueprint</div>' +
         '<div class="prompt-box">' + r.promptHint + '</div>' +
       '</div>';
-    document.getElementById('modalBg').classList.add('open');
+    document.getElementById('drawerBg').classList.add('open');
   }
 
-  document.getElementById('modalClose').addEventListener('click', function () { document.getElementById('modalBg').classList.remove('open'); });
-  document.getElementById('modalBg').addEventListener('click', function (e) { if (e.target === this) this.classList.remove('open'); });
+  document.getElementById('drawerClose').addEventListener('click', function () { document.getElementById('drawerBg').classList.remove('open'); });
+  document.getElementById('drawerBg').addEventListener('click', function (e) { if (e.target === this) this.classList.remove('open'); });
   document.querySelectorAll('.filter-pill').forEach(function (b) {
     b.addEventListener('click', function () { activeFilter = b.dataset.filter; syncButtons(); render(); });
+  });
+  document.querySelectorAll('.prio-pill').forEach(function (b) {
+    b.addEventListener('click', function () { activePrio = b.dataset.prio; syncButtons(); render(); });
   });
   document.getElementById('searchBox').addEventListener('input', function (e) { searchQuery = e.target.value; render(); });
 
