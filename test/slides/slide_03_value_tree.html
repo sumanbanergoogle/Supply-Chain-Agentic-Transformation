@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · The TM&amp;D Value Tree: Anchoring on CEO Metrics First</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/deck_nav.css">
+<script src="../assets/deck_nav.js?v=9"></script>
+<style>
+  .tree-root {
+    max-width: 640px; margin: 22px auto 0; text-align: center;
+    background: var(--surface); border: 2px solid var(--g-blue);
+    border-radius: 18px; padding: 16px 24px; box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  .tree-root::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px;
+    border-radius: 16px 16px 0 0; background: var(--gemini-spark);
+  }
+  .tree-root small { font: 600 11px var(--font-mono); letter-spacing: 1.3px; text-transform: uppercase; color: var(--blue-ink); }
+  .tree-root h2 { margin: 4px 0 2px; font: 600 21px var(--font-display); color: var(--text); }
+  .tree-root span { font-size: 13px; color: var(--text-muted); }
+
+  .tree-stem { width: 2px; height: 22px; background: var(--border-strong); margin: 0 auto; }
+  .tree-bar { height: 2px; background: var(--border-strong); width: 76%; margin: 0 auto; }
+  .tree-drops { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; }
+  .tree-drops i { display: block; width: 2px; height: 18px; background: var(--border-strong); margin: 0 auto; }
+
+  .levers-grid {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;
+  }
+  .lever-card {
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 18px; padding: 20px; box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden;
+    transition: transform .16s, box-shadow .16s;
+  }
+  .lever-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--tc); }
+  .lever-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .lever-num {
+    font: 600 11px var(--font-mono); letter-spacing: 1px; text-transform: uppercase;
+    color: var(--ti);
+  }
+  .lever-card h3 { margin: 0; font: 600 17.5px/1.25 var(--font-display); color: var(--text); }
+  .lever-card p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--text-muted); }
+  .lever-kpi {
+    margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-subtle);
+    font: 600 12px var(--font-mono); color: var(--ti);
+  }
+
+  @media (max-width: 1020px) {
+    .tree-stem, .tree-bar, .tree-drops { display: none; }
+    .levers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; }
+  }
+  @media (max-width: 640px) {
+    .levers-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+    <span class="mast-rule"></span>
+    <span class="mast-tag">03 · The TM&amp;D Value Tree</span>
+  </a>
+  <span class="mast-sp"></span>
+  <div class="mast-nav" id="mastSlideNav">
+    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+  </div>
+</header>
+
+<main class="page-wrap">
+  <div class="page-kick"><i></i>Slide 03 · Anchoring on CEO Metrics First</div>
+  <h1 class="page-h1">The ITC TM&amp;D Value Tree</h1>
+  <p class="page-lede">Before exploring workflows or technology, we anchor every Agentic AI initiative on the <b>4 commercial levers that define ROI</b> in CPG Logistics &amp; Distribution.</p>
+
+  <div class="tree-root">
+    <small>North Star Outcome</small>
+    <h2>TM&amp;D EBITDA, Cash Flow &amp; Market Share</h2>
+    <span>Measured across General Trade, Modern Trade, Quick Commerce &amp; CFAs</span>
+  </div>
+  <div class="tree-stem"></div>
+  <div class="tree-bar"></div>
+  <div class="tree-drops"><i></i><i></i><i></i><i></i></div>
+
+  <div class="levers-grid">
+    <div class="lever-card p-blue">
+      <div class="lever-num">Lever 01 · Growth</div>
+      <h3>Revenue Protection &amp; Channel Compliance</h3>
+      <p>Higher On-Time In-Full (OTIF), fewer lost sales from kirana stock-outs, and lower Modern Trade / Quick Commerce fill-rate penalties.</p>
+      <div class="lever-kpi">KPI: OTIF % · OOS Reduction · MT/Q-Comm Fines</div>
+    </div>
+
+    <div class="lever-card p-green">
+      <div class="lever-num">Lever 02 · Cost</div>
+      <h3>Logistics Cost Optimization</h3>
+      <p>Lower freight cost as a % of sales via higher truck fill rates, reduced spot-freight premiums, and lower detention &amp; demurrage.</p>
+      <div class="lever-kpi">KPI: Freight % of Sales · FTL Fill % · Detention</div>
+    </div>
+
+    <div class="lever-card p-amber">
+      <div class="lever-num">Lever 03 · Cash &amp; Quality</div>
+      <h3>Working Capital &amp; Freshness (Foods / FMCG)</h3>
+      <p>Lower Days Inventory Outstanding (DIO) across CFAs and stockists, and reduced expiry write-offs via FEFO-aware rebalancing.</p>
+      <div class="lever-kpi">KPI: CFA/WD DIO · SLOB &amp; Expiry Write-Offs</div>
+    </div>
+
+    <div class="lever-card p-purple">
+      <div class="lever-num">Lever 04 · Productivity</div>
+      <h3>Commercial &amp; Control Tower Productivity</h3>
+      <p>Automated freight audit, POD verification, and trade claim resolution—freeing field and operations teams from manual firefighting.</p>
+      <div class="lever-kpi">KPI: Claim Cycle TAT · Freight Leakage · Hrs Saved</div>
+    </div>
+  </div>
+
+  <footer class="deck-footer">
+    <span>Slide 03 · The TM&amp;D Value Tree: Anchoring on CEO Metrics First</span>
+    <span class="footer-brand">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+      <span style="width:1px;height:16px;background:#DADCE0;"></span>
+      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
+    </span>
+  </footer>
+</main>
+
+<script>
+  initDeckChrome({ root: '../' });
+</script>
+</body>
+</html>
