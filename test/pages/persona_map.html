@@ -167,13 +167,13 @@
 <main class="page-wrap">
   <div class="page-kick"><i></i>Slide 05 · The Agentic Supply Chain Workforce</div>
   <h1 class="page-h1">Persona Map: 60 Supply Chain Roles &amp; Vulnerability Board</h1>
-  <p class="page-lede">Every role across the 6 CPG Supply Chain pillars mapped into <b>600 operational workflow cells</b> by ownership (Agent Prepares, Incumbent System, Human Sign-Off) and build priority. Click any cell to inspect its agentic action.</p>
+  <p class="page-lede">Every role across the 6 CPG Supply Chain pillars mapped to its <b>1 dedicated Gemini Enterprise Agent</b> alongside the incumbent system of record and human sign-off gate. Click any cell or row to inspect the agent blueprint.</p>
 
   <div class="estate-strip">
     <div><b>60</b><span>Supply chain personas</span></div>
-    <div><b>600</b><span>Workflow cells mapped</span></div>
-    <div><b>60%</b><span>Agent prepares, human decides</span></div>
-    <div><b>40%</b><span>Incumbent ERP &amp; human gates</span></div>
+    <div><b>60</b><span>Dedicated AI agents (1 per role)</span></div>
+    <div><b>180</b><span>Workflow cells mapped</span></div>
+    <div><b>100%</b><span>Non-invasive over ERP / DMS / WMS</span></div>
   </div>
 
   <div class="legend-bar">
@@ -249,20 +249,12 @@
 
   function buildCells(r) {
     var s0 = r.sources[0] || 'SAP ERP';
-    var s1 = r.sources[1] || s0;
-    var s2 = r.sources[2] || s1;
-    var dj = r.dayJourney || [];
+    var prioCls = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'own-agentic prio-first' : 'own-agentic prio-next';
+    var prioLbl = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'Agent Prepares (Build First)' : 'Agent Prepares (Build Next)';
     return [
-      { code: 'A01', cls: 'own-agentic prio-first', owner: 'Agent Prepares (Build First)', title: dj[0] ? dj[0].agent : 'Signal Ingestion & Sensing', detail: dj[0] ? dj[0].desc : 'Continuously monitors ' + s0 + ' for anomalies and demand/supply shifts.' },
-      { code: 'A02', cls: 'own-agentic prio-first', owner: 'Agent Prepares (Build First)', title: r.agent, detail: r.mandate + ' (' + r.impact + ')' },
-      { code: 'A03', cls: 'own-agentic prio-next',  owner: 'Agent Prepares (Build Next)',  title: dj[1] ? dj[1].agent : 'Cross-Source Reconciliation', detail: dj[1] ? dj[1].desc : 'Cross-references ' + s1 + ' and ' + s2 + ' to prepare decision options.' },
-      { code: 'A04', cls: 'own-agentic prio-next',  owner: 'Agent Prepares (Build Next)',  title: dj[2] ? dj[2].agent : 'Action Brief & Escalation', detail: dj[2] ? dj[2].desc : 'Drafts executive summary and pre-populates action payloads.' },
-      { code: 'A05', cls: 'own-agentic',            owner: 'Routine Agentic',              title: 'Document & Policy Grounding', detail: 'Retrieves SOPs, contracts, and historical benchmarks via Gemini Enterprise Search.' },
-      { code: 'A06', cls: 'own-agentic',            owner: 'Routine Agentic',              title: 'Automated Alert & Sync', detail: 'Pushes proactive notifications to Workspace, Chat, and mobile surfaces.' },
-      { code: 'S01', cls: 'own-system',             owner: 'Incumbent System of Record',   title: s0 + ' Core Transaction', detail: 'Deterministic ledger posting, master data validation, and compliance logging.' },
-      { code: 'S02', cls: 'own-system',             owner: 'Incumbent System of Record',   title: s1 + ' Batch & Audit', detail: 'Automated EDI/ERP batch synchronization and financial accounting.' },
-      { code: 'H01', cls: 'own-human',              owner: 'Human Sign-Off',               title: 'Commercial / Financial Approval', detail: 'Final human authorization for high-value commitments and policy exceptions.' },
-      { code: 'H02', cls: 'own-human',              owner: 'Human Sign-Off',               title: 'Stakeholder Negotiation', detail: 'Relationship-sensitive partner, carrier, or customer alignment.' }
+      { code: 'A01', cls: prioCls,      owner: prioLbl,                    title: r.agent,                    detail: r.mandate + ' (' + r.impact + ')' },
+      { code: 'S01', cls: 'own-system', owner: 'Incumbent System of Record', title: s0 + ' Core System',       detail: 'Deterministic ledger posting, master data validation, and compliance logging in ' + r.sources.join(', ') + '.' },
+      { code: 'H01', cls: 'own-human',  owner: 'Human Sign-Off',             title: 'Human Decision & Control', detail: r.persona + ' retains final approval for high-value commitments and policy exceptions (' + r.impact + ').' }
     ];
   }
 
@@ -282,7 +274,7 @@
       if (!q) return true;
       return (r.persona + ' ' + r.agent + ' ' + r.mandate + ' ' + r.impact + ' ' + r.subprocess).toLowerCase().indexOf(q) !== -1;
     });
-    document.getElementById('resultCount').textContent = 'Showing ' + filtered.length + ' of ' + allRows.length + ' supply chain personas (' + (filtered.length * 10) + ' cells)';
+    document.getElementById('resultCount').textContent = 'Showing ' + filtered.length + ' of ' + allRows.length + ' supply chain personas (' + filtered.length + ' agents · ' + (filtered.length * 3) + ' cells)';
     var grid = document.getElementById('boardGrid');
     grid.innerHTML = '';
 
@@ -312,7 +304,7 @@
       var tag = document.createElement('span');
       tag.className = 'row-agent-tag';
       tag.textContent = '⚡ ' + r.agent;
-      tag.addEventListener('click', function () { openDrawer(r, cells[1]); });
+      tag.addEventListener('click', function () { openDrawer(r, cells[0]); });
       tilesWrap.appendChild(tag);
 
       var pCol = document.createElement('div');
@@ -321,7 +313,7 @@
         '<div class="b-meta">' + r.id + ' · ' + r.pillarTitle + '</div>' +
         '<div class="b-name">' + r.persona + '</div>' +
         '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>';
-      pCol.addEventListener('click', function () { openDrawer(r, cells[1]); });
+      pCol.addEventListener('click', function () { openDrawer(r, cells[0]); });
 
       row.appendChild(pCol);
       row.appendChild(tilesWrap);
