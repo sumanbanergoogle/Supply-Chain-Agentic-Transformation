@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
-import { ArrowRight, CheckCircle2, Loader2, Play, Sparkles, TrendingUp } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, Cell } from 'recharts';
+import { ArrowRight, CheckCircle2, Loader2, Play, Send, Sparkles, TrendingUp, AlertTriangle } from 'lucide-react';
 import { tmdApi } from '../../api/client';
-import { BeatInfo, BeatSimulation, CityBenchmark, CityName, OutletSummary } from '../../types/tmd';
+import { BeatDiagnosisPayload, BeatInfo, BeatSimulation, CityBenchmark, CityName, OutletSummary } from '../../types/tmd';
 
 export const CityComparisonView: React.FC<{ onSelectCity: (c: CityName) => void }> = ({ onSelectCity }) => {
   const [rows, setRows] = useState<CityBenchmark[]>([]);
@@ -18,7 +18,7 @@ export const CityComparisonView: React.FC<{ onSelectCity: (c: CityName) => void 
   if (loading) {
     return (
       <div className="py-12 flex items-center justify-center gap-2 text-xs font-mono text-textMuted">
-        <Loader2 className="w-4 h-4 animate-spin text-accent" /> Loading Bangalore · Hyderabad · Chennai benchmark...
+        <Loader2 className="w-4 h-4 animate-spin text-accent" /> Comparing Bangalore · Hyderabad · Chennai...
       </div>
     );
   }
@@ -26,7 +26,7 @@ export const CityComparisonView: React.FC<{ onSelectCity: (c: CityName) => void 
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-base font-bold text-white">Cross-City ITC TM&amp;D Executive Comparison</h2>
+        <h2 className="text-base font-bold text-white">Compare Cities — ITC TM&amp;D Metro Benchmark</h2>
         <p className="text-xs text-textMuted mt-0.5">
           General Trade monthly leakage, zero-billing incidence, and ML-attributed primary failure mode across Metro Branches.
         </p>
@@ -38,12 +38,12 @@ export const CityComparisonView: React.FC<{ onSelectCity: (c: CityName) => void 
             key={c.city}
             type="button"
             onClick={() => onSelectCity(c.city as CityName)}
-            className="text-left bg-[#0d1117] border border-border hover:border-accent rounded-xl p-4 transition-colors space-y-2"
+            className="text-left bg-[#0d1117] border border-border hover:border-accent rounded-lg p-4 transition-colors space-y-2"
           >
             <div className="flex items-center justify-between">
               <span className="text-sm font-bold text-white">{c.city}</span>
               <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-rose-950/60 text-rose-300 border border-rose-700/50">
-                {c.zero_billing_pct}% Zero-Billing
+                {c.zero_billing_pct}% Zero-Bill
               </span>
             </div>
             <div className="grid grid-cols-2 gap-2 pt-1 font-mono text-xs">
@@ -73,8 +73,8 @@ export const CityComparisonView: React.FC<{ onSelectCity: (c: CityName) => void 
         ))}
       </div>
 
-      <div className="bg-[#0d1117] border border-border rounded-xl p-4 h-64">
-        <div className="text-xs font-mono text-textMuted mb-2">Monthly NSV Leakage (₹ Lakhs) vs Active LSPC Gap</div>
+      <div className="bg-[#0d1117] border border-border rounded-lg p-4 h-64">
+        <div className="text-xs font-mono text-textMuted mb-2">Monthly NSV Leakage (₹ Lakhs) vs Zero-Billing Outlets</div>
         <ResponsiveContainer width="100%" height="90%">
           <BarChart data={rows.map((r) => ({ ...r, leakage_lakhs: Number((r.monthly_leakage_inr / 100000).toFixed(2)) }))}>
             <CartesianGrid strokeDasharray="3 3" stroke="#21262d" />
@@ -96,6 +96,7 @@ export const CityHealthPriorityView: React.FC<{
   onSelectCity: (c: 'ALL' | CityName) => void;
   onOpenOutlet: (id: string) => void;
 }> = ({ city, onSelectCity, onOpenOutlet }) => {
+  const [summary, setSummary] = useState<any>(null);
   const [queue, setQueue] = useState<OutletSummary[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -103,48 +104,85 @@ export const CityHealthPriorityView: React.FC<{
     setLoading(true);
     tmdApi
       .cityHealth(city)
-      .then((res) => setQueue(res.priority_queue))
+      .then((res) => {
+        setSummary(res.summary);
+        setQueue(res.priority_queue);
+      })
       .finally(() => setLoading(false));
   }, [city]);
+
+  const total = summary?.total_outlets || 1;
+  const pctH = summary ? (summary.healthy_count / total) * 100 : 0;
+  const pctW = summary ? (summary.warning_count / total) * 100 : 0;
+  const pctC = summary ? (summary.critical_count / total) * 100 : 0;
 
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-2">
-        <div>
-          <h2 className="text-base font-bold text-white">Priority Revenue Leakage Queue</h2>
-          <p className="text-xs text-textMuted">Ranked by Monthly NSV At-Risk (₹) × GradientBoosting Churn Probability</p>
-        </div>
-        <div className="flex items-center gap-1.5 font-mono text-xs">
+        <div className="flex items-center gap-2 text-xs font-mono flex-wrap">
+          <span className="text-textMuted">City:</span>
           {(['ALL', 'Bangalore', 'Hyderabad', 'Chennai'] as const).map((c) => (
             <button
               key={c}
               type="button"
               onClick={() => onSelectCity(c)}
               className={`px-2.5 py-1 rounded border ${
-                city === c ? 'border-accent bg-accent/20 text-white' : 'border-border text-textMuted hover:text-white'
+                city === c ? 'border-accent text-white bg-[#0d1117]' : 'border-border text-textMuted hover:text-white'
               }`}
             >
               {c}
             </button>
           ))}
         </div>
+        <span className="text-xs font-mono text-textMuted">Click an outlet to inspect SHAP + Vision</span>
       </div>
 
+      {/* HealthBucketsCard matching reference repo */}
+      {summary && (
+        <div className="bg-[#0d1117] border border-border rounded-lg p-4 space-y-3 text-xs">
+          <div className="flex items-center justify-between border-b border-border/60 pb-2">
+            <h2 className="font-mono font-bold uppercase text-white">
+              Outlet Health — {city === 'ALL' ? 'All Metro Cities' : city}
+            </h2>
+            <span className="font-mono text-textMuted">{summary.total_outlets} outlets · as of {summary.as_of}</span>
+          </div>
+          <div className="w-full h-2.5 rounded-full overflow-hidden flex bg-border/40">
+            <div style={{ width: `${pctH}%`, backgroundColor: '#2ea043' }} />
+            <div style={{ width: `${pctW}%`, backgroundColor: '#d29922' }} />
+            <div style={{ width: `${pctC}%`, backgroundColor: '#f85149' }} />
+          </div>
+          <div className="grid grid-cols-3 gap-2 font-mono text-xs">
+            <div className="bg-surface border border-border/60 rounded p-2">
+              <span className="text-emerald-400 font-bold">● Healthy: {summary.healthy_count}</span>
+              <span className="block text-[10px] text-textMuted">Active core range billing</span>
+            </div>
+            <div className="bg-surface border border-border/60 rounded p-2">
+              <span className="text-amber-400 font-bold">● Attention: {summary.warning_count}</span>
+              <span className="block text-[10px] text-textMuted">LSPC erosion / single-category</span>
+            </div>
+            <div className="bg-surface border border-border/60 rounded p-2">
+              <span className="text-rose-400 font-bold">● Zero-Billing: {summary.critical_count}</span>
+              <span className="block text-[10px] text-textMuted">₹{(summary.monthly_leakage_inr / 100000).toFixed(2)}L/mo at risk</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* PriorityQueueTable matching reference repo */}
       {loading ? (
         <div className="py-10 flex justify-center text-xs font-mono text-textMuted">
-          <Loader2 className="w-4 h-4 animate-spin mr-2" /> Ranking outlets...
+          <Loader2 className="w-4 h-4 animate-spin mr-2" /> Loading priority queue...
         </div>
       ) : (
-        <div className="overflow-x-auto border border-border rounded-xl bg-[#0d1117]">
+        <div className="overflow-x-auto border border-border rounded-lg bg-[#0d1117]">
           <table className="w-full text-left text-xs">
             <thead className="bg-surface border-b border-border font-mono text-[11px] text-textMuted">
               <tr>
                 <th className="p-2.5">Outlet</th>
-                <th className="p-2.5">City / Beat</th>
+                <th className="p-2.5">Beat / Zone</th>
                 <th className="p-2.5">Status</th>
                 <th className="p-2.5">LSPC</th>
                 <th className="p-2.5">Churn Prob</th>
-                <th className="p-2.5">GNN Spillover</th>
                 <th className="p-2.5">Leakage / Mo</th>
               </tr>
             </thead>
@@ -156,12 +194,12 @@ export const CityHealthPriorityView: React.FC<{
                   className="hover:bg-surface/80 cursor-pointer transition-colors"
                 >
                   <td className="p-2.5">
-                    <div className="font-semibold text-white">{o.outlet_id}</div>
+                    <div className="font-mono font-semibold text-white">{o.outlet_id}</div>
                     <div className="text-[11px] text-textMuted">{o.name}</div>
                   </td>
                   <td className="p-2.5 font-mono text-[11px]">
-                    <div className="text-white">{o.city}</div>
-                    <div className="text-textMuted">{o.beat_id}</div>
+                    <div className="text-white">{o.beat_id}</div>
+                    <div className="text-textMuted">{o.zone}</div>
                   </td>
                   <td className="p-2.5 font-mono">
                     <span
@@ -171,14 +209,13 @@ export const CityHealthPriorityView: React.FC<{
                           : 'bg-amber-950/70 text-amber-300 border border-amber-700/50'
                       }`}
                     >
-                      {o.health_status === 'critical' ? 'ZERO-BILL' : 'AT-RISK'}
+                      {o.health_status === 'critical' ? 'ZERO-BILLING' : 'ATTENTION'}
                     </span>
                   </td>
                   <td className="p-2.5 font-mono text-white">
                     {o.current_lspc} / <span className="text-textMuted">{o.target_lspc}</span>
                   </td>
                   <td className="p-2.5 font-mono text-rose-300">{Math.round(o.churn_prob * 100)}%</td>
-                  <td className="p-2.5 font-mono text-purple-300">{Math.round(o.gnn_spillover_risk * 100)}%</td>
                   <td className="p-2.5 font-mono font-bold text-rose-400">
                     ₹{o.revenue_leakage_monthly_inr.toLocaleString()}
                   </td>
@@ -192,13 +229,122 @@ export const CityHealthPriorityView: React.FC<{
   );
 };
 
-export const BeatSimulatorView: React.FC<{ city: string; initialBeatId?: string | null }> = ({
-  city,
-  initialBeatId,
-}) => {
+export const BeatDiagnosisView: React.FC<{
+  beatId: string;
+  onSelectBeat: (b: string) => void;
+  onOpenOutlet: (id: string) => void;
+}> = ({ beatId, onSelectBeat, onOpenOutlet }) => {
+  const [diag, setDiag] = useState<BeatDiagnosisPayload | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    tmdApi
+      .diagnoseBeat(beatId)
+      .then(setDiag)
+      .finally(() => setLoading(false));
+  }, [beatId]);
+
+  if (loading || !diag) {
+    return (
+      <div className="py-12 flex justify-center text-xs font-mono text-textMuted">
+        <Loader2 className="w-4 h-4 animate-spin mr-2" /> Running XGBoost+SHAP &amp; GNN on {beatId}...
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between flex-wrap gap-2">
+        <div>
+          <h2 className="text-base font-bold text-white">Beat Reality Check &amp; ML Diagnosis · {diag.beat.beat_id}</h2>
+          <p className="text-xs text-textMuted">
+            {diag.beat.zone} · Salesman: {diag.beat.salesman_name} · Visit Compliance:{' '}
+            <strong className="text-white">{diag.beat.visit_compliance_pct}%</strong>
+          </p>
+        </div>
+        <div className="flex items-center gap-1 font-mono text-xs">
+          {['BLR-B04', 'BLR-B07', 'HYD-B01', 'CHN-B03'].map((b) => (
+            <button
+              key={b}
+              type="button"
+              onClick={() => onSelectBeat(b)}
+              className={`px-2 py-1 rounded border ${
+                beatId === b ? 'border-accent bg-accent/20 text-white' : 'border-border text-textMuted hover:text-white'
+              }`}
+            >
+              {b}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* ML Attribution Waterfall for the Beat */}
+      <div className="bg-[#0d1117] border border-border rounded-lg p-4 h-60">
+        <div className="text-xs font-mono text-white mb-2">
+          XGBoost + SHAP &amp; Spatio-Temporal GNN Attribution ({diag.beat.beat_id})
+        </div>
+        <ResponsiveContainer width="100%" height="86%">
+          <BarChart data={diag.factors} layout="vertical" margin={{ left: 10, right: 20 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#21262d" />
+            <XAxis type="number" stroke="#8b949e" tick={{ fontSize: 10 }} unit="%" />
+            <YAxis type="category" dataKey="label" width={230} stroke="#8b949e" tick={{ fontSize: 10 }} />
+            <Tooltip contentStyle={{ backgroundColor: '#161b22', borderColor: '#30363d', fontSize: 11 }} />
+            <Bar dataKey="share_pct" name="SHAP Share %" radius={[0, 4, 4, 0]}>
+              {diag.factors.map((f) => (
+                <Cell key={f.factor_key} fill={f.color} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Planned vs Actual SFA GPS Check-ins Table */}
+      <div className="bg-[#0d1117] border border-border rounded-lg overflow-hidden">
+        <div className="px-3 py-2 border-b border-border bg-surface text-xs font-mono text-textMuted flex justify-between">
+          <span>Planned Sequence vs Actual SFA GPS Check-in</span>
+          {diag.skipped_count > 0 && (
+            <span className="text-rose-400 flex items-center gap-1">
+              <AlertTriangle className="w-3.5 h-3.5" /> {diag.skipped_count} tail outlets skipped 3w in a row
+            </span>
+          )}
+        </div>
+        <div className="divide-y divide-border/50">
+          {diag.outlets.map((o) => (
+            <button
+              key={o.outlet_id}
+              type="button"
+              onClick={() => onOpenOutlet(o.outlet_id)}
+              className="w-full text-left px-3 py-2 hover:bg-surface/80 flex items-center justify-between text-xs transition-colors"
+            >
+              <div>
+                <span className="font-mono text-textMuted mr-2">#{o.beat_seq}</span>
+                <span className="font-mono font-bold text-white">{o.outlet_id}</span>
+                <span className="ml-2 text-textMain">{o.name}</span>
+              </div>
+              <div className="flex items-center gap-3 font-mono text-[11px]">
+                <span className={o.visited_on_time ? 'text-emerald-400' : 'text-rose-400 font-bold'}>
+                  {o.actual_gps_time}
+                </span>
+                <span className="text-amber-300">LSPC {o.current_lspc}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const BeatSimulatorView: React.FC<{
+  city: string;
+  initialBeatId?: string | null;
+  onSimulationChange?: (sim: BeatSimulation | null) => void;
+}> = ({ city, initialBeatId, onSimulationChange }) => {
   const [beats, setBeats] = useState<BeatInfo[]>([]);
-  const [selectedBeat, setSelectedBeat] = useState<string>(initialBeatId || 'BLR-B02');
+  const [selectedBeat, setSelectedBeat] = useState<string>(initialBeatId || 'BLR-B04');
   const [sim, setSim] = useState<BeatSimulation | null>(null);
+  const [ticket, setTicket] = useState<{ ticket_id: string; summary: string } | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -217,9 +363,13 @@ export const BeatSimulatorView: React.FC<{ city: string; initialBeatId?: string 
 
   const runSim = (bid: string) => {
     setLoading(true);
+    setTicket(null);
     tmdApi
       .simulateBeat(bid)
-      .then(setSim)
+      .then((res) => {
+        setSim(res);
+        onSimulationChange?.(res);
+      })
       .finally(() => setLoading(false));
   };
 
@@ -227,15 +377,22 @@ export const BeatSimulatorView: React.FC<{ city: string; initialBeatId?: string 
     if (selectedBeat) runSim(selectedBeat);
   }, [selectedBeat]);
 
+  const handleDispatch = () => {
+    if (!sim) return;
+    tmdApi
+      .dispatchBeat(sim.beat_id, `Approved Beat ${sim.beat_id} split + Hero SKU replenishment push`)
+      .then(setTicket);
+  };
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
           <h2 className="text-base font-bold text-white flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-accent" /> Counterfactual Beat Rebalance Simulator
+            <Sparkles className="w-4 h-4 text-accent" /> Route Optimization &amp; Uplift Simulator
           </h2>
           <p className="text-xs text-textMuted">
-            Reassign congested fringe outlets across adjacent salesman beats to expand visit duration and eliminate rush-fatigue.
+            Re-split overloaded beats to eliminate 4:15 PM traffic skips and trigger priority WD stock replenishment.
           </p>
         </div>
 
@@ -247,7 +404,7 @@ export const BeatSimulatorView: React.FC<{ city: string; initialBeatId?: string 
           >
             {beats.map((b) => (
               <option key={b.beat_id} value={b.beat_id}>
-                {b.beat_id} · {b.city} ({b.zone}) {b.beat_load_index > 1.1 ? '⚠ Overloaded' : ''}
+                {b.beat_id} · {b.city} ({b.zone})
               </option>
             ))}
           </select>
@@ -256,86 +413,80 @@ export const BeatSimulatorView: React.FC<{ city: string; initialBeatId?: string 
             onClick={() => runSim(selectedBeat)}
             className="flex items-center gap-1 px-3 py-1.5 rounded-md bg-accent text-[#0d1117] font-semibold text-xs hover:bg-blue-400"
           >
-            <Play className="w-3.5 h-3.5" /> Re-run
+            <Play className="w-3.5 h-3.5" /> Simulate
           </button>
         </div>
       </div>
 
       {loading || !sim ? (
         <div className="py-10 flex justify-center text-xs font-mono text-textMuted">
-          <Loader2 className="w-4 h-4 animate-spin mr-2" /> Optimizing salesman beat spatial graph...
+          <Loader2 className="w-4 h-4 animate-spin mr-2" /> Optimizing route polygons &amp; counterfactual uplift...
         </div>
       ) : (
         <div className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="bg-[#0d1117] border border-rose-800/50 rounded-xl p-4 space-y-2">
-              <div className="text-xs font-mono uppercase text-rose-300">Current Strained Beat ({sim.beat_id})</div>
-              <div className="text-xs text-textMuted">Salesman: {sim.salesman_name} · {sim.zone}</div>
+            <div className="bg-[#0d1117] border border-rose-800/50 rounded-lg p-4 space-y-2">
+              <div className="text-xs font-mono uppercase text-rose-300">Before: Strained Beat ({sim.beat_id})</div>
+              <div className="text-xs text-textMuted">Completion: {sim.before.finish_time}</div>
               <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
                 <div>
                   <div className="text-textMuted text-[10px]">Route Distance</div>
                   <div className="text-white font-bold text-sm">{sim.before.distance_km} km</div>
                 </div>
                 <div>
-                  <div className="text-textMuted text-[10px]">Avg Time in Outlet</div>
+                  <div className="text-textMuted text-[10px]">Avg Visit Duration</div>
                   <div className="text-rose-400 font-bold text-sm">{sim.before.avg_visit_duration_min} min</div>
-                </div>
-                <div>
-                  <div className="text-textMuted text-[10px]">Load Index</div>
-                  <div className="text-amber-300 font-bold">{sim.before.beat_load_index}x</div>
-                </div>
-                <div>
-                  <div className="text-textMuted text-[10px]">Beat Monthly Leakage</div>
-                  <div className="text-rose-400 font-bold">₹{sim.before.monthly_leakage_inr.toLocaleString()}</div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#0d1117] border border-emerald-700/60 rounded-xl p-4 space-y-2">
+            <div className="bg-[#0d1117] border border-emerald-700/60 rounded-lg p-4 space-y-2">
               <div className="text-xs font-mono uppercase text-emerald-300 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Post-Rebalance Plan
+                <CheckCircle2 className="w-3.5 h-3.5" /> After: Balanced Polygons ({sim.target_transfer_beat})
               </div>
-              <div className="text-xs text-textMuted">
-                Shifts 2 fringe stores <ArrowRight className="w-3 h-3 inline" /> {sim.target_transfer_beat} ({sim.target_transfer_salesman})
+              <div className="text-xs text-emerald-300 font-mono">
+                Travel time -{sim.after.travel_time_reduction_pct}% · {sim.after.finish_time}
               </div>
-              <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
+              <div className="grid grid-cols-3 gap-2 pt-2 font-mono text-xs">
                 <div>
-                  <div className="text-textMuted text-[10px]">Optimized Distance</div>
-                  <div className="text-emerald-300 font-bold text-sm">{sim.after.distance_km} km</div>
+                  <div className="text-textMuted text-[10px]">Reactivated</div>
+                  <div className="text-emerald-300 font-bold text-sm">+{sim.after.reactivated_zero_billing_outlets} stores</div>
                 </div>
                 <div>
-                  <div className="text-textMuted text-[10px]">Projected Call Time</div>
-                  <div className="text-emerald-300 font-bold text-sm">{sim.after.avg_visit_duration_min} min</div>
+                  <div className="text-textMuted text-[10px]">LSPC Uplift</div>
+                  <div className="text-sky-300 font-bold text-sm">+{sim.after.projected_lspc_uplift} LSPC</div>
                 </div>
                 <div>
-                  <div className="text-textMuted text-[10px]">New Load Index</div>
-                  <div className="text-white font-bold">{sim.after.beat_load_index}x</div>
-                </div>
-                <div>
-                  <div className="text-textMuted text-[10px]">Recovered Revenue / Mo</div>
-                  <div className="text-emerald-400 font-bold flex items-center gap-1">
-                    <TrendingUp className="w-3.5 h-3.5" /> +₹{sim.after.projected_monthly_recovery_inr.toLocaleString()}
+                  <div className="text-textMuted text-[10px]">Monthly Recovery</div>
+                  <div className="text-emerald-400 font-bold text-sm flex items-center gap-1">
+                    <TrendingUp className="w-3.5 h-3.5" /> ₹{(sim.after.projected_monthly_recovery_inr / 100000).toFixed(1)}L
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#0d1117] border border-border rounded-xl p-4">
-            <div className="text-xs font-mono text-textMuted mb-2">
-              Recommended Outlets to Reassign to {sim.target_transfer_beat}
+          <div className="bg-[#0d1117] border border-border rounded-lg p-4 flex items-center justify-between gap-3 flex-wrap">
+            <div className="text-xs text-textMuted">
+              Ready to push {sim.beat_id} rebalance + HSR Beat 7 priority SKU replenishment to the Area Sales Manager &amp; WD DMS.
             </div>
-            <div className="space-y-1.5">
-              {sim.reassigned_outlets.map((ro) => (
-                <div key={ro.outlet_id} className="flex items-center justify-between text-xs bg-surface px-3 py-2 rounded border border-border/60">
-                  <span className="font-mono text-white">
-                    {ro.outlet_id} · <span className="font-sans text-textMuted">{ro.name}</span>
-                  </span>
-                  <span className="font-mono text-amber-300">₹{ro.leakage_inr.toLocaleString()} / mo leakage</span>
-                </div>
-              ))}
-            </div>
+            <button
+              type="button"
+              onClick={handleDispatch}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-[#0d1117] font-bold text-xs"
+            >
+              <Send className="w-3.5 h-3.5" /> Send Beat Update &amp; Stock Alert to ASM
+            </button>
           </div>
+
+          {ticket && (
+            <div className="bg-emerald-950/40 border border-emerald-600/60 rounded-lg p-3 text-xs font-mono text-emerald-200 flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>
+                Dispatched <strong>{ticket.ticket_id}</strong> — {ticket.summary}
+              </span>
+            </div>
+          )}
         </div>
       )}
     </div>

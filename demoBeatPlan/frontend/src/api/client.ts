@@ -1,4 +1,5 @@
 import type {
+  BeatDiagnosisPayload,
   BeatInfo,
   BeatSimulation,
   CityBenchmark,
@@ -36,8 +37,18 @@ export const tmdApi = {
   infrastructure: (city = 'ALL') =>
     getJson<InfrastructurePayload>(`/api/geo/infrastructure?city=${encodeURIComponent(city)}`),
   beats: (city = 'ALL') => getJson<BeatInfo[]>(`/api/beats?city=${encodeURIComponent(city)}`),
+  diagnoseBeat: (beatId: string) => getJson<BeatDiagnosisPayload>(`/api/beats/${encodeURIComponent(beatId)}/diagnose`),
   simulateBeat: (beatId: string) =>
     getJson<BeatSimulation>(`/api/beats/${encodeURIComponent(beatId)}/simulate`, { method: 'POST' }),
+  dispatchBeat: (beatId: string, note = '') =>
+    getJson<{ ticket_id: string; beat_id: string; status: string; summary: string; as_of: string }>(
+      `/api/beats/${encodeURIComponent(beatId)}/dispatch`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ note }),
+      },
+    ),
   chat: (payload: {
     message: string;
     session_id?: string;

@@ -1,48 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import { Minus, PanelRightClose, PanelRightOpen, Radio } from 'lucide-react';
-import { ChatAction, OutletSummary } from '../../types/tmd';
+import { Minus, PanelRightClose, PanelRightOpen } from 'lucide-react';
+import { UrviMark } from '../common/UrviMark';
 import { VoiceAgentPanel } from './VoiceAgentPanel';
+import { ChatAction, OutletSummary } from '../../types/tmd';
 
 export const AGENT_DOCK_WIDTH = 'max(22vw, 350px)';
 
-interface FloatingAgentProps {
+export const FloatingAgent: React.FC<{
   outlet?: OutletSummary | null;
   city?: string | null;
   screen?: string | null;
   contextLabel?: string;
   onAgentAction?: (a: ChatAction) => void;
+  autoDock?: boolean;
   onDockedChange?: (docked: boolean) => void;
   suspended?: boolean;
-}
-
-export const FloatingAgent: React.FC<FloatingAgentProps> = ({
-  outlet,
-  city,
-  screen,
-  contextLabel,
-  onAgentAction,
-  onDockedChange,
-  suspended = false,
-}) => {
-  // Auto-open & docked on load so Gemini Live is immediately enabled and visible
+}> = ({ outlet, city, screen, contextLabel, onAgentAction, autoDock = false, onDockedChange, suspended = false }) => {
   const [open, setOpen] = useState<boolean>(true);
-  const [dockedMode, setDockedMode] = useState<boolean>(true);
+  const [manualDock, setManualDock] = useState<boolean>(true);
   const [voice, setVoice] = useState({ live: false, listening: false, speaking: false, thinking: false });
 
-  const isDocked = open && dockedMode && !suspended;
+  const docked = open && (autoDock || manualDock) && !suspended;
   useEffect(() => {
-    onDockedChange?.(isDocked);
-  }, [isDocked, onDockedChange]);
+    onDockedChange?.(docked);
+  }, [docked, onDockedChange]);
 
   const headerActions = (
     <>
       <button
         type="button"
-        onClick={() => setDockedMode((v) => !v)}
-        className="p-1.5 rounded text-textMuted hover:text-white hover:bg-border transition-colors"
-        title={dockedMode ? 'Float panel' : 'Dock right'}
+        onClick={() => setManualDock((v) => !v)}
+        disabled={autoDock}
+        className={`p-1.5 rounded transition-colors ${docked ? 'text-accent' : 'text-textMuted hover:text-white hover:bg-border'}`}
+        title={manualDock ? 'Undock (float)' : 'Dock to right'}
       >
-        {dockedMode ? <PanelRightClose className="w-3.5 h-3.5" /> : <PanelRightOpen className="w-3.5 h-3.5" />}
+        {docked ? <PanelRightClose className="w-4 h-4" /> : <PanelRightOpen className="w-4 h-4" />}
       </button>
       <button
         type="button"
@@ -50,19 +42,35 @@ export const FloatingAgent: React.FC<FloatingAgentProps> = ({
         className="p-1.5 rounded text-textMuted hover:text-white hover:bg-border transition-colors"
         title="Minimise"
       >
-        <Minus className="w-3.5 h-3.5" />
+        <Minus className="w-4 h-4" />
       </button>
     </>
+  );
+
+  const badge = voice.listening ? (
+    <span className="text-[9px] font-mono font-bold text-emerald-300 bg-emerald-950/60 border border-emerald-700/60 px-1.5 py-0.5 rounded animate-pulse">
+      LISTENING
+    </span>
+  ) : voice.speaking ? (
+    <span className="text-[9px] font-mono font-bold text-accent bg-blue-950/60 border border-blue-700/60 px-1.5 py-0.5 rounded">
+      SPEAKING
+    </span>
+  ) : voice.live ? (
+    <span className="text-[9px] font-mono font-bold text-emerald-300 bg-emerald-950/60 border border-emerald-700/60 px-1.5 py-0.5 rounded">
+      LIVE
+    </span>
+  ) : (
+    <kbd className="text-[9px] font-mono text-textMuted bg-[#0d1117] border border-border px-1 py-0.5 rounded">Ctrl K</kbd>
   );
 
   return (
     <>
       <div
-        style={isDocked ? { top: 0, right: 0, bottom: 0, width: AGENT_DOCK_WIDTH } : undefined}
+        style={docked ? { top: 0, right: 0, bottom: 0, width: AGENT_DOCK_WIDTH } : undefined}
         className={`fixed z-[1001] flex flex-col overflow-hidden bg-surface ${
-          isDocked
+          docked
             ? 'border-l border-border shadow-xl shadow-black/40'
-            : 'right-4 bottom-16 w-[min(420px,calc(100vw-2rem))] h-[min(620px,calc(100vh-6rem))] rounded-xl border border-border shadow-2xl'
+            : 'right-4 bottom-20 w-[min(420px,calc(100vw-2rem))] h-[min(640px,calc(100vh-7rem))] rounded-xl border border-border shadow-2xl shadow-black/60'
         } ${open && !suspended ? '' : 'hidden'}`}
       >
         <VoiceAgentPanel
@@ -76,14 +84,15 @@ export const FloatingAgent: React.FC<FloatingAgentProps> = ({
         />
       </div>
 
-      {(!open || !isDocked) && !suspended && (
+      {!docked && !suspended && (
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="fixed right-4 bottom-4 z-[1001] flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#12161c] border border-accent/60 text-white shadow-xl text-xs font-semibold"
+          className="fixed right-4 bottom-4 z-[1001] flex items-center gap-2 pl-2.5 pr-3 py-2 rounded-full border bg-[#12161c] border-accent/60 text-white hover:border-accent shadow-xl shadow-black/50"
         >
-          <Radio className={`w-3.5 h-3.5 ${voice.live ? 'text-emerald-400 animate-pulse' : 'text-accent'}`} />
-          <span>{open ? 'Minimise Sahayak AI' : 'Sahayak AI · Gemini Live'}</span>
+          <UrviMark size={24} title="Sahayak" />
+          <span className="text-xs font-semibold font-sans whitespace-nowrap">{open ? 'Minimise' : 'Sahayak AI Agent'}</span>
+          {!open && badge}
         </button>
       )}
     </>

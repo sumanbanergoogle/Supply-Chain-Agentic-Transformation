@@ -1,12 +1,4 @@
-"""Gemini Live bidirectional proxy behind WS /ws/live (auto-enabled on load).
-
-Supports:
-- Upstream: 16kHz PCM16 mono audio chunks, JSON context/prompt/audio_end/interrupt messages
-- Downstream: 24kHz PCM16 audio bytes, status, voice_state, input_transcript, caption_delta,
-              tool_call, action, turn_complete, fallback_reply, interrupted
-- Automatic session resumption + sliding window compression on GoAway
-- Clean degradation to text-mode fallback via /api/chat runner if Vertex ADC isn't reachable locally
-"""
+"""Gemini Live bidirectional proxy behind WS /ws/live (auto-enabled on load)."""
 from __future__ import annotations
 
 import asyncio
@@ -27,7 +19,7 @@ logger = logging.getLogger("beatpulse.live.session")
 
 DEFAULT_LIVE_MODEL = "gemini-3.8-live"
 DEFAULT_LIVE_LOCATION = "us-central1"
-MAX_CONSECUTIVE_FAILURES = 2
+MAX_CONSECUTIVE_FAILURES = 1
 LANGUAGES = ("english", "hinglish", "hindi")
 PROMPT_PATH = Path(__file__).with_name("live_prompt.md")
 LANGUAGE_MARKER = "## LANGUAGE BLOCKS"
@@ -43,7 +35,7 @@ def live_settings() -> dict[str, Any]:
         "project": os.getenv("BEATPULSE_LIVE_PROJECT") or settings.PROJECT_ID,
         "voice": os.getenv("BEATPULSE_LIVE_VOICE", "Aoede"),
         "offline": os.getenv("BEATPULSE_LIVE_OFFLINE", "0") == "1",
-        "backoff_s": float(os.getenv("BEATPULSE_LIVE_BACKOFF_S", "0.4") or 0.4),
+        "backoff_s": float(os.getenv("BEATPULSE_LIVE_BACKOFF_S", "0.2") or 0.2),
         "tool_timeout_s": float(os.getenv("BEATPULSE_LIVE_TOOL_TIMEOUT_S", str(voice_tools.TOOL_TIMEOUT_S)) or 10.0),
     }
 
@@ -108,7 +100,8 @@ def build_live_config(types: Any, system_prompt: str, tools: list[Any], handle: 
 def _default_connect_factory(cfg: dict[str, Any]) -> ConnectFactory:
     from google import genai
 
-    client = genai.Client(vertexai=True, project=cfg["project"], location=cfg["location"])
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    client = genai.Client(api_key=api_key) if api_key else genai.Client(vertexai=True, project=cfg["project"], location=cfg["location"])
 
     def factory(model: str, config: Any) -> Any:
         return client.aio.live.connect(model=model, config=config)
@@ -191,7 +184,7 @@ async def handle_live_websocket(websocket: WebSocket, connect_factory: ConnectFa
                     "status": "fallback",
                     "model": "text",
                     "memory": False,
-                    "message": "BEATPULSE_LIVE_OFFLINE=1 — interactive tool copilot active.",
+                    "message": "Offline mode enabled — using tool-grounded interactive copilot.",
                 },
             )
             await run_fallback_session(websocket, inbound, state)
@@ -224,7 +217,7 @@ async def run_resilient_live(
                 "status": "fallback",
                 "model": "text",
                 "memory": False,
-                "message": f"Gemini Live setup error ({type(e).__name__}) — interactive copilot active.",
+                "message": f"Gemini Live unavailable ({type(e).__name__}) — tool copilot active.",
             },
         )
         await run_fallback_session(websocket, inbound, state)
@@ -265,7 +258,7 @@ async def run_resilient_live(
                         "status": "fallback",
                         "model": "text",
                         "memory": False,
-                        "message": f"Gemini Live ADC unavailable ({type(e).__name__}) — switched to tool-grounded text mode.",
+                        "message": f"Vertex Live ADC unavailable ({type(e).__name__}) — using tool-grounded text & browser speech mode.",
                     },
                 )
                 await run_fallback_session(websocket, inbound, state)
@@ -395,16 +388,10 @@ async def _run_bidi_stream(
 
 async def run_fallback_session(websocket: WebSocket, inbound: asyncio.Queue, state: dict[str, Any]) -> None:
     await _send(websocket, {"type": "voice_state", "state": "idle"})
-    warned = False
     while True:
         msg = await inbound.get()
         if msg is _CLOSED:
             return
-        if msg.get("bytes"):
-            if not warned:
-                warned = True
-                await _send(websocket, {"type": "error", "message": "Voice live stream requires Vertex ADC — type below or use browser speech replay."})
-            continue
         if not msg.get("text"):
             continue
         try:

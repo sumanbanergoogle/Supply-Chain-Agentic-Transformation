@@ -71,6 +71,7 @@ export class LiveClient {
   }
 
   public connect(ctx: LiveContext = {}): void {
+    if (typeof window === 'undefined' || !('WebSocket' in window)) return;
     if (this.ws && (this.ws.readyState === WebSocket.OPEN || this.ws.readyState === WebSocket.CONNECTING)) return;
     this.ctx = { ...this.ctx, ...ctx };
     if (!this.ctx.persona) this.ctx.persona = getPersona();
@@ -123,8 +124,13 @@ export class LiveClient {
 
     sock.onerror = () => {
       if (this.ws !== sock) return;
-      this.handlers.onError?.('Live WebSocket error');
+      this.handlers.onError?.('WebSocket error');
     };
+  }
+
+  public retry(): void {
+    this.disconnect();
+    this.connect(this.ctx);
   }
 
   public disconnect(): void {
@@ -182,13 +188,16 @@ export class LiveClient {
 }
 
 export function isLiveSupported(): boolean {
+  return typeof window !== 'undefined' && 'WebSocket' in window;
+}
+
+export function isMicSupported(): boolean {
   if (typeof window === 'undefined') return false;
   const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
   return !!(
     AudioCtx &&
     'audioWorklet' in AudioCtx.prototype &&
     typeof navigator !== 'undefined' &&
-    typeof navigator.mediaDevices?.getUserMedia === 'function' &&
-    window.WebSocket
+    typeof navigator.mediaDevices?.getUserMedia === 'function'
   );
 }

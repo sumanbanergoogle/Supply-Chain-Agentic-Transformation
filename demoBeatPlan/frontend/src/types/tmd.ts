@@ -31,7 +31,12 @@ export interface OutletSummary {
   wd_id: string;
   wd_name: string;
   beat_id: string;
+  beat_seq?: number;
   salesman_name: string;
+  planned_visit_time?: string;
+  actual_gps_time?: string;
+  visited_on_time?: boolean;
+  skipped_weeks?: number;
   channel_type: string;
   tier: string;
   lat: number;
@@ -167,9 +172,22 @@ export interface BeatInfo {
   salesman_name: string;
   visit_day: string;
   planned_outlets: number;
+  visit_compliance_pct?: number;
   planned_distance_km: number;
   actual_distance_km: number;
   beat_load_index: number;
+  beat_mode?: string;
+}
+
+export interface BeatDiagnosisPayload {
+  beat: BeatInfo;
+  outlets: OutletSummary[];
+  zero_billing_count: number;
+  skipped_count: number;
+  total_monthly_leakage_inr: number;
+  avg_lspc: number;
+  avg_gnn_spillover: number;
+  factors: { factor_key: string; label: string; share_pct: number; color: string }[];
 }
 
 export interface BeatSimulation {
@@ -184,21 +202,37 @@ export interface BeatSimulation {
     avg_visit_duration_min: number;
     beat_load_index: number;
     monthly_leakage_inr: number;
+    finish_time?: string;
   };
   after: {
     distance_km: number;
+    travel_time_reduction_pct?: number;
     avg_visit_duration_min: number;
     beat_load_index: number;
+    finish_time?: string;
+    reactivated_zero_billing_outlets?: number;
     projected_monthly_recovery_inr: number;
     projected_lspc_uplift: number;
   };
   reassigned_outlets: { outlet_id: string; name: string; leakage_inr: number }[];
-  optimized_waypoints: [number, number][];
+  polygon_a?: [number, number][];
+  polygon_b?: [number, number][];
+}
+
+export interface PoiItem {
+  poi_id: string;
+  kind: 'qcommerce' | 'college' | 'traffic';
+  city: string;
+  name: string;
+  lat: number;
+  lng: number;
+  intensity: number;
 }
 
 export interface InfrastructurePayload {
   wds: { wd_id: string; city: string; name: string; hub: string; lat: number; lng: number; fill_rate_base: number }[];
-  dark_stores: { poi_id: string; city: string; name: string; lat: number; lng: number; intensity: number }[];
+  dark_stores: PoiItem[];
+  pois?: PoiItem[];
   beats: BeatInfo[];
 }
 

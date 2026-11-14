@@ -1,16 +1,17 @@
 import { useEffect, useRef } from 'react';
 
 export const UI_ACTIONS = {
-  map_view: ['south_india', 'city'],
+  map_view: ['india', 'city'],
   fullscreen: ['on', 'off'],
   basemap: ['satellite', 'street'],
-  beat_trails: ['on', 'off'],
+  flowlines: ['on', 'off'],
   legend: ['on', 'off'],
   zoom: ['in', 'out'],
   focus_city: ['Bangalore', 'Hyderabad', 'Chennai', 'ALL'],
+  focus_beat: null,
   focus_outlet: null,
   open_outlet: null,
-  open_screen: ['city_compare', 'city_health', 'beat_simulator'],
+  open_screen: ['beat_history', 'city_compare', 'city_health', 'beat_simulator', 'beat_diagnosis'],
   panel: ['expand', 'restore', 'close'],
   language: ['english', 'hinglish', 'hindi'],
   report: ['open', 'print', 'close'],
@@ -30,32 +31,17 @@ export interface UiCommand {
 
 const EVT = 'beatpulse:ui';
 
-const LABELS: Record<string, string> = {
-  'map_view:south_india': 'South India overview',
-  'map_view:city': 'City drilldown',
-  'fullscreen:on': 'Full screen map',
-  'fullscreen:off': 'Exit full screen',
-  'basemap:satellite': 'Satellite view',
-  'basemap:street': 'Street view',
-  'beat_trails:on': 'Beat trails shown',
-  'beat_trails:off': 'Beat trails hidden',
-  'open_screen:city_compare': 'City comparison',
-  'open_screen:city_health': 'Health & Priority Queue',
-  'open_screen:beat_simulator': 'Beat Rebalance Simulator',
-  'health_filter:all': 'All outlets',
-  'health_filter:healthy': 'Productive outlets',
-  'health_filter:attention': 'At-risk outlets',
-  'health_filter:critical': 'Zero-billing outlets',
-  'report:open': 'Beat Action Pack opened',
-};
-
 export function labelOf(cmd: UiCommand): string {
-  const k = `${cmd.action}:${cmd.value ?? ''}`;
-  if (LABELS[k]) return LABELS[k];
-  if (cmd.action === 'focus_city') return cmd.value === 'ALL' ? 'All 3 Cities' : `${cmd.value} focused`;
+  if (cmd.action === 'focus_city') return cmd.value === 'ALL' ? 'All Cities' : `${cmd.value} focused`;
+  if (cmd.action === 'focus_beat') return `Beat filter: ${cmd.value}`;
   if (cmd.action === 'focus_outlet') return `${cmd.outlet_id} on map`;
   if (cmd.action === 'open_outlet') return `${cmd.outlet_id} opened`;
-  return cmd.action;
+  if (cmd.action === 'flowlines') return `Planned vs Actual routes ${cmd.value}`;
+  if (cmd.action === 'basemap') return cmd.value === 'satellite' ? 'Satellite map' : 'Dark SCADA map';
+  if (cmd.action === 'open_screen') return `${cmd.value?.replace('_', ' ')}`;
+  if (cmd.action === 'health_filter') return `Showing: ${cmd.value}`;
+  if (cmd.action === 'report') return `Action Pack: ${cmd.outlet_id || cmd.value}`;
+  return `${cmd.action}:${cmd.value ?? ''}`;
 }
 
 export function dispatchUi(cmd: UiCommand): void {

@@ -1,30 +1,48 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Maximize2, Minimize2, X } from 'lucide-react';
+import { Maximize2, Minimize2, Play, X } from 'lucide-react';
 import { Header } from './components/common/Header';
+import { CitySelector } from './components/fields/CitySelector';
 import { OutletMap } from './components/map/OutletMap';
-import { CityComparisonView, CityHealthPriorityView, BeatSimulatorView } from './components/decision/CityViews';
+import {
+  BeatDiagnosisView,
+  BeatSimulatorView,
+  CityComparisonView,
+  CityHealthPriorityView,
+} from './components/decision/CityViews';
 import { OutletDeepDiveDrawer, CanvasView } from './components/outlet/OutletDeepDiveDrawer';
 import { FieldReportOverlay } from './components/outlet/FieldReportOverlay';
 import { FloatingAgent, AGENT_DOCK_WIDTH } from './components/agent/FloatingAgent';
 import { tmdApi } from './api/client';
-import { ChatAction, CityFilter, CityKPIs, InfrastructurePayload, OutletSummary } from './types/tmd';
+import { BeatSimulation, ChatAction, CityFilter, CityKPIs, InfrastructurePayload, OutletSummary } from './types/tmd';
 import { dispatchUi, useUiCommands } from './agent/uiCommands';
 
-type ScreenTab = 'map' | 'city_compare' | 'city_health' | 'beat_simulator';
+type ScreenTab = 'map' | 'city_compare' | 'city_health' | 'beat_diagnosis' | 'beat_simulator';
+
+const STORYBOARD_STEPS = [
+  { step: 1, label: '1. Macro Q3 Health', prompt: 'Pull up Q3 General Trade health for Bangalore Metro' },
+  { step: 2, label: '2. Beat 4 vs Beat 7', prompt: 'Zoom into Beat 4 and Beat 7 and compare salesman visits' },
+  { step: 3, label: '3. ML/SHAP Beat 7', prompt: 'Run ML/DL root-cause diagnostic models on Beat 7' },
+  { step: 4, label: '4. Lakshmi Mart Vision', prompt: 'Why is Lakshmi Super Mart only buying 2 categories?' },
+  { step: 5, label: '5. Rebalance & ASM', prompt: 'Simulate fixing Beat 4 route and Beat 7 SKU push' },
+];
 
 export function App() {
   const [outlets, setOutlets] = useState<OutletSummary[]>([]);
   const [kpis, setKpis] = useState<CityKPIs | null>(null);
   const [infra, setInfra] = useState<InfrastructurePayload | null>(null);
   const [cityFilter, setCityFilter] = useState<CityFilter>('ALL');
+  const [beatFilter, setBeatFilter] = useState<string | null>(null);
   const [healthFilter, setHealthFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedOutletId, setSelectedOutletId] = useState<string | null>(null);
   const [drawerOutletId, setDrawerOutletId] = useState<string | null>(null);
   const [canvasView, setCanvasView] = useState<CanvasView>('overview');
   const [screenTab, setScreenTab] = useState<ScreenTab>('map');
-  const [selectedBeatId, setSelectedBeatId] = useState<string | null>(null);
+  const [selectedBeatId, setSelectedBeatId] = useState<string>('BLR-B04');
+  const [simulatedBeat, setSimulatedBeat] = useState<BeatSimulation | null>(null);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
   const [middleExpanded, setMiddleExpanded] = useState(false);
+  const [mapFullscreen, setMapFullscreen] = useState(false);
   const [agentDocked, setAgentDocked] = useState(true);
   const [reportOutletId, setReportOutletId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -44,9 +62,23 @@ export function App() {
     tmdApi.kpis(cityFilter).then(setKpis).catch(() => {});
   }, [cityFilter, loading]);
 
+  const cityScopedOutlets = useMemo(
+    () => (cityFilter === 'ALL' ? outlets : outlets.filter((o) => o.city === cityFilter)),
+    [outlets, cityFilter],
+  );
+
+  const healthCounts = useMemo(
+    () => ({
+      healthy: cityScopedOutlets.filter((o) => o.health_status === 'healthy').length,
+      warning: cityScopedOutlets.filter((o) => o.health_status === 'warning').length,
+      critical: cityScopedOutlets.filter((o) => o.health_status === 'critical').length,
+    }),
+    [cityScopedOutlets],
+  );
+
   const filteredOutlets = useMemo(() => {
-    return outlets.filter((o) => {
-      const matchCity = cityFilter === 'ALL' || o.city === cityFilter;
+    return cityScopedOutlets.filter((o) => {
+      const matchBeat = !beatFilter || beatFilter.split(',').includes(o.beat_id);
       const matchHealth = healthFilter === 'all' || o.health_status === healthFilter;
       const q = searchQuery.trim().toLowerCase();
       const matchSearch =
@@ -54,11 +86,10 @@ export function App() {
         o.outlet_id.toLowerCase().includes(q) ||
         o.name.toLowerCase().includes(q) ||
         o.beat_id.toLowerCase().includes(q) ||
-        o.zone.toLowerCase().includes(q) ||
-        o.wd_name.toLowerCase().includes(q);
-      return matchCity && matchHealth && matchSearch;
+        o.zone.toLowerCase().includes(q);
+      return matchBeat && matchHealth && matchSearch;
     });
-  }, [outlets, cityFilter, healthFilter, searchQuery]);
+  }, [cityScopedOutlets, beatFilter, healthFilter, searchQuery]);
 
   const filteredInfra = useMemo<InfrastructurePayload | null>(() => {
     if (!infra) return null;
@@ -66,6 +97,7 @@ export function App() {
     return {
       wds: infra.wds.filter((w) => w.city === cityFilter),
       dark_stores: infra.dark_stores.filter((d) => d.city === cityFilter),
+      pois: infra.pois?.filter((p) => p.city === cityFilter),
       beats: infra.beats.filter((b) => b.city === cityFilter),
     };
   }, [infra, cityFilter]);
@@ -88,22 +120,18 @@ export function App() {
   useUiCommands((cmd) => {
     if (cmd.action === 'focus_city' && cmd.value) {
       setCityFilter(cmd.value as CityFilter);
+      setBeatFilter(null);
+    } else if (cmd.action === 'focus_beat') {
+      setBeatFilter(cmd.value || null);
     } else if (cmd.action === 'open_outlet' && cmd.outlet_id) {
       openOutlet(cmd.outlet_id, (cmd.view as CanvasView) || 'overview');
     } else if (cmd.action === 'open_screen' && cmd.value) {
       setScreenTab(cmd.value as ScreenTab);
     } else if (cmd.action === 'health_filter' && cmd.value) {
       setHealthFilter(cmd.value);
-    } else if (cmd.action === 'panel') {
-      if (cmd.value === 'close') {
-        setDrawerOutletId(null);
-        setScreenTab('map');
-        setMiddleExpanded(false);
-      } else if (cmd.value === 'expand') setMiddleExpanded(true);
-      else setMiddleExpanded(false);
     } else if (cmd.action === 'report') {
       if (cmd.value === 'close') setReportOutletId(null);
-      else setReportOutletId(cmd.outlet_id || drawerOutletId || selectedOutletId || 'BLR-108');
+      else setReportOutletId(cmd.outlet_id || drawerOutletId || selectedOutletId || 'BLR-701');
     }
   });
 
@@ -111,22 +139,43 @@ export function App() {
     if (a.city && (a.city === 'Bangalore' || a.city === 'Hyderabad' || a.city === 'Chennai')) {
       setCityFilter(a.city);
     }
-    if (a.screen === 'city_compare' || a.screen === 'city_health' || a.screen === 'beat_simulator') {
-      if (a.beat_id) setSelectedBeatId(a.beat_id);
+    if (a.beat_id) setSelectedBeatId(a.beat_id);
+    if (a.screen === 'city_compare' || a.screen === 'city_health' || a.screen === 'beat_diagnosis' || a.screen === 'beat_simulator') {
       setScreenTab(a.screen);
     } else if (a.screen === 'outlet' && a.outlet_id) {
       openOutlet(a.outlet_id, (a.view as CanvasView) || 'overview');
     }
   };
 
+  const triggerStoryboardStep = (stepNum: number, prompt: string) => {
+    setActiveStep(stepNum);
+    window.dispatchEvent(new CustomEvent('beatpulse:run_prompt', { detail: prompt }));
+  };
+
   const panelOpen = !!drawerOutletId || screenTab !== 'map';
   const contextLabel = [
-    cityFilter === 'ALL' ? 'South Metro (BLR·HYD·CHN)' : cityFilter,
-    selectedOutletId,
+    cityFilter === 'ALL' ? 'South India' : cityFilter,
+    selectedOutletId || beatFilter,
     screenTab !== 'map' ? screenTab : drawerOutletId ? canvasView : 'Map',
   ]
     .filter(Boolean)
     .join(' · ');
+
+  const viewBtn = (t: ScreenTab, label: string) => (
+    <button
+      key={t}
+      type="button"
+      onClick={() => {
+        if (t !== 'beat_simulator') setSimulatedBeat(null);
+        setScreenTab(screenTab === t ? 'map' : t);
+      }}
+      className={`px-2.5 py-1 rounded transition-colors ${
+        screenTab === t ? 'bg-accent/80 text-white font-semibold' : 'text-white/75 hover:text-white hover:bg-white/10'
+      }`}
+    >
+      {label}
+    </button>
+  );
 
   return (
     <div
@@ -144,80 +193,85 @@ export function App() {
 
       {loading ? (
         <div className="flex-1 flex items-center justify-center font-mono text-xs text-textMuted">
-          Initializing ITC TM&amp;D BeatPulse Analytics &amp; ML Models...
+          <span className="animate-spin mr-2">◌</span> Initializing BeatPulse ITC TM&amp;D Core...
         </div>
       ) : (
         <div className="flex-1 flex overflow-hidden">
-          {/* Map Stage */}
           <section
-            className={`${panelOpen ? 'w-1/2 min-w-[340px] border-r border-border' : 'w-full'} flex flex-col relative bg-surface ${
+            className={`${panelOpen ? 'w-1/2 min-w-[360px] border-r border-border' : 'w-full'} flex flex-col relative bg-surface ${
               panelOpen && middleExpanded ? 'hidden' : ''
             }`}
           >
-            <OutletMap
-              outlets={filteredOutlets}
-              selectedOutletId={selectedOutletId}
-              cityFilter={cityFilter}
-              infrastructure={filteredInfra}
-              onSelectOutlet={(id) => openOutlet(id, 'overview')}
-              onSelectCity={(c) => setCityFilter(c)}
-            />
+            <div className="flex-1 relative">
+              <OutletMap
+                outlets={filteredOutlets}
+                allOutletsCountByHealth={healthCounts}
+                selectedOutletId={selectedOutletId}
+                cityFilter={cityFilter}
+                beatFilter={beatFilter}
+                healthFilter={healthFilter}
+                infrastructure={filteredInfra}
+                simulatedBeat={simulatedBeat}
+                onSelectOutlet={(id) => openOutlet(id, 'overview')}
+                onSelectCity={(c) => {
+                  setCityFilter(c);
+                  setBeatFilter(null);
+                  setSimulatedBeat(null);
+                }}
+                onFullscreenChange={setMapFullscreen}
+                fullscreenRightInset={agentDocked ? AGENT_DOCK_WIDTH : undefined}
+              />
 
-            {/* Top-Left City & Decision Tab Strip overlaid cleanly on map */}
-            <div className="absolute top-3 left-3 z-[500] flex flex-wrap items-center gap-1.5 bg-[#12161c]/90 backdrop-blur-md border border-border rounded-xl p-1.5 text-xs font-mono shadow-xl">
-              {(['ALL', 'Bangalore', 'Hyderabad', 'Chennai'] as CityFilter[]).map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() => {
-                    setCityFilter(c);
-                    setDrawerOutletId(null);
-                    setScreenTab('map');
-                  }}
-                  className={`px-2.5 py-1 rounded-lg transition-colors ${
-                    cityFilter === c && screenTab === 'map'
-                      ? 'bg-accent text-[#0d1117] font-bold'
-                      : 'text-textMuted hover:text-white'
-                  }`}
-                >
-                  {c === 'ALL' ? 'All 3 Cities' : c}
-                </button>
-              ))}
-              <span className="text-border">|</span>
-              {(
-                [
-                  ['city_compare', 'City Benchmark'],
-                  ['city_health', 'Priority Queue'],
-                  ['beat_simulator', 'Beat Simulator'],
-                ] as const
-              ).map(([tab, label]) => (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setScreenTab(screenTab === tab ? 'map' : tab)}
-                  className={`px-2.5 py-1 rounded-lg transition-colors ${
-                    screenTab === tab ? 'bg-emerald-500 text-[#0d1117] font-bold' : 'text-textMuted hover:text-white'
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+              {/* Top-left translucent overlay matching workover-operations-ai-agent-cloudrun/App.tsx */}
+              <div className="absolute top-3 left-3 z-[500] flex flex-col items-start gap-1.5 max-w-[calc(100%-1.5rem)] pointer-events-none">
+                <div className="pointer-events-auto rounded-lg bg-black/45 backdrop-blur-sm border border-white/10 shadow-lg">
+                  <CitySelector
+                    value={cityFilter}
+                    onChange={(c) => {
+                      setCityFilter(c);
+                      setBeatFilter(null);
+                      setSimulatedBeat(null);
+                    }}
+                    outlets={outlets}
+                    variant="overlay"
+                  />
+                </div>
+                <div className="pointer-events-auto flex items-center gap-0.5 p-1 rounded-lg bg-black/45 backdrop-blur-sm border border-white/10 shadow-lg text-[11px] font-sans flex-wrap">
+                  {viewBtn('city_compare', 'Compare cities')}
+                  {viewBtn('city_health', 'Health & priority')}
+                  {viewBtn('beat_diagnosis', 'Beat 4/7 Diagnosis')}
+                  {viewBtn('beat_simulator', 'Beat Simulator')}
+                </div>
+                <div className="pointer-events-auto flex items-center gap-1 p-1 rounded-lg bg-black/55 backdrop-blur-sm border border-emerald-500/30 shadow-lg text-[10px] font-mono flex-wrap">
+                  <span className="px-1.5 text-emerald-300 font-bold flex items-center gap-1">
+                    <Play className="w-2.5 h-2.5" /> 5-Min Storyboard:
+                  </span>
+                  {STORYBOARD_STEPS.map((s) => (
+                    <button
+                      key={s.step}
+                      type="button"
+                      onClick={() => triggerStoryboardStep(s.step, s.prompt)}
+                      className={`px-2 py-0.5 rounded transition-colors ${
+                        activeStep === s.step
+                          ? 'bg-emerald-500 text-[#0d1117] font-bold'
+                          : 'text-white/80 hover:text-white hover:bg-white/10'
+                      }`}
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* Answer Canvas / Middle Panel */}
           {panelOpen && (
-            <section
-              className={`${
-                middleExpanded ? 'w-full' : 'w-1/2'
-              } flex flex-col relative bg-surface overflow-hidden`}
-            >
-              <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5">
+            <section className="flex-1 basis-1/2 min-w-[400px] flex flex-col overflow-hidden relative bg-surface">
+              <div className="absolute top-2 right-2 z-30 flex items-center gap-1">
                 <button
                   type="button"
                   onClick={() => setMiddleExpanded((v) => !v)}
-                  className="p-1.5 rounded border border-border bg-[#12161c]/90 text-textMuted hover:text-white"
-                  title="Expand panel"
+                  className="p-1.5 rounded border border-border bg-[#12161c]/90 text-textMuted hover:text-white hover:border-accent"
                 >
                   {middleExpanded ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
                 </button>
@@ -227,9 +281,9 @@ export function App() {
                     setDrawerOutletId(null);
                     setScreenTab('map');
                     setMiddleExpanded(false);
+                    setSimulatedBeat(null);
                   }}
-                  className="p-1.5 rounded border border-border bg-[#12161c]/90 text-textMuted hover:text-white"
-                  title="Close panel"
+                  className="p-1.5 rounded border border-border bg-[#12161c]/90 text-textMuted hover:text-white hover:border-accent"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -252,9 +306,24 @@ export function App() {
                     onOpenOutlet={(id) => openOutlet(id, 'diagnosis')}
                   />
                 </div>
+              ) : screenTab === 'beat_diagnosis' ? (
+                <div className="flex-1 overflow-y-auto p-4 pt-12">
+                  <BeatDiagnosisView
+                    beatId={selectedBeatId}
+                    onSelectBeat={(b) => {
+                      setSelectedBeatId(b);
+                      setBeatFilter(b);
+                    }}
+                    onOpenOutlet={(id) => openOutlet(id, 'vision')}
+                  />
+                </div>
               ) : screenTab === 'beat_simulator' ? (
                 <div className="flex-1 overflow-y-auto p-4 pt-12">
-                  <BeatSimulatorView city={cityFilter} initialBeatId={selectedBeatId} />
+                  <BeatSimulatorView
+                    city={cityFilter}
+                    initialBeatId={selectedBeatId}
+                    onSimulationChange={setSimulatedBeat}
+                  />
                 </div>
               ) : (
                 drawerOutletId && (
@@ -278,6 +347,7 @@ export function App() {
         screen={screenTab}
         contextLabel={contextLabel}
         onAgentAction={handleAgentAction}
+        autoDock={(middleExpanded && panelOpen) || mapFullscreen}
         onDockedChange={setAgentDocked}
         suspended={!!reportOutletId}
       />

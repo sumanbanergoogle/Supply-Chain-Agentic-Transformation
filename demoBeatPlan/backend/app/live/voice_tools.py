@@ -38,83 +38,57 @@ def register_voice_tool(
     return deco
 
 
-@register_voice_tool(
-    name="get_city_kpis",
-    action_kind="city_kpis",
-    description="Get ITC TM&D KPIs (outlets, zero-billing count, LSPC, monthly leakage) for ALL, Bangalore, Hyderabad, or Chennai.",
-)
+@register_voice_tool(name="get_city_kpis", action_kind="city_kpis", description="Get ITC TM&D KPIs for ALL, Bangalore, Hyderabad, or Chennai.")
 def _get_city_kpis(city: str = "ALL") -> dict[str, Any]:
     return agent_tools.get_city_kpis(city=city)
 
 
-@register_voice_tool(
-    name="compare_cities",
-    action_kind="city_comparison",
-    description="Compare Bangalore, Hyderabad, and Chennai across zero-billing %, LSPC, revenue leakage, and dominant root cause.",
-)
+@register_voice_tool(name="compare_cities", action_kind="city_comparison", description="Compare Bangalore, Hyderabad, and Chennai across zero-billing %, LSPC, revenue leakage, and dominant root cause.")
 def _compare_cities() -> dict[str, Any]:
     return agent_tools.compare_cities()
 
 
-@register_voice_tool(
-    name="get_priority_queue",
-    action_kind="priority_queue",
-    description="Get top churning or zero-billing outlets in a city sorted by monthly revenue leakage.",
-)
+@register_voice_tool(name="get_priority_queue", action_kind="priority_queue", description="Get top churning or zero-billing outlets in a city sorted by monthly revenue leakage.")
 def _get_priority_queue(city: str = "ALL", limit: int = 8) -> dict[str, Any]:
     return agent_tools.get_priority_queue(city=city, limit=limit)
 
 
-@register_voice_tool(
-    name="get_outlet_profile",
-    action_kind="outlet_profile",
-    description="Inspect outlet profile, distributor, beat, and telemetry summary for an outlet ID like BLR-104.",
-)
+@register_voice_tool(name="get_outlet_profile", action_kind="outlet_profile", description="Inspect outlet profile, storefront vision shelf audit, distributor, and telemetry summary (e.g. BLR-701 Lakshmi Super Mart).")
 def _get_outlet_profile(outlet_id: str) -> dict[str, Any]:
     return agent_tools.get_outlet_profile(outlet_id=outlet_id)
 
 
-@register_voice_tool(
-    name="diagnose_outlet_leakage",
-    action_kind="attribution_waterfall",
-    description="Run SHAP + Spatio-Temporal GNN + Storefront Vision attribution explaining why an outlet is losing revenue/LSPC.",
-)
+@register_voice_tool(name="diagnose_outlet_leakage", action_kind="attribution_waterfall", description="Run SHAP + Spatio-Temporal GNN + Storefront Vision attribution explaining why an outlet is losing revenue/LSPC.")
 def _diagnose_outlet_leakage(outlet_id: str) -> dict[str, Any]:
     return agent_tools.diagnose_outlet_leakage(outlet_id=outlet_id)
 
 
-@register_voice_tool(
-    name="recommend_outlet_intervention",
-    action_kind="nba",
-    description="Rank top-3 Next Best Actions with recovery probability, monthly uplift, and k-NN analog stores for an outlet.",
-)
+@register_voice_tool(name="diagnose_beat_leakage", action_kind="beat_diagnosis", description="Run Beat-level SHAP + GNN + Planned vs Actual GPS visit comparison on a beat like BLR-B04 or BLR-B07.")
+def _diagnose_beat_leakage(beat_id: str) -> dict[str, Any]:
+    return agent_tools.diagnose_beat_leakage(beat_id=beat_id)
+
+
+@register_voice_tool(name="recommend_outlet_intervention", action_kind="nba", description="Rank top-3 Next Best Actions with recovery probability, monthly uplift, and k-NN analog stores for an outlet.")
 def _recommend_outlet_intervention(outlet_id: str, top_k: int = 3) -> dict[str, Any]:
     return agent_tools.recommend_outlet_intervention(outlet_id=outlet_id, top_k=top_k)
 
 
-@register_voice_tool(
-    name="compare_outlet_interventions",
-    action_kind="counterfactual",
-    description="Compare recommended vs alternative intervention side-by-side for an outlet.",
-)
+@register_voice_tool(name="compare_outlet_interventions", action_kind="counterfactual", description="Compare recommended vs alternative intervention side-by-side for an outlet.")
 def _compare_outlet_interventions(outlet_id: str) -> dict[str, Any]:
     return agent_tools.compare_outlet_interventions(outlet_id=outlet_id)
 
 
-@register_voice_tool(
-    name="simulate_beat_rebalance",
-    action_kind="beat_simulation",
-    description="Simulate spatial beat rebalancing for a beat like BLR-B02 or HYD-B04.",
-)
+@register_voice_tool(name="simulate_beat_rebalance", action_kind="beat_simulation", description="Simulate spatial beat rebalancing for a beat like BLR-B04 or BLR-B07.")
 def _simulate_beat_rebalance(beat_id: str) -> dict[str, Any]:
     return agent_tools.simulate_beat_rebalance(beat_id=beat_id)
 
 
-@register_voice_tool(
-    name="ui_control",
-    action_kind="ui_control",
-    description="Control the dashboard screen: focus_city (Bangalore/Hyderabad/Chennai/ALL), focus_outlet, open_outlet, open_screen (city_compare/city_health/beat_simulator), health_filter (all/healthy/attention/critical), basemap (satellite/street), beat_trails (on/off), fullscreen (on/off), report (open/print/close).",
-)
+@register_voice_tool(name="dispatch_asm_action", action_kind="asm_dispatch", description="Dispatch approved beat rebalance and priority stock alert ticket to the ASM and Distributor.")
+def _dispatch_asm_action(beat_id: str, note: str = "") -> dict[str, Any]:
+    return agent_tools.dispatch_asm_action(beat_id=beat_id, note=note)
+
+
+@register_voice_tool(name="ui_control", action_kind="ui_control", description="Control dashboard: focus_city, focus_beat, focus_outlet, open_outlet, open_screen, health_filter, basemap, flowlines, fullscreen, panel, report.")
 def _ui_control(action: str, value: str = "", outlet_id: str = "", view: str = "") -> dict[str, Any]:
     return agent_tools.ui_control(action=action, value=value, outlet_id=outlet_id, view=view)
 

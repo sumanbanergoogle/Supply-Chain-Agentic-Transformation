@@ -1,25 +1,21 @@
-"""Allow-listed UI command vocabulary for agentic screen control.
-
-Mirrors frontend/src/agent/uiCommands.ts so voice and chat tools can cleanly
-zoom the map, filter by city or outlet health, open answer canvas views,
-simulate beats, or open printable field action packs.
-"""
+"""Allow-listed UI command vocabulary for agentic screen control."""
 from __future__ import annotations
 
 import re
 from typing import Any
 
 UI_ACTIONS: dict[str, tuple[str, ...] | None] = {
-    "map_view": ("south_india", "city"),
+    "map_view": ("india", "city"),
     "fullscreen": ("on", "off"),
     "basemap": ("satellite", "street"),
-    "beat_trails": ("on", "off"),
+    "flowlines": ("on", "off"),
     "legend": ("on", "off"),
     "zoom": ("in", "out"),
     "focus_city": ("Bangalore", "Hyderabad", "Chennai", "ALL"),
+    "focus_beat": None,
     "focus_outlet": None,
     "open_outlet": None,
-    "open_screen": ("city_compare", "city_health", "beat_simulator"),
+    "open_screen": ("beat_history", "city_compare", "city_health", "beat_simulator", "beat_diagnosis"),
     "panel": ("expand", "restore", "close"),
     "language": ("english", "hinglish", "hindi"),
     "report": ("open", "print", "close"),
@@ -28,13 +24,14 @@ UI_ACTIONS: dict[str, tuple[str, ...] | None] = {
 }
 
 OUTLET_VIEWS = (
+    "summary",
     "overview",
     "telemetry",
     "diagnosis",
+    "vision",
     "recommendation",
     "compare",
     "nearby",
-    "beat_plan",
 )
 
 _ALIASES: dict[str, dict[str, str]] = {
@@ -66,6 +63,7 @@ _ALIASES: dict[str, dict[str, str]] = {
         "critical": "critical",
     },
     "open_screen": {
+        "history": "beat_history",
         "compare": "city_compare",
         "cities": "city_compare",
         "health": "city_health",
@@ -73,8 +71,9 @@ _ALIASES: dict[str, dict[str, str]] = {
         "queue": "city_health",
         "beat": "beat_simulator",
         "simulate": "beat_simulator",
+        "diagnose": "beat_diagnosis",
     },
-    "basemap": {"dark": "street", "satellite": "satellite", "sat": "satellite"},
+    "basemap": {"dark": "street", "scada": "street", "satellite": "satellite", "sat": "satellite"},
 }
 
 _OUTLET_RE = re.compile(r"\b(BLR|HYD|CHN)[-\s]?(\d{3})\b", re.IGNORECASE)
@@ -83,6 +82,8 @@ _OUTLET_RE = re.compile(r"\b(BLR|HYD|CHN)[-\s]?(\d{3})\b", re.IGNORECASE)
 def normalize_outlet_id(raw: str | None) -> str | None:
     if not raw:
         return None
+    if "lakshmi" in raw.lower():
+        return "BLR-701"
     m = _OUTLET_RE.search(raw.strip())
     if m:
         return f"{m.group(1).upper()}-{m.group(2)}"

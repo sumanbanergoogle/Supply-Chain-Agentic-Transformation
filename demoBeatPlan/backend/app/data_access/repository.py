@@ -25,6 +25,11 @@ class BeatPulseRepository:
         ]
         if not all((landing / fname).exists() for fname in required):
             generate_dataset(landing)
+        else:
+            # Auto-refresh if generated schema is from an earlier build (missing beat_seq / pois kind)
+            om = pd.read_parquet(landing / "outlet_master.parquet")
+            if "beat_seq" not in om.columns or "BLR-701" not in set(om["outlet_id"]):
+                generate_dataset(landing)
 
         self.wd_master: pd.DataFrame = pd.read_parquet(landing / "wd_master.parquet")
         self.dark_stores: pd.DataFrame = pd.read_parquet(landing / "dark_stores.parquet")
@@ -79,16 +84,17 @@ class BeatPulseRepository:
 
     def get_city_infrastructure(self, city: str | None = None) -> dict[str, Any]:
         wds = self.wd_master
-        ds = self.dark_stores
+        pois = self.dark_stores
         beats = self.beat_master
         if city and city.upper() != "ALL":
             c = city.strip().lower()
             wds = wds[wds["city"].str.lower() == c]
-            ds = ds[ds["city"].str.lower() == c]
+            pois = pois[pois["city"].str.lower() == c]
             beats = beats[beats["city"].str.lower() == c]
         return {
             "wds": wds.to_dict(orient="records"),
-            "dark_stores": ds.to_dict(orient="records"),
+            "dark_stores": pois[pois["kind"] == "qcommerce"].to_dict(orient="records"),
+            "pois": pois.to_dict(orient="records"),
             "beats": beats.to_dict(orient="records"),
         }
 

@@ -24,6 +24,10 @@ class ChatRequest(BaseModel):
     screen: str | None = None
 
 
+class DispatchRequest(BaseModel):
+    note: str = ""
+
+
 @router.get("/health")
 def health() -> dict[str, Any]:
     engine = get_engine()
@@ -120,12 +124,25 @@ def list_beats(city: str = "ALL") -> list[dict[str, Any]]:
     return df.to_dict(orient="records")
 
 
+@router.get("/beats/{beat_id}/diagnose")
+def diagnose_beat(beat_id: str) -> dict[str, Any]:
+    try:
+        return get_engine().diagnose_beat(beat_id)
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e)) from e
+
+
 @router.post("/beats/{beat_id}/simulate")
 def simulate_beat(beat_id: str) -> dict[str, Any]:
     try:
         return get_engine().simulate_beat_rebalance(beat_id)
     except KeyError as e:
         raise HTTPException(status_code=404, detail=str(e)) from e
+
+
+@router.post("/beats/{beat_id}/dispatch")
+def dispatch_beat(beat_id: str, req: DispatchRequest) -> dict[str, Any]:
+    return get_engine().dispatch_asm_action(beat_id=beat_id, note=req.note)
 
 
 @router.post("/chat")

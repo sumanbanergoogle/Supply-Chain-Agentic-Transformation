@@ -10,7 +10,7 @@ from app.data_access.repository import get_repository
 
 def get_city_kpis(city: str = "ALL") -> dict[str, Any]:
     """Return ITC TM&D summary KPIs (outlets, zero-billing count, LSPC, monthly leakage) for ALL or Bangalore/Hyderabad/Chennai."""
-    return {"status": "OK", "data": get_engine().kpis(city)}
+    return {"status": "OK", "city": city, "data": get_engine().kpis(city)}
 
 
 def compare_cities() -> dict[str, Any]:
@@ -21,12 +21,12 @@ def compare_cities() -> dict[str, Any]:
 def get_priority_queue(city: str = "ALL", limit: int = 8) -> dict[str, Any]:
     """Return top at-risk and zero-billing outlets ranked by monthly revenue leakage and ML churn score."""
     data = get_engine().city_health(city)
-    data["priority_queue"] = data["priority_queue"][: max(1, min(limit, 20))]
-    return {"status": "OK", "data": data}
+    data["priority_queue"] = data["priority_queue"][: max(1, min(limit, 25))]
+    return {"status": "OK", "city": city, "data": data}
 
 
 def get_outlet_profile(outlet_id: str) -> dict[str, Any]:
-    """Return full outlet profile, WD, beat info, and latest KPIs for a specific outlet ID like BLR-104 or HYD-108."""
+    """Return full outlet profile, WD, beat info, storefront vision note, and KPIs (e.g. BLR-701 Lakshmi Super Mart)."""
     oid = normalize_outlet_id(outlet_id) or outlet_id
     out = get_repository().get_outlet(oid)
     if not out:
@@ -41,6 +41,15 @@ def diagnose_outlet_leakage(outlet_id: str) -> dict[str, Any]:
     try:
         res = get_engine().attribute_leakage(oid)
         return {"status": "OK", "outlet_id": res["outlet_id"], "city": res["city"], "data": res}
+    except KeyError as e:
+        return {"status": "NOT_FOUND", "message": str(e)}
+
+
+def diagnose_beat_leakage(beat_id: str) -> dict[str, Any]:
+    """Run Beat-level SHAP + Spatio-Temporal GNN + Planned vs Actual SFA GPS Reality Check for a beat (e.g. BLR-B04 or BLR-B07)."""
+    try:
+        res = get_engine().diagnose_beat(beat_id)
+        return {"status": "OK", "beat_id": res["beat"]["beat_id"], "city": res["beat"]["city"], "data": res}
     except KeyError as e:
         return {"status": "NOT_FOUND", "message": str(e)}
 
@@ -66,12 +75,18 @@ def compare_outlet_interventions(outlet_id: str) -> dict[str, Any]:
 
 
 def simulate_beat_rebalance(beat_id: str) -> dict[str, Any]:
-    """Simulate spatial beat split / rebalancing for a beat like BLR-B02 or HYD-B04 to recover salesman visit time and LSPC."""
+    """Simulate spatial beat split / rebalancing for a beat like BLR-B04 or BLR-B07 to recover salesman visit time and revenue."""
     try:
         res = get_engine().simulate_beat_rebalance(beat_id)
         return {"status": "OK", "beat_id": res["beat_id"], "city": res["city"], "data": res}
     except KeyError as e:
         return {"status": "NOT_FOUND", "message": str(e)}
+
+
+def dispatch_asm_action(beat_id: str, note: str = "") -> dict[str, Any]:
+    """Create and send an actionable beat rebalance + priority stock allocation ticket to the ASM & WD."""
+    res = get_engine().dispatch_asm_action(beat_id=beat_id, note=note)
+    return {"status": "OK", "beat_id": res["beat_id"], "data": res}
 
 
 def ui_control(
@@ -80,7 +95,7 @@ def ui_control(
     outlet_id: str = "",
     view: str = "",
 ) -> dict[str, Any]:
-    """Drive the dashboard UI: focus_city, focus_outlet, open_outlet, open_screen, health_filter, basemap, beat_trails, fullscreen, panel, language, report."""
+    """Drive the dashboard UI: focus_city, focus_beat, focus_outlet, open_outlet, open_screen, health_filter, basemap, flowlines, fullscreen, panel, language, report."""
     res = validate_ui_command(action=action, value=value or None, outlet_id=outlet_id or None, view=view or None)
     if res["status"] == "OK":
         return {"status": "OK", "data": res}
