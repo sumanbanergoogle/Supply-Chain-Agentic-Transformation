@@ -14,14 +14,19 @@
   .why-card h3 { margin: 8px 0 8px; font: 600 17.5px/1.25 var(--font-display); color: var(--text); }
   .why-card p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
 
-  .cockpit { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 22px 24px; box-shadow: var(--shadow-md); margin: 22px 0 0; position: relative; overflow: hidden; }
-  .cockpit::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
-  .prompt-bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); font: 500 14px var(--font-display); }
-  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .inflect { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 22px 24px; box-shadow: var(--shadow-md); margin: 20px 0 0; position: relative; overflow: hidden; }
+  .inflect::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
   .q-pill { font: 500 12.5px var(--font-display); padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text); cursor: pointer; }
   .q-pill.active { background: var(--g-blue); color: #FFF; border-color: var(--g-blue); }
-  .drawer { margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: color-mix(in srgb, var(--g-blue) 7%, var(--surface)); border: 1px solid color-mix(in srgb, var(--g-blue) 30%, transparent); }
-  @media(max-width:900px){ .why-3{ grid-template-columns: 1fr; } }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr 0.75fr; gap: 14px; }
+  .vs-box { padding: 15px 16px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); }
+  .vs-box.agentic { background: color-mix(in srgb, var(--g-blue) 7%, var(--surface)); border-color: color-mix(in srgb, var(--g-blue) 35%, transparent); }
+  .vs-box.impact { background: color-mix(in srgb, var(--g-green) 8%, var(--surface)); border-color: color-mix(in srgb, var(--g-green) 35%, transparent); display: flex; flex-direction: column; justify-content: center; }
+  .vs-lbl { font: 600 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .vs-txt { font-size: 13.5px; line-height: 1.5; color: var(--text); }
+  @media(max-width:900px){ .why-3, .vs-grid{ grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -39,7 +44,7 @@
 <main class="page-wrap">
   <div class="page-kick"><i></i>Slide 01 · Executive Briefing for ITC TM&amp;D Head</div>
   <h1 class="page-h1">Why Agentic Transformation, Why Now—for Supply Chains in India</h1>
-  <p class="page-lede">India’s supply chains operate at unmatched physical complexity—from <b>12M+ kiranas and multi-tier CFAs</b> to <b>10-minute Quick Commerce</b>. Dashboards already tell us <i>what</i> broke yesterday; <b>Agentic AI</b> turns live signals into bounded execution <i>today</i>.</p>
+  <p class="page-lede">India’s supply chains operate at unmatched physical complexity—from <b>12M+ kiranas and multi-tier CFAs</b> to <b>10-minute Quick Commerce</b>. Dashboards already tell us <i>what</i> broke yesterday; <b>Agentic AI</b> turns live signals into coordinated execution <i>today</i>.</p>
 
   <div class="why-3">
     <div class="why-card p-blue">
@@ -50,33 +55,40 @@
     <div class="why-card p-green">
       <div class="k">02 · Digital Readiness</div>
       <h3>The Data Spine Already Exists</h3>
-      <p>Indian enterprises already run SAP, DMS/SFA, FASTag/GPS, and e-Way Bills—creating the exact live telemetry needed for agents to act without replacing core ERPs.</p>
+      <p>Indian enterprises already run SAP, DMS/SFA, FASTag/GPS, and e-Way Bills—creating the live telemetry needed for autonomous execution without replacing core ERPs.</p>
     </div>
     <div class="why-card p-purple">
-      <div class="k">03 · Low-Code AI Maturity</div>
-      <h3>Gemini Enterprise Removes Build Friction</h3>
-      <p>Reasoning across constraints, multimodal vision (PODs &amp; shelf photos), and 12+ Indian vernacular voices can now be deployed in weeks via low-code agents.</p>
+      <div class="k">03 · Enterprise AI Maturity</div>
+      <h3>From Passive Insights to Bounded Action</h3>
+      <p>Reasoning across cost, shelf-life, and channel SLAs—combined with vision for PODs/shelves and 12+ Indian vernacular voices—is now production-ready at scale.</p>
     </div>
   </div>
 
-  <div class="cockpit">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <span class="badge-pill badge-solid">✦ See It in Action · Gemini Enterprise Supply Chain Cockpit</span>
-      <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="cockpitLat">LATENCY: 380ms · GROUNDED ON SAP + DMS + BIGQUERY</span>
-    </div>
-    <div class="prompt-bar">
-      <span style="color:var(--blue-ink);font-size:18px;">✦</span>
-      <span id="cockpitPrompt">"Detect regional POS demand surge, rebalance CFA fair-share stock, and reroute delayed MT/Q-Comm deliveries..."</span>
+  <div class="inflect">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <span class="badge-pill badge-solid">India Supply Chain Decision Velocity · Legacy vs. Agentic</span>
+      <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="inflectTag">CLICK A REAL-WORLD SCENARIO TO COMPARE</span>
     </div>
     <div class="pill-row">
-      <button class="q-pill active" onclick="setCockpit('demand', this)">Demand Sensing &amp; S&amp;OP</button>
-      <button class="q-pill" onclick="setCockpit('cfa', this)">CFA Fair-Share Allocation</button>
-      <button class="q-pill" onclick="setCockpit('rtm', this)">Distributor &amp; Beat Copilot</button>
-      <button class="q-pill" onclick="setCockpit('fleet', this)">MT/Q-Comm Slot &amp; Rerouter</button>
+      <button class="q-pill active" onclick="setScenario('festive', this)">Festive &amp; Monsoon Demand Surge</button>
+      <button class="q-pill" onclick="setScenario('qcomm', this)">10-Min Q-Commerce &amp; MT SLAs</button>
+      <button class="q-pill" onclick="setScenario('transit', this)">Highway Closure &amp; Fleet Detention</button>
+      <button class="q-pill" onclick="setScenario('claims', this)">Distributor Claims &amp; POD Audits</button>
     </div>
-    <div class="drawer" id="cockpitOut">
-      <div style="font:600 12px var(--font-mono);color:var(--blue-ink);margin-bottom:5px;" id="cockpitTag">DEMAND SENSING &amp; WAR-ROOM AGENT // LOW-CODE AGENT STUDIO</div>
-      <div style="font-size:13.5px;line-height:1.55;" id="cockpitBody">Synthesized POS velocity, monsoon weather shifts, and festive calendars—detecting a <b>+22% regional demand inflection 9 days earlier</b> than statistical baselines and recommending co-packer shift allocation.</div>
+    <div class="vs-grid">
+      <div class="vs-box">
+        <div class="vs-lbl" style="color:var(--red-ink);">Today · Manual War-Room</div>
+        <div class="vs-txt" id="vsLegacy">Weekly Excel S&amp;OP reviews spot regional POS spikes 10–14 days late, leaving high-velocity CFAs stocked out while neighboring depots hold excess.</div>
+      </div>
+      <div class="vs-box agentic">
+        <div class="vs-lbl" style="color:var(--blue-ink);">With Agentic AI · Bounded Action</div>
+        <div class="vs-txt" id="vsAgentic">Continuously correlates POS velocity, weather, and regional calendars—pre-computing fair-share CFA allocations and inter-depot transfers in minutes.</div>
+      </div>
+      <div class="vs-box impact">
+        <div class="vs-lbl" style="color:var(--green-ink);">Business Outcome</div>
+        <div style="font:600 22px/1.15 var(--font-display);color:var(--text);" id="vsMetric">7–14 Days Earlier</div>
+        <div style="font-size:12.5px;color:var(--text-muted);margin-top:4px;" id="vsSub">Demand shift detection &amp; shelf availability</div>
+      </div>
     </div>
   </div>
 
@@ -85,40 +97,40 @@
 
 <script>
   initDeckChrome({ root: '../' });
-  var COCKPIT = {
-    demand: {
-      prompt: '"Detect regional POS demand surge, rebalance CFA fair-share stock, and reroute delayed MT/Q-Comm deliveries..."',
-      tag: 'DEMAND SENSING & WAR-ROOM AGENT // LOW-CODE AGENT STUDIO',
-      lat: 'LATENCY: 380ms · GROUNDED ON SAP + DMS + BIGQUERY',
-      body: 'Synthesized POS velocity, monsoon weather shifts, and festive calendars—detecting a <b>+22% regional demand inflection 9 days earlier</b> than statistical baselines and recommending co-packer shift allocation.'
+  var SCENARIOS = {
+    festive: {
+      legacy: 'Weekly Excel S&amp;OP reviews spot regional POS spikes 10–14 days late, leaving high-velocity CFAs stocked out while neighboring depots hold excess.',
+      agentic: 'Continuously correlates POS velocity, weather, and regional calendars—pre-computing fair-share CFA allocations and inter-depot transfers in minutes.',
+      metric: '7–14 Days Earlier',
+      sub: 'Demand shift detection &amp; shelf availability'
     },
-    cfa: {
-      prompt: '"CFA West shows 28% stock shortfall on core snack SKUs against 38 WD indents. Run fair-share split..."',
-      tag: 'CS&L FAIR-SHARE ALLOCATION AGENT // LOW-CODE AGENT STUDIO',
-      lat: 'LATENCY: 440ms · CFA ATP + 30-DAY WD VELOCITY',
-      body: 'Protected 100% of Tier-1 Q-Commerce &amp; Modern Trade POs and allocated remaining stock proportionally across 38 Wholesale Dealers by 30-day secondary velocity. Auto-sent WhatsApp ETA updates.'
+    qcomm: {
+      legacy: 'Strict &gt;75% shelf-life rules and missed dark-store dock slots result in automatic PO rejections and steep OTIF penalties.',
+      agentic: 'Screens POs against batch FEFO expiry at order entry, flags transit delays early, and proactively reschedules dock appointment slots.',
+      metric: '98.5%+ OTIF',
+      sub: 'Modern Trade &amp; Quick Commerce compliance'
     },
-    rtm: {
-      prompt: '"Generate 08:15 AM Territory Morning Pulse: flag lagging beats, WD stock-outs, and priority SKUs..."',
-      tag: 'TERRITORY RTM PULSE AGENT // NO-CODE GEMINI GEM',
-      lat: 'LATENCY: 290ms · DMS SECONDARY SALES + BEAT LOGS',
-      body: 'Analyzed overnight DMS sync across 18 distributors. Flagged staple SKU stock-outs at 3 key WDs, identified 2 lagging rural beats, and pushed vernacular focus-SKU cards to field vans.'
+    transit: {
+      legacy: 'Highway bottlenecks, city no-entry curfews, and plant gate queues cause 3–4 hour truck detention before dispatchers react.',
+      agentic: 'Monitors live GPS/FASTag and traffic feeds, dynamically reroutes multi-drop trucks, and rebalances plant loading bays in real time.',
+      metric: '6–10% Fuel Saved',
+      sub: '40% lower plant &amp; depot truck detention'
     },
-    fleet: {
-      prompt: '"NH-48 highway closure detected. Reroute 4 Modern Trade &amp; Q-Comm trucks and reschedule dock slots..."',
-      tag: 'MT/Q-COMM SLOT & DYNAMIC REROUTER // MAPS + AGENT STUDIO',
-      lat: 'LATENCY: 310ms · GOOGLE MAPS API + RETAILER EDI',
-      body: 'Re-sequenced 4 trucks avoiding municipal no-entry curfews (saved 8.5% fuel) and proactively secured revised 4:30 PM dark-store dock slots—avoiding OTIF penalties.'
+    claims: {
+      legacy: 'Paper PODs, damaged return cartons, and trade scheme circulars take weeks to audit manually—creating distributor friction and margin leakage.',
+      agentic: 'Reads scanned PODs, photos, and scheme PDFs automatically—reconciling valid claims in hours and blocking duplicate or invalid deductions.',
+      metric: '3–7% Recovered',
+      sub: 'In overbilled freight &amp; trade claim leakage'
     }
   };
-  window.setCockpit = function (k, btn) {
+  window.setScenario = function (k, btn) {
     document.querySelectorAll('.q-pill').forEach(function (b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    var d = COCKPIT[k];
-    document.getElementById('cockpitPrompt').textContent = d.prompt;
-    document.getElementById('cockpitTag').textContent = d.tag;
-    document.getElementById('cockpitLat').textContent = d.lat;
-    document.getElementById('cockpitBody').innerHTML = d.body;
+    var s = SCENARIOS[k];
+    document.getElementById('vsLegacy').innerHTML = s.legacy;
+    document.getElementById('vsAgentic').innerHTML = s.agentic;
+    document.getElementById('vsMetric').innerHTML = s.metric;
+    document.getElementById('vsSub').innerHTML = s.sub;
   };
 </script>
 </body></html>
