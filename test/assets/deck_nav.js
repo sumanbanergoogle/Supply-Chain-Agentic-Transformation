@@ -9,7 +9,7 @@
 })();
 
 window.SC_SLIDE_DECK = [
-  { num: "01", title: "Agentic Transformation in India's Supply Chain", path: "slides/slide_01.html" },
+  { num: "01", title: "Why Agentic Transformation, Why Now—India Supply Chains", path: "slides/slide_01.html" },
   { num: "02", title: "Why 'Agentic' Now for ITC TM&D?", path: "slides/slide_02_hook.html" },
   { num: "03", title: "The TM&D Value Tree (CEO Metrics)", path: "slides/slide_03_value_tree.html" },
   { num: "04", title: "Why CPG Supply Chain is Critical & Challenges", path: "slides/slide_02.html" },
