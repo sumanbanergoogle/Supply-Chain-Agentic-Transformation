@@ -1,4 +1,4 @@
-/* Theme initialization + Floating Presentation HUD & Slide Deck Switcher */
+/* Theme initialization + Top Masthead Slide Nav + Floating Presentation HUD */
 (function () {
   try {
     if ((localStorage.getItem('deck-theme') || 'light') === 'dark') {
@@ -9,23 +9,22 @@
 })();
 
 window.SC_SLIDE_DECK = [
-  { num: "00", title: "Executive Overview & Value Stream", path: "pages/overview.html" },
-  { num: "01", title: "Pillar 01 · Planning & Strategy", path: "pillars/01_planning.html" },
-  { num: "02", title: "Pillar 02 · Sourcing & Procurement", path: "pillars/02_procurement.html" },
-  { num: "03", title: "Pillar 03 · Manufacturing & Production", path: "pillars/03_manufacturing.html" },
-  { num: "04", title: "Pillar 04 · Inventory & Warehousing", path: "pillars/04_warehousing.html" },
-  { num: "05", title: "Pillar 05 · Distribution & Logistics (CPG)", path: "pillars/05_distribution.html" },
-  { num: "06", title: "Pillar 06 · Returns & Reverse Logistics", path: "pillars/06_reverse.html" },
-  { num: "07", title: "From One Agent to an Agentic Org", path: "pages/one_to_many.html" },
-  { num: "08", title: "60-Persona & Agent Matrix", path: "pages/persona_map.html" },
-  { num: "09", title: "How Agents Are Built (Gemini Enterprise)", path: "pages/build_01_how.html" },
-  { num: "10", title: "Enterprise Reference Architecture", path: "pages/build_02_arch.html" },
-  { num: "11", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
-  { num: "12", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
-  { num: "13", title: "Where People Meet the Agent", path: "pages/build_05_surface.html" },
-  { num: "14", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
-  { num: "15", title: "Why Google Cloud", path: "pages/build_07_why_google.html" },
-  { num: "16", title: "100 Days to Proof of Value", path: "pages/build_08_100_days.html" }
+  { num: "00", title: "Executive Overview (ITC TM&D)", path: "slides/slide_00.html" },
+  { num: "01", title: "Capital & Margin Reality", path: "slides/slide_01.html" },
+  { num: "02", title: "Swiss Cheese Barriers", path: "slides/slide_02.html" },
+  { num: "03", title: "The 3 Traps & Tribal Knowledge", path: "slides/slide_03.html" },
+  { num: "04", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_04.html" },
+  { num: "05", title: "Live Demo: ITC TM&D Cockpit", path: "slides/slide_05.html" },
+  { num: "06", title: "From One Agent to an Agentic Org", path: "pages/one_to_many.html" },
+  { num: "07", title: "Persona Map: 60 Roles & Agents", path: "pages/persona_map.html" },
+  { num: "08", title: "How Agents Are Built", path: "pages/build_01_how.html" },
+  { num: "09", title: "Architecture", path: "pages/build_02_arch.html" },
+  { num: "10", title: "Model Choice", path: "pages/build_03_models.html" },
+  { num: "11", title: "Governance", path: "pages/build_04_govern.html" },
+  { num: "12", title: "Where People Meet the Agent", path: "pages/build_05_surface.html" },
+  { num: "13", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
+  { num: "14", title: "Why Google Cloud", path: "pages/build_07_why_google.html" },
+  { num: "15", title: "100 Days to Proof of Value", path: "pages/build_08_100_days.html" }
 ];
 
 window.initDeckChrome = function (opts) {
@@ -51,11 +50,40 @@ window.initDeckChrome = function (opts) {
   var curIdx = window.SC_SLIDE_DECK.findIndex(function (s) {
     return currentPath.indexOf(s.path) !== -1;
   });
-  if (curIdx === -1) curIdx = 0;
 
   var totalIdx = window.SC_SLIDE_DECK.length - 1;
-  var prevSlide = curIdx > 0 ? rootPrefix + window.SC_SLIDE_DECK[curIdx - 1].path : null;
-  var nextSlide = curIdx < totalIdx ? rootPrefix + window.SC_SLIDE_DECK[curIdx + 1].path : null;
+  var prevSlide = opts.prev || (curIdx > 0 ? rootPrefix + window.SC_SLIDE_DECK[curIdx - 1].path : null);
+  var nextSlide = opts.next || (curIdx !== -1 && curIdx < totalIdx ? rootPrefix + window.SC_SLIDE_DECK[curIdx + 1].path : rootPrefix + 'slides/slide_01.html');
+
+  var curStr = curIdx !== -1 ? String(curIdx).padStart(2, '0') : '••';
+  var totStr = String(totalIdx).padStart(2, '0');
+
+  // Populate Top Masthead Slide Nav if #mastSlideNav exists (or add All Slides button to .mast-nav)
+  var mastSlideNav = document.getElementById('mastSlideNav');
+  if (mastSlideNav) {
+    var prevTop = prevSlide
+      ? '<a class="btn-ghost" href="' + prevSlide + '">← Prev Page</a>'
+      : '<span class="btn-ghost" style="opacity:.45;cursor:not-allowed;">← Prev Page</span>';
+    var nextTop = (curIdx < totalIdx)
+      ? '<a class="btn-cta" href="' + nextSlide + '">Next Page →</a>'
+      : '<a class="btn-cta" href="' + rootPrefix + 'index.html">All Slides ↻</a>';
+    var themeBtn = document.getElementById('themeToggle');
+    mastSlideNav.innerHTML =
+      prevTop +
+      '<button type="button" class="btn-ghost top-all-slides" style="font-family:var(--font-mono);font-weight:700;color:var(--blue-ink);">' + curStr + ' / ' + totStr + ' ▾</button>' +
+      nextTop +
+      '<a class="btn-ghost" href="' + rootPrefix + 'index.html">All Slides ↗</a>';
+    if (themeBtn) mastSlideNav.insertBefore(themeBtn, mastSlideNav.firstChild);
+  } else {
+    var anyMast = document.querySelector('.mast-nav');
+    if (anyMast && !anyMast.querySelector('.top-all-slides')) {
+      var allBtn = document.createElement('button');
+      allBtn.type = 'button';
+      allBtn.className = 'btn-ghost top-all-slides';
+      allBtn.textContent = 'All Slides ▾';
+      anyMast.insertBefore(allBtn, anyMast.firstChild);
+    }
+  }
 
   // Inject Floating Presentation HUD Controls (matching Oil & Gas reference deck)
   var hud = document.createElement('div');
@@ -66,12 +94,9 @@ window.initDeckChrome = function (opts) {
     ? '<a href="' + prevSlide + '" style="color:#E2E8F0;text-decoration:none;font:600 13px var(--font-display);padding:5px 10px;border-radius:16px;background:rgba(255,255,255,0.08);">◀ Prev</a>'
     : '<span style="color:#475569;font:600 13px var(--font-display);padding:5px 10px;cursor:not-allowed;">◀ Prev</span>';
 
-  var curStr = String(curIdx).padStart(2, '0');
-  var totStr = String(totalIdx).padStart(2, '0');
-
-  var nextHtml = nextSlide
+  var nextHtml = (curIdx === -1 || curIdx < totalIdx)
     ? '<a href="' + nextSlide + '" style="color:#FFF;text-decoration:none;background:rgba(49,134,255,0.28);padding:5px 14px;border-radius:18px;border:1px solid #8AB4F8;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">Next Slide ▶</a>'
-    : '<a href="' + rootPrefix + 'index.html" style="color:#FFF;text-decoration:none;background:rgba(0,175,87,0.28);padding:5px 14px;border-radius:18px;border:1px solid #5BB974;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">Briefing Map ↻</a>';
+    : '<a href="' + rootPrefix + 'index.html" style="color:#FFF;text-decoration:none;background:rgba(0,175,87,0.28);padding:5px 14px;border-radius:18px;border:1px solid #5BB974;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">All Slides ↻</a>';
 
   hud.innerHTML =
     prevHtml +
@@ -84,11 +109,11 @@ window.initDeckChrome = function (opts) {
   // Slide Switcher Popover
   var menu = document.createElement('div');
   menu.id = 'hudSlideMenu';
-  menu.style.cssText = 'position:fixed;bottom:72px;right:24px;width:340px;max-height:70vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;box-shadow:var(--shadow-lg);padding:10px;z-index:9991;display:none;';
+  menu.style.cssText = 'position:fixed;bottom:72px;right:24px;width:350px;max-height:72vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;box-shadow:var(--shadow-lg);padding:10px;z-index:9991;display:none;';
   menu.innerHTML =
     '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 8px 8px;border-bottom:1px solid var(--border-subtle);margin-bottom:6px;">' +
-      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">All Slides (00–16)</span>' +
-      '<a href="' + rootPrefix + 'index.html" style="font:600 12px var(--font-display);color:var(--blue-ink);">Briefing Map</a>' +
+      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">All Slides (00–15)</span>' +
+      '<a href="' + rootPrefix + 'index.html" style="font:600 12px var(--font-display);color:var(--blue-ink);">Briefing Map ↗</a>' +
     '</div>' +
     window.SC_SLIDE_DECK.map(function (s, idx) {
       var isActive = idx === curIdx;
@@ -99,12 +124,16 @@ window.initDeckChrome = function (opts) {
     }).join('');
   document.body.appendChild(menu);
 
-  document.getElementById('hudSlideMenuBtn').addEventListener('click', function (e) {
+  function toggleMenu(e) {
     e.stopPropagation();
     menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-  });
+  }
+  document.getElementById('hudSlideMenuBtn').addEventListener('click', toggleMenu);
+  document.querySelectorAll('.top-all-slides').forEach(function (el) { el.addEventListener('click', toggleMenu); });
   document.addEventListener('click', function (e) {
-    if (!menu.contains(e.target) && e.target.id !== 'hudSlideMenuBtn') menu.style.display = 'none';
+    if (!menu.contains(e.target) && e.target.id !== 'hudSlideMenuBtn' && !e.target.classList.contains('top-all-slides')) {
+      menu.style.display = 'none';
+    }
   });
 
   function toggleFs() {
