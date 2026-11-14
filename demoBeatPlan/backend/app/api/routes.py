@@ -3,11 +3,11 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, Header, HTTPException
 from pydantic import BaseModel, Field
 
 from app import settings
-from app.agent import rbac
+from app.agent import rbac, tools as agent_tools
 from app.agent.runner import run_turn_async
 from app.analytics.ml_engine import get_engine
 from app.data_access.repository import get_repository
@@ -22,6 +22,11 @@ class ChatRequest(BaseModel):
     city: str | None = None
     outlet_id: str | None = None
     screen: str | None = None
+
+
+class ToolExecRequest(BaseModel):
+    name: str
+    args: dict[str, Any] = {}
 
 
 class DispatchRequest(BaseModel):
@@ -145,8 +150,46 @@ def dispatch_beat(beat_id: str, req: DispatchRequest) -> dict[str, Any]:
     return get_engine().dispatch_asm_action(beat_id=beat_id, note=req.note)
 
 
+@router.post("/tools/execute")
+def execute_tool_endpoint(req: ToolExecRequest) -> dict[str, Any]:
+    fn = agent_tools.TOOL_REGISTRY.get(req.name)
+    if not fn:
+        raise HTTPException(status_code=404, detail=f"Unknown tool {req.name}")
+    return fn(**(req.args or {}))
+
+
+@router.get("/tools/declarations")
+def tool_declarations() -> dict[str, Any]:
+    from app.live import voice_tools
+
+    out = []
+    for name, vt in voice_tools.VOICE_TOOLS.items():
+        import inspect
+
+        sig = inspect.signature(vt.fn)
+        props = {}
+        req = []
+        for pname, param in sig.parameters.items():
+            ptype = "integer" if param.annotation is int else ("number" if param.annotation is float else "string")
+            props[pname] = {"type": ptype, "description": f"Parameter {pname}"}
+            if param.default is inspect.Parameter.empty:
+                req.append(pname)
+        out.append(
+            {
+                "name": name,
+                "description": vt.description,
+                "parameters": {"type": "object", "properties": props, "required": req},
+            }
+        )
+    return {"declarations": out}
+
+
 @router.post("/chat")
-async def post_chat(req: ChatRequest, persona: str = Depends(rbac.get_persona)) -> dict[str, Any]:
+async def post_chat(
+    req: ChatRequest,
+    persona: str = Depends(rbac.get_persona),
+    x_gemini_api_key: str | None = Header(None, alias="X-Gemini-Api-Key"),
+) -> dict[str, Any]:
     return await run_turn_async(
         session_id=req.session_id,
         user_id="web",
@@ -156,4 +199,5 @@ async def post_chat(req: ChatRequest, persona: str = Depends(rbac.get_persona)) 
         language=req.language,
         text=req.message,
         screen=req.screen,
+        api_key=x_gemini_api_key,
     )

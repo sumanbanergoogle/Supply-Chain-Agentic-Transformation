@@ -1,4 +1,4 @@
-"""Text agent runner (Vertex AI gemini-3.8-flash + deterministic 5-step storyboard responder)."""
+"""Text agent runner (Real-time Vertex AI / Gemini API tool-calling + dynamic fallback)."""
 from __future__ import annotations
 
 import asyncio
@@ -31,10 +31,10 @@ _BEAT_RE = re.compile(r"\b(BLR|HYD|CHN)[-\s]?(B0[1-7])\b", re.IGNORECASE)
 
 def _language_instruction(lang: str) -> str:
     if lang == "hinglish":
-        return "Reply concisely in crisp executive Hinglish."
+        return "Reply naturally and concisely in crisp executive Hinglish."
     if lang == "hindi":
         return "Reply concisely in clear Hindi (Devanagari) keeping ITC SKU names and IDs intact."
-    return "Reply concisely in sharp, executive English (2-4 sentences, citing exact INR, LSPC, and tool numbers)."
+    return "Reply concisely in sharp, executive English (2-4 crisp sentences citing exact INR, LSPC, and tool numbers)."
 
 
 def _deterministic_turn(
@@ -43,7 +43,7 @@ def _deterministic_turn(
     outlet_id: str | None,
     language: str,
 ) -> dict[str, Any]:
-    """Tool-grounded responder supporting the full 5-Minute Live Demo Storyboard & multi-city exploration."""
+    """Tool-grounded responder handling both 5-Step Storyboard and open-ended analytics offline."""
     q = text.lower().strip()
     tool_calls: list[dict[str, Any]] = []
     actions: list[dict[str, Any]] = []
@@ -68,18 +68,46 @@ def _deterministic_turn(
             detected_city = cname
             break
 
-    # Storyboard Step 5b: Dispatch ASM Action
+    # Storyboard Step 5b: ASM Dispatch
     if any(w in q for w in ("send", "dispatch", "asm", "alert")) and any(w in q for w in ("beat", "stock", "update", "asm", "action")):
         bid = target_beat or "BLR-B04"
         res = agent_tools.dispatch_asm_action(bid)["data"]
         tool_calls.append({"name": "dispatch_asm_action", "args": {"beat_id": bid}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
         actions.append({"kind": "ui", "source_tool": "ui_control", "command": {"action": "report", "value": "open", "outlet_id": target_outlet or "BLR-701"}})
+        return {
+            "response": f"Ticket {res['ticket_id']} dispatched to ASM & Distributor DMS: {bid} split plan + HSR Beat 7 priority Sunfeast/Bingo! stock alert queued.",
+            "tool_calls": tool_calls,
+            "artifacts": [],
+            "actions": actions,
+            "status": "ok",
+            "engine": "deterministic-tools",
+        }
+
+    # Distributor / WD queries
+    if any(w in q for w in ("distributor", "wd ", "wds", "stockist", "fill rate", "fill-rate")):
+        res = agent_tools.get_distributor_performance(detected_city or "ALL")
+        tool_calls.append({"name": "get_distributor_performance", "args": {"city": detected_city or "ALL"}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
+        worst = min(res["distributors"], key=lambda x: x["avg_fill_rate"])
         msg = (
-            f"Ticket {res['ticket_id']} dispatched to ASM & Distributor DMS: {bid} split plan + HSR Beat 7 priority Sunfeast/Bingo! stock alert queued."
+            f"Lowest WD fill rate is {worst['name']} ({worst['city']}) at {worst['avg_fill_rate']*100:.1f}%, "
+            f"with {worst['zero_billing_outlets']} zero-billing stores and ₹{worst['monthly_leakage_inr']:,.0f}/month leakage."
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
-    # Storyboard Step 5a: Simulate Beat 4 Route & Beat 7 SKU Push
+    # Category / SKU mix queries (only when not asking for Beat rebalance simulation)
+    if (
+        any(w in q for w in ("sku", "category", "categories", "aashirvaad", "sunfeast", "savlon", "fiama", "classmate", "bingo", "yippee", "personal care", "foods", "stationery"))
+        and "lakshmi" not in q
+        and not any(w in q for w in ("simulate", "rebalance", "split"))
+    ):
+        res = agent_tools.get_sku_category_breakdown(city=detected_city or "ALL", beat_id=target_beat or "", outlet_id=target_outlet or "")
+        if res["status"] == "OK":
+            tool_calls.append({"name": "get_sku_category_breakdown", "args": {"city": detected_city or "ALL"}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
+            cats = res["categories"]
+            summary = "; ".join(f"{k.replace('_', ' ').title()}: {v['change_pct']}%" for k, v in cats.items())
+            return {"response": f"Category momentum ({res['scope']}): {summary}.", "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
+
+    # Storyboard Step 5a: Beat Rebalance Simulation
     if any(w in q for w in ("simulate", "rebalance", "fix", "recovery", "split")):
         bid = target_beat or ("BLR-B04" if (detected_city or "").lower() in ("bangalore", "") else f"{detected_city[:3].upper()}-B02")
         res = agent_tools.simulate_beat_rebalance(bid)["data"]
@@ -94,7 +122,7 @@ def _deterministic_turn(
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
-    # Storyboard Step 4: Multimodal Storefront Inspection (Lakshmi Super Mart)
+    # Storyboard Step 4: Multimodal Storefront Vision Inspection
     if target_outlet and (target_outlet == "BLR-701" or any(w in q for w in ("lakshmi", "vision", "storefront", "categories", "college", "shelf", "inspect"))):
         prof = agent_tools.get_outlet_profile(target_outlet)
         tool_calls.append({"name": "get_outlet_profile", "args": {"outlet_id": target_outlet}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
@@ -107,7 +135,7 @@ def _deterministic_turn(
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
-    # Storyboard Step 3: ML/DL Root-Cause Diagnosis on Beat 7 (or specified beat)
+    # Storyboard Step 3: Beat ML/SHAP
     if (target_beat and any(w in q for w in ("diagnostic", "ml", "shap", "gnn", "why", "drop", "root", "model", "compliance"))) or ("beat 7" in q and "beat 4" not in q):
         bid = target_beat or "BLR-B07"
         res = agent_tools.diagnose_beat_leakage(bid)["data"]
@@ -116,10 +144,9 @@ def _deterministic_turn(
         actions.append({"kind": "ui", "source_tool": "ui_control", "command": {"action": "focus_beat", "value": bid}})
         actions.append({"kind": "navigate", "screen": "beat_diagnosis", "city": res["beat"]["city"], "beat_id": bid, "source_tool": "diagnose_beat_leakage"})
         breakdown = " | ".join(f"{int(round(f['share_pct']))}% {f['label']}" for f in res["factors"])
-        msg = f"XGBoost+SHAP & Spatio-Temporal GNN breakdown for {bid} ({res['beat']['zone']}): {breakdown}."
-        return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
+        return {"response": f"XGBoost+SHAP & Spatio-Temporal GNN breakdown for {bid} ({res['beat']['zone']}): {breakdown}.", "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
-    # Storyboard Step 2: Drill-Down & Beat Reality Check (Beat 4 vs Beat 7 planned vs actual visits)
+    # Storyboard Step 2: Beat 4 vs 7 Planned vs Actual
     if any(w in q for w in ("beat 4", "beat 7", "salesman visit", "zero-billing kirana", "planned", "actual", "zoom into")):
         bid = "BLR-B04"
         res = agent_tools.diagnose_beat_leakage(bid)["data"]
@@ -134,7 +161,7 @@ def _deterministic_turn(
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
-    # Storyboard Step 1: Macro Status Check (Q3 GT Health / Bengaluru South Cluster)
+    # Storyboard Step 1: Macro Q3 GT Health
     if any(w in q for w in ("q3", "macro", "biggest drop", "general trade health", "bengaluru", "bangalore")) and not target_outlet and "compare" not in q:
         k = agent_tools.get_city_kpis("Bangalore")["data"]
         tool_calls.append({"name": "get_city_kpis", "args": {"city": "Bangalore"}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
@@ -146,30 +173,12 @@ def _deterministic_turn(
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
-    if "report" in q or "pack" in q:
-        oid = target_outlet or "BLR-701"
-        actions.append({"kind": "ui", "source_tool": "ui_control", "command": {"action": "report", "value": "open", "outlet_id": oid}})
-        return {"response": f"Prepared the printable ITC TM&D Field Action Pack for {oid}.", "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
-
     if any(w in q for w in ("compare", "cities", "hyderabad", "chennai")) and not target_outlet:
         res = agent_tools.compare_cities()["data"]
         tool_calls.append({"name": "compare_cities", "args": {}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
         actions.append({"kind": "navigate", "screen": "city_compare", "source_tool": "compare_cities"})
         summary = "; ".join(f"{c['city']}: ₹{c['monthly_leakage_inr']:,.0f}/mo ({c['critical_count']} zero-billing)" for c in res["cities"])
         return {"response": f"Cross-city ITC TM&D benchmark — {summary}.", "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
-
-    if target_outlet and any(w in q for w in ("counterfactual", "alternative")):
-        res = agent_tools.compare_outlet_interventions(target_outlet)["data"]
-        tool_calls.append({"name": "compare_outlet_interventions", "args": {"outlet_id": target_outlet}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
-        actions.append({"kind": "navigate", "screen": "outlet", "view": "compare", "outlet_id": target_outlet, "source_tool": "compare_outlet_interventions"})
-        return {"response": f"Counterfactual for {target_outlet}: '{res['recommended']['title']}' leads by ₹{res['net_advantage_inr']:,.0f}/month.", "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
-
-    if target_outlet and any(w in q for w in ("recommend", "action", "nba")):
-        res = agent_tools.recommend_outlet_intervention(target_outlet)["data"]
-        top = res["recommendations"][0]
-        tool_calls.append({"name": "recommend_outlet_intervention", "args": {"outlet_id": target_outlet}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
-        actions.append({"kind": "navigate", "screen": "outlet", "view": "recommendation", "outlet_id": target_outlet, "city": res["city"], "source_tool": "recommend_outlet_intervention"})
-        return {"response": f"Top NBA for {target_outlet}: {top['title']} ({int(top['p_recovery']*100)}% recovery confidence, +₹{top['expected_monthly_uplift_inr']:,.0f}/mo).", "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
     if target_outlet:
         diag = agent_tools.diagnose_outlet_leakage(target_outlet)
@@ -180,17 +189,26 @@ def _deterministic_turn(
             actions.append({"kind": "navigate", "screen": "outlet", "view": "diagnosis", "outlet_id": d["outlet_id"], "city": d["city"], "source_tool": "diagnose_outlet_leakage"})
             return {"response": f"SHAP Diagnosis for {d['outlet_id']} ({d['name']}): ₹{d['monthly_leakage_inr']:,.0f}/mo leakage; top driver {top_f['share_pct']}% {top_f['label']}.", "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
-    k = agent_tools.get_city_kpis(detected_city or "ALL")["data"]
-    tool_calls.append({"name": "get_city_kpis", "args": {"city": detected_city or "ALL"}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
-    actions.append({"kind": "navigate", "screen": "city_health", "city": detected_city, "source_tool": "get_priority_queue"})
-    return {
-        "response": f"{detected_city or 'Bangalore, Hyderabad & Chennai'} GT Health: {k['critical_count']} Zero-Billing outlets, ₹{k['monthly_leakage_inr']:,.0f}/month leakage, LSPC {k['avg_lspc']}/{k['target_lspc']}.",
-        "tool_calls": tool_calls,
-        "artifacts": [],
-        "actions": actions,
-        "status": "ok",
-        "engine": "deterministic-tools",
-    }
+    # Generic open-ended query fallback across live store metrics
+    cause_filter = ""
+    if "q-commerce" in q or "zepto" in q or "blinkit" in q or "quick" in q:
+        cause_filter = "qcommerce_spillover"
+    elif "credit" in q:
+        cause_filter = "credit_margin_squeeze"
+    elif "mismatch" in q or "tier" in q or "assortment" in q:
+        cause_filter = "assortment_tier_mismatch"
+    elif "stockout" in q or "out of stock" in q or "oos" in q:
+        cause_filter = "hero_sku_stockout"
+
+    res = agent_tools.query_outlets(city=detected_city or "ALL", dominant_cause=cause_filter, limit=5)
+    tool_calls.append({"name": "query_outlets", "args": {"city": detected_city or "ALL", "dominant_cause": cause_filter}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
+    top_names = ", ".join(f"{o['outlet_id']} (₹{int(o['revenue_leakage_monthly_inr']):,})" for o in res["outlets"][:3])
+    msg = (
+        f"Live query ({detected_city or 'All 3 Cities'}{f' · {cause_filter}' if cause_filter else ''}): "
+        f"{res['count']} matching outlets, ₹{res['total_monthly_leakage_inr']:,.0f}/month leakage, avg LSPC {res['avg_lspc']}. "
+        f"Top impacted: {top_names}."
+    )
+    return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
 
 async def run_turn_async(
@@ -203,11 +221,13 @@ async def run_turn_async(
     language: str = "english",
     text: str,
     screen: str | None = None,
+    api_key: str | None = None,
 ) -> dict[str, Any]:
     sid = session_id or f"bp-{uuid.uuid4().hex[:8]}"
     lang = (language or settings.DEFAULT_LANGUAGE).lower()
+    runtime_key = (api_key or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
 
-    if settings.AGENT_LLM != "vertex":
+    if settings.AGENT_LLM != "vertex" and not runtime_key:
         res = _deterministic_turn(text, city, outlet_id, lang)
         return {"session_id": sid, "language": lang, "persona": persona, **res}
 
@@ -215,42 +235,32 @@ async def run_turn_async(
         from google import genai
         from google.genai import types
 
-        api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-        client = (
-            genai.Client(api_key=api_key)
-            if api_key
-            else genai.Client(vertexai=True, project=settings.PROJECT_ID, location=settings.TEXT_LOCATION)
-        )
+        if runtime_key:
+            client = genai.Client(api_key=runtime_key)
+            model_name = os.getenv("BEATPULSE_AI_STUDIO_TEXT_MODEL", "gemini-2.5-flash")
+        else:
+            client = genai.Client(vertexai=True, project=settings.PROJECT_ID, location=settings.TEXT_LOCATION)
+            model_name = settings.TEXT_MODEL
 
-        tool_fns = [
-            agent_tools.get_city_kpis,
-            agent_tools.compare_cities,
-            agent_tools.get_priority_queue,
-            agent_tools.get_outlet_profile,
-            agent_tools.diagnose_outlet_leakage,
-            agent_tools.diagnose_beat_leakage,
-            agent_tools.recommend_outlet_intervention,
-            agent_tools.compare_outlet_interventions,
-            agent_tools.simulate_beat_rebalance,
-            agent_tools.dispatch_asm_action,
-            agent_tools.ui_control,
-        ]
-        fn_map = {fn.__name__: fn for fn in tool_fns}
+        tool_fns = agent_tools.ALL_TOOLS
+        fn_map = agent_tools.TOOL_REGISTRY
         sys_prompt = (
-            "You are Sahayak AI, ITC Limited TM&D General Trade Copilot across Bangalore, Hyderabad, and Chennai. "
-            "Always ground numbers in a tool call in this turn. Focus map and screens with ui_control / diagnostic tools. "
+            "You are Sahayak AI, the real-time executive copilot for ITC Limited TM&D across Bangalore, Hyderabad, and Chennai. "
+            "The audience may ask ANY open-ended question about cities, beats, WDs, SKUs/categories, outlets, ML/SHAP drivers, GNN spillover, storefront vision, or simulations. "
+            "Always call the appropriate tools in real time to compute exact numbers — never guess numbers. "
+            "Also call ui_control or analytical tools so the map and Answer Canvas update automatically on screen. "
             f"Context: persona={persona}, city={city or 'ALL'}, outlet_id={outlet_id or 'none'}, screen={screen or 'map'}. "
             + _language_instruction(lang)
         )
         contents: list[Any] = [types.Content(role="user", parts=[types.Part.from_text(text=text)])]
-        config = types.GenerateContentConfig(system_instruction=sys_prompt, tools=tool_fns, temperature=0.2)
+        config = types.GenerateContentConfig(system_instruction=sys_prompt, tools=tool_fns, temperature=0.25)
 
         recorded_tools: list[dict[str, Any]] = []
         recorded_actions: list[dict[str, Any]] = []
         reply_text = ""
 
-        for _ in range(4):
-            resp = await asyncio.to_thread(client.models.generate_content, model=settings.TEXT_MODEL, contents=contents, config=config)
+        for _ in range(5):
+            resp = await asyncio.to_thread(client.models.generate_content, model=model_name, contents=contents, config=config)
             cand = resp.candidates[0] if resp.candidates else None
             if not cand or not cand.content:
                 break
@@ -275,10 +285,20 @@ async def run_turn_async(
             contents.append(types.Content(role="user", parts=fn_responses))
 
         if reply_text:
-            return {"session_id": sid, "response": reply_text, "tool_calls": recorded_tools, "artifacts": [], "actions": recorded_actions, "status": "ok", "engine": f"vertex:{settings.TEXT_MODEL}", "language": lang, "persona": persona}
+            return {
+                "session_id": sid,
+                "response": reply_text,
+                "tool_calls": recorded_tools,
+                "artifacts": [],
+                "actions": recorded_actions,
+                "status": "ok",
+                "engine": f"live:{model_name}",
+                "language": lang,
+                "persona": persona,
+            }
     except Exception as e:  # noqa: BLE001
-        logger.warning("Vertex chat unavailable (%s: %s) — falling back cleanly", type(e).__name__, e)
+        logger.warning("Live Gemini LLM unavailable (%s: %s) — falling back to local tool engine", type(e).__name__, e)
 
     fallback = _deterministic_turn(text, city, outlet_id, lang)
-    fallback["status"] = "degraded" if settings.AGENT_LLM == "vertex" else "ok"
+    fallback["status"] = "degraded"
     return {"session_id": sid, "language": lang, "persona": persona, **fallback}

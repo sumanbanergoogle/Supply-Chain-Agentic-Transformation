@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   Bot,
+  KeyRound,
   Mic,
   MicOff,
   Play,
@@ -98,6 +99,9 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
   const [isMuted, setIsMuted] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [legacySpeaking, setLegacySpeaking] = useState(false);
+  const [showKeyBox, setShowKeyBox] = useState(false);
+  const [apiKeyDraft, setApiKeyDraft] = useState('');
+  const [activeApiKey, setActiveApiKey] = useState('');
 
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
@@ -381,13 +385,16 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
 
     setIsProcessing(true);
     try {
-      const res = await tmdApi.chat({
-        message: textToSend,
-        language,
-        city: city ?? null,
-        outlet_id: outlet?.outlet_id ?? null,
-        screen: screen ?? null,
-      });
+      const res = await tmdApi.chat(
+        {
+          message: textToSend,
+          language,
+          city: city ?? null,
+          outlet_id: outlet?.outlet_id ?? null,
+          screen: screen ?? null,
+        },
+        activeApiKey || undefined,
+      );
       const uiChips: string[] = [];
       for (const a of (res.actions || []) as ChatAction[]) {
         if (a.kind === 'ui' && a.command) {
@@ -586,14 +593,29 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
               <Radio className={`w-3.5 h-3.5 ${st.pulse ? 'animate-pulse' : ''}`} />
               <span>{st.label}</span>
             </button>
-            {isLiveMode && liveStatus === 'fallback' && (
-              <button
-                type="button"
-                onClick={() => client.retry()}
-                className="text-[10px] font-mono text-accent hover:text-white px-1"
-              >
-                Retry
-              </button>
+            {isLiveMode && (liveStatus === 'fallback' || liveStatus === 'disconnected') && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => client.retry()}
+                  className="text-[10px] font-mono text-accent hover:text-white px-1"
+                >
+                  Retry
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowKeyBox((v) => !v)}
+                  title="Connect real-time Gemini Live API key (when Vertex ADC is expired)"
+                  className={`flex items-center gap-1 text-[10px] font-mono px-1.5 py-0.5 rounded border ${
+                    activeApiKey
+                      ? 'border-emerald-600/60 text-emerald-300 bg-emerald-950/40'
+                      : 'border-amber-600/60 text-amber-300 bg-amber-950/40 hover:text-white'
+                  }`}
+                >
+                  <KeyRound className="w-3 h-3" />
+                  <span>{activeApiKey ? 'Key Set' : 'Live Key'}</span>
+                </button>
+              </>
             )}
             <button
               type="button"
@@ -609,6 +631,37 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
             {headerActions}
           </div>
         </div>
+
+        {showKeyBox && (
+          <div className="mt-2 p-2 rounded-lg bg-[#0d1117] border border-border space-y-1.5 text-[11px] font-sans">
+            <div className="text-textMuted">
+              Vertex ADC is expired on this Cloudtop. Paste a session-only Gemini API key (memory only) or run{' '}
+              <code className="text-amber-300">gcloud auth application-default login</code> and click Retry:
+            </div>
+            <div className="flex items-center gap-1.5">
+              <input
+                type="password"
+                value={apiKeyDraft}
+                onChange={(e) => setApiKeyDraft(e.target.value)}
+                placeholder="AIza..."
+                className="flex-1 bg-surface border border-border rounded px-2 py-1 text-xs font-mono text-white focus:outline-none focus:border-accent"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  const k = apiKeyDraft.trim();
+                  setActiveApiKey(k);
+                  client.setSessionApiKey(k);
+                  setShowKeyBox(false);
+                  if (k) client.retry();
+                }}
+                className="px-2.5 py-1 rounded bg-emerald-500 text-[#0d1117] font-bold text-xs hover:bg-emerald-400"
+              >
+                Connect
+              </button>
+            </div>
+          </div>
+        )}
 
         <div className="mt-1.5 flex items-center justify-between gap-2 text-[10px] font-mono">
           <div className="flex items-center gap-1 min-w-0 text-textMuted">

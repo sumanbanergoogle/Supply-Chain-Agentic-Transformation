@@ -49,14 +49,17 @@ export const tmdApi = {
         body: JSON.stringify({ note }),
       },
     ),
-  chat: (payload: {
-    message: string;
-    session_id?: string;
-    language?: string;
-    city?: string | null;
-    outlet_id?: string | null;
-    screen?: string | null;
-  }) =>
+  chat: (
+    payload: {
+      message: string;
+      session_id?: string;
+      language?: string;
+      city?: string | null;
+      outlet_id?: string | null;
+      screen?: string | null;
+    },
+    apiKey?: string,
+  ) =>
     getJson<{
       session_id: string;
       response: string;
@@ -66,7 +69,10 @@ export const tmdApi = {
       engine: string;
     }>('/api/chat', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(apiKey ? { 'X-Gemini-Api-Key': apiKey } : {}),
+      },
       body: JSON.stringify(payload),
     }),
 };

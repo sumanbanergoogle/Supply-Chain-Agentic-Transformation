@@ -88,6 +88,21 @@ def _dispatch_asm_action(beat_id: str, note: str = "") -> dict[str, Any]:
     return agent_tools.dispatch_asm_action(beat_id=beat_id, note=note)
 
 
+@register_voice_tool(name="query_outlets", action_kind="outlet_query", description="Filter outlets dynamically across Bangalore, Hyderabad, and Chennai by city, beat_id, health_status, dominant_cause, or tier.")
+def _query_outlets(city: str = "ALL", beat_id: str = "", health_status: str = "", dominant_cause: str = "", tier: str = "", limit: int = 10) -> dict[str, Any]:
+    return agent_tools.query_outlets(city=city, beat_id=beat_id, health_status=health_status, dominant_cause=dominant_cause, tier=tier, limit=limit)
+
+
+@register_voice_tool(name="get_sku_category_breakdown", action_kind="category_breakdown", description="Analyze ITC Foods, Personal Care, Stationery, and Agarbatti sales and trend by city, beat, or outlet.")
+def _get_sku_category_breakdown(city: str = "ALL", beat_id: str = "", outlet_id: str = "") -> dict[str, Any]:
+    return agent_tools.get_sku_category_breakdown(city=city, beat_id=beat_id, outlet_id=outlet_id)
+
+
+@register_voice_tool(name="get_distributor_performance", action_kind="wd_performance", description="Inspect Wholesale Distributor fill rates, zero-billing exposure, and leakage by city.")
+def _get_distributor_performance(city: str = "ALL") -> dict[str, Any]:
+    return agent_tools.get_distributor_performance(city=city)
+
+
 @register_voice_tool(name="ui_control", action_kind="ui_control", description="Control dashboard: focus_city, focus_beat, focus_outlet, open_outlet, open_screen, health_filter, basemap, flowlines, fullscreen, panel, report.")
 def _ui_control(action: str, value: str = "", outlet_id: str = "", view: str = "") -> dict[str, Any]:
     return agent_tools.ui_control(action=action, value=value, outlet_id=outlet_id, view=view)

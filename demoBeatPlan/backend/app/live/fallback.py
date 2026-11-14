@@ -1,4 +1,4 @@
-"""Fallback text responder when Gemini Live Vertex stream is unavailable."""
+"""Fallback text responder when Gemini Live stream is unavailable."""
 from __future__ import annotations
 
 import logging
@@ -9,7 +9,11 @@ from app.agent.runner import run_turn_async
 logger = logging.getLogger("beatpulse.live.fallback")
 
 
-async def answer_text_async(text: str, ui: dict[str, Any] | None = None) -> dict[str, Any]:
+async def answer_text_async(
+    text: str,
+    ui: dict[str, Any] | None = None,
+    api_key: str | None = None,
+) -> dict[str, Any]:
     ui = ui or {}
     try:
         res = await run_turn_async(
@@ -21,6 +25,7 @@ async def answer_text_async(text: str, ui: dict[str, Any] | None = None) -> dict
             language=ui.get("language") or "english",
             text=text,
             screen=ui.get("screen"),
+            api_key=api_key,
         )
         return {
             "text": res.get("response", ""),

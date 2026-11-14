@@ -77,6 +77,9 @@ def test_rest_endpoints():
     assert client.get("/api/beats/BLR-B07/diagnose").status_code == 200
     assert client.post("/api/beats/BLR-B04/simulate").status_code == 200
     assert client.get("/api/outlets/BLR-701/report").status_code == 200
+    assert len(client.get("/api/tools/declarations").json()["declarations"]) >= 12
+    assert client.post("/api/tools/execute", json={"name": "get_distributor_performance", "args": {"city": "Hyderabad"}}).status_code == 200
+    assert client.post("/api/tools/execute", json={"name": "get_sku_category_breakdown", "args": {"city": "Chennai"}}).status_code == 200
 
 
 def test_ui_control_validation():

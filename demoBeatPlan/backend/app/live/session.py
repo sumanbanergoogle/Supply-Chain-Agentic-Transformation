@@ -28,9 +28,12 @@ _CLOSED = object()
 ConnectFactory = Callable[[str, Any], Any]
 
 
-def live_settings() -> dict[str, Any]:
+def live_settings(api_key: str | None = None) -> dict[str, Any]:
+    key = (api_key or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
+    default_model = os.getenv("BEATPULSE_AI_STUDIO_LIVE_MODEL", "gemini-2.5-flash-native-audio-preview-12-2025") if key else os.getenv("BEATPULSE_LIVE_MODEL", DEFAULT_LIVE_MODEL)
     return {
-        "model": os.getenv("BEATPULSE_LIVE_MODEL", DEFAULT_LIVE_MODEL),
+        "api_key": key or None,
+        "model": default_model,
         "location": os.getenv("BEATPULSE_LIVE_LOCATION", DEFAULT_LIVE_LOCATION),
         "project": os.getenv("BEATPULSE_LIVE_PROJECT") or settings.PROJECT_ID,
         "voice": os.getenv("BEATPULSE_LIVE_VOICE", "Aoede"),
@@ -100,7 +103,7 @@ def build_live_config(types: Any, system_prompt: str, tools: list[Any], handle: 
 def _default_connect_factory(cfg: dict[str, Any]) -> ConnectFactory:
     from google import genai
 
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    api_key = cfg.get("api_key") or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
     client = genai.Client(api_key=api_key) if api_key else genai.Client(vertexai=True, project=cfg["project"], location=cfg["location"])
 
     def factory(model: str, config: Any) -> Any:
@@ -158,9 +161,10 @@ async def _run_tool(ws: WebSocket, name: str, args: dict[str, Any], timeout_s: f
 
 async def handle_live_websocket(websocket: WebSocket, connect_factory: ConnectFactory | None = None) -> None:
     await websocket.accept()
-    cfg = live_settings()
+    api_key = websocket.query_params.get("api_key")
+    cfg = live_settings(api_key=api_key)
     inbound: asyncio.Queue = asyncio.Queue()
-    state: dict[str, Any] = {"handle": None, "resumable": False, "ui": initial_ui_from_query(websocket)}
+    state: dict[str, Any] = {"handle": None, "resumable": False, "ui": initial_ui_from_query(websocket), "api_key": api_key}
 
     async def browser_reader() -> None:
         try:
@@ -415,7 +419,7 @@ async def run_fallback_session(websocket: WebSocket, inbound: asyncio.Queue, sta
             continue
         text = str(data.get("text", ""))
         await _send(websocket, {"type": "voice_state", "state": "thinking"})
-        reply = await fallback.answer_text_async(text, dict(state["ui"]))
+        reply = await fallback.answer_text_async(text, dict(state["ui"]), api_key=state.get("api_key"))
         for tc in reply.get("tool_calls", []):
             await _send(websocket, {"type": "tool_call", "name": tc["name"], "status": "done", "duration_ms": tc.get("duration_ms")})
         await _send(
