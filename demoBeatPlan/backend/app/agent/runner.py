@@ -34,7 +34,7 @@ def _language_instruction(lang: str) -> str:
         return "Reply naturally and concisely in crisp executive Hinglish."
     if lang == "hindi":
         return "Reply concisely in clear Hindi (Devanagari) keeping ITC SKU names and IDs intact."
-    return "Reply concisely in sharp, executive English (2-4 crisp sentences citing exact INR, LSPC, and tool numbers)."
+    return "Respond strictly in 100% standard English ONLY. NEVER use any Hindi or Hinglish words. Keep it crisp (2-4 sentences citing exact INR, LSPC, and tool numbers)."
 
 
 def _deterministic_turn(

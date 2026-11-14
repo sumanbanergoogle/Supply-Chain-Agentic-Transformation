@@ -140,10 +140,18 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
     if (mutedRef.current || typeof window === 'undefined' || !('speechSynthesis' in window) || !text.trim()) return;
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = language === 'hindi' ? 'hi-IN' : 'en-IN';
     const voices = window.speechSynthesis.getVoices();
-    const v = voices.find((x) => x.lang === 'en-IN' || x.lang === 'hi-IN');
-    if (v) u.voice = v;
+    if (language === 'hindi') {
+      u.lang = 'hi-IN';
+      const v = voices.find((x) => x.lang === 'hi-IN' || x.lang === 'hi_IN');
+      if (v) u.voice = v;
+    } else {
+      u.lang = 'en-IN';
+      const v =
+        voices.find((x) => x.lang === 'en-IN' || x.lang === 'en_IN') ||
+        voices.find((x) => x.lang.startsWith('en'));
+      if (v) u.voice = v;
+    }
     u.onstart = () => setLegacySpeaking(true);
     u.onend = () => setLegacySpeaking(false);
     u.onerror = () => setLegacySpeaking(false);
@@ -670,7 +678,14 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
           </div>
           <select
             value={language}
-            onChange={(e) => setLanguage(e.target.value as LiveLanguage)}
+            onChange={(e) => {
+              const nextLang = e.target.value as LiveLanguage;
+              setLanguage(nextLang);
+              if (isLiveMode) {
+                client.setContext({ language: nextLang });
+                client.retry();
+              }
+            }}
             aria-label="Agent language"
             className="bg-[#0d1117] border border-border rounded px-1 py-0.5 text-[10px] text-textMain focus:outline-none focus:border-accent"
           >

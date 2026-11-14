@@ -73,6 +73,8 @@ export class LiveClient {
   private openMic = false;
   private sessionApiKey = '';
   private directMode = false;
+  private reconnectAttempts = 0;
+  private reconnectTimer: number | null = null;
 
   constructor(handlers?: LiveHandlers) {
     if (handlers) this.handlers = handlers;
@@ -124,6 +126,11 @@ export class LiveClient {
 
     sock.onopen = () => {
       if (this.ws !== sock) return;
+      this.reconnectAttempts = 0;
+      if (this.reconnectTimer !== null) {
+        clearTimeout(this.reconnectTimer);
+        this.reconnectTimer = null;
+      }
       this.setContext({});
     };
 
@@ -166,6 +173,14 @@ export class LiveClient {
       if (!this.explicitDisconnect && this.status !== 'fallback') {
         if (this.sessionApiKey) {
           this.connectDirectAiStudio(this.sessionApiKey);
+        } else if (this.reconnectAttempts < 3) {
+          this.reconnectAttempts += 1;
+          const delayMs = this.reconnectAttempts * 1500;
+          this.setStatus('reconnecting', { message: `Reconnecting (${this.reconnectAttempts}/3)...` });
+          this.reconnectTimer = window.setTimeout(() => {
+            this.reconnectTimer = null;
+            if (!this.explicitDisconnect) this.connect(this.ctx);
+          }, delayMs);
         } else {
           this.setStatus('disconnected');
         }
@@ -187,7 +202,7 @@ export class LiveClient {
   private async connectDirectAiStudio(apiKey: string): Promise<void> {
     this.explicitDisconnect = false;
     this.directMode = true;
-    this.setStatus('connecting', { model: 'gemini-3.8-live' });
+    this.setStatus('connecting', { model: 'gemini-3.1-flash-live-preview' });
 
     let decls: any[] = [];
     try {
@@ -210,7 +225,7 @@ export class LiveClient {
       sock.send(
         JSON.stringify({
           setup: {
-            model: 'models/gemini-3.8-live',
+            model: 'models/gemini-3.1-flash-live-preview',
             generationConfig: {
               responseModalities: ['AUDIO'],
               speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Aoede' } } },
@@ -324,6 +339,10 @@ export class LiveClient {
 
   public disconnect(): void {
     this.explicitDisconnect = true;
+    if (this.reconnectTimer !== null) {
+      clearTimeout(this.reconnectTimer);
+      this.reconnectTimer = null;
+    }
     micCapture.stop();
     audioPlayer.interrupt();
     this.ws?.close();

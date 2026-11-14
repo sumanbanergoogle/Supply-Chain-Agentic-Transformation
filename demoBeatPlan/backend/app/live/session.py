@@ -17,7 +17,7 @@ from app.live import fallback, voice_tools
 
 logger = logging.getLogger("beatpulse.live.session")
 
-DEFAULT_LIVE_MODEL = "gemini-3.8-live"
+DEFAULT_LIVE_MODEL = "gemini-3.1-flash-live-preview"
 DEFAULT_LIVE_LOCATION = "us-central1"
 MAX_CONSECUTIVE_FAILURES = 1
 LANGUAGES = ("english", "hinglish", "hindi")
@@ -298,7 +298,12 @@ async def _run_bidi_stream(
             if mtype == "context":
                 line = _context_line(state["ui"])
                 if line:
-                    suffix = f"\nLANGUAGE: {language_block(norm_language(state['ui'].get('language')))}" if lang_changed else ""
+                    lang_now = norm_language(state["ui"].get("language"))
+                    suffix = (
+                        f"\n[STRICT LANGUAGE SWITCH: From now on respond ONLY in {lang_now}.]\n{language_block(lang_now)}"
+                        if lang_changed
+                        else ""
+                    )
                     await session.send_client_content(
                         turns=[types.Content(role="user", parts=[types.Part.from_text(text=f"{line}{suffix}")])],
                         turn_complete=False,
