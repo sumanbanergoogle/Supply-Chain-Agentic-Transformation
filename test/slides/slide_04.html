@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" class="theme-light">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>04 · From One Agent to an Agentic Organisation — CPG Supply Chain</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · From One Agent to an Agentic Organisation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css">
-<script src="../assets/deck_nav.js?v=5"></script>
-<style>.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px;}@media(max-width:960px){.grid-3{grid-template-columns:1fr;}}</style>
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/build.css">
+<link rel="stylesheet" href="../assets/deck_nav.css">
+<script src="../assets/deck_nav.js?v=7"></script>
+<style>
+  .om-c { max-width: 1040px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .om-c h1 { font-size: clamp(34px, 3.6vw, 54px); margin: 12px 0 14px; font-weight: 600; line-height: 1.12; letter-spacing: -0.8px; color: var(--text); }
+  .om-c h1 span { color: var(--blue-ink); }
+  .om-c .bx-sub { font-size: 18px; line-height: 1.55; max-width: 820px; margin: 0 auto 28px; color: var(--text-muted); }
+  .om-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--g-blue); color: #FFF; font: 600 15px var(--font-display); padding: 12px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-md); transition: filter .15s, transform .15s; }
+  .om-btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+</style>
 </head>
 <body>
+
 <header class="mast">
-  <a href="../index.html" style="display:flex;align-items:center;gap:12px;"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">04 · Agentic Organisation</span></a>
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+    <span class="mast-rule"></span>
+    <span class="mast-tag">04 · One Agent to Many</span>
+  </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
+  <div class="mast-nav" id="mastSlideNav">
+    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+    <a class="btn-ghost" href="slide_03.html">← Prev Slide</a>
+    <span class="btn-ghost" style="font-family:var(--font-mono);font-weight:700;color:var(--blue-ink);">04 / 10</span>
+    <a class="btn-cta" href="../pages/persona_map.html">Next Slide →</a>
+    <a class="btn-ghost" href="../index.html">Briefing Map ↗</a>
+  </div>
 </header>
-<main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 04 · From One Agent to an Agentic Organisation</div>
-  <h1 class="page-h1">From One Workflow to a 6-Pillar Agentic CPG Network</h1>
-  <p class="page-lede">A single agent solves one bottleneck. True transformation happens when <b>60 specialized agents coordinate across all 6 CPG Supply Chain pillars</b>—from Demand Sensing to Reverse Circularity.</p>
 
-  <div class="kpi-strip">
-    <div class="kpi-box"><b>6 Pillars</b><span>Connected from Demand Signal to Reverse Recovery</span></div>
-    <div class="kpi-box"><b>20 Lifecycles</b><span>Cross-functional handoffs automated via Agent2Agent</span></div>
-    <div class="kpi-box"><b>60 Roles</b><span>Every supply chain persona augmented, never bypassed</span></div>
+<main class="bx om" style="display:flex; align-items:center; justify-content:center; min-height: calc(100vh - 120px); padding: 40px max(24px, 4vw);">
+  <div class="om-c">
+    <h1>What you saw was <span>'One'</span> example of an agentic workflow.</h1>
+    <p class="bx-sub">In an agentic organisation, many such agents work across mission-critical CPG supply chain operations — each on a high-value workflow, with people in charge.</p>
+    <a class="om-btn" href="../pages/persona_map.html">Meet the agentic workforce <span>→</span></a>
   </div>
-
-  <div class="grid-3">
-    <div class="card card-top-accent p-blue">
-      <span class="badge-pill">Signal Cascade · Example 1</span>
-      <h3 style="margin:10px 0 6px;font:600 18px var(--font-display);">Demand Surge → Plant → Primary FTL</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;"><b>Demand Sensing Agent</b> spots a +22% festive POS spike → <b>Changeover Optimizer</b> sequences extra plant runs → <b>Load Consolidation Agent</b> books multi-SKU FTLs to CFAs.</p>
-    </div>
-    <div class="card card-top-accent p-amber">
-      <span class="badge-pill">Signal Cascade · Example 2</span>
-      <h3 style="margin:10px 0 6px;font:600 18px var(--font-display);">Supply Crunch → CFA → Q-Comm OTIF</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;"><b>Disruption Sensing Agent</b> flags raw material delay → <b>Fair-Share Allocation Agent</b> protects Tier-1 Q-Comm POs → <b>MT/Q-Comm Slot Copilot</b> reschedules dock windows.</p>
-    </div>
-    <div class="card card-top-accent p-red">
-      <span class="badge-pill">Signal Cascade · Example 3</span>
-      <h3 style="margin:10px 0 6px;font:600 18px var(--font-display);">Short-Dated Stock → ESL → Circularity</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;"><b>SLOB Disposition Agent</b> flags 60% shelf-life lots → <b>Dynamic Markdown Agent</b> triggers automated price cuts → <b>RTI Reconciler</b> schedules return crate backhauls.</p>
-    </div>
-  </div>
-
-  <footer class="deck-footer"><span>Slide 04 · From One Agent to an Agentic Organisation</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
 </main>
-<script>initDeckChrome({ root: '../' });</script>
-</body></html>
+
+<script>
+  initDeckChrome({ root: '../', prev: 'slide_03.html', next: '../pages/persona_map.html' });
+</script>
+</body>
+</html>
