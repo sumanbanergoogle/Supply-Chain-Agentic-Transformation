@@ -2,48 +2,105 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>01 · Capital &amp; Margin Reality — ITC TM&amp;D &amp; Supply Chain</title>
+<title>01 · Agentic Transformation in India's Supply Chain</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css">
-<script src="../assets/deck_nav.js?v=3"></script>
-<style>.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px;}@media(max-width:960px){.grid-3{grid-template-columns:1fr;}}</style>
+<script src="../assets/deck_nav.js?v=4"></script>
+<style>
+  .cockpit { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); margin: 24px 0; position: relative; overflow: hidden; }
+  .cockpit::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
+  .prompt-bar { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); font: 500 14.5px var(--font-display); }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .q-pill { font: 500 12.5px var(--font-display); padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text); cursor: pointer; }
+  .q-pill.active { background: var(--g-blue); color: #FFF; border-color: var(--g-blue); }
+  .drawer { margin-top: 16px; padding: 16px 18px; border-radius: 14px; background: color-mix(in srgb, var(--g-blue) 7%, var(--surface)); border: 1px solid color-mix(in srgb, var(--g-blue) 30%, transparent); }
+  .meta-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+  @media(max-width:900px){ .meta-3{ grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 <header class="mast">
-  <a href="../index.html" style="display:flex;align-items:center;gap:12px;"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">01 · Capital &amp; Margin Reality</span></a>
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
+    <span class="mast-tag">01 · India's Supply Chain</span>
+  </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
+  <div class="mast-nav" id="mastSlideNav">
+    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+  </div>
 </header>
+
 <main class="page-wrap">
-  <div class="page-kick"><i></i>Stage 01 · The Commercial Stakes at ITC TM&amp;D</div>
-  <h1 class="page-h1">Massive Physical Scale Meets Micro-Margin Volatility</h1>
-  <p class="page-lede">ITC’s multi-category FMCG portfolio—Foods (Aashirvaad, Sunfeast, Bingo!, YiPPee!), Personal Care, Stationery, and Tobacco—moves across millions of kiranas, WDs, and Q-Commerce dark stores. Even a <b>1% improvement in fill rate or trade spend efficiency</b> unlocks massive EBITDA.</p>
+  <div class="page-kick"><i></i>Slide 01 · Agentic Transformation in India's Supply Chain</div>
+  <h1 class="page-h1">Agentic Transformation in India's CPG Supply Chain</h1>
+  <p class="page-lede">India’s consumer goods networks span <b>12M+ kirana outlets, thousands of distributors, regional CFAs, Modern Trade, and 10-minute Quick Commerce</b>. Gemini Enterprise layers <b>low-code AI agents</b> directly over SAP, DMS, WMS, and TMS—turning fragmented alerts into autonomous, margin-optimal execution.</p>
 
-  <div class="kpi-strip">
-    <div class="kpi-box"><b>7M+</b><span>Retail outlets served across GT, MT, Q-Comm &amp; Rural</span></div>
-    <div class="kpi-box"><b>15–20%</b><span>Retail Out-of-Stock (OOS) recoverable via predictive replenishment</span></div>
-    <div class="kpi-box"><b>90 mins/day</b><span>Saved per ASM/TSI by eliminating manual MIS slicing</span></div>
-  </div>
-
-  <div class="grid-3">
-    <div class="card card-top-accent p-blue">
-      <span class="badge-pill">Revenue Leakage</span>
-      <h3 style="margin:10px 0 8px;font:600 18px var(--font-display);">Missed Lines &amp; Kirana OOS</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;">DSRs carry 60+ SKUs but default to booking only top-3 fast movers. Without store-level cross-sell prompts, high-margin NPD &amp; focus SKUs miss shelf placement.</p>
+  <div class="cockpit">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <span class="badge-pill badge-solid">✦ Interactive Gemini Enterprise Supply Chain Cockpit</span>
+      <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="cockpitLat">LATENCY: 380ms · GROUNDED ON SAP + DMS + BIGQUERY</span>
     </div>
-    <div class="card card-top-accent p-amber">
-      <span class="badge-pill">Working Capital Trap</span>
-      <h3 style="margin:10px 0 8px;font:600 18px var(--font-display);">CFA &amp; WD Inventory Imbalance</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;">One region faces SLOB &amp; expiry write-offs while a neighboring CFA rations stock—driven by disconnected primary-to-secondary visibility.</p>
+    <div class="prompt-bar">
+      <span style="color:var(--blue-ink);font-size:18px;">✦</span>
+      <span id="cockpitPrompt">"Detect regional POS demand surge, rebalance CFA fair-share stock, and reroute delayed MT/Q-Comm deliveries..."</span>
     </div>
-    <div class="card card-top-accent p-red">
-      <span class="badge-pill">Commercial Erosion</span>
-      <h3 style="margin:10px 0 8px;font:600 18px var(--font-display);">Trade Spend &amp; Freight Leakage</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;">Delayed claim audits, unverified window displays, MT OTIF penalties, and carrier detention surcharges silently erode net realization.</p>
+    <div class="pill-row">
+      <button class="q-pill active" onclick="setCockpit('demand', this)">Demand Sensing &amp; S&amp;OP</button>
+      <button class="q-pill" onclick="setCockpit('cfa', this)">CFA Fair-Share Allocation</button>
+      <button class="q-pill" onclick="setCockpit('rtm', this)">Distributor &amp; Beat Copilot</button>
+      <button class="q-pill" onclick="setCockpit('fleet', this)">MT/Q-Comm Slot &amp; Rerouter</button>
+    </div>
+    <div class="drawer" id="cockpitOut">
+      <div style="font:600 12px var(--font-mono);color:var(--blue-ink);margin-bottom:6px;" id="cockpitTag">DEMAND SENSING &amp; WAR-ROOM AGENT // LOW-CODE AGENT STUDIO</div>
+      <div style="font-size:14px;line-height:1.55;" id="cockpitBody">Synthesized POS velocity, monsoon weather shifts, and festive calendars—detecting a <b>+22% regional demand inflection 9 days earlier</b> than statistical baselines and recommending co-packer shift allocation.</div>
     </div>
   </div>
 
-  <footer class="deck-footer"><span>Slide 01 · Capital &amp; Margin Reality</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+  <div class="meta-3">
+    <div class="card"><div style="font:600 11px var(--font-mono);color:var(--blue-ink);">6 OPERATING PILLARS</div><div style="font:600 15px var(--font-display);margin-top:6px;">Planning · Procurement · Mfg · Warehousing · Distribution · Reverse</div></div>
+    <div class="card"><div style="font:600 11px var(--font-mono);color:var(--green-ink);">LOW-CODE / NO-CODE</div><div style="font:600 15px var(--font-display);margin-top:6px;">Gemini Gems · Agent Studio · Multimodal Vision · Vernacular Voice</div></div>
+    <div class="card"><div style="font:600 11px var(--font-mono);color:var(--purple-ink);">NON-INVASIVE OVERLAY</div><div style="font:600 15px var(--font-display);margin-top:6px;">SAP S/4HANA · DMS / SFA · BigQuery · Google Maps Platform</div></div>
+  </div>
+
+  <footer class="deck-footer"><span>Slide 01 · Agentic Transformation in India's Supply Chain</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
 </main>
-<script>initDeckChrome({ root: '../' });</script>
+
+<script>
+  initDeckChrome({ root: '../' });
+  var COCKPIT = {
+    demand: {
+      prompt: '"Detect regional POS demand surge, rebalance CFA fair-share stock, and reroute delayed MT/Q-Comm deliveries..."',
+      tag: 'DEMAND SENSING & WAR-ROOM AGENT // LOW-CODE AGENT STUDIO',
+      lat: 'LATENCY: 380ms · GROUNDED ON SAP + DMS + BIGQUERY',
+      body: 'Synthesized POS velocity, monsoon weather shifts, and festive calendars—detecting a <b>+22% regional demand inflection 9 days earlier</b> than statistical baselines and recommending co-packer shift allocation.'
+    },
+    cfa: {
+      prompt: '"CFA West shows 28% stock shortfall on core snack SKUs against 38 WD indents. Run fair-share split..."',
+      tag: 'CS&L FAIR-SHARE ALLOCATION AGENT // LOW-CODE AGENT STUDIO',
+      lat: 'LATENCY: 440ms · CFA ATP + 30-DAY WD VELOCITY',
+      body: 'Protected 100% of Tier-1 Q-Commerce &amp; Modern Trade POs and allocated remaining stock proportionally across 38 Wholesale Dealers by 30-day secondary velocity. Auto-sent WhatsApp ETA updates.'
+    },
+    rtm: {
+      prompt: '"Generate 08:15 AM Territory Morning Pulse: flag lagging beats, WD stock-outs, and priority SKUs..."',
+      tag: 'TERRITORY RTM PULSE AGENT // NO-CODE GEMINI GEM',
+      lat: 'LATENCY: 290ms · DMS SECONDARY SALES + BEAT LOGS',
+      body: 'Analyzed overnight DMS sync across 18 distributors. Flagged staple SKU stock-outs at 3 key WDs, identified 2 lagging rural beats, and pushed vernacular focus-SKU cards to field vans.'
+    },
+    fleet: {
+      prompt: '"NH-48 highway closure detected. Reroute 4 Modern Trade &amp; Q-Comm trucks and reschedule dock slots..."',
+      tag: 'MT/Q-COMM SLOT & DYNAMIC REROUTER // MAPS + AGENT STUDIO',
+      lat: 'LATENCY: 310ms · GOOGLE MAPS API + RETAILER EDI',
+      body: 'Re-sequenced 4 trucks avoiding municipal no-entry curfews (saved 8.5% fuel) and proactively secured revised 4:30 PM dark-store dock slots—avoiding OTIF penalties.'
+    }
+  };
+  window.setCockpit = function (k, btn) {
+    document.querySelectorAll('.q-pill').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var d = COCKPIT[k];
+    document.getElementById('cockpitPrompt').textContent = d.prompt;
+    document.getElementById('cockpitTag').textContent = d.tag;
+    document.getElementById('cockpitLat').textContent = d.lat;
+    document.getElementById('cockpitBody').innerHTML = d.body;
+  };
+</script>
 </body></html>

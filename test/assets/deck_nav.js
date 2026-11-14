@@ -1,4 +1,4 @@
-/* Theme initialization + Top Masthead Slide Nav + Floating Presentation HUD */
+/* Theme initialization + Top Masthead Slide Nav + Floating Presentation HUD (10-Slide CPG Sequence) */
 (function () {
   try {
     if ((localStorage.getItem('deck-theme') || 'light') === 'dark') {
@@ -9,22 +9,16 @@
 })();
 
 window.SC_SLIDE_DECK = [
-  { num: "00", title: "Executive Overview (ITC TM&D)", path: "slides/slide_00.html" },
-  { num: "01", title: "Capital & Margin Reality", path: "slides/slide_01.html" },
-  { num: "02", title: "Swiss Cheese Barriers", path: "slides/slide_02.html" },
-  { num: "03", title: "The 3 Traps & Tribal Knowledge", path: "slides/slide_03.html" },
-  { num: "04", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_04.html" },
-  { num: "05", title: "Live Demo: ITC TM&D Cockpit", path: "slides/slide_05.html" },
-  { num: "06", title: "From One Agent to an Agentic Org", path: "pages/one_to_many.html" },
-  { num: "07", title: "Persona Map: 60 Roles & Agents", path: "pages/persona_map.html" },
-  { num: "08", title: "How Agents Are Built", path: "pages/build_01_how.html" },
-  { num: "09", title: "Architecture", path: "pages/build_02_arch.html" },
-  { num: "10", title: "Model Choice", path: "pages/build_03_models.html" },
-  { num: "11", title: "Governance", path: "pages/build_04_govern.html" },
-  { num: "12", title: "Where People Meet the Agent", path: "pages/build_05_surface.html" },
-  { num: "13", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
-  { num: "14", title: "Why Google Cloud", path: "pages/build_07_why_google.html" },
-  { num: "15", title: "100 Days to Proof of Value", path: "pages/build_08_100_days.html" }
+  { num: "01", title: "Agentic Transformation in India's Supply Chain", path: "slides/slide_01.html" },
+  { num: "02", title: "Why CPG Supply Chain is Critical & Challenges", path: "slides/slide_02.html" },
+  { num: "03", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
+  { num: "04", title: "From One Agent to an Agentic Organisation", path: "slides/slide_04.html" },
+  { num: "05", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
+  { num: "06", title: "How Agents Are Built (Gemini Enterprise)", path: "pages/build_01_how.html" },
+  { num: "07", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
+  { num: "08", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
+  { num: "09", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
+  { num: "10", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" }
 ];
 
 window.initDeckChrome = function (opts) {
@@ -51,22 +45,24 @@ window.initDeckChrome = function (opts) {
     return currentPath.indexOf(s.path) !== -1;
   });
 
-  var totalIdx = window.SC_SLIDE_DECK.length - 1;
-  var prevSlide = opts.prev || (curIdx > 0 ? rootPrefix + window.SC_SLIDE_DECK[curIdx - 1].path : null);
-  var nextSlide = opts.next || (curIdx !== -1 && curIdx < totalIdx ? rootPrefix + window.SC_SLIDE_DECK[curIdx + 1].path : rootPrefix + 'slides/slide_01.html');
+  var totalCount = window.SC_SLIDE_DECK.length; // 10
+  var prevSlide = (curIdx > 0) ? rootPrefix + window.SC_SLIDE_DECK[curIdx - 1].path : (curIdx === -1 ? opts.prev : null);
+  var nextSlide = (curIdx !== -1 && curIdx < totalCount - 1)
+    ? rootPrefix + window.SC_SLIDE_DECK[curIdx + 1].path
+    : (curIdx === -1 ? (opts.next || rootPrefix + 'slides/slide_01.html') : null);
 
-  var curStr = curIdx !== -1 ? String(curIdx).padStart(2, '0') : '••';
-  var totStr = String(totalIdx).padStart(2, '0');
+  var curStr = curIdx !== -1 ? String(curIdx + 1).padStart(2, '0') : '••';
+  var totStr = String(totalCount).padStart(2, '0');
 
-  // Populate Top Masthead Slide Nav if #mastSlideNav exists (or add All Slides button to .mast-nav)
+  // Populate Top Masthead Slide Nav
   var mastSlideNav = document.getElementById('mastSlideNav');
   if (mastSlideNav) {
     var prevTop = prevSlide
-      ? '<a class="btn-ghost" href="' + prevSlide + '">← Prev Page</a>'
-      : '<span class="btn-ghost" style="opacity:.45;cursor:not-allowed;">← Prev Page</span>';
-    var nextTop = (curIdx < totalIdx)
-      ? '<a class="btn-cta" href="' + nextSlide + '">Next Page →</a>'
-      : '<a class="btn-cta" href="' + rootPrefix + 'index.html">All Slides ↻</a>';
+      ? '<a class="btn-ghost" href="' + prevSlide + '">← Prev Slide</a>'
+      : '<span class="btn-ghost" style="opacity:.45;cursor:not-allowed;">← Prev Slide</span>';
+    var nextTop = nextSlide
+      ? '<a class="btn-cta" href="' + nextSlide + '">Next Slide →</a>'
+      : '<a class="btn-cta" href="' + rootPrefix + 'index.html">Briefing Map ↻</a>';
     var themeBtn = document.getElementById('themeToggle');
     mastSlideNav.innerHTML =
       prevTop +
@@ -80,12 +76,12 @@ window.initDeckChrome = function (opts) {
       var allBtn = document.createElement('button');
       allBtn.type = 'button';
       allBtn.className = 'btn-ghost top-all-slides';
-      allBtn.textContent = 'All Slides ▾';
+      allBtn.textContent = (curIdx !== -1 ? curStr + ' / ' + totStr + ' · ' : '') + 'All Slides ▾';
       anyMast.insertBefore(allBtn, anyMast.firstChild);
     }
   }
 
-  // Inject Floating Presentation HUD Controls (matching Oil & Gas reference deck)
+  // Inject Floating Presentation HUD Controls
   var hud = document.createElement('div');
   hud.id = 'sc-hud';
   hud.style.cssText = 'position:fixed;bottom:20px;right:24px;background:rgba(13,17,23,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.16);border-radius:30px;padding:6px 14px;display:flex;align-items:center;gap:10px;z-index:9990;box-shadow:0 10px 30px rgba(0,0,0,0.45);';
@@ -94,9 +90,9 @@ window.initDeckChrome = function (opts) {
     ? '<a href="' + prevSlide + '" style="color:#E2E8F0;text-decoration:none;font:600 13px var(--font-display);padding:5px 10px;border-radius:16px;background:rgba(255,255,255,0.08);">◀ Prev</a>'
     : '<span style="color:#475569;font:600 13px var(--font-display);padding:5px 10px;cursor:not-allowed;">◀ Prev</span>';
 
-  var nextHtml = (curIdx === -1 || curIdx < totalIdx)
+  var nextHtml = nextSlide
     ? '<a href="' + nextSlide + '" style="color:#FFF;text-decoration:none;background:rgba(49,134,255,0.28);padding:5px 14px;border-radius:18px;border:1px solid #8AB4F8;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">Next Slide ▶</a>'
-    : '<a href="' + rootPrefix + 'index.html" style="color:#FFF;text-decoration:none;background:rgba(0,175,87,0.28);padding:5px 14px;border-radius:18px;border:1px solid #5BB974;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">All Slides ↻</a>';
+    : '<a href="' + rootPrefix + 'index.html" style="color:#FFF;text-decoration:none;background:rgba(0,175,87,0.28);padding:5px 14px;border-radius:18px;border:1px solid #5BB974;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">Briefing Map ↻</a>';
 
   hud.innerHTML =
     prevHtml +
@@ -109,10 +105,10 @@ window.initDeckChrome = function (opts) {
   // Slide Switcher Popover
   var menu = document.createElement('div');
   menu.id = 'hudSlideMenu';
-  menu.style.cssText = 'position:fixed;bottom:72px;right:24px;width:350px;max-height:72vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;box-shadow:var(--shadow-lg);padding:10px;z-index:9991;display:none;';
+  menu.style.cssText = 'position:fixed;bottom:72px;right:24px;width:360px;max-height:72vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;box-shadow:var(--shadow-lg);padding:10px;z-index:9991;display:none;';
   menu.innerHTML =
     '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 8px 8px;border-bottom:1px solid var(--border-subtle);margin-bottom:6px;">' +
-      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">All Slides (00–15)</span>' +
+      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">CPG Supply Chain Slides (01–10)</span>' +
       '<a href="' + rootPrefix + 'index.html" style="font:600 12px var(--font-display);color:var(--blue-ink);">Briefing Map ↗</a>' +
     '</div>' +
     window.SC_SLIDE_DECK.map(function (s, idx) {
@@ -145,7 +141,7 @@ window.initDeckChrome = function (opts) {
   }
   document.getElementById('hudFsBtn').addEventListener('click', toggleFs);
 
-  // Keyboard navigation (Left / Right arrows, F for fullscreen, Esc for map)
+  // Keyboard navigation
   document.addEventListener('keydown', function (e) {
     if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT')) return;
     if (e.key === 'ArrowRight' && nextSlide) window.location.href = nextSlide;
