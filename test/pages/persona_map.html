@@ -9,13 +9,28 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css">
 <link rel="stylesheet" href="../assets/deck_nav.css">
-<script src="../assets/deck_nav.js?v=5"></script>
-<script src="../data/supply_chain_data.js"></script>
+<script src="../assets/deck_nav.js?v=6"></script>
+<script src="../data/supply_chain_data.js?v=6"></script>
 <style>
+  :root {
+    --crit-bg:   rgba(252, 65, 61, 0.13);
+    --fric-bg:   rgba(254, 199, 0, 0.20);
+    --base-bg:   #EDF0F6;
+    --hatch:     rgba(90, 98, 117, 0.17);
+    --dotcol:    rgba(90, 98, 117, 0.42);
+  }
+  html.theme-dark {
+    --crit-bg:   rgba(252, 65, 61, 0.20);
+    --fric-bg:   rgba(254, 199, 0, 0.16);
+    --base-bg:   #23262E;
+    --hatch:     rgba(168, 175, 192, 0.15);
+    --dotcol:    rgba(168, 175, 192, 0.40);
+  }
+
   .estate-strip {
     display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
     background: var(--surface); border: 1px solid var(--border-subtle);
-    border-radius: 16px; overflow: hidden; margin: 20px 0 18px; box-shadow: var(--shadow-sm);
+    border-radius: 16px; overflow: hidden; margin: 20px 0 16px; box-shadow: var(--shadow-sm);
   }
   .estate-strip div { padding: 14px 18px; border-left: 1px solid var(--border-subtle); }
   .estate-strip div:first-child { border-left: 0; }
@@ -25,17 +40,24 @@
   .legend-bar {
     display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
     padding: 10px 16px; border-radius: 12px; background: var(--surface);
-    border: 1px solid var(--border-subtle); font-size: 12px; color: var(--text-muted); margin-bottom: 16px;
+    border: 1px solid var(--border-subtle); font-size: 12px; color: var(--text-muted); margin-bottom: 14px;
   }
   .lg-item { display: inline-flex; align-items: center; gap: 7px; }
-  .sw { width: 16px; height: 14px; border-radius: 4px; display: inline-block; }
-  .sw-agent { background: color-mix(in srgb, var(--g-blue) 16%, var(--surface)); border: 1px solid color-mix(in srgb, var(--g-blue) 45%, transparent); }
-  .sw-sys { background: var(--surface-sunk); border: 1px solid var(--border-subtle); }
-  .sw-human { background: transparent; border: 1.5px dashed var(--text-muted); }
+  .sw { width: 18px; height: 14px; border-radius: 4px; display: inline-block; }
+  .sw-agent { background: color-mix(in srgb, var(--g-blue) 14%, var(--surface)); border: 1px solid color-mix(in srgb, var(--g-blue) 45%, transparent); }
+  .sw-sys {
+    background: repeating-linear-gradient(-45deg, var(--base-bg), var(--base-bg) 3px, var(--hatch) 3px, var(--hatch) 6px);
+    border: 1px solid var(--border-subtle);
+  }
+  .sw-human {
+    background: radial-gradient(var(--dotcol) 1px, transparent 1px);
+    background-size: 5px 5px;
+    border: 1.5px dashed var(--text-muted);
+  }
   .rail-red { border-left: 4px solid var(--g-red); padding-left: 6px; font-weight: 600; color: var(--text); }
   .rail-yel { border-left: 4px solid var(--g-yellow); padding-left: 6px; font-weight: 600; color: var(--text); }
 
-  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 16px; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 14px; }
   .filter-pill {
     font: 500 12px var(--font-display); padding: 6px 13px; border-radius: 999px;
     border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text);
@@ -49,40 +71,54 @@
     font: 400 13px var(--font-body); outline: none;
   }
 
-  /* Board Rows (Vulnerability / Agentic Matrix layout) */
-  .board { display: flex; flex-direction: column; gap: 10px; }
+  /* Chessboard / Matrix Rows (matching Oil & Gas Persona Map) */
+  .board { display: flex; flex-direction: column; gap: 8px; }
   .b-row {
-    display: grid; grid-template-columns: 290px 1fr; gap: 14px; align-items: center;
+    display: grid; grid-template-columns: 330px 1fr; gap: 14px; align-items: center;
     background: var(--surface); border: 1px solid var(--border-subtle);
-    border-radius: 14px; padding: 12px 14px; cursor: pointer; transition: border-color .15s, box-shadow .15s;
+    border-radius: 12px; padding: 10px 14px; transition: border-color .15s, box-shadow .15s;
   }
   .b-row:hover { border-color: var(--tc); box-shadow: var(--shadow-sm); }
-  .b-persona { border-right: 1px solid var(--border-subtle); padding-right: 12px; }
-  .b-meta { font: 600 10.5px var(--font-mono); color: var(--ti); text-transform: uppercase; letter-spacing: .5px; }
-  .b-name { font: 600 14.5px/1.25 var(--font-display); margin: 3px 0; color: var(--text); }
+  .b-persona { border-right: 1px solid var(--border-subtle); padding-right: 12px; cursor: pointer; }
+  .b-meta { font: 600 10px var(--font-mono); color: var(--ti); text-transform: uppercase; letter-spacing: .5px; }
+  .b-name { font: 600 14px/1.25 var(--font-display); margin: 2px 0; color: var(--text); }
   .b-impact { font: 500 11.5px var(--font-body); color: var(--text-muted); }
 
-  .b-cells { display: flex; flex-wrap: wrap; gap: 8px; }
-  .cell {
-    padding: 7px 11px; border-radius: 9px; font-size: 12px; line-height: 1.3;
-    min-width: 155px; max-width: 230px; flex: 1;
+  /* 54x40 Chessboard Tiles */
+  .b-tiles { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tile-sq {
+    width: 58px; height: 42px; border-radius: 7px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font: 600 10.5px/1.1 var(--font-mono); position: relative;
+    transition: transform .12s, box-shadow .12s;
   }
-  .cell-agent {
-    background: color-mix(in srgb, var(--g-blue) 10%, var(--surface));
-    border: 1px solid color-mix(in srgb, var(--g-blue) 30%, transparent);
-    border-left: 3.5px solid var(--g-red);
+  .tile-sq:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,.14); z-index: 2; }
+  .tile-sq small { font: 500 8.5px var(--font-mono); opacity: .78; margin-top: 2px; }
+
+  .t-agent {
+    background: color-mix(in srgb, var(--g-blue) 12%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--g-blue) 35%, transparent);
+    color: var(--blue-ink);
   }
-  .cell-agent.next { border-left-color: var(--g-yellow); }
-  .cell-sys {
-    background: var(--surface-sunk);
-    border: 1px solid var(--border-subtle);
+  .t-crit { border-left: 3.5px solid var(--g-red); background: var(--crit-bg); color: var(--text); }
+  .t-fric { border-left: 3.5px solid var(--g-yellow); background: var(--fric-bg); color: var(--text); }
+  .t-sys {
+    background: repeating-linear-gradient(-45deg, var(--base-bg), var(--base-bg) 3px, var(--hatch) 3px, var(--hatch) 6px);
+    border: 1px solid var(--border-subtle); color: var(--text-muted);
   }
-  .cell-human {
-    background: transparent;
-    border: 1.5px dashed var(--border-subtle);
+  .t-human {
+    background: radial-gradient(var(--dotcol) 1px, transparent 1px);
+    background-size: 5px 5px;
+    border: 1.5px dashed var(--border-strong); color: var(--text-muted);
   }
-  .cell b { display: block; font: 600 11.5px var(--font-display); color: var(--text); margin-bottom: 2px; }
-  .cell span { font: 400 11px var(--font-mono); color: var(--text-muted); }
+
+  .row-agent-tag {
+    margin-left: auto; font: 600 11.5px var(--font-display); color: var(--ti);
+    padding: 5px 11px; border-radius: 999px;
+    background: color-mix(in srgb, var(--tc) 10%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--tc) 30%, transparent);
+    cursor: pointer; white-space: nowrap;
+  }
 
   /* Modal Drawer */
   .modal-bg { position: fixed; inset: 0; background: rgba(18,19,23,.55); backdrop-filter: blur(4px); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 20px; }
@@ -96,7 +132,11 @@
   .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip { font: 500 11.5px var(--font-mono); padding: 4px 10px; border-radius: 8px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); }
 
-  @media (max-width: 960px) { .estate-strip { grid-template-columns: repeat(2, 1fr); } .b-row { grid-template-columns: 1fr; } .b-persona { border-right: 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; } }
+  @media (max-width: 960px) {
+    .estate-strip { grid-template-columns: repeat(2, 1fr); }
+    .b-row { grid-template-columns: 1fr; }
+    .b-persona { border-right: 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+  }
 </style>
 </head>
 <body>
@@ -110,27 +150,31 @@
   <span class="mast-sp"></span>
   <div class="mast-nav" id="mastSlideNav">
     <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+    <a class="btn-ghost" href="../slides/slide_04.html">← Prev Slide</a>
+    <span class="btn-ghost" style="font-family:var(--font-mono);font-weight:700;color:var(--blue-ink);">05 / 10</span>
+    <a class="btn-cta" href="build_01_how.html">Next Slide →</a>
+    <a class="btn-ghost" href="../index.html">Briefing Map ↗</a>
   </div>
 </header>
 
 <main class="page-wrap">
   <div class="page-kick"><i></i>Slide 05 · The Agentic Supply Chain Workforce</div>
   <h1 class="page-h1">Persona Map: 60 Supply Chain Roles &amp; Action Matrix</h1>
-  <p class="page-lede">Every role across the 6 CPG Supply Chain pillars mapped by <b>who runs each step</b> (Agent Prepares, Incumbent ERP/WMS, or Human Approves) and <b>build priority</b>. Click any row to inspect the full Gemini Enterprise blueprint.</p>
+  <p class="page-lede">Every role across the 6 CPG Supply Chain pillars mapped by <b>who runs each step</b> (Agent Prepares, Incumbent ERP/WMS/TMS, or Human Sign-Off) and <b>build priority</b>. Click any tile or row to inspect the Gemini Enterprise blueprint.</p>
 
   <div class="estate-strip">
-    <div><b>60</b><span>Supply chain personas mapped</span></div>
-    <div><b>68%</b><span>Steps: Agent prepares, human decides</span></div>
-    <div><b>17%</b><span>Steps: Incumbent ERP / WMS / TMS</span></div>
-    <div><b>15%</b><span>Steps: Human sign-off &amp; exception governance</span></div>
+    <div><b>60</b><span>CPG supply chain personas</span></div>
+    <div><b>360</b><span>Operational workflow steps</span></div>
+    <div><b>68%</b><span>Agent prepares, human decides</span></div>
+    <div><b>100%</b><span>Non-invasive over ERP / DMS / WMS</span></div>
   </div>
 
   <div class="legend-bar">
     <span class="lg-item"><span class="sw sw-agent"></span> Agent prepares, human decides</span>
-    <span class="lg-item"><span class="sw sw-sys"></span> Incumbent system of record</span>
+    <span class="lg-item"><span class="sw sw-sys"></span> Incumbent ERP / WMS / TMS</span>
     <span class="lg-item"><span class="sw sw-human"></span> Human sign-off / authority</span>
-    <span class="lg-item rail-red">Build First (High Friction)</span>
-    <span class="lg-item rail-yel">Build Next</span>
+    <span class="lg-item rail-red">Build First (Critical)</span>
+    <span class="lg-item rail-yel">Build Next (Friction)</span>
   </div>
 
   <div class="controls">
@@ -165,19 +209,21 @@
 </div>
 
 <script>
-  initDeckChrome({ root: '../' });
+  initDeckChrome({ root: '../', prev: '../slides/slide_04.html', next: 'build_01_how.html' });
 
   var allRows = [];
-  window.SUPPLY_CHAIN_DATA.pillars.forEach(function (p) {
-    p.subprocesses.forEach(function (sub) {
-      sub.items.forEach(function (item) {
-        allRows.push(Object.assign({}, item, {
-          pillarId: p.id, pillarTitle: p.title, pillarNum: p.num,
-          cssClass: p.cssClass, subprocess: sub.name
-        }));
+  if (window.SUPPLY_CHAIN_DATA && window.SUPPLY_CHAIN_DATA.pillars) {
+    window.SUPPLY_CHAIN_DATA.pillars.forEach(function (p) {
+      p.subprocesses.forEach(function (sub) {
+        sub.items.forEach(function (item) {
+          allRows.push(Object.assign({}, item, {
+            pillarId: p.id, pillarTitle: p.title, pillarNum: p.num,
+            cssClass: p.cssClass, subprocess: sub.name
+          }));
+        });
       });
     });
-  });
+  }
 
   var params = new URLSearchParams(window.location.search);
   var activeFilter = params.get('pillar') || 'all';
@@ -203,21 +249,18 @@
       var row = document.createElement('div');
       row.className = 'b-row ' + r.cssClass;
 
-      var cellsHtml = '';
-      if (r.dayJourney && r.dayJourney.length) {
-        cellsHtml =
-          r.dayJourney.map(function (j, idx) {
-            return '<div class="cell cell-agent ' + (idx > 0 ? 'next' : '') + '"><b>⚡ ' + j.agent + '</b><span>' + j.time.split(' ')[0] + ' · ' + j.mode + '</span></div>';
-          }).join('') +
-          '<div class="cell cell-sys"><b>' + r.sources[0] + '</b><span>System of Record</span></div>' +
-          '<div class="cell cell-human"><b>Human Approval</b><span>' + r.impact + '</span></div>';
-      } else {
-        cellsHtml =
-          '<div class="cell cell-agent"><b>⚡ ' + r.agent + '</b><span>' + r.buildMode + '</span></div>' +
-          '<div class="cell cell-agent next"><b>Ground &amp; Reason</b><span>' + r.sources.slice(0, 2).join(' + ') + '</span></div>' +
-          '<div class="cell cell-sys"><b>' + r.sources[0] + '</b><span>Incumbent System</span></div>' +
-          '<div class="cell cell-human"><b>Human Sign-Off</b><span>' + r.impact + '</span></div>';
-      }
+      var tiles = [
+        { code: 'A01', sub: 'Signal', cls: 't-agent t-crit', tip: 'Ingest & Sense: ' + r.sources[0] },
+        { code: 'A02', sub: 'Reason', cls: 't-agent t-crit', tip: r.agent + ': ' + r.mandate },
+        { code: 'A03', sub: 'Draft',  cls: 't-agent t-fric', tip: 'Prepare action / brief for ' + r.persona },
+        { code: 'A04', sub: 'Ground', cls: 't-agent t-fric', tip: 'Cross-check ' + (r.sources[1] || r.sources[0]) },
+        { code: 'S01', sub: 'ERP',    cls: 't-sys',          tip: 'System of Record: ' + r.sources[0] },
+        { code: 'H01', sub: 'Sign',   cls: 't-human',        tip: 'Human Approval: ' + r.impact }
+      ];
+
+      var tilesHtml = tiles.map(function (t) {
+        return '<div class="tile-sq ' + t.cls + '" title="' + t.tip.replace(/"/g, '&quot;') + '"><span>' + t.code + '</span><small>' + t.sub + '</small></div>';
+      }).join('');
 
       row.innerHTML =
         '<div class="b-persona">' +
@@ -225,7 +268,10 @@
           '<div class="b-name">' + r.persona + '</div>' +
           '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>' +
         '</div>' +
-        '<div class="b-cells">' + cellsHtml + '</div>';
+        '<div class="b-tiles">' +
+          tilesHtml +
+          '<span class="row-agent-tag">⚡ ' + r.agent + '</span>' +
+        '</div>';
 
       row.addEventListener('click', function () { openModal(r); });
       grid.appendChild(row);
