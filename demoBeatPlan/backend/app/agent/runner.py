@@ -225,11 +225,11 @@ async def run_turn_async(
 ) -> dict[str, Any]:
     sid = session_id or f"bp-{uuid.uuid4().hex[:8]}"
     lang = (language or settings.DEFAULT_LANGUAGE).lower()
-    runtime_key = (api_key or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
-
-    if settings.AGENT_LLM != "vertex" and not runtime_key:
+    if settings.AGENT_LLM == "fake" and not api_key:
         res = _deterministic_turn(text, city, outlet_id, lang)
         return {"session_id": sid, "language": lang, "persona": persona, **res}
+
+    runtime_key = settings.get_gemini_api_key(api_key)
 
     try:
         from google import genai
@@ -237,7 +237,7 @@ async def run_turn_async(
 
         if runtime_key:
             client = genai.Client(api_key=runtime_key)
-            model_name = os.getenv("BEATPULSE_AI_STUDIO_TEXT_MODEL", "gemini-2.5-flash")
+            model_name = os.getenv("BEATPULSE_AI_STUDIO_TEXT_MODEL", settings.TEXT_MODEL)
         else:
             client = genai.Client(vertexai=True, project=settings.PROJECT_ID, location=settings.TEXT_LOCATION)
             model_name = settings.TEXT_MODEL
@@ -253,7 +253,12 @@ async def run_turn_async(
             + _language_instruction(lang)
         )
         contents: list[Any] = [types.Content(role="user", parts=[types.Part.from_text(text=text)])]
-        config = types.GenerateContentConfig(system_instruction=sys_prompt, tools=tool_fns, temperature=0.25)
+        config = types.GenerateContentConfig(
+            system_instruction=sys_prompt,
+            tools=tool_fns,
+            temperature=0.25,
+            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
+        )
 
         recorded_tools: list[dict[str, Any]] = []
         recorded_actions: list[dict[str, Any]] = []

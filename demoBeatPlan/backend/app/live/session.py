@@ -29,8 +29,8 @@ ConnectFactory = Callable[[str, Any], Any]
 
 
 def live_settings(api_key: str | None = None) -> dict[str, Any]:
-    key = (api_key or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
-    default_model = os.getenv("BEATPULSE_AI_STUDIO_LIVE_MODEL", "gemini-2.5-flash-native-audio-preview-12-2025") if key else os.getenv("BEATPULSE_LIVE_MODEL", DEFAULT_LIVE_MODEL)
+    key = settings.get_gemini_api_key(api_key)
+    default_model = os.getenv("BEATPULSE_LIVE_MODEL", DEFAULT_LIVE_MODEL)
     return {
         "api_key": key or None,
         "model": default_model,
@@ -103,7 +103,7 @@ def build_live_config(types: Any, system_prompt: str, tools: list[Any], handle: 
 def _default_connect_factory(cfg: dict[str, Any]) -> ConnectFactory:
     from google import genai
 
-    api_key = cfg.get("api_key") or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    api_key = cfg.get("api_key") or settings.get_gemini_api_key()
     client = genai.Client(api_key=api_key) if api_key else genai.Client(vertexai=True, project=cfg["project"], location=cfg["location"])
 
     def factory(model: str, config: Any) -> Any:

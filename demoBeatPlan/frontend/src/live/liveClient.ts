@@ -187,7 +187,7 @@ export class LiveClient {
   private async connectDirectAiStudio(apiKey: string): Promise<void> {
     this.explicitDisconnect = false;
     this.directMode = true;
-    this.setStatus('connecting', { model: 'gemini-2.5-flash-native-audio-preview-12-2025' });
+    this.setStatus('connecting', { model: 'gemini-3.8-live' });
 
     let decls: any[] = [];
     try {
@@ -210,7 +210,7 @@ export class LiveClient {
       sock.send(
         JSON.stringify({
           setup: {
-            model: 'models/gemini-2.5-flash-native-audio-preview-12-2025',
+            model: 'models/gemini-3.8-live',
             generationConfig: {
               responseModalities: ['AUDIO'],
               speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Aoede' } } },

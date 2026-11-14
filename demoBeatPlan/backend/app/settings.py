@@ -21,6 +21,22 @@ TEXT_LOCATION: str = os.getenv("BEATPULSE_TEXT_LOCATION", "global")
 AGENT_LLM: str = os.getenv("BEATPULSE_AGENT_LLM", "vertex").lower()
 DEFAULT_LANGUAGE: str = os.getenv("BEATPULSE_DEFAULT_LANGUAGE", "english").lower()
 
+
+def get_gemini_api_key(override: str | None = None) -> str:
+    """Resolve optional Gemini API key from request override, env, or local user config (~/.config/itc_tmd_demo/gemini_api_key)."""
+    if override and override.strip():
+        return override.strip()
+    env_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
+    if env_key:
+        return env_key
+    key_file = Path.home() / ".config" / "itc_tmd_demo" / "gemini_api_key"
+    if key_file.is_file():
+        try:
+            return key_file.read_text(encoding="utf-8").strip()
+        except OSError:
+            pass
+    return ""
+
 CITIES = ("Bangalore", "Hyderabad", "Chennai")
 
 ITC_PORTFOLIO = {
