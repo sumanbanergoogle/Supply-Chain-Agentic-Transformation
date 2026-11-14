@@ -40,9 +40,25 @@ def query_outlets(
     if beat_id:
         df = df[df["beat_id"].str.upper() == beat_id.strip().upper()]
     if health_status:
-        df = df[df["health_status"].str.lower() == health_status.strip().lower()]
+        hs = health_status.strip().lower().replace("-", "_").replace(" ", "_")
+        if hs in ("zero_billing", "zero"):
+            hs = "critical"
+        elif hs in ("at_risk", "needs_attention"):
+            hs = "warning"
+        df = df[df["health_status"].str.lower() == hs]
     if dominant_cause:
-        df = df[df["dominant_cause"].str.lower().str.contains(dominant_cause.strip().lower(), regex=False)]
+        dc = dominant_cause.strip().lower().replace("-", "_").replace(" ", "_")
+        if "stockout" in dc or "fill" in dc or "oos" in dc:
+            dc = "hero_sku_stockout"
+        elif "qcom" in dc or "quick" in dc or "zepto" in dc or "blinkit" in dc:
+            dc = "qcommerce_spillover"
+        elif "fatigue" in dc or "traffic" in dc or "skip" in dc or "beat" in dc:
+            dc = "beat_coverage_fatigue"
+        elif "credit" in dc or "margin" in dc:
+            dc = "credit_margin_squeeze"
+        elif "assortment" in dc or "mismatch" in dc or "tier" in dc or "vision" in dc:
+            dc = "assortment_tier_mismatch"
+        df = df[df["dominant_cause"].str.lower().str.contains(dc, regex=False)]
     if tier:
         df = df[df["tier"].str.lower().str.contains(tier.strip().lower(), regex=False)]
 
