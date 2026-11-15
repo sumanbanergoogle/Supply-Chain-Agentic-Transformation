@@ -20,7 +20,8 @@ window.SC_SLIDE_DECK = [
   { num: "09", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
   { num: "10", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
   { num: "11", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
-  { num: "12", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" }
+  { num: "12", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" },
+  { num: "13", title: "ITC TM&D × Google — Strategic Partnership", path: "slides/slide_06_tmd_partnership.html" }
 ];
 
 window.initDeckChrome = function (opts) {
@@ -110,7 +111,7 @@ window.initDeckChrome = function (opts) {
   menu.style.cssText = 'position:fixed;bottom:72px;right:24px;width:360px;max-height:72vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;box-shadow:var(--shadow-lg);padding:10px;z-index:9991;display:none;';
   menu.innerHTML =
     '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 8px 8px;border-bottom:1px solid var(--border-subtle);margin-bottom:6px;">' +
-      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">Supply Chain Slides (01–12)</span>' +
+      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">Supply Chain Slides (01–13)</span>' +
       '<a href="' + rootPrefix + 'index.html" style="font:600 12px var(--font-display);color:var(--blue-ink);">Briefing Map ↗</a>' +
     '</div>' +
     window.SC_SLIDE_DECK.map(function (s, idx) {
