@@ -17,7 +17,7 @@ from app.live import fallback, voice_tools
 
 logger = logging.getLogger("beatpulse.live.session")
 
-DEFAULT_LIVE_MODEL = "gemini-3.1-flash-live-preview"
+DEFAULT_LIVE_MODEL = "gemini-3.8-live"
 DEFAULT_LIVE_LOCATION = "us-central1"
 MAX_CONSECUTIVE_FAILURES = 1
 LANGUAGES = ("english", "hinglish", "hindi")
