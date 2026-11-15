@@ -169,21 +169,40 @@
   .d-tag.prio-next  { color: #B06000; border-color: rgba(254,199,0,.55); background: rgba(254,199,0,.18); }
   .d-tag.own-agentic { color: var(--blue-ink); border-color: rgba(49,134,255,.45); background: rgba(49,134,255,.10); }
   .d-tag.agent { color: var(--green-ink); border-color: rgba(0,175,87,.45); background: rgba(0,175,87,.10); }
-  .d-body { padding: 14px 18px 18px; display: grid; gap: 14px; }
-  .d-block { border-left: 3px solid var(--border-strong); padding-left: 12px; }
+  .d-body { padding: 16px 20px 18px; display: grid; gap: 14px; }
+  .d-block { border-left: 3px solid var(--border-strong); padding-left: 14px; }
   .d-block.today { border-left-color: var(--border-strong); }
   .d-block.vuln  { border-left-color: var(--g-red); }
   .d-block.plug  { border-left-color: var(--g-green); }
-  .d-k { font: 600 10px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px; }
-  .d-v { font: 400 13px/1.5 var(--font-body); color: var(--text); }
+  .d-k { font: 600 10px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+  .d-v { font: 400 13px/1.55 var(--font-body); color: var(--text); }
+  .d-v.muted { color: var(--text-muted); }
+  .d-agent { font: 600 13.5px/1.35 var(--font-body); color: var(--green-ink); margin-bottom: 3px; }
+  .d-regid { font: 500 10.5px var(--font-mono); color: var(--text-muted); margin-bottom: 6px; }
   .d-spec {
-    background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-    border-radius: 10px; padding: 10px 12px; display: grid; gap: 6px;
+    margin-top: 2px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+    display: grid; gap: 5px;
   }
-  .d-spec-row { display: grid; grid-template-columns: 82px 1fr; gap: 8px; font-size: 12px; }
-  .d-spec-k { font: 600 10.5px var(--font-mono); color: var(--text-muted); text-transform: uppercase; }
-  .d-spec-v { font: 500 12px var(--font-body); color: var(--text); }
-  .prompt-box { background: var(--surface-sunk); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 10px 12px; font: 400 11.5px/1.5 var(--font-mono); color: var(--text-muted); }
+  .d-spec-row { display: flex; gap: 10px; align-items: baseline; font-size: 12px; }
+  .d-spec-k { font: 600 10px var(--font-mono); letter-spacing: .08em; color: var(--text-muted); text-transform: uppercase; flex: none; width: 82px; }
+  .d-spec-v { font: 400 12px var(--font-body); color: var(--text-muted); }
+  .d-foot {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    padding: 0 20px 20px;
+  }
+  .ge-launch {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 15px; border-radius: 999px;
+    background: #202124; color: #FFFFFF;
+    border: 1px solid #202124; text-decoration: none;
+    font: 600 12.5px/1 var(--font-body);
+    transition: background .14s ease, transform .14s ease;
+  }
+  .ge-launch:hover { background: #303134; transform: translateY(-1px); }
+  .ge-mark { height: 15px; width: auto; display: block; filter: brightness(0) invert(1); }
+  .ge-arrow { opacity: .8; font-size: 12px; }
 
   @media (max-width: 1120px) {
     .stage-grid { grid-template-columns: 1fr; }
@@ -299,13 +318,13 @@
         var lbl = ag.prio === 'prio-first' ? 'Agent Prepares (Build First)' : (ag.prio === 'prio-next' ? 'Agent Prepares (Build Next)' : 'Routine Agentic');
         return {
           code: 'A0' + (idx + 1), cls: c, owner: lbl,
-          title: ag.name, detail: ag.dailyTask || ag.desc,
+          title: ag.name, today: ag.dailyTask || r.mandate, desc: ag.desc || ag.dailyTask,
           impact: ag.impact || r.impact, sources: ag.sources || r.sources, prompt: ag.promptHint || r.promptHint
         };
       });
     }
     return [
-      { code: 'A01', cls: prioCls, owner: prioLbl, title: r.agent, detail: r.mandate, impact: r.impact, sources: r.sources, prompt: r.promptHint }
+      { code: 'A01', cls: prioCls, owner: prioLbl, title: r.agent, today: r.mandate, desc: r.promptHint, impact: r.impact, sources: r.sources, prompt: r.promptHint }
     ];
   }
 
@@ -324,39 +343,44 @@
     var srcs = (cell && cell.sources) ? cell.sources : r.sources;
     var prmt = (cell && cell.prompt) ? cell.prompt : r.promptHint;
     var imp  = (cell && cell.impact) ? cell.impact : r.impact;
-    var cCode = cell ? (r.id + ' · ' + cell.code) : r.id;
+    var cCode = cell ? cell.code : 'A01';
     var cTitle = cell ? cell.title : r.agent;
-    var prioTag = (cell && cell.cls.indexOf('prio-first') !== -1)
-      ? '<span class="d-tag prio-first">Build First</span>'
-      : ((cell && cell.cls.indexOf('prio-next') !== -1) ? '<span class="d-tag prio-next">Build Next</span>' : '');
-    var ownTag = (cell && cell.cls.indexOf('own-system') !== -1)
-      ? '<span class="d-tag">Incumbent System</span>'
-      : ((cell && cell.cls.indexOf('own-human') !== -1) ? '<span class="d-tag">Human Sign-Off</span>' : '<span class="d-tag own-agentic">Agent Prepares</span>');
+    var todayText = (cell && cell.today) ? cell.today : r.mandate;
+    var vulnText = (cell && cell.today && cell.today !== r.mandate)
+      ? r.mandate
+      : 'Manual reconciliation across disconnected systems introduces latency, blind spots, and reactive firefighting.';
+    var agentDesc = (cell && cell.desc) ? cell.desc : prmt;
 
     panel.innerHTML =
       '<div class="d-head">' +
-        '<span class="d-code">' + cCode + '</span>' +
         '<div class="d-title">' +
           '<span class="d-action">' + cTitle + '</span>' +
           '<span class="d-who">' + r.persona + ' · ' + r.pillarTitle + '</span>' +
         '</div>' +
-        (isPin ? '<button class="d-close" id="unpinBtn" title="Unpin">✕</button>' : '') +
-      '</div>' +
-      '<div class="d-tags">' +
-        prioTag +
-        ownTag +
-        '<span class="d-tag agent">⚡ ' + cTitle + '</span>' +
+        (isPin ? '<button class="d-close" id="unpinBtn" title="Close">✕</button>' : '') +
       '</div>' +
       '<div class="d-body">' +
-        '<div class="d-block today"><div class="d-k">Role &amp; Mandate</div><div class="d-v">' + r.mandate + '</div></div>' +
-        '<div class="d-block vuln"><div class="d-k">Operational Gap Addressed</div><div class="d-v">' + (cell ? cell.detail : r.mandate) + '</div></div>' +
-        '<div class="d-block plug"><div class="d-k">Agentic Outcome &amp; Value</div><div class="d-v"><b>' + imp + '</b> — ' + (cell ? cell.owner : 'Gemini Enterprise Agent') + '</div></div>' +
+        '<div class="d-block today"><div class="d-k">How it runs today</div><div class="d-v muted">' + todayText + '</div></div>' +
+        '<div class="d-block vuln"><div class="d-k">What goes wrong</div><div class="d-v">' + vulnText + '</div></div>' +
+        '<div class="d-block plug">' +
+          '<div class="d-k">What the agent does</div>' +
+          '<div class="d-agent">' + cTitle + '</div>' +
+          '<div class="d-regid">' + r.id + '-' + cCode + ' · agent registry id</div>' +
+          '<div class="d-v muted">' + agentDesc + '</div>' +
+        '</div>' +
+        '<div class="d-block"><div class="d-k">Value impact</div><div class="d-v"><b>' + imp + '</b></div></div>' +
+        '<div class="d-block"><div class="d-k">System of record</div><div class="d-v muted">' + srcs.join(' · ') + '</div></div>' +
         '<div class="d-spec">' +
           '<div class="d-spec-row"><span class="d-spec-k">Sub-Process</span><span class="d-spec-v">' + r.subprocess + '</span></div>' +
-          '<div class="d-spec-row"><span class="d-spec-k">Grounding</span><span class="d-spec-v">' + srcs.join(' · ') + '</span></div>' +
           '<div class="d-spec-row"><span class="d-spec-k">Status</span><span class="d-spec-v">' + (isPin ? 'Pinned (click ✕ or another square)' : 'Hovering (click square to pin)') + '</span></div>' +
         '</div>' +
-        '<div><div class="d-k" style="margin-bottom:5px;">Gemini Enterprise Blueprint</div><div class="prompt-box">' + prmt + '</div></div>' +
+      '</div>' +
+      '<div class="d-foot">' +
+        '<a class="ge-launch" href="https://vertexaisearch.cloud.google.com/" target="_blank" rel="noopener noreferrer" title="Opens Gemini Enterprise">' +
+          '<img class="ge-mark" src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">' +
+          '<span class="ge-cta">Open this agent</span>' +
+          '<span class="ge-arrow" aria-hidden="true">&#8599;</span>' +
+        '</a>' +
       '</div>';
 
     var ub = document.getElementById('unpinBtn');
