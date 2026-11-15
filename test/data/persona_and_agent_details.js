@@ -11,7 +11,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Demand Forecasting",
     "whatTheyDo": "Responsible for developing the enterprise baseline consensus demand forecast across all commercial channels and product lines. Synthesizes retail point-of-sale velocity, promotional calendars, channel inventory, and macro demand drivers to provide manufacturing, procurement, and logistics with a single synchronized build plan.",
-    "whyItMatters": "In high-velocity CPG operations across Mumbai Corporate S&OP Tower · Western Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Mumbai Corporate S&OP Tower · Western Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -25,7 +25,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 87.97,
     "primaryAgent": "Demand Sensing Agent",
     "suiteNames": [
       "Demand Sensing Agent",
@@ -33,7 +32,8 @@ window.SC_PERSONA_DETAILS = {
       "Trade Scheme & Promo Lift Forecaster",
       "Channel-Mix & Q-Comm Spike Predictor",
       "Forecast Bias & CFA Stock-Out Sentinel"
-    ]
+    ],
+    "sumanImpact": "Detects demand shifts 7–14 days earlier"
   },
   "SC-02": {
     "id": "SC-02",
@@ -46,7 +46,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Demand Forecasting",
     "whatTheyDo": "Owns commercial sales channel harmonization across e-commerce, wholesale clubs, and national retail accounts. Reconciles field sales forecasts, marketing promotion lift assumptions, and retailer POS sell-through to eliminate consensus gaps between commercial goals and operational supply reality.",
-    "whyItMatters": "In high-velocity CPG operations across Geneva / Bengaluru Commercial Sync Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Geneva / Bengaluru Commercial Sync Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -60,7 +60,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 21.88,
     "primaryAgent": "Forecast Reconciliation",
     "suiteNames": [
       "Forecast Reconciliation",
@@ -68,7 +67,8 @@ window.SC_PERSONA_DETAILS = {
       "Branch Revenue & Volume Bridge Bot",
       "Regional Festive & Seasonality Calibrator",
       "WD Opening-to-Closing Stock Sanity Bot"
-    ]
+    ],
+    "sumanImpact": "Replaces black-box variance models"
   },
   "SC-03": {
     "id": "SC-03",
@@ -81,7 +81,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Demand Forecasting",
     "whatTheyDo": "Directs new product introductions (NPI) and product portfolio lifecycle transitions. Forecasts launch volume profiles by modeling historical SKU lookalikes, attributes, and packaging configurations, ensuring manufacturing readiness without excess launch inventory or costly stockouts.",
-    "whyItMatters": "In high-velocity CPG operations across Gurugram Foods Innovation & Launch Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Gurugram Foods Innovation & Launch Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -95,7 +95,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 19.52,
     "primaryAgent": "NPI Demand Profiler",
     "suiteNames": [
       "NPI Demand Profiler",
@@ -103,7 +102,8 @@ window.SC_PERSONA_DETAILS = {
       "Cannibalization & Halo Sentinel",
       "Regional Pilot Store Velocity Monitor",
       "Competitive Pack & Claim Benchmark Gem"
-    ]
+    ],
+    "sumanImpact": "Cuts 90-day launch forecast errors"
   },
   "SC-04": {
     "id": "SC-04",
@@ -116,7 +116,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Trade Promotion",
     "whatTheyDo": "Designs and manages customer promotional campaigns, trade spend budgets, and retailer joint business plans. Evaluates price elasticity, shelf promotional lift, and cross-SKU cannibalization to maximize net promotional profit and prevent margin-dilutive trade spend leakage.",
-    "whyItMatters": "In high-velocity CPG operations across Chicago / Mumbai Modern Trade RGM Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Chicago / Mumbai Modern Trade RGM Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -130,7 +130,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 83.2,
     "primaryAgent": "Promo ROI Simulator",
     "suiteNames": [
       "Promo ROI Simulator",
@@ -138,7 +137,8 @@ window.SC_PERSONA_DETAILS = {
       "Retail Display & Visibility Compliance Bot",
       "GT Slab Elasticity & Margin Guardrail Bot",
       "MT / Q-Comm Co-Op Ad & Visibility ROI Tracker"
-    ]
+    ],
+    "sumanImpact": "Prevents break-even trade leakage"
   },
   "SC-05": {
     "id": "SC-05",
@@ -151,7 +151,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Trade Promotion",
     "whatTheyDo": "Manages commercial relationships and collaborative planning (CPFR) with top-tier retail accounts. Aligns joint promotional calendars, resolves order deduction disputes, and synchronizes retailer warehouse inventory targets with enterprise supply availability.",
-    "whyItMatters": "In high-velocity CPG operations across Bhiwandi CFA & General Trade Key Accounts, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bhiwandi CFA & General Trade Key Accounts, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -165,7 +165,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 4,
     "toilAfter": 8,
-    "annualValueCr": 57.12,
     "primaryAgent": "JBP Negotiation Agent",
     "suiteNames": [
       "JBP Negotiation Agent",
@@ -173,7 +172,8 @@ window.SC_PERSONA_DETAILS = {
       "Key Account Margin & Terms Monitor",
       "Retailer Range & New-SKU Listing Tracker",
       "Short-Shelf-Life Rejection & Penalty Preventer"
-    ]
+    ],
+    "sumanImpact": "Aligns buyer margins and volume goals"
   },
   "SC-06": {
     "id": "SC-06",
@@ -186,7 +186,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Trade Promotion",
     "whatTheyDo": "Guarantees financial integrity of commercial trade marketing and post-promotional deductions. Audits retailer proof-of-performance circulars, validates bill-back claims against contractual agreements, and prevents unauthorized trade spend deductions.",
-    "whyItMatters": "In high-velocity CPG operations across Hyderabad Shared Commercial Finance Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Hyderabad Shared Commercial Finance Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -200,7 +200,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 33.61,
     "primaryAgent": "Deduction Audit Agent",
     "suiteNames": [
       "Deduction Audit Agent",
@@ -208,7 +207,8 @@ window.SC_PERSONA_DETAILS = {
       "Unbilled Trade Accrual & Leakage Watcher",
       "Distributor Credit-Limit & Overdue Early Warning",
       "Secondary-to-Claim Ratio Anomaly Sentinel"
-    ]
+    ],
+    "sumanImpact": "Resolves claim disputes in hours"
   },
   "SC-07": {
     "id": "SC-07",
@@ -221,7 +221,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "S&OP / IBP",
     "whatTheyDo": "Leads the monthly Sales & Operations Planning (S&OP) and Integrated Business Planning (IBP) consensus cycle. Reconciles unconstrained commercial demand against plant capacity constraints, raw material lead times, and executive financial targets to publish the single master operating plan.",
-    "whyItMatters": "In high-velocity CPG operations across Kolkata / Mumbai Integrated S&OP Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Kolkata / Mumbai Integrated S&OP Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -235,7 +235,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 18,
     "toilAfter": 8,
-    "annualValueCr": 54.13,
     "primaryAgent": "Consensus & Gap Agent",
     "suiteNames": [
       "Consensus & Gap Agent",
@@ -243,7 +242,8 @@ window.SC_PERSONA_DETAILS = {
       "Scenario Trade-Off & Margin Simulator",
       "Co-Packer & Alternate Line Surge Allocator",
       "Master Schedule Stability & Freeze Monitor"
-    ]
+    ],
+    "sumanImpact": "Highlights margin-dilutive imbalances"
   },
   "SC-08": {
     "id": "SC-08",
@@ -256,7 +256,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "S&OP / IBP",
     "whatTheyDo": "Oversees end-to-end supply chain execution, operational resiliency, and working capital optimization. Evaluates multi-scenario risk trade-offs across service levels, manufacturing costs, and inventory holding to protect enterprise gross margins and customer OTIF delivery.",
-    "whyItMatters": "In high-velocity CPG operations across Singapore / Mumbai Global CSCO War-Room, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Singapore / Mumbai Global CSCO War-Room, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -270,7 +270,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 9,
-    "annualValueCr": 37.5,
     "primaryAgent": "Digital War-Room Agent",
     "suiteNames": [
       "Digital War-Room Agent",
@@ -278,7 +277,8 @@ window.SC_PERSONA_DETAILS = {
       "Working Capital & Service Trade-Off Radar",
       "Network Risk & Plant Contingency Simulator",
       "Quarterly Board & Townhall KPI Narrative Bot"
-    ]
+    ],
+    "sumanImpact": "Rapid OTIF impact scenario brief"
   },
   "SC-09": {
     "id": "SC-09",
@@ -291,7 +291,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "S&OP / IBP",
     "whatTheyDo": "Directs the digital transformation of Integrated Business Planning (IBP) and enterprise digital twin strategy. Orchestrates continuous cross-functional synchronization between financial revenue planning, supply constraints, and operational execution.",
-    "whyItMatters": "In high-velocity CPG operations across Bengaluru Executive IBP Control Tower, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bengaluru Executive IBP Control Tower, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -305,7 +305,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 5,
     "toilAfter": 8,
-    "annualValueCr": 8.06,
     "primaryAgent": "Executive Copilot",
     "suiteNames": [
       "Executive Copilot",
@@ -313,7 +312,8 @@ window.SC_PERSONA_DETAILS = {
       "Financialized IBP Variance Explainer",
       "Assumption Drift & Forecast Bias Auditor",
       "Portfolio Profitability & Capacity Trade-Off Bot"
-    ]
+    ],
+    "sumanImpact": "Reduces deck preparation by days"
   },
   "SC-10": {
     "id": "SC-10",
@@ -326,7 +326,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Portfolio & SKU",
     "whatTheyDo": "Manages category product line profitability, SKU rationalization, and assortment strategy. Balances high-velocity core products with seasonal offerings, optimizing shelf space, gross margins, and inventory turns across all market segments.",
-    "whyItMatters": "In high-velocity CPG operations across Rotterdam / Mumbai Portfolio Margin Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Rotterdam / Mumbai Portfolio Margin Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -340,7 +340,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 27.82,
     "primaryAgent": "SKU Pruning Agent",
     "suiteNames": [
       "SKU Pruning Agent",
@@ -348,7 +347,8 @@ window.SC_PERSONA_DETAILS = {
       "Pack-Price Architecture & Mix Optimizer",
       "Regional Outlet Penetration & White-Space Bot",
       "Promo-to-Baseline Cannibalization Tracker"
-    ]
+    ],
+    "sumanImpact": "Unlocks tail working capital"
   },
   "SC-11": {
     "id": "SC-11",
@@ -361,7 +361,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Portfolio & SKU",
     "whatTheyDo": "Coordinates material cutover schedules and phase-in/phase-out transitions for new packaging and reformulated products. Minimizes obsolete raw material write-offs while ensuring smooth production ramp-ups without plant downtime.",
-    "whyItMatters": "In high-velocity CPG operations across Pune Packaging Cutover & BOM Studio, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Pune Packaging Cutover & BOM Studio, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -375,7 +375,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 15.98,
     "primaryAgent": "PIPO Run-Out Agent",
     "suiteNames": [
       "PIPO Run-Out Agent",
@@ -383,7 +382,8 @@ window.SC_PERSONA_DETAILS = {
       "Transition Buffer & Depot Flush Tracker",
       "Minimum-Order-Quantity (MOQ) Stranded-Stock Bot",
       "Regulatory & Statutory Cutover Compliance Tracker"
-    ]
+    ],
+    "sumanImpact": "Eliminates stranded write-offs"
   },
   "SC-12": {
     "id": "SC-12",
@@ -396,7 +396,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-blue)",
     "subprocess": "Portfolio & SKU",
     "whatTheyDo": "Partners with supply chain executives to govern capital allocation, working capital investment, and cost-to-serve analytics. Models P&L impacts of inventory holding costs, logistics expediting, and trade promotion returns to protect corporate operating profit.",
-    "whyItMatters": "In high-velocity CPG operations across London / Mumbai Cost-to-Serve Analytics, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across London / Mumbai Cost-to-Serve Analytics, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP IBP · Distributor Management System (DMS) · Retail POS",
     "notOwned": [
       {
@@ -410,7 +410,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 14.55,
     "primaryAgent": "Cost-to-Serve Diagnostic",
     "suiteNames": [
       "Cost-to-Serve Diagnostic",
@@ -418,7 +417,8 @@ window.SC_PERSONA_DETAILS = {
       "SKU Standard-to-Actual Cost Variance Agent",
       "Small-Drop & Minimum-Order Freight Penalty Bot",
       "Working Capital Cash-Conversion Tracker"
-    ]
+    ],
+    "sumanImpact": "Re-engineers MOQ and pack rules"
   },
   "SC-13": {
     "id": "SC-13",
@@ -431,7 +431,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Supplier Network",
     "whatTheyDo": "Directs strategic supplier relationship management and multi-tier supply chain risk governance. Identifies sub-tier supplier vulnerabilities, geopolitical chokepoints, and financial insolvencies to establish resilient sourcing contingency networks.",
-    "whyItMatters": "In high-velocity CPG operations across Chennai Multi-Tier Sourcing Nerve Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Chennai Multi-Tier Sourcing Nerve Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -445,7 +445,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 2,
     "toilAfter": 8,
-    "annualValueCr": 54.42,
     "primaryAgent": "Disruption Sensing Agent",
     "suiteNames": [
       "Disruption Sensing Agent",
@@ -453,7 +452,8 @@ window.SC_PERSONA_DETAILS = {
       "Alternate Vendor & Spec Qualification Copilot",
       "Single-Source BOM Vulnerability Mapper",
       "Weather & Monsoon Freight Disruption Predictor"
-    ]
+    ],
+    "sumanImpact": "2–3 week advance disruption warning"
   },
   "SC-14": {
     "id": "SC-14",
@@ -466,7 +466,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Supplier Network",
     "whatTheyDo": "Oversees the day-to-day procurement operations, purchase order expediting, and supplier delivery tracking. Resolves operational material bottlenecks and PO exceptions to keep manufacturing plants supplied without costly downtime.",
-    "whyItMatters": "In high-velocity CPG operations across Sao Paulo / Kochi Agri Vendor Qualification, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Sao Paulo / Kochi Agri Vendor Qualification, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -480,7 +480,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 4,
     "toilAfter": 36,
-    "annualValueCr": 18.09,
     "primaryAgent": "Onboarding & Qual. Agent",
     "suiteNames": [
       "Onboarding & Qual. Agent",
@@ -488,7 +487,8 @@ window.SC_PERSONA_DETAILS = {
       "Supplier Scorecard & SLA Briefing Agent",
       "Vendor Master Data & Bank-Change Fraud Guard",
       "Purchase Requisition (PR) Routing & SLA Copilot"
-    ]
+    ],
+    "sumanImpact": "Cuts onboarding from weeks to <48h"
   },
   "SC-15": {
     "id": "SC-15",
@@ -501,7 +501,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Supplier Network",
     "whatTheyDo": "Drives circular economy initiatives, closed-loop packaging reuse, and corporate zero-waste landfill targets. Tracks greenhouse gas offsets and recycled material flows for audited ESG sustainability reporting.",
-    "whyItMatters": "In high-velocity CPG operations across Corporate Zero-Waste & Food-Bank Ledger, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Corporate Zero-Waste & Food-Bank Ledger, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -515,7 +515,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 20.35,
     "primaryAgent": "ESG & Scope 3 Auditor",
     "suiteNames": [
       "ESG & Scope 3 Auditor",
@@ -523,7 +522,8 @@ window.SC_PERSONA_DETAILS = {
       "Deforestation & RSPO/FSC Chain Auditor",
       "Plastic EPR Credit & Recycler Reconciliation Bot",
       "Supplier Decarbonization Roadmap Tracker"
-    ]
+    ],
+    "sumanImpact": "Automates Scope 3 disclosure audits"
   },
   "SC-16": {
     "id": "SC-16",
@@ -536,7 +536,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Material & Packaging",
     "whatTheyDo": "Leads direct material and ingredient category sourcing strategies and contract negotiations. Models commodity feedstock index fluctuations and clean-sheet cost breakdowns to lock in favorable forward supply contracts.",
-    "whyItMatters": "In high-velocity CPG operations across Frankfurt / Sanand Resin & Feedstock Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Frankfurt / Sanand Resin & Feedstock Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -550,7 +550,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 50.8,
     "primaryAgent": "Commodity Index Advisor",
     "suiteNames": [
       "Commodity Index Advisor",
@@ -558,7 +557,8 @@ window.SC_PERSONA_DETAILS = {
       "Import Parity & Customs Duty Watchdog",
       "Crop & Harvest Yield Supply Outlook Agent",
       "Make-vs-Buy & Tolling Margin Analyzer"
-    ]
+    ],
+    "sumanImpact": "Optimizes forward-contract windows"
   },
   "SC-17": {
     "id": "SC-17",
@@ -571,7 +571,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Material & Packaging",
     "whatTheyDo": "Executes complex RFQ events, supplier qualification audits, and competitive benchmarking for critical raw materials and packaging. Builds parametric should-cost models to negotiate fair market pricing and secure volume allocations.",
-    "whyItMatters": "In high-velocity CPG operations across Mumbai Direct Materials Should-Cost Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Mumbai Direct Materials Should-Cost Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -585,7 +585,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 26.32,
     "primaryAgent": "Dynamic Should-Cost Agent",
     "suiteNames": [
       "Dynamic Should-Cost Agent",
@@ -593,7 +592,8 @@ window.SC_PERSONA_DETAILS = {
       "Raw Material Index Pass-Through Auditor",
       "Packaging Conversion Cost & Tooling Estimator",
       "Regional Vendor Consolidation & Freight Bundler"
-    ]
+    ],
+    "sumanImpact": "Fact-based margin leverage in RFPs"
   },
   "SC-18": {
     "id": "SC-18",
@@ -606,7 +606,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Material & Packaging",
     "whatTheyDo": "Designs sustainable, high-performance packaging specifications and material alternatives. Balances barrier protection, structural integrity, and eco-friendly recyclability with automated pallet cube fit and manufacturing line speed.",
-    "whyItMatters": "In high-velocity CPG operations across Dubai / Haridwar Sustainable Packaging Lab, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Dubai / Haridwar Sustainable Packaging Lab, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -620,7 +620,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 28.86,
     "primaryAgent": "Sustainable Packaging Agent",
     "suiteNames": [
       "Sustainable Packaging Agent",
@@ -628,7 +627,8 @@ window.SC_PERSONA_DETAILS = {
       "EPR Tax & Light-Weighting Optimizer",
       "Shelf-Life Extension & Moisture Barrier Advisor",
       "Case-Pack & Pallet Ti-Hi Cube Optimizer"
-    ]
+    ],
+    "sumanImpact": "Mitigates EPR and landfill taxation"
   },
   "SC-19": {
     "id": "SC-19",
@@ -641,7 +641,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Contract & PO Mgmt",
     "whatTheyDo": "Drafts and negotiates master service agreements (MSAs), SLA terms, and compliance covenants with global suppliers. Streamlines legal contract review and redlining while safeguarding enterprise intellectual property and liability.",
-    "whyItMatters": "In high-velocity CPG operations across Mumbai Commercial Procurement Legal, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Mumbai Commercial Procurement Legal, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -655,7 +655,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 35.49,
     "primaryAgent": "Contract Leakage Agent",
     "suiteNames": [
       "Contract Leakage Agent",
@@ -663,7 +662,8 @@ window.SC_PERSONA_DETAILS = {
       "Off-Contract Maverick Spend Detector",
       "Contract Renewal & Auto-Escalation Sentinel",
       "Payment Terms & Early-Pay Discount Optimizer"
-    ]
+    ],
+    "sumanImpact": "Recovers missed rebates & surcharges"
   },
   "SC-20": {
     "id": "SC-20",
@@ -676,7 +676,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Contract & PO Mgmt",
     "whatTheyDo": "Manages operational purchase order creation, confirmation tracking, and vendor delivery promises. Communicates daily with suppliers to expedite urgent material requisitions and update ERP delivery dates.",
-    "whyItMatters": "In high-velocity CPG operations across Dublin / Pune Inbound MRP Expediting Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Dublin / Pune Inbound MRP Expediting Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -690,7 +690,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 70,
-    "annualValueCr": 16.45,
     "primaryAgent": "PO Expediting Agent",
     "suiteNames": [
       "PO Expediting Agent",
@@ -698,7 +697,8 @@ window.SC_PERSONA_DETAILS = {
       "Automated Vendor Follow-Up & ASN Bot",
       "Open-PO Aging & Ghost-Order Cleaner",
       "Import Customs & Port Clearance Tracker"
-    ]
+    ],
+    "sumanImpact": "Resolves ~70% of standard PO delays"
   },
   "SC-21": {
     "id": "SC-21",
@@ -711,7 +711,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-purple)",
     "subprocess": "Contract & PO Mgmt",
     "whatTheyDo": "Governs the 3-way matching process between purchase orders, receiving dock receipts, and supplier invoices. Resolves quantity and price discrepancies to prevent vendor payment holds and capture early-payment cash discounts.",
-    "whyItMatters": "In high-velocity CPG operations across Noida Shared Accounts Payable Recovery Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Noida Shared Accounts Payable Recovery Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds",
     "notOwned": [
       {
@@ -725,7 +725,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 49.58,
     "primaryAgent": "Three-Way Match Dispute",
     "suiteNames": [
       "Three-Way Match Dispute",
@@ -733,7 +732,8 @@ window.SC_PERSONA_DETAILS = {
       "Duplicate Invoice & GST Credit Sentinel",
       "GR/IR Clearing & Month-End Accrual Helper",
       "Vendor Payment-Status Self-Service Bot"
-    ]
+    ],
+    "sumanImpact": "Prevents vendor holds & saves discounts"
   },
   "SC-22": {
     "id": "SC-22",
@@ -746,7 +746,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Production Scheduling",
     "whatTheyDo": "Builds and maintains the finite master production schedule across all manufacturing lines and plant facilities. Balances production batch sizes, customer demand priorities, and line capacity to maximize plant throughput.",
-    "whyItMatters": "In high-velocity CPG operations across Haridwar ICML High-Speed Bottling Campus, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Haridwar ICML High-Speed Bottling Campus, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -760,7 +760,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 42.98,
     "primaryAgent": "Changeover Optimizer",
     "suiteNames": [
       "Changeover Optimizer",
@@ -768,7 +767,8 @@ window.SC_PERSONA_DETAILS = {
       "RM/PM Availability Check Before Freeze",
       "Campaign Batch-Size & Shelf-Life Balancer",
       "Allergen & CIP Washdown Sequencing Optimizer"
-    ]
+    ],
+    "sumanImpact": "Cuts sanitation downtime by 15–25%"
   },
   "SC-23": {
     "id": "SC-23",
@@ -781,7 +781,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Production Scheduling",
     "whatTheyDo": "Supervises real-time plant floor execution, operator staffing, and machinery uptime during production shifts. Responds rapidly to line stoppages, quality deviations, and material shortages to hit daily production targets.",
-    "whyItMatters": "In high-velocity CPG operations across Ranjangaon Pune ICML Packaging Floor, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Ranjangaon Pune ICML Packaging Floor, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -795,7 +795,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 3,
     "toilAfter": 3,
-    "annualValueCr": 25.8,
     "primaryAgent": "Disruption Re-sequencer",
     "suiteNames": [
       "Disruption Re-sequencer",
@@ -803,7 +802,8 @@ window.SC_PERSONA_DETAILS = {
       "Line Speed & Scrap Anomaly Coach",
       "Emergency Maintenance Dispatch & Spares Bot",
       "WIP Hold & Rework Routing Advisor"
-    ]
+    ],
+    "sumanImpact": "Line reallocation in <3 minutes"
   },
   "SC-24": {
     "id": "SC-24",
@@ -816,7 +816,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Production Scheduling",
     "whatTheyDo": "Directs overall manufacturing facility performance, overall equipment effectiveness (OEE), and plant safety. Optimizes operating budgets, labor utilization, and asset maintenance to deliver high-quality products on schedule.",
-    "whyItMatters": "In high-velocity CPG operations across Malur Bengaluru Multi-Line Plant Ops, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Malur Bengaluru Multi-Line Plant Ops, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -830,7 +830,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 32.55,
     "primaryAgent": "Labor & Line Balancing",
     "suiteNames": [
       "Labor & Line Balancing",
@@ -838,7 +837,8 @@ window.SC_PERSONA_DETAILS = {
       "Daily Plant OEE & Conversion Cost Pulse",
       "Safety Near-Miss & Shift Walk Audit Copilot",
       "Contractor & Temp-Labor Attendance Reconciler"
-    ]
+    ],
+    "sumanImpact": "Prevents certified skill bottlenecks"
   },
   "SC-25": {
     "id": "SC-25",
@@ -851,7 +851,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Capacity Planning",
     "whatTheyDo": "Coordinates manufacturing network strategy and capacity allocation across internal factories and external co-manufacturers. Ensures agile cross-facility load balancing to absorb demand surges and supply disruptions.",
-    "whyItMatters": "In high-velocity CPG operations across Mumbai Multi-Plant OEE Engineering Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Mumbai Multi-Plant OEE Engineering Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -865,7 +865,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 26.27,
     "primaryAgent": "Bottleneck Diagnostic",
     "suiteNames": [
       "Bottleneck Diagnostic",
@@ -873,7 +872,8 @@ window.SC_PERSONA_DETAILS = {
       "Preventive Maintenance vs Demand Conflict Bot",
       "Cold-Room & Plant FG Staging Overflow Radar",
       "Multi-Site Yield & Giveaway Benchmarker"
-    ]
+    ],
+    "sumanImpact": "Flags facility constraints 3–6 mos out"
   },
   "SC-26": {
     "id": "SC-26",
@@ -886,7 +886,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Capacity Planning",
     "whatTheyDo": "Manages commercial relationships, production scheduling, and quality oversight with contract manufacturing organizations (CMOs). Monitors outsourced production milestones and raw material handoffs to ensure contract compliance.",
-    "whyItMatters": "In high-velocity CPG operations across Sri City / Rotterdam Co-Packer Network, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Sri City / Rotterdam Co-Packer Network, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -900,7 +900,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 41.04,
     "primaryAgent": "Co-Packer Allocation",
     "suiteNames": [
       "Co-Packer Allocation",
@@ -908,7 +907,8 @@ window.SC_PERSONA_DETAILS = {
       "CMO Schedule Adherence & Dispatch Tracker",
       "Co-Packer Quality Audit & Hygiene Tracker",
       "Co-Packer Tolling Invoice & Rate Auditor"
-    ]
+    ],
+    "sumanImpact": "Optimizes net gross margin per case"
   },
   "SC-27": {
     "id": "SC-27",
@@ -921,7 +921,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Capacity Planning",
     "whatTheyDo": "Leads manufacturing process engineering, automation initiatives, and smart factory digital tooling. Evaluates equipment capabilities, cycle times, and robotics to improve plant floor productivity and worker safety.",
-    "whyItMatters": "In high-velocity CPG operations across Corporate Industrial CapEx Twin Studio, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Corporate Industrial CapEx Twin Studio, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -935,7 +935,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 12.32,
     "primaryAgent": "CapEx Simulator",
     "suiteNames": [
       "CapEx Simulator",
@@ -943,7 +942,8 @@ window.SC_PERSONA_DETAILS = {
       "Energy & Utilities Intensity Benchmarker",
       "New-Line Commissioning & Ramp-Up Tracker",
       "Equipment Lifecycle & Obsolete-Spares Radar"
-    ]
+    ],
+    "sumanImpact": "Delivers defensible board CapEx ROI"
   },
   "SC-28": {
     "id": "SC-28",
@@ -956,7 +956,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Quality & Compliance",
     "whatTheyDo": "Governs product quality assurance, line inspection protocols, and HACCP/GMP compliance. Investigates defects, enforces non-conformance quarantines, and coordinates corrective actions to maintain brand integrity.",
-    "whyItMatters": "In high-velocity CPG operations across Medak Food Park High-Speed Vision QA, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Medak Food Park High-Speed Vision QA, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -970,7 +970,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 61.14,
     "primaryAgent": "Visual Defect Triager",
     "suiteNames": [
       "Visual Defect Triager",
@@ -978,7 +977,8 @@ window.SC_PERSONA_DETAILS = {
       "QA Hold Release & Disposition Copilot",
       "Incoming Raw Material COA & Lab Verifier",
       "Metal Detector & X-Ray Calibration Auditor"
-    ]
+    ],
+    "sumanImpact": "Prevents full pallet scrap & holds"
   },
   "SC-29": {
     "id": "SC-29",
@@ -991,7 +991,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Quality & Compliance",
     "whatTheyDo": "Ensures manufacturing processes meet stringent FDA, OSHA, ISO, and local safety standards. Maintains validated electronic batch records, audit logs, and compliance documentation for global market release.",
-    "whyItMatters": "In high-velocity CPG operations across Haridwar GMP & FSSAI/FDA Release Lab, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Haridwar GMP & FSSAI/FDA Release Lab, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -1005,7 +1005,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 12,
     "toilAfter": 24,
-    "annualValueCr": 16.84,
     "primaryAgent": "Batch Record Auditor",
     "suiteNames": [
       "Batch Record Auditor",
@@ -1013,7 +1012,8 @@ window.SC_PERSONA_DETAILS = {
       "Mock Recall & Traceability Drill Agent",
       "FSSAI / Legal Metrology Change Radar",
       "HACCP & Environmental Swab Trend Sentinel"
-    ]
+    ],
+    "sumanImpact": "60–80% faster batch release review"
   },
   "SC-30": {
     "id": "SC-30",
@@ -1026,7 +1026,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-green)",
     "subprocess": "Quality & Compliance",
     "whatTheyDo": "Drives Lean, Six Sigma, and Kaizen operational excellence programs across manufacturing plants. Identifies scrap root causes, bottleneck line stages, and changeover delays to boost yield and reduce manufacturing costs.",
-    "whyItMatters": "In high-velocity CPG operations across Sanand Lean Six Sigma & CAPA Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Sanand Lean Six Sigma & CAPA Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA",
     "notOwned": [
       {
@@ -1040,7 +1040,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 21,
     "toilAfter": 4,
-    "annualValueCr": 17.79,
     "primaryAgent": "RCA & CAPA Copilot",
     "suiteNames": [
       "RCA & CAPA Copilot",
@@ -1048,7 +1047,8 @@ window.SC_PERSONA_DETAILS = {
       "CAPA Effectiveness & Kaizen Tracker",
       "OEE Loss-Tree & Micro-Stop Pareto Builder",
       "Best-Practice Replication & SOP Recommender"
-    ]
+    ],
+    "sumanImpact": "Speeds 5-Why investigation closures"
   },
   "SC-31": {
     "id": "SC-31",
@@ -1061,7 +1061,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Positioning & Optimization",
     "whatTheyDo": "Calculates and optimizes multi-echelon safety stock buffers, reorder points, and inventory positioning across plants, RDCs, and forward fulfillment centers. Balances customer service level targets against inventory carrying costs.",
-    "whyItMatters": "In high-velocity CPG operations across Bengaluru Multi-Echelon Inventory Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bengaluru Multi-Echelon Inventory Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1075,7 +1075,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 64.69,
     "primaryAgent": "Safety Stock Agent",
     "suiteNames": [
       "Safety Stock Agent",
@@ -1083,7 +1082,8 @@ window.SC_PERSONA_DETAILS = {
       "Freshness vs Service-Level Buffer Balancer",
       "ABC-XYZ Segmentation & Policy Tuner",
       "Transit-Time Variability & Lead-Time Updater"
-    ]
+    ],
+    "sumanImpact": "Cuts working capital by 10–18%"
   },
   "SC-32": {
     "id": "SC-32",
@@ -1096,7 +1096,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Positioning & Optimization",
     "whatTheyDo": "Monitors stock health, inventory velocity, and slow-moving or obsolete (SLOB) goods across the distribution network. Initiates replenishment purchase orders and stock transfer orders to keep distribution centers balanced.",
-    "whyItMatters": "In high-velocity CPG operations across Bhiwandi SLOB & Freshness Control Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bhiwandi SLOB & Freshness Control Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1110,7 +1110,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 72.15,
     "primaryAgent": "SLOB Disposition Agent",
     "suiteNames": [
       "SLOB Disposition Agent",
@@ -1118,7 +1117,8 @@ window.SC_PERSONA_DETAILS = {
       "Non-Moving Stock & Promo Bundle Advisor",
       "Blocked & Quality-Hold Stock Aging Tracker",
       "Slow-Moving Depot-to-Depot Transfer Finder"
-    ]
+    ],
+    "sumanImpact": "Prevents expired stock write-offs"
   },
   "SC-33": {
     "id": "SC-33",
@@ -1131,7 +1131,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Positioning & Optimization",
     "whatTheyDo": "Generates weekly and daily stock transfer orders (STOs) to replenish regional and forward distribution centers from manufacturing plants. Accounts for transit lead times, warehouse receiving capacities, and demand spikes.",
-    "whyItMatters": "In high-velocity CPG operations across Nagpur MIHAN National Cross-Dock Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Nagpur MIHAN National Cross-Dock Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1145,7 +1145,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 30.95,
     "primaryAgent": "Inter-Facility Rebalancer",
     "suiteNames": [
       "Inter-Facility Rebalancer",
@@ -1153,7 +1152,8 @@ window.SC_PERSONA_DETAILS = {
       "Inter-CFA Stock Balancing & STO Copilot",
       "Allocation Fair-Share Pre-Check for WDs",
       "In-Transit Stock & Pipeline Visibility Bot"
-    ]
+    ],
+    "sumanImpact": "Eliminates regional out-of-stocks"
   },
   "SC-34": {
     "id": "SC-34",
@@ -1166,7 +1166,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Warehouse Operations",
     "whatTheyDo": "Directs distribution center throughput, warehouse slotting architecture, and labor productivity. Optimizes putaway, wave picking, and packing flows to achieve high outbound dock velocity and low cost-per-unit handled.",
-    "whyItMatters": "In high-velocity CPG operations across Dankuni Automated AS/RS Fulfillment Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Dankuni Automated AS/RS Fulfillment Center, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1180,7 +1180,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 35.2,
     "primaryAgent": "Dynamic Slotting Agent",
     "suiteNames": [
       "Dynamic Slotting Agent",
@@ -1188,7 +1187,8 @@ window.SC_PERSONA_DETAILS = {
       "Dock & Staging Congestion Predictor",
       "Pallet-Space Utilization & Overflow Forecaster",
       "Forklift & MHE Fleet Utilization Tracker"
-    ]
+    ],
+    "sumanImpact": "Reduces picker transit time by 15–30%"
   },
   "SC-35": {
     "id": "SC-35",
@@ -1201,7 +1201,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Warehouse Operations",
     "whatTheyDo": "Oversees inbound dock appointments, trailer unloading, and quality receiving verification. Directs ASN validation, cross-dock flow-through, and putaway staging to minimize dock congestion and carrier detention.",
-    "whyItMatters": "In high-velocity CPG operations across Bilaspur Gurugram Inbound Receiving Dock, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bilaspur Gurugram Inbound Receiving Dock, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1215,7 +1215,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 14,
     "toilAfter": 75,
-    "annualValueCr": 16.61,
     "primaryAgent": "Dock-to-Stock Agent",
     "suiteNames": [
       "Dock-to-Stock Agent",
@@ -1223,7 +1222,8 @@ window.SC_PERSONA_DETAILS = {
       "FEFO Put-Away & Batch Segregation Guide",
       "Inbound Carrier Detention & Gate-Wait Tracker",
       "Damaged-in-Transit Evidence Capture Gem"
-    ]
+    ],
+    "sumanImpact": "Dock turnaround in minutes vs. hours"
   },
   "SC-36": {
     "id": "SC-36",
@@ -1236,7 +1236,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Warehouse Operations",
     "whatTheyDo": "Coordinates warehouse floor teams, wave release timing, and material handling equipment during active picking shifts. Resolves picking bottlenecks, pack station starvation, and carrier cutoff deadlines.",
-    "whyItMatters": "In high-velocity CPG operations across Hosur High-Velocity Wave Fulfillment Floor, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Hosur High-Velocity Wave Fulfillment Floor, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1250,7 +1250,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 4,
     "toilAfter": 8,
-    "annualValueCr": 22.15,
     "primaryAgent": "Wave Fulfillment Copilot",
     "suiteNames": [
       "Wave Fulfillment Copilot",
@@ -1258,7 +1257,8 @@ window.SC_PERSONA_DETAILS = {
       "Pick-Error & Short-Pick Root-Cause Bot",
       "Cycle-Count Priority & Inventory Accuracy Bot",
       "Temp Picker Onboarding & Productivity Coach"
-    ]
+    ],
+    "sumanImpact": "Prevents missed dispatch windows (OTIF)"
   },
   "SC-37": {
     "id": "SC-37",
@@ -1271,7 +1271,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Omnichannel Visibility",
     "whatTheyDo": "Governs store-level fulfillment operations, Ship-from-Store (SFS), and Buy-Online-Pickup-In-Store (BOPIS) execution. Optimizes in-store picking labor, retail backroom staging, and customer order handoffs.",
-    "whyItMatters": "In high-velocity CPG operations across Mumbai Modern Trade & Q-Commerce Ops, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Mumbai Modern Trade & Q-Commerce Ops, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1285,7 +1285,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 36.38,
     "primaryAgent": "Phantom Inventory Sensor",
     "suiteNames": [
       "Phantom Inventory Sensor",
@@ -1293,7 +1292,8 @@ window.SC_PERSONA_DETAILS = {
       "Promo Display Execution & Stock-Check Bot",
       "MT Planogram & Facing Compliance Auditor",
       "Store-Level Shrinkage & Pilferage Pattern Bot"
-    ]
+    ],
+    "sumanImpact": "Triggers targeted floor cycle counts"
   },
   "SC-38": {
     "id": "SC-38",
@@ -1306,7 +1306,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Omnichannel Visibility",
     "whatTheyDo": "Directs omnichannel distributed order management (DOM) strategy across retail stores, e-commerce fulfillment hubs, and 3PL partners. Minimizes split shipments and parcel delivery costs while meeting customer delivery SLAs.",
-    "whyItMatters": "In high-velocity CPG operations across Dallas / Bengaluru Omnichannel ATP Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Dallas / Bengaluru Omnichannel ATP Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1320,7 +1320,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 23.29,
     "primaryAgent": "SFS / BOPIS Sourcing",
     "suiteNames": [
       "SFS / BOPIS Sourcing",
@@ -1328,7 +1327,8 @@ window.SC_PERSONA_DETAILS = {
       "e-B2B & Direct-to-Retailer Order Promiser",
       "Quick-Commerce Assortment & Pack-Size Tuner",
       "Last-Mile Delivery SLA & Rider Wait Monitor"
-    ]
+    ],
+    "sumanImpact": "Lowers parcel costs & split rates"
   },
   "SC-39": {
     "id": "SC-39",
@@ -1341,7 +1341,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-teal, #0097A7)",
     "subprocess": "Omnichannel Visibility",
     "whatTheyDo": "Manages warehouse return processing, inspection sorting, and product disposition routing. Directs refurbishment, repackaging, liquidation, and recycling streams to recover maximum asset value from returned merchandise.",
-    "whyItMatters": "In high-velocity CPG operations across Bhiwandi Reverse Grading & Refurb Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bhiwandi Reverse Grading & Refurb Hub, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Manhattan Active WMS · SAP EWM · DMS Stock Ledger",
     "notOwned": [
       {
@@ -1355,7 +1355,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 9,
     "toilAfter": 24,
-    "annualValueCr": 20.64,
     "primaryAgent": "Returns Triage Agent",
     "suiteNames": [
       "Returns Triage Agent",
@@ -1363,7 +1362,8 @@ window.SC_PERSONA_DETAILS = {
       "Return Root-Cause & Pack-Damage Tracker",
       "Field Destruction & GST Reversal Audit Bot",
       "Seasonal & Festive Unsold Return Predictor"
-    ]
+    ],
+    "sumanImpact": "Restocks sellable returns within 24h"
   },
   "SC-40": {
     "id": "SC-40",
@@ -1385,7 +1385,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 27.3,
     "primaryAgent": "Load Consolidation Agent",
     "suiteNames": [
       "Overnight STO & Load Consolidation Agent",
@@ -1393,7 +1392,8 @@ window.SC_PERSONA_DETAILS = {
       "EOD Dispatch & Carrier Tender Agent",
       "Lane Rate-Card & Spot-vs-Contract Optimizer",
       "Plant-to-CFA Direct-to-WD Bypass Advisor"
-    ]
+    ],
+    "sumanImpact": "12–18% higher primary FTL fill rate"
   },
   "SC-41": {
     "id": "SC-41",
@@ -1415,7 +1415,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 30.5,
     "primaryAgent": "Yard Disruption & Detention Sentinel",
     "suiteNames": [
       "Inbound Gate & Bay Scheduler Gem",
@@ -1423,7 +1422,8 @@ window.SC_PERSONA_DETAILS = {
       "E-Way Bill & Gate-Out Reconciler",
       "Driver Check-In & Multilingual Kiosk Assistant",
       "Vehicle Fitness & Safety Checklist Auditor"
-    ]
+    ],
+    "sumanImpact": "Cuts plant truck detention by 40%"
   },
   "SC-42": {
     "id": "SC-42",
@@ -1445,7 +1445,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 33.7,
     "primaryAgent": "Cold-Chain Thermal Auditor",
     "suiteNames": [
       "Pre-Cooling & Reefer Readiness Gem",
@@ -1453,7 +1452,8 @@ window.SC_PERSONA_DETAILS = {
       "Transit QA Release & Claim Copilot",
       "Monsoon Humidity & Ambient Transit Risk Bot",
       "Reefer Carrier Thermal-Compliance Scorecard"
-    ]
+    ],
+    "sumanImpact": "Prevents perishable FMCG spoilage"
   },
   "SC-43": {
     "id": "SC-43",
@@ -1475,7 +1475,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 36.9,
     "primaryAgent": "CFA Wave & Bay Orchestrator",
     "suiteNames": [
       "CFA Morning Bay & Labor Planner Gem",
@@ -1483,7 +1482,8 @@ window.SC_PERSONA_DETAILS = {
       "CFA Wave & Bay Orchestrator",
       "CFA Labor & Loader Wave Balancer",
       "CFA Hygiene, Pest & Stack-Height Auditor"
-    ]
+    ],
+    "sumanImpact": "30% faster CFA dock turnaround"
   },
   "SC-44": {
     "id": "SC-44",
@@ -1505,7 +1505,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 40.1,
     "primaryAgent": "Fair-Share Stock Allocation Agent",
     "suiteNames": [
       "Morning Short-Supply & Fill-Rate Pulse",
@@ -1513,7 +1512,8 @@ window.SC_PERSONA_DETAILS = {
       "WD Backorder & ETA Communicator",
       "Key-Account vs GT Priority Conflict Resolver",
       "Backorder Auto-Recovery & Replenishment Notifier"
-    ]
+    ],
+    "sumanImpact": "Protects distributor fill-rate equity"
   },
   "SC-45": {
     "id": "SC-45",
@@ -1535,7 +1535,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 14.5,
     "primaryAgent": "EOD Billing & Cutoff Closer Agent",
     "suiteNames": [
       "Credit-Block & Indent Readiness Gem",
@@ -1543,7 +1542,8 @@ window.SC_PERSONA_DETAILS = {
       "EOD Billing & Cutoff Closer Agent",
       "GST e-Invoice & e-Way Bill Error Auto-Fixer",
       "Distributor Balance-Order & Cancellation Cleaner"
-    ]
+    ],
+    "sumanImpact": "99.2% same-day primary billing"
   },
   "SC-46": {
     "id": "SC-46",
@@ -1565,7 +1565,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 17.7,
     "primaryAgent": "MT / Q-Comm Slot & OTIF Copilot",
     "suiteNames": [
       "PO Expiry & Slot Conflict Scanner",
@@ -1573,7 +1572,8 @@ window.SC_PERSONA_DETAILS = {
       "OTIF Penalty & Fill-Rate Defender",
       "Q-Comm Dark-Store Direct-Drop Scheduler",
       "Retailer Portal ASN & Appointment Reconciler"
-    ]
+    ],
+    "sumanImpact": "98.5%+ MT & Q-Comm OTIF compliance"
   },
   "SC-47": {
     "id": "SC-47",
@@ -1595,7 +1595,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 20.9,
     "primaryAgent": "Territory RTM Morning Pulse Gem",
     "suiteNames": [
       "Territory RTM Morning Pulse Gem",
@@ -1603,7 +1602,8 @@ window.SC_PERSONA_DETAILS = {
       "EOD Market Debrief & Action Tracker",
       "Beat-Level Zero-Billing & Outlet Churn Radar",
       "New-Launch Distribution & Eco-Outlet Tracker"
-    ]
+    ],
+    "sumanImpact": "+4% secondary distribution reach"
   },
   "SC-48": {
     "id": "SC-48",
@@ -1625,7 +1625,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 24.1,
     "primaryAgent": "Predictive WD Reorder & Dispatch Agent",
     "suiteNames": [
       "Morning Tempo Load & Beat Briefing Gem",
@@ -1633,7 +1632,8 @@ window.SC_PERSONA_DETAILS = {
       "Damage Return & Claim Status Bot",
       "WD Working-Capital & ROI Health Advisor",
       "Salesman Beat-Order Anomaly & Split-Load Bot"
-    ]
+    ],
+    "sumanImpact": "4–6 days reduction in WD DSI"
   },
   "SC-49": {
     "id": "SC-49",
@@ -1646,7 +1646,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-yellow)",
     "subprocess": "Fleet, Carrier & Freight Governance",
     "whatTheyDo": "Manages central route dispatch, hours-of-service (HOS) driver compliance, and dynamic route optimization using live traffic and weather radar. Re-routes vehicles around highway bottlenecks to protect delivery commitments.",
-    "whyItMatters": "In high-velocity CPG operations across Central FleetFlow Corridor Control Room, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Central FleetFlow Corridor Control Room, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Oracle OTM · SAP TM · NIC E-Way Bill API",
     "notOwned": [
       {
@@ -1660,7 +1660,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 40.25,
     "primaryAgent": "Dynamic Rerouter",
     "suiteNames": [
       "Curfew & Route Compliance Validator",
@@ -1668,7 +1667,8 @@ window.SC_PERSONA_DETAILS = {
       "Fleet Utilization & Empty-Mile Auditor",
       "EV / CNG Fleet Range & Charge-Stop Planner",
       "Geo-Fenced Proof-of-Delivery & Cash Alert Bot"
-    ]
+    ],
+    "sumanImpact": "Cuts fleet fuel & transit time 6–10%"
   },
   "SC-50": {
     "id": "SC-50",
@@ -1690,7 +1690,6 @@ window.SC_PERSONA_DETAILS = {
     "notOwned": "Does not override core Distribution & Logistics financial ledgers or safety policies without human sign-off.",
     "toilBefore": 34,
     "toilAfter": 16,
-    "annualValueCr": 30.5,
     "primaryAgent": "Routing Guide Compliance Agent",
     "suiteNames": [
       "Lane Tender Rejection Radar",
@@ -1698,7 +1697,8 @@ window.SC_PERSONA_DETAILS = {
       "Weekly Carrier QBR Scorecard Agent",
       "Fuel-Surcharge & Diesel-Index Auditor",
       "Carrier Safety, GPS Uptime & Compliance Bot"
-    ]
+    ],
+    "sumanImpact": "Reduces spot freight by 15–20%"
   },
   "SC-51": {
     "id": "SC-51",
@@ -1711,7 +1711,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-yellow)",
     "subprocess": "Fleet, Carrier & Freight Governance",
     "whatTheyDo": "Audits carrier freight bills against agreed rate sheets, tenders, and accessorial fees. Files and recovers loss, damage, and detention claims (OS&D) to protect transportation budgets from billing errors.",
-    "whyItMatters": "In high-velocity CPG operations across Chennai Freight Bill & Accessorial Audit, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Chennai Freight Bill & Accessorial Audit, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "Oracle OTM · SAP TM · NIC E-Way Bill API",
     "notOwned": [
       {
@@ -1725,7 +1725,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 66.56,
     "primaryAgent": "Freight Bill Audit Agent",
     "suiteNames": [
       "POD OCR & Short-Delivery Extractor",
@@ -1733,7 +1732,8 @@ window.SC_PERSONA_DETAILS = {
       "Auto-Approval & Credit Note Generator",
       "Toll, Unloading & Extra-Drop Accessorial Verifier",
       "Unbilled Freight Provision & Accrual Reconciler"
-    ]
+    ],
+    "sumanImpact": "Captures 3–7% in overbilled fees"
   },
   "SC-52": {
     "id": "SC-52",
@@ -1746,7 +1746,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Returns & Claims Mgmt",
     "whatTheyDo": "Directs customer return authorization policies, warranty validation, and return fraud prevention. Implements computer vision and return history scoring to identify serial fraud claims and wardrobing abuse.",
-    "whyItMatters": "In high-velocity CPG operations across Bengaluru Multimodal RMA Fraud Lab, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bengaluru Multimodal RMA Fraud Lab, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -1760,7 +1760,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 67.69,
     "primaryAgent": "Return Fraud Sentinel",
     "suiteNames": [
       "Return Fraud Sentinel",
@@ -1768,7 +1767,8 @@ window.SC_PERSONA_DETAILS = {
       "Serial & Batch Authenticity Verifier",
       "Cross-Channel Grey-Market & Diversion Watcher",
       "High-Risk Return Policy Rule Tuner"
-    ]
+    ],
+    "sumanImpact": "Cuts returns fraud abuse by 25–40%"
   },
   "SC-53": {
     "id": "SC-53",
@@ -1781,7 +1781,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Returns & Claims Mgmt",
     "whatTheyDo": "Designs customer-friendly return, exchange, and instant refund policies that protect brand loyalty. Coordinates 'keep-it' salvage recommendations to eliminate costly reverse shipping on low-value items.",
-    "whyItMatters": "In high-velocity CPG operations across Mumbai Consumer Refund & Keep-It Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Mumbai Consumer Refund & Keep-It Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -1795,7 +1795,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 17.99,
     "primaryAgent": "Keep-It & Routing Advisor",
     "suiteNames": [
       "Keep-It & Routing Advisor",
@@ -1803,7 +1802,8 @@ window.SC_PERSONA_DETAILS = {
       "Retailer / Consumer Claim Resolution Copilot",
       "Repeat-Damage Packaging Feedback Synthesizer",
       "Proactive Delay & Short-Ship Notifier"
-    ]
+    ],
+    "sumanImpact": "Lowers net return costs by 15–22%"
   },
   "SC-54": {
     "id": "SC-54",
@@ -1816,7 +1816,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Returns & Claims Mgmt",
     "whatTheyDo": "Manages commercial freight damage claims, Over-Short-and-Damage (OS&D) settlements, and vendor chargebacks. Resolves discrepancies between electronic bills of lading and dock receiving damage logs.",
-    "whyItMatters": "In high-velocity CPG operations across Nagpur Carrier OS&D Claims Control, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Nagpur Carrier OS&D Claims Control, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -1830,7 +1830,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 21.35,
     "primaryAgent": "OS&D Freight Claims",
     "suiteNames": [
       "OS&D Freight Claims",
@@ -1838,7 +1837,8 @@ window.SC_PERSONA_DETAILS = {
       "Transit Insurance & Repeat-Offender Tracker",
       "Cold-Chain Excursion & Insurance Claim Compiler",
       "Carrier Claim Recovery Aging & Escalator"
-    ]
+    ],
+    "sumanImpact": "Resolves carrier claims in <72 hours"
   },
   "SC-55": {
     "id": "SC-55",
@@ -1851,7 +1851,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Expiry & Markdowns",
     "whatTheyDo": "Governs in-store markdown schedules, shelf clearance velocity, and seasonal product liquidation. Uses sales velocity analytics to discount aging inventory dynamically before expiration.",
-    "whyItMatters": "In high-velocity CPG operations across Hyderabad Fresh ESL & Markdown Studio, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Hyderabad Fresh ESL & Markdown Studio, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -1865,7 +1865,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 34.06,
     "primaryAgent": "Dynamic Markdown Agent",
     "suiteNames": [
       "Dynamic Markdown Agent",
@@ -1873,7 +1872,8 @@ window.SC_PERSONA_DETAILS = {
       "Store-Level Freshness & Rotation Coach",
       "Slow-Moving Shelf-Space Reallocation Advisor",
       "Markdown Cannibalization & Halo Checker"
-    ]
+    ],
+    "sumanImpact": "Cuts perishable scrap by 20–35%"
   },
   "SC-56": {
     "id": "SC-56",
@@ -1886,7 +1886,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Expiry & Markdowns",
     "whatTheyDo": "Coordinates bulk secondary market liquidation, salvage auction tenders, and product diversion to off-price retailers. Recovers working capital from discontinued and returned merchandise.",
-    "whyItMatters": "In high-velocity CPG operations across Delhi NCR Short-Dated Secondary Clearing, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Delhi NCR Short-Dated Secondary Clearing, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -1900,7 +1900,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 18.15,
     "primaryAgent": "Short-Dated Redistributor",
     "suiteNames": [
       "Short-Dated Redistributor",
@@ -1908,7 +1907,8 @@ window.SC_PERSONA_DETAILS = {
       "Write-Off Tax & CSR Compliance Documenter",
       "Regional Surplus-to-Demand Secondary Matcher",
       "Expiry Write-Off Root-Cause Categorizer"
-    ]
+    ],
+    "sumanImpact": "Diverts bulk perishables from landfill"
   },
   "SC-57": {
     "id": "SC-57",
@@ -1921,7 +1921,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Expiry & Markdowns",
     "whatTheyDo": "Drives circular economy initiatives, closed-loop packaging reuse, and corporate zero-waste landfill targets. Tracks greenhouse gas offsets and recycled material flows for audited ESG sustainability reporting.",
-    "whyItMatters": "In high-velocity CPG operations across Corporate Zero-Waste & Food-Bank Ledger, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Corporate Zero-Waste & Food-Bank Ledger, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -1935,7 +1935,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 20.35,
     "primaryAgent": "Food Waste & ESG Copilot",
     "suiteNames": [
       "Food Waste & ESG Copilot",
@@ -1943,7 +1942,8 @@ window.SC_PERSONA_DETAILS = {
       "Circular Packaging & Scrap Valorization Bot",
       "Zero-Waste-to-Landfill Plant Certifier",
       "Green Freight & Modal-Shift Emissions Tracker"
-    ]
+    ],
+    "sumanImpact": "Automates annual circularity reporting"
   },
   "SC-58": {
     "id": "SC-58",
@@ -1956,7 +1956,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Pallet & Tote Reclamation",
     "whatTheyDo": "Manages reusable transport items (RTIs)—including reusable plastic totes, pallets, and cryogenic containers. Tracks asset cycles and minimizes loss across customer supply loops.",
-    "whyItMatters": "In high-velocity CPG operations across Bhiwandi CHEP/PECO RFID Pool Control, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Bhiwandi CHEP/PECO RFID Pool Control, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -1970,7 +1970,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 23.29,
     "primaryAgent": "RTI Balance Reconciler",
     "suiteNames": [
       "RTI Balance Reconciler",
@@ -1978,7 +1977,8 @@ window.SC_PERSONA_DETAILS = {
       "RTI Rental Invoice & Loss Reconciler",
       "Plant-to-CFA Crate Circulation Velocity Tracker",
       "Peak-Season RTI Buffer Pre-Positioner"
-    ]
+    ],
+    "sumanImpact": "Eliminates 30% in non-return fee fines"
   },
   "SC-59": {
     "id": "SC-59",
@@ -1991,7 +1991,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Pallet & Tote Reclamation",
     "whatTheyDo": "Plans cost-effective return shipping, backhaul consolidation, and regional return consolidation center (RCC) routing. Integrates empty backhaul trailers into primary freight routes to cut return shipping expenses.",
-    "whyItMatters": "In high-velocity CPG operations across Pune Milk-Run Empty Crate Backhaul Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Pune Milk-Run Empty Crate Backhaul Desk, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -2005,7 +2005,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 28,
     "toilAfter": 12,
-    "annualValueCr": 17.12,
     "primaryAgent": "Milk-Run Consolidation",
     "suiteNames": [
       "Milk-Run Consolidation",
@@ -2013,7 +2012,8 @@ window.SC_PERSONA_DETAILS = {
       "Reverse Fleet Utilization & Detention Tracker",
       "Third-Party Backhaul Monetization Matcher",
       "Crate Collapse & Stack-Density Optimizer"
-    ]
+    ],
+    "sumanImpact": "Boosts backhaul fill rate by 25–40%"
   },
   "SC-60": {
     "id": "SC-60",
@@ -2026,7 +2026,7 @@ window.SC_PERSONA_DETAILS = {
     "pillarColor": "var(--g-red)",
     "subprocess": "Pallet & Tote Reclamation",
     "whatTheyDo": "Audits return packaging integrity, food contact safety compliance, and hazardous material return transport. Enforces sanitary handling standards to prevent contamination in circular packaging loops.",
-    "whyItMatters": "In high-velocity CPG operations across Haridwar Reusable Tote Wash & QA Gate, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in ₹ Lakhs and Crores.",
+    "whyItMatters": "In high-velocity CPG operations across Haridwar Reusable Tote Wash & QA Gate, delayed visibility directly triggers Modern Trade OTIF penalties, FEFO shelf-life write-offs, or unrecovered trade/freight leakage measured in INR  Lakhs and Crores.",
     "systemsTouched": "SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal",
     "notOwned": [
       {
@@ -2040,7 +2040,6 @@ window.SC_PERSONA_DETAILS = {
     ],
     "toilBefore": 26,
     "toilAfter": 8,
-    "annualValueCr": 16.12,
     "primaryAgent": "Sanitation & Health Agent",
     "suiteNames": [
       "Sanitation & Health Agent",
@@ -2048,7 +2047,8 @@ window.SC_PERSONA_DETAILS = {
       "Damaged RTI Quarantine & Repair Triager",
       "Allergen Cross-Contact Wash Segregation Bot",
       "Wash-Water & Chemical Dosing Efficiency Bot"
-    ]
+    ],
+    "sumanImpact": "Extends reusable lifecycle by 15–20%"
   }
 };
 
@@ -2065,13 +2065,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 59.61,
     "sources": [
       "BigQuery POS",
       "Weather API",
       "SAP IBP"
     ],
-    "problem": "₹148 Lakh Cr/yr global stockout & overstock distortion · 32%–45% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose ₹148 Lakh Cr annually (₹100 Lakh Cr stockouts + ₹46.93 Lakh Cr overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.",
+    "problem": "Synthesizes POS velocity, weather anomalies, and macro trends.",
     "outcome": "Detects demand shifts 7–14 days earlier",
     "reads": "Normalizes store/hub sell-through in BigQuery & imputes stockout censorship Connected CPG systems: SAP IBP · Distributor Management System (DMS) · Retail POS.",
     "does": "Generates zero-shot & fine-tuned P10/P50/P90 horizon fans on Vertex AI (Time-Series Forecasting Foundation Model + BigQuery ML Hierarchical Bayesian Censored-Demand Imputation).",
@@ -2085,7 +2084,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Demand Sensing Agent",
-    "liveId": "demand_sensing_agent"
+    "liveId": "demand_sensing_agent",
+    "sumanImpact": "Detects demand shifts 7–14 days earlier"
   },
   "secondary-to-primary translation agent": {
     "name": "Secondary-to-Primary Translation Agent",
@@ -2099,7 +2099,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 39.6,
     "sources": [
       "DMS Secondary",
       "WD Closing Stock",
@@ -2108,7 +2107,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles Wholesale Dealer closing stock & secondary depletion against primary indents before morning CFA allocation.",
     "outcome": "Cuts WD-to-CFA bullwhip distortion by 18%",
     "reads": "Streams live records from DMS Secondary, WD Closing Stock, CFA Indents into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Bridges Wholesale Dealer (WD) secondary depletion and closing stock with CFA primary indents to eliminate bullwhip distortion. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Bridges Wholesale Dealer (WD) secondary depletion and closing stock with CFA primary indents to eliminate bullwhip distortion. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged DMS Secondary transfer/allocation order — formatted for Demand Planner / Forecaster review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in DMS Secondary without Demand Planner / Forecaster sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Secondary and WD Closing Stock rather than extrapolating unverified values.",
@@ -2120,7 +2119,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Secondary-to-Primary Translation Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts WD-to-CFA bullwhip distortion by 18%"
   },
   "trade scheme & promo lift forecaster": {
     "name": "Trade Scheme & Promo Lift Forecaster",
@@ -2134,7 +2134,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 39.6,
     "sources": [
       "Scheme Circulars",
       "Historical Promo Lift",
@@ -2143,7 +2142,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Simulates GT/MT scheme uplift and post-promo pantry-loading dip prior to monthly trade circular release.",
     "outcome": "+12% incremental trade scheme ROI",
     "reads": "Streams live records from Scheme Circulars, Historical Promo Lift, Margin Tables into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Models incremental volume lift and post-scheme pantry-loading dip for GT & MT trade promotions before scheme circular release. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Models incremental volume lift and post-scheme pantry-loading dip for GT & MT trade promotions before scheme circular release. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Scheme Circulars update — formatted for Demand Planner / Forecaster review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Scheme Circulars without Demand Planner / Forecaster approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Scheme Circulars and Historical Promo Lift rather than extrapolating unverified values.",
@@ -2155,7 +2154,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Trade Scheme & Promo Lift Forecaster",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+12% incremental trade scheme ROI"
   },
   "channel-mix & q-comm spike predictor": {
     "name": "Channel-Mix & Q-Comm Spike Predictor",
@@ -2169,7 +2169,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 39.6,
     "sources": [
       "Q-Comm Dark Stores",
       "MT POS",
@@ -2178,7 +2177,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Separates Blinkit/Zepto/MT dark-store flash spikes from steady General Trade baseline demand for branch replenishment.",
     "outcome": "Protects 98.5%+ Q-Comm & MT OTIF",
     "reads": "Streams live records from Q-Comm Dark Stores, MT POS, GT Beat Sales into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Separates General Trade, Modern Trade, and Quick Commerce dark-store velocity spikes for accurate branch-level replenishment. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Separates General Trade, Modern Trade, and Quick Commerce dark-store velocity spikes for accurate branch-level replenishment. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Q-Comm Dark Stores update — formatted for Demand Planner / Forecaster review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Q-Comm Dark Stores without Demand Planner / Forecaster approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Q-Comm Dark Stores and MT POS rather than extrapolating unverified values.",
@@ -2190,7 +2189,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Channel-Mix & Q-Comm Spike Predictor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects 98.5%+ Q-Comm & MT OTIF"
   },
   "forecast bias & cfa stock-out sentinel": {
     "name": "Forecast Bias & CFA Stock-Out Sentinel",
@@ -2204,7 +2204,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 39.6,
     "sources": [
       "SAP IBP Bias",
       "CFA ATP",
@@ -2213,7 +2212,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags persistent SKU-branch over/under-forecasting and pushes proactive alerts to ASMs & CS&L before safety-stock breach.",
     "outcome": "20% fewer regional CFA stock-outs",
     "reads": "Streams live records from SAP IBP Bias, CFA ATP, ASM Alerts into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Flags recurring SKU-branch forecast bias and alerts ASMs & CS&L before regional CFAs breach safety stock. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Flags recurring SKU-branch forecast bias and alerts ASMs & CS&L before regional CFAs breach safety stock. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged SAP IBP Bias update — formatted for Demand Planner / Forecaster review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in SAP IBP Bias without Demand Planner / Forecaster approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP IBP Bias and CFA ATP rather than extrapolating unverified values.",
@@ -2225,7 +2224,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Forecast Bias & CFA Stock-Out Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% fewer regional CFA stock-outs"
   },
   "forecast reconciliation": {
     "name": "Forecast Reconciliation",
@@ -2239,13 +2239,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 21.88,
     "sources": [
       "Channel BI",
       "Google Sheets",
       "E-Comm Feeds"
     ],
-    "problem": "₹148 Lakh Cr/yr global stockout & overstock distortion · 32%–45% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose ₹148 Lakh Cr annually (₹100 Lakh Cr stockouts + ₹46.93 Lakh Cr overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.",
+    "problem": "Identifies unmodeled drivers across eCommerce and retail channels.",
     "outcome": "Replaces black-box variance models",
     "reads": "Normalizes daily store scan & retailer DC withdrawal feeds into BigQuery Connected CPG systems: SAP IBP · Distributor Management System (DMS) · Retail POS.",
     "does": "Flags zero-scan shelf stockouts masked by phantom ERP stock (BigQuery ML Zero-Scan Poisson Anomaly Detector + Vertex AI ADK CPFR Consensus Reconciler).",
@@ -2259,7 +2258,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Forecast Reconciliation",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Replaces black-box variance models"
   },
   "channel forecast consensus agent": {
     "name": "Channel Forecast Consensus Agent",
@@ -2273,7 +2273,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P0 · Build First",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 9.8,
     "sources": [
       "DMS Secondary",
       "MT POS",
@@ -2282,7 +2281,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles General Trade, Modern Trade, and Q-Comm channel projections before weekly commercial review.",
     "outcome": "4–6% lower GT/MT forecast error",
     "reads": "Streams live records from DMS Secondary, MT POS, SAP IBP into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Identifies unmodeled drivers across GT, MT, and e-B2B channels and aligns commercial plans with primary supply. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Identifies unmodeled drivers across GT, MT, and e-B2B channels and aligns commercial plans with primary supply. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged DMS Secondary update — formatted for Commercial Planning Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in DMS Secondary without Commercial Planning Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Secondary and MT POS rather than extrapolating unverified values.",
@@ -2294,7 +2293,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Channel Forecast Consensus Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "4–6% lower GT/MT forecast error"
   },
   "branch revenue & volume bridge bot": {
     "name": "Branch Revenue & Volume Bridge Bot",
@@ -2308,7 +2308,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 9.8,
     "sources": [
       "Branch P&L",
       "Trade Spend",
@@ -2317,7 +2316,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Auto-generates branch-wise volume, mix, and realization bridges ahead of weekly TM&D commercial huddles.",
     "outcome": "Saves 6 hrs/week in S&OP prep",
     "reads": "Streams live records from Branch P&L, Trade Spend, IBP Consensus into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Builds variance bridges across branch volume, pack mix, and realization to spotlight commercial risks early. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Builds variance bridges across branch volume, pack mix, and realization to spotlight commercial risks early. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Branch P&L update — formatted for Commercial Planning Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Branch P&L without Commercial Planning Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Branch P&L and Trade Spend rather than extrapolating unverified values.",
@@ -2329,7 +2328,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Branch Revenue & Volume Bridge Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 6 hrs/week in S&OP prep"
   },
   "regional festive & seasonality calibrator": {
     "name": "Regional Festive & Seasonality Calibrator",
@@ -2343,7 +2343,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.8,
     "sources": [
       "Regional Calendars",
       "DMS Secondary",
@@ -2352,8 +2351,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Adjusts branch-level commercial plans for regional festivals, harvest cycles, and school reopening spikes.",
     "outcome": "Cuts festive stock-outs by 16%",
     "reads": "Streams live records from Regional Calendars, DMS Secondary, SAP IBP into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Aligns regional commercial phasing with local festival calendars and branch secondary run-rates. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Commercial Planning Lead review inside Gemini Enterprise.",
+    "does": "Aligns regional commercial phasing with local festival calendars and branch secondary run-rates. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Commercial Planning Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Regional Calendars or overrides Commercial Planning Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Regional Calendars and DMS Secondary rather than extrapolating unverified values.",
     "samplePrompt": "Calibrate next 6 weeks of branch commercial targets for regional festivals across East, West, North, and South.",
@@ -2364,7 +2363,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Regional Festive & Seasonality Calibrator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts festive stock-outs by 16%"
   },
   "wd opening-to-closing stock sanity bot": {
     "name": "WD Opening-to-Closing Stock Sanity Bot",
@@ -2378,7 +2378,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.8,
     "sources": [
       "WD Closing Stock",
       "Primary Billing",
@@ -2387,7 +2386,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Audits distributor stock-in-trade norms to flag artificial quarter-end channel stuffing risks.",
     "outcome": "Eliminates phantom channel inventory",
     "reads": "Streams live records from WD Closing Stock, Primary Billing, Secondary Sales into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Monitors Wholesale Dealer inventory-days vs secondary depletion to keep commercial plans grounded. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Monitors Wholesale Dealer inventory-days vs secondary depletion to keep commercial plans grounded. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged WD Closing Stock transfer/allocation order — formatted for Commercial Planning Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in WD Closing Stock without Commercial Planning Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WD Closing Stock and Primary Billing rather than extrapolating unverified values.",
@@ -2399,7 +2398,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "WD Opening-to-Closing Stock Sanity Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates phantom channel inventory"
   },
   "npi demand profiler": {
     "name": "NPI Demand Profiler",
@@ -2413,13 +2413,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 19.52,
     "sources": [
       "PLM Specs",
       "Historical NPI DB",
       "Drive Decks"
     ],
-    "problem": "₹148 Lakh Cr/yr global stockout & overstock distortion · 32%–45% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose ₹148 Lakh Cr annually (₹100 Lakh Cr stockouts + ₹46.93 Lakh Cr overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.",
+    "problem": "Matches launch packaging and attributes to historical lookalikes.",
     "outcome": "Cuts 90-day launch forecast errors",
     "reads": "Normalizes store/hub sell-through in BigQuery & imputes stockout censorship Connected CPG systems: SAP IBP · Distributor Management System (DMS) · Retail POS.",
     "does": "Generates zero-shot & fine-tuned P10/P50/P90 horizon fans on Vertex AI (Time-Series Forecasting Foundation Model + BigQuery ML Hierarchical Bayesian Censored-Demand Imputation).",
@@ -2433,7 +2432,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "NPI Demand Profiler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts 90-day launch forecast errors"
   },
   "npi launch readiness tracker": {
     "name": "NPI Launch Readiness Tracker",
@@ -2447,7 +2447,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8.8,
     "sources": [
       "PLM",
       "Artwork Portal",
@@ -2456,7 +2455,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks packaging artwork sign-offs, FSSAI label approvals, and pilot plant readiness across launch gates.",
     "outcome": "20% faster NPD shelf-readiness",
     "reads": "Streams live records from PLM, Artwork Portal, Plant Trials into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Monitors cross-functional NPD launch milestones from formulation freeze to first CFA dispatch. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Monitors cross-functional NPD launch milestones from formulation freeze to first CFA dispatch. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Brand & Innovation Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Brand & Innovation Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across PLM and Artwork Portal rather than extrapolating unverified values.",
@@ -2468,7 +2467,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "NPI Launch Readiness Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% faster NPD shelf-readiness"
   },
   "cannibalization & halo sentinel": {
     "name": "Cannibalization & Halo Sentinel",
@@ -2482,7 +2482,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8.8,
     "sources": [
       "POS Velocity",
       "Panel Data",
@@ -2491,7 +2490,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Measures early repeat-purchase velocity and sibling SKU cannibalization during the first 8 weeks post-launch.",
     "outcome": "Cuts post-launch forecast bias by 15%",
     "reads": "Streams live records from POS Velocity, Panel Data, SAP IBP into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Tracks post-launch repeat rates and parent-SKU cannibalization to recalibrate rolling production plans. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Tracks post-launch repeat rates and parent-SKU cannibalization to recalibrate rolling production plans. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged POS Velocity update — formatted for Brand & Innovation Manager review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in POS Velocity without Brand & Innovation Manager approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across POS Velocity and Panel Data rather than extrapolating unverified values.",
@@ -2503,7 +2502,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cannibalization & Halo Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts post-launch forecast bias by 15%"
   },
   "regional pilot store velocity monitor": {
     "name": "Regional Pilot Store Velocity Monitor",
@@ -2517,7 +2517,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.8,
     "sources": [
       "MT POS",
       "Q-Comm Velocity",
@@ -2526,8 +2525,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks daily repeat-rate and trial velocity in launch test cities against category benchmarks.",
     "outcome": "2x faster post-launch course correction",
     "reads": "Streams live records from MT POS, Q-Comm Velocity, Test Markets into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Monitors early test-market velocity to guide scale-up vs pack/price tweaks before national rollout. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Brand & Innovation Manager review inside Gemini Enterprise.",
+    "does": "Monitors early test-market velocity to guide scale-up vs pack/price tweaks before national rollout. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Brand & Innovation Manager review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to MT POS or overrides Brand & Innovation Manager sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MT POS and Q-Comm Velocity rather than extrapolating unverified values.",
     "samplePrompt": "Compare Week 1–3 repeat velocity in pilot cities against top-quartile category launches.",
@@ -2538,7 +2537,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Regional Pilot Store Velocity Monitor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2x faster post-launch course correction"
   },
   "competitive pack & claim benchmark gem": {
     "name": "Competitive Pack & Claim Benchmark Gem",
@@ -2552,7 +2552,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.8,
     "sources": [
       "Market Scans",
       "Shelf Audits",
@@ -2561,7 +2560,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Synthesizes competitor pack-price ladders, claims, and gram-weight shifts ahead of brand reviews.",
     "outcome": "Saves 4 hrs/week in launch prep",
     "reads": "Streams live records from Market Scans, Shelf Audits, Pack Specs into BigQuery, normalizing demand forecasting exceptions and baseline thresholds in real time.",
-    "does": "Keeps brand teams updated on competitor SKU launches, price-point gaps, and packaging innovations. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Keeps brand teams updated on competitor SKU launches, price-point gaps, and packaging innovations. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Market Scans, discrepancy highlights against Shelf Audits, and 1-click dispute/approval card — formatted for Brand & Innovation Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Market Scans without Brand & Innovation Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Market Scans and Shelf Audits rather than extrapolating unverified values.",
@@ -2573,7 +2572,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Competitive Pack & Claim Benchmark Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 4 hrs/week in launch prep"
   },
   "promo roi simulator": {
     "name": "Promo ROI Simulator",
@@ -2587,7 +2587,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 57.22,
     "sources": [
       "TPM System",
       "BigQuery POS",
@@ -2607,7 +2606,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Promo ROI Simulator",
-    "liveId": "promo_lift_simulator"
+    "liveId": "promo_lift_simulator",
+    "sumanImpact": "Prevents break-even trade leakage"
   },
   "trade scheme circular & slab auditor": {
     "name": "Trade Scheme Circular & Slab Auditor",
@@ -2621,7 +2621,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 37.4,
     "sources": [
       "Scheme Engine",
       "DMS Claims",
@@ -2630,7 +2629,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Validates GT/MT scheme slabs against margin guardrails and checks for overlapping branch-level discounts.",
     "outcome": "+10% scheme budget efficiency",
     "reads": "Streams live records from Scheme Engine, DMS Claims, Branch Targets into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Audits proposed trade scheme structures for slab cannibalization, margin dilution, and channel conflict. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Audits proposed trade scheme structures for slab cannibalization, margin dilution, and channel conflict. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Scheme Engine update — formatted for Trade Marketing Manager review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Scheme Engine without Trade Marketing Manager approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Scheme Engine and DMS Claims rather than extrapolating unverified values.",
@@ -2642,7 +2641,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Trade Scheme Circular & Slab Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+10% scheme budget efficiency"
   },
   "retail display & visibility compliance bot": {
     "name": "Retail Display & Visibility Compliance Bot",
@@ -2656,7 +2656,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 37.4,
     "sources": [
       "Field Rep Photos",
       "Retailer Audits",
@@ -2665,7 +2664,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies outlet display photos from field force apps against contracted visibility and chiller-share norms.",
     "outcome": "18% higher end-cap & POSM compliance",
     "reads": "Streams live records from Field Rep Photos, Retailer Audits, Trade Spend into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Uses multimodal vision on field rep outlet photos to score POSM, end-cap, and planogram execution. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Uses multimodal vision on field rep outlet photos to score POSM, end-cap, and planogram execution. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Field Rep Photos, discrepancy highlights against Retailer Audits, and 1-click dispute/approval card — formatted for Trade Marketing Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Field Rep Photos without Trade Marketing Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Field Rep Photos and Retailer Audits rather than extrapolating unverified values.",
@@ -2677,7 +2676,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Retail Display & Visibility Compliance Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "18% higher end-cap & POSM compliance"
   },
   "gt slab elasticity & margin guardrail bot": {
     "name": "GT Slab Elasticity & Margin Guardrail Bot",
@@ -2691,7 +2691,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 37.4,
     "sources": [
       "DMS Secondary",
       "Slab Elasticity",
@@ -2700,7 +2699,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tests proposed General Trade quantity-discount slabs against historical retailer uplift and net margin.",
     "outcome": "+140 bps GT scheme net realization",
     "reads": "Streams live records from DMS Secondary, Slab Elasticity, Margin Tables into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Prevents over-discounting on inelastic hero SKUs while targeting slabs toward high-elasticity packs. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents over-discounting on inelastic hero SKUs while targeting slabs toward high-elasticity packs. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged DMS Secondary update — formatted for Trade Marketing Manager review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in DMS Secondary without Trade Marketing Manager approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Secondary and Slab Elasticity rather than extrapolating unverified values.",
@@ -2712,7 +2711,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "GT Slab Elasticity & Margin Guardrail Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+140 bps GT scheme net realization"
   },
   "mt / q-comm co-op ad & visibility roi tracker": {
     "name": "MT / Q-Comm Co-Op Ad & Visibility ROI Tracker",
@@ -2726,7 +2726,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 37.4,
     "sources": [
       "Q-Comm Ads",
       "MT POS",
@@ -2735,7 +2734,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Correlates Blinkit/Zepto banner spends and MT end-cap fees with daily SKU off-take lift.",
     "outcome": "15% higher digital/retail media ROAS",
     "reads": "Streams live records from Q-Comm Ads, MT POS, Promo Spend into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Measures incremental sales lift per rupee of Modern Trade and Quick Commerce visibility spend. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Measures incremental sales lift per rupee of Modern Trade and Quick Commerce visibility spend. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Q-Comm Ads update — formatted for Trade Marketing Manager review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Q-Comm Ads without Trade Marketing Manager approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Q-Comm Ads and MT POS rather than extrapolating unverified values.",
@@ -2747,7 +2746,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "MT / Q-Comm Co-Op Ad & Visibility ROI Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% higher digital/retail media ROAS"
   },
   "jbp negotiation agent": {
     "name": "JBP Negotiation Agent",
@@ -2761,7 +2761,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.08,
     "sources": [
       "Account P&L",
       "Drive Templates",
@@ -2781,7 +2780,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "JBP Negotiation Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Aligns buyer margins and volume goals"
   },
   "mt / q-comm otif & fill-rate defender": {
     "name": "MT / Q-Comm OTIF & Fill-Rate Defender",
@@ -2795,7 +2795,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P0 · Build First",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 25.7,
     "sources": [
       "Retailer POs",
       "CFA ATP",
@@ -2804,7 +2803,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reviews incoming DMart, Reliance, Blinkit, and Zepto POs every morning against CFA stock and slot cutoffs.",
     "outcome": "Protects 98.5% key-account OTIF",
     "reads": "Streams live records from Retailer POs, CFA ATP, ASN Portal into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Flags key-account short-ship risks before dispatch cutoff and coordinates priority stock allocation. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Flags key-account short-ship risks before dispatch cutoff and coordinates priority stock allocation. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Key Account Manager (KAM) review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Key Account Manager (KAM) confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Retailer POs and CFA ATP rather than extrapolating unverified values.",
@@ -2816,7 +2815,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "MT / Q-Comm OTIF & Fill-Rate Defender",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects 98.5% key-account OTIF"
   },
   "key account margin & terms monitor": {
     "name": "Key Account Margin & Terms Monitor",
@@ -2830,7 +2830,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 25.7,
     "sources": [
       "JBP Contracts",
       "TOT Rebates",
@@ -2839,7 +2838,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks Terms of Trade (TOT) slab achievement, listing fees, and promo co-funding across top MT/Q-Comm banners.",
     "outcome": "2–3% stronger net JBP margin",
     "reads": "Streams live records from JBP Contracts, TOT Rebates, Invoice ERP into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Monitors real-time TOT rebate accruals and promotional funding burn against annual JBP agreements. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Monitors real-time TOT rebate accruals and promotional funding burn against annual JBP agreements. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from JBP Contracts, discrepancy highlights against TOT Rebates, and 1-click dispute/approval card — formatted for Key Account Manager (KAM) review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to JBP Contracts without Key Account Manager (KAM) verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across JBP Contracts and TOT Rebates rather than extrapolating unverified values.",
@@ -2851,7 +2850,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Key Account Margin & Terms Monitor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2–3% stronger net JBP margin"
   },
   "retailer range & new-sku listing tracker": {
     "name": "Retailer Range & New-SKU Listing Tracker",
@@ -2865,7 +2865,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 25.7,
     "sources": [
       "MT Assortment",
       "Store POS",
@@ -2874,7 +2873,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks store-level distribution build for newly listed SKUs across Modern Trade chains.",
     "outcome": "30% faster key-account assortment rollout",
     "reads": "Streams live records from MT Assortment, Store POS, KAM Plan into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Identifies contracted MT stores that have not yet placed their initial PO for newly listed SKUs. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Identifies contracted MT stores that have not yet placed their initial PO for newly listed SKUs. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from MT Assortment, discrepancy highlights against Store POS, and 1-click dispute/approval card — formatted for Key Account Manager (KAM) review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to MT Assortment without Key Account Manager (KAM) verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MT Assortment and Store POS rather than extrapolating unverified values.",
@@ -2886,7 +2885,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Retailer Range & New-SKU Listing Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "30% faster key-account assortment rollout"
   },
   "short-shelf-life rejection & penalty preventer": {
     "name": "Short-Shelf-Life Rejection & Penalty Preventer",
@@ -2900,7 +2900,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 25.7,
     "sources": [
       "CFA Batch Age",
       "MT Min-Life",
@@ -2909,7 +2908,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies every allocated key-account lot meets the retailer's 65%–75% minimum remaining shelf-life rule.",
     "outcome": "Cuts MT gate rejections by 45%",
     "reads": "Streams live records from CFA Batch Age, MT Min-Life, ASN Portal into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Blocks non-compliant aged batches before dispatch to prevent costly MT DC gate rejections. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Blocks non-compliant aged batches before dispatch to prevent costly MT DC gate rejections. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from CFA Batch Age, discrepancy highlights against MT Min-Life, and 1-click dispute/approval card — formatted for Key Account Manager (KAM) review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to CFA Batch Age without Key Account Manager (KAM) verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Batch Age and MT Min-Life rather than extrapolating unverified values.",
@@ -2921,7 +2920,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Short-Shelf-Life Rejection & Penalty Preventer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts MT gate rejections by 45%"
   },
   "deduction audit agent": {
     "name": "Deduction Audit Agent",
@@ -2935,7 +2935,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 33.61,
     "sources": [
       "Scanned Invoices",
       "SAP Claims",
@@ -2955,7 +2954,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Deduction Audit Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Resolves claim disputes in hours"
   },
   "wd & mt claim settlement copilot": {
     "name": "WD & MT Claim Settlement Copilot",
@@ -2969,7 +2969,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.1,
     "sources": [
       "DMS Claims",
       "SAP FI",
@@ -2978,7 +2977,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Matches Wholesale Dealer and Modern Trade credit-note requests against approved scheme circulars and secondary sales.",
     "outcome": "50% faster distributor claim cycle",
     "reads": "Streams live records from DMS Claims, SAP FI, Scheme Master into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Automates claim eligibility checks across WD secondary invoices and MT deduction advices. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates claim eligibility checks across WD secondary invoices and MT deduction advices. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from DMS Claims, discrepancy highlights against SAP FI, and 1-click dispute/approval card — formatted for Revenue / Trade Finance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to DMS Claims without Revenue / Trade Finance Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Claims and SAP FI rather than extrapolating unverified values.",
@@ -2990,7 +2989,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "WD & MT Claim Settlement Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "50% faster distributor claim cycle"
   },
   "unbilled trade accrual & leakage watcher": {
     "name": "Unbilled Trade Accrual & Leakage Watcher",
@@ -3004,7 +3004,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.1,
     "sources": [
       "GL Accruals",
       "Deduction Logs",
@@ -3013,8 +3012,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles open customer deductions and unredeemed scheme provisions to prevent quarter-end surprises.",
     "outcome": "Recovers 1.5–2.5% trade spend leakage",
     "reads": "Streams live records from GL Accruals, Deduction Logs, TOT Agreements into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Continuously audits trade spend accruals against settled credit notes to surface invalid deductions. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Revenue / Trade Finance Lead review inside Gemini Enterprise.",
+    "does": "Continuously audits trade spend accruals against settled credit notes to surface invalid deductions. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Revenue / Trade Finance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to GL Accruals or overrides Revenue / Trade Finance Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across GL Accruals and Deduction Logs rather than extrapolating unverified values.",
     "samplePrompt": "Rank open MT/WD trade deductions older than 30 days without matching scheme approval.",
@@ -3025,7 +3024,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Unbilled Trade Accrual & Leakage Watcher",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Recovers 1.5–2.5% trade spend leakage"
   },
   "distributor credit-limit & overdue early warning": {
     "name": "Distributor Credit-Limit & Overdue Early Warning",
@@ -3039,7 +3039,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.1,
     "sources": [
       "SAP AR",
       "WD Indents",
@@ -3048,7 +3047,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags Wholesale Dealers approaching credit limits before morning primary billing waves run.",
     "outcome": "Cuts blocked primary indents by 35%",
     "reads": "Streams live records from SAP AR, WD Indents, Collection Logs into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Coordinates proactive collections or temporary limit approvals so high-velocity WDs never miss dispatch. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Coordinates proactive collections or temporary limit approvals so high-velocity WDs never miss dispatch. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Revenue / Trade Finance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Revenue / Trade Finance Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP AR and WD Indents rather than extrapolating unverified values.",
@@ -3060,7 +3059,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Distributor Credit-Limit & Overdue Early Warning",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts blocked primary indents by 35%"
   },
   "secondary-to-claim ratio anomaly sentinel": {
     "name": "Secondary-to-Claim Ratio Anomaly Sentinel",
@@ -3074,7 +3074,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.1,
     "sources": [
       "DMS Secondary",
       "Claim Portal",
@@ -3083,8 +3082,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compares each distributor's monthly scheme claim % against branch benchmarks and secondary sales.",
     "outcome": "Prevents 1–2% trade claim over-payouts",
     "reads": "Streams live records from DMS Secondary, Claim Portal, Branch Norms into BigQuery, normalizing trade promotion exceptions and baseline thresholds in real time.",
-    "does": "Surfaces outlier claim ratios across territories for targeted trade finance verification. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Revenue / Trade Finance Lead review inside Gemini Enterprise.",
+    "does": "Surfaces outlier claim ratios across territories for targeted trade finance verification. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Revenue / Trade Finance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to DMS Secondary or overrides Revenue / Trade Finance Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Secondary and Claim Portal rather than extrapolating unverified values.",
     "samplePrompt": "Flag distributors whose scheme claim % of secondary sales exceeded branch norm by >300 bps.",
@@ -3095,7 +3094,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Secondary-to-Claim Ratio Anomaly Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents 1–2% trade claim over-payouts"
   },
   "consensus & gap agent": {
     "name": "Consensus & Gap Agent",
@@ -3109,7 +3109,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 33.09,
     "sources": [
       "SAP APO/IBP",
       "Plant Capacity",
@@ -3129,7 +3128,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Consensus & Gap Agent",
-    "liveId": "sop_scenario_weaver"
+    "liveId": "sop_scenario_weaver",
+    "sumanImpact": "Highlights margin-dilutive imbalances"
   },
   "pre-s&op constraint & gap summarizer": {
     "name": "Pre-S&OP Constraint & Gap Summarizer",
@@ -3143,7 +3143,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.4,
     "sources": [
       "SAP IBP",
       "Plant Capacity",
@@ -3152,7 +3151,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compiles demand-vs-capacity imbalances across plants and co-packers before weekly S&OP alignment.",
     "outcome": "Cuts S&OP cycle prep by 60%",
     "reads": "Streams live records from SAP IBP, Plant Capacity, RCCP into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Synthesizes constrained supply gaps, line utilization bottlenecks, and inventory coverage into executive briefs. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Synthesizes constrained supply gaps, line utilization bottlenecks, and inventory coverage into executive briefs. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged SAP IBP transfer/allocation order — formatted for S&OP / Supply Planning Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in SAP IBP without S&OP / Supply Planning Dir. sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP IBP and Plant Capacity rather than extrapolating unverified values.",
@@ -3164,7 +3163,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Pre-S&OP Constraint & Gap Summarizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts S&OP cycle prep by 60%"
   },
   "scenario trade-off & margin simulator": {
     "name": "Scenario Trade-Off & Margin Simulator",
@@ -3178,7 +3178,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.4,
     "sources": [
       "IBP Scenarios",
       "Contribution Margin",
@@ -3187,8 +3186,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evaluates overtime shifts, inter-plant sourcing swaps, and priority SKU allocation trade-offs.",
     "outcome": "+150 bps gross margin protection",
     "reads": "Streams live records from IBP Scenarios, Contribution Margin, Freight Matrix into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Simulates cost and service impacts of alternate sourcing and overtime production plans during supply crunches. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for S&OP / Supply Planning Dir. review inside Gemini Enterprise.",
+    "does": "Simulates cost and service impacts of alternate sourcing and overtime production plans during supply crunches. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for S&OP / Supply Planning Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to IBP Scenarios or overrides S&OP / Supply Planning Dir. sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across IBP Scenarios and Contribution Margin rather than extrapolating unverified values.",
     "samplePrompt": "Compare overtime cost vs inter-region freight cost to close next month's capacity gap.",
@@ -3199,7 +3198,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Scenario Trade-Off & Margin Simulator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+150 bps gross margin protection"
   },
   "co-packer & alternate line surge allocator": {
     "name": "Co-Packer & Alternate Line Surge Allocator",
@@ -3213,7 +3213,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.4,
     "sources": [
       "Plant RCCP",
       "Co-Packer Cap",
@@ -3222,7 +3221,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reallocates peak demand spikes between internal plants and regional co-packers weekly.",
     "outcome": "Protects 97%+ peak-season fill rate",
     "reads": "Streams live records from Plant RCCP, Co-Packer Cap, SAP IBP into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Balances internal line utilization with external tolling capacity to close regional supply gaps. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Balances internal line utilization with external tolling capacity to close regional supply gaps. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Plant RCCP transfer/allocation order — formatted for S&OP / Supply Planning Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Plant RCCP without S&OP / Supply Planning Dir. sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant RCCP and Co-Packer Cap rather than extrapolating unverified values.",
@@ -3234,7 +3233,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Co-Packer & Alternate Line Surge Allocator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects 97%+ peak-season fill rate"
   },
   "master schedule stability & freeze monitor": {
     "name": "Master Schedule Stability & Freeze Monitor",
@@ -3248,7 +3248,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.4,
     "sources": [
       "SAP MPS",
       "Demand Edits",
@@ -3257,7 +3256,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks late demand overrides inside the 2-week frozen production window and quantifies changeover loss.",
     "outcome": "Cuts costly mid-week schedule churn by 30%",
     "reads": "Streams live records from SAP MPS, Demand Edits, Changeover Log into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Enforces MPS time-fence discipline while highlighting true high-margin exceptions. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Enforces MPS time-fence discipline while highlighting true high-margin exceptions. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged SAP MPS update — formatted for S&OP / Supply Planning Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in SAP MPS without S&OP / Supply Planning Dir. approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP MPS and Demand Edits rather than extrapolating unverified values.",
@@ -3269,7 +3268,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Master Schedule Stability & Freeze Monitor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts costly mid-week schedule churn by 30%"
   },
   "digital war-room agent": {
     "name": "Digital War-Room Agent",
@@ -3283,7 +3283,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 37.5,
     "sources": [
       "Control Tower",
       "Co-Packer Contracts",
@@ -3303,7 +3302,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Digital War-Room Agent",
-    "liveId": "disruption_war_room_orchestrator"
+    "liveId": "disruption_war_room_orchestrator",
+    "sumanImpact": "Rapid OTIF impact scenario brief"
   },
   "daily supply chain control tower brief": {
     "name": "Daily Supply Chain Control Tower Brief",
@@ -3317,7 +3317,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.9,
     "sources": [
       "OTIF KPIs",
       "Plant OEE",
@@ -3326,7 +3325,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Delivers a 08:00 AM mobile brief covering national OTIF, plant OEE anomalies, and critical stock-out risks.",
     "outcome": "Same-day executive visibility",
     "reads": "Streams live records from OTIF KPIs, Plant OEE, Inventory DOH into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Consolidates plant, depot, and logistics exceptions into a single prioritized daily executive scorecard. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Consolidates plant, depot, and logistics exceptions into a single prioritized daily executive scorecard. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged OTIF KPIs transfer/allocation order — formatted for Supply Chain VP / COO review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in OTIF KPIs without Supply Chain VP / COO sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across OTIF KPIs and Plant OEE rather than extrapolating unverified values.",
@@ -3338,7 +3337,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Daily Supply Chain Control Tower Brief",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Same-day executive visibility"
   },
   "working capital & service trade-off radar": {
     "name": "Working Capital & Service Trade-Off Radar",
@@ -3352,7 +3352,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.9,
     "sources": [
       "SAP IBP",
       "Working Capital",
@@ -3361,8 +3360,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Highlights where excess safety stock can be trimmed without risking A-class SKU fill rates.",
     "outcome": "5–8% inventory cash release",
     "reads": "Streams live records from SAP IBP, Working Capital, Fill Rate into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Balances working capital targets against customer service SLAs across regions and product categories. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Supply Chain VP / COO review inside Gemini Enterprise.",
+    "does": "Balances working capital targets against customer service SLAs across regions and product categories. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Supply Chain VP / COO review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SAP IBP or overrides Supply Chain VP / COO sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP IBP and Working Capital rather than extrapolating unverified values.",
     "samplePrompt": "Identify categories with >45 days of finished-goods cover alongside <95% fill rate elsewhere.",
@@ -3373,7 +3372,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Working Capital & Service Trade-Off Radar",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "5–8% inventory cash release"
   },
   "network risk & plant contingency simulator": {
     "name": "Network Risk & Plant Contingency Simulator",
@@ -3387,7 +3387,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.9,
     "sources": [
       "Plant Network",
       "CFA Stock",
@@ -3396,7 +3395,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Simulates alternate plant-to-CFA sourcing paths during monsoon floods, strikes, or line outages.",
     "outcome": "3x faster crisis response decisions",
     "reads": "Streams live records from Plant Network, CFA Stock, Lane Rates into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Provides instant cost-and-service contingency plans when major manufacturing or transit hubs are disrupted. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Provides instant cost-and-service contingency plans when major manufacturing or transit hubs are disrupted. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Plant Network transfer/allocation order — formatted for Supply Chain VP / COO review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Plant Network without Supply Chain VP / COO sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant Network and CFA Stock rather than extrapolating unverified values.",
@@ -3408,7 +3407,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Network Risk & Plant Contingency Simulator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "3x faster crisis response decisions"
   },
   "quarterly board & townhall kpi narrative bot": {
     "name": "Quarterly Board & Townhall KPI Narrative Bot",
@@ -3422,7 +3422,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.9,
     "sources": [
       "OTIF",
       "Cost-to-Serve",
@@ -3431,7 +3430,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Synthesizes quarterly service, inventory, freight, and sustainability trends into board-ready talking points.",
     "outcome": "Saves 8 hrs per executive review",
     "reads": "Streams live records from OTIF, Cost-to-Serve, ESG Metrics into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Turns multi-system supply chain KPIs into concise executive narratives with root-cause citations. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Turns multi-system supply chain KPIs into concise executive narratives with root-cause citations. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Supply Chain VP / COO review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Supply Chain VP / COO sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across OTIF and Cost-to-Serve rather than extrapolating unverified values.",
@@ -3443,7 +3442,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Quarterly Board & Townhall KPI Narrative Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 8 hrs per executive review"
   },
   "executive copilot": {
     "name": "Executive Copilot",
@@ -3457,7 +3457,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.06,
     "sources": [
       "Google Workspace",
       "S&OP Scorecards",
@@ -3477,7 +3476,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Executive Copilot",
-    "liveId": "csco_control_tower_copilot"
+    "liveId": "csco_control_tower_copilot",
+    "sumanImpact": "Reduces deck preparation by days"
   },
   "ibp action tracker & sign-off nudger": {
     "name": "IBP Action Tracker & Sign-Off Nudger",
@@ -3491,7 +3491,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 3.6,
     "sources": [
       "IBP Workflow",
       "Workspace",
@@ -3500,8 +3499,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks pending demand, supply, and finance sign-offs and nudges owners ahead of IBP lock dates.",
     "outcome": "100% on-time IBP gate closure",
     "reads": "Streams live records from IBP Workflow, Workspace, ERP Snapshots into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Automates IBP calendar governance, decision logging, and cross-functional assumption sign-offs. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for IBP Lead / Chief Planning Off. review inside Gemini Enterprise.",
+    "does": "Automates IBP calendar governance, decision logging, and cross-functional assumption sign-offs. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for IBP Lead / Chief Planning Off. review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to IBP Workflow or overrides IBP Lead / Chief Planning Off. sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across IBP Workflow and Workspace rather than extrapolating unverified values.",
     "samplePrompt": "List overdue IBP review tasks and draft concise follow-up reminders for functional leads.",
@@ -3512,7 +3511,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "IBP Action Tracker & Sign-Off Nudger",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% on-time IBP gate closure"
   },
   "financialized ibp variance explainer": {
     "name": "Financialized IBP Variance Explainer",
@@ -3526,7 +3526,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 3.6,
     "sources": [
       "IBP Plan",
       "AOP Budget",
@@ -3535,8 +3534,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Translates volume plan changes into revenue, COGS, and working capital deltas against Annual Operating Plan.",
     "outcome": "Eliminates manual spreadsheet prep",
     "reads": "Streams live records from IBP Plan, AOP Budget, Standard Cost into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Bridges physical supply plans to financial AOP metrics for monthly leadership reviews. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for IBP Lead / Chief Planning Off. review inside Gemini Enterprise.",
+    "does": "Bridges physical supply plans to financial AOP metrics for monthly leadership reviews. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for IBP Lead / Chief Planning Off. review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to IBP Plan or overrides IBP Lead / Chief Planning Off. sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across IBP Plan and AOP Budget rather than extrapolating unverified values.",
     "samplePrompt": "Explain the COGS and working capital impact of this month's consensus plan update vs AOP.",
@@ -3547,7 +3546,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Financialized IBP Variance Explainer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates manual spreadsheet prep"
   },
   "assumption drift & forecast bias auditor": {
     "name": "Assumption Drift & Forecast Bias Auditor",
@@ -3561,7 +3561,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 3.6,
     "sources": [
       "IBP History",
       "Actual Sales",
@@ -3570,7 +3569,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks which commercial or supply assumptions caused the largest IBP plan vs actual misses.",
     "outcome": "Improves IBP forecast accountability",
     "reads": "Streams live records from IBP History, Actual Sales, Override Log into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Scores historical IBP assumption accuracy by function to eliminate recurring optimism bias. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Scores historical IBP assumption accuracy by function to eliminate recurring optimism bias. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged IBP History update — formatted for IBP Lead / Chief Planning Off. review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in IBP History without IBP Lead / Chief Planning Off. approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across IBP History and Actual Sales rather than extrapolating unverified values.",
@@ -3582,7 +3581,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Assumption Drift & Forecast Bias Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Improves IBP forecast accountability"
   },
   "portfolio profitability & capacity trade-off bot": {
     "name": "Portfolio Profitability & Capacity Trade-Off Bot",
@@ -3596,7 +3596,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 3.6,
     "sources": [
       "SKU Margin",
       "Line Hours",
@@ -3605,7 +3604,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Ranks constrained-line SKUs by contribution margin per machine-hour ahead of IBP reconciliation.",
     "outcome": "+100 bps mix-adjusted EBITDA",
     "reads": "Streams live records from SKU Margin, Line Hours, IBP Demand into BigQuery, normalizing s&op / ibp exceptions and baseline thresholds in real time.",
-    "does": "Guides IBP leaders to prioritize high-margin SKUs when manufacturing capacity is tight. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Guides IBP leaders to prioritize high-margin SKUs when manufacturing capacity is tight. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged SKU Margin update — formatted for IBP Lead / Chief Planning Off. review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in SKU Margin without IBP Lead / Chief Planning Off. approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SKU Margin and Line Hours rather than extrapolating unverified values.",
@@ -3617,7 +3616,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Portfolio Profitability & Capacity Trade-Off Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+100 bps mix-adjusted EBITDA"
   },
   "sku pruning agent": {
     "name": "SKU Pruning Agent",
@@ -3631,7 +3631,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 27.82,
     "sources": [
       "SKU P&L",
       "Changeover Matrix",
@@ -3651,7 +3650,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "SKU Pruning Agent",
-    "liveId": "working_capital_cash_bridge"
+    "liveId": "working_capital_cash_bridge",
+    "sumanImpact": "Unlocks tail working capital"
   },
   "gt/mt assortment & tail-sku advisor": {
     "name": "GT/MT Assortment & Tail-SKU Advisor",
@@ -3665,7 +3665,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 12.5,
     "sources": [
       "DMS Sales",
       "MT POS",
@@ -3674,8 +3673,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Scores slow-moving SKUs across General Trade and Modern Trade outlets for rationalization or channel restriction.",
     "outcome": "8–12% working capital reduction",
     "reads": "Streams live records from DMS Sales, MT POS, Changeover Cost into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Identifies low-velocity tail SKUs whose manufacturing changeover and depot holding costs exceed net margin. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Category Manager review inside Gemini Enterprise.",
+    "does": "Identifies low-velocity tail SKUs whose manufacturing changeover and depot holding costs exceed net margin. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Category Manager review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to DMS Sales or overrides Category Manager sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Sales and MT POS rather than extrapolating unverified values.",
     "samplePrompt": "Rank bottom 15% SKUs by gross margin after changeover and depot holding cost across GT and MT.",
@@ -3686,7 +3685,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "GT/MT Assortment & Tail-SKU Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "8–12% working capital reduction"
   },
   "pack-price architecture & mix optimizer": {
     "name": "Pack-Price Architecture & Mix Optimizer",
@@ -3700,7 +3700,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 12.5,
     "sources": [
       "Channel Mix",
       "Price Ladders",
@@ -3709,19 +3708,20 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors LUP/multipack/family-pack mix shifts across urban MT and rural GT territories.",
     "outcome": "+90 bps category gross margin",
     "reads": "Streams live records from Channel Mix, Price Ladders, Elasticity into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Analyzes pack-size margin contribution and recommends optimal assortment mix by channel. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Analyzes pack-size margin contribution and recommends optimal assortment mix by channel. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Channel Mix update — formatted for Category Manager review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Channel Mix without Category Manager approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Channel Mix and Price Ladders rather than extrapolating unverified values.",
-    "samplePrompt": "Compare net contribution per ton across ₹5/₹10 GT packs vs large MT family packs.",
+    "samplePrompt": "Compare net contribution per ton across INR 5/INR 10 GT packs vs large MT family packs.",
     "starterPrompts": [
-      "Compare net contribution per ton across ₹5/₹10 GT packs vs large MT family packs.",
+      "Compare net contribution per ton across INR 5/INR 10 GT packs vs large MT family packs.",
       "Compare current Channel Mix status against Price Ladders for portfolio & sku this week and draft the approval-ready action plan."
     ],
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Pack-Price Architecture & Mix Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+90 bps category gross margin"
   },
   "regional outlet penetration & white-space bot": {
     "name": "Regional Outlet Penetration & White-Space Bot",
@@ -3735,7 +3735,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 12.5,
     "sources": [
       "DMS Outlet Map",
       "GT Beat Sales",
@@ -3744,7 +3743,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies high-potential GT and MT outlets buying peer SKUs that haven't stocked hero variants.",
     "outcome": "+5% core SKU distribution reach",
     "reads": "Streams live records from DMS Outlet Map, GT Beat Sales, Category Index into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Pinpoints outlet-level assortment white spaces for TM&D field sales teams. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Pinpoints outlet-level assortment white spaces for TM&D field sales teams. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Category Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Category Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Outlet Map and GT Beat Sales rather than extrapolating unverified values.",
@@ -3756,7 +3755,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Regional Outlet Penetration & White-Space Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+5% core SKU distribution reach"
   },
   "promo-to-baseline cannibalization tracker": {
     "name": "Promo-to-Baseline Cannibalization Tracker",
@@ -3770,7 +3770,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 12.5,
     "sources": [
       "MT POS",
       "DMS Sales",
@@ -3779,7 +3778,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Measures how promotional multipacks cannibalize full-price core packs across channels.",
     "outcome": "Protects core-SKU gross margin",
     "reads": "Streams live records from MT POS, DMS Sales, Promo Log into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Tracks net category incrementality vs intra-brand pack cannibalization. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Tracks net category incrementality vs intra-brand pack cannibalization. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged MT POS update — formatted for Category Manager review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in MT POS without Category Manager approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MT POS and DMS Sales rather than extrapolating unverified values.",
@@ -3791,7 +3790,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Promo-to-Baseline Cannibalization Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects core-SKU gross margin"
   },
   "pipo run-out agent": {
     "name": "PIPO Run-Out Agent",
@@ -3805,7 +3805,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.98,
     "sources": [
       "BOM Master",
       "Packing Inventory",
@@ -3825,7 +3824,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "PIPO Run-Out Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates stranded write-offs"
   },
   "artwork & rm/pm obsolescence sentinel": {
     "name": "Artwork & RM/PM Obsolescence Sentinel",
@@ -3839,7 +3839,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.2,
     "sources": [
       "BOM Master",
       "PM Inventory",
@@ -3848,7 +3847,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Checks open packaging material POs and plant stock before engineering change cutovers.",
     "outcome": "Cuts packaging write-offs by 35%",
     "reads": "Streams live records from BOM Master, PM Inventory, Artwork ECN into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Prevents stranded laminates, cartons, and pre-printed wrappers during pack-change or regulatory transitions. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents stranded laminates, cartons, and pre-printed wrappers during pack-change or regulatory transitions. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged BOM Master transfer/allocation order — formatted for Lifecycle / Materials Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in BOM Master without Lifecycle / Materials Mgr sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across BOM Master and PM Inventory rather than extrapolating unverified values.",
@@ -3860,7 +3859,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Artwork & RM/PM Obsolescence Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts packaging write-offs by 35%"
   },
   "transition buffer & depot flush tracker": {
     "name": "Transition Buffer & Depot Flush Tracker",
@@ -3874,7 +3874,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.2,
     "sources": [
       "CFA Stock",
       "Open STOs",
@@ -3883,7 +3882,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors old-SKU depletion at CFAs to time new-SKU first dispatches cleanly.",
     "outcome": "Zero transition stock-outs",
     "reads": "Streams live records from CFA Stock, Open STOs, SAP MRP into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Synchronizes phase-out depletion with phase-in production across depots to avoid dual-SKU clutter. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Synchronizes phase-out depletion with phase-in production across depots to avoid dual-SKU clutter. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged CFA Stock transfer/allocation order — formatted for Lifecycle / Materials Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in CFA Stock without Lifecycle / Materials Mgr sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Stock and Open STOs rather than extrapolating unverified values.",
@@ -3895,7 +3894,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Transition Buffer & Depot Flush Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero transition stock-outs"
   },
   "minimum-order-quantity (moq) stranded-stock bot": {
     "name": "Minimum-Order-Quantity (MOQ) Stranded-Stock Bot",
@@ -3909,7 +3909,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.2,
     "sources": [
       "Vendor MOQs",
       "Laminate Stock",
@@ -3918,7 +3917,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags packaging MOQs that exceed remaining phase-out volume before artwork cutover.",
     "outcome": "Cuts vendor PM write-off claims by 30%",
     "reads": "Streams live records from Vendor MOQs, Laminate Stock, PIPO Dates into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Prevents buyers from ordering full-MOQ printed films right before a planned pack transition. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents buyers from ordering full-MOQ printed films right before a planned pack transition. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Vendor MOQs transfer/allocation order — formatted for Lifecycle / Materials Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Vendor MOQs without Lifecycle / Materials Mgr sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Vendor MOQs and Laminate Stock rather than extrapolating unverified values.",
@@ -3930,7 +3929,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Minimum-Order-Quantity (MOQ) Stranded-Stock Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts vendor PM write-off claims by 30%"
   },
   "regulatory & statutory cutover compliance tracker": {
     "name": "Regulatory & Statutory Cutover Compliance Tracker",
@@ -3944,7 +3944,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.2,
     "sources": [
       "Legal Gazette",
       "Artwork PLM",
@@ -3953,8 +3952,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks statutory MRP, weight, or nutrition label change deadlines across every active SKU.",
     "outcome": "100% on-time statutory label compliance",
     "reads": "Streams live records from Legal Gazette, Artwork PLM, Plant Runs into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Synchronizes legal compliance dates with packaging runs and depot depletion. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Lifecycle / Materials Mgr review inside Gemini Enterprise.",
+    "does": "Synchronizes legal compliance dates with packaging runs and depot depletion. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Lifecycle / Materials Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Legal Gazette or overrides Lifecycle / Materials Mgr sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Legal Gazette and Artwork PLM rather than extrapolating unverified values.",
     "samplePrompt": "List SKUs with upcoming statutory label deadlines lacking approved print cylinders.",
@@ -3965,7 +3964,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Regulatory & Statutory Cutover Compliance Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% on-time statutory label compliance"
   },
   "cost-to-serve diagnostic": {
     "name": "Cost-to-Serve Diagnostic",
@@ -3979,7 +3979,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 14.55,
     "sources": [
       "ERP Freight",
       "Channel Rebates",
@@ -3999,7 +3998,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cost-to-Serve Diagnostic",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Re-engineers MOQ and pack rules"
   },
   "channel cost-to-serve & freight leakage bot": {
     "name": "Channel Cost-to-Serve & Freight Leakage Bot",
@@ -4013,7 +4013,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 6.5,
     "sources": [
       "Freight Bills",
       "CFA Handling",
@@ -4022,7 +4021,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Breaks down primary freight, CFA handling, and secondary delivery cost per case across GT, MT, and Q-Comm.",
     "outcome": "+120 bps channel net margin",
     "reads": "Streams live records from Freight Bills, CFA Handling, Channel P&L into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Uncovers margin-eroding small-drop deliveries, expedited freights, and high-return lanes by channel. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Uncovers margin-eroding small-drop deliveries, expedited freights, and high-return lanes by channel. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Freight Bills transfer/allocation order — formatted for Commercial Finance Director review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Freight Bills without Commercial Finance Director sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Freight Bills and CFA Handling rather than extrapolating unverified values.",
@@ -4034,7 +4033,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Channel Cost-to-Serve & Freight Leakage Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+120 bps channel net margin"
   },
   "sku standard-to-actual cost variance agent": {
     "name": "SKU Standard-to-Actual Cost Variance Agent",
@@ -4048,7 +4048,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 6.5,
     "sources": [
       "SAP CO-PA",
       "Plant Yields",
@@ -4057,8 +4056,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags plant yield losses, overtime spikes, and commodity cost variances against standard SKU costs.",
     "outcome": "Real-time COGS variance alerts",
     "reads": "Streams live records from SAP CO-PA, Plant Yields, RM Prices into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Tracks manufacturing and material price variances daily to protect gross margin targets. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Commercial Finance Director review inside Gemini Enterprise.",
+    "does": "Tracks manufacturing and material price variances daily to protect gross margin targets. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Commercial Finance Director review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SAP CO-PA or overrides Commercial Finance Director sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP CO-PA and Plant Yields rather than extrapolating unverified values.",
     "samplePrompt": "Summarize top 5 SKUs with unfavorable BOM yield or conversion cost variance this week.",
@@ -4069,7 +4068,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "SKU Standard-to-Actual Cost Variance Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Real-time COGS variance alerts"
   },
   "small-drop & minimum-order freight penalty bot": {
     "name": "Small-Drop & Minimum-Order Freight Penalty Bot",
@@ -4083,7 +4083,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 6.5,
     "sources": [
       "WD Invoices",
       "Freight Bills",
@@ -4092,7 +4091,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies customers and routes with chronic sub-optimal drop sizes driving high freight-to-sales.",
     "outcome": "Cuts uneconomic small-drop deliveries 25%",
     "reads": "Streams live records from WD Invoices, Freight Bills, Drop Size into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Quantifies margin dilution from frequent small indents to guide minimum-order-value rules. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Quantifies margin dilution from frequent small indents to guide minimum-order-value rules. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from WD Invoices, discrepancy highlights against Freight Bills, and 1-click dispute/approval card — formatted for Commercial Finance Director review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to WD Invoices without Commercial Finance Director verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WD Invoices and Freight Bills rather than extrapolating unverified values.",
@@ -4104,7 +4103,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Small-Drop & Minimum-Order Freight Penalty Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts uneconomic small-drop deliveries 25%"
   },
   "working capital cash-conversion tracker": {
     "name": "Working Capital Cash-Conversion Tracker",
@@ -4118,7 +4118,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 6.5,
     "sources": [
       "DIO",
       "DPO",
@@ -4127,7 +4126,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors inventory days, payables, and receivables across categories to spot cash traps.",
     "outcome": "3–5 days faster cash conversion",
     "reads": "Streams live records from DIO, DPO, DSO into BigQuery, normalizing portfolio & sku exceptions and baseline thresholds in real time.",
-    "does": "Provides daily cash-conversion visibility linking supply chain inventory to finance targets. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Provides daily cash-conversion visibility linking supply chain inventory to finance targets. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged DIO transfer/allocation order — formatted for Commercial Finance Director review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in DIO without Commercial Finance Director sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DIO and DPO rather than extrapolating unverified values.",
@@ -4139,7 +4138,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Working Capital Cash-Conversion Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "3–5 days faster cash conversion"
   },
   "disruption sensing agent": {
     "name": "Disruption Sensing Agent",
@@ -4153,7 +4153,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 54.42,
     "sources": [
       "Port/AIS Feeds",
       "Supplier News",
@@ -4173,7 +4172,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Disruption Sensing Agent",
-    "liveId": "tier_n_risk_sentinel"
+    "liveId": "tier_n_risk_sentinel",
+    "sumanImpact": "2–3 week advance disruption warning"
   },
   "supplier financial & geopolitical alert agent": {
     "name": "Supplier Financial & Geopolitical Alert Agent",
@@ -4187,7 +4187,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.5,
     "sources": [
       "News Feeds",
       "Port AIS",
@@ -4196,7 +4195,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Scans global port congestion, weather alerts, and vendor credit events against critical tier-1/tier-2 BOMs.",
     "outcome": "48-hr earlier disruption response",
     "reads": "Streams live records from News Feeds, Port AIS, Vendor Credit into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Continuously monitors supplier risk signals and maps affected plants and SKUs before stock-outs occur. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Continuously monitors supplier risk signals and maps affected plants and SKUs before stock-outs occur. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged News Feeds transfer/allocation order — formatted for Procurement Dir. / Risk Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in News Feeds without Procurement Dir. / Risk Mgr sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across News Feeds and Port AIS rather than extrapolating unverified values.",
@@ -4208,7 +4207,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Supplier Financial & Geopolitical Alert Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "48-hr earlier disruption response"
   },
   "alternate vendor & spec qualification copilot": {
     "name": "Alternate Vendor & Spec Qualification Copilot",
@@ -4222,7 +4222,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.5,
     "sources": [
       "Approved Vendor List",
       "QA Specs",
@@ -4231,7 +4230,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies pre-qualified backup suppliers and available capacity when primary vendors face delays.",
     "outcome": "30% faster dual-sourcing",
     "reads": "Streams live records from Approved Vendor List, QA Specs, Lead Times into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Accelerates emergency allocation shifts to approved secondary suppliers with minimal QA friction. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Accelerates emergency allocation shifts to approved secondary suppliers with minimal QA friction. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Approved Vendor List transfer/allocation order — formatted for Procurement Dir. / Risk Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Approved Vendor List without Procurement Dir. / Risk Mgr sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Approved Vendor List and QA Specs rather than extrapolating unverified values.",
@@ -4243,7 +4242,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Alternate Vendor & Spec Qualification Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "30% faster dual-sourcing"
   },
   "single-source bom vulnerability mapper": {
     "name": "Single-Source BOM Vulnerability Mapper",
@@ -4257,7 +4257,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.5,
     "sources": [
       "BOM Tree",
       "Vendor Share",
@@ -4266,8 +4265,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Maps revenue-at-risk across every single-sourced flavor, enzyme, and specialty laminate.",
     "outcome": "100% visibility into tier-1 chokepoints",
     "reads": "Streams live records from BOM Tree, Vendor Share, Revenue At Risk into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Quantifies daily EBITDA exposure for single-sourced materials to prioritize qualification. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Procurement Dir. / Risk Mgr review inside Gemini Enterprise.",
+    "does": "Quantifies daily EBITDA exposure for single-sourced materials to prioritize qualification. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Procurement Dir. / Risk Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to BOM Tree or overrides Procurement Dir. / Risk Mgr sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across BOM Tree and Vendor Share rather than extrapolating unverified values.",
     "samplePrompt": "Rank top 15 single-sourced ingredients and films by weekly finished-goods revenue at risk.",
@@ -4278,7 +4277,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Single-Source BOM Vulnerability Mapper",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% visibility into tier-1 chokepoints"
   },
   "weather & monsoon freight disruption predictor": {
     "name": "Weather & Monsoon Freight Disruption Predictor",
@@ -4292,7 +4292,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 24.5,
     "sources": [
       "Weather API",
       "Inbound Lanes",
@@ -4301,7 +4300,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Correlates severe monsoon/cyclone forecasts with key vendor-to-plant inbound corridors.",
     "outcome": "Pre-positions buffer stock 72h early",
     "reads": "Streams live records from Weather API, Inbound Lanes, Vendor Hubs into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Triggers early inbound dispatch pull-forwards before highway closures hit. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Triggers early inbound dispatch pull-forwards before highway closures hit. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Procurement Dir. / Risk Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Procurement Dir. / Risk Mgr confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Weather API and Inbound Lanes rather than extrapolating unverified values.",
@@ -4313,7 +4312,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Weather & Monsoon Freight Disruption Predictor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Pre-positions buffer stock 72h early"
   },
   "onboarding & qual. agent": {
     "name": "Onboarding & Qual. Agent",
@@ -4327,7 +4327,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.09,
     "sources": [
       "Audit PDFs",
       "ISO Certs",
@@ -4347,7 +4346,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Onboarding & Qual. Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts onboarding from weeks to <48h"
   },
   "vendor compliance & audit expiry sentinel": {
     "name": "Vendor Compliance & Audit Expiry Sentinel",
@@ -4361,7 +4361,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8.1,
     "sources": [
       "SAP Ariba",
       "ISO/FSSAI Docs",
@@ -4370,7 +4369,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags upcoming ISO, FSSAI, BRC, and tax certificate expirations and sends automated renewal requests.",
     "outcome": "Zero expired supplier certifications",
     "reads": "Streams live records from SAP Ariba, ISO/FSSAI Docs, Vendor Portal into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Monitors vendor compliance documents continuously to eliminate manual audit chasing. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Monitors vendor compliance documents continuously to eliminate manual audit chasing. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged SAP Ariba transfer/allocation order — formatted for Procurement Operations Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in SAP Ariba without Procurement Operations Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP Ariba and ISO/FSSAI Docs rather than extrapolating unverified values.",
@@ -4382,7 +4381,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Vendor Compliance & Audit Expiry Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero expired supplier certifications"
   },
   "supplier scorecard & sla briefing agent": {
     "name": "Supplier Scorecard & SLA Briefing Agent",
@@ -4396,7 +4396,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8.1,
     "sources": [
       "GRN OTIF",
       "QA Rejections",
@@ -4405,7 +4404,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compiles vendor OTIF, rejection PPM, and price variance scorecards ahead of supplier review meetings.",
     "outcome": "Saves 5 hrs/week on QBR prep",
     "reads": "Streams live records from GRN OTIF, QA Rejections, PO History into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Automates vendor performance scorecards from ERP receipt and quality inspection logs. Executes via Gemini Multimodal Vernacular Voice + BigQuery Outlet/Territory Context Grounding to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates vendor performance scorecards from ERP receipt and quality inspection logs. Executes via Gemini Multimodal Vernacular Voice + BigQuery Outlet/Territory Context Grounding to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Concise vernacular brief, top-3 priority actions per outlet/beat, and draft order/message cards — formatted for Procurement Operations Lead review inside Gemini Enterprise.",
     "stopsAt": "Never transmits external customer/distributor communications or finalizes orders without Procurement Operations Lead 1-tap confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across GRN OTIF and QA Rejections rather than extrapolating unverified values.",
@@ -4417,7 +4416,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Supplier Scorecard & SLA Briefing Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 5 hrs/week on QBR prep"
   },
   "vendor master data & bank-change fraud guard": {
     "name": "Vendor Master Data & Bank-Change Fraud Guard",
@@ -4431,7 +4431,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.1,
     "sources": [
       "SAP Vendor Master",
       "GST/PAN",
@@ -4440,8 +4439,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Audits daily vendor master bank-account and tax-ID edits for anomalies or unverified approvals.",
     "outcome": "Zero payment-diversion fraud risk",
     "reads": "Streams live records from SAP Vendor Master, GST/PAN, Bank Audit into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Protects procurement operations from duplicate vendor creation and bank-detail tampering. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Procurement Operations Lead review inside Gemini Enterprise.",
+    "does": "Protects procurement operations from duplicate vendor creation and bank-detail tampering. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Procurement Operations Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SAP Vendor Master or overrides Procurement Operations Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP Vendor Master and GST/PAN rather than extrapolating unverified values.",
     "samplePrompt": "Audit all vendor bank-account or GSTIN changes submitted in the last 7 days.",
@@ -4452,7 +4451,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Vendor Master Data & Bank-Change Fraud Guard",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero payment-diversion fraud risk"
   },
   "purchase requisition (pr) routing & sla copilot": {
     "name": "Purchase Requisition (PR) Routing & SLA Copilot",
@@ -4466,7 +4466,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.1,
     "sources": [
       "SAP PRs",
       "Approval Matrix",
@@ -4475,8 +4474,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Checks incoming PRs for missing specs or cost-center codes and routes them to right buyers.",
     "outcome": "40% faster PR-to-PO cycle time",
     "reads": "Streams live records from SAP PRs, Approval Matrix, Catalogs into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Eliminates PR bounce-backs and speeds up routine indirect and direct PO issuance. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Procurement Operations Lead review inside Gemini Enterprise.",
+    "does": "Eliminates PR bounce-backs and speeds up routine indirect and direct PO issuance. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Procurement Operations Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SAP PRs or overrides Procurement Operations Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP PRs and Approval Matrix rather than extrapolating unverified values.",
     "samplePrompt": "List open PRs stuck >48 hours and identify missing specification or approval steps.",
@@ -4487,7 +4486,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Purchase Requisition (PR) Routing & SLA Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "40% faster PR-to-PO cycle time"
   },
   "esg & scope 3 auditor": {
     "name": "ESG & Scope 3 Auditor",
@@ -4501,7 +4501,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.46,
     "sources": [
       "RSPO/FSC Certs",
       "LCA Databases",
@@ -4521,7 +4520,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "ESG & Scope 3 Auditor",
-    "liveId": "carbon_scope3_ledger"
+    "liveId": "carbon_scope3_ledger",
+    "sumanImpact": "Automates Scope 3 disclosure audits"
   },
   "scope 3 & packaging epr data collector": {
     "name": "Scope 3 & Packaging EPR Data Collector",
@@ -4535,7 +4535,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 9.2,
     "sources": [
       "Supplier LCAs",
       "EPR Filings",
@@ -4544,7 +4543,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Aggregates supplier emission factors, recycled-content declarations, and freight tonne-km for ESG audits.",
     "outcome": "65% less manual ESG reporting effort",
     "reads": "Streams live records from Supplier LCAs, EPR Filings, Freight Logs into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Automates Scope 3 emissions tracking and plastic EPR compliance documentation across suppliers. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates Scope 3 emissions tracking and plastic EPR compliance documentation across suppliers. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Chief Sustainability Officer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Supplier LCAs and EPR Filings rather than extrapolating unverified values.",
@@ -4556,7 +4555,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Scope 3 & Packaging EPR Data Collector",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "65% less manual ESG reporting effort"
   },
   "deforestation & rspo/fsc chain auditor": {
     "name": "Deforestation & RSPO/FSC Chain Auditor",
@@ -4570,7 +4570,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 9.2,
     "sources": [
       "RSPO/FSC Certs",
       "Batch GRNs",
@@ -4579,8 +4578,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies RSPO and FSC chain-of-custody certificates against incoming raw material and carton lots.",
     "outcome": "100% traceable palm/paper sourcing",
     "reads": "Streams live records from RSPO/FSC Certs, Batch GRNs, Origin Maps into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Validates sustainability certifications on every inbound batch to ensure audit readiness. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
+    "does": "Validates sustainability certifications on every inbound batch to ensure audit readiness. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to RSPO/FSC Certs or overrides Chief Sustainability Officer sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across RSPO/FSC Certs and Batch GRNs rather than extrapolating unverified values.",
     "samplePrompt": "Flag any inbound paperboard or palm-derived lots missing valid chain-of-custody certificates.",
@@ -4591,7 +4590,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Deforestation & RSPO/FSC Chain Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% traceable palm/paper sourcing"
   },
   "plastic epr credit & recycler reconciliation bot": {
     "name": "Plastic EPR Credit & Recycler Reconciliation Bot",
@@ -4605,7 +4605,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.2,
     "sources": [
       "CPCB Portal",
       "Sales Weight",
@@ -4614,7 +4613,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles monthly sold plastic packaging tonnage against registered recycler EPR certificates.",
     "outcome": "100% audit-ready EPR credit filings",
     "reads": "Streams live records from CPCB Portal, Sales Weight, Recycler Certs into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Automates state-by-state plastic Extended Producer Responsibility compliance tracking. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates state-by-state plastic Extended Producer Responsibility compliance tracking. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Chief Sustainability Officer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CPCB Portal and Sales Weight rather than extrapolating unverified values.",
@@ -4626,7 +4625,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Plastic EPR Credit & Recycler Reconciliation Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% audit-ready EPR credit filings"
   },
   "supplier decarbonization roadmap tracker": {
     "name": "Supplier Decarbonization Roadmap Tracker",
@@ -4640,7 +4640,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.2,
     "sources": [
       "Vendor Targets",
       "RE100",
@@ -4649,7 +4648,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks top-50 supplier renewable-energy adoption and emission-intensity reductions quarterly.",
     "outcome": "Accelerates Scope 3 net-zero targets",
     "reads": "Streams live records from Vendor Targets, RE100, Emission Factors into BigQuery, normalizing supplier network exceptions and baseline thresholds in real time.",
-    "does": "Monitors supplier climate commitments against corporate Scope 3 reduction milestones. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Monitors supplier climate commitments against corporate Scope 3 reduction milestones. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Chief Sustainability Officer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Vendor Targets and RE100 rather than extrapolating unverified values.",
@@ -4661,7 +4660,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Supplier Decarbonization Roadmap Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Accelerates Scope 3 net-zero targets"
   },
   "commodity index advisor": {
     "name": "Commodity Index Advisor",
@@ -4675,7 +4675,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.55,
     "sources": [
       "CBOT/Platts Feeds",
       "ERP Depletion",
@@ -4695,7 +4694,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Commodity Index Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Optimizes forward-contract windows"
   },
   "commodity price shock & coverage simulator": {
     "name": "Commodity Price Shock & Coverage Simulator",
@@ -4709,7 +4709,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.9,
     "sources": [
       "CBOT / NCDEX",
       "Open Contracts",
@@ -4718,7 +4717,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Correlates daily spot/futures commodity moves with forward MRP coverage to recommend contract extensions.",
     "outcome": "2–4% raw material cost avoidance",
     "reads": "Streams live records from CBOT / NCDEX, Open Contracts, MRP Demand into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Simulates landed cost impact of commodity swings and advises optimal forward cover windows. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Simulates landed cost impact of commodity swings and advises optimal forward cover windows. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from CBOT / NCDEX, discrepancy highlights against Open Contracts, and 1-click dispute/approval card — formatted for Category Sourcing Mgr (Direct) review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to CBOT / NCDEX without Category Sourcing Mgr (Direct) verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CBOT / NCDEX and Open Contracts rather than extrapolating unverified values.",
@@ -4730,7 +4729,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Commodity Price Shock & Coverage Simulator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2–4% raw material cost avoidance"
   },
   "import parity & customs duty watchdog": {
     "name": "Import Parity & Customs Duty Watchdog",
@@ -4744,7 +4744,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.9,
     "sources": [
       "FX Rates",
       "Port Tariffs",
@@ -4753,8 +4752,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compares domestic vs imported landed costs factoring FX movements, ocean freight, and duty changes.",
     "outcome": "Protects landed-cost margins",
     "reads": "Streams live records from FX Rates, Port Tariffs, Vendor Quotes into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Tracks import parity economics daily to guide domestic vs import sourcing splits. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Category Sourcing Mgr (Direct) review inside Gemini Enterprise.",
+    "does": "Tracks import parity economics daily to guide domestic vs import sourcing splits. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Category Sourcing Mgr (Direct) review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to FX Rates or overrides Category Sourcing Mgr (Direct) sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across FX Rates and Port Tariffs rather than extrapolating unverified values.",
     "samplePrompt": "Compare landed plant cost of imported vs domestic resin grades at today's FX and freight rates.",
@@ -4765,7 +4764,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Import Parity & Customs Duty Watchdog",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects landed-cost margins"
   },
   "crop & harvest yield supply outlook agent": {
     "name": "Crop & Harvest Yield Supply Outlook Agent",
@@ -4779,7 +4779,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.9,
     "sources": [
       "Mandi Arrivals",
       "Monsoon Data",
@@ -4788,8 +4787,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Synthesizes regional mandi arrivals, rainfall deficits, and crop acreage for wheat, sugar, and edible oils.",
     "outcome": "Earlier agri-commodity buying signals",
     "reads": "Streams live records from Mandi Arrivals, Monsoon Data, Agri Reports into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Turns agricultural supply signals into actionable forward-buying windows. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Category Sourcing Mgr (Direct) review inside Gemini Enterprise.",
+    "does": "Turns agricultural supply signals into actionable forward-buying windows. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Category Sourcing Mgr (Direct) review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Mandi Arrivals or overrides Category Sourcing Mgr (Direct) sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Mandi Arrivals and Monsoon Data rather than extrapolating unverified values.",
     "samplePrompt": "Summarize wheat and palm oil harvest arrival trends and 60-day price outlook.",
@@ -4800,7 +4799,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Crop & Harvest Yield Supply Outlook Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Earlier agri-commodity buying signals"
   },
   "make-vs-buy & tolling margin analyzer": {
     "name": "Make-vs-Buy & Tolling Margin Analyzer",
@@ -4814,7 +4814,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.9,
     "sources": [
       "Commodity Spot",
       "Conversion Cost",
@@ -4823,7 +4822,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compares buying refined/processed ingredients vs raw procurement plus external tolling.",
     "outcome": "1.5% lower semi-finished cost",
     "reads": "Streams live records from Commodity Spot, Conversion Cost, Vendor Quotes into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Evaluates processing spreads daily to optimize raw-vs-processed sourcing mix. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Evaluates processing spreads daily to optimize raw-vs-processed sourcing mix. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Commodity Spot update — formatted for Category Sourcing Mgr (Direct) review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Commodity Spot without Category Sourcing Mgr (Direct) approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Commodity Spot and Conversion Cost rather than extrapolating unverified values.",
@@ -4835,7 +4834,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Make-vs-Buy & Tolling Margin Analyzer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "1.5% lower semi-finished cost"
   },
   "dynamic should-cost agent": {
     "name": "Dynamic Should-Cost Agent",
@@ -4849,7 +4849,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 26.32,
     "sources": [
       "CAD/Spec Sheets",
       "Resin Indices",
@@ -4869,7 +4868,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Dynamic Should-Cost Agent",
-    "liveId": "rfq_should_cost_agent"
+    "liveId": "rfq_should_cost_agent",
+    "sumanImpact": "Fact-based margin leverage in RFPs"
   },
   "rfq bid normalization & negotiation copilot": {
     "name": "RFQ Bid Normalization & Negotiation Copilot",
@@ -4883,7 +4883,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 11.8,
     "sources": [
       "Vendor Quotes",
       "Should-Cost",
@@ -4892,8 +4891,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Normalizes multi-vendor RFQ spreadsheets across incoterms, payment terms, and tooling amortization.",
     "outcome": "3–5% faster sourcing negotiations",
     "reads": "Streams live records from Vendor Quotes, Should-Cost, Historical Spend into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Benchmarks incoming vendor bids against should-cost models to highlight negotiation levers. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Strategic Sourcing Lead review inside Gemini Enterprise.",
+    "does": "Benchmarks incoming vendor bids against should-cost models to highlight negotiation levers. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Strategic Sourcing Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Vendor Quotes or overrides Strategic Sourcing Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Vendor Quotes and Should-Cost rather than extrapolating unverified values.",
     "samplePrompt": "Compare incoming corrugate and laminate quotes against our indexed should-cost benchmark.",
@@ -4904,7 +4903,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "RFQ Bid Normalization & Negotiation Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "3–5% faster sourcing negotiations"
   },
   "raw material index pass-through auditor": {
     "name": "Raw Material Index Pass-Through Auditor",
@@ -4918,7 +4918,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 11.8,
     "sources": [
       "Index Clauses",
       "PO Prices",
@@ -4927,7 +4926,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Checks whether supplier invoice prices automatically stepped down when underlying resin or paper indices fell.",
     "outcome": "Eliminates delayed price rollbacks",
     "reads": "Streams live records from Index Clauses, PO Prices, Platts/ICIS into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Audits formula-based supplier contracts to ensure timely downward price resets. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Audits formula-based supplier contracts to ensure timely downward price resets. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Index Clauses, discrepancy highlights against PO Prices, and 1-click dispute/approval card — formatted for Strategic Sourcing Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Index Clauses without Strategic Sourcing Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Index Clauses and PO Prices rather than extrapolating unverified values.",
@@ -4939,7 +4938,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Raw Material Index Pass-Through Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates delayed price rollbacks"
   },
   "packaging conversion cost & tooling estimator": {
     "name": "Packaging Conversion Cost & Tooling Estimator",
@@ -4953,7 +4953,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.8,
     "sources": [
       "Tooling Specs",
       "Machine Rates",
@@ -4962,8 +4961,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Deconstructs injection-molding, blow-molding, and print-cylinder quotes into cycle time and resin cost.",
     "outcome": "5–8% savings on custom molds & dies",
     "reads": "Streams live records from Tooling Specs, Machine Rates, Vendor Quotes into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Provides clean engineering should-cost baselines before tooling PO negotiations. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Strategic Sourcing Lead review inside Gemini Enterprise.",
+    "does": "Provides clean engineering should-cost baselines before tooling PO negotiations. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Strategic Sourcing Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Tooling Specs or overrides Strategic Sourcing Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Tooling Specs and Machine Rates rather than extrapolating unverified values.",
     "samplePrompt": "Benchmark vendor cylinder and mold amortization quotes against industry cycle-time norms.",
@@ -4974,7 +4973,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Packaging Conversion Cost & Tooling Estimator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "5–8% savings on custom molds & dies"
   },
   "regional vendor consolidation & freight bundler": {
     "name": "Regional Vendor Consolidation & Freight Bundler",
@@ -4988,7 +4988,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.8,
     "sources": [
       "Plant Locations",
       "Vendor Hubs",
@@ -4997,8 +4996,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies opportunities to source cartons and films from vendors closer to regional plants.",
     "outcome": "4% lower inbound packaging freight",
     "reads": "Streams live records from Plant Locations, Vendor Hubs, Inbound Spend into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Balances unit packaging price against inbound freight distance across plants. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Strategic Sourcing Lead review inside Gemini Enterprise.",
+    "does": "Balances unit packaging price against inbound freight distance across plants. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Strategic Sourcing Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Plant Locations or overrides Strategic Sourcing Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant Locations and Vendor Hubs rather than extrapolating unverified values.",
     "samplePrompt": "Identify carton SKUs currently shipped >500 km that can be localized near regional plants.",
@@ -5009,7 +5008,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Regional Vendor Consolidation & Freight Bundler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "4% lower inbound packaging freight"
   },
   "sustainable packaging agent": {
     "name": "Sustainable Packaging Agent",
@@ -5023,7 +5023,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.37,
     "sources": [
       "EPR Regulations",
       "Material Trials",
@@ -5043,7 +5042,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Sustainable Packaging Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Mitigates EPR and landfill taxation"
   },
   "line trial & barrier spec compatibility agent": {
     "name": "Line Trial & Barrier Spec Compatibility Agent",
@@ -5057,7 +5057,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 13,
     "sources": [
       "Spec Library",
       "Line OEE",
@@ -5066,7 +5065,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Matches candidate recyclable mono-material films against historical sealing temperature and WVTR/OTR lab results.",
     "outcome": "25% faster sustainable pack trials",
     "reads": "Streams live records from Spec Library, Line OEE, Shelf-Life Lab into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Predicts packaging line runnability and barrier shelf-life risks before scheduling costly plant trials. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Predicts packaging line runnability and barrier shelf-life risks before scheduling costly plant trials. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Spec Library, discrepancy highlights against Line OEE, and 1-click dispute/approval card — formatted for Packaging R&D Engineer review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Spec Library without Packaging R&D Engineer verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Spec Library and Line OEE rather than extrapolating unverified values.",
@@ -5078,7 +5077,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Line Trial & Barrier Spec Compatibility Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "25% faster sustainable pack trials"
   },
   "epr tax & light-weighting optimizer": {
     "name": "EPR Tax & Light-Weighting Optimizer",
@@ -5092,7 +5092,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 13,
     "sources": [
       "EPR Rules",
       "BOM Weights",
@@ -5101,7 +5100,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies SKUs where carton GSM or bottle gram-weight can be reduced without transit damage.",
     "outcome": "Cuts resin usage & EPR fees by 8%",
     "reads": "Streams live records from EPR Rules, BOM Weights, Drop-Test Logs into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Models packaging weight reductions against transit damage rates and statutory EPR fee slabs. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Models packaging weight reductions against transit damage rates and statutory EPR fee slabs. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Packaging R&D Engineer review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Packaging R&D Engineer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across EPR Rules and BOM Weights rather than extrapolating unverified values.",
@@ -5113,7 +5112,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "EPR Tax & Light-Weighting Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts resin usage & EPR fees by 8%"
   },
   "shelf-life extension & moisture barrier advisor": {
     "name": "Shelf-Life Extension & Moisture Barrier Advisor",
@@ -5127,7 +5127,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13,
     "sources": [
       "Lab WVTR",
       "Monsoon Claims",
@@ -5136,7 +5135,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Correlates regional humidity damage claims with laminate barrier specs to recommend targeted upgrades.",
     "outcome": "+30 days shelf life in humid zones",
     "reads": "Streams live records from Lab WVTR, Monsoon Claims, Film Specs into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Matches packaging barrier grades to regional climate zones instead of over-specifying nationally. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Matches packaging barrier grades to regional climate zones instead of over-specifying nationally. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Lab WVTR, discrepancy highlights against Monsoon Claims, and 1-click dispute/approval card — formatted for Packaging R&D Engineer review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Lab WVTR without Packaging R&D Engineer verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Lab WVTR and Monsoon Claims rather than extrapolating unverified values.",
@@ -5148,7 +5147,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Shelf-Life Extension & Moisture Barrier Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+30 days shelf life in humid zones"
   },
   "case-pack & pallet ti-hi cube optimizer": {
     "name": "Case-Pack & Pallet Ti-Hi Cube Optimizer",
@@ -5162,7 +5162,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13,
     "sources": [
       "Carton Dims",
       "Pallet Ti-Hi",
@@ -5171,7 +5170,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Simulates secondary carton dimension tweaks to maximize pallet layer density and truck cube.",
     "outcome": "6–9% more cases per FTL truck",
     "reads": "Streams live records from Carton Dims, Pallet Ti-Hi, Truck Cube into BigQuery, normalizing material & packaging exceptions and baseline thresholds in real time.",
-    "does": "Reduces primary freight cost per unit by eliminating wasted air in shipper cartons and pallets. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Reduces primary freight cost per unit by eliminating wasted air in shipper cartons and pallets. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Packaging R&D Engineer review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Packaging R&D Engineer confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Carton Dims and Pallet Ti-Hi rather than extrapolating unverified values.",
@@ -5183,7 +5182,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Case-Pack & Pallet Ti-Hi Cube Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "6–9% more cases per FTL truck"
   },
   "contract leakage agent": {
     "name": "Contract Leakage Agent",
@@ -5197,13 +5197,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 35.49,
     "sources": [
       "Contract PDFs",
       "SAP Spend",
       "Credit Notes"
     ],
-    "problem": "₹450–₹560per manual invoice vs. ₹76digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.",
+    "problem": "Reconciles live spend against negotiated rebate tiers and volume discount scales.",
     "outcome": "Recovers missed rebates & surcharges",
     "reads": "Extracts volume tiers, index caps & SLA rebates from PDFs via Document AI & Operational SQL & Vector DB (On-Prem / Cloud) Connected CPG systems: SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds.",
     "does": "Maps engineering specs to 10-digit HS codes & FTA rules with legal citations (Document AI + Vector Search & Semantic Index (DB / MCP) Legal Contract RAG + Gemini 3.1 Pro Hierarchical HS Code Legal-Ruling Classifier).",
@@ -5217,7 +5216,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Contract Leakage Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Recovers missed rebates & surcharges"
   },
   "rebate tier & volume threshold tracker": {
     "name": "Rebate Tier & Volume Threshold Tracker",
@@ -5231,7 +5231,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16,
     "sources": [
       "Contract Tiers",
       "YTD Spend",
@@ -5240,7 +5239,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors YTD spend against annual supplier rebate thresholds and alerts buyers near tier breakpoints.",
     "outcome": "Captures 100% earned volume rebates",
     "reads": "Streams live records from Contract Tiers, YTD Spend, ERP POs into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Tracks contract volume tiers in real time so buyers capture maximum negotiated rebates. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Tracks contract volume tiers in real time so buyers capture maximum negotiated rebates. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Contract Tiers, discrepancy highlights against YTD Spend, and 1-click dispute/approval card — formatted for Commercial Sourcing / Legal review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Contract Tiers without Commercial Sourcing / Legal verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Contract Tiers and YTD Spend rather than extrapolating unverified values.",
@@ -5252,7 +5251,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Rebate Tier & Volume Threshold Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Captures 100% earned volume rebates"
   },
   "off-contract maverick spend detector": {
     "name": "Off-Contract Maverick Spend Detector",
@@ -5266,7 +5266,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16,
     "sources": [
       "SAP POs",
       "Catalog Rates",
@@ -5275,7 +5274,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags non-catalog PRs/POs issued above contracted rate cards or to non-preferred vendors.",
     "outcome": "Cuts maverick spend by 40%",
     "reads": "Streams live records from SAP POs, Catalog Rates, Cost Centers into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Audits daily purchase orders to redirect off-contract spend back to preferred agreements. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Audits daily purchase orders to redirect off-contract spend back to preferred agreements. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP POs, discrepancy highlights against Catalog Rates, and 1-click dispute/approval card — formatted for Commercial Sourcing / Legal review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP POs without Commercial Sourcing / Legal verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP POs and Catalog Rates rather than extrapolating unverified values.",
@@ -5287,7 +5286,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Off-Contract Maverick Spend Detector",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts maverick spend by 40%"
   },
   "contract renewal & auto-escalation sentinel": {
     "name": "Contract Renewal & Auto-Escalation Sentinel",
@@ -5301,7 +5301,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16,
     "sources": [
       "CLM Repository",
       "Expiry Dates",
@@ -5310,7 +5309,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Alerts sourcing leads 90 days before supplier contract expirations or automatic price-escalation dates.",
     "outcome": "Zero unwanted auto-renewals",
     "reads": "Streams live records from CLM Repository, Expiry Dates, CPI Clauses into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Prevents silent contract rollovers and gives category teams time to re-tender. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents silent contract rollovers and gives category teams time to re-tender. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from CLM Repository, discrepancy highlights against Expiry Dates, and 1-click dispute/approval card — formatted for Commercial Sourcing / Legal review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to CLM Repository without Commercial Sourcing / Legal verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CLM Repository and Expiry Dates rather than extrapolating unverified values.",
@@ -5322,7 +5321,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Contract Renewal & Auto-Escalation Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero unwanted auto-renewals"
   },
   "payment terms & early-pay discount optimizer": {
     "name": "Payment Terms & Early-Pay Discount Optimizer",
@@ -5336,7 +5336,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16,
     "sources": [
       "AP Terms",
       "Treasury Rate",
@@ -5345,7 +5344,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags inconsistent payment terms across the same vendor and evaluates dynamic discounting offers.",
     "outcome": "Improves DPO & treasury yield",
     "reads": "Streams live records from AP Terms, Treasury Rate, Vendor Invoices into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Harmonizes vendor payment terms and captures risk-free early-payment discounts where accretive. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Harmonizes vendor payment terms and captures risk-free early-payment discounts where accretive. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from AP Terms, discrepancy highlights against Treasury Rate, and 1-click dispute/approval card — formatted for Commercial Sourcing / Legal review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to AP Terms without Commercial Sourcing / Legal verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across AP Terms and Treasury Rate rather than extrapolating unverified values.",
@@ -5357,7 +5356,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Payment Terms & Early-Pay Discount Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Improves DPO & treasury yield"
   },
   "po expediting agent": {
     "name": "PO Expediting Agent",
@@ -5371,13 +5371,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.45,
     "sources": [
       "EDI 855/856",
       "Plant Run Schedule",
       "Vendor Email"
     ],
-    "problem": "₹450–₹560per manual invoice vs. ₹76digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.",
+    "problem": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments.",
     "outcome": "Resolves ~70% of standard PO delays",
     "reads": "Compares actual supplier & ocean/air/rail/road P50 & P90 durations vs. static SAP fields Connected CPG systems: SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds.",
     "does": "Reconciles CubiScan/weighbridge telemetry against WMS, TMS & Air ULD item masters (BigQuery ML Empirical Bayesian Lead-Time Estimator + Isolation-Forest Master Anomaly Detector + Enterprise API & MCP Gateway SAP BAPI Steward).",
@@ -5391,7 +5390,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "PO Expediting Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Resolves ~70% of standard PO delays"
   },
   "material shortage & line-stop risk radar": {
     "name": "Material Shortage & Line-Stop Risk Radar",
@@ -5405,7 +5405,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.4,
     "sources": [
       "SAP MRP",
       "Open POs",
@@ -5414,8 +5413,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Cross-checks next 7 days of plant production schedules against inbound RM/PM ETA and QA release status.",
     "outcome": "Zero preventable line-stops",
     "reads": "Streams live records from SAP MRP, Open POs, Plant Schedule into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Spots inbound material delays early and recommends air/express split-shipments or schedule swaps. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Buyer / Procurement Coord. review inside Gemini Enterprise.",
+    "does": "Spots inbound material delays early and recommends air/express split-shipments or schedule swaps. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Buyer / Procurement Coord. review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SAP MRP or overrides Buyer / Procurement Coord. sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP MRP and Open POs rather than extrapolating unverified values.",
     "samplePrompt": "List all raw/packaging materials with <3 days plant cover and unconfirmed vendor ASNs.",
@@ -5426,7 +5425,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Material Shortage & Line-Stop Risk Radar",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero preventable line-stops"
   },
   "automated vendor follow-up & asn bot": {
     "name": "Automated Vendor Follow-Up & ASN Bot",
@@ -5440,7 +5440,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.4,
     "sources": [
       "Open POs",
       "Vendor Email",
@@ -5449,8 +5448,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Sends automated confirmation nudges for unacknowledged POs and overdue ASNs.",
     "outcome": "Saves 2 hrs/day in chasing emails",
     "reads": "Streams live records from Open POs, Vendor Email, Gate Schedule into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Automates routine vendor expediting communications and updates ERP delivery dates. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Buyer / Procurement Coord. review inside Gemini Enterprise.",
+    "does": "Automates routine vendor expediting communications and updates ERP delivery dates. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Buyer / Procurement Coord. review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Open POs or overrides Buyer / Procurement Coord. sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Open POs and Vendor Email rather than extrapolating unverified values.",
     "samplePrompt": "Draft concise expediting follow-ups for POs due within 72 hours missing ASN confirmation.",
@@ -5461,7 +5460,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Automated Vendor Follow-Up & ASN Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 2 hrs/day in chasing emails"
   },
   "open-po aging & ghost-order cleaner": {
     "name": "Open-PO Aging & Ghost-Order Cleaner",
@@ -5475,7 +5475,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.4,
     "sources": [
       "SAP ME2N",
       "GRN Logs",
@@ -5484,7 +5483,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies stale partially-delivered POs that distort MRP supply signals and asks buyers to close them.",
     "outcome": "Cleaner MRP & accurate ATP",
     "reads": "Streams live records from SAP ME2N, GRN Logs, Open POs into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Keeps ERP open-order books clean so planners don't rely on phantom inbound stock. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Keeps ERP open-order books clean so planners don't rely on phantom inbound stock. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged SAP ME2N transfer/allocation order — formatted for Buyer / Procurement Coord. review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in SAP ME2N without Buyer / Procurement Coord. sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP ME2N and GRN Logs rather than extrapolating unverified values.",
@@ -5496,7 +5495,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Open-PO Aging & Ghost-Order Cleaner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cleaner MRP & accurate ATP"
   },
   "import customs & port clearance tracker": {
     "name": "Import Customs & Port Clearance Tracker",
@@ -5510,7 +5510,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.4,
     "sources": [
       "CHA Feeds",
       "Bill of Entry",
@@ -5519,8 +5518,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks Bill of Entry filing, customs exam holds, and container free-time expiry at ports.",
     "outcome": "Cuts port demurrage by 40%",
     "reads": "Streams live records from CHA Feeds, Bill of Entry, Container GPS into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Coordinates customs brokers and transporters to clear imported inputs before demurrage kicks in. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Buyer / Procurement Coord. review inside Gemini Enterprise.",
+    "does": "Coordinates customs brokers and transporters to clear imported inputs before demurrage kicks in. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Buyer / Procurement Coord. review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to CHA Feeds or overrides Buyer / Procurement Coord. sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CHA Feeds and Bill of Entry rather than extrapolating unverified values.",
     "samplePrompt": "Flag imported containers within 48 hours of port free-time expiry.",
@@ -5531,7 +5530,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Import Customs & Port Clearance Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts port demurrage by 40%"
   },
   "three-way match dispute": {
     "name": "Three-Way Match Dispute",
@@ -5545,13 +5545,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 31.68,
     "sources": [
       "SAP PO/GRN",
       "Invoice PDFs",
       "Rate Cards"
     ],
-    "problem": "₹450–₹560per manual invoice vs. ₹76digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.",
+    "problem": "Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices.",
     "outcome": "Prevents vendor holds & saves discounts",
     "reads": "Extracts volume tiers, index caps & SLA rebates from PDFs via Document AI & Operational SQL & Vector DB (On-Prem / Cloud) Connected CPG systems: SAP Ariba · SAP S/4HANA MM · Mandi & Commodity Feeds.",
     "does": "Maps engineering specs to 10-digit HS codes & FTA rules with legal citations (Document AI + Vector Search & Semantic Index (DB / MCP) Legal Contract RAG + Gemini 3.1 Pro Hierarchical HS Code Legal-Ruling Classifier).",
@@ -5565,7 +5564,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Three-Way Match Dispute",
-    "liveId": "three_way_match_dispute"
+    "liveId": "three_way_match_dispute",
+    "sumanImpact": "Prevents vendor holds & saves discounts"
   },
   "grn-to-invoice quantity & rate reconciler": {
     "name": "GRN-to-Invoice Quantity & Rate Reconciler",
@@ -5579,7 +5579,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.3,
     "sources": [
       "SAP MIRO",
       "PO Master",
@@ -5588,7 +5587,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Auto-classifies blocked invoices by root cause (short GRN, price variance, missing tax code) and routes fixes.",
     "outcome": "70% faster invoice exception clearing",
     "reads": "Streams live records from SAP MIRO, PO Master, GRN Logs into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Pinpoints exact PO/GRN/invoice mismatches and drafts resolution requests for buyers or vendors. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Pinpoints exact PO/GRN/invoice mismatches and drafts resolution requests for buyers or vendors. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP MIRO, discrepancy highlights against PO Master, and 1-click dispute/approval card — formatted for Accounts Payable Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP MIRO without Accounts Payable Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP MIRO and PO Master rather than extrapolating unverified values.",
@@ -5600,7 +5599,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "GRN-to-Invoice Quantity & Rate Reconciler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "70% faster invoice exception clearing"
   },
   "duplicate invoice & gst credit sentinel": {
     "name": "Duplicate Invoice & GST Credit Sentinel",
@@ -5614,7 +5614,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.3,
     "sources": [
       "AP Ledger",
       "GST Portal",
@@ -5623,7 +5622,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Scans incoming vendor invoices for near-duplicate amounts/dates and missing GST e-invoice matches.",
     "outcome": "Eliminates duplicate payouts & tax loss",
     "reads": "Streams live records from AP Ledger, GST Portal, Vendor Invoices into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Prevents duplicate payments and protects input tax credit compliance before payment runs. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents duplicate payments and protects input tax credit compliance before payment runs. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from AP Ledger, discrepancy highlights against GST Portal, and 1-click dispute/approval card — formatted for Accounts Payable Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to AP Ledger without Accounts Payable Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across AP Ledger and GST Portal rather than extrapolating unverified values.",
@@ -5635,7 +5634,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Duplicate Invoice & GST Credit Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates duplicate payouts & tax loss"
   },
   "gr/ir clearing & month-end accrual helper": {
     "name": "GR/IR Clearing & Month-End Accrual Helper",
@@ -5649,7 +5649,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.3,
     "sources": [
       "SAP GR/IR",
       "Open Receipts",
@@ -5658,7 +5657,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles aged Goods Receipt / Invoice Receipt balances ahead of monthly financial close.",
     "outcome": "3x faster month-end AP close",
     "reads": "Streams live records from SAP GR/IR, Open Receipts, Unbilled POs into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Surfaces unbilled receipts and unreceived invoices so finance closes cleanly on Day 2. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Surfaces unbilled receipts and unreceived invoices so finance closes cleanly on Day 2. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP GR/IR, discrepancy highlights against Open Receipts, and 1-click dispute/approval card — formatted for Accounts Payable Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP GR/IR without Accounts Payable Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP GR/IR and Open Receipts rather than extrapolating unverified values.",
@@ -5670,7 +5669,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "GR/IR Clearing & Month-End Accrual Helper",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "3x faster month-end AP close"
   },
   "vendor payment-status self-service bot": {
     "name": "Vendor Payment-Status Self-Service Bot",
@@ -5684,7 +5684,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.3,
     "sources": [
       "AP Ledger",
       "Payment Run",
@@ -5693,8 +5692,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Answers supplier invoice-status and TDS/withholding queries automatically with UTR/payment dates.",
     "outcome": "70% fewer vendor inquiry emails",
     "reads": "Streams live records from AP Ledger, Payment Run, Vendor Portal into BigQuery, normalizing contract & po mgmt exceptions and baseline thresholds in real time.",
-    "does": "Eliminates routine AP helpdesk tickets from suppliers checking payment status. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Accounts Payable Lead review inside Gemini Enterprise.",
+    "does": "Eliminates routine AP helpdesk tickets from suppliers checking payment status. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Accounts Payable Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to AP Ledger or overrides Accounts Payable Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across AP Ledger and Payment Run rather than extrapolating unverified values.",
     "samplePrompt": "Draft status replies for today's vendor payment inquiries using live SAP clearing dates.",
@@ -5705,7 +5704,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Vendor Payment-Status Self-Service Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "70% fewer vendor inquiry emails"
   },
   "changeover optimizer": {
     "name": "Changeover Optimizer",
@@ -5719,7 +5719,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 42.98,
     "sources": [
       "MES Schedule",
       "Allergen Matrix",
@@ -5739,7 +5738,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Changeover Optimizer",
-    "liveId": "finite_production_scheduler"
+    "liveId": "finite_production_scheduler",
+    "sumanImpact": "Cuts sanitation downtime by 15–25%"
   },
   "finite schedule & rush-order inserter": {
     "name": "Finite Schedule & Rush-Order Inserter",
@@ -5753,7 +5753,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 19.3,
     "sources": [
       "SAP PP",
       "CFA Stock-Outs",
@@ -5762,7 +5761,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Re-sequences daily plant runs when urgent CFA or key-account stock-out orders arrive mid-week.",
     "outcome": "15% higher schedule adherence",
     "reads": "Streams live records from SAP PP, CFA Stock-Outs, Line Matrix into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Balances urgent replenishment priorities against allergen/format changeover penalties. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Balances urgent replenishment priorities against allergen/format changeover penalties. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged SAP PP transfer/allocation order — formatted for Master Production Scheduler review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in SAP PP without Master Production Scheduler sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP PP and CFA Stock-Outs rather than extrapolating unverified values.",
@@ -5774,7 +5773,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Finite Schedule & Rush-Order Inserter",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% higher schedule adherence"
   },
   "rm/pm availability check before freeze": {
     "name": "RM/PM Availability Check Before Freeze",
@@ -5788,7 +5788,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 19.3,
     "sources": [
       "BOM",
       "Plant Warehouse",
@@ -5797,8 +5796,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies every scheduled batch has 100% QA-released ingredients and laminates before locking the shift plan.",
     "outcome": "Cuts mid-shift starved runs by 50%",
     "reads": "Streams live records from BOM, Plant Warehouse, QA Hold into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Prevents scheduling production runs that lack QA-cleared raw or packaging materials. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Master Production Scheduler review inside Gemini Enterprise.",
+    "does": "Prevents scheduling production runs that lack QA-cleared raw or packaging materials. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Master Production Scheduler review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to BOM or overrides Master Production Scheduler sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across BOM and Plant Warehouse rather than extrapolating unverified values.",
     "samplePrompt": "Audit tomorrow's frozen production schedule for any BOM component still under QA hold.",
@@ -5809,7 +5808,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "RM/PM Availability Check Before Freeze",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts mid-shift starved runs by 50%"
   },
   "campaign batch-size & shelf-life balancer": {
     "name": "Campaign Batch-Size & Shelf-Life Balancer",
@@ -5823,7 +5823,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 19.3,
     "sources": [
       "SAP PP",
       "Demand Rate",
@@ -5832,7 +5831,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Optimizes campaign run lengths so long runs don't create aged stock for slow-moving SKUs.",
     "outcome": "10% fewer changeover & expiry losses",
     "reads": "Streams live records from SAP PP, Demand Rate, Shelf-Life into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Balances setup efficiency against finished-goods freshness across A/B/C velocity tiers. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Balances setup efficiency against finished-goods freshness across A/B/C velocity tiers. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP PP, discrepancy highlights against Demand Rate, and 1-click dispute/approval card — formatted for Master Production Scheduler review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP PP without Master Production Scheduler verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP PP and Demand Rate rather than extrapolating unverified values.",
@@ -5844,7 +5843,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Campaign Batch-Size & Shelf-Life Balancer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "10% fewer changeover & expiry losses"
   },
   "allergen & cip washdown sequencing optimizer": {
     "name": "Allergen & CIP Washdown Sequencing Optimizer",
@@ -5858,7 +5858,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 19.3,
     "sources": [
       "Allergen Matrix",
       "CIP Times",
@@ -5867,8 +5866,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Sequences non-allergen to allergen runs (e.g., plain to nut/dairy) to cut full CIP washdowns.",
     "outcome": "Saves 4–6 line hours/week",
     "reads": "Streams live records from Allergen Matrix, CIP Times, Run Queue into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Minimizes wet-clean changeover downtime while upholding strict food allergen protocols. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Master Production Scheduler review inside Gemini Enterprise.",
+    "does": "Minimizes wet-clean changeover downtime while upholding strict food allergen protocols. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Master Production Scheduler review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Allergen Matrix or overrides Master Production Scheduler sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Allergen Matrix and CIP Times rather than extrapolating unverified values.",
     "samplePrompt": "Sequence this week's 18 SKU runs on Line 2 to minimize full allergen CIP washdowns.",
@@ -5879,7 +5878,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Allergen & CIP Washdown Sequencing Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 4–6 line hours/week"
   },
   "disruption re-sequencer": {
     "name": "Disruption Re-sequencer",
@@ -5893,7 +5893,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 25.8,
     "sources": [
       "SCADA/PLC Alerts",
       "Line Specs",
@@ -5913,7 +5912,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Disruption Re-sequencer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Line reallocation in <3 minutes"
   },
   "shift handover & downtime logger gem": {
     "name": "Shift Handover & Downtime Logger Gem",
@@ -5927,7 +5927,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.6,
     "sources": [
       "SCADA / PLC",
       "Operator Notes",
@@ -5936,8 +5935,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Summarizes shift output, micro-stops, scrap reasons, and pending maintenance into a clean handover brief.",
     "outcome": "Saves 30 mins per shift handover",
     "reads": "Streams live records from SCADA / PLC, Operator Notes, OEE Log into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Captures structured shift performance and downtime context for incoming supervisors. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Shop Floor / Shift Lead review inside Gemini Enterprise.",
+    "does": "Captures structured shift performance and downtime context for incoming supervisors. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Shop Floor / Shift Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SCADA / PLC or overrides Shop Floor / Shift Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SCADA / PLC and Operator Notes rather than extrapolating unverified values.",
     "samplePrompt": "Generate a concise Shift-B to Shift-C handover summary with top 3 downtime causes.",
@@ -5948,7 +5947,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Shift Handover & Downtime Logger Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 30 mins per shift handover"
   },
   "line speed & scrap anomaly coach": {
     "name": "Line Speed & Scrap Anomaly Coach",
@@ -5962,7 +5962,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.6,
     "sources": [
       "Line Telemetry",
       "Weight Checkers",
@@ -5971,7 +5970,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Alerts floor leads when wrapper rejects, seal defects, or micro-stoppages trend above shift baseline.",
     "outcome": "2–3% OEE uplift on bottleneck lines",
     "reads": "Streams live records from Line Telemetry, Weight Checkers, Reject Logs into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Detects subtle line speed degradation and packaging scrap spikes during live runs. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Detects subtle line speed degradation and packaging scrap spikes during live runs. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Shop Floor / Shift Lead review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Shop Floor / Shift Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Line Telemetry and Weight Checkers rather than extrapolating unverified values.",
@@ -5983,7 +5982,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Line Speed & Scrap Anomaly Coach",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2–3% OEE uplift on bottleneck lines"
   },
   "emergency maintenance dispatch & spares bot": {
     "name": "Emergency Maintenance Dispatch & Spares Bot",
@@ -5997,7 +5997,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.6,
     "sources": [
       "CMMS",
       "Spares Store",
@@ -6006,7 +6005,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Looks up machine fault codes, past repair fixes, and spare-part bin locations the moment a line stops.",
     "outcome": "20% faster Mean Time To Repair",
     "reads": "Streams live records from CMMS, Spares Store, Fault Codes into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Equips shift technicians with instant troubleshooting history and spares availability. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Equips shift technicians with instant troubleshooting history and spares availability. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Shop Floor / Shift Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Shop Floor / Shift Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CMMS and Spares Store rather than extrapolating unverified values.",
@@ -6018,7 +6017,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Emergency Maintenance Dispatch & Spares Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% faster Mean Time To Repair"
   },
   "wip hold & rework routing advisor": {
     "name": "WIP Hold & Rework Routing Advisor",
@@ -6032,7 +6032,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.6,
     "sources": [
       "WIP Sensors",
       "Line Status",
@@ -6041,8 +6040,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Calculates remaining safe hold-time for dough/batter/mix WIP during unplanned stops and routes rework.",
     "outcome": "Cuts perishable WIP scrap by 25%",
     "reads": "Streams live records from WIP Sensors, Line Status, QA Rules into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Prevents mid-process food waste by redirecting stranded WIP to alternate lines before spoilage. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Shop Floor / Shift Lead review inside Gemini Enterprise.",
+    "does": "Prevents mid-process food waste by redirecting stranded WIP to alternate lines before spoilage. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Shop Floor / Shift Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to WIP Sensors or overrides Shop Floor / Shift Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WIP Sensors and Line Status rather than extrapolating unverified values.",
     "samplePrompt": "Recommend alternate packaging lines for 800 kg of stranded WIP before 45-min hold limit.",
@@ -6053,7 +6052,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "WIP Hold & Rework Routing Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts perishable WIP scrap by 25%"
   },
   "labor & line balancing": {
     "name": "Labor & Line Balancing",
@@ -6067,7 +6067,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.69,
     "sources": [
       "HRMS Rosters",
       "Skill Matrix",
@@ -6087,7 +6086,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Labor & Line Balancing",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents certified skill bottlenecks"
   },
   "multi-line shift roster & skill matcher": {
     "name": "Multi-Line Shift Roster & Skill Matcher",
@@ -6101,7 +6101,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 14.6,
     "sources": [
       "HR Roster",
       "Skill Matrix",
@@ -6110,8 +6109,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Matches certified operators and relief crews to planned high-speed lines at the start of each shift.",
     "outcome": "12% lower overtime & idle labor",
     "reads": "Streams live records from HR Roster, Skill Matrix, Run Plan into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Optimizes operator deployment across active lines while honoring safety and skill certifications. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Plant Operations Manager review inside Gemini Enterprise.",
+    "does": "Optimizes operator deployment across active lines while honoring safety and skill certifications. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Plant Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to HR Roster or overrides Plant Operations Manager sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across HR Roster and Skill Matrix rather than extrapolating unverified values.",
     "samplePrompt": "Recommend optimal crew re-allocation across Lines 1–6 given today's absenteeism.",
@@ -6122,7 +6121,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Multi-Line Shift Roster & Skill Matcher",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "12% lower overtime & idle labor"
   },
   "daily plant oee & conversion cost pulse": {
     "name": "Daily Plant OEE & Conversion Cost Pulse",
@@ -6136,7 +6136,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 14.6,
     "sources": [
       "Plant OEE",
       "Power/Fuel",
@@ -6145,7 +6144,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks daily cases produced per labor-hour and utility intensity across all plant shifts.",
     "outcome": "Real-time plant cost visibility",
     "reads": "Streams live records from Plant OEE, Power/Fuel, Labor Hours into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Surfaces shift-level conversion cost variances and labor productivity gaps daily. Executes via Gemini Multimodal Vernacular Voice + BigQuery Outlet/Territory Context Grounding to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Surfaces shift-level conversion cost variances and labor productivity gaps daily. Executes via Gemini Multimodal Vernacular Voice + BigQuery Outlet/Territory Context Grounding to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Concise vernacular brief, top-3 priority actions per outlet/beat, and draft order/message cards — formatted for Plant Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never transmits external customer/distributor communications or finalizes orders without Plant Operations Manager 1-tap confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant OEE and Power/Fuel rather than extrapolating unverified values.",
@@ -6157,7 +6156,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Daily Plant OEE & Conversion Cost Pulse",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Real-time plant cost visibility"
   },
   "safety near-miss & shift walk audit copilot": {
     "name": "Safety Near-Miss & Shift Walk Audit Copilot",
@@ -6171,7 +6171,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 14.6,
     "sources": [
       "EHS Logs",
       "Shift Photos",
@@ -6180,7 +6179,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Logs voice/photo near-miss observations from floor walks and tracks corrective action closure.",
     "outcome": "100% timely safety hazard closure",
     "reads": "Streams live records from EHS Logs, Shift Photos, LOTO Checklist into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Simplifies shop-floor EHS reporting and ensures lockout/tagout compliance. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Simplifies shop-floor EHS reporting and ensures lockout/tagout compliance. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from EHS Logs, discrepancy highlights against Shift Photos, and 1-click dispute/approval card — formatted for Plant Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to EHS Logs without Plant Operations Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across EHS Logs and Shift Photos rather than extrapolating unverified values.",
@@ -6192,7 +6191,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Safety Near-Miss & Shift Walk Audit Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% timely safety hazard closure"
   },
   "contractor & temp-labor attendance reconciler": {
     "name": "Contractor & Temp-Labor Attendance Reconciler",
@@ -6206,7 +6206,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 14.6,
     "sources": [
       "Biometric Gate",
       "Shift Roster",
@@ -6215,7 +6214,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles daily biometric gate punches against planned shift headcount and contractor invoices.",
     "outcome": "Eliminates biometric billing leakage",
     "reads": "Streams live records from Biometric Gate, Shift Roster, Contractor Bills into BigQuery, normalizing production scheduling exceptions and baseline thresholds in real time.",
-    "does": "Automates shift labor attendance verification and flags unscheduled overtime. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates shift labor attendance verification and flags unscheduled overtime. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Biometric Gate, discrepancy highlights against Shift Roster, and 1-click dispute/approval card — formatted for Plant Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Biometric Gate without Plant Operations Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Biometric Gate and Shift Roster rather than extrapolating unverified values.",
@@ -6227,7 +6226,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Contractor & Temp-Labor Attendance Reconciler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates biometric billing leakage"
   },
   "bottleneck diagnostic": {
     "name": "Bottleneck Diagnostic",
@@ -6241,13 +6241,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 26.27,
     "sources": [
       "Utility Telemetry",
       "Cold Storage Cap",
       "IBP Volume"
     ],
-    "problem": "5%–20% of manufacturing capacity lost to unplanned downtime (₹4.17 Lakh Cr+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.",
+    "problem": "Assesses CIP utilities, boiler loads, and cold storage holding limits.",
     "outcome": "Flags facility constraints 3–6 mos out",
     "reads": "Streams high-frequency vibration & current via Pub/Sub & Dataflow to detect degradation 48h ahead Connected CPG systems: SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA.",
     "does": "Aligns 45-min repair inside planned ChronosMake line changeovers for zero OEE loss (Vertex AI Multimodal Vibration/Acoustic Spectral Anomaly Model + Mathematical Optimization Solver (MILP / CP-SAT) Joint PM-Production Window MILP).",
@@ -6261,7 +6260,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Bottleneck Diagnostic",
-    "liveId": "predictive_oee_sentinel"
+    "liveId": "predictive_oee_sentinel",
+    "sumanImpact": "Flags facility constraints 3–6 mos out"
   },
   "cross-plant capacity & transfer optimizer": {
     "name": "Cross-Plant Capacity & Transfer Optimizer",
@@ -6275,7 +6275,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 11.8,
     "sources": [
       "Plant OEE",
       "Co-Packer Cap",
@@ -6284,7 +6283,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies underutilized regional plants to absorb overflow demand from congested sites.",
     "outcome": "8% better network asset utilization",
     "reads": "Streams live records from Plant OEE, Co-Packer Cap, Freight Rates into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Rebalances multi-plant production loads factoring line speeds, utilities, and outbound freight. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Rebalances multi-plant production loads factoring line speeds, utilities, and outbound freight. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Supply Chain Ops Director review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Supply Chain Ops Director confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant OEE and Co-Packer Cap rather than extrapolating unverified values.",
@@ -6296,7 +6295,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cross-Plant Capacity & Transfer Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "8% better network asset utilization"
   },
   "preventive maintenance vs demand conflict bot": {
     "name": "Preventive Maintenance vs Demand Conflict Bot",
@@ -6310,7 +6310,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 11.8,
     "sources": [
       "PM Calendar",
       "Demand Peak",
@@ -6319,7 +6318,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Checks planned boiler, chiller, and line maintenance shutdowns against upcoming promotional peaks.",
     "outcome": "Prevents peak-season capacity crunch",
     "reads": "Streams live records from PM Calendar, Demand Peak, Buffer Stock into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Aligns plant maintenance windows with low-demand weeks and pre-build inventory buffers. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Aligns plant maintenance windows with low-demand weeks and pre-build inventory buffers. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged PM Calendar update — formatted for Supply Chain Ops Director review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in PM Calendar without Supply Chain Ops Director approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across PM Calendar and Demand Peak rather than extrapolating unverified values.",
@@ -6331,7 +6330,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Preventive Maintenance vs Demand Conflict Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents peak-season capacity crunch"
   },
   "cold-room & plant fg staging overflow radar": {
     "name": "Cold-Room & Plant FG Staging Overflow Radar",
@@ -6345,7 +6345,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.8,
     "sources": [
       "Plant FG Store",
       "Primary Dispatch",
@@ -6354,7 +6353,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Alerts ops directors when plant finished-goods bays approach 90% capacity due to delayed primary trucks.",
     "outcome": "Zero production halts from full docks",
     "reads": "Streams live records from Plant FG Store, Primary Dispatch, Line Output into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Coordinates urgent primary dispatch pulls before plant storage congestion slows lines. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Coordinates urgent primary dispatch pulls before plant storage congestion slows lines. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Supply Chain Ops Director review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Supply Chain Ops Director confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant FG Store and Primary Dispatch rather than extrapolating unverified values.",
@@ -6366,7 +6365,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cold-Room & Plant FG Staging Overflow Radar",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero production halts from full docks"
   },
   "multi-site yield & giveaway benchmarker": {
     "name": "Multi-Site Yield & Giveaway Benchmarker",
@@ -6380,7 +6380,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 11.8,
     "sources": [
       "Plant Yields",
       "BOM Norms",
@@ -6389,7 +6388,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compares actual vs standard ingredient and film yield across sister plants running identical SKUs.",
     "outcome": "1% material yield recovery",
     "reads": "Streams live records from Plant Yields, BOM Norms, Scrap Logs into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Highlights best-in-class plant yields to replicate process settings across the network. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Highlights best-in-class plant yields to replicate process settings across the network. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Supply Chain Ops Director review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Supply Chain Ops Director sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant Yields and BOM Norms rather than extrapolating unverified values.",
@@ -6401,7 +6400,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Multi-Site Yield & Giveaway Benchmarker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "1% material yield recovery"
   },
   "co-packer allocation": {
     "name": "Co-Packer Allocation",
@@ -6415,13 +6415,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.95,
     "sources": [
       "CMO Rate Cards",
       "Plant Conversion",
       "Freight Matrix"
     ],
-    "problem": "5%–20% of manufacturing capacity lost to unplanned downtime (₹4.17 Lakh Cr+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.",
+    "problem": "Models internal conversion costs against co-packer tolling agreements.",
     "outcome": "Optimizes net gross margin per case",
     "reads": "Maps finite plant line rates, labor shifts, supplier MOQs & ocean/air lead times Connected CPG systems: SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA.",
     "does": "Solves 50+ overtime vs. pre-build vs. alt-plant trade-offs in Mathematical Optimization Solver (MILP / CP-SAT) (Gemini 3.1 Pro + Multi-Hop Constraint Graph DB + Mathematical Optimization Solver (MILP / CP-SAT) Multi-Objective MILP Capacity & Margin Solver).",
@@ -6435,7 +6434,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Co-Packer Allocation",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Optimizes net gross margin per case"
   },
   "co-packer rm/pm reconciliation agent": {
     "name": "Co-Packer RM/PM Reconciliation Agent",
@@ -6449,7 +6449,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.5,
     "sources": [
       "CMO GRNs",
       "BOM Yield",
@@ -6458,7 +6457,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles company-supplied ingredients and packaging against co-packer finished-goods output.",
     "outcome": "Cuts tolling material loss by 25%",
     "reads": "Streams live records from CMO GRNs, BOM Yield, Scrap Claims into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Tracks yield variance and scrap claims across external co-packers to prevent material leakage. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Tracks yield variance and scrap claims across external co-packers to prevent material leakage. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for External Sourcing / CMO Lead review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without External Sourcing / CMO Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CMO GRNs and BOM Yield rather than extrapolating unverified values.",
@@ -6470,7 +6469,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Co-Packer RM/PM Reconciliation Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts tolling material loss by 25%"
   },
   "cmo schedule adherence & dispatch tracker": {
     "name": "CMO Schedule Adherence & Dispatch Tracker",
@@ -6484,7 +6484,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.5,
     "sources": [
       "CMO Portal",
       "Open POs",
@@ -6493,7 +6492,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors co-packer daily production completions against scheduled CFA replenishment dates.",
     "outcome": "15% better co-packer OTIF",
     "reads": "Streams live records from CMO Portal, Open POs, CFA Receipts into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Flags delayed CMO batches early so planners can adjust CFA allocations. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Flags delayed CMO batches early so planners can adjust CFA allocations. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for External Sourcing / CMO Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without External Sourcing / CMO Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CMO Portal and Open POs rather than extrapolating unverified values.",
@@ -6505,7 +6504,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CMO Schedule Adherence & Dispatch Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% better co-packer OTIF"
   },
   "co-packer quality audit & hygiene tracker": {
     "name": "Co-Packer Quality Audit & Hygiene Tracker",
@@ -6519,7 +6519,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.5,
     "sources": [
       "QA Audits",
       "LIMS",
@@ -6528,8 +6527,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks co-packer GMP audit scores, pest-control logs, and batch defect PPM alongside internal plants.",
     "outcome": "Consistent external QA standards",
     "reads": "Streams live records from QA Audits, LIMS, Consumer Claims into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Ensures external manufacturing partners maintain identical food-safety and quality compliance. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for External Sourcing / CMO Lead review inside Gemini Enterprise.",
+    "does": "Ensures external manufacturing partners maintain identical food-safety and quality compliance. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for External Sourcing / CMO Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to QA Audits or overrides External Sourcing / CMO Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across QA Audits and LIMS rather than extrapolating unverified values.",
     "samplePrompt": "Summarize quarterly GMP audit findings and open CAPAs across all active co-packers.",
@@ -6540,7 +6539,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Co-Packer Quality Audit & Hygiene Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Consistent external QA standards"
   },
   "co-packer tolling invoice & rate auditor": {
     "name": "Co-Packer Tolling Invoice & Rate Auditor",
@@ -6554,7 +6554,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.5,
     "sources": [
       "Tolling Rates",
       "CMO GRNs",
@@ -6563,7 +6562,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies co-packer conversion-fee invoices against contracted slab rates and verified good output.",
     "outcome": "Eliminates tolling over-billing",
     "reads": "Streams live records from Tolling Rates, CMO GRNs, AP Invoices into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Audits tolling bills for slab-rate accuracy and deducts excess scrap beyond agreed tolerances. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Audits tolling bills for slab-rate accuracy and deducts excess scrap beyond agreed tolerances. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Tolling Rates, discrepancy highlights against CMO GRNs, and 1-click dispute/approval card — formatted for External Sourcing / CMO Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Tolling Rates without External Sourcing / CMO Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Tolling Rates and CMO GRNs rather than extrapolating unverified values.",
@@ -6575,7 +6574,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Co-Packer Tolling Invoice & Rate Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates tolling over-billing"
   },
   "capex simulator": {
     "name": "CapEx Simulator",
@@ -6589,13 +6589,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 12.32,
     "sources": [
       "5-Yr Demand Plan",
       "OEM Quotes",
       "OEE Benchmarks"
     ],
-    "problem": "5%–20% of manufacturing capacity lost to unplanned downtime (₹4.17 Lakh Cr+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.",
+    "problem": "Simulates multi-year volume trends to test high-speed line expansions.",
     "outcome": "Delivers defensible board CapEx ROI",
     "reads": "Attributes exact ocean, air, rail, drayage, pick, pack, cube & detention cost per order line Connected CPG systems: SAP S/4HANA PP · Siemens Opcenter MES · LIMS QA.",
     "does": "Optimizes DC territories, factory-to-customer bypass & 3PL overflow capacity in Mathematical Optimization Solver (MILP / CP-SAT) (BigQuery Activity-Based Landed Cost-to-Serve Attribution + Mathematical Optimization Solver (MILP / CP-SAT) Capacitated Facility Location & Multi-Modal Flow MILP).",
@@ -6609,7 +6608,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CapEx Simulator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Delivers defensible board CapEx ROI"
   },
   "automation & line retrofit roi modeler": {
     "name": "Automation & Line Retrofit ROI Modeler",
@@ -6623,7 +6623,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 5.5,
     "sources": [
       "Line OEE",
       "Labor Cost",
@@ -6632,7 +6631,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Builds payback and IRR models for end-of-line case packers, palletizers, and vision systems.",
     "outcome": "2x faster CapEx business cases",
     "reads": "Streams live records from Line OEE, Labor Cost, Vendor Quotes into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Evaluates engineering CapEx proposals using live plant downtime, labor, and scrap baselines. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Evaluates engineering CapEx proposals using live plant downtime, labor, and scrap baselines. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for VP Manufacturing Engineering review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without VP Manufacturing Engineering sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Line OEE and Labor Cost rather than extrapolating unverified values.",
@@ -6644,7 +6643,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Automation & Line Retrofit ROI Modeler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2x faster CapEx business cases"
   },
   "energy & utilities intensity benchmarker": {
     "name": "Energy & Utilities Intensity Benchmarker",
@@ -6658,7 +6658,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 5.5,
     "sources": [
       "Sub-Meters",
       "Steam/Chiller",
@@ -6667,8 +6666,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Benchmarks kWh and steam per ton across similar lines to pinpoint inefficient compressors or ovens.",
     "outcome": "5–7% plant utility cost savings",
     "reads": "Streams live records from Sub-Meters, Steam/Chiller, Output Logs into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Identifies utility waste across plants and quantifies energy-saving engineering upgrades. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for VP Manufacturing Engineering review inside Gemini Enterprise.",
+    "does": "Identifies utility waste across plants and quantifies energy-saving engineering upgrades. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for VP Manufacturing Engineering review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Sub-Meters or overrides VP Manufacturing Engineering sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Sub-Meters and Steam/Chiller rather than extrapolating unverified values.",
     "samplePrompt": "Rank plants by kWh per ton produced and highlight top energy-efficiency opportunities.",
@@ -6679,7 +6678,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Energy & Utilities Intensity Benchmarker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "5–7% plant utility cost savings"
   },
   "new-line commissioning & ramp-up tracker": {
     "name": "New-Line Commissioning & Ramp-Up Tracker",
@@ -6693,7 +6693,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 5.5,
     "sources": [
       "FAT/SAT Logs",
       "Ramp Curve",
@@ -6702,8 +6701,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks daily commissioning punch-list items and OEE ramp vs vendor performance guarantees.",
     "outcome": "20% faster vertical ramp to rated OEE",
     "reads": "Streams live records from FAT/SAT Logs, Ramp Curve, Vendor SLAs into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Accelerates new line stabilization and documents vendor SLA shortfalls during commissioning. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for VP Manufacturing Engineering review inside Gemini Enterprise.",
+    "does": "Accelerates new line stabilization and documents vendor SLA shortfalls during commissioning. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for VP Manufacturing Engineering review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to FAT/SAT Logs or overrides VP Manufacturing Engineering sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across FAT/SAT Logs and Ramp Curve rather than extrapolating unverified values.",
     "samplePrompt": "Compare Week 1–6 OEE ramp on the new line against contracted vendor performance curve.",
@@ -6714,7 +6713,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "New-Line Commissioning & Ramp-Up Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% faster vertical ramp to rated OEE"
   },
   "equipment lifecycle & obsolete-spares radar": {
     "name": "Equipment Lifecycle & Obsolete-Spares Radar",
@@ -6728,7 +6728,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 5.5,
     "sources": [
       "Asset Registry",
       "OEM EOL",
@@ -6737,7 +6736,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags aging PLCs, drives, and critical motors approaching OEM end-of-life without spares cover.",
     "outcome": "Prevents multi-week breakdown waits",
     "reads": "Streams live records from Asset Registry, OEM EOL, Spares Stock into BigQuery, normalizing capacity planning exceptions and baseline thresholds in real time.",
-    "does": "Guides multi-year engineering replacement CapEx before obsolete components halt lines. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Guides multi-year engineering replacement CapEx before obsolete components halt lines. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Asset Registry transfer/allocation order — formatted for VP Manufacturing Engineering review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Asset Registry without VP Manufacturing Engineering sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Asset Registry and OEM EOL rather than extrapolating unverified values.",
@@ -6749,7 +6748,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Equipment Lifecycle & Obsolete-Spares Radar",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents multi-week breakdown waits"
   },
   "visual defect triager": {
     "name": "Visual Defect Triager",
@@ -6763,7 +6763,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 32.95,
     "sources": [
       "Line Camera Frames",
       "QA Spec Book",
@@ -6783,7 +6782,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Visual Defect Triager",
-    "liveId": "inline_yield_guardian"
+    "liveId": "inline_yield_guardian",
+    "sumanImpact": "Prevents full pallet scrap & holds"
   },
   "in-process weight & seal drift sentinel": {
     "name": "In-Process Weight & Seal Drift Sentinel",
@@ -6797,7 +6797,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 27.5,
     "sources": [
       "Checkweighers",
       "Vision Cam",
@@ -6806,7 +6805,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors real-time checkweigher trends and seal integrity alerts across high-speed packaging lines.",
     "outcome": "Cuts giveaway & seal rejects by 30%",
     "reads": "Streams live records from Checkweighers, Vision Cam, SPC Logs into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Flags mean-weight drift or intermittent seal defects before batches fail finished-goods QA. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Flags mean-weight drift or intermittent seal defects before batches fail finished-goods QA. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Checkweighers, discrepancy highlights against Vision Cam, and 1-click dispute/approval card — formatted for QA Manager / Line Inspector review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Checkweighers without QA Manager / Line Inspector verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Checkweighers and Vision Cam rather than extrapolating unverified values.",
@@ -6818,7 +6817,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "In-Process Weight & Seal Drift Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts giveaway & seal rejects by 30%"
   },
   "qa hold release & disposition copilot": {
     "name": "QA Hold Release & Disposition Copilot",
@@ -6832,7 +6832,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 27.5,
     "sources": [
       "LIMS",
       "Micro Logs",
@@ -6841,7 +6840,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks lab test completion for held lots and drafts disposition recommendations for QA sign-off.",
     "outcome": "40% faster QA lot release",
     "reads": "Streams live records from LIMS, Micro Logs, WMS Hold into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Eliminates finished-goods dispatch delays caused by slow manual QA hold clearance. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Eliminates finished-goods dispatch delays caused by slow manual QA hold clearance. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for QA Manager / Line Inspector review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without QA Manager / Line Inspector confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across LIMS and Micro Logs rather than extrapolating unverified values.",
@@ -6853,7 +6852,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "QA Hold Release & Disposition Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "40% faster QA lot release"
   },
   "incoming raw material coa & lab verifier": {
     "name": "Incoming Raw Material COA & Lab Verifier",
@@ -6867,7 +6867,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 27.5,
     "sources": [
       "Vendor COAs",
       "Spec Limits",
@@ -6876,8 +6875,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Extracts moisture, peroxide value, and micro parameters from vendor Certificate of Analysis PDFs.",
     "outcome": "50% faster incoming QA clearance",
     "reads": "Streams live records from Vendor COAs, Spec Limits, LIMS into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Auto-compares incoming ingredient COA values against internal specs to speed up lab release. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for QA Manager / Line Inspector review inside Gemini Enterprise.",
+    "does": "Auto-compares incoming ingredient COA values against internal specs to speed up lab release. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for QA Manager / Line Inspector review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Vendor COAs or overrides QA Manager / Line Inspector sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Vendor COAs and Spec Limits rather than extrapolating unverified values.",
     "samplePrompt": "Parse today's incoming flour and oil COA PDFs and flag any borderline spec values.",
@@ -6888,7 +6887,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Incoming Raw Material COA & Lab Verifier",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "50% faster incoming QA clearance"
   },
   "metal detector & x-ray calibration auditor": {
     "name": "Metal Detector & X-Ray Calibration Auditor",
@@ -6902,7 +6902,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 27.5,
     "sources": [
       "CCP Logs",
       "Test Piece Scans",
@@ -6911,7 +6910,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies hourly metal-detector and X-ray test-piece checks are logged for every active food line.",
     "outcome": "100% CCP audit compliance",
     "reads": "Streams live records from CCP Logs, Test Piece Scans, Shift QA into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Catches missed Critical Control Point (CCP) verifications in real time during shifts. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Catches missed Critical Control Point (CCP) verifications in real time during shifts. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from CCP Logs, discrepancy highlights against Test Piece Scans, and 1-click dispute/approval card — formatted for QA Manager / Line Inspector review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to CCP Logs without QA Manager / Line Inspector verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CCP Logs and Test Piece Scans rather than extrapolating unverified values.",
@@ -6923,7 +6922,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Metal Detector & X-Ray Calibration Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% CCP audit compliance"
   },
   "batch record auditor": {
     "name": "Batch Record Auditor",
@@ -6937,7 +6937,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.84,
     "sources": [
       "Batch Prod Records",
       "Vendor COAs",
@@ -6957,7 +6956,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Batch Record Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "60–80% faster batch release review"
   },
   "label & fssai/regulatory claims checker": {
     "name": "Label & FSSAI/Regulatory Claims Checker",
@@ -6971,7 +6971,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.6,
     "sources": [
       "Artwork PDFs",
       "FSSAI Rules",
@@ -6980,7 +6979,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Cross-checks packaging artwork nutrition panels, allergen declarations, and MRP/net-weight text against BOMs.",
     "outcome": "Zero regulatory label recalls",
     "reads": "Streams live records from Artwork PDFs, FSSAI Rules, BOM Allergens into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Uses multimodal document inspection to verify regulatory compliance on every artwork revision. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Uses multimodal document inspection to verify regulatory compliance on every artwork revision. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Artwork PDFs, discrepancy highlights against FSSAI Rules, and 1-click dispute/approval card — formatted for Regulatory Compliance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Artwork PDFs without Regulatory Compliance Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Artwork PDFs and FSSAI Rules rather than extrapolating unverified values.",
@@ -6992,7 +6991,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Label & FSSAI/Regulatory Claims Checker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero regulatory label recalls"
   },
   "mock recall & traceability drill agent": {
     "name": "Mock Recall & Traceability Drill Agent",
@@ -7006,7 +7006,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.6,
     "sources": [
       "SAP Batch",
       "CFA Dispatch",
@@ -7015,7 +7014,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Traces any raw material lot forward through plant batches, CFAs, and wholesale dealers instantaneously.",
     "outcome": "Traceability in <5 mins vs 4 hrs",
     "reads": "Streams live records from SAP Batch, CFA Dispatch, WD Invoices into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Provides instant end-to-end batch genealogy for regulatory audits and quality holds. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Provides instant end-to-end batch genealogy for regulatory audits and quality holds. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP Batch, discrepancy highlights against CFA Dispatch, and 1-click dispute/approval card — formatted for Regulatory Compliance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP Batch without Regulatory Compliance Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP Batch and CFA Dispatch rather than extrapolating unverified values.",
@@ -7027,7 +7026,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Mock Recall & Traceability Drill Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Traceability in <5 mins vs 4 hrs"
   },
   "fssai / legal metrology change radar": {
     "name": "FSSAI / Legal Metrology Change Radar",
@@ -7041,7 +7041,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.6,
     "sources": [
       "FSSAI Gazette",
       "Legal Metrology",
@@ -7050,8 +7049,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors food-safety and packaging-law notifications and maps impacted SKUs and artworks.",
     "outcome": "Zero missed regulatory deadlines",
     "reads": "Streams live records from FSSAI Gazette, Legal Metrology, SKU Master into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Translates new regulatory circulars into SKU-level compliance action checklists. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Regulatory Compliance Lead review inside Gemini Enterprise.",
+    "does": "Translates new regulatory circulars into SKU-level compliance action checklists. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Regulatory Compliance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to FSSAI Gazette or overrides Regulatory Compliance Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across FSSAI Gazette and Legal Metrology rather than extrapolating unverified values.",
     "samplePrompt": "Map latest FSSAI labeling notification against our active beverage and snack SKUs.",
@@ -7062,7 +7061,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "FSSAI / Legal Metrology Change Radar",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero missed regulatory deadlines"
   },
   "haccp & environmental swab trend sentinel": {
     "name": "HACCP & Environmental Swab Trend Sentinel",
@@ -7076,7 +7076,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.6,
     "sources": [
       "LIMS Swabs",
       "Zone Map",
@@ -7085,8 +7084,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks environmental pathogen and allergen swab trends across plant zones to spot early drift.",
     "outcome": "Proactive hygiene intervention",
     "reads": "Streams live records from LIMS Swabs, Zone Map, Sanitation Log into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Detects subtle sanitation drift before finished-product batches are affected. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Regulatory Compliance Lead review inside Gemini Enterprise.",
+    "does": "Detects subtle sanitation drift before finished-product batches are affected. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Regulatory Compliance Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to LIMS Swabs or overrides Regulatory Compliance Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across LIMS Swabs and Zone Map rather than extrapolating unverified values.",
     "samplePrompt": "Highlight plant zones showing rising APC/yeast swab counts over the last 4 weeks.",
@@ -7097,7 +7096,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "HACCP & Environmental Swab Trend Sentinel",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Proactive hygiene intervention"
   },
   "rca & capa copilot": {
     "name": "RCA & CAPA Copilot",
@@ -7111,7 +7111,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 17.79,
     "sources": [
       "Complaint Logs",
       "Lot Genealogy",
@@ -7131,7 +7130,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "RCA & CAPA Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Speeds 5-Why investigation closures"
   },
   "consumer complaint & lot correlation bot": {
     "name": "Consumer Complaint & Lot Correlation Bot",
@@ -7145,7 +7145,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8,
     "sources": [
       "CRM Complaints",
       "Batch Logs",
@@ -7154,8 +7153,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Clusters consumer freshness, breakage, and packaging complaints by plant line, shift, and transit lane.",
     "outcome": "50% faster defect root-cause isolation",
     "reads": "Streams live records from CRM Complaints, Batch Logs, Transit Data into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Pinpoints whether quality complaints stem from manufacturing shifts, packaging lots, or transit heat. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
+    "does": "Pinpoints whether quality complaints stem from manufacturing shifts, packaging lots, or transit heat. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to CRM Complaints or overrides Continuous Improvement Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CRM Complaints and Batch Logs rather than extrapolating unverified values.",
     "samplePrompt": "Cluster last 30 days of freshness complaints by plant batch, CFA, and transit duration.",
@@ -7166,7 +7165,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Consumer Complaint & Lot Correlation Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "50% faster defect root-cause isolation"
   },
   "capa effectiveness & kaizen tracker": {
     "name": "CAPA Effectiveness & Kaizen Tracker",
@@ -7180,7 +7180,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8,
     "sources": [
       "CAPA Log",
       "Line Audits",
@@ -7189,8 +7188,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies whether closed corrective actions actually sustained lower defect rates over the next 60 days.",
     "outcome": "35% fewer repeat quality incidents",
     "reads": "Streams live records from CAPA Log, Line Audits, Defect PPM into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Monitors post-CAPA defect trends and flags recurring issues for engineering escalation. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
+    "does": "Monitors post-CAPA defect trends and flags recurring issues for engineering escalation. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to CAPA Log or overrides Continuous Improvement Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CAPA Log and Line Audits rather than extrapolating unverified values.",
     "samplePrompt": "Audit CAPAs closed 60 days ago and flag any lines where defect PPM has crept back up.",
@@ -7201,7 +7200,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CAPA Effectiveness & Kaizen Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "35% fewer repeat quality incidents"
   },
   "oee loss-tree & micro-stop pareto builder": {
     "name": "OEE Loss-Tree & Micro-Stop Pareto Builder",
@@ -7215,7 +7215,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8,
     "sources": [
       "SCADA Logs",
       "Downtime Codes",
@@ -7224,8 +7223,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Builds weekly plant loss-trees separating changeover, breakdown, speed loss, and micro-stops.",
     "outcome": "Focuses CI teams on top 20% losses",
     "reads": "Streams live records from SCADA Logs, Downtime Codes, Shift OEE into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Automates Lean/TPM loss-tree analysis across plants without manual spreadsheet crunching. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
+    "does": "Automates Lean/TPM loss-tree analysis across plants without manual spreadsheet crunching. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SCADA Logs or overrides Continuous Improvement Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SCADA Logs and Downtime Codes rather than extrapolating unverified values.",
     "samplePrompt": "Generate a 30-day OEE loss-tree Pareto for Plant North showing top 5 speed-loss drivers.",
@@ -7236,7 +7235,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "OEE Loss-Tree & Micro-Stop Pareto Builder",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Focuses CI teams on top 20% losses"
   },
   "best-practice replication & sop recommender": {
     "name": "Best-Practice Replication & SOP Recommender",
@@ -7250,7 +7250,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8,
     "sources": [
       "Kaizen Library",
       "Plant KPIs",
@@ -7259,8 +7258,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Matches a plant's recurring bottleneck with proven Kaizen fixes already implemented at sister sites.",
     "outcome": "Accelerates cross-plant CI scaling",
     "reads": "Streams live records from Kaizen Library, Plant KPIs, SOP Docs into BigQuery, normalizing quality & compliance exceptions and baseline thresholds in real time.",
-    "does": "Connects CI engineers with verified internal solutions from across the manufacturing network. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
+    "does": "Connects CI engineers with verified internal solutions from across the manufacturing network. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Continuous Improvement Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Kaizen Library or overrides Continuous Improvement Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Kaizen Library and Plant KPIs rather than extrapolating unverified values.",
     "samplePrompt": "Search our Kaizen library for proven fixes to vertical form-fill-seal jaw sticking.",
@@ -7271,7 +7270,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Best-Practice Replication & SOP Recommender",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Accelerates cross-plant CI scaling"
   },
   "safety stock agent": {
     "name": "Safety Stock Agent",
@@ -7285,7 +7285,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 64.69,
     "sources": [
       "MEIO Tables",
       "Supplier Lead Times",
@@ -7305,7 +7304,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Safety Stock Agent",
-    "liveId": "meio_safety_stock_agent"
+    "liveId": "meio_safety_stock_agent",
+    "sumanImpact": "Cuts working capital by 10–18%"
   },
   "cfa & wd safety stock norm recalibrator": {
     "name": "CFA & WD Safety Stock Norm Recalibrator",
@@ -7319,7 +7319,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 29.1,
     "sources": [
       "SAP IBP",
       "CFA Lead Times",
@@ -7328,7 +7327,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Recalculates dynamic min/max safety stock norms across regional CFAs and key Wholesale Dealers weekly.",
     "outcome": "10–14% lower depot working capital",
     "reads": "Streams live records from SAP IBP, CFA Lead Times, WD Demand into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Adjusts CFA and distributor safety buffers based on live plant transit variability and secondary velocity. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Adjusts CFA and distributor safety buffers based on live plant transit variability and secondary velocity. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged SAP IBP update — formatted for Inventory Optimization Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in SAP IBP without Inventory Optimization Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP IBP and CFA Lead Times rather than extrapolating unverified values.",
@@ -7340,7 +7339,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CFA & WD Safety Stock Norm Recalibrator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "10–14% lower depot working capital"
   },
   "freshness vs service-level buffer balancer": {
     "name": "Freshness vs Service-Level Buffer Balancer",
@@ -7354,7 +7354,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 29.1,
     "sources": [
       "Shelf-Life Rules",
       "CFA DOH",
@@ -7363,7 +7362,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags food/perishable SKUs where current safety stock norms risk breaching Modern Trade minimum-life norms.",
     "outcome": "Cuts short-shelf-life write-offs by 22%",
     "reads": "Streams live records from Shelf-Life Rules, CFA DOH, MT Min-Life into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Optimizes inventory targets for shelf-life-sensitive SKUs so depots never age out past MT acceptance. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Optimizes inventory targets for shelf-life-sensitive SKUs so depots never age out past MT acceptance. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Shelf-Life Rules, discrepancy highlights against CFA DOH, and 1-click dispute/approval card — formatted for Inventory Optimization Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Shelf-Life Rules without Inventory Optimization Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Shelf-Life Rules and CFA DOH rather than extrapolating unverified values.",
@@ -7375,7 +7374,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Freshness vs Service-Level Buffer Balancer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts short-shelf-life write-offs by 22%"
   },
   "abc-xyz segmentation & policy tuner": {
     "name": "ABC-XYZ Segmentation & Policy Tuner",
@@ -7389,7 +7389,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 29.1,
     "sources": [
       "SKU Revenue",
       "Demand CV",
@@ -7398,7 +7397,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Re-classifies SKUs quarterly by revenue velocity (ABC) and demand volatility (XYZ) to tune service targets.",
     "outcome": "Higher service on A-class SKUs",
     "reads": "Streams live records from SKU Revenue, Demand CV, SAP IBP into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Ensures working capital is concentrated on high-velocity/high-margin SKUs rather than slow tail items. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Ensures working capital is concentrated on high-velocity/high-margin SKUs rather than slow tail items. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged SKU Revenue update — formatted for Inventory Optimization Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in SKU Revenue without Inventory Optimization Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SKU Revenue and Demand CV rather than extrapolating unverified values.",
@@ -7410,7 +7409,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "ABC-XYZ Segmentation & Policy Tuner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Higher service on A-class SKUs"
   },
   "transit-time variability & lead-time updater": {
     "name": "Transit-Time Variability & Lead-Time Updater",
@@ -7424,7 +7424,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 29.1,
     "sources": [
       "TMS Actuals",
       "SAP MRP",
@@ -7433,7 +7432,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compares ERP static lane lead times against actual 90-day plant-to-CFA transit durations.",
     "outcome": "Eliminates stale ERP planning lead times",
     "reads": "Streams live records from TMS Actuals, SAP MRP, Lane History into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Prevents chronic stock-outs caused by understated monsoon or highway transit times in SAP. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents chronic stock-outs caused by understated monsoon or highway transit times in SAP. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged TMS Actuals transfer/allocation order — formatted for Inventory Optimization Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in TMS Actuals without Inventory Optimization Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across TMS Actuals and SAP MRP rather than extrapolating unverified values.",
@@ -7445,7 +7444,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Transit-Time Variability & Lead-Time Updater",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates stale ERP planning lead times"
   },
   "slob disposition agent": {
     "name": "SLOB Disposition Agent",
@@ -7459,7 +7459,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 36.26,
     "sources": [
       "WMS Batch Expiry",
       "Run-Rate",
@@ -7479,7 +7478,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "SLOB Disposition Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents expired stock write-offs"
   },
   "near-expiry depot lot early-warning agent": {
     "name": "Near-Expiry Depot Lot Early-Warning Agent",
@@ -7493,7 +7493,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P0 · Build First",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 32.5,
     "sources": [
       "WMS Batch Age",
       "CFA Stock",
@@ -7502,7 +7501,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Scans all CFA and plant batches within 90/60/45 days of expiry against trailing depletion rates.",
     "outcome": "25–35% lower expiry write-offs",
     "reads": "Streams live records from WMS Batch Age, CFA Stock, Sales Velocity into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Flags slow-moving batches early enough to trigger secondary redistribution or trade schemes. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Flags slow-moving batches early enough to trigger secondary redistribution or trade schemes. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged WMS Batch Age update — formatted for Inventory Controller / Buyer review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in WMS Batch Age without Inventory Controller / Buyer approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Batch Age and CFA Stock rather than extrapolating unverified values.",
@@ -7514,7 +7513,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Near-Expiry Depot Lot Early-Warning Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "25–35% lower expiry write-offs"
   },
   "non-moving stock & promo bundle advisor": {
     "name": "Non-Moving Stock & Promo Bundle Advisor",
@@ -7528,7 +7528,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 32.5,
     "sources": [
       "SLOB List",
       "Scheme Engine",
@@ -7537,7 +7536,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Recommends GT/MT combo-pack or trade-scheme clearance options for slow-moving depot inventory.",
     "outcome": "Recovers 40%+ salvage value",
     "reads": "Streams live records from SLOB List, Scheme Engine, Channel Mix into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Matches trapped depot stock with high-velocity outlets and secondary clearance channels. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Matches trapped depot stock with high-velocity outlets and secondary clearance channels. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged SLOB List update — formatted for Inventory Controller / Buyer review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in SLOB List without Inventory Controller / Buyer approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SLOB List and Scheme Engine rather than extrapolating unverified values.",
@@ -7549,7 +7548,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Non-Moving Stock & Promo Bundle Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Recovers 40%+ salvage value"
   },
   "blocked & quality-hold stock aging tracker": {
     "name": "Blocked & Quality-Hold Stock Aging Tracker",
@@ -7563,7 +7563,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 32.5,
     "sources": [
       "WMS Hold Bins",
       "QA Status",
@@ -7572,7 +7571,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks inventory sitting in blocked/quarantine bins across CFAs and escalates aged holds daily.",
     "outcome": "40% faster release or write-off",
     "reads": "Streams live records from WMS Hold Bins, QA Status, Batch Value into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Prevents saleable or salvageable stock from silently expiring inside depot hold cages. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents saleable or salvageable stock from silently expiring inside depot hold cages. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged WMS Hold Bins transfer/allocation order — formatted for Inventory Controller / Buyer review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in WMS Hold Bins without Inventory Controller / Buyer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Hold Bins and QA Status rather than extrapolating unverified values.",
@@ -7584,7 +7583,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Blocked & Quality-Hold Stock Aging Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "40% faster release or write-off"
   },
   "slow-moving depot-to-depot transfer finder": {
     "name": "Slow-Moving Depot-to-Depot Transfer Finder",
@@ -7598,7 +7598,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 32.5,
     "sources": [
       "CFA Aged Stock",
       "Regional Velocity",
@@ -7607,7 +7606,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Matches slow-moving stock in one CFA with high-velocity demand in another region before expiry.",
     "outcome": "Saves 25% of potential write-offs",
     "reads": "Streams live records from CFA Aged Stock, Regional Velocity, Freight Cost into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Evaluates whether lateral transfer freight is justified to rescue aging regional stock. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Evaluates whether lateral transfer freight is justified to rescue aging regional stock. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged CFA Aged Stock transfer/allocation order — formatted for Inventory Controller / Buyer review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in CFA Aged Stock without Inventory Controller / Buyer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Aged Stock and Regional Velocity rather than extrapolating unverified values.",
@@ -7619,7 +7618,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Slow-Moving Depot-to-Depot Transfer Finder",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves 25% of potential write-offs"
   },
   "inter-facility rebalancer": {
     "name": "Inter-Facility Rebalancer",
@@ -7633,7 +7633,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30.95,
     "sources": [
       "Network On-Hand",
       "Transfer Rates",
@@ -7653,7 +7652,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Inter-Facility Rebalancer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates regional out-of-stocks"
   },
   "cfa-to-wd daily replenishment recommender": {
     "name": "CFA-to-WD Daily Replenishment Recommender",
@@ -7667,7 +7667,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.9,
     "sources": [
       "WD Closing Stock",
       "CFA ATP",
@@ -7676,7 +7675,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Generates recommended primary replenishment indents for Wholesale Dealers based on secondary depletion.",
     "outcome": "+4% WD in-stock availability",
     "reads": "Streams live records from WD Closing Stock, CFA ATP, Secondary Run-Rate into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Replaces reactive distributor ordering with data-driven daily replenishment proposals. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Replaces reactive distributor ordering with data-driven daily replenishment proposals. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged WD Closing Stock transfer/allocation order — formatted for Replenishment Planner review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in WD Closing Stock without Replenishment Planner sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WD Closing Stock and CFA ATP rather than extrapolating unverified values.",
@@ -7688,7 +7687,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CFA-to-WD Daily Replenishment Recommender",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+4% WD in-stock availability"
   },
   "inter-cfa stock balancing & sto copilot": {
     "name": "Inter-CFA Stock Balancing & STO Copilot",
@@ -7702,7 +7702,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.9,
     "sources": [
       "CFA Inventory",
       "Open Indents",
@@ -7711,7 +7710,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies neighboring CFAs with surplus stock to cover acute regional shortages via lateral transfers.",
     "outcome": "Cuts emergency stock-outs by 30%",
     "reads": "Streams live records from CFA Inventory, Open Indents, Lane Rates into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Evaluates lateral CFA-to-CFA transfer economics vs waiting for next plant production run. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Evaluates lateral CFA-to-CFA transfer economics vs waiting for next plant production run. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged CFA Inventory transfer/allocation order — formatted for Replenishment Planner review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in CFA Inventory without Replenishment Planner sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Inventory and Open Indents rather than extrapolating unverified values.",
@@ -7723,7 +7722,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Inter-CFA Stock Balancing & STO Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts emergency stock-outs by 30%"
   },
   "allocation fair-share pre-check for wds": {
     "name": "Allocation Fair-Share Pre-Check for WDs",
@@ -7737,7 +7737,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.9,
     "sources": [
       "CFA ATP",
       "WD Indents",
@@ -7746,7 +7745,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags SKU-CFA combinations where open distributor indents exceed available stock so rationing triggers early.",
     "outcome": "Protects broad retail coverage",
     "reads": "Streams live records from CFA ATP, WD Indents, Coverage Norms into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Prevents first-come-first-served depletion from starving smaller Wholesale Dealers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents first-come-first-served depletion from starving smaller Wholesale Dealers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged CFA ATP transfer/allocation order — formatted for Replenishment Planner review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in CFA ATP without Replenishment Planner sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA ATP and WD Indents rather than extrapolating unverified values.",
@@ -7758,7 +7757,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Allocation Fair-Share Pre-Check for WDs",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects broad retail coverage"
   },
   "in-transit stock & pipeline visibility bot": {
     "name": "In-Transit Stock & Pipeline Visibility Bot",
@@ -7772,7 +7772,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.9,
     "sources": [
       "Open STOs",
       "Truck GPS",
@@ -7781,7 +7780,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Incorporates live GPS ETAs of inbound plant trucks into daily depot replenishment calculations.",
     "outcome": "Cuts duplicate emergency indents",
     "reads": "Streams live records from Open STOs, Truck GPS, CFA ATP into BigQuery, normalizing positioning & optimization exceptions and baseline thresholds in real time.",
-    "does": "Gives replenishment planners true pipeline visibility so arriving stock isn't double-ordered. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Gives replenishment planners true pipeline visibility so arriving stock isn't double-ordered. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Replenishment Planner review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Replenishment Planner confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Open STOs and Truck GPS rather than extrapolating unverified values.",
@@ -7793,7 +7792,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "In-Transit Stock & Pipeline Visibility Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts duplicate emergency indents"
   },
   "dynamic slotting agent": {
     "name": "Dynamic Slotting Agent",
@@ -7807,7 +7807,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 20.82,
     "sources": [
       "WMS Pick Logs",
       "DC Floor Map",
@@ -7827,7 +7826,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Dynamic Slotting Agent",
-    "liveId": "warehouse_slotting_agent"
+    "liveId": "warehouse_slotting_agent",
+    "sumanImpact": "Reduces picker transit time by 15–30%"
   },
   "fast-mover slotting & pick-path optimizer": {
     "name": "Fast-Mover Slotting & Pick-Path Optimizer",
@@ -7841,7 +7841,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 15.8,
     "sources": [
       "WMS Picks",
       "Seasonality",
@@ -7850,7 +7849,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Re-scores SKU pick frequency weekly to move festive/seasonal fast movers to golden-zone bays.",
     "outcome": "15–20% higher pick productivity",
     "reads": "Streams live records from WMS Picks, Seasonality, Rack Map into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Continuously optimizes warehouse slotting to reduce picker travel distance and congestion. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Continuously optimizes warehouse slotting to reduce picker travel distance and congestion. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for DC Operations Mgr / IE Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without DC Operations Mgr / IE Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Picks and Seasonality rather than extrapolating unverified values.",
@@ -7862,7 +7861,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Fast-Mover Slotting & Pick-Path Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15–20% higher pick productivity"
   },
   "dock & staging congestion predictor": {
     "name": "Dock & Staging Congestion Predictor",
@@ -7876,7 +7876,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 15.8,
     "sources": [
       "Inbound ASNs",
       "Wave Plan",
@@ -7885,7 +7884,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Forecasts hourly staging lane utilization and flags inbound/outbound dock overlaps before shift start.",
     "outcome": "25% smoother peak-shift throughput",
     "reads": "Streams live records from Inbound ASNs, Wave Plan, Bay Capacity into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Balances dock schedules and staging lanes to prevent pallet bottlenecks during peak waves. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Balances dock schedules and staging lanes to prevent pallet bottlenecks during peak waves. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for DC Operations Mgr / IE Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without DC Operations Mgr / IE Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Inbound ASNs and Wave Plan rather than extrapolating unverified values.",
@@ -7897,7 +7896,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Dock & Staging Congestion Predictor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "25% smoother peak-shift throughput"
   },
   "pallet-space utilization & overflow forecaster": {
     "name": "Pallet-Space Utilization & Overflow Forecaster",
@@ -7911,7 +7911,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.8,
     "sources": [
       "WMS Occupancy",
       "Inbound Plan",
@@ -7920,7 +7919,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Projects 14-day warehouse pallet occupancy against rack capacity ahead of festive stock builds.",
     "outcome": "15% less costly overflow warehousing",
     "reads": "Streams live records from WMS Occupancy, Inbound Plan, Seasonal Peak into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Gives DC managers early lead time to optimize honeycombing or book temporary overflow bays. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Gives DC managers early lead time to optimize honeycombing or book temporary overflow bays. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged WMS Occupancy update — formatted for DC Operations Mgr / IE Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in WMS Occupancy without DC Operations Mgr / IE Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Occupancy and Inbound Plan rather than extrapolating unverified values.",
@@ -7932,7 +7931,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Pallet-Space Utilization & Overflow Forecaster",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% less costly overflow warehousing"
   },
   "forklift & mhe fleet utilization tracker": {
     "name": "Forklift & MHE Fleet Utilization Tracker",
@@ -7946,7 +7946,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.8,
     "sources": [
       "MHE Telemetry",
       "Put-Away Logs",
@@ -7955,7 +7954,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors reach-truck and pallet-jack utilization and battery-swap bottlenecks across shifts.",
     "outcome": "12% higher MHE productivity",
     "reads": "Streams live records from MHE Telemetry, Put-Away Logs, Shift Plan into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Balances material handling equipment across inbound and outbound zones. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Balances material handling equipment across inbound and outbound zones. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for DC Operations Mgr / IE Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without DC Operations Mgr / IE Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MHE Telemetry and Put-Away Logs rather than extrapolating unverified values.",
@@ -7967,7 +7966,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Forklift & MHE Fleet Utilization Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "12% higher MHE productivity"
   },
   "dock-to-stock agent": {
     "name": "Dock-to-Stock Agent",
@@ -7981,7 +7981,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.61,
     "sources": [
       "BOL Scans",
       "Pallet Photos",
@@ -8001,7 +8000,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Dock-to-Stock Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Dock turnaround in minutes vs. hours"
   },
   "asn discrepancy & short-receipt triager": {
     "name": "ASN Discrepancy & Short-Receipt Triager",
@@ -8015,7 +8015,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.5,
     "sources": [
       "WMS GRN",
       "Carrier BOL",
@@ -8024,7 +8023,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles inbound truck seal, pallet count, and damaged-case photos against plant dispatch notes.",
     "outcome": "60% faster dock-to-stock posting",
     "reads": "Streams live records from WMS GRN, Carrier BOL, Plant Dispatch into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Automates inbound variance documentation so clean stock posts to available-to-promise immediately. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates inbound variance documentation so clean stock posts to available-to-promise immediately. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Inbound Receiving Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Inbound Receiving Supervisor confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS GRN and Carrier BOL rather than extrapolating unverified values.",
@@ -8036,7 +8035,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "ASN Discrepancy & Short-Receipt Triager",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "60% faster dock-to-stock posting"
   },
   "fefo put-away & batch segregation guide": {
     "name": "FEFO Put-Away & Batch Segregation Guide",
@@ -8050,7 +8050,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.5,
     "sources": [
       "Batch Expiry",
       "WMS Bins",
@@ -8059,7 +8058,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Directs forklift operators to segregate fresh plant batches from older stock for strict FEFO rotation.",
     "outcome": "Zero FEFO picking violations",
     "reads": "Streams live records from Batch Expiry, WMS Bins, MT Norms into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Enforces batch-date segregation at put-away to protect Modern Trade freshness compliance. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Enforces batch-date segregation at put-away to protect Modern Trade freshness compliance. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Batch Expiry transfer/allocation order — formatted for Inbound Receiving Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Batch Expiry without Inbound Receiving Supervisor sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Batch Expiry and WMS Bins rather than extrapolating unverified values.",
@@ -8071,7 +8070,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "FEFO Put-Away & Batch Segregation Guide",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero FEFO picking violations"
   },
   "inbound carrier detention & gate-wait tracker": {
     "name": "Inbound Carrier Detention & Gate-Wait Tracker",
@@ -8085,7 +8085,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.5,
     "sources": [
       "Gate Logs",
       "Unloading Time",
@@ -8094,7 +8093,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks plant-to-CFA truck gate-in to dock-out unloading duration to prevent carrier detention claims.",
     "outcome": "35% lower inbound unloading detention",
     "reads": "Streams live records from Gate Logs, Unloading Time, Carrier SLA into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Prioritizes inbound unloading slots for trucks nearing free-time thresholds. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prioritizes inbound unloading slots for trucks nearing free-time thresholds. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Inbound Receiving Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Inbound Receiving Supervisor confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Gate Logs and Unloading Time rather than extrapolating unverified values.",
@@ -8106,7 +8105,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Inbound Carrier Detention & Gate-Wait Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "35% lower inbound unloading detention"
   },
   "damaged-in-transit evidence capture gem": {
     "name": "Damaged-in-Transit Evidence Capture Gem",
@@ -8120,7 +8120,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.5,
     "sources": [
       "Dock Photos",
       "GRN Variance",
@@ -8129,7 +8128,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Guides receiving clerks to capture photo, batch, and quantity proof on damaged pallets before truck release.",
     "outcome": "100% documented carrier OS&D claims",
     "reads": "Streams live records from Dock Photos, GRN Variance, BOL Scans into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Ensures clean evidence packages for carrier claims while posting clean pallets immediately. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Ensures clean evidence packages for carrier claims while posting clean pallets immediately. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Dock Photos, discrepancy highlights against GRN Variance, and 1-click dispute/approval card — formatted for Inbound Receiving Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Dock Photos without Inbound Receiving Supervisor verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Dock Photos and GRN Variance rather than extrapolating unverified values.",
@@ -8141,7 +8140,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Damaged-in-Transit Evidence Capture Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% documented carrier OS&D claims"
   },
   "wave fulfillment copilot": {
     "name": "Wave Fulfillment Copilot",
@@ -8155,7 +8155,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 22.15,
     "sources": [
       "WMS Wave Queue",
       "Labor Active",
@@ -8175,7 +8174,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Wave Fulfillment Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents missed dispatch windows (OTIF)"
   },
   "cutoff-aware wave prioritization copilot": {
     "name": "Cutoff-Aware Wave Prioritization Copilot",
@@ -8189,7 +8189,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10,
     "sources": [
       "WMS Waves",
       "Truck ETAs",
@@ -8198,7 +8197,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Re-sequences open pick waves dynamically based on arriving truck readiness and billing cutoffs.",
     "outcome": "99%+ on-time dispatch cutoff",
     "reads": "Streams live records from WMS Waves, Truck ETAs, Picker Rates into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Balances picker assignments across zones so priority MT and WD trucks depart on schedule. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Balances picker assignments across zones so priority MT and WD trucks depart on schedule. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for DC Shift Floor Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without DC Shift Floor Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Waves and Truck ETAs rather than extrapolating unverified values.",
@@ -8210,7 +8209,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cutoff-Aware Wave Prioritization Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "99%+ on-time dispatch cutoff"
   },
   "pick-error & short-pick root-cause bot": {
     "name": "Pick-Error & Short-Pick Root-Cause Bot",
@@ -8224,7 +8224,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10,
     "sources": [
       "Scan Logs",
       "Cycle Counts",
@@ -8233,7 +8232,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Analyzes daily short-picks to trigger targeted cycle counts on suspect bin locations.",
     "outcome": "45% fewer customer short-pick claims",
     "reads": "Streams live records from Scan Logs, Cycle Counts, Claims into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Catches bin inventory inaccuracies immediately after short-picks to prevent repeat misses. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Catches bin inventory inaccuracies immediately after short-picks to prevent repeat misses. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Scan Logs, discrepancy highlights against Cycle Counts, and 1-click dispute/approval card — formatted for DC Shift Floor Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Scan Logs without DC Shift Floor Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Scan Logs and Cycle Counts rather than extrapolating unverified values.",
@@ -8245,7 +8244,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Pick-Error & Short-Pick Root-Cause Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "45% fewer customer short-pick claims"
   },
   "cycle-count priority & inventory accuracy bot": {
     "name": "Cycle-Count Priority & Inventory Accuracy Bot",
@@ -8259,7 +8259,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10,
     "sources": [
       "WMS Variances",
       "Fast Movers",
@@ -8268,7 +8267,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Generates daily targeted cycle-count lists focused on high-velocity bins and recent short-picks.",
     "outcome": "99.5%+ bin inventory accuracy",
     "reads": "Streams live records from WMS Variances, Fast Movers, Cycle Logs into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Keeps warehouse bin accuracy high without disrupting full-day shipping operations. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Keeps warehouse bin accuracy high without disrupting full-day shipping operations. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged WMS Variances transfer/allocation order — formatted for DC Shift Floor Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in WMS Variances without DC Shift Floor Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Variances and Fast Movers rather than extrapolating unverified values.",
@@ -8280,7 +8279,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cycle-Count Priority & Inventory Accuracy Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "99.5%+ bin inventory accuracy"
   },
   "temp picker onboarding & productivity coach": {
     "name": "Temp Picker Onboarding & Productivity Coach",
@@ -8294,7 +8294,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10,
     "sources": [
       "WMS Pick Rates",
       "Error Logs",
@@ -8303,8 +8302,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks lines-per-hour and scan-error rates for seasonal pickers to guide floor coaching.",
     "outcome": "20% faster peak-season picker ramp",
     "reads": "Streams live records from WMS Pick Rates, Error Logs, Zone Map into BigQuery, normalizing warehouse operations exceptions and baseline thresholds in real time.",
-    "does": "Helps floor leads pair new pickers with optimal zones during festive volume spikes. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for DC Shift Floor Lead review inside Gemini Enterprise.",
+    "does": "Helps floor leads pair new pickers with optimal zones during festive volume spikes. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for DC Shift Floor Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to WMS Pick Rates or overrides DC Shift Floor Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Pick Rates and Error Logs rather than extrapolating unverified values.",
     "samplePrompt": "Identify pickers with >2% mis-pick rate this week for targeted zone coaching.",
@@ -8315,7 +8314,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Temp Picker Onboarding & Productivity Coach",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% faster peak-season picker ramp"
   },
   "phantom inventory sensor": {
     "name": "Phantom Inventory Sensor",
@@ -8329,7 +8329,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 36.38,
     "sources": [
       "POS Zero-Sales",
       "Store On-Hand",
@@ -8349,7 +8348,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Phantom Inventory Sensor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Triggers targeted floor cycle counts"
   },
   "mt / retail shelf out-of-stock predictor": {
     "name": "MT / Retail Shelf Out-of-Stock Predictor",
@@ -8363,7 +8363,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.4,
     "sources": [
       "MT POS",
       "Store On-Hand",
@@ -8372,7 +8371,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Detects zero-scan anomalies on fast-moving SKUs across Modern Trade stores to trigger shelf replenishment.",
     "outcome": "35% fewer lost retail sales",
     "reads": "Streams live records from MT POS, Store On-Hand, Planogram into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Identifies phantom inventory and backroom-to-shelf gaps at retail stores before sales are lost. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Identifies phantom inventory and backroom-to-shelf gaps at retail stores before sales are lost. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from MT POS, discrepancy highlights against Store On-Hand, and 1-click dispute/approval card — formatted for Store Operations / Omni Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to MT POS without Store Operations / Omni Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MT POS and Store On-Hand rather than extrapolating unverified values.",
@@ -8384,7 +8383,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "MT / Retail Shelf Out-of-Stock Predictor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "35% fewer lost retail sales"
   },
   "promo display execution & stock-check bot": {
     "name": "Promo Display Execution & Stock-Check Bot",
@@ -8398,7 +8398,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.4,
     "sources": [
       "Promo Calendar",
       "Store Inventory",
@@ -8407,7 +8406,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies promotional stores hold sufficient backroom stock 72 hours before weekend flyers go live.",
     "outcome": "+15% promo on-shelf availability",
     "reads": "Streams live records from Promo Calendar, Store Inventory, POS into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Prevents advertised promotional items from running out on Day 1 at key retail outlets. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents advertised promotional items from running out on Day 1 at key retail outlets. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Promo Calendar update — formatted for Store Operations / Omni Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Promo Calendar without Store Operations / Omni Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Promo Calendar and Store Inventory rather than extrapolating unverified values.",
@@ -8419,7 +8418,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Promo Display Execution & Stock-Check Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+15% promo on-shelf availability"
   },
   "mt planogram & facing compliance auditor": {
     "name": "MT Planogram & Facing Compliance Auditor",
@@ -8433,7 +8433,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.4,
     "sources": [
       "Shelf Photos",
       "Planogram",
@@ -8442,7 +8441,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Scores store shelf photos from merchandisers against contracted eye-level facings and adjacency rules.",
     "outcome": "+8% shelf-share visibility",
     "reads": "Streams live records from Shelf Photos, Planogram, MT Stores into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Uses multimodal vision to audit Modern Trade shelf compliance across hundreds of outlets. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Uses multimodal vision to audit Modern Trade shelf compliance across hundreds of outlets. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Shelf Photos, discrepancy highlights against Planogram, and 1-click dispute/approval card — formatted for Store Operations / Omni Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Shelf Photos without Store Operations / Omni Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Shelf Photos and Planogram rather than extrapolating unverified values.",
@@ -8454,7 +8453,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "MT Planogram & Facing Compliance Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+8% shelf-share visibility"
   },
   "store-level shrinkage & pilferage pattern bot": {
     "name": "Store-Level Shrinkage & Pilferage Pattern Bot",
@@ -8468,7 +8468,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.4,
     "sources": [
       "Cycle Counts",
       "POS Sales",
@@ -8477,8 +8476,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Detects recurring inventory shrink clusters on high-value personal care and premium food SKUs.",
     "outcome": "Cuts high-value SKU shrink by 20%",
     "reads": "Streams live records from Cycle Counts, POS Sales, Store Audits into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Flags stores with abnormal book-vs-physical adjustments for loss-prevention follow-up. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Store Operations / Omni Lead review inside Gemini Enterprise.",
+    "does": "Flags stores with abnormal book-vs-physical adjustments for loss-prevention follow-up. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Store Operations / Omni Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Cycle Counts or overrides Store Operations / Omni Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Cycle Counts and POS Sales rather than extrapolating unverified values.",
     "samplePrompt": "Rank top 15 MT outlets by unexplained negative inventory adjustments over 60 days.",
@@ -8489,7 +8488,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Store-Level Shrinkage & Pilferage Pattern Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts high-value SKU shrink by 20%"
   },
   "sfs / bopis sourcing": {
     "name": "SFS / BOPIS Sourcing",
@@ -8503,7 +8503,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 23.29,
     "sources": [
       "DOM Rules",
       "Parcel Rate Zones",
@@ -8523,7 +8522,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "SFS / BOPIS Sourcing",
-    "liveId": "atp_order_promising_agent"
+    "liveId": "atp_order_promising_agent",
+    "sumanImpact": "Lowers parcel costs & split rates"
   },
   "q-comm dark-store inventory & split router": {
     "name": "Q-Comm Dark-Store Inventory & Split Router",
@@ -8537,7 +8537,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "Dark Store Stock",
       "Order Velocity",
@@ -8546,7 +8545,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors micro-fulfillment and Q-Comm dark-store buffer depletion to trigger rapid intra-city top-ups.",
     "outcome": "12% lower dark-store stock-outs",
     "reads": "Streams live records from Dark Store Stock, Order Velocity, CFA ATP into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Protects 10-minute delivery availability by predicting dark-store SKU burn rates by hour. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Protects 10-minute delivery availability by predicting dark-store SKU burn rates by hour. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Omnichannel Fulfillment Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Omnichannel Fulfillment Dir. confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Dark Store Stock and Order Velocity rather than extrapolating unverified values.",
@@ -8558,7 +8557,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Q-Comm Dark-Store Inventory & Split Router",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "12% lower dark-store stock-outs"
   },
   "e-b2b & direct-to-retailer order promiser": {
     "name": "e-B2B & Direct-to-Retailer Order Promiser",
@@ -8572,7 +8572,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "e-B2B Orders",
       "WD / CFA Stock",
@@ -8581,7 +8580,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Routes incoming retailer app orders to the optimal Wholesale Dealer or micro-depot with stock and van capacity.",
     "outcome": "98%+ next-day B2B fulfillment",
     "reads": "Streams live records from e-B2B Orders, WD / CFA Stock, Van Capacity into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Balances fulfillment cost and next-day delivery promises across distributor and company nodes. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Balances fulfillment cost and next-day delivery promises across distributor and company nodes. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged e-B2B Orders transfer/allocation order — formatted for Omnichannel Fulfillment Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in e-B2B Orders without Omnichannel Fulfillment Dir. sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across e-B2B Orders and WD / CFA Stock rather than extrapolating unverified values.",
@@ -8593,7 +8592,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "e-B2B & Direct-to-Retailer Order Promiser",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "98%+ next-day B2B fulfillment"
   },
   "quick-commerce assortment & pack-size tuner": {
     "name": "Quick-Commerce Assortment & Pack-Size Tuner",
@@ -8607,7 +8607,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "Q-Comm POS",
       "Search Trends",
@@ -8616,7 +8615,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Recommends high-velocity impulse and multipack SKUs suited for constrained Q-Comm dark-store racks.",
     "outcome": "+11% Q-Comm basket conversion",
     "reads": "Streams live records from Q-Comm POS, Search Trends, Dark Store Cap into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Optimizes limited dark-store shelf slots for maximum revenue per cubic foot. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Optimizes limited dark-store shelf slots for maximum revenue per cubic foot. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Q-Comm POS, discrepancy highlights against Search Trends, and 1-click dispute/approval card — formatted for Omnichannel Fulfillment Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Q-Comm POS without Omnichannel Fulfillment Dir. verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Q-Comm POS and Search Trends rather than extrapolating unverified values.",
@@ -8628,7 +8627,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Quick-Commerce Assortment & Pack-Size Tuner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+11% Q-Comm basket conversion"
   },
   "last-mile delivery sla & rider wait monitor": {
     "name": "Last-Mile Delivery SLA & Rider Wait Monitor",
@@ -8642,7 +8642,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "Dispatch Logs",
       "Drop GPS",
@@ -8651,7 +8650,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks e-B2B retailer order-to-delivery cycle times across company and distributor last-mile vans.",
     "outcome": "Protects e-B2B next-day promise",
     "reads": "Streams live records from Dispatch Logs, Drop GPS, WD Vans into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Identifies pin-codes with chronic next-day delivery misses for route rebalancing. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Identifies pin-codes with chronic next-day delivery misses for route rebalancing. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Omnichannel Fulfillment Dir. review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Omnichannel Fulfillment Dir. confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Dispatch Logs and Drop GPS rather than extrapolating unverified values.",
@@ -8663,7 +8662,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Last-Mile Delivery SLA & Rider Wait Monitor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects e-B2B next-day promise"
   },
   "returns triage agent": {
     "name": "Returns Triage Agent",
@@ -8677,7 +8677,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 20.64,
     "sources": [
       "Return Photos",
       "Grade Rules",
@@ -8697,7 +8696,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Returns Triage Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Restocks sellable returns within 24h"
   },
   "wd & mt damage return pre-approval bot": {
     "name": "WD & MT Damage Return Pre-Approval Bot",
@@ -8711,7 +8711,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.3,
     "sources": [
       "Damage Photos",
       "WD Claims",
@@ -8720,7 +8719,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Classifies distributor and retail damage-return photos to auto-approve eligible credits or field destruction.",
     "outcome": "50% faster return credit turnaround",
     "reads": "Streams live records from Damage Photos, WD Claims, Return Policy into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Eliminates unnecessary reverse haulage of unsaleable damaged FMCG packs via photo verification. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Eliminates unnecessary reverse haulage of unsaleable damaged FMCG packs via photo verification. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Damage Photos, discrepancy highlights against WD Claims, and 1-click dispute/approval card — formatted for Reverse Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Damage Photos without Reverse Logistics Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Damage Photos and WD Claims rather than extrapolating unverified values.",
@@ -8732,7 +8731,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "WD & MT Damage Return Pre-Approval Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "50% faster return credit turnaround"
   },
   "return root-cause & pack-damage tracker": {
     "name": "Return Root-Cause & Pack-Damage Tracker",
@@ -8746,7 +8746,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.3,
     "sources": [
       "Return Reasons",
       "Transit Lanes",
@@ -8755,7 +8754,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Correlates crushed-carton and leakage returns with specific transport lanes, loaders, and shipper specs.",
     "outcome": "20% lower transit damage rate",
     "reads": "Streams live records from Return Reasons, Transit Lanes, Case Specs into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Turns reverse logistics claims into actionable packaging and loading improvements. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Turns reverse logistics claims into actionable packaging and loading improvements. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Reverse Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Reverse Logistics Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Return Reasons and Transit Lanes rather than extrapolating unverified values.",
@@ -8767,7 +8766,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Return Root-Cause & Pack-Damage Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% lower transit damage rate"
   },
   "field destruction & gst reversal audit bot": {
     "name": "Field Destruction & GST Reversal Audit Bot",
@@ -8781,7 +8781,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.3,
     "sources": [
       "Photo Proof",
       "GST Rules",
@@ -8790,7 +8789,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies witness/photo destruction logs for damaged FMCG stock destroyed at distributor premises.",
     "outcome": "100% tax-compliant damage disposal",
     "reads": "Streams live records from Photo Proof, GST Rules, WD Credits into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Prevents costly reverse haulage while maintaining strict financial and tax audit trails. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents costly reverse haulage while maintaining strict financial and tax audit trails. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Photo Proof, discrepancy highlights against GST Rules, and 1-click dispute/approval card — formatted for Reverse Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Photo Proof without Reverse Logistics Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Photo Proof and GST Rules rather than extrapolating unverified values.",
@@ -8802,7 +8801,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Field Destruction & GST Reversal Audit Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% tax-compliant damage disposal"
   },
   "seasonal & festive unsold return predictor": {
     "name": "Seasonal & Festive Unsold Return Predictor",
@@ -8816,7 +8816,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.3,
     "sources": [
       "Festive Sell-In",
       "Secondary POS",
@@ -8825,7 +8824,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors post-festival sell-through in GT/MT to trigger early inter-branch pulls before expiry.",
     "outcome": "Cuts post-festive returns by 30%",
     "reads": "Streams live records from Festive Sell-In, Secondary POS, WD Stock into BigQuery, normalizing omnichannel visibility exceptions and baseline thresholds in real time.",
-    "does": "Prevents festive gift-pack gluts from turning into post-season reverse write-offs. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents festive gift-pack gluts from turning into post-season reverse write-offs. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Festive Sell-In transfer/allocation order — formatted for Reverse Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Festive Sell-In without Reverse Logistics Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Festive Sell-In and Secondary POS rather than extrapolating unverified values.",
@@ -8837,7 +8836,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Seasonal & Festive Unsold Return Predictor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts post-festive returns by 30%"
   },
   "overnight sto & load consolidation agent": {
     "name": "Overnight STO & Load Consolidation Agent",
@@ -8851,7 +8851,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 12.3,
     "sources": [
       "SAP STOs",
       "SKU Cube/Weight",
@@ -8860,7 +8859,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (08:00–10:00): Ingests overnight SAP plant production outputs and groups partial CFA indents into optimal 32ft/40ft FTL linehauls.",
     "outcome": "12–18% higher primary FTL fill rate",
     "reads": "Streams live records from SAP STOs, SKU Cube/Weight, TMS into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Ingests overnight SAP plant production outputs and groups partial CFA indents into optimal 32ft/40ft FTL linehauls. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Ingests overnight SAP plant production outputs and groups partial CFA indents into optimal 32ft/40ft FTL linehauls. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Primary Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Primary Transport Planner confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP STOs and SKU Cube/Weight rather than extrapolating unverified values.",
@@ -8873,7 +8872,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Load Consolidation Agent (ITC TMD)",
-    "liveId": "itc_load_consolidation_agent"
+    "liveId": "itc_load_consolidation_agent",
+    "sumanImpact": "12–18% higher primary FTL fill rate"
   },
   "rake & multimodal switch copilot": {
     "name": "Rake & Multimodal Switch Copilot",
@@ -8887,7 +8887,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 12.3,
     "sources": [
       "Rail/Road Feeds",
       "Highway Traffic",
@@ -8896,8 +8895,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (11:00–15:00): Evaluates road vs. rail rake lead times when highway congestion spikes, recommending urgent road diversions for A-class SKUs.",
     "outcome": "Protects A-class CFA stock during delays",
     "reads": "Streams live records from Rail/Road Feeds, Highway Traffic, A-Class SKUs into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Evaluates road vs. rail rake lead times when highway congestion spikes, recommending urgent road diversions for A-class SKUs. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Primary Transport Planner review inside Gemini Enterprise.",
+    "does": "Evaluates road vs. rail rake lead times when highway congestion spikes, recommending urgent road diversions for A-class SKUs. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Primary Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Rail/Road Feeds or overrides Primary Transport Planner sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Rail/Road Feeds and Highway Traffic rather than extrapolating unverified values.",
     "samplePrompt": "Execute Rake & Multimodal Switch Copilot workflow: Evaluates road vs. rail rake lead times when highway congestion spikes, recommending urgent road diversions for A-class SKUs.",
@@ -8908,7 +8907,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Rake & Multimodal Switch Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects A-class CFA stock during delays"
   },
   "eod dispatch & carrier tender agent": {
     "name": "EOD Dispatch & Carrier Tender Agent",
@@ -8922,7 +8922,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code + OpenAPI",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 12.3,
     "sources": [
       "TMS Webhook",
       "Transporter Portal",
@@ -8931,7 +8930,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–19:00): Auto-tenders finalized primary loads to contracted transporters via TMS webhook and flags unaccepted lanes.",
     "outcome": "95%+ same-day carrier tender acceptance",
     "reads": "Streams live records from TMS Webhook, Transporter Portal, Lane Cards into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Auto-tenders finalized primary loads to contracted transporters via TMS webhook and flags unaccepted lanes. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Auto-tenders finalized primary loads to contracted transporters via TMS webhook and flags unaccepted lanes. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from TMS Webhook, discrepancy highlights against Transporter Portal, and 1-click dispute/approval card — formatted for Primary Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to TMS Webhook without Primary Transport Planner verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across TMS Webhook and Transporter Portal rather than extrapolating unverified values.",
@@ -8943,7 +8942,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "EOD Dispatch & Carrier Tender Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "95%+ same-day carrier tender acceptance"
   },
   "lane rate-card & spot-vs-contract optimizer": {
     "name": "Lane Rate-Card & Spot-vs-Contract Optimizer",
@@ -8957,7 +8957,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 12.3,
     "sources": [
       "Lane Contracts",
       "Spot Quotes",
@@ -8966,7 +8965,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compares contracted transporter rates against live spot bids on surge lanes before tendering.",
     "outcome": "4–6% primary freight savings",
     "reads": "Streams live records from Lane Contracts, Spot Quotes, SAP STOs into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Prevents expensive ad-hoc spot premiums when primary lanes spike. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents expensive ad-hoc spot premiums when primary lanes spike. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Lane Contracts, discrepancy highlights against Spot Quotes, and 1-click dispute/approval card — formatted for Primary Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Lane Contracts without Primary Transport Planner verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Lane Contracts and Spot Quotes rather than extrapolating unverified values.",
@@ -8978,7 +8977,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Lane Rate-Card & Spot-vs-Contract Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "4–6% primary freight savings"
   },
   "plant-to-cfa direct-to-wd bypass advisor": {
     "name": "Plant-to-CFA Direct-to-WD Bypass Advisor",
@@ -8992,7 +8992,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 12.3,
     "sources": [
       "Large WD Indents",
       "Plant Stock",
@@ -9001,7 +9000,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Spots full-truckload distributor indents that can ship direct from plant, bypassing CFA double-handling.",
     "outcome": "Saves CFA handling + 2 days lead time",
     "reads": "Streams live records from Large WD Indents, Plant Stock, FTL Rates into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Cuts depot handling cost and transit time for high-volume Wholesale Dealers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Cuts depot handling cost and transit time for high-volume Wholesale Dealers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Large WD Indents transfer/allocation order — formatted for Primary Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Large WD Indents without Primary Transport Planner sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Large WD Indents and Plant Stock rather than extrapolating unverified values.",
@@ -9013,7 +9012,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Plant-to-CFA Direct-to-WD Bypass Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Saves CFA handling + 2 days lead time"
   },
   "inbound gate & bay scheduler gem": {
     "name": "Inbound Gate & Bay Scheduler Gem",
@@ -9027,7 +9027,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 13.7,
     "sources": [
       "YMS Gate Logs",
       "Plant Shift Plan",
@@ -9036,7 +9035,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (07:30–09:30): Sequences morning truck arrivals against plant shift readiness and pre-assigns staging bays before gate-in.",
     "outcome": "25% faster morning bay turnaround",
     "reads": "Streams live records from YMS Gate Logs, Plant Shift Plan, Bay Matrix into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Sequences morning truck arrivals against plant shift readiness and pre-assigns staging bays before gate-in. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Sequences morning truck arrivals against plant shift readiness and pre-assigns staging bays before gate-in. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Plant Yard & Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Plant Yard & Dispatch Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across YMS Gate Logs and Plant Shift Plan rather than extrapolating unverified values.",
@@ -9048,7 +9047,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Inbound Gate & Bay Scheduler Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "25% faster morning bay turnaround"
   },
   "yard disruption & detention sentinel": {
     "name": "Yard Disruption & Detention Sentinel",
@@ -9062,7 +9062,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 20.9,
     "sources": [
       "GPS / FASTag",
       "Dock Sensors",
@@ -9071,7 +9070,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "At peak shift handovers, 32-ft containers and frozen reefers queue at ICML weighbridges and blocked stretch-wrap doors beyond the 120-minute free-time slab—triggering Rs 850-Rs 1,350/hr carrier detention charges and diesel burn on waiting reefers.",
     "outcome": "Cuts plant truck detention by 40%",
     "reads": "Streams live records from GPS / FASTag, Dock Sensors, Google Chat into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Monitors dwell-time alerts at loading docks; triggers Google Chat escalations if any trailer exceeds 90-minute turnaround. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Monitors dwell-time alerts at loading docks; triggers Google Chat escalations if any trailer exceeds 90-minute turnaround. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Plant Yard & Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Plant Yard & Dispatch Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across GPS / FASTag and Dock Sensors rather than extrapolating unverified values.",
@@ -9084,7 +9083,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Yard Disruption & Detention Sentinel (ITC TMD)",
-    "liveId": "itc_yard_disruption_detention_sentinel"
+    "liveId": "itc_yard_disruption_detention_sentinel",
+    "sumanImpact": "Cuts plant truck detention by 40%"
   },
   "e-way bill & gate-out reconciler": {
     "name": "E-Way Bill & Gate-Out Reconciler",
@@ -9098,7 +9098,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.7,
     "sources": [
       "SAP e-Way Bill",
       "Seal Scans",
@@ -9107,7 +9106,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–18:30): Verifies physical seal numbers against SAP e-Way Bills and logs final gate-out timestamps for carrier SLA scoring.",
     "outcome": "Zero e-Way Bill / seal mismatch dispatches",
     "reads": "Streams live records from SAP e-Way Bill, Seal Scans, Carrier SLA into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Verifies physical seal numbers against SAP e-Way Bills and logs final gate-out timestamps for carrier SLA scoring. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Verifies physical seal numbers against SAP e-Way Bills and logs final gate-out timestamps for carrier SLA scoring. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP e-Way Bill, discrepancy highlights against Seal Scans, and 1-click dispute/approval card — formatted for Plant Yard & Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP e-Way Bill without Plant Yard & Dispatch Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP e-Way Bill and Seal Scans rather than extrapolating unverified values.",
@@ -9119,7 +9118,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "E-Way Bill & Gate-Out Reconciler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero e-Way Bill / seal mismatch dispatches"
   },
   "driver check-in & multilingual kiosk assistant": {
     "name": "Driver Check-In & Multilingual Kiosk Assistant",
@@ -9133,7 +9133,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.7,
     "sources": [
       "Gate Kiosk",
       "LR Scans",
@@ -9142,7 +9141,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Guides drivers in regional languages on bay assignments, PPE rules, and loading readiness.",
     "outcome": "50% faster gate entry processing",
     "reads": "Streams live records from Gate Kiosk, LR Scans, Driver App into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Eliminates yard communication delays and paperwork errors at busy plant gates. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Eliminates yard communication delays and paperwork errors at busy plant gates. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Gate Kiosk, discrepancy highlights against LR Scans, and 1-click dispute/approval card — formatted for Plant Yard & Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Gate Kiosk without Plant Yard & Dispatch Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Gate Kiosk and LR Scans rather than extrapolating unverified values.",
@@ -9154,7 +9153,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Driver Check-In & Multilingual Kiosk Assistant",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "50% faster gate entry processing"
   },
   "vehicle fitness & safety checklist auditor": {
     "name": "Vehicle Fitness & Safety Checklist Auditor",
@@ -9168,7 +9168,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.7,
     "sources": [
       "Gate Inspection",
       "Tarpaulin Check",
@@ -9177,7 +9176,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies truck floor cleanliness, odor-free condition, and waterproof tarpaulin checks before food loading.",
     "outcome": "Zero unsafe or leaking truck dispatches",
     "reads": "Streams live records from Gate Inspection, Tarpaulin Check, Floor Photos into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Prevents transit rain damage and contamination by enforcing pre-load vehicle QA. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents transit rain damage and contamination by enforcing pre-load vehicle QA. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Gate Inspection, discrepancy highlights against Tarpaulin Check, and 1-click dispute/approval card — formatted for Plant Yard & Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Gate Inspection without Plant Yard & Dispatch Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Gate Inspection and Tarpaulin Check rather than extrapolating unverified values.",
@@ -9189,7 +9188,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Vehicle Fitness & Safety Checklist Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero unsafe or leaking truck dispatches"
   },
   "pre-cooling & reefer readiness gem": {
     "name": "Pre-Cooling & Reefer Readiness Gem",
@@ -9203,7 +9203,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 15.2,
     "sources": [
       "Reefer IoT",
       "Pre-Trip Logs",
@@ -9212,7 +9211,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (08:00–10:00): Audits pre-trip reefer set-point logs (-18°C / +4°C) across all scheduled chilled/frozen dispatches before loading.",
     "outcome": "100% pre-cooled dispatch compliance",
     "reads": "Streams live records from Reefer IoT, Pre-Trip Logs, Dispatch Plan into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Audits pre-trip reefer set-point logs (-18°C / +4°C) across all scheduled chilled/frozen dispatches before loading. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Audits pre-trip reefer set-point logs (-18°C / +4°C) across all scheduled chilled/frozen dispatches before loading. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Cold-Chain & Transit QA Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Cold-Chain & Transit QA Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Reefer IoT and Pre-Trip Logs rather than extrapolating unverified values.",
@@ -9224,7 +9223,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Pre-Cooling & Reefer Readiness Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% pre-cooled dispatch compliance"
   },
   "live thermal excursion sentinel": {
     "name": "Live Thermal Excursion Sentinel",
@@ -9238,7 +9238,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.2,
     "sources": [
       "Live Thermal IoT",
       "WhatsApp Alerts",
@@ -9247,7 +9246,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (10:30–15:30): Detects mid-transit temperature spikes >2°C, sends WhatsApp alerts to drivers, and locates nearest emergency cold-storage hub.",
     "outcome": "Prevents perishable FMCG spoilage",
     "reads": "Streams live records from Live Thermal IoT, WhatsApp Alerts, Cold-Hub Map into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Detects mid-transit temperature spikes >2°C, sends WhatsApp alerts to drivers, and locates nearest emergency cold-storage hub. Executes via Gemini Multimodal Vernacular Voice + BigQuery Outlet/Territory Context Grounding to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Detects mid-transit temperature spikes >2°C, sends WhatsApp alerts to drivers, and locates nearest emergency cold-storage hub. Executes via Gemini Multimodal Vernacular Voice + BigQuery Outlet/Territory Context Grounding to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Concise vernacular brief, top-3 priority actions per outlet/beat, and draft order/message cards — formatted for Cold-Chain & Transit QA Lead review inside Gemini Enterprise.",
     "stopsAt": "Never transmits external customer/distributor communications or finalizes orders without Cold-Chain & Transit QA Lead 1-tap confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Live Thermal IoT and WhatsApp Alerts rather than extrapolating unverified values.",
@@ -9260,7 +9259,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Cold-Chain Thermal Auditor (ITC TMD)",
-    "liveId": "itc_cold_chain_thermal_auditor"
+    "liveId": "itc_cold_chain_thermal_auditor",
+    "sumanImpact": "Prevents perishable FMCG spoilage"
   },
   "transit qa release & claim copilot": {
     "name": "Transit QA Release & Claim Copilot",
@@ -9274,7 +9274,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.2,
     "sources": [
       "QA Telemetry",
       "Carrier SLAs",
@@ -9283,7 +9282,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–18:30): Generates batch-level thermal compliance certificates for receiving CFAs or auto-drafts carrier spoilage claims.",
     "outcome": "Automated transit QA release & claims",
     "reads": "Streams live records from QA Telemetry, Carrier SLAs, Claim Portal into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Generates batch-level thermal compliance certificates for receiving CFAs or auto-drafts carrier spoilage claims. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Generates batch-level thermal compliance certificates for receiving CFAs or auto-drafts carrier spoilage claims. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Cold-Chain & Transit QA Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Cold-Chain & Transit QA Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across QA Telemetry and Carrier SLAs rather than extrapolating unverified values.",
@@ -9295,7 +9294,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Transit QA Release & Claim Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Automated transit QA release & claims"
   },
   "monsoon humidity & ambient transit risk bot": {
     "name": "Monsoon Humidity & Ambient Transit Risk Bot",
@@ -9309,7 +9309,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.2,
     "sources": [
       "Weather API",
       "Route Humidity",
@@ -9318,7 +9317,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags moisture-sensitive food/paper lanes transiting heavy-rain corridors needing extra desiccant/wrapping.",
     "outcome": "Cuts humidity carton damage by 30%",
     "reads": "Streams live records from Weather API, Route Humidity, SKU Sensitivity into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Protects non-reefer moisture-sensitive FMCG loads during peak monsoon transit. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Protects non-reefer moisture-sensitive FMCG loads during peak monsoon transit. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Cold-Chain & Transit QA Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Cold-Chain & Transit QA Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Weather API and Route Humidity rather than extrapolating unverified values.",
@@ -9330,7 +9329,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Monsoon Humidity & Ambient Transit Risk Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts humidity carton damage by 30%"
   },
   "reefer carrier thermal-compliance scorecard": {
     "name": "Reefer Carrier Thermal-Compliance Scorecard",
@@ -9344,7 +9344,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.2,
     "sources": [
       "IoT Logs",
       "Excursion Count",
@@ -9353,7 +9352,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Scores refrigerated fleet partners weekly on set-point adherence, door-open events, and pre-cool speed.",
     "outcome": "Top-quartile cold-chain reliability",
     "reads": "Streams live records from IoT Logs, Excursion Count, Carrier SLA into BigQuery, normalizing primary logistics & plant dispatch (factory → cfa / depot) exceptions and baseline thresholds in real time.",
-    "does": "Drives data-backed carrier selection for temperature-sensitive food and dairy lanes. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Drives data-backed carrier selection for temperature-sensitive food and dairy lanes. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Cold-Chain & Transit QA Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Cold-Chain & Transit QA Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across IoT Logs and Excursion Count rather than extrapolating unverified values.",
@@ -9365,7 +9364,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Reefer Carrier Thermal-Compliance Scorecard",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Top-quartile cold-chain reliability"
   },
   "cfa morning bay & labor planner gem": {
     "name": "CFA Morning Bay & Labor Planner Gem",
@@ -9379,7 +9379,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P0 · Build First",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 16.6,
     "sources": [
       "WMS / CFA Portal",
       "SAP GRN",
@@ -9388,7 +9387,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (07:30–09:30): Prioritizes inbound factory trucks carrying backordered SKUs and assigns cross-docking teams for direct WD loading.",
     "outcome": "30% faster CFA dock turnaround",
     "reads": "Streams live records from WMS / CFA Portal, SAP GRN, Vehicle Queue into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Prioritizes inbound factory trucks carrying backordered SKUs and assigns cross-docking teams for direct WD loading. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prioritizes inbound factory trucks carrying backordered SKUs and assigns cross-docking teams for direct WD loading. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Depot / CFA Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Depot / CFA Operations Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS / CFA Portal and SAP GRN rather than extrapolating unverified values.",
@@ -9400,7 +9399,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CFA Morning Bay & Labor Planner Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "30% faster CFA dock turnaround"
   },
   "fefo batch & damage triage agent": {
     "name": "FEFO Batch & Damage Triage Agent",
@@ -9414,7 +9414,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.6,
     "sources": [
       "FEFO Batch Map",
       "Indent Queue",
@@ -9423,7 +9422,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (10:30–15:00): Scans inbound pallet photos for crushed cartons and enforces First-Expired-First-Out (FEFO) bin placement.",
     "outcome": "100% FEFO compliance on outbound waves",
     "reads": "Streams live records from FEFO Batch Map, Indent Queue, Bay Capacity into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Scans inbound pallet photos for crushed cartons and enforces First-Expired-First-Out (FEFO) bin placement. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Scans inbound pallet photos for crushed cartons and enforces First-Expired-First-Out (FEFO) bin placement. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from FEFO Batch Map, discrepancy highlights against Indent Queue, and 1-click dispute/approval card — formatted for Depot / CFA Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to FEFO Batch Map without Depot / CFA Operations Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across FEFO Batch Map and Indent Queue rather than extrapolating unverified values.",
@@ -9435,7 +9434,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "FEFO Batch & Damage Triage Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% FEFO compliance on outbound waves"
   },
   "cfa wave & bay orchestrator": {
     "name": "CFA Wave & Bay Orchestrator",
@@ -9449,7 +9449,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 21.1,
     "sources": [
       "SAP Dispatch",
       "Billing Cutoffs",
@@ -9458,7 +9457,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "State CFAs simultaneously pick rapid Quick-Commerce waves (strict 75% Minimum Remaining Shelf-Life gate, 10:30 cutoff), Modern Trade pallets, and General Trade Wholesale Dealer loads (55% MRSL gate). Unbalanced bays miss morning cutoffs while blind picking sends older batches to Quick-Commerce.",
     "outcome": "Zero missed same-day billing cutoffs",
     "reads": "Streams live records from SAP Dispatch, Billing Cutoffs, POD Logs into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Audits unbilled distributor orders at 5:30 PM and dynamically reallocates dock loaders to clear 100% of same-day dispatches. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Audits unbilled distributor orders at 5:30 PM and dynamically reallocates dock loaders to clear 100% of same-day dispatches. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP Dispatch, discrepancy highlights against Billing Cutoffs, and 1-click dispute/approval card — formatted for Depot / CFA Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP Dispatch without Depot / CFA Operations Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP Dispatch and Billing Cutoffs rather than extrapolating unverified values.",
@@ -9471,7 +9470,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2773771553799396308/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "CFA Wave & Bay Orchestrator (ITC TMD)",
-    "liveId": "itc_cfa_wave_bay_orchestrator"
+    "liveId": "itc_cfa_wave_bay_orchestrator",
+    "sumanImpact": "30% faster CFA dock turnaround"
   },
   "cfa labor & loader wave balancer": {
     "name": "CFA Labor & Loader Wave Balancer",
@@ -9485,7 +9485,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.6,
     "sources": [
       "CFA Roster",
       "Indent Volume",
@@ -9494,7 +9493,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Aligns depot loading crews and forklift shifts with peak afternoon distributor billing waves.",
     "outcome": "20% higher cases loaded per labor-hour",
     "reads": "Streams live records from CFA Roster, Indent Volume, Bay Plan into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Prevents end-of-day dock bottlenecks when 60% of distributor trucks arrive together. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents end-of-day dock bottlenecks when 60% of distributor trucks arrive together. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Depot / CFA Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Depot / CFA Operations Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Roster and Indent Volume rather than extrapolating unverified values.",
@@ -9506,7 +9505,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CFA Labor & Loader Wave Balancer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% higher cases loaded per labor-hour"
   },
   "cfa hygiene, pest & stack-height auditor": {
     "name": "CFA Hygiene, Pest & Stack-Height Auditor",
@@ -9520,7 +9520,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.6,
     "sources": [
       "CFA Photos",
       "Audit Checklist",
@@ -9529,7 +9528,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reviews daily depot walkthrough photos for pallet stack-height limits, aisle clearance, and pest traps.",
     "outcome": "100% depot FSSAI & safety audit pass",
     "reads": "Streams live records from CFA Photos, Audit Checklist, FEFO Logs into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Keeps third-party CFA warehouses continuously compliant with food-safety and EHS norms. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Keeps third-party CFA warehouses continuously compliant with food-safety and EHS norms. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from CFA Photos, discrepancy highlights against Audit Checklist, and 1-click dispute/approval card — formatted for Depot / CFA Operations Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to CFA Photos without Depot / CFA Operations Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Photos and Audit Checklist rather than extrapolating unverified values.",
@@ -9541,7 +9540,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "CFA Hygiene, Pest & Stack-Height Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% depot FSSAI & safety audit pass"
   },
   "morning short-supply & fill-rate pulse": {
     "name": "Morning Short-Supply & Fill-Rate Pulse",
@@ -9555,7 +9555,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 18,
     "sources": [
       "CFA ATP",
       "WD Indents",
@@ -9564,7 +9563,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (08:30–10:00): Scans overnight WD indents vs. CFA Available-to-Promise (ATP) stock, highlighting top 10 constrained SKUs.",
     "outcome": "Prevents single-WD hoarding",
     "reads": "Streams live records from CFA ATP, WD Indents, Stock-Out Alerts into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Scans overnight WD indents vs. CFA Available-to-Promise (ATP) stock, highlighting top 10 constrained SKUs. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Scans overnight WD indents vs. CFA Available-to-Promise (ATP) stock, highlighting top 10 constrained SKUs. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from CFA ATP, discrepancy highlights against WD Indents, and 1-click dispute/approval card — formatted for Customer Service & Logistics (CS&L) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to CFA ATP without Customer Service & Logistics (CS&L) Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA ATP and WD Indents rather than extrapolating unverified values.",
@@ -9576,7 +9575,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Morning Short-Supply & Fill-Rate Pulse",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents single-WD hoarding"
   },
   "fair-share stock allocation agent": {
     "name": "Fair-Share Stock Allocation Agent",
@@ -9590,7 +9590,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 27.4,
     "sources": [
       "Fair-Share Rules",
       "WD Priority",
@@ -9599,7 +9598,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "When a high-velocity SKU like Sunfeast Dark Fantasy 300g is short at a State CFA (2,400 cases available vs 3,650 ordered), standard SAP First-In-First-Out lets early Modern Trade bulk orders consume 100% of stock—starving 18 General Trade Wholesale Dealers and UNNATI kiranas.",
     "outcome": "Fair-share fill rate +6% in peak season",
     "reads": "Streams live records from Fair-Share Rules, WD Priority, SAP Allocation into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Runs proportional allocation across WDs based on 30-day secondary velocity and strategic channel SLAs, posting draft splits to SAP. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Runs proportional allocation across WDs based on 30-day secondary velocity and strategic channel SLAs, posting draft splits to SAP. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Fair-Share Rules transfer/allocation order — formatted for Customer Service & Logistics (CS&L) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Fair-Share Rules without Customer Service & Logistics (CS&L) Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Fair-Share Rules and WD Priority rather than extrapolating unverified values.",
@@ -9612,7 +9611,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9202118731352281302/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Fair-Share Stock Allocation Agent (ITC TMD)",
-    "liveId": "itc_fair_share_stock_allocation_agent"
+    "liveId": "itc_fair_share_stock_allocation_agent",
+    "sumanImpact": "Protects distributor fill-rate equity"
   },
   "wd backorder & eta communicator": {
     "name": "WD Backorder & ETA Communicator",
@@ -9626,7 +9626,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code + Messaging",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18,
     "sources": [
       "WhatsApp / DMS",
       "Transit ETAs",
@@ -9635,7 +9634,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–18:30): Sends proactive automated WhatsApp/email updates to distributors detailing allocated quantities and next plant arrival ETA.",
     "outcome": "50% fewer distributor status calls",
     "reads": "Streams live records from WhatsApp / DMS, Transit ETAs, WD Portal into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Sends proactive automated WhatsApp/email updates to distributors detailing allocated quantities and next plant arrival ETA. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Sends proactive automated WhatsApp/email updates to distributors detailing allocated quantities and next plant arrival ETA. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged WhatsApp / DMS transfer/allocation order — formatted for Customer Service & Logistics (CS&L) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in WhatsApp / DMS without Customer Service & Logistics (CS&L) Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WhatsApp / DMS and Transit ETAs rather than extrapolating unverified values.",
@@ -9647,7 +9646,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "WD Backorder & ETA Communicator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "50% fewer distributor status calls"
   },
   "key-account vs gt priority conflict resolver": {
     "name": "Key-Account vs GT Priority Conflict Resolver",
@@ -9661,7 +9661,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18,
     "sources": [
       "MT Penalties",
       "GT Fill Rate",
@@ -9670,7 +9669,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evaluates penalty cost of shorting an MT/Q-Comm PO vs starving 20 GT Wholesale Dealers.",
     "outcome": "Balances MT penalties vs GT reach",
     "reads": "Streams live records from MT Penalties, GT Fill Rate, CFA ATP into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Gives CS&L leads transparent financial trade-offs during acute SKU shortages. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Gives CS&L leads transparent financial trade-offs during acute SKU shortages. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged MT Penalties transfer/allocation order — formatted for Customer Service & Logistics (CS&L) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in MT Penalties without Customer Service & Logistics (CS&L) Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MT Penalties and GT Fill Rate rather than extrapolating unverified values.",
@@ -9682,7 +9681,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Key-Account vs GT Priority Conflict Resolver",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Balances MT penalties vs GT reach"
   },
   "backorder auto-recovery & replenishment notifier": {
     "name": "Backorder Auto-Recovery & Replenishment Notifier",
@@ -9696,7 +9696,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18,
     "sources": [
       "Open Backorders",
       "Inbound GRNs",
@@ -9705,7 +9704,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Automatically releases queued distributor backorders the moment plant inbound trucks post GRN.",
     "outcome": "Zero forgotten backorders",
     "reads": "Streams live records from Open Backorders, Inbound GRNs, DMS into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Ensures recovered stock flows immediately to waiting Wholesale Dealers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Ensures recovered stock flows immediately to waiting Wholesale Dealers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Open Backorders transfer/allocation order — formatted for Customer Service & Logistics (CS&L) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Open Backorders without Customer Service & Logistics (CS&L) Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Open Backorders and Inbound GRNs rather than extrapolating unverified values.",
@@ -9717,7 +9716,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Backorder Auto-Recovery & Replenishment Notifier",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero forgotten backorders"
   },
   "credit-block & indent readiness gem": {
     "name": "Credit-Block & Indent Readiness Gem",
@@ -9731,7 +9731,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 6.5,
     "sources": [
       "SAP Credit",
       "WD Balances",
@@ -9740,7 +9739,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (08:00–10:00): Screens morning WD primary orders against overdue credit ledgers and alerts ASMs before truck staging.",
     "outcome": "Eliminates credit-hold billing surprises",
     "reads": "Streams live records from SAP Credit, WD Balances, Indent Queue into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Screens morning WD primary orders against overdue credit ledgers and alerts ASMs before truck staging. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Screens morning WD primary orders against overdue credit ledgers and alerts ASMs before truck staging. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Depot Dispatch & Billing Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Depot Dispatch & Billing Supervisor confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP Credit and WD Balances rather than extrapolating unverified values.",
@@ -9752,7 +9751,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Credit-Block & Indent Readiness Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates credit-hold billing surprises"
   },
   "pick-to-invoice variance reconciler": {
     "name": "Pick-to-Invoice Variance Reconciler",
@@ -9766,7 +9766,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 6.5,
     "sources": [
       "WMS Pick Scans",
       "SAP Invoice",
@@ -9775,7 +9774,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (11:00–15:00): Matches physical bay pick counts against SAP order lines so short-picked invoices are adjusted before truck sealing.",
     "outcome": "Zero pick-to-invoice billing errors",
     "reads": "Streams live records from WMS Pick Scans, SAP Invoice, Variance Log into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Matches physical bay pick counts against SAP order lines so short-picked invoices are adjusted before truck sealing. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Matches physical bay pick counts against SAP order lines so short-picked invoices are adjusted before truck sealing. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from WMS Pick Scans, discrepancy highlights against SAP Invoice, and 1-click dispute/approval card — formatted for Depot Dispatch & Billing Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to WMS Pick Scans without Depot Dispatch & Billing Supervisor verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WMS Pick Scans and SAP Invoice rather than extrapolating unverified values.",
@@ -9787,7 +9786,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Pick-to-Invoice Variance Reconciler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero pick-to-invoice billing errors"
   },
   "eod billing & cutoff closer agent": {
     "name": "EOD Billing & Cutoff Closer Agent",
@@ -9801,7 +9801,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code + SAP OpenAPI",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 29.8,
     "sources": [
       "SAP Billing",
       "GST e-Way Bill",
@@ -9810,7 +9809,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Every evening before the 21:00 IST gate lock, loaded trucks sit trapped at CFA gates because SAP outbound deliveries (`VL02N`) fail Post Goods Issue or `VF01` billing due to FEFO batch-split variances, unsynced FinAgg dealer credit drawdowns, or hyphen typos in NIC E-Way Bill Part-B vehicle numbers.",
     "outcome": "100% same-day primary billing closure",
     "reads": "Streams live records from SAP Billing, GST e-Way Bill, Dispatch Log into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Auto-generates e-Way Bills and triggers final SAP billing batches before the 7:00 PM dispatch cutoff. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Auto-generates e-Way Bills and triggers final SAP billing batches before the 7:00 PM dispatch cutoff. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Depot Dispatch & Billing Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Depot Dispatch & Billing Supervisor confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP Billing and GST e-Way Bill rather than extrapolating unverified values.",
@@ -9823,7 +9822,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230909732670915574/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "EOD Billing & Cutoff Closer Agent (ITC TMD)",
-    "liveId": "itc_eod_billing_cutoff_closer_agent"
+    "liveId": "itc_eod_billing_cutoff_closer_agent",
+    "sumanImpact": "99.2% same-day primary billing"
   },
   "gst e-invoice & e-way bill error auto-fixer": {
     "name": "GST e-Invoice & e-Way Bill Error Auto-Fixer",
@@ -9837,7 +9837,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 6.5,
     "sources": [
       "SAP Billing",
       "NIC Portal",
@@ -9846,7 +9845,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Detects HSN code, pin-code, or transporter-ID mismatches blocking e-Way Bill generation before dispatch.",
     "outcome": "Zero truck gate holds due to tax errors",
     "reads": "Streams live records from SAP Billing, NIC Portal, Master Data into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Fixes billing master-data errors in seconds so loaded trucks never wait at depot gates. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Fixes billing master-data errors in seconds so loaded trucks never wait at depot gates. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from SAP Billing, discrepancy highlights against NIC Portal, and 1-click dispute/approval card — formatted for Depot Dispatch & Billing Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to SAP Billing without Depot Dispatch & Billing Supervisor verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP Billing and NIC Portal rather than extrapolating unverified values.",
@@ -9858,7 +9857,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "GST e-Invoice & e-Way Bill Error Auto-Fixer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero truck gate holds due to tax errors"
   },
   "distributor balance-order & cancellation cleaner": {
     "name": "Distributor Balance-Order & Cancellation Cleaner",
@@ -9872,7 +9872,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 6.5,
     "sources": [
       "Open Indents",
       "Billing Cutoff",
@@ -9881,8 +9880,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Reconciles unbilled end-of-day indent lines into next-day carry-forwards vs expired cancellations.",
     "outcome": "Accurate daily fill-rate reporting",
     "reads": "Streams live records from Open Indents, Billing Cutoff, DMS into BigQuery, normalizing cfa / depot operations & stock allocation exceptions and baseline thresholds in real time.",
-    "does": "Keeps depot order books clean and gives ASMs accurate true fill-rate metrics. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Depot Dispatch & Billing Supervisor review inside Gemini Enterprise.",
+    "does": "Keeps depot order books clean and gives ASMs accurate true fill-rate metrics. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Depot Dispatch & Billing Supervisor review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Open Indents or overrides Depot Dispatch & Billing Supervisor sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Open Indents and Billing Cutoff rather than extrapolating unverified values.",
     "samplePrompt": "Summarize today's unbilled indent lines by reason code (stock-out, credit block, cutoff miss).",
@@ -9893,7 +9892,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Distributor Balance-Order & Cancellation Cleaner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Accurate daily fill-rate reporting"
   },
   "po expiry & slot conflict scanner": {
     "name": "PO Expiry & Slot Conflict Scanner",
@@ -9907,7 +9907,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8,
     "sources": [
       "Retailer Portals",
       "PO Expiry",
@@ -9916,7 +9915,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (08:00–10:00): Parses Blinkit/Zepto/DMart POs for strict shelf-life (>75% DTE) and delivery slot deadlines, flagging at-risk orders.",
     "outcome": "Zero missed MT/Q-Comm PO expiries",
     "reads": "Streams live records from Retailer Portals, PO Expiry, Slot Calendar into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Parses Blinkit/Zepto/DMart POs for strict shelf-life (>75% DTE) and delivery slot deadlines, flagging at-risk orders. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Parses Blinkit/Zepto/DMart POs for strict shelf-life (>75% DTE) and delivery slot deadlines, flagging at-risk orders. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Retailer Portals, discrepancy highlights against PO Expiry, and 1-click dispute/approval card — formatted for Modern Trade & Q-Comm Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Retailer Portals without Modern Trade & Q-Comm Logistics Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Retailer Portals and PO Expiry rather than extrapolating unverified values.",
@@ -9928,7 +9927,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "PO Expiry & Slot Conflict Scanner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero missed MT/Q-Comm PO expiries"
   },
   "mt / q-comm slot & otif copilot": {
     "name": "MT / Q-Comm Slot & OTIF Copilot",
@@ -9942,7 +9942,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 28.4,
     "sources": [
       "ASN Portal",
       "CFA Dispatch",
@@ -9951,7 +9950,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Blinkit, Zepto, Swiggy Instamart, DMart, and Reliance enforce 15-to-30-minute dock arrival tolerances and strict 75% Minimum Remaining Shelf-Life gates. Missing a slot by 20 minutes or sending a 68%-MRSL batch triggers full truck turn-away and 5-10% PO chargebacks.",
     "outcome": "Protects 98%+ MT & Q-Comm OTIF",
     "reads": "Streams live records from ASN Portal, CFA Dispatch, Slot Rules into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Detects transit delays on MT-bound trucks and proactively requests revised dark-store/DC dock slots to avoid penalty fines. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Detects transit delays on MT-bound trucks and proactively requests revised dark-store/DC dock slots to avoid penalty fines. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Modern Trade & Q-Comm Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Modern Trade & Q-Comm Logistics Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across ASN Portal and CFA Dispatch rather than extrapolating unverified values.",
@@ -9964,7 +9963,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "MT / Q-Comm Slot & OTIF Copilot (ITC TMD)",
-    "liveId": "itc_mt_qcomm_slot_otif_copilot"
+    "liveId": "itc_mt_qcomm_slot_otif_copilot",
+    "sumanImpact": "98.5%+ MT & Q-Comm OTIF compliance"
   },
   "otif penalty & fill-rate defender": {
     "name": "OTIF Penalty & Fill-Rate Defender",
@@ -9978,7 +9978,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8,
     "sources": [
       "OTIF Tracker",
       "Penalty Clauses",
@@ -9987,7 +9986,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–18:30): Reconciles stamped MT GRNs against dispatched invoices to dispute unfair short-delivery deductions.",
     "outcome": "40% lower retailer OTIF penalty deductions",
     "reads": "Streams live records from OTIF Tracker, Penalty Clauses, Claim Logs into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Reconciles stamped MT GRNs against dispatched invoices to dispute unfair short-delivery deductions. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Reconciles stamped MT GRNs against dispatched invoices to dispute unfair short-delivery deductions. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from OTIF Tracker, discrepancy highlights against Penalty Clauses, and 1-click dispute/approval card — formatted for Modern Trade & Q-Comm Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to OTIF Tracker without Modern Trade & Q-Comm Logistics Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across OTIF Tracker and Penalty Clauses rather than extrapolating unverified values.",
@@ -9999,7 +9998,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "OTIF Penalty & Fill-Rate Defender",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "40% lower retailer OTIF penalty deductions"
   },
   "q-comm dark-store direct-drop scheduler": {
     "name": "Q-Comm Dark-Store Direct-Drop Scheduler",
@@ -10013,7 +10013,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8,
     "sources": [
       "Blinkit/Zepto POs",
       "City Micro-Hubs",
@@ -10022,7 +10021,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Consolidates city-level Q-Comm dark-store POs into dedicated milk-run vans hitting tight drop slots.",
     "outcome": "+5% Q-Comm on-shelf availability",
     "reads": "Streams live records from Blinkit/Zepto POs, City Micro-Hubs, Van Plan into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Protects high-frequency urban Quick Commerce replenishment without bloating freight cost. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Protects high-frequency urban Quick Commerce replenishment without bloating freight cost. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Blinkit/Zepto POs transfer/allocation order — formatted for Modern Trade & Q-Comm Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Blinkit/Zepto POs without Modern Trade & Q-Comm Logistics Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Blinkit/Zepto POs and City Micro-Hubs rather than extrapolating unverified values.",
@@ -10034,7 +10033,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Q-Comm Dark-Store Direct-Drop Scheduler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+5% Q-Comm on-shelf availability"
   },
   "retailer portal asn & appointment reconciler": {
     "name": "Retailer Portal ASN & Appointment Reconciler",
@@ -10048,7 +10048,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8,
     "sources": [
       "Retailer Portals",
       "Truck GPS",
@@ -10057,7 +10056,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors truck ETAs against booked MT DC slots and triggers automated slot-reschedule requests if delayed.",
     "outcome": "Eliminates 'No-Show' slot penalties",
     "reads": "Streams live records from Retailer Portals, Truck GPS, ASN Logs into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Prevents costly 'no-show' penalties and multi-day re-booking delays at retailer DCs. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents costly 'no-show' penalties and multi-day re-booking delays at retailer DCs. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Modern Trade & Q-Comm Logistics Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Modern Trade & Q-Comm Logistics Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Retailer Portals and Truck GPS rather than extrapolating unverified values.",
@@ -10069,7 +10068,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Retailer Portal ASN & Appointment Reconciler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates 'No-Show' slot penalties"
   },
   "territory rtm morning pulse gem": {
     "name": "Territory RTM Morning Pulse Gem",
@@ -10083,7 +10083,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P0 · Build First",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 19.8,
     "sources": [
       "DMS Secondary",
       "Beat Coverage",
@@ -10092,7 +10091,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Area Distribution Managers start every morning juggling four disconnected trackers: overnight UNNATI kirana app orders, yesterday's Vajra salesman beat strike rates, Wholesale Dealer stockout lines, and active trade schemes—missing urgent beat course-corrections before 08:30.",
     "outcome": "8:30 AM territory pulse in 60 seconds",
     "reads": "Streams live records from DMS Secondary, Beat Coverage, WD Fill Rate into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Delivers an 8:15 AM briefing highlighting lagging beats, WD stock-outs on core SKUs, and credit-blocked distributors. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Delivers an 8:15 AM briefing highlighting lagging beats, WD stock-outs on core SKUs, and credit-blocked distributors. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Area Distribution / RTM Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Area Distribution / RTM Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Secondary and Beat Coverage rather than extrapolating unverified values.",
@@ -10105,7 +10104,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/1654916665580027546/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Territory RTM Morning Pulse Gem (ITC TMD)",
-    "liveId": "itc_territory_rtm_morning_pulse_gem"
+    "liveId": "itc_territory_rtm_morning_pulse_gem",
+    "sumanImpact": "+4% secondary distribution reach"
   },
   "distributor jbr & stock-health copilot": {
     "name": "Distributor JBR & Stock-Health Copilot",
@@ -10119,7 +10119,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Mobile Voice Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 9.4,
     "sources": [
       "Mobile Voice",
       "WD Stock Health",
@@ -10128,7 +10127,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (11:00–15:00): Answers on-the-road voice queries before WD visits: 3-month fill rate, pending claims, and slow-moving NPD stock.",
     "outcome": "Faster ASM-to-WD stock intervention",
     "reads": "Streams live records from Mobile Voice, WD Stock Health, ASM Targets into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Answers on-the-road voice queries before WD visits: 3-month fill rate, pending claims, and slow-moving NPD stock. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Answers on-the-road voice queries before WD visits: 3-month fill rate, pending claims, and slow-moving NPD stock. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Mobile Voice transfer/allocation order — formatted for Area Distribution / RTM Manager review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Mobile Voice without Area Distribution / RTM Manager sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Mobile Voice and WD Stock Health rather than extrapolating unverified values.",
@@ -10140,7 +10139,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Distributor JBR & Stock-Health Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Faster ASM-to-WD stock intervention"
   },
   "eod market debrief & action tracker": {
     "name": "EOD Market Debrief & Action Tracker",
@@ -10154,7 +10154,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Voice + Workspace",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.4,
     "sources": [
       "Voice Notes",
       "Workspace",
@@ -10163,7 +10162,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:30–19:00): Converts 2-minute market visit voice notes into structured action items, WD portal tickets, and Branch Manager summaries.",
     "outcome": "100% field market visit follow-through",
     "reads": "Streams live records from Voice Notes, Workspace, Action Tracker into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Converts 2-minute market visit voice notes into structured action items, WD portal tickets, and Branch Manager summaries. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Converts 2-minute market visit voice notes into structured action items, WD portal tickets, and Branch Manager summaries. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Voice Notes transfer/allocation order — formatted for Area Distribution / RTM Manager review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Voice Notes without Area Distribution / RTM Manager sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Voice Notes and Workspace rather than extrapolating unverified values.",
@@ -10175,7 +10174,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "EOD Market Debrief & Action Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% field market visit follow-through"
   },
   "beat-level zero-billing & outlet churn radar": {
     "name": "Beat-Level Zero-Billing & Outlet Churn Radar",
@@ -10189,7 +10189,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.4,
     "sources": [
       "DMS Beat Data",
       "Outlet History",
@@ -10198,7 +10197,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags high-value retail outlets in a salesman's beat that skipped ordering for 2+ consecutive visits.",
     "outcome": "+4% active outlet billing coverage",
     "reads": "Streams live records from DMS Beat Data, Outlet History, ASM Territory into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Helps Area Distribution Managers direct field reps to recover slipping outlets early. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Helps Area Distribution Managers direct field reps to recover slipping outlets early. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Area Distribution / RTM Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Area Distribution / RTM Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Beat Data and Outlet History rather than extrapolating unverified values.",
@@ -10210,7 +10209,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Beat-Level Zero-Billing & Outlet Churn Radar",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+4% active outlet billing coverage"
   },
   "new-launch distribution & eco-outlet tracker": {
     "name": "New-Launch Distribution & Eco-Outlet Tracker",
@@ -10224,7 +10224,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.4,
     "sources": [
       "DMS Launch",
       "Beat Plan",
@@ -10233,7 +10232,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks daily effective coverage (ECO) of newly launched SKUs across urban and rural beats.",
     "outcome": "2x faster new-SKU beat penetration",
     "reads": "Streams live records from DMS Launch, Beat Plan, WD Stock into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Spots Wholesale Dealers holding launch stock without pushing it down to retail beats. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Spots Wholesale Dealers holding launch stock without pushing it down to retail beats. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Area Distribution / RTM Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Area Distribution / RTM Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Launch and Beat Plan rather than extrapolating unverified values.",
@@ -10245,7 +10244,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "New-Launch Distribution & Eco-Outlet Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2x faster new-SKU beat penetration"
   },
   "morning tempo load & beat briefing gem": {
     "name": "Morning Tempo Load & Beat Briefing Gem",
@@ -10259,7 +10259,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Vernacular Voice Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 10.8,
     "sources": [
       "DMS Beat Plan",
       "Tempo Capacity",
@@ -10268,7 +10267,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (07:30–09:30): Consolidates overnight DSR orders into route-wise tempo loading sheets and briefs van teams in regional languages.",
     "outcome": "15% higher morning beat drop efficiency",
     "reads": "Streams live records from DMS Beat Plan, Tempo Capacity, Voice Gem into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Consolidates overnight DSR orders into route-wise tempo loading sheets and briefs van teams in regional languages. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Consolidates overnight DSR orders into route-wise tempo loading sheets and briefs van teams in regional languages. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Wholesale Dealer (WD) / Stockist Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Wholesale Dealer (WD) / Stockist Ops Mgr confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across DMS Beat Plan and Tempo Capacity rather than extrapolating unverified values.",
@@ -10280,7 +10279,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Morning Tempo Load & Beat Briefing Gem",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% higher morning beat drop efficiency"
   },
   "predictive wd reorder & dispatch agent": {
     "name": "Predictive WD Reorder & Dispatch Agent",
@@ -10294,7 +10294,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 32.6,
     "sources": [
       "WD Closing Stock",
       "Secondary Sales",
@@ -10303,7 +10302,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Wholesale Dealers frequently under-order core staples during UNNATI scheme surges (causing kirana stockouts within 48 hours) or hit credit-limit walls mid-week despite having approved FinAgg/SBI supply-chain credit headroom.",
     "outcome": "Cuts WD stock-outs & overstocking by 22%",
     "reads": "Streams live records from WD Closing Stock, Secondary Sales, Credit Limit into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Forecasts festival SKU depletion 5 days ahead and auto-drafts optimal primary indents to the CPG CFA. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Forecasts festival SKU depletion 5 days ahead and auto-drafts optimal primary indents to the CPG CFA. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged WD Closing Stock update — formatted for Wholesale Dealer (WD) / Stockist Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in WD Closing Stock without Wholesale Dealer (WD) / Stockist Ops Mgr approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WD Closing Stock and Secondary Sales rather than extrapolating unverified values.",
@@ -10316,7 +10315,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9152999501602931019/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Predictive WD Reorder & Dispatch Agent (ITC TMD)",
-    "liveId": "itc_predictive_wd_reorder_dispatch_agent"
+    "liveId": "itc_predictive_wd_reorder_dispatch_agent",
+    "sumanImpact": "4–6 days reduction in WD DSI"
   },
   "damage return & claim status bot": {
     "name": "Damage Return & Claim Status Bot",
@@ -10330,7 +10330,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + WhatsApp",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.8,
     "sources": [
       "WhatsApp Photos",
       "Claim Policy",
@@ -10339,7 +10338,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:30–19:30): Classifies photos of damaged market returns for debit notes and answers instant WhatsApp queries on pending claim payouts.",
     "outcome": "Instant damage claim triage via WhatsApp",
     "reads": "Streams live records from WhatsApp Photos, Claim Policy, DMS Returns into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Classifies photos of damaged market returns for debit notes and answers instant WhatsApp queries on pending claim payouts. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Classifies photos of damaged market returns for debit notes and answers instant WhatsApp queries on pending claim payouts. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from WhatsApp Photos, discrepancy highlights against Claim Policy, and 1-click dispute/approval card — formatted for Wholesale Dealer (WD) / Stockist Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to WhatsApp Photos without Wholesale Dealer (WD) / Stockist Ops Mgr verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WhatsApp Photos and Claim Policy rather than extrapolating unverified values.",
@@ -10351,7 +10350,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Damage Return & Claim Status Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Instant damage claim triage via WhatsApp"
   },
   "wd working-capital & roi health advisor": {
     "name": "WD Working-Capital & ROI Health Advisor",
@@ -10365,7 +10365,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.8,
     "sources": [
       "WD Stock",
       "Credit Days",
@@ -10374,7 +10373,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors distributor inventory-turn and ROI, flagging slow-moving capital tied up in C-class SKUs.",
     "outcome": "Healthier, faster-turning WD partners",
     "reads": "Streams live records from WD Stock, Credit Days, Secondary Sales into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Helps Wholesale Dealers optimize working capital so they always have cash for fast movers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Helps Wholesale Dealers optimize working capital so they always have cash for fast movers. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged WD Stock transfer/allocation order — formatted for Wholesale Dealer (WD) / Stockist Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in WD Stock without Wholesale Dealer (WD) / Stockist Ops Mgr sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across WD Stock and Credit Days rather than extrapolating unverified values.",
@@ -10386,7 +10385,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "WD Working-Capital & ROI Health Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Healthier, faster-turning WD partners"
   },
   "salesman beat-order anomaly & split-load bot": {
     "name": "Salesman Beat-Order Anomaly & Split-Load Bot",
@@ -10400,7 +10400,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.8,
     "sources": [
       "SFA Orders",
       "Van Capacity",
@@ -10409,7 +10408,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Groups incoming field-salesman outlet orders into balanced tempo/e-rickshaw delivery beats.",
     "outcome": "10% higher van drop-size",
     "reads": "Streams live records from SFA Orders, Van Capacity, Beat GPS into BigQuery, normalizing channel & route-to-market (gt, mt & q-commerce) exceptions and baseline thresholds in real time.",
-    "does": "Eliminates manual evening order sorting at the stockist godown. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Eliminates manual evening order sorting at the stockist godown. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Wholesale Dealer (WD) / Stockist Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Wholesale Dealer (WD) / Stockist Ops Mgr confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SFA Orders and Van Capacity rather than extrapolating unverified values.",
@@ -10421,7 +10420,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Salesman Beat-Order Anomaly & Split-Load Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "10% higher van drop-size"
   },
   "curfew & route compliance validator": {
     "name": "Curfew & Route Compliance Validator",
@@ -10435,7 +10435,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 18.1,
     "sources": [
       "City Curfew DB",
       "Vehicle Specs",
@@ -10444,7 +10443,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (07:30–09:30): Checks all morning metro dispatches against municipal heavy-vehicle no-entry hours and low-bridge restrictions.",
     "outcome": "Zero city no-entry fines",
     "reads": "Streams live records from City Curfew DB, Vehicle Specs, Route Plan into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Checks all morning metro dispatches against municipal heavy-vehicle no-entry hours and low-bridge restrictions. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Checks all morning metro dispatches against municipal heavy-vehicle no-entry hours and low-bridge restrictions. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Fleet & Route Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Fleet & Route Dispatch Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across City Curfew DB and Vehicle Specs rather than extrapolating unverified values.",
@@ -10456,7 +10455,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Curfew & Route Compliance Validator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero city no-entry fines"
   },
   "live traffic & breakdown rerouter": {
     "name": "Live Traffic & Breakdown Rerouter",
@@ -10470,7 +10470,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code + Maps Platform",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.1,
     "sources": [
       "Google Maps API",
       "GPS Telemetry",
@@ -10479,7 +10478,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (10:30–15:30): Detects highway bottlenecks via Google Maps API and pushes optimized turn-by-turn detours to fleet drivers.",
     "outcome": "Protects multi-drop delivery SLAs",
     "reads": "Streams live records from Google Maps API, GPS Telemetry, Drop Windows into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Detects highway bottlenecks via Google Maps API and pushes optimized turn-by-turn detours to fleet drivers. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Detects highway bottlenecks via Google Maps API and pushes optimized turn-by-turn detours to fleet drivers. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Fleet & Route Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Fleet & Route Dispatch Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Google Maps API and GPS Telemetry rather than extrapolating unverified values.",
@@ -10492,7 +10491,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Dynamic Rerouter (ITC TMD)",
-    "liveId": "itc_dynamic_rerouter"
+    "liveId": "itc_dynamic_rerouter",
+    "sumanImpact": "Protects multi-drop delivery SLAs"
   },
   "fleet utilization & empty-mile auditor": {
     "name": "Fleet Utilization & Empty-Mile Auditor",
@@ -10506,7 +10506,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 18.1,
     "sources": [
       "Fleet GPS",
       "Load Factor",
@@ -10515,7 +10514,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–18:30): Analyzes planned vs. actual route kilometers and identifies return backhaul pairing opportunities.",
     "outcome": "8–12% lower empty-mile fleet cost",
     "reads": "Streams live records from Fleet GPS, Load Factor, Empty Miles into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Analyzes planned vs. actual route kilometers and identifies return backhaul pairing opportunities. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Analyzes planned vs. actual route kilometers and identifies return backhaul pairing opportunities. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Fleet & Route Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Fleet & Route Dispatch Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Fleet GPS and Load Factor rather than extrapolating unverified values.",
@@ -10527,7 +10526,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Fleet Utilization & Empty-Mile Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "8–12% lower empty-mile fleet cost"
   },
   "ev / cng fleet range & charge-stop planner": {
     "name": "EV / CNG Fleet Range & Charge-Stop Planner",
@@ -10541,7 +10541,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.1,
     "sources": [
       "EV Telemetry",
       "Charge Map",
@@ -10550,7 +10549,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Assigns urban secondary beats to EV/CNG vans factoring payload, AC/reefer draw, and charger locations.",
     "outcome": "12% lower urban last-mile fuel cost",
     "reads": "Streams live records from EV Telemetry, Charge Map, Beat Load into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Maximizes green urban fleet utilization without mid-route range anxiety. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Maximizes green urban fleet utilization without mid-route range anxiety. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Fleet & Route Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Fleet & Route Dispatch Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across EV Telemetry and Charge Map rather than extrapolating unverified values.",
@@ -10562,7 +10561,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "EV / CNG Fleet Range & Charge-Stop Planner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "12% lower urban last-mile fuel cost"
   },
   "geo-fenced proof-of-delivery & cash alert bot": {
     "name": "Geo-Fenced Proof-of-Delivery & Cash Alert Bot",
@@ -10576,7 +10576,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.1,
     "sources": [
       "Driver GPS",
       "Outlet Geo",
@@ -10585,7 +10584,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Verifies driver delivery check-ins match outlet geo-fences and flags out-of-zone drops immediately.",
     "outcome": "Zero unverified drop disputes",
     "reads": "Streams live records from Driver GPS, Outlet Geo, POD App into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Strengthens last-mile delivery governance and speeds up daily van cash/UPI reconciliation. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Strengthens last-mile delivery governance and speeds up daily van cash/UPI reconciliation. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Driver GPS, discrepancy highlights against Outlet Geo, and 1-click dispute/approval card — formatted for Fleet & Route Dispatch Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Driver GPS without Fleet & Route Dispatch Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Driver GPS and Outlet Geo rather than extrapolating unverified values.",
@@ -10597,7 +10596,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Geo-Fenced Proof-of-Delivery & Cash Alert Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero unverified drop disputes"
   },
   "lane tender rejection radar": {
     "name": "Lane Tender Rejection Radar",
@@ -10611,7 +10611,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 13.7,
     "sources": [
       "TMS Tenders",
       "Rejection Logs",
@@ -10620,7 +10619,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (08:30–10:00): Flags high-rejection lanes from overnight primary dispatches where spot market trucks were booked at a premium.",
     "outcome": "Flags lane tender failures 24h earlier",
     "reads": "Streams live records from TMS Tenders, Rejection Logs, Lane Matrix into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Flags high-rejection lanes from overnight primary dispatches where spot market trucks were booked at a premium. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Flags high-rejection lanes from overnight primary dispatches where spot market trucks were booked at a premium. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Transport Procurement Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Transport Procurement Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across TMS Tenders and Rejection Logs rather than extrapolating unverified values.",
@@ -10633,7 +10632,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Routing Guide Compliance Agent (ITC TMD)",
-    "liveId": "itc_routing_guide_compliance_agent"
+    "liveId": "itc_routing_guide_compliance_agent",
+    "sumanImpact": "Flags lane tender failures 24h earlier"
   },
   "carrier benchmark & mini-bid copilot": {
     "name": "Carrier Benchmark & Mini-Bid Copilot",
@@ -10647,7 +10647,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.7,
     "sources": [
       "Spot Market",
       "Contract Rates",
@@ -10656,7 +10655,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (11:00–15:00): Compares contracted lane rates against live freight index benchmarks to prepare rapid mini-RFQs for backup carriers.",
     "outcome": "3–5% spot freight cost savings",
     "reads": "Streams live records from Spot Market, Contract Rates, Carrier OTIF into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Compares contracted lane rates against live freight index benchmarks to prepare rapid mini-RFQs for backup carriers. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Compares contracted lane rates against live freight index benchmarks to prepare rapid mini-RFQs for backup carriers. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Spot Market, discrepancy highlights against Contract Rates, and 1-click dispute/approval card — formatted for Transport Procurement Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Spot Market without Transport Procurement Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Spot Market and Contract Rates rather than extrapolating unverified values.",
@@ -10668,7 +10667,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Carrier Benchmark & Mini-Bid Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "3–5% spot freight cost savings"
   },
   "weekly carrier qbr scorecard agent": {
     "name": "Weekly Carrier QBR Scorecard Agent",
@@ -10682,7 +10682,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 13.7,
     "sources": [
       "Carrier KPIs",
       "Detention Logs",
@@ -10691,7 +10690,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–18:00): Auto-compiles transporter OTIF, detention, and damage KPIs for commercial review meetings.",
     "outcome": "Automated weekly carrier QBR scorecards",
     "reads": "Streams live records from Carrier KPIs, Detention Logs, QBR Slides into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Auto-compiles transporter OTIF, detention, and damage KPIs for commercial review meetings. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Auto-compiles transporter OTIF, detention, and damage KPIs for commercial review meetings. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Transport Procurement Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Transport Procurement Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Carrier KPIs and Detention Logs rather than extrapolating unverified values.",
@@ -10703,7 +10702,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Weekly Carrier QBR Scorecard Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Automated weekly carrier QBR scorecards"
   },
   "fuel-surcharge & diesel-index auditor": {
     "name": "Fuel-Surcharge & Diesel-Index Auditor",
@@ -10717,7 +10717,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.7,
     "sources": [
       "Diesel Index",
       "Rate Cards",
@@ -10726,7 +10725,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Recalculates monthly transporter fuel-surcharge adjustments automatically from official diesel prices.",
     "outcome": "100% accurate fuel-clause billing",
     "reads": "Streams live records from Diesel Index, Rate Cards, Carrier Bills into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Eliminates manual spreadsheet disputes over carrier fuel-escalation clauses. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Eliminates manual spreadsheet disputes over carrier fuel-escalation clauses. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Transport Procurement Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Transport Procurement Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Diesel Index and Rate Cards rather than extrapolating unverified values.",
@@ -10738,7 +10737,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Fuel-Surcharge & Diesel-Index Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% accurate fuel-clause billing"
   },
   "carrier safety, gps uptime & compliance bot": {
     "name": "Carrier Safety, GPS Uptime & Compliance Bot",
@@ -10752,7 +10752,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 13.7,
     "sources": [
       "GPS Ping Logs",
       "Permit DB",
@@ -10761,7 +10760,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags transporters dispatching trucks with offline GPS devices or expiring fitness/insurance permits.",
     "outcome": "98%+ live GPS tracking coverage",
     "reads": "Streams live records from GPS Ping Logs, Permit DB, Carrier SLA into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Enforces fleet safety and visibility SLAs before trucks are tendered loads. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Enforces fleet safety and visibility SLAs before trucks are tendered loads. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Transport Procurement Manager review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Transport Procurement Manager confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across GPS Ping Logs and Permit DB rather than extrapolating unverified values.",
@@ -10773,7 +10772,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Carrier Safety, GPS Uptime & Compliance Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "98%+ live GPS tracking coverage"
   },
   "pod ocr & short-delivery extractor": {
     "name": "POD OCR & Short-Delivery Extractor",
@@ -10787,7 +10787,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30,
     "sources": [
       "POD Scans",
       "Multimodal OCR",
@@ -10796,7 +10795,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Morning (08:30–10:30): Reads scanned/photographed paper PODs from drivers, extracting stamps, shortage remarks, and receiver signatures.",
     "outcome": "80% faster POD discrepancy extraction",
     "reads": "Streams live records from POD Scans, Multimodal OCR, GRN Logs into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Reads scanned/photographed paper PODs from drivers, extracting stamps, shortage remarks, and receiver signatures. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Reads scanned/photographed paper PODs from drivers, extracting stamps, shortage remarks, and receiver signatures. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from POD Scans, discrepancy highlights against Multimodal OCR, and 1-click dispute/approval card — formatted for Freight Bill & Claims Controller review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to POD Scans without Freight Bill & Claims Controller verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across POD Scans and Multimodal OCR rather than extrapolating unverified values.",
@@ -10809,7 +10808,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Freight Bill Audit Agent (ITC TMD)",
-    "liveId": "itc_freight_bill_audit_agent"
+    "liveId": "itc_freight_bill_audit_agent",
+    "sumanImpact": "80% faster POD discrepancy extraction"
   },
   "detention & accessorial dispute agent": {
     "name": "Detention & Accessorial Dispute Agent",
@@ -10823,7 +10823,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30,
     "sources": [
       "GPS Dwell",
       "Rate Contracts",
@@ -10832,7 +10831,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Midday (11:00–15:30): Cross-checks billed carrier detention hours against actual FASTag/GPS geofence entry-exit logs to block invalid charges.",
     "outcome": "Eliminates invalid detention payouts",
     "reads": "Streams live records from GPS Dwell, Rate Contracts, Detention Rules into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Cross-checks billed carrier detention hours against actual FASTag/GPS geofence entry-exit logs to block invalid charges. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Cross-checks billed carrier detention hours against actual FASTag/GPS geofence entry-exit logs to block invalid charges. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from GPS Dwell, discrepancy highlights against Rate Contracts, and 1-click dispute/approval card — formatted for Freight Bill & Claims Controller review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to GPS Dwell without Freight Bill & Claims Controller verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across GPS Dwell and Rate Contracts rather than extrapolating unverified values.",
@@ -10844,7 +10843,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Detention & Accessorial Dispute Agent",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Eliminates invalid detention payouts"
   },
   "auto-approval & credit note generator": {
     "name": "Auto-Approval & Credit Note Generator",
@@ -10858,7 +10858,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code + SAP API",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30,
     "sources": [
       "SAP FI",
       "Credit Notes",
@@ -10867,8 +10866,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evening (16:00–18:00): Approves clean freight bills for automated SAP payout and drafts itemized dispute memos for rejected surcharges.",
     "outcome": "Auto-clears clean carrier bills in minutes",
     "reads": "Streams live records from SAP FI, Credit Notes, Freight Ledger into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Approves clean freight bills for automated SAP payout and drafts itemized dispute memos for rejected surcharges. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Freight Bill & Claims Controller review inside Gemini Enterprise.",
+    "does": "Approves clean freight bills for automated SAP payout and drafts itemized dispute memos for rejected surcharges. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Freight Bill & Claims Controller review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to SAP FI or overrides Freight Bill & Claims Controller sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SAP FI and Credit Notes rather than extrapolating unverified values.",
     "samplePrompt": "Execute Auto-Approval & Credit Note Generator workflow: Approves clean freight bills for automated SAP payout and drafts itemized dispute memos for rejected surcharges.",
@@ -10879,7 +10878,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Auto-Approval & Credit Note Generator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Auto-clears clean carrier bills in minutes"
   },
   "toll, unloading & extra-drop accessorial verifier": {
     "name": "Toll, Unloading & Extra-Drop Accessorial Verifier",
@@ -10893,7 +10893,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30,
     "sources": [
       "FASTag Logs",
       "Route Stops",
@@ -10902,7 +10901,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Cross-checks carrier extra-drop, green-tax, and toll claims against FASTag and GPS stop logs.",
     "outcome": "Cuts bogus accessorial charges by 55%",
     "reads": "Streams live records from FASTag Logs, Route Stops, Carrier Claims into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Validates every accessorial line item automatically before approving freight bills. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Validates every accessorial line item automatically before approving freight bills. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Freight Bill & Claims Controller review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Freight Bill & Claims Controller confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across FASTag Logs and Route Stops rather than extrapolating unverified values.",
@@ -10914,7 +10913,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Toll, Unloading & Extra-Drop Accessorial Verifier",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts bogus accessorial charges by 55%"
   },
   "unbilled freight provision & accrual reconciler": {
     "name": "Unbilled Freight Provision & Accrual Reconciler",
@@ -10928,7 +10928,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30,
     "sources": [
       "Completed Trips",
       "AP Invoices",
@@ -10937,7 +10936,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Estimates accrued freight liability for completed trips whose carrier invoices haven't arrived yet.",
     "outcome": "Accurate monthly logistics P&L",
     "reads": "Streams live records from Completed Trips, AP Invoices, SAP FI into BigQuery, normalizing fleet, carrier & freight governance exceptions and baseline thresholds in real time.",
-    "does": "Prevents month-end freight cost surprises for supply chain finance. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents month-end freight cost surprises for supply chain finance. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Completed Trips, discrepancy highlights against AP Invoices, and 1-click dispute/approval card — formatted for Freight Bill & Claims Controller review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Completed Trips without Freight Bill & Claims Controller verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Completed Trips and AP Invoices rather than extrapolating unverified values.",
@@ -10949,7 +10948,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Unbilled Freight Provision & Accrual Reconciler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Accurate monthly logistics P&L"
   },
   "return fraud sentinel": {
     "name": "Return Fraud Sentinel",
@@ -10963,13 +10963,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 42.34,
     "sources": [
       "Return Photos",
       "Packing Video",
       "Order History"
     ],
-    "problem": "₹74.31 Lakh Cr annual returns (16.9% of sales) · ₹8.43 Lakh Cr fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while ₹8.43 Lakh Cr in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.",
+    "problem": "Analyzes item photos and packaging video feeds to detect wear or swapped tags.",
     "outcome": "Cuts returns fraud abuse by 25–40%",
     "reads": "Injects RMA, pallet & empty container pickups into returning FleetFlow vehicles via Google Maps Connected CPG systems: SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal.",
     "does": "Classifies returns into Grade-A Restock, Refurb, Vendor Claim or Scrap via Gemini Vision (Gemini Multimodal Vision Defect Grader + Google Maps & Mathematical Optimization Solver (MILP / CP-SAT) Dynamic Backhaul Insertion CVRPTW).",
@@ -10983,7 +10982,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Return Fraud Sentinel",
-    "liveId": "reverse_rma_optimizer"
+    "liveId": "reverse_rma_optimizer",
+    "sumanImpact": "Cuts returns fraud abuse by 25–40%"
   },
   "distributor claim & return anomaly detector": {
     "name": "Distributor Claim & Return Anomaly Detector",
@@ -10997,7 +10997,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30.5,
     "sources": [
       "Claim History",
       "Batch Codes",
@@ -11006,7 +11005,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Flags unusual spikes in expiry/damage claims from specific outlets or distributors vs historical norms.",
     "outcome": "Cuts fraudulent return claims by 35%",
     "reads": "Streams live records from Claim History, Batch Codes, Outlet Sales into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Cross-checks claimed batch codes against actual primary/secondary invoice dates to spot abuse. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Cross-checks claimed batch codes against actual primary/secondary invoice dates to spot abuse. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Claim History, discrepancy highlights against Batch Codes, and 1-click dispute/approval card — formatted for Reverse Logistics / Fraud Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Claim History without Reverse Logistics / Fraud Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Claim History and Batch Codes rather than extrapolating unverified values.",
@@ -11018,7 +11017,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Distributor Claim & Return Anomaly Detector",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts fraudulent return claims by 35%"
   },
   "serial & batch authenticity verifier": {
     "name": "Serial & Batch Authenticity Verifier",
@@ -11032,7 +11032,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30.5,
     "sources": [
       "Batch Master",
       "Photo OCR",
@@ -11041,7 +11040,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Validates batch numbers and manufacturing dates on return photos against original dispatch records.",
     "outcome": "Protects brand & return integrity",
     "reads": "Streams live records from Batch Master, Photo OCR, Invoice Logs into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Prevents out-of-policy or expired third-party stock from entering the reverse credit pipeline. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents out-of-policy or expired third-party stock from entering the reverse credit pipeline. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Batch Master, discrepancy highlights against Photo OCR, and 1-click dispute/approval card — formatted for Reverse Logistics / Fraud Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Batch Master without Reverse Logistics / Fraud Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Batch Master and Photo OCR rather than extrapolating unverified values.",
@@ -11053,7 +11052,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Serial & Batch Authenticity Verifier",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects brand & return integrity"
   },
   "cross-channel grey-market & diversion watcher": {
     "name": "Cross-Channel Grey-Market & Diversion Watcher",
@@ -11067,7 +11067,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30.5,
     "sources": [
       "Batch Codes",
       "Online Listings",
@@ -11076,7 +11075,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Traces batch codes from unauthorized deep-discount listings back to original primary billing nodes.",
     "outcome": "Protects channel pricing integrity",
     "reads": "Streams live records from Batch Codes, Online Listings, WD Invoices into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Helps TM&D and legal teams spot cross-territory or channel-diversion leaks. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Helps TM&D and legal teams spot cross-territory or channel-diversion leaks. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Batch Codes, discrepancy highlights against Online Listings, and 1-click dispute/approval card — formatted for Reverse Logistics / Fraud Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Batch Codes without Reverse Logistics / Fraud Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Batch Codes and Online Listings rather than extrapolating unverified values.",
@@ -11088,7 +11087,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cross-Channel Grey-Market & Diversion Watcher",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects channel pricing integrity"
   },
   "high-risk return policy rule tuner": {
     "name": "High-Risk Return Policy Rule Tuner",
@@ -11102,7 +11102,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 30.5,
     "sources": [
       "Return Outcomes",
       "Fraud Flags",
@@ -11111,19 +11110,20 @@ window.SC_AGENT_DETAILS = {
     "problem": "Simulates threshold adjustments for instant credits vs mandatory physical inspection.",
     "outcome": "Balances CX with fraud prevention",
     "reads": "Streams live records from Return Outcomes, Fraud Flags, Ticket Cost into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Keeps return fraud controls calibrated without slowing down legitimate partner credits. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Keeps return fraud controls calibrated without slowing down legitimate partner credits. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Reverse Logistics / Fraud Lead review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Reverse Logistics / Fraud Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Return Outcomes and Fraud Flags rather than extrapolating unverified values.",
-    "samplePrompt": "Evaluate false-positive rate on our current ₹5,000 mandatory-inspection return rule.",
+    "samplePrompt": "Evaluate false-positive rate on our current INR 5,000 mandatory-inspection return rule.",
     "starterPrompts": [
-      "Evaluate false-positive rate on our current ₹5,000 mandatory-inspection return rule.",
+      "Evaluate false-positive rate on our current INR 5,000 mandatory-inspection return rule.",
       "Compare current Return Outcomes status against Fraud Flags for returns & claims mgmt this week and draft the approval-ready action plan."
     ],
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "High-Risk Return Policy Rule Tuner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Balances CX with fraud prevention"
   },
   "keep-it & routing advisor": {
     "name": "Keep-It & Routing Advisor",
@@ -11137,13 +11137,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 17.99,
     "sources": [
       "Item Margin",
       "Return Freight",
       "Customer LTV"
     ],
-    "problem": "₹74.31 Lakh Cr annual returns (16.9% of sales) · ₹8.43 Lakh Cr fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while ₹8.43 Lakh Cr in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.",
+    "problem": "Evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
     "outcome": "Lowers net return costs by 15–22%",
     "reads": "Injects RMA, pallet & empty container pickups into returning FleetFlow vehicles via Google Maps Connected CPG systems: SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal.",
     "does": "Classifies returns into Grade-A Restock, Refurb, Vendor Claim or Scrap via Gemini Vision (Gemini Multimodal Vision Defect Grader + Google Maps & Mathematical Optimization Solver (MILP / CP-SAT) Dynamic Backhaul Insertion CVRPTW).",
@@ -11157,7 +11156,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Keep-It & Routing Advisor",
-    "liveId": "keep_it_routing_advisor"
+    "liveId": "keep_it_routing_advisor",
+    "sumanImpact": "Lowers net return costs by 15–22%"
   },
   "instant credit vs reverse-pickup optimizer": {
     "name": "Instant Credit vs Reverse-Pickup Optimizer",
@@ -11171,7 +11171,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.1,
     "sources": [
       "SKU Margin",
       "Freight Cost",
@@ -11180,19 +11179,20 @@ window.SC_AGENT_DETAILS = {
     "problem": "Evaluates whether reverse pickup freight exceeds net recovery value on low-value damaged claims.",
     "outcome": "22% lower reverse freight cost",
     "reads": "Streams live records from SKU Margin, Freight Cost, Salvage Value into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Automates keep-it / local-disposal decisions when reverse logistics destroys net value. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates keep-it / local-disposal decisions when reverse logistics destroys net value. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Customer Experience (CX) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Customer Experience (CX) Lead sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across SKU Margin and Freight Cost rather than extrapolating unverified values.",
-    "samplePrompt": "Calculate net recovery vs reverse freight for today's pending return pickups under ₹2,500.",
+    "samplePrompt": "Calculate net recovery vs reverse freight for today's pending return pickups under INR 2,500.",
     "starterPrompts": [
-      "Calculate net recovery vs reverse freight for today's pending return pickups under ₹2,500.",
+      "Calculate net recovery vs reverse freight for today's pending return pickups under INR 2,500.",
       "Compare current SKU Margin status against Freight Cost for returns & claims mgmt this week and draft the approval-ready action plan."
     ],
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Instant Credit vs Reverse-Pickup Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "22% lower reverse freight cost"
   },
   "retailer / consumer claim resolution copilot": {
     "name": "Retailer / Consumer Claim Resolution Copilot",
@@ -11206,7 +11206,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.1,
     "sources": [
       "Ticket Logs",
       "Dispatch Proof",
@@ -11215,7 +11214,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Drafts empathetic, policy-compliant claim status updates and credit timelines for trade partners.",
     "outcome": "+14 NPS on claim handling",
     "reads": "Streams live records from Ticket Logs, Dispatch Proof, Credit Rules into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Accelerates trade partner and consumer complaint closure with full ERP context. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Accelerates trade partner and consumer complaint closure with full ERP context. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Customer Experience (CX) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Customer Experience (CX) Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Ticket Logs and Dispatch Proof rather than extrapolating unverified values.",
@@ -11227,7 +11226,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Retailer / Consumer Claim Resolution Copilot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+14 NPS on claim handling"
   },
   "repeat-damage packaging feedback synthesizer": {
     "name": "Repeat-Damage Packaging Feedback Synthesizer",
@@ -11241,7 +11241,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.1,
     "sources": [
       "Return Photos",
       "CX Tickets",
@@ -11250,7 +11249,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Clusters consumer and retailer damage complaints by SKU and packs into weekly briefs for Packaging R&D.",
     "outcome": "15% fewer transit-damage complaints",
     "reads": "Streams live records from Return Photos, CX Tickets, SKU Specs into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Closes the loop between customer claims and packaging engineering fixes. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Closes the loop between customer claims and packaging engineering fixes. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Return Photos, discrepancy highlights against CX Tickets, and 1-click dispute/approval card — formatted for Customer Experience (CX) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Return Photos without Customer Experience (CX) Lead verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Return Photos and CX Tickets rather than extrapolating unverified values.",
@@ -11262,7 +11261,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Repeat-Damage Packaging Feedback Synthesizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% fewer transit-damage complaints"
   },
   "proactive delay & short-ship notifier": {
     "name": "Proactive Delay & Short-Ship Notifier",
@@ -11276,7 +11276,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.1,
     "sources": [
       "TMS Delays",
       "CFA Dispatch",
@@ -11285,7 +11284,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Sends proactive ETA updates to key trade partners whenever primary or secondary trucks are delayed.",
     "outcome": "Cuts inbound 'Where is my order' calls 40%",
     "reads": "Streams live records from TMS Delays, CFA Dispatch, Partner Contacts into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Turns reactive complaint calls into proactive, transparent customer communication. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Turns reactive complaint calls into proactive, transparent customer communication. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Customer Experience (CX) Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Customer Experience (CX) Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across TMS Delays and CFA Dispatch rather than extrapolating unverified values.",
@@ -11297,7 +11296,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Proactive Delay & Short-Ship Notifier",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts inbound 'Where is my order' calls 40%"
   },
   "os&d freight claims": {
     "name": "OS&D Freight Claims",
@@ -11311,13 +11311,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 21.35,
     "sources": [
       "eBOLs",
       "Dock Photos",
       "Carrier Liability"
     ],
-    "problem": "₹74.31 Lakh Cr annual returns (16.9% of sales) · ₹8.43 Lakh Cr fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while ₹8.43 Lakh Cr in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.",
+    "problem": "Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes.",
     "outcome": "Resolves carrier claims in <72 hours",
     "reads": "Scores every open retail order against WMS wave & Google Maps lane delay risk Connected CPG systems: SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal.",
     "does": "Triggers alternate-DC ship or ModalShift team-truck upgrade when penalty > cost (BigQuery ML 72-Hr MABD Breach Predictor + Mathematical Optimization Solver (MILP / CP-SAT) Penalty-vs-Expedite NPV Solver + Document AI Dispute Assembler).",
@@ -11331,7 +11330,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "OS&D Freight Claims",
-    "liveId": "osd_freight_claims_agent"
+    "liveId": "osd_freight_claims_agent",
+    "sumanImpact": "Resolves carrier claims in <72 hours"
   },
   "carrier os&d evidence & dispute packager": {
     "name": "Carrier OS&D Evidence & Dispute Packager",
@@ -11345,7 +11345,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.6,
     "sources": [
       "Signed PODs",
       "Gate Photos",
@@ -11354,7 +11353,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Assembles signed POD shortages, dock photos, and rate-card liability clauses into ready-to-file claims.",
     "outcome": "3x higher carrier claim recovery",
     "reads": "Streams live records from Signed PODs, Gate Photos, Carrier SLA into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Automates end-to-end carrier Over, Short & Damaged (OS&D) claim packets. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Automates end-to-end carrier Over, Short & Damaged (OS&D) claim packets. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Signed PODs, discrepancy highlights against Gate Photos, and 1-click dispute/approval card — formatted for Claims Specialist / Controller review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Signed PODs without Claims Specialist / Controller verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Signed PODs and Gate Photos rather than extrapolating unverified values.",
@@ -11366,7 +11365,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Carrier OS&D Evidence & Dispute Packager",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "3x higher carrier claim recovery"
   },
   "transit insurance & repeat-offender tracker": {
     "name": "Transit Insurance & Repeat-Offender Tracker",
@@ -11380,7 +11380,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal + Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.6,
     "sources": [
       "Claims Ledger",
       "Transporter KPI",
@@ -11389,7 +11388,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks open insurance subrogations and flags transporters with chronic pilferage or rain-damage.",
     "outcome": "15% lower transit loss ratio",
     "reads": "Streams live records from Claims Ledger, Transporter KPI, Lane Risk into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Feeds carrier claim loss ratios directly into transport procurement scorecards. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Feeds carrier claim loss ratios directly into transport procurement scorecards. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Claims Specialist / Controller review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Claims Specialist / Controller confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Claims Ledger and Transporter KPI rather than extrapolating unverified values.",
@@ -11401,7 +11400,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Transit Insurance & Repeat-Offender Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% lower transit loss ratio"
   },
   "cold-chain excursion & insurance claim compiler": {
     "name": "Cold-Chain Excursion & Insurance Claim Compiler",
@@ -11415,7 +11415,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.6,
     "sources": [
       "Reefer IoT",
       "QA Hold Log",
@@ -11424,8 +11423,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Bundles thermal-excursion graphs, batch values, and surveyor reports into insurer-ready claim packs.",
     "outcome": "2x faster insurance payout settlement",
     "reads": "Streams live records from Reefer IoT, QA Hold Log, Policy Terms into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Speeds up recovery on spoiled chilled/frozen shipments. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Claims Specialist / Controller review inside Gemini Enterprise.",
+    "does": "Speeds up recovery on spoiled chilled/frozen shipments. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Claims Specialist / Controller review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Reefer IoT or overrides Claims Specialist / Controller sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Reefer IoT and QA Hold Log rather than extrapolating unverified values.",
     "samplePrompt": "Compile insurance claim packet for yesterday's reefer thermal excursion on Lane West-2.",
@@ -11436,7 +11435,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Cold-Chain Excursion & Insurance Claim Compiler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2x faster insurance payout settlement"
   },
   "carrier claim recovery aging & escalator": {
     "name": "Carrier Claim Recovery Aging & Escalator",
@@ -11450,7 +11450,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.6,
     "sources": [
       "Claims Ledger",
       "Carrier AP",
@@ -11459,7 +11458,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tracks open carrier OS&D claims past 30 days and flags eligible freight-bill offsets.",
     "outcome": "Cuts overdue claim balances by 35%",
     "reads": "Streams live records from Claims Ledger, Carrier AP, SLA Timers into BigQuery, normalizing returns & claims mgmt exceptions and baseline thresholds in real time.",
-    "does": "Ensures approved carrier damage claims actually convert into credit notes or AP offsets. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Ensures approved carrier damage claims actually convert into credit notes or AP offsets. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Claims Specialist / Controller review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Claims Specialist / Controller confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Claims Ledger and Carrier AP rather than extrapolating unverified values.",
@@ -11471,7 +11470,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Carrier Claim Recovery Aging & Escalator",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts overdue claim balances by 35%"
   },
   "dynamic markdown agent": {
     "name": "Dynamic Markdown Agent",
@@ -11485,13 +11485,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 34.06,
     "sources": [
       "DTE Inventory",
       "Hourly POS",
       "ESL Pricing API"
     ],
-    "problem": "2.5%–6.0% of grocery sales lost to shrink · ₹34.07 Lakh Cr+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.",
+    "problem": "Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts.",
     "outcome": "Cuts perishable scrap by 20–35%",
     "reads": "Separates net incremental lift from pull-forward & halo in BigQuery ML Connected CPG systems: SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal.",
     "does": "Quantifies sister-SKU volume diversion across price tiers (BigQuery ML Causal Double-ML Uplift + Cross-SKU Cannibalization Matrix + Mathematical Optimization Solver (MILP / CP-SAT) Supply-Aware Price Shaper).",
@@ -11505,7 +11504,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Dynamic Markdown Agent",
-    "liveId": "dynamic_markdown_agent"
+    "liveId": "dynamic_markdown_agent",
+    "sumanImpact": "Cuts perishable scrap by 20–35%"
   },
   "near-expiry trade promo & markdown pricer": {
     "name": "Near-Expiry Trade Promo & Markdown Pricer",
@@ -11519,7 +11519,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.3,
     "sources": [
       "MT POS",
       "Store DTE",
@@ -11528,7 +11527,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Recommends optimal markdown tiers or MT consumer BOGO offers based on remaining days-to-expiry.",
     "outcome": "20–30% lower perishable shrink",
     "reads": "Streams live records from MT POS, Store DTE, Elasticity into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Dynamically prices near-date retail inventory to maximize margin recovery before expiry. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Dynamically prices near-date retail inventory to maximize margin recovery before expiry. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged MT POS update — formatted for Merchandising / Store Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in MT POS without Merchandising / Store Ops Mgr approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MT POS and Store DTE rather than extrapolating unverified values.",
@@ -11540,7 +11539,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Near-Expiry Trade Promo & Markdown Pricer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20–30% lower perishable shrink"
   },
   "store-level freshness & rotation coach": {
     "name": "Store-Level Freshness & Rotation Coach",
@@ -11554,7 +11554,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.3,
     "sources": [
       "Store Audits",
       "Replenishment",
@@ -11563,7 +11562,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Alerts retail merchandisers to outlets with chronic FEFO rotation misses and high expiry shrink.",
     "outcome": "+2 days average shelf freshness",
     "reads": "Streams live records from Store Audits, Replenishment, Shrink Logs into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Guides field merchandisers to prioritize high-shrink stores for rack rotation audits. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Guides field merchandisers to prioritize high-shrink stores for rack rotation audits. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Store Audits transfer/allocation order — formatted for Merchandising / Store Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Store Audits without Merchandising / Store Ops Mgr sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Store Audits and Replenishment rather than extrapolating unverified values.",
@@ -11575,7 +11574,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Store-Level Freshness & Rotation Coach",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+2 days average shelf freshness"
   },
   "slow-moving shelf-space reallocation advisor": {
     "name": "Slow-Moving Shelf-Space Reallocation Advisor",
@@ -11589,7 +11589,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.3,
     "sources": [
       "MT POS",
       "Store Stock",
@@ -11598,7 +11597,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies chronically slow SKUs in specific MT clusters to swap shelf space toward faster variants.",
     "outcome": "+7% retail category productivity",
     "reads": "Streams live records from MT POS, Store Stock, Planogram into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Prevents slow-moving variants from aging out on store shelves. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents slow-moving variants from aging out on store shelves. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from MT POS, discrepancy highlights against Store Stock, and 1-click dispute/approval card — formatted for Merchandising / Store Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to MT POS without Merchandising / Store Ops Mgr verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across MT POS and Store Stock rather than extrapolating unverified values.",
@@ -11610,7 +11609,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Slow-Moving Shelf-Space Reallocation Advisor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+7% retail category productivity"
   },
   "markdown cannibalization & halo checker": {
     "name": "Markdown Cannibalization & Halo Checker",
@@ -11624,7 +11624,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 15.3,
     "sources": [
       "POS Markdowns",
       "Core Velocity",
@@ -11633,7 +11632,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors whether near-expiry store markdowns are cannibalizing fresh full-price stock.",
     "outcome": "Protects full-price SKU velocity",
     "reads": "Streams live records from POS Markdowns, Core Velocity, Margin into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Tunes markdown depth and timing to clear aging units without hurting full-margin sales. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Tunes markdown depth and timing to clear aging units without hurting full-margin sales. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged POS Markdowns update — formatted for Merchandising / Store Ops Mgr review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in POS Markdowns without Merchandising / Store Ops Mgr approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across POS Markdowns and Core Velocity rather than extrapolating unverified values.",
@@ -11645,7 +11644,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Markdown Cannibalization & Halo Checker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Protects full-price SKU velocity"
   },
   "short-dated redistributor": {
     "name": "Short-Dated Redistributor",
@@ -11659,13 +11659,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 18.15,
     "sources": [
       "DC Expiry Lots",
       "Secondary Buyers",
       "Food Bank Net"
     ],
-    "problem": "2.5%–6.0% of grocery sales lost to shrink · ₹34.07 Lakh Cr+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.",
+    "problem": "Matches near-date DC lots with discounters or food banks before acceptance cutoffs.",
     "outcome": "Diverts bulk perishables from landfill",
     "reads": "Maps incoming ocean container, air ULD & rail car contents to urgent outbound orders Connected CPG systems: SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal.",
     "does": "Bypasses high-bay storage by routing pallets straight from inbound strip door to outbound bay (Mathematical Optimization Solver (MILP / CP-SAT) CP-SAT Inbound-to-Outbound Door Coupling + Flow-Through Pallet De-Consolidation MILP).",
@@ -11679,7 +11678,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Short-Dated Redistributor",
-    "liveId": "short_dated_redistributor"
+    "liveId": "short_dated_redistributor",
+    "sumanImpact": "Diverts bulk perishables from landfill"
   },
   "secondary channel & value-chain matcher": {
     "name": "Secondary Channel & Value-Chain Matcher",
@@ -11693,7 +11693,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P0 · Build First",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8.2,
     "sources": [
       "CFA Aged Stock",
       "Liquidation Buyers",
@@ -11702,7 +11701,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Matches near-date CFA pallets with approved discount chains, institutional buyers, or food banks.",
     "outcome": "Doubles recovery on short-dated lots",
     "reads": "Streams live records from CFA Aged Stock, Liquidation Buyers, Food Banks into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Routes short-dated inventory to secondary channels before statutory cutoffs expire. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Routes short-dated inventory to secondary channels before statutory cutoffs expire. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Inventory Disposition Lead review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Inventory Disposition Lead confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Aged Stock and Liquidation Buyers rather than extrapolating unverified values.",
@@ -11714,7 +11713,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Secondary Channel & Value-Chain Matcher",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Doubles recovery on short-dated lots"
   },
   "write-off tax & csr compliance documenter": {
     "name": "Write-Off Tax & CSR Compliance Documenter",
@@ -11728,7 +11728,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 8.2,
     "sources": [
       "Donation Receipts",
       "Batch Value",
@@ -11737,8 +11736,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Compiles batch-level donation certificates and tax/CSR documentation for diverted food lots.",
     "outcome": "100% audit-ready donation records",
     "reads": "Streams live records from Donation Receipts, Batch Value, CSR Ledger into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Automates compliance paperwork for food-bank donations and certified destruction. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Inventory Disposition Lead review inside Gemini Enterprise.",
+    "does": "Automates compliance paperwork for food-bank donations and certified destruction. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Inventory Disposition Lead review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Donation Receipts or overrides Inventory Disposition Lead sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Donation Receipts and Batch Value rather than extrapolating unverified values.",
     "samplePrompt": "Generate monthly CSR food-diversion and tax-deduction audit pack from completed transfers.",
@@ -11749,7 +11748,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Write-Off Tax & CSR Compliance Documenter",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% audit-ready donation records"
   },
   "regional surplus-to-demand secondary matcher": {
     "name": "Regional Surplus-to-Demand Secondary Matcher",
@@ -11763,7 +11763,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.2,
     "sources": [
       "CFA Aged Stock",
       "Institutional Buyers",
@@ -11772,7 +11771,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Matches short-dated depot lots with regional institutional catering, defense, or discount buyers.",
     "outcome": "20% faster aged-lot clearance",
     "reads": "Streams live records from CFA Aged Stock, Institutional Buyers, Freight into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Expands secondary monetization channels before lots hit zero-value expiry. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Expands secondary monetization channels before lots hit zero-value expiry. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged CFA Aged Stock update — formatted for Inventory Disposition Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in CFA Aged Stock without Inventory Disposition Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CFA Aged Stock and Institutional Buyers rather than extrapolating unverified values.",
@@ -11784,7 +11783,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Regional Surplus-to-Demand Secondary Matcher",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% faster aged-lot clearance"
   },
   "expiry write-off root-cause categorizer": {
     "name": "Expiry Write-Off Root-Cause Categorizer",
@@ -11798,7 +11798,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.2,
     "sources": [
       "Write-Off Ledger",
       "Forecast Error",
@@ -11807,7 +11806,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Tags every expired write-off by root cause (over-forecast, high MOQ, cancelled promo, FEFO miss).",
     "outcome": "Feeds S&OP to prevent repeat waste",
     "reads": "Streams live records from Write-Off Ledger, Forecast Error, MOQ Logs into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Gives leadership clear accountability on why inventory expired. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Gives leadership clear accountability on why inventory expired. Executes via Vertex AI Time-Series Forecasting + BigQuery ML Elasticity & Bias Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Adjusted P10/P50/P90 SKU-location forecast table, bias diagnostics, and staged Write-Off Ledger update — formatted for Inventory Disposition Lead review inside Gemini Enterprise.",
     "stopsAt": "Never overwrites locked consensus numbers or scheme budgets in Write-Off Ledger without Inventory Disposition Lead approval.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Write-Off Ledger and Forecast Error rather than extrapolating unverified values.",
@@ -11819,7 +11818,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Expiry Write-Off Root-Cause Categorizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Feeds S&OP to prevent repeat waste"
   },
   "food waste & esg copilot": {
     "name": "Food Waste & ESG Copilot",
@@ -11833,13 +11833,12 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 8.39,
     "sources": [
       "Shrink Logs",
       "Compost Hauls",
       "ESG Frameworks"
     ],
-    "problem": "2.5%–6.0% of grocery sales lost to shrink · ₹34.07 Lakh Cr+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.",
+    "problem": "Aggregates store shrink and organic haul logs to generate audited GHG diversion filings.",
     "outcome": "Automates annual circularity reporting",
     "reads": "Computes primary CO2e per SKU-shipment across ocean, air, rail & road from actual fuel & load Connected CPG systems: SAP S/4HANA Returns · RFID Pool Ledger · CPCB EPR Portal.",
     "does": "Validates plot geolocation canopy history in Satellite & Geospatial Remote Sensing API & mill emission certs (BigQuery ISO-14083 Primary Telemetry Carbon Calculator + Earth Engine Canopy Verifier + Mathematical Optimization Solver (MILP / CP-SAT) Cost/Carbon Mode-Shift MILP).",
@@ -11853,7 +11852,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Food Waste & ESG Copilot",
-    "liveId": "food_waste_esg_copilot"
+    "liveId": "food_waste_esg_copilot",
+    "sumanImpact": "Automates annual circularity reporting"
   },
   "food waste & diversion impact tracker": {
     "name": "Food Waste & Diversion Impact Tracker",
@@ -11867,7 +11867,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 9.2,
     "sources": [
       "Scrap Logs",
       "Haul Manifests",
@@ -11876,7 +11875,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Aggregates plant food-waste diversion to animal feed, composting, and biogas into audited GHG metrics.",
     "outcome": "Zero unverified waste-to-landfill claims",
     "reads": "Streams live records from Scrap Logs, Haul Manifests, GHG Factors into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Tracks circular waste diversion across plants and depots for sustainability reporting. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Tracks circular waste diversion across plants and depots for sustainability reporting. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Chief Sustainability Officer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Scrap Logs and Haul Manifests rather than extrapolating unverified values.",
@@ -11888,7 +11887,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Food Waste & Diversion Impact Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero unverified waste-to-landfill claims"
   },
   "circular packaging & scrap valorization bot": {
     "name": "Circular Packaging & Scrap Valorization Bot",
@@ -11902,7 +11902,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "No-Code Gemini Gem",
     "priority": "P1 · Build Next",
     "model": "gemini-3.8-flash",
-    "annualValueCr": 9.2,
     "sources": [
       "Plant Scrap",
       "Recycler Rates",
@@ -11911,7 +11910,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Benchmarks corrugated and laminate scrap realization rates across regional plant recyclers.",
     "outcome": "+12% scrap & carton recovery revenue",
     "reads": "Streams live records from Plant Scrap, Recycler Rates, Manifests into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Optimizes circular recovery value from plant packaging scrap and damaged cartons. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Optimizes circular recovery value from plant packaging scrap and damaged cartons. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Chief Sustainability Officer sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Plant Scrap and Recycler Rates rather than extrapolating unverified values.",
@@ -11923,7 +11922,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Circular Packaging & Scrap Valorization Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "+12% scrap & carton recovery revenue"
   },
   "zero-waste-to-landfill plant certifier": {
     "name": "Zero-Waste-to-Landfill Plant Certifier",
@@ -11937,7 +11937,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.2,
     "sources": [
       "Waste Manifests",
       "Vendor Certs",
@@ -11946,8 +11945,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Audits plant waste-disposal manifests monthly to verify zero organic or packaging waste hit landfills.",
     "outcome": "100% plant ZWL audit readiness",
     "reads": "Streams live records from Waste Manifests, Vendor Certs, Plant Logs into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Automates documentation for Zero-Waste-to-Landfill site certifications. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
+    "does": "Automates documentation for Zero-Waste-to-Landfill site certifications. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Waste Manifests or overrides Chief Sustainability Officer sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Waste Manifests and Vendor Certs rather than extrapolating unverified values.",
     "samplePrompt": "Check all 12 plants for missing recycler or compost manifests in this month's ZWL log.",
@@ -11958,7 +11957,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Zero-Waste-to-Landfill Plant Certifier",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% plant ZWL audit readiness"
   },
   "green freight & modal-shift emissions tracker": {
     "name": "Green Freight & Modal-Shift Emissions Tracker",
@@ -11972,7 +11972,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 9.2,
     "sources": [
       "Rail Rakes",
       "EV Trips",
@@ -11981,8 +11980,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Calculates Scope 3 transport emissions avoided via rail rake shifts and EV secondary fleets.",
     "outcome": "Quantifies rail & EV CO2e savings",
     "reads": "Streams live records from Rail Rakes, EV Trips, Tonne-Km into BigQuery, normalizing expiry & markdowns exceptions and baseline thresholds in real time.",
-    "does": "Links daily logistics mode choices directly to corporate sustainability KPIs. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
+    "does": "Links daily logistics mode choices directly to corporate sustainability KPIs. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Chief Sustainability Officer review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Rail Rakes or overrides Chief Sustainability Officer sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Rail Rakes and EV Trips rather than extrapolating unverified values.",
     "samplePrompt": "Compute CO2e savings from this quarter's road-to-rail primary lane shifts.",
@@ -11993,7 +11992,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Green Freight & Modal-Shift Emissions Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Quantifies rail & EV CO2e savings"
   },
   "rti balance reconciler": {
     "name": "RTI Balance Reconciler",
@@ -12007,7 +12007,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 23.29,
     "sources": [
       "RFID Gate Scans",
       "CHEP/PECO Bills",
@@ -12027,7 +12026,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "RTI Balance Reconciler",
-    "liveId": "rti_balance_reconciler"
+    "liveId": "rti_balance_reconciler",
+    "sumanImpact": "Eliminates 30% in non-return fee fines"
   },
   "pallet & crate hoarding node detector": {
     "name": "Pallet & Crate Hoarding Node Detector",
@@ -12041,7 +12041,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "CHEP/RTI Portal",
       "WD Balances",
@@ -12050,7 +12049,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies CFAs, co-packers, and distributors holding returnable pallets/crates beyond cycle norms.",
     "outcome": "18% lower RTI replacement CapEx",
     "reads": "Streams live records from CHEP/RTI Portal, WD Balances, CFA Gate into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Monitors returnable transit item (RTI) dwell times to prevent asset loss and rental penalties. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Monitors returnable transit item (RTI) dwell times to prevent asset loss and rental penalties. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged CHEP/RTI Portal transfer/allocation order — formatted for Asset Recovery / RTI Manager review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in CHEP/RTI Portal without Asset Recovery / RTI Manager sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across CHEP/RTI Portal and WD Balances rather than extrapolating unverified values.",
@@ -12062,7 +12061,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Pallet & Crate Hoarding Node Detector",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "18% lower RTI replacement CapEx"
   },
   "rti rental invoice & loss reconciler": {
     "name": "RTI Rental Invoice & Loss Reconciler",
@@ -12076,7 +12076,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "Rental Bills",
       "Transfer Logs",
@@ -12085,7 +12084,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Audits monthly pallet pooler invoices against verified plant-to-CFA transfer and return scans.",
     "outcome": "Cuts RTI billing disputes by 50%",
     "reads": "Streams live records from Rental Bills, Transfer Logs, Write-Offs into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Reconciles pooled pallet hire charges and disputes erroneous lost-asset fees. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Reconciles pooled pallet hire charges and disputes erroneous lost-asset fees. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Rental Bills, discrepancy highlights against Transfer Logs, and 1-click dispute/approval card — formatted for Asset Recovery / RTI Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Rental Bills without Asset Recovery / RTI Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Rental Bills and Transfer Logs rather than extrapolating unverified values.",
@@ -12097,7 +12096,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "RTI Rental Invoice & Loss Reconciler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Cuts RTI billing disputes by 50%"
   },
   "plant-to-cfa crate circulation velocity tracker": {
     "name": "Plant-to-CFA Crate Circulation Velocity Tracker",
@@ -12111,7 +12111,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "RFID Scans",
       "Gate Logs",
@@ -12120,7 +12119,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Measures average round-trip days for reusable crates and pallets across every plant-CFA corridor.",
     "outcome": "15% faster RTI turn-time",
     "reads": "Streams live records from RFID Scans, Gate Logs, Cycle Norms into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Spots slow-turning corridors where pooled assets sit idle. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Spots slow-turning corridors where pooled assets sit idle. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from RFID Scans, discrepancy highlights against Gate Logs, and 1-click dispute/approval card — formatted for Asset Recovery / RTI Manager review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to RFID Scans without Asset Recovery / RTI Manager verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across RFID Scans and Gate Logs rather than extrapolating unverified values.",
@@ -12132,7 +12131,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Plant-to-CFA Crate Circulation Velocity Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% faster RTI turn-time"
   },
   "peak-season rti buffer pre-positioner": {
     "name": "Peak-Season RTI Buffer Pre-Positioner",
@@ -12146,7 +12146,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 10.5,
     "sources": [
       "Production Plan",
       "RTI Stock",
@@ -12155,7 +12154,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Forecasts plant pallet and crate demand 3 weeks ahead to pull empty units back before festive peaks.",
     "outcome": "Zero festive pallet shortages at plants",
     "reads": "Streams live records from Production Plan, RTI Stock, Backhauls into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Prevents high-speed palletizers from stalling due to empty-pallet shortages. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Prevents high-speed palletizers from stalling due to empty-pallet shortages. Executes via OR-Tools Linear Optimizer + BigQuery Real-Time ATP & Velocity Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "SKU-location allocation matrix, stockout/expiry risk heatmap, and staged Production Plan transfer/allocation order — formatted for Asset Recovery / RTI Manager review inside Gemini Enterprise.",
     "stopsAt": "Never executes stock transfers, emergency write-offs, or allocation overrides in Production Plan without Asset Recovery / RTI Manager sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Production Plan and RTI Stock rather than extrapolating unverified values.",
@@ -12167,7 +12166,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Peak-Season RTI Buffer Pre-Positioner",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero festive pallet shortages at plants"
   },
   "milk-run consolidation": {
     "name": "Milk-Run Consolidation",
@@ -12181,7 +12181,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P0 · Build First",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 17.12,
     "sources": [
       "Empty RTI Queue",
       "Outbound Trucks",
@@ -12201,7 +12200,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Milk-Run Consolidation",
-    "liveId": "intermodal_rail_linehaul_agent"
+    "liveId": "intermodal_rail_linehaul_agent",
+    "sumanImpact": "Boosts backhaul fill rate by 25–40%"
   },
   "empty-backhaul milk-run scheduler": {
     "name": "Empty-Backhaul Milk-Run Scheduler",
@@ -12215,7 +12215,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.7,
     "sources": [
       "Outbound Routes",
       "RTI Balances",
@@ -12224,7 +12223,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Pairs returning primary/secondary delivery trucks with nearby crate, pallet, and salvage pickups.",
     "outcome": "20% lower reverse transport spend",
     "reads": "Streams live records from Outbound Routes, RTI Balances, Truck GPS into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Eliminates dedicated empty-return trips by routing backhauls through high-balance nodes. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Eliminates dedicated empty-return trips by routing backhauls through high-balance nodes. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Reverse Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Reverse Transport Planner confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Outbound Routes and RTI Balances rather than extrapolating unverified values.",
@@ -12236,7 +12235,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Empty-Backhaul Milk-Run Scheduler",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "20% lower reverse transport spend"
   },
   "reverse fleet utilization & detention tracker": {
     "name": "Reverse Fleet Utilization & Detention Tracker",
@@ -12250,7 +12250,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.7,
     "sources": [
       "TMS Backhauls",
       "Dock Logs",
@@ -12259,7 +12258,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors backhaul pickup adherence and flags depots delaying empty-crate loading.",
     "outcome": "15% higher backhaul completion",
     "reads": "Streams live records from TMS Backhauls, Dock Logs, Carrier SLA into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Tracks reverse trip turnaround times to keep contracted carriers willing to take backhauls. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Tracks reverse trip turnaround times to keep contracted carriers willing to take backhauls. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from TMS Backhauls, discrepancy highlights against Dock Logs, and 1-click dispute/approval card — formatted for Reverse Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to TMS Backhauls without Reverse Transport Planner verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across TMS Backhauls and Dock Logs rather than extrapolating unverified values.",
@@ -12271,7 +12270,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Reverse Fleet Utilization & Detention Tracker",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "15% higher backhaul completion"
   },
   "third-party backhaul monetization matcher": {
     "name": "Third-Party Backhaul Monetization Matcher",
@@ -12285,7 +12285,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.7,
     "sources": [
       "Empty Lanes",
       "Partner Freight",
@@ -12294,7 +12293,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Identifies dedicated primary return corridors suitable for backhauling raw materials or partner loads.",
     "outcome": "10% net primary freight offset",
     "reads": "Streams live records from Empty Lanes, Partner Freight, TMS into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Turns empty return legs into inbound material hauls or freight-cost offsets. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Turns empty return legs into inbound material hauls or freight-cost offsets. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Reverse Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Reverse Transport Planner sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Empty Lanes and Partner Freight rather than extrapolating unverified values.",
@@ -12306,7 +12305,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Third-Party Backhaul Monetization Matcher",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "10% net primary freight offset"
   },
   "crate collapse & stack-density optimizer": {
     "name": "Crate Collapse & Stack-Density Optimizer",
@@ -12320,7 +12320,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.7,
     "sources": [
       "RTI Specs",
       "Truck Cube",
@@ -12329,7 +12328,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Optimizes nested/collapsed crate and pallet loading patterns for maximum backhaul return density.",
     "outcome": "2x more empty RTIs per backhaul",
     "reads": "Streams live records from RTI Specs, Truck Cube, Depot Queue into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Cuts reverse transport trips required to recover empty returnable packaging. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Cuts reverse transport trips required to recover empty returnable packaging. Executes via Google Maps Route Optimization + OR-Tools VRP / 3D Bin-Packing Solver to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Optimized dispatch/route manifest, ETA & dock-slot schedule, and driver/carrier notification draft — formatted for Reverse Transport Planner review inside Gemini Enterprise.",
     "stopsAt": "Never dispatches carrier tenders, route changes, or detention deductions without Reverse Transport Planner confirmation.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across RTI Specs and Truck Cube rather than extrapolating unverified values.",
@@ -12341,7 +12340,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Crate Collapse & Stack-Density Optimizer",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "2x more empty RTIs per backhaul"
   },
   "sanitation & health agent": {
     "name": "Sanitation & Health Agent",
@@ -12355,7 +12355,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 16.12,
     "sources": [
       "Tote Photos",
       "Wash Cycle Logs",
@@ -12375,7 +12374,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
     "geDisplayName": "Sanitation & Health Agent",
-    "liveId": "sanitation_health_agent"
+    "liveId": "sanitation_health_agent",
+    "sumanImpact": "Extends reusable lifecycle by 15–20%"
   },
   "reusable crate wash & hygiene auditor": {
     "name": "Reusable Crate Wash & Hygiene Auditor",
@@ -12389,7 +12389,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.3,
     "sources": [
       "Wash Logs",
       "ATP Swabs",
@@ -12398,7 +12397,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Audits wash-tunnel temperature, sanitizer concentration, and ATP swab passes before crate reuse.",
     "outcome": "100% food-contact sanitation compliance",
     "reads": "Streams live records from Wash Logs, ATP Swabs, Chemical Dosing into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Ensures every returned plastic crate or tote meets food-safety hygiene standards before re-entering plants. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Ensures every returned plastic crate or tote meets food-safety hygiene standards before re-entering plants. Executes via BigQuery Mass-Balance Ledger + Vertex AI Emissions & Recovery Scoring to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Traceable recovery/emissions ledger, disposition routing (restock vs. salvage vs. recycle), and audit-ready certificate draft — formatted for Packaging QA / Food Safety review inside Gemini Enterprise.",
     "stopsAt": "Never certifies regulatory ESG filings or authorizes scrap/salvage write-offs without Packaging QA / Food Safety sign-off.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Wash Logs and ATP Swabs rather than extrapolating unverified values.",
@@ -12410,7 +12409,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Reusable Crate Wash & Hygiene Auditor",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "100% food-contact sanitation compliance"
   },
   "damaged rti quarantine & repair triager": {
     "name": "Damaged RTI Quarantine & Repair Triager",
@@ -12424,7 +12424,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Multimodal Vision",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.3,
     "sources": [
       "Vision Scans",
       "Repair Logs",
@@ -12433,7 +12432,7 @@ window.SC_AGENT_DETAILS = {
     "problem": "Inspects return crate photos for cracked corners or contamination to route units to repair or recycle.",
     "outcome": "Prevents line jams from broken crates",
     "reads": "Streams live records from Vision Scans, Repair Logs, Pooler Specs into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Keeps structurally compromised crates out of automated plant palletizers and food lines. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
+    "does": "Keeps structurally compromised crates out of automated plant palletizers and food lines. Executes via Cloud Vision / Document AI Multimodal Extraction + BigQuery Verification to validate constraints and quantify operational & financial impact before proposing any action.",
     "returns": "Structured extraction ledger from Vision Scans, discrepancy highlights against Repair Logs, and 1-click dispute/approval card — formatted for Packaging QA / Food Safety review inside Gemini Enterprise.",
     "stopsAt": "Never releases payments, credit notes, or audit closures to Vision Scans without Packaging QA / Food Safety verification of flagged exceptions.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Vision Scans and Repair Logs rather than extrapolating unverified values.",
@@ -12445,7 +12444,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Damaged RTI Quarantine & Repair Triager",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Prevents line jams from broken crates"
   },
   "allergen cross-contact wash segregation bot": {
     "name": "Allergen Cross-Contact Wash Segregation Bot",
@@ -12459,7 +12459,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.3,
     "sources": [
       "Allergen Tags",
       "Wash Queue",
@@ -12468,8 +12467,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Segregates returned crates carrying nut/dairy SKUs into dedicated high-temp allergen wash cycles.",
     "outcome": "Zero allergen cross-contamination risk",
     "reads": "Streams live records from Allergen Tags, Wash Queue, Line Rules into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Protects allergen-free production lines from cross-contact via shared reusable crates. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Packaging QA / Food Safety review inside Gemini Enterprise.",
+    "does": "Protects allergen-free production lines from cross-contact via shared reusable crates. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Packaging QA / Food Safety review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Allergen Tags or overrides Packaging QA / Food Safety sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Allergen Tags and Wash Queue rather than extrapolating unverified values.",
     "samplePrompt": "Flag returned crates from allergen-containing SKU lines for dedicated Zone-B wash.",
@@ -12480,7 +12479,8 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Allergen Cross-Contact Wash Segregation Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "Zero allergen cross-contamination risk"
   },
   "wash-water & chemical dosing efficiency bot": {
     "name": "Wash-Water & Chemical Dosing Efficiency Bot",
@@ -12494,7 +12494,6 @@ window.SC_AGENT_DETAILS = {
     "buildMode": "Low-Code Agent Studio",
     "priority": "P1 · Build Next",
     "model": "gemini-3.1-pro-preview",
-    "annualValueCr": 7.3,
     "sources": [
       "Flow Meters",
       "Dosing Logs",
@@ -12503,8 +12502,8 @@ window.SC_AGENT_DETAILS = {
     "problem": "Monitors water, steam, and sanitizer usage per 1,000 washed crates to flag nozzle clogs or over-dosing.",
     "outcome": "12% lower wash-tunnel water & chemical use",
     "reads": "Streams live records from Flow Meters, Dosing Logs, Crate Count into BigQuery, normalizing pallet & tote reclamation exceptions and baseline thresholds in real time.",
-    "does": "Maintains food-safety wash standards while curbing utility and chemical waste. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify ₹ Cr/L impact before proposing any action.",
-    "returns": "Prioritized action queue, ₹ Cr/L impact breakdown, and staged ERP/workflow payload — formatted for Packaging QA / Food Safety review inside Gemini Enterprise.",
+    "does": "Maintains food-safety wash standards while curbing utility and chemical waste. Executes via Vertex AI Reasoning + BigQuery Analytical Engine to validate constraints and quantify operational & financial impact before proposing any action.",
+    "returns": "Prioritized action queue, operational & financial impact breakdown, and staged ERP/workflow payload — formatted for Packaging QA / Food Safety review inside Gemini Enterprise.",
     "stopsAt": "Never commits unapproved writes to Flow Meters or overrides Packaging QA / Food Safety sign-off thresholds.",
     "safetyEnvelope": "Strict human-in-the-loop boundary: flags missing or conflicting records across Flow Meters and Dosing Logs rather than extrapolating unverified values.",
     "samplePrompt": "Compare sanitizer consumption per 1,000 crates across all 4 regional wash hubs.",
@@ -12515,6 +12514,7 @@ window.SC_AGENT_DETAILS = {
     "liveInGE": false,
     "geUrl": "",
     "geDisplayName": "Wash-Water & Chemical Dosing Efficiency Bot",
-    "liveId": ""
+    "liveId": "",
+    "sumanImpact": "12% lower wash-tunnel water & chemical use"
   }
 };

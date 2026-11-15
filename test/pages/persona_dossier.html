@@ -224,10 +224,9 @@
               '<span class="pill ' + pCls + '">' + (a.priority || 'P1 · Build Next') + '</span>' +
               (isLive ? '<span class="plive">Live</span>' : '') +
             '</div>' +
-            '<span style="font:700 13px var(--mono);color:var(--green-ink);">₹' + (a.annualValueCr || '12.5') + ' Cr/yr</span>' +
           '</div>' +
           '<h3 class="ag-name">' + (a.geDisplayName || aname) + '</h3>' +
-          '<p class="ag-desc">' + (a.outcome || a.problem || '') + '</p>' +
+          '<p class="ag-desc">' + (a.sumanImpact || a.outcome || a.problem || '') + '</p>' +
           '<div class="ag-box"><b>How It Works</b>' + (a.does || '') + '</div>' +
           '<div class="ag-box"><b>Human Sign-Off Gate</b>' + (a.stopsAt || '') + '</div>' +
           '<div class="ag-foot"><span>Open Agent Architecture &amp; Tech Details</span><span>&rarr;</span></div>' +
@@ -250,7 +249,7 @@
             '</div>' +
           '</div>' +
           '<div class="kpi-stack">' +
-            '<div class="kpi-box"><b style="color:var(--green-ink);">₹' + p.annualValueCr + ' Cr/yr</b><span>Annual Role Value</span></div>' +
+            '<div class="kpi-box"><b style="color:var(--green-ink);font-size:16px;">' + (p.sumanImpact || p.setting) + '</b><span>Target Impact</span></div>' +
             '<div class="kpi-box"><b>' + p.toilBefore + 'h → ' + p.toilAfter + 'h</b><span>Weekly Toil</span></div>' +
             '<div class="kpi-box"><b>' + p.suiteNames.length + ' Agents</b><span>Agentic Suite</span></div>' +
           '</div>' +
