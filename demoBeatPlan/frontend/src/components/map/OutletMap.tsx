@@ -350,11 +350,6 @@ export const OutletMap: React.FC<OutletMapProps> = ({
         </button>
       </div>
 
-      {/* Bottom-Right Pilot Scope Label */}
-      <div className="absolute bottom-4 right-4 z-[400] bg-black/55 backdrop-blur-sm border border-white/10 text-white/75 px-2.5 py-1 rounded-md text-[10px] font-mono shadow-xl">
-        Simulated South Metro Pilot · {outlets.length || 112} Sample Outlets
-      </div>
-
       {/* Bottom-Left Collapsible See-Through Health & Overlay Legend (matches WellMap.tsx) */}
       <div className="absolute bottom-3 left-14 z-[400] flex items-center gap-3 flex-wrap rounded-md bg-black/45 backdrop-blur-sm border border-white/10 px-2.5 py-1 text-[10px] font-mono text-white/85 max-w-[calc(100%-17rem)]">
         <button
