@@ -212,13 +212,13 @@
 
 <main class="page-wrap">
   <div class="page-kick"><i></i>Slide 07 · The Agentic Supply Chain Workforce</div>
-  <h1 class="page-h1">Persona Map: Supply Chain Roles &amp; Vulnerability Board</h1>
-  <p class="page-lede">Each row is one supply chain persona on the left and its workflow squares on the right—ordered by what an agent prepares, what the incumbent ERP/DMS runs, and what stays human. <b>Hover or click any square</b> to inspect the agent in the right-hand panel.</p>
+  <h1 class="page-h1">Persona Map: Supply Chain Roles &amp; Agentic Workforce</h1>
+  <p class="page-lede">Each row is one supply chain persona on the left and its dedicated Gemini Enterprise agents on the right. <b>Hover or click any square</b> to inspect the agent in the right-hand panel.</p>
 
   <div class="estate-strip">
     <div><b>60</b><span>Supply chain personas</span></div>
     <div><b>64</b><span>Dedicated AI agents</span></div>
-    <div><b>184</b><span>Workflow cells mapped</span></div>
+    <div><b>6</b><span>Supply chain pillars</span></div>
     <div><b>100%</b><span>Non-invasive over ERP / DMS / WMS</span></div>
   </div>
 
@@ -226,8 +226,6 @@
     <span class="lg-item"><span class="sw sw-first"></span> Build First (Critical)</span>
     <span class="lg-item"><span class="sw sw-next"></span> Build Next (Friction)</span>
     <span class="lg-item"><span class="sw sw-agent"></span> Routine Agentic</span>
-    <span class="lg-item"><span class="sw sw-sys"></span> Incumbent ERP / WMS / TMS</span>
-    <span class="lg-item"><span class="sw sw-human"></span> Human Sign-Off</span>
   </div>
 
   <div class="controls">
@@ -243,12 +241,9 @@
 
   <div class="controls" style="margin-top:4px;">
     <span style="font:600 11px var(--font-mono);color:var(--text-muted);text-transform:uppercase;">Highlight:</span>
-    <button class="prio-pill active" data-prio="all">All Cells</button>
+    <button class="prio-pill active" data-prio="all">All Agents</button>
     <button class="prio-pill" data-prio="prio-first">Build First (Red)</button>
     <button class="prio-pill" data-prio="prio-next">Build Next (Yellow)</button>
-    <button class="prio-pill" data-prio="own-agentic">All Agentic</button>
-    <button class="prio-pill" data-prio="own-system">Incumbent System</button>
-    <button class="prio-pill" data-prio="own-human">Human Only</button>
   </div>
 
   <div id="resultCount" style="font:500 12px var(--font-mono);color:var(--text-muted);margin-bottom:10px;">Showing 60 personas</div>
@@ -296,29 +291,22 @@
   }
 
   function buildCells(r) {
-    var s0 = r.sources[0] || 'SAP ERP';
     var prioCls = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'own-agentic prio-first' : 'own-agentic prio-next';
     var prioLbl = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'Agent Prepares (Build First)' : 'Agent Prepares (Build Next)';
-    var agentCells = [];
     if (r.tmAndDAgents && r.tmAndDAgents.length) {
-      agentCells = r.tmAndDAgents.map(function (ag, idx) {
+      return r.tmAndDAgents.map(function (ag, idx) {
         var c = 'own-agentic' + (ag.prio ? ' ' + ag.prio : '');
         var lbl = ag.prio === 'prio-first' ? 'Agent Prepares (Build First)' : (ag.prio === 'prio-next' ? 'Agent Prepares (Build Next)' : 'Routine Agentic');
         return {
-          code: 'A0' + (idx + 1), cls: c, owner: lbl + ' · ' + ag.mode,
+          code: 'A0' + (idx + 1), cls: c, owner: lbl,
           title: ag.name, detail: ag.dailyTask || ag.desc,
           impact: ag.impact || r.impact, sources: ag.sources || r.sources, prompt: ag.promptHint || r.promptHint
         };
       });
-    } else {
-      agentCells = [
-        { code: 'A01', cls: prioCls, owner: prioLbl, title: r.agent, detail: r.mandate, impact: r.impact, sources: r.sources, prompt: r.promptHint }
-      ];
     }
-    return agentCells.concat([
-      { code: 'S01', cls: 'own-system', owner: 'Incumbent System of Record', title: s0 + ' Core System', detail: 'Deterministic ledger posting, master data validation, and compliance logging in ' + r.sources.join(', ') + '.', impact: r.impact, sources: r.sources, prompt: r.promptHint },
-      { code: 'H01', cls: 'own-human',  owner: 'Human Sign-Off',             title: 'Human Decision & Control', detail: r.persona + ' retains final approval for high-value commitments and policy exceptions.', impact: r.impact, sources: r.sources, prompt: r.promptHint }
-    ]);
+    return [
+      { code: 'A01', cls: prioCls, owner: prioLbl, title: r.agent, detail: r.mandate, impact: r.impact, sources: r.sources, prompt: r.promptHint }
+    ];
   }
 
   function syncButtons() {
@@ -362,7 +350,7 @@
       '<div class="d-body">' +
         '<div class="d-block today"><div class="d-k">Role &amp; Mandate</div><div class="d-v">' + r.mandate + '</div></div>' +
         '<div class="d-block vuln"><div class="d-k">Operational Gap Addressed</div><div class="d-v">' + (cell ? cell.detail : r.mandate) + '</div></div>' +
-        '<div class="d-block plug"><div class="d-k">Agentic Outcome &amp; Value</div><div class="d-v"><b>' + imp + '</b> — Built via ' + (cell ? cell.owner : r.buildMode) + '</div></div>' +
+        '<div class="d-block plug"><div class="d-k">Agentic Outcome &amp; Value</div><div class="d-v"><b>' + imp + '</b> — ' + (cell ? cell.owner : 'Gemini Enterprise Agent') + '</div></div>' +
         '<div class="d-spec">' +
           '<div class="d-spec-row"><span class="d-spec-k">Sub-Process</span><span class="d-spec-v">' + r.subprocess + '</span></div>' +
           '<div class="d-spec-row"><span class="d-spec-k">Grounding</span><span class="d-spec-v">' + srcs.join(' · ') + '</span></div>' +
@@ -418,12 +406,6 @@
         });
         tilesWrap.appendChild(sp);
       });
-
-      var tag = document.createElement('span');
-      tag.className = 'row-agent-tag';
-      tag.textContent = r.tmAndDAgents ? ('⚡ ' + r.tmAndDAgents.length + ' TM&D Agents') : ('⚡ ' + r.agent);
-      tag.addEventListener('click', function () { pinned = true; showInspector(r, cells[0], true); });
-      tilesWrap.appendChild(tag);
 
       var pCol = document.createElement('div');
       pCol.className = 'b-persona';
