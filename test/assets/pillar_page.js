@@ -103,11 +103,11 @@ window.renderPillarPage = function (pillarId, prevUrl, nextUrl) {
                   '<span style="font:600 11px var(--font-mono);color:var(--text-muted);">' + item.id + '</span>' +
                   '<span class="badge-pill">' + item.buildMode + '</span>' +
                 '</div>' +
-                '<h3 style="margin:0 0 6px;font:600 17px/1.25 var(--font-display);">' + item.persona + '</h3>' +
+                '<h3 style="margin:0 0 6px;font:600 17px/1.25 var(--font-display);"><a href="../pages/persona_dossier.html?id=' + encodeURIComponent(item.id) + '" style="color:inherit;text-decoration:none;">' + item.persona + ' &rarr;</a></h3>' +
                 '<p style="margin:0 0 14px;font-size:13.5px;line-height:1.45;color:var(--text-muted);">' + item.mandate + '</p>' +
                 '<div style="padding:11px 12px;border-radius:10px;background:color-mix(in srgb, var(--tc) 8%, var(--surface-sunk));border:1px solid color-mix(in srgb, var(--tc) 25%, transparent);margin-bottom:10px;">' +
                   '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">' +
-                    '<div style="font:600 13.5px var(--font-display);color:var(--ti);">⚡ ' + item.agent + '</div>' +
+                    '<a href="../pages/agent_details.html?agent=' + encodeURIComponent(item.agent) + '&persona=' + encodeURIComponent(item.id) + '" style="font:600 13.5px var(--font-display);color:var(--ti);text-decoration:none;">⚡ ' + item.agent + ' &rarr;</a>' +
                     ((function(){ var lr=(window.SC_LIVE_AGENT_MAP||{})[(item.agent||'').toLowerCase()]; return lr ? '<span style="display:inline-flex;align-items:center;gap:8px;"><a href="../pages/demo_stage.html?agent='+encodeURIComponent(lr.id)+'" style="font:600 11px var(--font-mono);color:var(--text-muted);text-decoration:none;">&#9654; Demo</a><a href="'+lr.geUrl+'" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:#FFF;background:var(--g-green);border-radius:999px;padding:4px 8px;box-shadow:0 0 0 3px rgba(0,175,87,.16);text-decoration:none;">Live &#8599;</a></span>' : ''; })()) +
                   '</div>' +
                   '<div style="font:500 12.5px var(--font-body);margin-top:4px;"><b>Impact:</b> ' + item.impact + '</div>' +

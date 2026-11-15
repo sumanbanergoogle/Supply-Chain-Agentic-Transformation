@@ -387,7 +387,7 @@
       '<div class="d-head">' +
         '<div class="d-title">' +
           '<span class="d-action">' + cTitle + '</span>' +
-          '<span class="d-who">' + r.persona + ' · ' + r.pillarTitle + '</span>' +
+          '<a class="d-who" href="persona_dossier.html?id=' + encodeURIComponent(r.id) + '" style="color:inherit;text-decoration:none;display:inline-block;" title="Open Persona Dossier">' + r.persona + ' · ' + r.pillarTitle + ' &rarr;</a>' +
         '</div>' +
         (isPin ? '<button class="d-close" id="unpinBtn" title="Close">✕</button>' : '') +
       '</div>' +
@@ -410,6 +410,10 @@
         '</div>' +
       '</div>' +
       '<div class="d-foot">' +
+        '<a class="ge-launch" style="background:var(--g-blue);border-color:var(--g-blue);margin-bottom:8px;" href="agent_details.html?agent=' + encodeURIComponent(cTitle) + '&persona=' + encodeURIComponent(r.id) + '">' +
+          '<span>View Agent Details</span>' +
+          '<span class="ge-arrow" aria-hidden="true">&rarr;</span>' +
+        '</a>' +
         (liveRec ? (
           '<a class="ge-launch" href="' + geHref + '" target="_blank" rel="noopener noreferrer" title="Opens Gemini Enterprise">' +
             '<img class="ge-mark" src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">' +
@@ -417,7 +421,7 @@
             '<span class="ge-arrow" aria-hidden="true">&#8599;</span>' +
           '</a>' +
           '<a href="demo_stage.html?agent=' + encodeURIComponent(liveRec.id) + '" style="display:block;width:100%;text-align:center;margin-top:6px;font:600 12px var(--font-display);color:var(--blue-ink);text-decoration:none;">&#9654; Watch Video &amp; Live Demo Stage &rarr;</a>'
-        ) : '<span style="font:500 11.5px var(--font-mono);color:var(--text-muted);">Blueprint · Not yet deployed in Gemini Enterprise</span>') +
+        ) : '<span style="display:block;font:500 11.5px var(--font-mono);color:var(--text-muted);">Blueprint · Not yet deployed in Gemini Enterprise</span>') +
       '</div>';
 
     var ub = document.getElementById('unpinBtn');
@@ -481,7 +485,8 @@
           '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>' +
         '</div>' +
         (rowLiveRec ? '<a class="plive" href="' + rowLiveRec.geUrl + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Open ' + (rowLiveRec.geDisplayName || rowLiveRec.name) + ' in Gemini Enterprise">Live</a>' : '');
-      pCol.addEventListener('click', function () { pinned = true; showInspector(r, cells[0], true); });
+      pCol.title = 'Open Persona Dossier & Agent Suite';
+      pCol.addEventListener('click', function () { window.location.href = 'persona_dossier.html?id=' + encodeURIComponent(r.id); });
 
       row.appendChild(pCol);
       row.appendChild(tilesWrap);
