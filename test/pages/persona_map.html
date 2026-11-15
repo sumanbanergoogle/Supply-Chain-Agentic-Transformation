@@ -121,6 +121,20 @@
     background: transparent;
     border: 1.5px dashed var(--text-dim);
   }
+  .bcell.is-live i { position: relative; box-shadow: inset 0 0 0 1.5px rgba(0, 175, 87, .55); }
+  .bcell.is-live i::after {
+    content: ""; position: absolute; top: 4px; right: 4px;
+    width: 7px; height: 7px; border-radius: 50%; background: #00AF57;
+    box-shadow: 0 0 0 2px var(--surface);
+  }
+  .live-dot-lg { width: 9px; height: 9px; border-radius: 50%; background: #00AF57; display: inline-block; }
+  .live-pill-row {
+    display: inline-flex; align-items: center; gap: 4px; margin-left: 6px;
+    padding: 1px 6px; border-radius: 999px; font: 700 9.5px var(--font-mono);
+    background: rgba(0, 175, 87, .12); color: var(--green-ink); border: 1px solid rgba(0, 175, 87, .35);
+  }
+    border: 1.5px dashed var(--text-dim);
+  }
   .bcell.is-open i {
     border: 2px solid var(--g-blue);
     box-shadow: 0 0 0 2px rgba(49, 134, 255, .28);
@@ -246,6 +260,7 @@
     <span class="lg-item"><span class="sw sw-first"></span> Build First (Critical)</span>
     <span class="lg-item"><span class="sw sw-next"></span> Build Next (Friction)</span>
     <span class="lg-item"><span class="sw sw-agent"></span> Routine Agentic</span>
+    <span class="lg-item"><span class="live-dot-lg"></span> Live in Gemini Enterprise (Direct Launch)</span>
   </div>
 
   <div class="controls">
@@ -265,6 +280,7 @@
     <button class="prio-pill" data-prio="prio-first">Build First (Red)</button>
     <button class="prio-pill" data-prio="prio-next">Build Next (Yellow)</button>
     <button class="prio-pill" data-prio="prio-routine">Routine Agentic (Blue)</button>
+    <button class="prio-pill" data-prio="is-live">● Live in GE (37 Roles)</button>
   </div>
 
   <div id="resultCount" style="font:500 12px var(--font-mono);color:var(--text-muted);margin-bottom:10px;">Showing 60 personas</div>
@@ -318,22 +334,25 @@
     var prioLbl = isFirst ? 'Agent Prepares (Build First)' : 'Agent Prepares (Build Next)';
     var qLbl = isFirst ? 'Build First (Critical)' : 'Build Next (Friction)';
     var rowTag = 'A' + (r.rowNum < 10 ? '0' + r.rowNum : r.rowNum);
+    var liveMap = window.SC_LIVE_AGENT_MAP || {};
     if (r.tmAndDAgents && r.tmAndDAgents.length) {
       return r.tmAndDAgents.map(function (ag, idx) {
-        var c = 'own-agentic ' + (ag.prio ? ag.prio : 'prio-routine');
+        var isLive = Boolean(liveMap[(ag.name || '').toLowerCase()]);
+        var c = 'own-agentic ' + (ag.prio ? ag.prio : 'prio-routine') + (isLive ? ' is-live' : '');
         var lbl = ag.prio === 'prio-first' ? 'Agent Prepares (Build First)' : (ag.prio === 'prio-next' ? 'Agent Prepares (Build Next)' : 'Routine Agentic');
         var q = ag.prio === 'prio-first' ? 'Build First (Critical)' : (ag.prio === 'prio-next' ? 'Build Next (Friction)' : 'Routine Agentic');
         var wNum = idx + 1;
         var cellCode = rowTag + 'W' + (wNum < 10 ? '0' + wNum : wNum);
         return {
-          code: cellCode, cls: c, owner: lbl, queue: q,
+          code: cellCode, cls: c, owner: lbl, queue: q, isLive: isLive,
           title: ag.name, today: ag.dailyTask || r.mandate, desc: ag.desc || ag.dailyTask,
           impact: ag.impact || r.impact, sources: ag.sources || r.sources, prompt: ag.promptHint || r.promptHint
         };
       });
     }
+    var isPrimaryLive = Boolean(liveMap[(r.agent || '').toLowerCase()]);
     return [
-      { code: rowTag + 'W01', cls: prioCls, owner: prioLbl, queue: qLbl, title: r.agent, today: r.mandate, desc: r.promptHint, impact: r.impact, sources: r.sources, prompt: r.promptHint }
+      { code: rowTag + 'W01', cls: prioCls + (isPrimaryLive ? ' is-live' : ''), owner: prioLbl, queue: qLbl, isLive: isPrimaryLive, title: r.agent, today: r.mandate, desc: r.promptHint, impact: r.impact, sources: r.sources, prompt: r.promptHint }
     ];
   }
 
@@ -386,6 +405,7 @@
         '<div class="d-spec">' +
           '<div class="d-spec-row"><span class="d-spec-k">Build Queue</span><span class="d-spec-v">' + (cell && cell.queue ? cell.queue : 'Build First (Critical)') + '</span></div>' +
           '<div class="d-spec-row"><span class="d-spec-k">Sub-Process</span><span class="d-spec-v">' + r.subprocess + '</span></div>' +
+          '<div class="d-spec-row"><span class="d-spec-k">GE Status</span><span class="d-spec-v">' + (liveRec ? '<b style="color:var(--green-ink);">● Live in Gemini Enterprise</b>' + (liveRec.isItcTmd ? ' (ITC TMD)' : '') : 'Staged Blueprint') + '</span></div>' +
           '<div class="d-spec-row"><span class="d-spec-k">Status</span><span class="d-spec-v">' + (isPin ? 'Pinned (click ✕ or another square)' : 'Hovering (click square to pin)') + '</span></div>' +
         '</div>' +
       '</div>' +
@@ -449,10 +469,11 @@
 
       var pCol = document.createElement('div');
       pCol.className = 'b-persona';
+      var hasLiveRow = cells.some(function (c) { return c.isLive; });
       pCol.innerHTML =
         '<span class="b-av">' + initials(r.persona) + '</span>' +
         '<div>' +
-          '<div class="b-meta">' + r.id + ' · ' + r.pillarTitle + '</div>' +
+          '<div class="b-meta">' + r.id + ' · ' + r.pillarTitle + (hasLiveRow ? '<span class="live-pill-row">● Live GE</span>' : '') + '</div>' +
           '<div class="b-name">' + r.persona + '</div>' +
           '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>' +
         '</div>';

@@ -1751,5 +1751,105 @@ window.SC_LIVE_AGENT_MAP = {
       "What critical pallet & tote reclamation risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "samplePrompt": "What critical pallet & tote reclamation risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
+  },
+  "overnight sto & load consolidation agent": {
+    "id": "itc_load_consolidation_agent",
+    "name": "Load Consolidation Agent",
+    "geDisplayName": "Load Consolidation Agent (ITC TMD)",
+    "isItcTmd": true,
+    "pillar": "Distribution & Logistics (ITC TMD)",
+    "persona": "Primary Transport Planner",
+    "buildMode": "Low-Code Agent Studio",
+    "model": "gemini-3.1-pro-preview",
+    "annualValueCr": 29.4,
+    "outcome": "ITC ICML mega-plants ship both high-density Staples (Aashirvaad Atta at ~600 kg/m3, weighting out a 32-ft MXL truck at 45% volume) and ultra-light fragile Foods (Bingo! chips & Sunfeast biscuits at ~90-180 kg/m3, cubing out at 25% payload). Dispatching single-category trucks wastes 28-36% of primary freight spend.",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
+    "starterPrompts": [
+      "Check today's staged Ranjangaon and Khordha dispatches. Where are we sending half-empty Atta or Bingo! trucks that can be combined?",
+      "Will co-loading Sunfeast biscuits and Bingo! cartons above Aashirvaad Atta on the Ahmedabad lane stay safe on axle weight and carton crushing?",
+      "Prepare the consolidated truck loading plan for the Sanand and Dankuni lanes so I can review and release the indents."
+    ],
+    "samplePrompt": "Check today's staged Ranjangaon and Khordha dispatches. Where are we sending half-empty Atta or Bingo! trucks that can be combined?"
+  },
+  "live thermal excursion sentinel": {
+    "id": "itc_cold_chain_thermal_auditor",
+    "name": "Cold-Chain Thermal Auditor",
+    "geDisplayName": "Cold-Chain Thermal Auditor (ITC TMD)",
+    "isItcTmd": true,
+    "pillar": "Distribution & Logistics (ITC TMD)",
+    "persona": "Cold-Chain & Transit QA Lead",
+    "buildMode": "Low-Code Agent Studio",
+    "model": "gemini-3.1-pro-preview",
+    "annualValueCr": 22.6,
+    "outcome": "ITC Master Chef frozen snacks (-18C), Aashirvaad Svasti paneer/curd (2-8C), and Fabelle luxury chocolates (16-20C) suffer mid-highway compressor slips or driver fuel-saving switch-offs. Simple min/max alerts miss cumulative Arrhenius kinetic heat damage.",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
+    "starterPrompts": [
+      "Review our inbound Master Chef frozen, Svasti dairy, and Fabelle chocolate reefers. Did any load suffer heat damage in transit?",
+      "Check the logger printout on the Kapurthala frozen fries truck and the Patna paneer load to see why temperatures spiked.",
+      "Hold the affected pallets in quarantine and prepare the carrier spoilage claim packet for quality sign-off."
+    ],
+    "samplePrompt": "Review our inbound Master Chef frozen, Svasti dairy, and Fabelle chocolate reefers. Did any load suffer heat damage in transit?"
+  },
+  "live traffic & breakdown rerouter": {
+    "id": "itc_dynamic_rerouter",
+    "name": "Dynamic Rerouter",
+    "geDisplayName": "Dynamic Rerouter (ITC TMD)",
+    "isItcTmd": true,
+    "pillar": "Distribution & Logistics (ITC TMD)",
+    "persona": "Fleet & Route Dispatch Lead",
+    "buildMode": "Low-Code + Maps Platform",
+    "model": "gemini-3.1-pro-preview",
+    "annualValueCr": 22.0,
+    "outcome": "En-route highway landslides (NH-48 Khandala Ghat), urban waterlogging (Bengaluru ORR), police heavy-vehicle curfews, commercial EV low battery State-of-Charge, and expiring midnight NIC E-Way Bills cause severe delivery misses and Section 129 GST transit penalties.",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
+    "starterPrompts": [
+      "Which primary trucks and city EV vans are stuck in highway blockages, waterlogging, or police no-entry curfews right now?",
+      "Are any delayed highway loads close to their E-Way Bill expiring tonight, or do any city EVs need a charging stop to finish their drops?",
+      "Send the diversion routes, charger stop, and E-Way Bill extension request to the control tower queue for approval."
+    ],
+    "samplePrompt": "Which primary trucks and city EV vans are stuck in highway blockages, waterlogging, or police no-entry curfews right now?"
+  },
+  "lane tender rejection radar": {
+    "id": "itc_routing_guide_compliance_agent",
+    "name": "Routing Guide Compliance Agent",
+    "geDisplayName": "Routing Guide Compliance Agent (ITC TMD)",
+    "isItcTmd": true,
+    "pillar": "Distribution & Logistics (ITC TMD)",
+    "persona": "Transport Procurement Manager",
+    "buildMode": "No-Code Gemini Gem",
+    "model": "gemini-3.8-flash",
+    "annualValueCr": 16.9,
+    "outcome": "ITC negotiates annual L1/L2/L3 waterfall rate cards across hundreds of ICML-to-CFA lanes, yet local dispatchers frequently bypass L2 backup carriers during evening rush and book ad-hoc spot-market brokers at 28-40% freight premiums.",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
+    "starterPrompts": [
+      "Where did we overspend on spot-market trucks this month instead of using our contracted L1 and L2 transporters?",
+      "On which lanes did our dispatchers skip the backup carrier waterfall versus lanes where contracted transporters actually refused loads?",
+      "Prepare compliance notes for the skipped waterfall lanes and flag chronic rejection lanes for rate review."
+    ],
+    "samplePrompt": "Where did we overspend on spot-market trucks this month instead of using our contracted L1 and L2 transporters?"
+  },
+  "pod ocr & short-delivery extractor": {
+    "id": "itc_freight_bill_audit_agent",
+    "name": "Freight Bill Audit Agent",
+    "geDisplayName": "Freight Bill Audit Agent (ITC TMD)",
+    "isItcTmd": true,
+    "pillar": "Distribution & Logistics (ITC TMD)",
+    "persona": "Freight Bill & Claims Controller",
+    "buildMode": "Multimodal + Agent Studio",
+    "model": "gemini-3.1-pro-preview",
+    "annualValueCr": 25.5,
+    "outcome": "Indian CPG freight settlement requires reconciling paper-heavy Lorry Receipts (Bilty), rubber-stamped CFA Proof-of-Delivery (POD) slips with handwritten wet/crushed carton remarks, contracted diesel escalation pegs, and GPS-verified gate detention hours.",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
+    "starterPrompts": [
+      "Audit this week's pending transporter freight bills. Where do billed rates, fuel surcharges, or detention hours disagree with our contracts and GPS logs?",
+      "Check the scanned lorry receipts and stamped delivery slips on LR-TCI-882910 and LR-HWK-771024 for damaged cartons or duplicate billing.",
+      "Block the duplicate bill and stage short-pay vouchers deducting the unverified detention and damaged Dark Fantasy cartons."
+    ],
+    "samplePrompt": "Audit this week's pending transporter freight bills. Where do billed rates, fuel surcharges, or detention hours disagree with our contracts and GPS logs?"
   }
 };
