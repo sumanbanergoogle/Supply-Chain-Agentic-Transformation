@@ -10,7 +10,7 @@
 
 window.SC_SLIDE_DECK = [
   { num: "01", title: "Why Agentic Transformation for Supply Chains in India", path: "slides/slide_01.html" },
-  { num: "02", title: "Why 'Agentic' Now for ITC TM&D?", path: "slides/slide_02_hook.html" },
+  { num: "02", title: "Why 'Agentic' Now for TM&D?", path: "slides/slide_02_hook.html" },
   { num: "03", title: "The TM&D Value Tree (CEO Metrics)", path: "slides/slide_03_value_tree.html" },
   { num: "04", title: "TM&D Operational Reality & Core Challenges", path: "slides/slide_02.html" },
   { num: "05", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
