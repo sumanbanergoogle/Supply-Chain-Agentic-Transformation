@@ -36,7 +36,14 @@ window.SUPPLY_CHAIN_DATA = {
               agent: "Demand Sensing Agent",
               buildMode: "Low-Code Agent Studio",
               sources: ["BigQuery POS", "Weather API", "SAP IBP"],
-              promptHint: "Correlate regional POS velocity with 14-day weather & promo calendars to flag SKU-level demand inflections."
+              promptHint: "Correlate regional POS velocity with 14-day weather & promo calendars to flag SKU-level demand inflections.",
+              tmAndDAgents: [
+                { name: "Demand Sensing Agent", mode: "Low-Code Agent Studio", prio: "prio-first", desc: "Synthesizes secondary POS velocity, monsoon/weather anomalies, and festive calendars to detect regional demand shifts 7–14 days earlier." },
+                { name: "Secondary-to-Primary Translation Agent", mode: "Low-Code Agent Studio", prio: "prio-first", desc: "Bridges Wholesale Dealer (WD) secondary depletion and closing stock with CFA primary indents to eliminate bullwhip distortion." },
+                { name: "Trade Scheme & Promo Lift Forecaster", mode: "No-Code Gemini Gem", prio: "prio-next", desc: "Models incremental volume lift and post-scheme pantry-loading dip for GT & MT trade promotions before scheme circular release." },
+                { name: "Channel-Mix & Q-Comm Spike Predictor", mode: "Low-Code Agent Studio", prio: "prio-next", desc: "Separates General Trade, Modern Trade, and Quick Commerce dark-store velocity spikes for accurate branch-level replenishment." },
+                { name: "Forecast Bias & CFA Stock-Out Sentinel", mode: "No-Code Gemini Gem", prio: "", desc: "Flags recurring SKU-branch forecast bias and alerts ASMs & CS&L before regional CFAs breach safety stock." }
+              ]
             },
             {
               id: "SC-02",

@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css">
 <link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-<script src="../assets/deck_nav.js?v=9"></script>
-<script src="../data/supply_chain_data.js?v=7"></script>
+<script src="../assets/deck_nav.js?v=12"></script>
+<script src="../data/supply_chain_data.js?v=12"></script>
 <style>
   :root {
     --base-bg: #EDF0F6;
@@ -251,11 +251,22 @@
     var s0 = r.sources[0] || 'SAP ERP';
     var prioCls = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'own-agentic prio-first' : 'own-agentic prio-next';
     var prioLbl = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'Agent Prepares (Build First)' : 'Agent Prepares (Build Next)';
-    return [
-      { code: 'A01', cls: prioCls,      owner: prioLbl,                    title: r.agent,                    detail: r.mandate + ' (' + r.impact + ')' },
+    var agentCells = [];
+    if (r.tmAndDAgents && r.tmAndDAgents.length) {
+      agentCells = r.tmAndDAgents.map(function (ag, idx) {
+        var c = 'own-agentic' + (ag.prio ? ' ' + ag.prio : '');
+        var lbl = ag.prio === 'prio-first' ? 'Agent Prepares (Build First)' : (ag.prio === 'prio-next' ? 'Agent Prepares (Build Next)' : 'Routine Agentic');
+        return { code: 'A0' + (idx + 1), cls: c, owner: lbl + ' · ' + ag.mode, title: ag.name, detail: ag.desc };
+      });
+    } else {
+      agentCells = [
+        { code: 'A01', cls: prioCls, owner: prioLbl, title: r.agent, detail: r.mandate + ' (' + r.impact + ')' }
+      ];
+    }
+    return agentCells.concat([
       { code: 'S01', cls: 'own-system', owner: 'Incumbent System of Record', title: s0 + ' Core System',       detail: 'Deterministic ledger posting, master data validation, and compliance logging in ' + r.sources.join(', ') + '.' },
       { code: 'H01', cls: 'own-human',  owner: 'Human Sign-Off',             title: 'Human Decision & Control', detail: r.persona + ' retains final approval for high-value commitments and policy exceptions (' + r.impact + ').' }
-    ];
+    ]);
   }
 
   function syncButtons() {
@@ -336,6 +347,17 @@
         }).join('') + '</div>';
     }
 
+    var tmAgentsHtml = '';
+    if (r.tmAndDAgents && r.tmAndDAgents.length) {
+      tmAgentsHtml = '<div class="sec"><div class="sec-lbl">TM&amp;D Daily Forecasting Agents (' + r.tmAndDAgents.length + ')</div>' +
+        r.tmAndDAgents.map(function (ag) {
+          return '<div style="padding:10px 12px;border-radius:10px;background:var(--surface-sunk);border-left:3px solid var(--tc);margin-bottom:8px;">' +
+            '<div style="display:flex;justify-content:space-between;font:600 11px var(--font-mono);"><span>⚡ ' + ag.name + '</span><span style="color:var(--ti);">' + ag.mode + '</span></div>' +
+            '<div style="font-size:13px;color:var(--text-muted);margin-top:4px;">' + ag.desc + '</div>' +
+          '</div>';
+        }).join('') + '</div>';
+    }
+
     body.innerHTML =
       '<span class="badge-pill">' + r.pillarNum + ' · ' + r.pillarTitle + ' / ' + r.subprocess + '</span>' +
       '<h2>' + r.persona + '</h2>' +
@@ -351,6 +373,7 @@
         '<div style="font:600 16px var(--font-display);color:var(--ti);">⚡ ' + r.agent + ' <span class="badge-pill" style="margin-left:8px;">' + r.buildMode + '</span></div>' +
         '<div style="margin-top:6px;font-size:13.5px;"><b>Measurable Value:</b> ' + r.impact + '</div>' +
       '</div>' +
+      tmAgentsHtml +
       journeyHtml +
       '<div class="sec"><div class="sec-lbl">Enterprise Grounding Sources</div><div class="chip-row">' +
         r.sources.map(function (s) { return '<span class="chip">' + s + '</span>'; }).join('') +
