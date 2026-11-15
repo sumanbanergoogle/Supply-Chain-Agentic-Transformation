@@ -5,6 +5,13 @@
       document.documentElement.classList.add('theme-dark');
       document.documentElement.classList.remove('theme-light');
     }
+    var cs = document.currentScript && document.currentScript.src;
+    if (cs && !document.querySelector('script[data-cpg-transitions]')) {
+      var s = document.createElement('script');
+      s.src = cs.replace(/deck_nav\.js.*$/, 'ios_transitions.js?v=1');
+      s.setAttribute('data-cpg-transitions', '1');
+      document.head.appendChild(s);
+    }
   } catch (e) {}
 })();
 
