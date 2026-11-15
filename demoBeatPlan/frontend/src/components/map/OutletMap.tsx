@@ -345,9 +345,9 @@ export const OutletMap: React.FC<OutletMapProps> = ({
         </button>
       </div>
 
-      {/* Bottom-Right Synthetic Data Label (matches WellMap.tsx) */}
-      <div className="absolute bottom-4 right-4 z-[400] bg-amber-950/80 border border-amber-700/60 text-amber-200 px-2 py-1 rounded text-[10px] font-mono shadow-xl">
-        ⚠ Synthetic ITC TM&amp;D dataset (demo)
+      {/* Bottom-Right Pilot Scope Label */}
+      <div className="absolute bottom-4 right-4 z-[400] bg-black/55 backdrop-blur-sm border border-white/10 text-white/75 px-2.5 py-1 rounded-md text-[10px] font-mono shadow-xl">
+        Simulated South Metro Pilot · {outlets.length || 112} Sample Outlets
       </div>
 
       {/* Bottom-Left Collapsible See-Through Health & Overlay Legend (matches WellMap.tsx) */}

@@ -96,10 +96,13 @@ export const Header: React.FC<HeaderProps> = ({
           {!compact && (
             <>
               <span className="text-border">|</span>
-              <span className="px-2 text-rose-300">
-                Leakage: <strong>₹{(kpis.monthly_leakage_inr / 100000).toFixed(1)}L</strong>
+              <span
+                className="px-2 text-rose-300"
+                title={`Monthly revenue leakage across ${kpis.total_outlets} South Metro pilot outlets`}
+              >
+                Leakage: <strong>₹{(kpis.monthly_leakage_inr / 100000).toFixed(1)}L/mo</strong>
               </span>
-              <span className="px-1.5 text-sky-300">
+              <span className="px-1.5 text-sky-300" title="Average Lines Sold Per Call across active pilot outlets">
                 LSPC: <strong>{kpis.avg_lspc}</strong>
               </span>
             </>

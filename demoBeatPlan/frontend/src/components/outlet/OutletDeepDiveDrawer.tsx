@@ -148,6 +148,9 @@ export const OutletDeepDiveDrawer: React.FC<{
                 <strong className="text-purple-300">{outlet.qc_dark_store_dist_km} km</strong> away (GNN Spillover:{' '}
                 {Math.round(outlet.gnn_spillover_risk * 100)}%).
               </p>
+              <div className="pt-2 border-t border-border/60 text-[10px] font-mono text-textMuted">
+                Data Sync: WD DMS Secondary Billing · SFA GPS Check-ins · eB2B Order Signals · 600m Q-Com Graph · Daily Refresh
+              </div>
             </div>
           </>
         )}

@@ -197,6 +197,7 @@ export interface BeatSimulation {
   salesman_name: string;
   target_transfer_beat: string;
   target_transfer_salesman: string;
+  capacity_source?: string;
   before: {
     distance_km: number;
     avg_visit_duration_min: number;

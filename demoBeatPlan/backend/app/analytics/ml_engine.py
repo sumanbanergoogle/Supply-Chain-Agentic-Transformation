@@ -430,6 +430,12 @@ class BeatAnalyticsEngine:
         avg_lspc_gap = float((beat_outlets["target_lspc"] - beat_outlets["current_lspc"]).clip(lower=0.0).mean()) if outlets_list else 1.5
         lspc_uplift = round(max(0.6, min(2.2, avg_lspc_gap * 0.55)), 1)
 
+        adj_after_load = round(min(1.02, float(adj_beat["beat_load_index"]) + 0.08), 2)
+        capacity_note = (
+            f"Reallocated from adjacent lower-load beat {adj_beat['beat_id']} "
+            f"(Load {adj_beat['beat_load_index']} → {adj_after_load}) — zero extra DS headcount"
+        )
+
         return {
             "beat_id": beat["beat_id"],
             "city": beat["city"],
@@ -437,6 +443,7 @@ class BeatAnalyticsEngine:
             "salesman_name": beat["salesman_name"],
             "target_transfer_beat": f"{beat['beat_id']}B (Balanced Split via {adj_beat['beat_id']})" if norm == "BLR-B04" else adj_beat["beat_id"],
             "target_transfer_salesman": adj_beat["salesman_name"],
+            "capacity_source": capacity_note,
             "before": {
                 "distance_km": old_dist,
                 "avg_visit_duration_min": old_visit,

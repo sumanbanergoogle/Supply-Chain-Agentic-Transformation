@@ -262,7 +262,7 @@ async def run_resilient_live(
                         "status": "fallback",
                         "model": "text",
                         "memory": False,
-                        "message": f"Vertex Live ADC unavailable ({type(e).__name__}) — using tool-grounded text & browser speech mode.",
+                        "message": f"Live voice audio unavailable ({type(e).__name__}) — using tool-grounded text & browser speech mode.",
                     },
                 )
                 await run_fallback_session(websocket, inbound, state)
@@ -409,7 +409,7 @@ async def run_fallback_session(websocket: WebSocket, inbound: asyncio.Queue, sta
                     websocket,
                     {
                         "type": "error",
-                        "message": "Vertex Gemini Live ADC unavailable — raw PCM audio cannot be streamed; use browser Speech Recognition or type your query.",
+                        "message": "Direct PCM audio stream unavailable — use browser voice input or type your query.",
                     },
                 )
             continue

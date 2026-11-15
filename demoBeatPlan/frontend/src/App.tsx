@@ -41,6 +41,7 @@ export function App() {
   const [selectedBeatId, setSelectedBeatId] = useState<string>('BLR-B04');
   const [simulatedBeat, setSimulatedBeat] = useState<BeatSimulation | null>(null);
   const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [walkthroughOpen, setWalkthroughOpen] = useState(false);
   const [middleExpanded, setMiddleExpanded] = useState(false);
   const [mapFullscreen, setMapFullscreen] = useState(false);
   const [agentDocked, setAgentDocked] = useState(true);
@@ -241,26 +242,39 @@ export function App() {
                   {viewBtn('city_health', 'Health & priority')}
                   {viewBtn('beat_diagnosis', 'Beat 4/7 Diagnosis')}
                   {viewBtn('beat_simulator', 'Beat Simulator')}
+                  <span className="text-white/15 px-0.5">|</span>
+                  <button
+                    type="button"
+                    onClick={() => setWalkthroughOpen((v) => !v)}
+                    className={`px-2 py-1 rounded transition-colors flex items-center gap-1 font-mono text-[10px] ${
+                      walkthroughOpen
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                        : 'text-white/65 hover:text-white hover:bg-white/10'
+                    }`}
+                    title="Toggle guided executive walkthrough prompts"
+                  >
+                    <Play className="w-2.5 h-2.5" />
+                    <span>Walkthrough {walkthroughOpen ? '▾' : '▸'}</span>
+                  </button>
                 </div>
-                <div className="pointer-events-auto flex items-center gap-1 p-1 rounded-lg bg-black/55 backdrop-blur-sm border border-emerald-500/30 shadow-lg text-[10px] font-mono flex-wrap">
-                  <span className="px-1.5 text-emerald-300 font-bold flex items-center gap-1">
-                    <Play className="w-2.5 h-2.5" /> 5-Min Storyboard:
-                  </span>
-                  {STORYBOARD_STEPS.map((s) => (
-                    <button
-                      key={s.step}
-                      type="button"
-                      onClick={() => triggerStoryboardStep(s.step, s.prompt)}
-                      className={`px-2 py-0.5 rounded transition-colors ${
-                        activeStep === s.step
-                          ? 'bg-emerald-500 text-[#0d1117] font-bold'
-                          : 'text-white/80 hover:text-white hover:bg-white/10'
-                      }`}
-                    >
-                      {s.label}
-                    </button>
-                  ))}
-                </div>
+                {walkthroughOpen && (
+                  <div className="pointer-events-auto flex items-center gap-1 p-1 rounded-lg bg-black/60 backdrop-blur-sm border border-emerald-500/30 shadow-lg text-[10px] font-mono flex-wrap">
+                    {STORYBOARD_STEPS.map((s) => (
+                      <button
+                        key={s.step}
+                        type="button"
+                        onClick={() => triggerStoryboardStep(s.step, s.prompt)}
+                        className={`px-2 py-0.5 rounded transition-colors ${
+                          activeStep === s.step
+                            ? 'bg-emerald-500 text-[#0d1117] font-bold'
+                            : 'text-white/80 hover:text-white hover:bg-white/10'
+                        }`}
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </section>

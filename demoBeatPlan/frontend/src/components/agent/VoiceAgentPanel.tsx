@@ -176,7 +176,7 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                 id: `sys-fb-${Date.now()}`,
                 sender: 'agent',
                 timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                text: info?.message || 'Vertex Live audio unavailable — browser voice & tool-grounded copilot active.',
+                text: info?.message || 'Live voice audio unavailable — browser voice & tool-grounded copilot active.',
                 live: true,
               },
             ];
@@ -613,7 +613,7 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowKeyBox((v) => !v)}
-                  title="Connect real-time Gemini Live API key (when Vertex ADC is expired)"
+                  title="Configure Gemini Live API connection key"
                   className={`flex items-center gap-1 text-[10px] font-mono px-1.5 py-0.5 rounded border ${
                     activeApiKey
                       ? 'border-emerald-600/60 text-emerald-300 bg-emerald-950/40'
@@ -621,7 +621,7 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                   }`}
                 >
                   <KeyRound className="w-3 h-3" />
-                  <span>{activeApiKey ? 'Key Set' : 'Live Key'}</span>
+                  <span>{activeApiKey ? 'Key Set' : 'API Key'}</span>
                 </button>
               </>
             )}
@@ -643,8 +643,7 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
         {showKeyBox && (
           <div className="mt-2 p-2 rounded-lg bg-[#0d1117] border border-border space-y-1.5 text-[11px] font-sans">
             <div className="text-textMuted">
-              Vertex ADC is expired on this Cloudtop. Paste a session-only Gemini API key (memory only) or run{' '}
-              <code className="text-amber-300">gcloud auth application-default login</code> and click Retry:
+              Gemini Live API Connection — paste a session-only API key (held in browser memory only) and click Connect:
             </div>
             <div className="flex items-center gap-1.5">
               <input

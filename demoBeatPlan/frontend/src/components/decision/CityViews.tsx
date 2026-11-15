@@ -447,6 +447,11 @@ export const BeatSimulatorView: React.FC<{
               <div className="text-xs text-emerald-300 font-mono">
                 Travel time -{sim.after.travel_time_reduction_pct}% · {sim.after.finish_time}
               </div>
+              {sim.capacity_source && (
+                <div className="text-[11px] font-sans text-emerald-200/85 bg-emerald-950/35 border border-emerald-800/40 rounded px-2 py-1">
+                  {sim.capacity_source}
+                </div>
+              )}
               <div className="grid grid-cols-3 gap-2 pt-2 font-mono text-xs">
                 <div>
                   <div className="text-textMuted text-[10px]">Reactivated</div>
