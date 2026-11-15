@@ -106,7 +106,10 @@ window.renderPillarPage = function (pillarId, prevUrl, nextUrl) {
                 '<h3 style="margin:0 0 6px;font:600 17px/1.25 var(--font-display);">' + item.persona + '</h3>' +
                 '<p style="margin:0 0 14px;font-size:13.5px;line-height:1.45;color:var(--text-muted);">' + item.mandate + '</p>' +
                 '<div style="padding:11px 12px;border-radius:10px;background:color-mix(in srgb, var(--tc) 8%, var(--surface-sunk));border:1px solid color-mix(in srgb, var(--tc) 25%, transparent);margin-bottom:10px;">' +
-                  '<div style="font:600 13.5px var(--font-display);color:var(--ti);">⚡ ' + item.agent + '</div>' +
+                  '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">' +
+                    '<div style="font:600 13.5px var(--font-display);color:var(--ti);">⚡ ' + item.agent + '</div>' +
+                    ((function(){ var lr=(window.SC_LIVE_AGENT_MAP||{})[(item.agent||'').toLowerCase()]; return lr ? '<span style="display:inline-flex;gap:8px;"><a href="../pages/demo_stage.html?agent='+encodeURIComponent(lr.id)+'" style="font:600 11px var(--font-mono);color:var(--text-muted);text-decoration:none;">&#9654; Demo</a><a href="'+lr.geUrl+'" target="_blank" rel="noopener noreferrer" style="font:600 11px var(--font-mono);color:var(--blue-ink);text-decoration:none;">Live GE &#8599;</a></span>' : ''; })()) +
+                  '</div>' +
                   '<div style="font:500 12.5px var(--font-body);margin-top:4px;"><b>Impact:</b> ' + item.impact + '</div>' +
                 '</div>' +
                 '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
