@@ -160,6 +160,11 @@
     function initials(name) {
       return (name || 'SC').split(/[\s\/]+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0].toUpperCase(); }).join('');
     }
+    function toList(v) {
+      if (Array.isArray(v)) return v;
+      if (typeof v === 'string') return v.split(/\s*[·|]\s*/).map(function (s) { return s.trim(); }).filter(Boolean);
+      return [];
+    }
 
     function paintRoster() {
       var dEl = document.getElementById('domainChips');
@@ -242,7 +247,7 @@
               '<h1 class="role-h1">' + p.persona + '</h1>' +
               '<div class="human-sub">' + p.personName + ' <span>· ' + p.setting + '</span></div>' +
               '<p class="what-desc">' + p.whatTheyDo + '</p>' +
-              '<div class="sys-chips">' + (p.systemsTouched || []).map(function (s) { return '<span class="sys-chip">⚡ ' + s + '</span>'; }).join('') + '</div>' +
+              '<div class="sys-chips">' + toList(p.systemsTouched).map(function (s) { return '<span class="sys-chip">⚡ ' + s + '</span>'; }).join('') + '</div>' +
             '</div>' +
           '</div>' +
           '<div class="kpi-stack">' +
@@ -252,7 +257,7 @@
           '</div>' +
         '</section>' +
         '<div class="flow-bar" style="--pc:' + (p.pillarColor || '#3186FF') + ';">' +
-          '<div class="flow-step"><div class="flow-num">01</div><div><b>Live Signals</b><span>' + (p.systemsTouched || []).slice(0, 3).join(' · ') + '</span></div></div>' +
+          '<div class="flow-step"><div class="flow-num">01</div><div><b>Live Signals</b><span>' + toList(p.systemsTouched).slice(0, 3).join(' · ') + '</span></div></div>' +
           '<div class="flow-arr">···</div>' +
           '<div class="flow-step"><div class="flow-num">02</div><div><b>' + p.suiteNames.length + ' Specialized Agents Coordinate</b><span>Sense exceptions, run deterministic math &amp; prepare drafts</span></div></div>' +
           '<div class="flow-arr">···</div>' +
