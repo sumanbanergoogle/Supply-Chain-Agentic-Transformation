@@ -173,7 +173,7 @@
         PILLARS.map(function (p) {
           return '<button class="fchip ' + (activeDomain === p.id ? 'is-on' : '') + '" data-d="' + p.id + '">' + p.num + ' · ' + p.title + '</button>';
         }).join('') +
-        '<input class="fsearch" id="pSearch" type="search" placeholder="Filter role, leader, or agent..." value="' + searchQ.replace(/"/g, '&quot;') + '">';
+        '<input class="fsearch" id="pSearch" type="search" placeholder="Filter persona or agent..." value="' + searchQ.replace(/"/g, '&quot;') + '">';
 
       dEl.querySelectorAll('.fchip').forEach(function (b) {
         b.addEventListener('click', function () { activeDomain = b.dataset.d; paintRoster(); });
@@ -188,14 +188,14 @@
       var list = allIds.map(function (id) { return PDETAILS[id]; }).filter(function (p) {
         if (activeDomain !== 'all' && p.pillarId !== activeDomain) return false;
         if (!q) return true;
-        return (p.id + ' ' + p.persona + ' ' + p.personName + ' ' + p.suiteNames.join(' ')).toLowerCase().indexOf(q) !== -1;
+        return (p.id + ' ' + p.persona + ' ' + p.suiteNames.join(' ')).toLowerCase().indexOf(q) !== -1;
       });
       var sEl = document.getElementById('personaStrip');
       sEl.innerHTML = list.map(function (p) {
         return '<button class="pchip ' + (p.id === reqId ? 'is-on' : '') + '" data-id="' + p.id + '">' +
           '<span class="pchip-av" style="background:' + (p.pillarColor || '#3186FF') + '">' + initials(p.persona) + '</span>' +
           '<span>' + p.persona + '</span>' +
-          '<span class="pchip-sub">· ' + p.personName + '</span>' +
+          '<span class="pchip-sub">· ' + p.id + '</span>' +
         '</button>';
       }).join('');
       sEl.querySelectorAll('.pchip').forEach(function (b) {
@@ -244,7 +244,7 @@
                 '<span class="mpill">' + p.subprocess + '</span>' +
               '</div>' +
               '<h1 class="role-h1">' + p.persona + '</h1>' +
-              '<div class="human-sub">' + p.personName + ' <span>· ' + p.setting + '</span></div>' +
+              '<div class="human-sub"><span>' + p.setting + '</span></div>' +
               '<p class="what-desc">' + p.whatTheyDo + '</p>' +
               '<div class="sys-chips">' + toList(p.systemsTouched).map(function (s) { return '<span class="sys-chip">⚡ ' + s + '</span>'; }).join('') + '</div>' +
             '</div>' +
@@ -260,9 +260,9 @@
           '<div class="flow-arr">···</div>' +
           '<div class="flow-step"><div class="flow-num">02</div><div><b>' + p.suiteNames.length + ' Specialized Agents Coordinate</b><span>Sense exceptions, run deterministic math &amp; prepare drafts</span></div></div>' +
           '<div class="flow-arr">···</div>' +
-          '<div class="flow-step"><div class="flow-num">03</div><div><b>' + p.personName.split(' ')[0] + ' Approves in 1 Click</b><span>' + p.notOwned + '</span></div></div>' +
+          '<div class="flow-step"><div class="flow-num">03</div><div><b>' + p.persona + ' Approves in 1 Click</b><span>' + p.notOwned + '</span></div></div>' +
         '</div>' +
-        '<div class="sec-head"><h2>' + p.personName.split(' ')[0] + '\'s Agentic Suite (' + p.suiteNames.length + ' Agents)</h2><span style="font:600 12px var(--mono);color:var(--text-muted);">Click any agent card to open full architecture &amp; live links</span></div>' +
+        '<div class="sec-head"><h2>Agentic Suite (' + p.suiteNames.length + ' Agents)</h2><span style="font:600 12px var(--mono);color:var(--text-muted);">Click any agent card to open full architecture &amp; live links</span></div>' +
         '<div class="suite-grid">' + cardsHtml + '</div>';
     }
 
