@@ -291,6 +291,7 @@
       p.subprocesses.forEach(function (sub) {
         sub.items.forEach(function (item) {
           allRows.push(Object.assign({}, item, {
+            rowNum: allRows.length + 1,
             pillarId: p.id, pillarTitle: p.title, pillarNum: p.num,
             cssClass: p.cssClass, subprocess: sub.name
           }));
@@ -312,19 +313,22 @@
   function buildCells(r) {
     var prioCls = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'own-agentic prio-first' : 'own-agentic prio-next';
     var prioLbl = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'Agent Prepares (Build First)' : 'Agent Prepares (Build Next)';
+    var rowTag = 'A' + (r.rowNum < 10 ? '0' + r.rowNum : r.rowNum);
     if (r.tmAndDAgents && r.tmAndDAgents.length) {
       return r.tmAndDAgents.map(function (ag, idx) {
         var c = 'own-agentic' + (ag.prio ? ' ' + ag.prio : '');
         var lbl = ag.prio === 'prio-first' ? 'Agent Prepares (Build First)' : (ag.prio === 'prio-next' ? 'Agent Prepares (Build Next)' : 'Routine Agentic');
+        var wNum = idx + 1;
+        var cellCode = rowTag + 'W' + (wNum < 10 ? '0' + wNum : wNum);
         return {
-          code: 'A0' + (idx + 1), cls: c, owner: lbl,
+          code: cellCode, cls: c, owner: lbl,
           title: ag.name, today: ag.dailyTask || r.mandate, desc: ag.desc || ag.dailyTask,
           impact: ag.impact || r.impact, sources: ag.sources || r.sources, prompt: ag.promptHint || r.promptHint
         };
       });
     }
     return [
-      { code: 'A01', cls: prioCls, owner: prioLbl, title: r.agent, today: r.mandate, desc: r.promptHint, impact: r.impact, sources: r.sources, prompt: r.promptHint }
+      { code: rowTag + 'W01', cls: prioCls, owner: prioLbl, title: r.agent, today: r.mandate, desc: r.promptHint, impact: r.impact, sources: r.sources, prompt: r.promptHint }
     ];
   }
 
@@ -343,7 +347,7 @@
     var srcs = (cell && cell.sources) ? cell.sources : r.sources;
     var prmt = (cell && cell.prompt) ? cell.prompt : r.promptHint;
     var imp  = (cell && cell.impact) ? cell.impact : r.impact;
-    var cCode = cell ? cell.code : 'A01';
+    var cCode = cell ? cell.code : ('A' + (r.rowNum < 10 ? '0' + r.rowNum : r.rowNum) + 'W01');
     var cTitle = cell ? cell.title : r.agent;
     var todayText = (cell && cell.today) ? cell.today : r.mandate;
     var vulnText = (cell && cell.today && cell.today !== r.mandate)
@@ -365,7 +369,7 @@
         '<div class="d-block plug">' +
           '<div class="d-k">What the agent does</div>' +
           '<div class="d-agent">' + cTitle + '</div>' +
-          '<div class="d-regid">' + r.id + '-' + cCode + ' · agent registry id</div>' +
+          '<div class="d-regid">' + cCode + ' · agent registry id</div>' +
           '<div class="d-v muted">' + agentDesc + '</div>' +
         '</div>' +
         '<div class="d-block"><div class="d-k">Value impact</div><div class="d-v"><b>' + imp + '</b></div></div>' +
