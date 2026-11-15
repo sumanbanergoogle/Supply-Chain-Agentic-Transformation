@@ -129,6 +129,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Auto-generates branch-wise volume, mix, and realization bridges ahead of weekly TM&D commercial huddles.",
                   desc: "Builds variance bridges across branch volume, pack mix, and realization to spotlight commercial risks early.",
                   promptHint: "Summarize branch-level revenue vs volume variance drivers for the current month."
+                },
+                {
+                  name: "Regional Festive & Seasonality Calibrator",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Cuts festive stock-outs by 16%",
+                  sources: ["Regional Calendars", "DMS Secondary", "SAP IBP"],
+                  dailyTask: "Adjusts branch-level commercial plans for regional festivals, harvest cycles, and school reopening spikes.",
+                  desc: "Aligns regional commercial phasing with local festival calendars and branch secondary run-rates.",
+                  promptHint: "Calibrate next 6 weeks of branch commercial targets for regional festivals across East, West, North, and South."
+                },
+                {
+                  name: "WD Opening-to-Closing Stock Sanity Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Eliminates phantom channel inventory",
+                  sources: ["WD Closing Stock", "Primary Billing", "Secondary Sales"],
+                  dailyTask: "Audits distributor stock-in-trade norms to flag artificial quarter-end channel stuffing risks.",
+                  desc: "Monitors Wholesale Dealer inventory-days vs secondary depletion to keep commercial plans grounded.",
+                  promptHint: "Flag branches where WD days-on-hand grew >25% without matching secondary off-take."
                 }
               ]
             },
@@ -171,6 +191,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Measures early repeat-purchase velocity and sibling SKU cannibalization during the first 8 weeks post-launch.",
                   desc: "Tracks post-launch repeat rates and parent-SKU cannibalization to recalibrate rolling production plans.",
                   promptHint: "Compare actual Week 1-4 repeat velocity of new SKUs against historical lookalike curves."
+                },
+                {
+                  name: "Regional Pilot Store Velocity Monitor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "2x faster post-launch course correction",
+                  sources: ["MT POS", "Q-Comm Velocity", "Test Markets"],
+                  dailyTask: "Tracks daily repeat-rate and trial velocity in launch test cities against category benchmarks.",
+                  desc: "Monitors early test-market velocity to guide scale-up vs pack/price tweaks before national rollout.",
+                  promptHint: "Compare Week 1–3 repeat velocity in pilot cities against top-quartile category launches."
+                },
+                {
+                  name: "Competitive Pack & Claim Benchmark Gem",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Saves 4 hrs/week in launch prep",
+                  sources: ["Market Scans", "Shelf Audits", "Pack Specs"],
+                  dailyTask: "Synthesizes competitor pack-price ladders, claims, and gram-weight shifts ahead of brand reviews.",
+                  desc: "Keeps brand teams updated on competitor SKU launches, price-point gaps, and packaging innovations.",
+                  promptHint: "Summarize recent competitor pack-price changes in our core biscuit and snack segments."
                 }
               ]
             }
@@ -218,6 +258,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Verifies outlet display photos from field force apps against contracted visibility and chiller-share norms.",
                   desc: "Uses multimodal vision on field rep outlet photos to score POSM, end-cap, and planogram execution.",
                   promptHint: "Audit submitted outlet display photos for contracted shelf share and flag non-compliant stores."
+                },
+                {
+                  name: "GT Slab Elasticity & Margin Guardrail Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+140 bps GT scheme net realization",
+                  sources: ["DMS Secondary", "Slab Elasticity", "Margin Tables"],
+                  dailyTask: "Tests proposed General Trade quantity-discount slabs against historical retailer uplift and net margin.",
+                  desc: "Prevents over-discounting on inelastic hero SKUs while targeting slabs toward high-elasticity packs.",
+                  promptHint: "Simulate margin impact of shifting 3% GT slab discount to combo-pack display incentives."
+                },
+                {
+                  name: "MT / Q-Comm Co-Op Ad & Visibility ROI Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "15% higher digital/retail media ROAS",
+                  sources: ["Q-Comm Ads", "MT POS", "Promo Spend"],
+                  dailyTask: "Correlates Blinkit/Zepto banner spends and MT end-cap fees with daily SKU off-take lift.",
+                  desc: "Measures incremental sales lift per rupee of Modern Trade and Quick Commerce visibility spend.",
+                  promptHint: "Rank Q-Comm and MT visibility investments by incremental margin ROI over the last 30 days."
                 }
               ]
             },
@@ -260,6 +320,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Tracks Terms of Trade (TOT) slab achievement, listing fees, and promo co-funding across top MT/Q-Comm banners.",
                   desc: "Monitors real-time TOT rebate accruals and promotional funding burn against annual JBP agreements.",
                   promptHint: "Summarize YTD JBP volume attainment and TOT rebate accrual status by key account."
+                },
+                {
+                  name: "Retailer Range & New-SKU Listing Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "30% faster key-account assortment rollout",
+                  sources: ["MT Assortment", "Store POS", "KAM Plan"],
+                  dailyTask: "Tracks store-level distribution build for newly listed SKUs across Modern Trade chains.",
+                  desc: "Identifies contracted MT stores that have not yet placed their initial PO for newly listed SKUs.",
+                  promptHint: "List contracted MT stores with zero POs for our newly launched SKUs over the last 14 days."
+                },
+                {
+                  name: "Short-Shelf-Life Rejection & Penalty Preventer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts MT gate rejections by 45%",
+                  sources: ["CFA Batch Age", "MT Min-Life", "ASN Portal"],
+                  dailyTask: "Verifies every allocated key-account lot meets the retailer's 65%–75% minimum remaining shelf-life rule.",
+                  desc: "Blocks non-compliant aged batches before dispatch to prevent costly MT DC gate rejections.",
+                  promptHint: "Audit today's open MT dispatches against each banner's minimum remaining shelf-life SLA."
                 }
               ]
             },
@@ -302,6 +382,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Reconciles open customer deductions and unredeemed scheme provisions to prevent quarter-end surprises.",
                   desc: "Continuously audits trade spend accruals against settled credit notes to surface invalid deductions.",
                   promptHint: "Rank open MT/WD trade deductions older than 30 days without matching scheme approval."
+                },
+                {
+                  name: "Distributor Credit-Limit & Overdue Early Warning",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Cuts blocked primary indents by 35%",
+                  sources: ["SAP AR", "WD Indents", "Collection Logs"],
+                  dailyTask: "Flags Wholesale Dealers approaching credit limits before morning primary billing waves run.",
+                  desc: "Coordinates proactive collections or temporary limit approvals so high-velocity WDs never miss dispatch.",
+                  promptHint: "List priority WDs with open indents today that will breach credit limits without collection clearance."
+                },
+                {
+                  name: "Secondary-to-Claim Ratio Anomaly Sentinel",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Prevents 1–2% trade claim over-payouts",
+                  sources: ["DMS Secondary", "Claim Portal", "Branch Norms"],
+                  dailyTask: "Compares each distributor's monthly scheme claim % against branch benchmarks and secondary sales.",
+                  desc: "Surfaces outlier claim ratios across territories for targeted trade finance verification.",
+                  promptHint: "Flag distributors whose scheme claim % of secondary sales exceeded branch norm by >300 bps."
                 }
               ]
             }
@@ -349,6 +449,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evaluates overtime shifts, inter-plant sourcing swaps, and priority SKU allocation trade-offs.",
                   desc: "Simulates cost and service impacts of alternate sourcing and overtime production plans during supply crunches.",
                   promptHint: "Compare overtime cost vs inter-region freight cost to close next month's capacity gap."
+                },
+                {
+                  name: "Co-Packer & Alternate Line Surge Allocator",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Protects 97%+ peak-season fill rate",
+                  sources: ["Plant RCCP", "Co-Packer Cap", "SAP IBP"],
+                  dailyTask: "Reallocates peak demand spikes between internal plants and regional co-packers weekly.",
+                  desc: "Balances internal line utilization with external tolling capacity to close regional supply gaps.",
+                  promptHint: "Allocate next month's 15% festive volume surge across plants and qualified co-packers."
+                },
+                {
+                  name: "Master Schedule Stability & Freeze Monitor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts costly mid-week schedule churn by 30%",
+                  sources: ["SAP MPS", "Demand Edits", "Changeover Log"],
+                  dailyTask: "Tracks late demand overrides inside the 2-week frozen production window and quantifies changeover loss.",
+                  desc: "Enforces MPS time-fence discipline while highlighting true high-margin exceptions.",
+                  promptHint: "Quantify changeover hours lost this week due to inside-fence demand changes."
                 }
               ]
             },
@@ -391,6 +511,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Highlights where excess safety stock can be trimmed without risking A-class SKU fill rates.",
                   desc: "Balances working capital targets against customer service SLAs across regions and product categories.",
                   promptHint: "Identify categories with >45 days of finished-goods cover alongside <95% fill rate elsewhere."
+                },
+                {
+                  name: "Network Risk & Plant Contingency Simulator",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "3x faster crisis response decisions",
+                  sources: ["Plant Network", "CFA Stock", "Lane Rates"],
+                  dailyTask: "Simulates alternate plant-to-CFA sourcing paths during monsoon floods, strikes, or line outages.",
+                  desc: "Provides instant cost-and-service contingency plans when major manufacturing or transit hubs are disrupted.",
+                  promptHint: "Simulate CFA coverage and freight cost if Plant West goes offline for 5 days."
+                },
+                {
+                  name: "Quarterly Board & Townhall KPI Narrative Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Saves 8 hrs per executive review",
+                  sources: ["OTIF", "Cost-to-Serve", "ESG Metrics"],
+                  dailyTask: "Synthesizes quarterly service, inventory, freight, and sustainability trends into board-ready talking points.",
+                  desc: "Turns multi-system supply chain KPIs into concise executive narratives with root-cause citations.",
+                  promptHint: "Draft a 6-slide executive supply chain KPI summary covering OTIF, working capital, and freight."
                 }
               ]
             },
@@ -433,6 +573,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Translates volume plan changes into revenue, COGS, and working capital deltas against Annual Operating Plan.",
                   desc: "Bridges physical supply plans to financial AOP metrics for monthly leadership reviews.",
                   promptHint: "Explain the COGS and working capital impact of this month's consensus plan update vs AOP."
+                },
+                {
+                  name: "Assumption Drift & Forecast Bias Auditor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Improves IBP forecast accountability",
+                  sources: ["IBP History", "Actual Sales", "Override Log"],
+                  dailyTask: "Tracks which commercial or supply assumptions caused the largest IBP plan vs actual misses.",
+                  desc: "Scores historical IBP assumption accuracy by function to eliminate recurring optimism bias.",
+                  promptHint: "Rank top 5 manual IBP overrides over the last 3 cycles by forecast accuracy impact."
+                },
+                {
+                  name: "Portfolio Profitability & Capacity Trade-Off Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "+100 bps mix-adjusted EBITDA",
+                  sources: ["SKU Margin", "Line Hours", "IBP Demand"],
+                  dailyTask: "Ranks constrained-line SKUs by contribution margin per machine-hour ahead of IBP reconciliation.",
+                  desc: "Guides IBP leaders to prioritize high-margin SKUs when manufacturing capacity is tight.",
+                  promptHint: "Rank SKUs on constrained Line 4 by contribution margin per machine-hour."
                 }
               ]
             }
@@ -480,6 +640,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Monitors LUP/multipack/family-pack mix shifts across urban MT and rural GT territories.",
                   desc: "Analyzes pack-size margin contribution and recommends optimal assortment mix by channel.",
                   promptHint: "Compare net contribution per ton across ₹5/₹10 GT packs vs large MT family packs."
+                },
+                {
+                  name: "Regional Outlet Penetration & White-Space Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+5% core SKU distribution reach",
+                  sources: ["DMS Outlet Map", "GT Beat Sales", "Category Index"],
+                  dailyTask: "Identifies high-potential GT and MT outlets buying peer SKUs that haven't stocked hero variants.",
+                  desc: "Pinpoints outlet-level assortment white spaces for TM&D field sales teams.",
+                  promptHint: "List top 500 GT outlets by category turnover missing our top-3 hero SKUs."
+                },
+                {
+                  name: "Promo-to-Baseline Cannibalization Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Protects core-SKU gross margin",
+                  sources: ["MT POS", "DMS Sales", "Promo Log"],
+                  dailyTask: "Measures how promotional multipacks cannibalize full-price core packs across channels.",
+                  desc: "Tracks net category incrementality vs intra-brand pack cannibalization.",
+                  promptHint: "Measure cannibalization of 100g core packs during last month's multipack promotion."
                 }
               ]
             },
@@ -522,6 +702,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Monitors old-SKU depletion at CFAs to time new-SKU first dispatches cleanly.",
                   desc: "Synchronizes phase-out depletion with phase-in production across depots to avoid dual-SKU clutter.",
                   promptHint: "List CFAs still holding >14 days of phase-out SKU inventory ahead of new-pack cutover."
+                },
+                {
+                  name: "Minimum-Order-Quantity (MOQ) Stranded-Stock Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Cuts vendor PM write-off claims by 30%",
+                  sources: ["Vendor MOQs", "Laminate Stock", "PIPO Dates"],
+                  dailyTask: "Flags packaging MOQs that exceed remaining phase-out volume before artwork cutover.",
+                  desc: "Prevents buyers from ordering full-MOQ printed films right before a planned pack transition.",
+                  promptHint: "Identify open printed-film POs whose MOQ exceeds remaining demand before PIPO cutover."
+                },
+                {
+                  name: "Regulatory & Statutory Cutover Compliance Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "100% on-time statutory label compliance",
+                  sources: ["Legal Gazette", "Artwork PLM", "Plant Runs"],
+                  dailyTask: "Tracks statutory MRP, weight, or nutrition label change deadlines across every active SKU.",
+                  desc: "Synchronizes legal compliance dates with packaging runs and depot depletion.",
+                  promptHint: "List SKUs with upcoming statutory label deadlines lacking approved print cylinders."
                 }
               ]
             },
@@ -564,6 +764,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Flags plant yield losses, overtime spikes, and commodity cost variances against standard SKU costs.",
                   desc: "Tracks manufacturing and material price variances daily to protect gross margin targets.",
                   promptHint: "Summarize top 5 SKUs with unfavorable BOM yield or conversion cost variance this week."
+                },
+                {
+                  name: "Small-Drop & Minimum-Order Freight Penalty Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Cuts uneconomic small-drop deliveries 25%",
+                  sources: ["WD Invoices", "Freight Bills", "Drop Size"],
+                  dailyTask: "Identifies customers and routes with chronic sub-optimal drop sizes driving high freight-to-sales.",
+                  desc: "Quantifies margin dilution from frequent small indents to guide minimum-order-value rules.",
+                  promptHint: "List distributors and MT DCs with average drop size <40% of truckload capacity."
+                },
+                {
+                  name: "Working Capital Cash-Conversion Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "3–5 days faster cash conversion",
+                  sources: ["DIO", "DPO", "DSO"],
+                  dailyTask: "Monitors inventory days, payables, and receivables across categories to spot cash traps.",
+                  desc: "Provides daily cash-conversion visibility linking supply chain inventory to finance targets.",
+                  promptHint: "Summarize DIO, DSO, and DPO trends by category and highlight biggest cash-release levers."
                 }
               ]
             }
@@ -632,6 +852,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Identifies pre-qualified backup suppliers and available capacity when primary vendors face delays.",
                   desc: "Accelerates emergency allocation shifts to approved secondary suppliers with minimal QA friction.",
                   promptHint: "List pre-approved backup vendors and lead times for our top 5 bottleneck raw materials."
+                },
+                {
+                  name: "Single-Source BOM Vulnerability Mapper",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "100% visibility into tier-1 chokepoints",
+                  sources: ["BOM Tree", "Vendor Share", "Revenue At Risk"],
+                  dailyTask: "Maps revenue-at-risk across every single-sourced flavor, enzyme, and specialty laminate.",
+                  desc: "Quantifies daily EBITDA exposure for single-sourced materials to prioritize qualification.",
+                  promptHint: "Rank top 15 single-sourced ingredients and films by weekly finished-goods revenue at risk."
+                },
+                {
+                  name: "Weather & Monsoon Freight Disruption Predictor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Pre-positions buffer stock 72h early",
+                  sources: ["Weather API", "Inbound Lanes", "Vendor Hubs"],
+                  dailyTask: "Correlates severe monsoon/cyclone forecasts with key vendor-to-plant inbound corridors.",
+                  desc: "Triggers early inbound dispatch pull-forwards before highway closures hit.",
+                  promptHint: "Flag inbound raw material shipments transiting flood-alert corridors over the next 72 hours."
                 }
               ]
             },
@@ -674,6 +914,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Compiles vendor OTIF, rejection PPM, and price variance scorecards ahead of supplier review meetings.",
                   desc: "Automates vendor performance scorecards from ERP receipt and quality inspection logs.",
                   promptHint: "Generate a QBR performance summary for our top 10 packaging suppliers."
+                },
+                {
+                  name: "Vendor Master Data & Bank-Change Fraud Guard",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-first",
+                  impact: "Zero payment-diversion fraud risk",
+                  sources: ["SAP Vendor Master", "GST/PAN", "Bank Audit"],
+                  dailyTask: "Audits daily vendor master bank-account and tax-ID edits for anomalies or unverified approvals.",
+                  desc: "Protects procurement operations from duplicate vendor creation and bank-detail tampering.",
+                  promptHint: "Audit all vendor bank-account or GSTIN changes submitted in the last 7 days."
+                },
+                {
+                  name: "Purchase Requisition (PR) Routing & SLA Copilot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "40% faster PR-to-PO cycle time",
+                  sources: ["SAP PRs", "Approval Matrix", "Catalogs"],
+                  dailyTask: "Checks incoming PRs for missing specs or cost-center codes and routes them to right buyers.",
+                  desc: "Eliminates PR bounce-backs and speeds up routine indirect and direct PO issuance.",
+                  promptHint: "List open PRs stuck >48 hours and identify missing specification or approval steps."
                 }
               ]
             },
@@ -716,6 +976,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Verifies RSPO and FSC chain-of-custody certificates against incoming raw material and carton lots.",
                   desc: "Validates sustainability certifications on every inbound batch to ensure audit readiness.",
                   promptHint: "Flag any inbound paperboard or palm-derived lots missing valid chain-of-custody certificates."
+                },
+                {
+                  name: "Plastic EPR Credit & Recycler Reconciliation Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "100% audit-ready EPR credit filings",
+                  sources: ["CPCB Portal", "Sales Weight", "Recycler Certs"],
+                  dailyTask: "Reconciles monthly sold plastic packaging tonnage against registered recycler EPR certificates.",
+                  desc: "Automates state-by-state plastic Extended Producer Responsibility compliance tracking.",
+                  promptHint: "Compare YTD plastic packaging put-on-market vs verified EPR recycling credits by category."
+                },
+                {
+                  name: "Supplier Decarbonization Roadmap Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Accelerates Scope 3 net-zero targets",
+                  sources: ["Vendor Targets", "RE100", "Emission Factors"],
+                  dailyTask: "Tracks top-50 supplier renewable-energy adoption and emission-intensity reductions quarterly.",
+                  desc: "Monitors supplier climate commitments against corporate Scope 3 reduction milestones.",
+                  promptHint: "Identify top 20 high-emission suppliers lacking verified renewable energy transition plans."
                 }
               ]
             }
@@ -763,6 +1043,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Compares domestic vs imported landed costs factoring FX movements, ocean freight, and duty changes.",
                   desc: "Tracks import parity economics daily to guide domestic vs import sourcing splits.",
                   promptHint: "Compare landed plant cost of imported vs domestic resin grades at today's FX and freight rates."
+                },
+                {
+                  name: "Crop & Harvest Yield Supply Outlook Agent",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Earlier agri-commodity buying signals",
+                  sources: ["Mandi Arrivals", "Monsoon Data", "Agri Reports"],
+                  dailyTask: "Synthesizes regional mandi arrivals, rainfall deficits, and crop acreage for wheat, sugar, and edible oils.",
+                  desc: "Turns agricultural supply signals into actionable forward-buying windows.",
+                  promptHint: "Summarize wheat and palm oil harvest arrival trends and 60-day price outlook."
+                },
+                {
+                  name: "Make-vs-Buy & Tolling Margin Analyzer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "1.5% lower semi-finished cost",
+                  sources: ["Commodity Spot", "Conversion Cost", "Vendor Quotes"],
+                  dailyTask: "Compares buying refined/processed ingredients vs raw procurement plus external tolling.",
+                  desc: "Evaluates processing spreads daily to optimize raw-vs-processed sourcing mix.",
+                  promptHint: "Compare spot cost of refined oil vs crude oil + external refining tolling."
                 }
               ]
             },
@@ -805,6 +1105,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Checks whether supplier invoice prices automatically stepped down when underlying resin or paper indices fell.",
                   desc: "Audits formula-based supplier contracts to ensure timely downward price resets.",
                   promptHint: "Identify active formula contracts overdue for a quarterly index price downward adjustment."
+                },
+                {
+                  name: "Packaging Conversion Cost & Tooling Estimator",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "5–8% savings on custom molds & dies",
+                  sources: ["Tooling Specs", "Machine Rates", "Vendor Quotes"],
+                  dailyTask: "Deconstructs injection-molding, blow-molding, and print-cylinder quotes into cycle time and resin cost.",
+                  desc: "Provides clean engineering should-cost baselines before tooling PO negotiations.",
+                  promptHint: "Benchmark vendor cylinder and mold amortization quotes against industry cycle-time norms."
+                },
+                {
+                  name: "Regional Vendor Consolidation & Freight Bundler",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "4% lower inbound packaging freight",
+                  sources: ["Plant Locations", "Vendor Hubs", "Inbound Spend"],
+                  dailyTask: "Identifies opportunities to source cartons and films from vendors closer to regional plants.",
+                  desc: "Balances unit packaging price against inbound freight distance across plants.",
+                  promptHint: "Identify carton SKUs currently shipped >500 km that can be localized near regional plants."
                 }
               ]
             },
@@ -847,6 +1167,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Identifies SKUs where carton GSM or bottle gram-weight can be reduced without transit damage.",
                   desc: "Models packaging weight reductions against transit damage rates and statutory EPR fee slabs.",
                   promptHint: "Rank top 10 high-volume SKUs by potential resin/corrugate light-weighting savings."
+                },
+                {
+                  name: "Shelf-Life Extension & Moisture Barrier Advisor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+30 days shelf life in humid zones",
+                  sources: ["Lab WVTR", "Monsoon Claims", "Film Specs"],
+                  dailyTask: "Correlates regional humidity damage claims with laminate barrier specs to recommend targeted upgrades.",
+                  desc: "Matches packaging barrier grades to regional climate zones instead of over-specifying nationally.",
+                  promptHint: "Identify coastal/monsoon territories with elevated sogginess claims needing higher WVTR films."
+                },
+                {
+                  name: "Case-Pack & Pallet Ti-Hi Cube Optimizer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "6–9% more cases per FTL truck",
+                  sources: ["Carton Dims", "Pallet Ti-Hi", "Truck Cube"],
+                  dailyTask: "Simulates secondary carton dimension tweaks to maximize pallet layer density and truck cube.",
+                  desc: "Reduces primary freight cost per unit by eliminating wasted air in shipper cartons and pallets.",
+                  promptHint: "Simulate shipper dimension adjustments for top 10 SKUs to improve 32ft FTL cube fill."
                 }
               ]
             }
@@ -894,6 +1234,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Flags non-catalog PRs/POs issued above contracted rate cards or to non-preferred vendors.",
                   desc: "Audits daily purchase orders to redirect off-contract spend back to preferred agreements.",
                   promptHint: "Summarize this week's non-catalog POs that exceeded contracted unit rates."
+                },
+                {
+                  name: "Contract Renewal & Auto-Escalation Sentinel",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Zero unwanted auto-renewals",
+                  sources: ["CLM Repository", "Expiry Dates", "CPI Clauses"],
+                  dailyTask: "Alerts sourcing leads 90 days before supplier contract expirations or automatic price-escalation dates.",
+                  desc: "Prevents silent contract rollovers and gives category teams time to re-tender.",
+                  promptHint: "List supplier contracts expiring or triggering CPI escalation within the next 90 days."
+                },
+                {
+                  name: "Payment Terms & Early-Pay Discount Optimizer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Improves DPO & treasury yield",
+                  sources: ["AP Terms", "Treasury Rate", "Vendor Invoices"],
+                  dailyTask: "Flags inconsistent payment terms across the same vendor and evaluates dynamic discounting offers.",
+                  desc: "Harmonizes vendor payment terms and captures risk-free early-payment discounts where accretive.",
+                  promptHint: "Find vendors billed on multiple different payment terms across plants."
                 }
               ]
             },
@@ -936,6 +1296,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Sends automated confirmation nudges for unacknowledged POs and overdue ASNs.",
                   desc: "Automates routine vendor expediting communications and updates ERP delivery dates.",
                   promptHint: "Draft concise expediting follow-ups for POs due within 72 hours missing ASN confirmation."
+                },
+                {
+                  name: "Open-PO Aging & Ghost-Order Cleaner",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Cleaner MRP & accurate ATP",
+                  sources: ["SAP ME2N", "GRN Logs", "Open POs"],
+                  dailyTask: "Identifies stale partially-delivered POs that distort MRP supply signals and asks buyers to close them.",
+                  desc: "Keeps ERP open-order books clean so planners don't rely on phantom inbound stock.",
+                  promptHint: "List open POs past delivery date by >30 days with <10% balance remaining to close."
+                },
+                {
+                  name: "Import Customs & Port Clearance Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts port demurrage by 40%",
+                  sources: ["CHA Feeds", "Bill of Entry", "Container GPS"],
+                  dailyTask: "Tracks Bill of Entry filing, customs exam holds, and container free-time expiry at ports.",
+                  desc: "Coordinates customs brokers and transporters to clear imported inputs before demurrage kicks in.",
+                  promptHint: "Flag imported containers within 48 hours of port free-time expiry."
                 }
               ]
             },
@@ -978,6 +1358,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Scans incoming vendor invoices for near-duplicate amounts/dates and missing GST e-invoice matches.",
                   desc: "Prevents duplicate payments and protects input tax credit compliance before payment runs.",
                   promptHint: "Flag invoices in the pending payment run with missing GST match or potential duplicate numbers."
+                },
+                {
+                  name: "GR/IR Clearing & Month-End Accrual Helper",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "3x faster month-end AP close",
+                  sources: ["SAP GR/IR", "Open Receipts", "Unbilled POs"],
+                  dailyTask: "Reconciles aged Goods Receipt / Invoice Receipt balances ahead of monthly financial close.",
+                  desc: "Surfaces unbilled receipts and unreceived invoices so finance closes cleanly on Day 2.",
+                  promptHint: "Summarize aged GR/IR balances >60 days requiring write-off or vendor invoice follow-up."
+                },
+                {
+                  name: "Vendor Payment-Status Self-Service Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "70% fewer vendor inquiry emails",
+                  sources: ["AP Ledger", "Payment Run", "Vendor Portal"],
+                  dailyTask: "Answers supplier invoice-status and TDS/withholding queries automatically with UTR/payment dates.",
+                  desc: "Eliminates routine AP helpdesk tickets from suppliers checking payment status.",
+                  promptHint: "Draft status replies for today's vendor payment inquiries using live SAP clearing dates."
                 }
               ]
             }
@@ -1046,6 +1446,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Verifies every scheduled batch has 100% QA-released ingredients and laminates before locking the shift plan.",
                   desc: "Prevents scheduling production runs that lack QA-cleared raw or packaging materials.",
                   promptHint: "Audit tomorrow's frozen production schedule for any BOM component still under QA hold."
+                },
+                {
+                  name: "Campaign Batch-Size & Shelf-Life Balancer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "10% fewer changeover & expiry losses",
+                  sources: ["SAP PP", "Demand Rate", "Shelf-Life"],
+                  dailyTask: "Optimizes campaign run lengths so long runs don't create aged stock for slow-moving SKUs.",
+                  desc: "Balances setup efficiency against finished-goods freshness across A/B/C velocity tiers.",
+                  promptHint: "Recommend optimal campaign batch sizes for C-class SKUs to avoid >30 days plant aging."
+                },
+                {
+                  name: "Allergen & CIP Washdown Sequencing Optimizer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Saves 4–6 line hours/week",
+                  sources: ["Allergen Matrix", "CIP Times", "Run Queue"],
+                  dailyTask: "Sequences non-allergen to allergen runs (e.g., plain to nut/dairy) to cut full CIP washdowns.",
+                  desc: "Minimizes wet-clean changeover downtime while upholding strict food allergen protocols.",
+                  promptHint: "Sequence this week's 18 SKU runs on Line 2 to minimize full allergen CIP washdowns."
                 }
               ]
             },
@@ -1088,6 +1508,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Alerts floor leads when wrapper rejects, seal defects, or micro-stoppages trend above shift baseline.",
                   desc: "Detects subtle line speed degradation and packaging scrap spikes during live runs.",
                   promptHint: "Highlight packaging lines showing >2% film waste or elevated micro-stops in the last 4 hours."
+                },
+                {
+                  name: "Emergency Maintenance Dispatch & Spares Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "20% faster Mean Time To Repair",
+                  sources: ["CMMS", "Spares Store", "Fault Codes"],
+                  dailyTask: "Looks up machine fault codes, past repair fixes, and spare-part bin locations the moment a line stops.",
+                  desc: "Equips shift technicians with instant troubleshooting history and spares availability.",
+                  promptHint: "Pull last 3 repair logs and spare seal bin locations for Wrapper #4 fault code E-112."
+                },
+                {
+                  name: "WIP Hold & Rework Routing Advisor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts perishable WIP scrap by 25%",
+                  sources: ["WIP Sensors", "Line Status", "QA Rules"],
+                  dailyTask: "Calculates remaining safe hold-time for dough/batter/mix WIP during unplanned stops and routes rework.",
+                  desc: "Prevents mid-process food waste by redirecting stranded WIP to alternate lines before spoilage.",
+                  promptHint: "Recommend alternate packaging lines for 800 kg of stranded WIP before 45-min hold limit."
                 }
               ]
             },
@@ -1130,6 +1570,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Tracks daily cases produced per labor-hour and utility intensity across all plant shifts.",
                   desc: "Surfaces shift-level conversion cost variances and labor productivity gaps daily.",
                   promptHint: "Compare yesterday's cases-per-labor-hour and energy intensity across all active lines."
+                },
+                {
+                  name: "Safety Near-Miss & Shift Walk Audit Copilot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "100% timely safety hazard closure",
+                  sources: ["EHS Logs", "Shift Photos", "LOTO Checklist"],
+                  dailyTask: "Logs voice/photo near-miss observations from floor walks and tracks corrective action closure.",
+                  desc: "Simplifies shop-floor EHS reporting and ensures lockout/tagout compliance.",
+                  promptHint: "Summarize open shop-floor safety observations and overdue LOTO audit items for today."
+                },
+                {
+                  name: "Contractor & Temp-Labor Attendance Reconciler",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Eliminates biometric billing leakage",
+                  sources: ["Biometric Gate", "Shift Roster", "Contractor Bills"],
+                  dailyTask: "Reconciles daily biometric gate punches against planned shift headcount and contractor invoices.",
+                  desc: "Automates shift labor attendance verification and flags unscheduled overtime.",
+                  promptHint: "Compare yesterday's biometric shift punches against approved line crew allocations."
                 }
               ]
             }
@@ -1177,6 +1637,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Checks planned boiler, chiller, and line maintenance shutdowns against upcoming promotional peaks.",
                   desc: "Aligns plant maintenance windows with low-demand weeks and pre-build inventory buffers.",
                   promptHint: "Flag any planned line shutdowns overlapping with next month's festive pre-build window."
+                },
+                {
+                  name: "Cold-Room & Plant FG Staging Overflow Radar",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Zero production halts from full docks",
+                  sources: ["Plant FG Store", "Primary Dispatch", "Line Output"],
+                  dailyTask: "Alerts ops directors when plant finished-goods bays approach 90% capacity due to delayed primary trucks.",
+                  desc: "Coordinates urgent primary dispatch pulls before plant storage congestion slows lines.",
+                  promptHint: "Flag plants where projected 48-hour output exceeds available FG staging + outbound truck plan."
+                },
+                {
+                  name: "Multi-Site Yield & Giveaway Benchmarker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "1% material yield recovery",
+                  sources: ["Plant Yields", "BOM Norms", "Scrap Logs"],
+                  dailyTask: "Compares actual vs standard ingredient and film yield across sister plants running identical SKUs.",
+                  desc: "Highlights best-in-class plant yields to replicate process settings across the network.",
+                  promptHint: "Compare laminate waste % and dough yield across all plants producing SKU Family X."
                 }
               ]
             },
@@ -1219,6 +1699,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Monitors co-packer daily production completions against scheduled CFA replenishment dates.",
                   desc: "Flags delayed CMO batches early so planners can adjust CFA allocations.",
                   promptHint: "List co-packer batches running >24 hours behind schedule for priority CFAs."
+                },
+                {
+                  name: "Co-Packer Quality Audit & Hygiene Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Consistent external QA standards",
+                  sources: ["QA Audits", "LIMS", "Consumer Claims"],
+                  dailyTask: "Tracks co-packer GMP audit scores, pest-control logs, and batch defect PPM alongside internal plants.",
+                  desc: "Ensures external manufacturing partners maintain identical food-safety and quality compliance.",
+                  promptHint: "Summarize quarterly GMP audit findings and open CAPAs across all active co-packers."
+                },
+                {
+                  name: "Co-Packer Tolling Invoice & Rate Auditor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Eliminates tolling over-billing",
+                  sources: ["Tolling Rates", "CMO GRNs", "AP Invoices"],
+                  dailyTask: "Verifies co-packer conversion-fee invoices against contracted slab rates and verified good output.",
+                  desc: "Audits tolling bills for slab-rate accuracy and deducts excess scrap beyond agreed tolerances.",
+                  promptHint: "Audit this month's co-packer tolling invoices against contracted slab rates and GRN output."
                 }
               ]
             },
@@ -1261,6 +1761,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Benchmarks kWh and steam per ton across similar lines to pinpoint inefficient compressors or ovens.",
                   desc: "Identifies utility waste across plants and quantifies energy-saving engineering upgrades.",
                   promptHint: "Rank plants by kWh per ton produced and highlight top energy-efficiency opportunities."
+                },
+                {
+                  name: "New-Line Commissioning & Ramp-Up Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "20% faster vertical ramp to rated OEE",
+                  sources: ["FAT/SAT Logs", "Ramp Curve", "Vendor SLAs"],
+                  dailyTask: "Tracks daily commissioning punch-list items and OEE ramp vs vendor performance guarantees.",
+                  desc: "Accelerates new line stabilization and documents vendor SLA shortfalls during commissioning.",
+                  promptHint: "Compare Week 1–6 OEE ramp on the new line against contracted vendor performance curve."
+                },
+                {
+                  name: "Equipment Lifecycle & Obsolete-Spares Radar",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Prevents multi-week breakdown waits",
+                  sources: ["Asset Registry", "OEM EOL", "Spares Stock"],
+                  dailyTask: "Flags aging PLCs, drives, and critical motors approaching OEM end-of-life without spares cover.",
+                  desc: "Guides multi-year engineering replacement CapEx before obsolete components halt lines.",
+                  promptHint: "List critical packaging-line PLCs and drives flagged as OEM end-of-life with zero spares."
                 }
               ]
             }
@@ -1308,6 +1828,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Tracks lab test completion for held lots and drafts disposition recommendations for QA sign-off.",
                   desc: "Eliminates finished-goods dispatch delays caused by slow manual QA hold clearance.",
                   promptHint: "List finished-goods lots on QA hold whose lab results cleared and are awaiting ERP release."
+                },
+                {
+                  name: "Incoming Raw Material COA & Lab Verifier",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "50% faster incoming QA clearance",
+                  sources: ["Vendor COAs", "Spec Limits", "LIMS"],
+                  dailyTask: "Extracts moisture, peroxide value, and micro parameters from vendor Certificate of Analysis PDFs.",
+                  desc: "Auto-compares incoming ingredient COA values against internal specs to speed up lab release.",
+                  promptHint: "Parse today's incoming flour and oil COA PDFs and flag any borderline spec values."
+                },
+                {
+                  name: "Metal Detector & X-Ray Calibration Auditor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "100% CCP audit compliance",
+                  sources: ["CCP Logs", "Test Piece Scans", "Shift QA"],
+                  dailyTask: "Verifies hourly metal-detector and X-ray test-piece checks are logged for every active food line.",
+                  desc: "Catches missed Critical Control Point (CCP) verifications in real time during shifts.",
+                  promptHint: "Audit today's shift CCP verification logs for any missed hourly metal-detector checks."
                 }
               ]
             },
@@ -1350,6 +1890,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Traces any raw material lot forward through plant batches, CFAs, and wholesale dealers instantaneously.",
                   desc: "Provides instant end-to-end batch genealogy for regulatory audits and quality holds.",
                   promptHint: "Trace ingredient lot #X forward to all finished batches, CFAs, and billed distributors."
+                },
+                {
+                  name: "FSSAI / Legal Metrology Change Radar",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Zero missed regulatory deadlines",
+                  sources: ["FSSAI Gazette", "Legal Metrology", "SKU Master"],
+                  dailyTask: "Monitors food-safety and packaging-law notifications and maps impacted SKUs and artworks.",
+                  desc: "Translates new regulatory circulars into SKU-level compliance action checklists.",
+                  promptHint: "Map latest FSSAI labeling notification against our active beverage and snack SKUs."
+                },
+                {
+                  name: "HACCP & Environmental Swab Trend Sentinel",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Proactive hygiene intervention",
+                  sources: ["LIMS Swabs", "Zone Map", "Sanitation Log"],
+                  dailyTask: "Tracks environmental pathogen and allergen swab trends across plant zones to spot early drift.",
+                  desc: "Detects subtle sanitation drift before finished-product batches are affected.",
+                  promptHint: "Highlight plant zones showing rising APC/yeast swab counts over the last 4 weeks."
                 }
               ]
             },
@@ -1392,6 +1952,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Verifies whether closed corrective actions actually sustained lower defect rates over the next 60 days.",
                   desc: "Monitors post-CAPA defect trends and flags recurring issues for engineering escalation.",
                   promptHint: "Audit CAPAs closed 60 days ago and flag any lines where defect PPM has crept back up."
+                },
+                {
+                  name: "OEE Loss-Tree & Micro-Stop Pareto Builder",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Focuses CI teams on top 20% losses",
+                  sources: ["SCADA Logs", "Downtime Codes", "Shift OEE"],
+                  dailyTask: "Builds weekly plant loss-trees separating changeover, breakdown, speed loss, and micro-stops.",
+                  desc: "Automates Lean/TPM loss-tree analysis across plants without manual spreadsheet crunching.",
+                  promptHint: "Generate a 30-day OEE loss-tree Pareto for Plant North showing top 5 speed-loss drivers."
+                },
+                {
+                  name: "Best-Practice Replication & SOP Recommender",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Accelerates cross-plant CI scaling",
+                  sources: ["Kaizen Library", "Plant KPIs", "SOP Docs"],
+                  dailyTask: "Matches a plant's recurring bottleneck with proven Kaizen fixes already implemented at sister sites.",
+                  desc: "Connects CI engineers with verified internal solutions from across the manufacturing network.",
+                  promptHint: "Search our Kaizen library for proven fixes to vertical form-fill-seal jaw sticking."
                 }
               ]
             }
@@ -1460,6 +2040,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Flags food/perishable SKUs where current safety stock norms risk breaching Modern Trade minimum-life norms.",
                   desc: "Optimizes inventory targets for shelf-life-sensitive SKUs so depots never age out past MT acceptance.",
                   promptHint: "Identify perishable SKUs with >60% shelf-life consumed while still sitting in CFA safety stock."
+                },
+                {
+                  name: "ABC-XYZ Segmentation & Policy Tuner",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Higher service on A-class SKUs",
+                  sources: ["SKU Revenue", "Demand CV", "SAP IBP"],
+                  dailyTask: "Re-classifies SKUs quarterly by revenue velocity (ABC) and demand volatility (XYZ) to tune service targets.",
+                  desc: "Ensures working capital is concentrated on high-velocity/high-margin SKUs rather than slow tail items.",
+                  promptHint: "Re-run ABC-XYZ classification across all CFAs and flag SKUs that shifted tiers."
+                },
+                {
+                  name: "Transit-Time Variability & Lead-Time Updater",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Eliminates stale ERP planning lead times",
+                  sources: ["TMS Actuals", "SAP MRP", "Lane History"],
+                  dailyTask: "Compares ERP static lane lead times against actual 90-day plant-to-CFA transit durations.",
+                  desc: "Prevents chronic stock-outs caused by understated monsoon or highway transit times in SAP.",
+                  promptHint: "List plant-to-CFA lanes where actual P90 transit time exceeds SAP planned lead time by >1 day."
                 }
               ]
             },
@@ -1502,6 +2102,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Recommends GT/MT combo-pack or trade-scheme clearance options for slow-moving depot inventory.",
                   desc: "Matches trapped depot stock with high-velocity outlets and secondary clearance channels.",
                   promptHint: "Suggest targeted trade clearance schemes for top 15 SLOB SKUs by depot value."
+                },
+                {
+                  name: "Blocked & Quality-Hold Stock Aging Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "40% faster release or write-off",
+                  sources: ["WMS Hold Bins", "QA Status", "Batch Value"],
+                  dailyTask: "Tracks inventory sitting in blocked/quarantine bins across CFAs and escalates aged holds daily.",
+                  desc: "Prevents saleable or salvageable stock from silently expiring inside depot hold cages.",
+                  promptHint: "List blocked/hold inventory >15 days old across all CFAs ranked by value at risk."
+                },
+                {
+                  name: "Slow-Moving Depot-to-Depot Transfer Finder",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Saves 25% of potential write-offs",
+                  sources: ["CFA Aged Stock", "Regional Velocity", "Freight Cost"],
+                  dailyTask: "Matches slow-moving stock in one CFA with high-velocity demand in another region before expiry.",
+                  desc: "Evaluates whether lateral transfer freight is justified to rescue aging regional stock.",
+                  promptHint: "Find regional CFAs with high demand for aged SKUs sitting >45 days in East depots."
                 }
               ]
             },
@@ -1544,6 +2164,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Identifies neighboring CFAs with surplus stock to cover acute regional shortages via lateral transfers.",
                   desc: "Evaluates lateral CFA-to-CFA transfer economics vs waiting for next plant production run.",
                   promptHint: "Find nearest surplus CFAs to cover acute A-class SKU shortages in West/South depots."
+                },
+                {
+                  name: "Allocation Fair-Share Pre-Check for WDs",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Protects broad retail coverage",
+                  sources: ["CFA ATP", "WD Indents", "Coverage Norms"],
+                  dailyTask: "Flags SKU-CFA combinations where open distributor indents exceed available stock so rationing triggers early.",
+                  desc: "Prevents first-come-first-served depletion from starving smaller Wholesale Dealers.",
+                  promptHint: "List SKUs at CFA South where today's open WD indents exceed available ATP."
+                },
+                {
+                  name: "In-Transit Stock & Pipeline Visibility Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts duplicate emergency indents",
+                  sources: ["Open STOs", "Truck GPS", "CFA ATP"],
+                  dailyTask: "Incorporates live GPS ETAs of inbound plant trucks into daily depot replenishment calculations.",
+                  desc: "Gives replenishment planners true pipeline visibility so arriving stock isn't double-ordered.",
+                  promptHint: "Show today's CFA stock-out SKUs that have inbound plant FTLs arriving within 12 hours."
                 }
               ]
             }
@@ -1591,6 +2231,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Forecasts hourly staging lane utilization and flags inbound/outbound dock overlaps before shift start.",
                   desc: "Balances dock schedules and staging lanes to prevent pallet bottlenecks during peak waves.",
                   promptHint: "Identify hours tomorrow where inbound plant receipts and outbound waves exceed staging capacity."
+                },
+                {
+                  name: "Pallet-Space Utilization & Overflow Forecaster",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "15% less costly overflow warehousing",
+                  sources: ["WMS Occupancy", "Inbound Plan", "Seasonal Peak"],
+                  dailyTask: "Projects 14-day warehouse pallet occupancy against rack capacity ahead of festive stock builds.",
+                  desc: "Gives DC managers early lead time to optimize honeycombing or book temporary overflow bays.",
+                  promptHint: "Project daily pallet occupancy at our top 5 CFAs over the next 21 days."
+                },
+                {
+                  name: "Forklift & MHE Fleet Utilization Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "12% higher MHE productivity",
+                  sources: ["MHE Telemetry", "Put-Away Logs", "Shift Plan"],
+                  dailyTask: "Monitors reach-truck and pallet-jack utilization and battery-swap bottlenecks across shifts.",
+                  desc: "Balances material handling equipment across inbound and outbound zones.",
+                  promptHint: "Identify shifts with highest forklift idle/queue time at dock staging."
                 }
               ]
             },
@@ -1633,6 +2293,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Directs forklift operators to segregate fresh plant batches from older stock for strict FEFO rotation.",
                   desc: "Enforces batch-date segregation at put-away to protect Modern Trade freshness compliance.",
                   promptHint: "Flag any mixed-date bin locations created during today's inbound put-away."
+                },
+                {
+                  name: "Inbound Carrier Detention & Gate-Wait Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "35% lower inbound unloading detention",
+                  sources: ["Gate Logs", "Unloading Time", "Carrier SLA"],
+                  dailyTask: "Tracks plant-to-CFA truck gate-in to dock-out unloading duration to prevent carrier detention claims.",
+                  desc: "Prioritizes inbound unloading slots for trucks nearing free-time thresholds.",
+                  promptHint: "Flag inbound trucks currently at CFA gates waiting >2 hours for an unloading bay."
+                },
+                {
+                  name: "Damaged-in-Transit Evidence Capture Gem",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "100% documented carrier OS&D claims",
+                  sources: ["Dock Photos", "GRN Variance", "BOL Scans"],
+                  dailyTask: "Guides receiving clerks to capture photo, batch, and quantity proof on damaged pallets before truck release.",
+                  desc: "Ensures clean evidence packages for carrier claims while posting clean pallets immediately.",
+                  promptHint: "Verify all today's damaged inbound receipts have signed LR remarks and batch photos attached."
                 }
               ]
             },
@@ -1675,6 +2355,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Analyzes daily short-picks to trigger targeted cycle counts on suspect bin locations.",
                   desc: "Catches bin inventory inaccuracies immediately after short-picks to prevent repeat misses.",
                   promptHint: "List the top 10 bin locations with repeated short-picks this week for immediate cycle count."
+                },
+                {
+                  name: "Cycle-Count Priority & Inventory Accuracy Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "99.5%+ bin inventory accuracy",
+                  sources: ["WMS Variances", "Fast Movers", "Cycle Logs"],
+                  dailyTask: "Generates daily targeted cycle-count lists focused on high-velocity bins and recent short-picks.",
+                  desc: "Keeps warehouse bin accuracy high without disrupting full-day shipping operations.",
+                  promptHint: "Generate today's 25-bin cycle count list prioritized by short-pick frequency and SKU value."
+                },
+                {
+                  name: "Temp Picker Onboarding & Productivity Coach",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "20% faster peak-season picker ramp",
+                  sources: ["WMS Pick Rates", "Error Logs", "Zone Map"],
+                  dailyTask: "Tracks lines-per-hour and scan-error rates for seasonal pickers to guide floor coaching.",
+                  desc: "Helps floor leads pair new pickers with optimal zones during festive volume spikes.",
+                  promptHint: "Identify pickers with >2% mis-pick rate this week for targeted zone coaching."
                 }
               ]
             }
@@ -1722,6 +2422,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Verifies promotional stores hold sufficient backroom stock 72 hours before weekend flyers go live.",
                   desc: "Prevents advertised promotional items from running out on Day 1 at key retail outlets.",
                   promptHint: "Check store-level stock cover for all SKUs featured in this weekend's MT promo circular."
+                },
+                {
+                  name: "MT Planogram & Facing Compliance Auditor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+8% shelf-share visibility",
+                  sources: ["Shelf Photos", "Planogram", "MT Stores"],
+                  dailyTask: "Scores store shelf photos from merchandisers against contracted eye-level facings and adjacency rules.",
+                  desc: "Uses multimodal vision to audit Modern Trade shelf compliance across hundreds of outlets.",
+                  promptHint: "Audit submitted MT store shelf photos for missing hero-SKU facings."
+                },
+                {
+                  name: "Store-Level Shrinkage & Pilferage Pattern Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts high-value SKU shrink by 20%",
+                  sources: ["Cycle Counts", "POS Sales", "Store Audits"],
+                  dailyTask: "Detects recurring inventory shrink clusters on high-value personal care and premium food SKUs.",
+                  desc: "Flags stores with abnormal book-vs-physical adjustments for loss-prevention follow-up.",
+                  promptHint: "Rank top 15 MT outlets by unexplained negative inventory adjustments over 60 days."
                 }
               ]
             },
@@ -1764,6 +2484,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Routes incoming retailer app orders to the optimal Wholesale Dealer or micro-depot with stock and van capacity.",
                   desc: "Balances fulfillment cost and next-day delivery promises across distributor and company nodes.",
                   promptHint: "Re-route unfulfilled e-B2B retailer orders to nearest alternate WD with available stock."
+                },
+                {
+                  name: "Quick-Commerce Assortment & Pack-Size Tuner",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+11% Q-Comm basket conversion",
+                  sources: ["Q-Comm POS", "Search Trends", "Dark Store Cap"],
+                  dailyTask: "Recommends high-velocity impulse and multipack SKUs suited for constrained Q-Comm dark-store racks.",
+                  desc: "Optimizes limited dark-store shelf slots for maximum revenue per cubic foot.",
+                  promptHint: "Rank our SKUs by dark-store velocity per cubic foot across Blinkit and Zepto."
+                },
+                {
+                  name: "Last-Mile Delivery SLA & Rider Wait Monitor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Protects e-B2B next-day promise",
+                  sources: ["Dispatch Logs", "Drop GPS", "WD Vans"],
+                  dailyTask: "Tracks e-B2B retailer order-to-delivery cycle times across company and distributor last-mile vans.",
+                  desc: "Identifies pin-codes with chronic next-day delivery misses for route rebalancing.",
+                  promptHint: "List pin-codes where e-B2B next-day delivery OTIF dropped below 92% this week."
                 }
               ]
             },
@@ -1806,6 +2546,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Correlates crushed-carton and leakage returns with specific transport lanes, loaders, and shipper specs.",
                   desc: "Turns reverse logistics claims into actionable packaging and loading improvements.",
                   promptHint: "Rank top 5 SKU-lane pairs generating crushed-case or leakage returns this month."
+                },
+                {
+                  name: "Field Destruction & GST Reversal Audit Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "100% tax-compliant damage disposal",
+                  sources: ["Photo Proof", "GST Rules", "WD Credits"],
+                  dailyTask: "Verifies witness/photo destruction logs for damaged FMCG stock destroyed at distributor premises.",
+                  desc: "Prevents costly reverse haulage while maintaining strict financial and tax audit trails.",
+                  promptHint: "Audit pending WD field-destruction claims for missing timestamped photo/video proof."
+                },
+                {
+                  name: "Seasonal & Festive Unsold Return Predictor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts post-festive returns by 30%",
+                  sources: ["Festive Sell-In", "Secondary POS", "WD Stock"],
+                  dailyTask: "Monitors post-festival sell-through in GT/MT to trigger early inter-branch pulls before expiry.",
+                  desc: "Prevents festive gift-pack gluts from turning into post-season reverse write-offs.",
+                  promptHint: "Flag distributors holding >21 days of seasonal gift-pack stock 2 weeks post-festival."
                 }
               ]
             }
@@ -1879,6 +2639,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–19:00): Auto-tenders finalized primary loads to contracted transporters via TMS webhook and flags unaccepted lanes.",
                   desc: "Auto-tenders finalized primary loads to contracted transporters via TMS webhook and flags unaccepted lanes.",
                   promptHint: "Execute EOD Dispatch & Carrier Tender Agent workflow: Auto-tenders finalized primary loads to contracted transporters via TMS webhook and flags unaccepted lanes."
+                },
+                {
+                  name: "Lane Rate-Card & Spot-vs-Contract Optimizer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "4–6% primary freight savings",
+                  sources: ["Lane Contracts", "Spot Quotes", "SAP STOs"],
+                  dailyTask: "Compares contracted transporter rates against live spot bids on surge lanes before tendering.",
+                  desc: "Prevents expensive ad-hoc spot premiums when primary lanes spike.",
+                  promptHint: "Identify primary lanes this week where spot freight exceeded contract rates by >12%."
+                },
+                {
+                  name: "Plant-to-CFA Direct-to-WD Bypass Advisor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Saves CFA handling + 2 days lead time",
+                  sources: ["Large WD Indents", "Plant Stock", "FTL Rates"],
+                  dailyTask: "Spots full-truckload distributor indents that can ship direct from plant, bypassing CFA double-handling.",
+                  desc: "Cuts depot handling cost and transit time for high-volume Wholesale Dealers.",
+                  promptHint: "Find today's WD indents >12 tons eligible for direct plant-to-WD FTL dispatch."
                 }
               ]
             },
@@ -1926,6 +2706,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–18:30): Verifies physical seal numbers against SAP e-Way Bills and logs final gate-out timestamps for carrier SLA scoring.",
                   desc: "Verifies physical seal numbers against SAP e-Way Bills and logs final gate-out timestamps for carrier SLA scoring.",
                   promptHint: "Execute E-Way Bill & Gate-Out Reconciler workflow: Verifies physical seal numbers against SAP e-Way Bills and logs final gate-out timestamps for carrier SLA scoring."
+                },
+                {
+                  name: "Driver Check-In & Multilingual Kiosk Assistant",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "50% faster gate entry processing",
+                  sources: ["Gate Kiosk", "LR Scans", "Driver App"],
+                  dailyTask: "Guides drivers in regional languages on bay assignments, PPE rules, and loading readiness.",
+                  desc: "Eliminates yard communication delays and paperwork errors at busy plant gates.",
+                  promptHint: "Summarize average driver gate-in to bay-docking time by shift and transporter."
+                },
+                {
+                  name: "Vehicle Fitness & Safety Checklist Auditor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Zero unsafe or leaking truck dispatches",
+                  sources: ["Gate Inspection", "Tarpaulin Check", "Floor Photos"],
+                  dailyTask: "Verifies truck floor cleanliness, odor-free condition, and waterproof tarpaulin checks before food loading.",
+                  desc: "Prevents transit rain damage and contamination by enforcing pre-load vehicle QA.",
+                  promptHint: "List transporters with repeated pre-load vehicle hygiene or tarpaulin rejections this month."
                 }
               ]
             },
@@ -1973,6 +2773,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–18:30): Generates batch-level thermal compliance certificates for receiving CFAs or auto-drafts carrier spoilage claims.",
                   desc: "Generates batch-level thermal compliance certificates for receiving CFAs or auto-drafts carrier spoilage claims.",
                   promptHint: "Execute Transit QA Release & Claim Copilot workflow: Generates batch-level thermal compliance certificates for receiving CFAs or auto-drafts carrier spoilage claims."
+                },
+                {
+                  name: "Monsoon Humidity & Ambient Transit Risk Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Cuts humidity carton damage by 30%",
+                  sources: ["Weather API", "Route Humidity", "SKU Sensitivity"],
+                  dailyTask: "Flags moisture-sensitive food/paper lanes transiting heavy-rain corridors needing extra desiccant/wrapping.",
+                  desc: "Protects non-reefer moisture-sensitive FMCG loads during peak monsoon transit.",
+                  promptHint: "Identify today's primary dispatches crossing heavy-rain alerts needing extra pallet wrap."
+                },
+                {
+                  name: "Reefer Carrier Thermal-Compliance Scorecard",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Top-quartile cold-chain reliability",
+                  sources: ["IoT Logs", "Excursion Count", "Carrier SLA"],
+                  dailyTask: "Scores refrigerated fleet partners weekly on set-point adherence, door-open events, and pre-cool speed.",
+                  desc: "Drives data-backed carrier selection for temperature-sensitive food and dairy lanes.",
+                  promptHint: "Rank cold-chain carriers by % of trips with zero >2°C thermal excursions last month."
                 }
               ]
             }
@@ -2025,6 +2845,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–19:00): Audits unbilled distributor orders at 5:30 PM and dynamically reallocates dock loaders to clear 100% of same-day dispatches.",
                   desc: "Audits unbilled distributor orders at 5:30 PM and dynamically reallocates dock loaders to clear 100% of same-day dispatches.",
                   promptHint: "Balance CFA unloading and distributor dispatch waves to protect same-day primary billing cutoffs."
+                },
+                {
+                  name: "CFA Labor & Loader Wave Balancer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "20% higher cases loaded per labor-hour",
+                  sources: ["CFA Roster", "Indent Volume", "Bay Plan"],
+                  dailyTask: "Aligns depot loading crews and forklift shifts with peak afternoon distributor billing waves.",
+                  desc: "Prevents end-of-day dock bottlenecks when 60% of distributor trucks arrive together.",
+                  promptHint: "Recommend loader crew shifts across Bays 1–8 for tomorrow's projected dispatch tonnage."
+                },
+                {
+                  name: "CFA Hygiene, Pest & Stack-Height Auditor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "100% depot FSSAI & safety audit pass",
+                  sources: ["CFA Photos", "Audit Checklist", "FEFO Logs"],
+                  dailyTask: "Reviews daily depot walkthrough photos for pallet stack-height limits, aisle clearance, and pest traps.",
+                  desc: "Keeps third-party CFA warehouses continuously compliant with food-safety and EHS norms.",
+                  promptHint: "Summarize open CFA housekeeping and stack-height compliance issues across regions."
                 }
               ]
             },
@@ -2072,6 +2912,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–18:30): Sends proactive automated WhatsApp/email updates to distributors detailing allocated quantities and next plant arrival ETA.",
                   desc: "Sends proactive automated WhatsApp/email updates to distributors detailing allocated quantities and next plant arrival ETA.",
                   promptHint: "Execute WD Backorder & ETA Communicator workflow: Sends proactive automated WhatsApp/email updates to distributors detailing allocated quantities and next plant arrival ETA."
+                },
+                {
+                  name: "Key-Account vs GT Priority Conflict Resolver",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Balances MT penalties vs GT reach",
+                  sources: ["MT Penalties", "GT Fill Rate", "CFA ATP"],
+                  dailyTask: "Evaluates penalty cost of shorting an MT/Q-Comm PO vs starving 20 GT Wholesale Dealers.",
+                  desc: "Gives CS&L leads transparent financial trade-offs during acute SKU shortages.",
+                  promptHint: "Recommend stock split between MT PO #442 and GT WDs for constrained SKU X."
+                },
+                {
+                  name: "Backorder Auto-Recovery & Replenishment Notifier",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Zero forgotten backorders",
+                  sources: ["Open Backorders", "Inbound GRNs", "DMS"],
+                  dailyTask: "Automatically releases queued distributor backorders the moment plant inbound trucks post GRN.",
+                  desc: "Ensures recovered stock flows immediately to waiting Wholesale Dealers.",
+                  promptHint: "List open WD backorders that can be fulfilled immediately from today's plant GRNs."
                 }
               ]
             },
@@ -2119,6 +2979,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–19:00): Auto-generates e-Way Bills and triggers final SAP billing batches before the 7:00 PM dispatch cutoff.",
                   desc: "Auto-generates e-Way Bills and triggers final SAP billing batches before the 7:00 PM dispatch cutoff.",
                   promptHint: "Flag credit-blocked WD indents by 2 PM and automate e-Way Bill + invoice batch release before evening cutoff."
+                },
+                {
+                  name: "GST e-Invoice & e-Way Bill Error Auto-Fixer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Zero truck gate holds due to tax errors",
+                  sources: ["SAP Billing", "NIC Portal", "Master Data"],
+                  dailyTask: "Detects HSN code, pin-code, or transporter-ID mismatches blocking e-Way Bill generation before dispatch.",
+                  desc: "Fixes billing master-data errors in seconds so loaded trucks never wait at depot gates.",
+                  promptHint: "Flag today's pending invoices failing NIC e-Way Bill validation and show the exact field fix."
+                },
+                {
+                  name: "Distributor Balance-Order & Cancellation Cleaner",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Accurate daily fill-rate reporting",
+                  sources: ["Open Indents", "Billing Cutoff", "DMS"],
+                  dailyTask: "Reconciles unbilled end-of-day indent lines into next-day carry-forwards vs expired cancellations.",
+                  desc: "Keeps depot order books clean and gives ASMs accurate true fill-rate metrics.",
+                  promptHint: "Summarize today's unbilled indent lines by reason code (stock-out, credit block, cutoff miss)."
                 }
               ]
             }
@@ -2171,6 +3051,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–18:30): Reconciles stamped MT GRNs against dispatched invoices to dispute unfair short-delivery deductions.",
                   desc: "Reconciles stamped MT GRNs against dispatched invoices to dispute unfair short-delivery deductions.",
                   promptHint: "Execute OTIF Penalty & Fill-Rate Defender workflow: Reconciles stamped MT GRNs against dispatched invoices to dispute unfair short-delivery deductions."
+                },
+                {
+                  name: "Q-Comm Dark-Store Direct-Drop Scheduler",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+5% Q-Comm on-shelf availability",
+                  sources: ["Blinkit/Zepto POs", "City Micro-Hubs", "Van Plan"],
+                  dailyTask: "Consolidates city-level Q-Comm dark-store POs into dedicated milk-run vans hitting tight drop slots.",
+                  desc: "Protects high-frequency urban Quick Commerce replenishment without bloating freight cost.",
+                  promptHint: "Sequence tomorrow's Mumbai/Delhi Q-Comm dark-store milk-run stops by appointment window."
+                },
+                {
+                  name: "Retailer Portal ASN & Appointment Reconciler",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Eliminates 'No-Show' slot penalties",
+                  sources: ["Retailer Portals", "Truck GPS", "ASN Logs"],
+                  dailyTask: "Monitors truck ETAs against booked MT DC slots and triggers automated slot-reschedule requests if delayed.",
+                  desc: "Prevents costly 'no-show' penalties and multi-day re-booking delays at retailer DCs.",
+                  promptHint: "Flag MT-bound trucks projected to miss their booked DC appointment window by >30 minutes."
                 }
               ]
             },
@@ -2218,6 +3118,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:30–19:00): Converts 2-minute market visit voice notes into structured action items, WD portal tickets, and Branch Manager summaries.",
                   desc: "Converts 2-minute market visit voice notes into structured action items, WD portal tickets, and Branch Manager summaries.",
                   promptHint: "Execute EOD Market Debrief & Action Tracker workflow: Converts 2-minute market visit voice notes into structured action items, WD portal tickets, and Branch Manager summaries."
+                },
+                {
+                  name: "Beat-Level Zero-Billing & Outlet Churn Radar",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+4% active outlet billing coverage",
+                  sources: ["DMS Beat Data", "Outlet History", "ASM Territory"],
+                  dailyTask: "Flags high-value retail outlets in a salesman's beat that skipped ordering for 2+ consecutive visits.",
+                  desc: "Helps Area Distribution Managers direct field reps to recover slipping outlets early.",
+                  promptHint: "List top 20 A-class outlets in Territory West with zero billing over the last 14 days."
+                },
+                {
+                  name: "New-Launch Distribution & Eco-Outlet Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "2x faster new-SKU beat penetration",
+                  sources: ["DMS Launch", "Beat Plan", "WD Stock"],
+                  dailyTask: "Tracks daily effective coverage (ECO) of newly launched SKUs across urban and rural beats.",
+                  desc: "Spots Wholesale Dealers holding launch stock without pushing it down to retail beats.",
+                  promptHint: "Highlight WDs that received new-SKU stock >10 days ago but have <15% beat penetration."
                 }
               ]
             },
@@ -2265,6 +3185,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:30–19:30): Classifies photos of damaged market returns for debit notes and answers instant WhatsApp queries on pending claim payouts.",
                   desc: "Classifies photos of damaged market returns for debit notes and answers instant WhatsApp queries on pending claim payouts.",
                   promptHint: "Execute Damage Return & Claim Status Bot workflow: Classifies photos of damaged market returns for debit notes and answers instant WhatsApp queries on pending claim payouts."
+                },
+                {
+                  name: "WD Working-Capital & ROI Health Advisor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Healthier, faster-turning WD partners",
+                  sources: ["WD Stock", "Credit Days", "Secondary Sales"],
+                  dailyTask: "Monitors distributor inventory-turn and ROI, flagging slow-moving capital tied up in C-class SKUs.",
+                  desc: "Helps Wholesale Dealers optimize working capital so they always have cash for fast movers.",
+                  promptHint: "Show WD ROI and inventory-days breakdown highlighting top 5 capital-trapping SKUs."
+                },
+                {
+                  name: "Salesman Beat-Order Anomaly & Split-Load Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "10% higher van drop-size",
+                  sources: ["SFA Orders", "Van Capacity", "Beat GPS"],
+                  dailyTask: "Groups incoming field-salesman outlet orders into balanced tempo/e-rickshaw delivery beats.",
+                  desc: "Eliminates manual evening order sorting at the stockist godown.",
+                  promptHint: "Optimize tomorrow's 4 delivery tempos across today's 185 SFA outlet orders."
                 }
               ]
             }
@@ -2317,6 +3257,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–18:30): Analyzes planned vs. actual route kilometers and identifies return backhaul pairing opportunities.",
                   desc: "Analyzes planned vs. actual route kilometers and identifies return backhaul pairing opportunities.",
                   promptHint: "Execute Fleet Utilization & Empty-Mile Auditor workflow: Analyzes planned vs. actual route kilometers and identifies return backhaul pairing opportunities."
+                },
+                {
+                  name: "EV / CNG Fleet Range & Charge-Stop Planner",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "12% lower urban last-mile fuel cost",
+                  sources: ["EV Telemetry", "Charge Map", "Beat Load"],
+                  dailyTask: "Assigns urban secondary beats to EV/CNG vans factoring payload, AC/reefer draw, and charger locations.",
+                  desc: "Maximizes green urban fleet utilization without mid-route range anxiety.",
+                  promptHint: "Assign urban secondary routes to our EV van fleet within 80% safe battery range."
+                },
+                {
+                  name: "Geo-Fenced Proof-of-Delivery & Cash Alert Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Zero unverified drop disputes",
+                  sources: ["Driver GPS", "Outlet Geo", "POD App"],
+                  dailyTask: "Verifies driver delivery check-ins match outlet geo-fences and flags out-of-zone drops immediately.",
+                  desc: "Strengthens last-mile delivery governance and speeds up daily van cash/UPI reconciliation.",
+                  promptHint: "Flag today's secondary deliveries logged >200m outside the outlet's verified geo-fence."
                 }
               ]
             },
@@ -2364,6 +3324,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–18:00): Auto-compiles transporter OTIF, detention, and damage KPIs for commercial review meetings.",
                   desc: "Auto-compiles transporter OTIF, detention, and damage KPIs for commercial review meetings.",
                   promptHint: "Execute Weekly Carrier QBR Scorecard Agent workflow: Auto-compiles transporter OTIF, detention, and damage KPIs for commercial review meetings."
+                },
+                {
+                  name: "Fuel-Surcharge & Diesel-Index Auditor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "100% accurate fuel-clause billing",
+                  sources: ["Diesel Index", "Rate Cards", "Carrier Bills"],
+                  dailyTask: "Recalculates monthly transporter fuel-surcharge adjustments automatically from official diesel prices.",
+                  desc: "Eliminates manual spreadsheet disputes over carrier fuel-escalation clauses.",
+                  promptHint: "Compute this month's diesel-index rate adjustment across all active primary lane contracts."
+                },
+                {
+                  name: "Carrier Safety, GPS Uptime & Compliance Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "98%+ live GPS tracking coverage",
+                  sources: ["GPS Ping Logs", "Permit DB", "Carrier SLA"],
+                  dailyTask: "Flags transporters dispatching trucks with offline GPS devices or expiring fitness/insurance permits.",
+                  desc: "Enforces fleet safety and visibility SLAs before trucks are tendered loads.",
+                  promptHint: "List contracted carriers with <90% GPS ping uptime over the last 14 days."
                 }
               ]
             },
@@ -2411,6 +3391,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Evening (16:00–18:00): Approves clean freight bills for automated SAP payout and drafts itemized dispute memos for rejected surcharges.",
                   desc: "Approves clean freight bills for automated SAP payout and drafts itemized dispute memos for rejected surcharges.",
                   promptHint: "Execute Auto-Approval & Credit Note Generator workflow: Approves clean freight bills for automated SAP payout and drafts itemized dispute memos for rejected surcharges."
+                },
+                {
+                  name: "Toll, Unloading & Extra-Drop Accessorial Verifier",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Cuts bogus accessorial charges by 55%",
+                  sources: ["FASTag Logs", "Route Stops", "Carrier Claims"],
+                  dailyTask: "Cross-checks carrier extra-drop, green-tax, and toll claims against FASTag and GPS stop logs.",
+                  desc: "Validates every accessorial line item automatically before approving freight bills.",
+                  promptHint: "Audit today's carrier accessorial claims against actual FASTag and GPS stop timestamps."
+                },
+                {
+                  name: "Unbilled Freight Provision & Accrual Reconciler",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Accurate monthly logistics P&L",
+                  sources: ["Completed Trips", "AP Invoices", "SAP FI"],
+                  dailyTask: "Estimates accrued freight liability for completed trips whose carrier invoices haven't arrived yet.",
+                  desc: "Prevents month-end freight cost surprises for supply chain finance.",
+                  promptHint: "Calculate month-end freight accrual for all delivered primary trips missing carrier bills."
                 }
               ]
             }
@@ -2479,6 +3479,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Validates batch numbers and manufacturing dates on return photos against original dispatch records.",
                   desc: "Prevents out-of-policy or expired third-party stock from entering the reverse credit pipeline.",
                   promptHint: "Verify batch codes on high-value return claims against our last 6 months of CFA dispatches."
+                },
+                {
+                  name: "Cross-Channel Grey-Market & Diversion Watcher",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Protects channel pricing integrity",
+                  sources: ["Batch Codes", "Online Listings", "WD Invoices"],
+                  dailyTask: "Traces batch codes from unauthorized deep-discount listings back to original primary billing nodes.",
+                  desc: "Helps TM&D and legal teams spot cross-territory or channel-diversion leaks.",
+                  promptHint: "Trace batch codes flagged on unauthorized B2B portals back to original billed CFAs/WDs."
+                },
+                {
+                  name: "High-Risk Return Policy Rule Tuner",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Balances CX with fraud prevention",
+                  sources: ["Return Outcomes", "Fraud Flags", "Ticket Cost"],
+                  dailyTask: "Simulates threshold adjustments for instant credits vs mandatory physical inspection.",
+                  desc: "Keeps return fraud controls calibrated without slowing down legitimate partner credits.",
+                  promptHint: "Evaluate false-positive rate on our current ₹5,000 mandatory-inspection return rule."
                 }
               ]
             },
@@ -2521,6 +3541,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Drafts empathetic, policy-compliant claim status updates and credit timelines for trade partners.",
                   desc: "Accelerates trade partner and consumer complaint closure with full ERP context.",
                   promptHint: "Draft resolution responses for open MT/WD short-delivery tickets cleared by POD audit."
+                },
+                {
+                  name: "Repeat-Damage Packaging Feedback Synthesizer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "15% fewer transit-damage complaints",
+                  sources: ["Return Photos", "CX Tickets", "SKU Specs"],
+                  dailyTask: "Clusters consumer and retailer damage complaints by SKU and packs into weekly briefs for Packaging R&D.",
+                  desc: "Closes the loop between customer claims and packaging engineering fixes.",
+                  promptHint: "Summarize top 5 SKUs generating crushed-pack or broken-seal customer complaints this month."
+                },
+                {
+                  name: "Proactive Delay & Short-Ship Notifier",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts inbound 'Where is my order' calls 40%",
+                  sources: ["TMS Delays", "CFA Dispatch", "Partner Contacts"],
+                  dailyTask: "Sends proactive ETA updates to key trade partners whenever primary or secondary trucks are delayed.",
+                  desc: "Turns reactive complaint calls into proactive, transparent customer communication.",
+                  promptHint: "Draft proactive delay alerts for MT DCs whose inbound trucks are >2 hours behind slot."
                 }
               ]
             },
@@ -2563,6 +3603,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Tracks open insurance subrogations and flags transporters with chronic pilferage or rain-damage.",
                   desc: "Feeds carrier claim loss ratios directly into transport procurement scorecards.",
                   promptHint: "Rank transporters by OS&D claim frequency and unresolved recovery value YTD."
+                },
+                {
+                  name: "Cold-Chain Excursion & Insurance Claim Compiler",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "2x faster insurance payout settlement",
+                  sources: ["Reefer IoT", "QA Hold Log", "Policy Terms"],
+                  dailyTask: "Bundles thermal-excursion graphs, batch values, and surveyor reports into insurer-ready claim packs.",
+                  desc: "Speeds up recovery on spoiled chilled/frozen shipments.",
+                  promptHint: "Compile insurance claim packet for yesterday's reefer thermal excursion on Lane West-2."
+                },
+                {
+                  name: "Carrier Claim Recovery Aging & Escalator",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Cuts overdue claim balances by 35%",
+                  sources: ["Claims Ledger", "Carrier AP", "SLA Timers"],
+                  dailyTask: "Tracks open carrier OS&D claims past 30 days and flags eligible freight-bill offsets.",
+                  desc: "Ensures approved carrier damage claims actually convert into credit notes or AP offsets.",
+                  promptHint: "List carrier OS&D claims >45 days overdue for AP freight-bill offset."
                 }
               ]
             }
@@ -2610,6 +3670,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Alerts retail merchandisers to outlets with chronic FEFO rotation misses and high expiry shrink.",
                   desc: "Guides field merchandisers to prioritize high-shrink stores for rack rotation audits.",
                   promptHint: "List top 20 MT stores driving 50% of category expiry write-offs this quarter."
+                },
+                {
+                  name: "Slow-Moving Shelf-Space Reallocation Advisor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "+7% retail category productivity",
+                  sources: ["MT POS", "Store Stock", "Planogram"],
+                  dailyTask: "Identifies chronically slow SKUs in specific MT clusters to swap shelf space toward faster variants.",
+                  desc: "Prevents slow-moving variants from aging out on store shelves.",
+                  promptHint: "List SKUs with >45 days store cover in MT Cluster B to reduce reorder quantities."
+                },
+                {
+                  name: "Markdown Cannibalization & Halo Checker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Protects full-price SKU velocity",
+                  sources: ["POS Markdowns", "Core Velocity", "Margin"],
+                  dailyTask: "Monitors whether near-expiry store markdowns are cannibalizing fresh full-price stock.",
+                  desc: "Tunes markdown depth and timing to clear aging units without hurting full-margin sales.",
+                  promptHint: "Evaluate impact of 30% DTE markdowns on fresh-lot sales velocity in top 50 stores."
                 }
               ]
             },
@@ -2652,6 +3732,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Compiles batch-level donation certificates and tax/CSR documentation for diverted food lots.",
                   desc: "Automates compliance paperwork for food-bank donations and certified destruction.",
                   promptHint: "Generate monthly CSR food-diversion and tax-deduction audit pack from completed transfers."
+                },
+                {
+                  name: "Regional Surplus-to-Demand Secondary Matcher",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "20% faster aged-lot clearance",
+                  sources: ["CFA Aged Stock", "Institutional Buyers", "Freight"],
+                  dailyTask: "Matches short-dated depot lots with regional institutional catering, defense, or discount buyers.",
+                  desc: "Expands secondary monetization channels before lots hit zero-value expiry.",
+                  promptHint: "Match 45-day DTE bulk packs at CFA East with approved institutional buyers."
+                },
+                {
+                  name: "Expiry Write-Off Root-Cause Categorizer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Feeds S&OP to prevent repeat waste",
+                  sources: ["Write-Off Ledger", "Forecast Error", "MOQ Logs"],
+                  dailyTask: "Tags every expired write-off by root cause (over-forecast, high MOQ, cancelled promo, FEFO miss).",
+                  desc: "Gives leadership clear accountability on why inventory expired.",
+                  promptHint: "Break down this quarter's expiry write-offs by root cause and top 10 SKUs."
                 }
               ]
             },
@@ -2694,6 +3794,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Benchmarks corrugated and laminate scrap realization rates across regional plant recyclers.",
                   desc: "Optimizes circular recovery value from plant packaging scrap and damaged cartons.",
                   promptHint: "Compare plant-wise corrugated scrap realization against regional recycler market rates."
+                },
+                {
+                  name: "Zero-Waste-to-Landfill Plant Certifier",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "100% plant ZWL audit readiness",
+                  sources: ["Waste Manifests", "Vendor Certs", "Plant Logs"],
+                  dailyTask: "Audits plant waste-disposal manifests monthly to verify zero organic or packaging waste hit landfills.",
+                  desc: "Automates documentation for Zero-Waste-to-Landfill site certifications.",
+                  promptHint: "Check all 12 plants for missing recycler or compost manifests in this month's ZWL log."
+                },
+                {
+                  name: "Green Freight & Modal-Shift Emissions Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Quantifies rail & EV CO2e savings",
+                  sources: ["Rail Rakes", "EV Trips", "Tonne-Km"],
+                  dailyTask: "Calculates Scope 3 transport emissions avoided via rail rake shifts and EV secondary fleets.",
+                  desc: "Links daily logistics mode choices directly to corporate sustainability KPIs.",
+                  promptHint: "Compute CO2e savings from this quarter's road-to-rail primary lane shifts."
                 }
               ]
             }
@@ -2741,6 +3861,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Audits monthly pallet pooler invoices against verified plant-to-CFA transfer and return scans.",
                   desc: "Reconciles pooled pallet hire charges and disputes erroneous lost-asset fees.",
                   promptHint: "Identify unverified asset-loss charges in this month's pallet pooler statement."
+                },
+                {
+                  name: "Plant-to-CFA Crate Circulation Velocity Tracker",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "15% faster RTI turn-time",
+                  sources: ["RFID Scans", "Gate Logs", "Cycle Norms"],
+                  dailyTask: "Measures average round-trip days for reusable crates and pallets across every plant-CFA corridor.",
+                  desc: "Spots slow-turning corridors where pooled assets sit idle.",
+                  promptHint: "Rank top 10 plant-to-CFA corridors by slowest reusable crate return cycle time."
+                },
+                {
+                  name: "Peak-Season RTI Buffer Pre-Positioner",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "Zero festive pallet shortages at plants",
+                  sources: ["Production Plan", "RTI Stock", "Backhauls"],
+                  dailyTask: "Forecasts plant pallet and crate demand 3 weeks ahead to pull empty units back before festive peaks.",
+                  desc: "Prevents high-speed palletizers from stalling due to empty-pallet shortages.",
+                  promptHint: "Flag plants projected to run short of plastic crates or pallets in the next 14 days."
                 }
               ]
             },
@@ -2783,6 +3923,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Monitors backhaul pickup adherence and flags depots delaying empty-crate loading.",
                   desc: "Tracks reverse trip turnaround times to keep contracted carriers willing to take backhauls.",
                   promptHint: "Highlight depots with >60-minute average loading detention on reverse RTI pickups."
+                },
+                {
+                  name: "Third-Party Backhaul Monetization Matcher",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "10% net primary freight offset",
+                  sources: ["Empty Lanes", "Partner Freight", "TMS"],
+                  dailyTask: "Identifies dedicated primary return corridors suitable for backhauling raw materials or partner loads.",
+                  desc: "Turns empty return legs into inbound material hauls or freight-cost offsets.",
+                  promptHint: "Match returning primary trucks from CFA South with inbound packaging pickups nearby."
+                },
+                {
+                  name: "Crate Collapse & Stack-Density Optimizer",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "2x more empty RTIs per backhaul",
+                  sources: ["RTI Specs", "Truck Cube", "Depot Queue"],
+                  dailyTask: "Optimizes nested/collapsed crate and pallet loading patterns for maximum backhaul return density.",
+                  desc: "Cuts reverse transport trips required to recover empty returnable packaging.",
+                  promptHint: "Calculate optimal collapsed-crate stack count per 32ft container for Depot North."
                 }
               ]
             },
@@ -2825,6 +3985,26 @@ window.SUPPLY_CHAIN_DATA = {
                   dailyTask: "Inspects return crate photos for cracked corners or contamination to route units to repair or recycle.",
                   desc: "Keeps structurally compromised crates out of automated plant palletizers and food lines.",
                   promptHint: "Summarize weekly damaged crate reject rates by return lane and route units for repair."
+                },
+                {
+                  name: "Allergen Cross-Contact Wash Segregation Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Zero allergen cross-contamination risk",
+                  sources: ["Allergen Tags", "Wash Queue", "Line Rules"],
+                  dailyTask: "Segregates returned crates carrying nut/dairy SKUs into dedicated high-temp allergen wash cycles.",
+                  desc: "Protects allergen-free production lines from cross-contact via shared reusable crates.",
+                  promptHint: "Flag returned crates from allergen-containing SKU lines for dedicated Zone-B wash."
+                },
+                {
+                  name: "Wash-Water & Chemical Dosing Efficiency Bot",
+                  mode: "Low-Code Agent Studio",
+                  prio: "",
+                  impact: "12% lower wash-tunnel water & chemical use",
+                  sources: ["Flow Meters", "Dosing Logs", "Crate Count"],
+                  dailyTask: "Monitors water, steam, and sanitizer usage per 1,000 washed crates to flag nozzle clogs or over-dosing.",
+                  desc: "Maintains food-safety wash standards while curbing utility and chemical waste.",
+                  promptHint: "Compare sanitizer consumption per 1,000 crates across all 4 regional wash hubs."
                 }
               ]
             }
