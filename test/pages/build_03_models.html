@@ -280,19 +280,7 @@
     </a>
   </aside>
 
-<script>
-/* Journey numbering: these 8 shared pages follow the track pages and the persona map,
-   so their running number depends on the track picked on the main page (deck-domain). */
-(function () {
-  var d = ""; try { d = (localStorage.getItem("deck-domain") || "").toLowerCase(); } catch (e) {}
-  var off = 7, tot = off + 8;
-  document.querySelectorAll("[data-bnum]").forEach(function (el) {
-    var n = off + parseInt(el.getAttribute("data-bnum"), 10);
-    el.textContent = (n < 10 ? "0" : "") + n + " / " + tot;
-  });
-})();
-</script>
-<script src="../assets/deck_nav.js?v=10"></script>
+<script src="../assets/deck_nav.js?v=11"></script>
 <script>if(window.initDeckChrome) initDeckChrome({ root: "../", prev: "build_01_how.html", next: "build_04_govern.html" });</script>
 </body>
 </html>
