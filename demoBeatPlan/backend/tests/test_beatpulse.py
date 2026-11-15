@@ -24,6 +24,13 @@ def test_dataset_and_cities_integrity():
     assert cities == {"Bangalore", "Hyderabad", "Chennai"}
     assert "BLR-701" in set(eng.outlets["outlet_id"])
     assert {"BLR-B04", "BLR-B07"}.issubset(set(eng.outlets["beat_id"]))
+    # Realistic metro GT zero-billing rate (not >25% catastrophic failure)
+    zero_billing_pct = 100.0 * (eng.outlets["health_status"] == "critical").mean()
+    assert 5.0 <= zero_billing_pct <= 22.0
+    # Actively billing store (zero_bill_weeks == 0) must not predict ~100% dormancy churn
+    lakshmi = eng._outlet_index["BLR-701"]
+    assert lakshmi["zero_bill_weeks"] == 0
+    assert lakshmi["churn_prob"] < 0.35
 
 
 def test_storyboard_5_steps_end_to_end():
@@ -50,10 +57,15 @@ def test_storyboard_5_steps_end_to_end():
     assert "BLR-701" in r4.json()["response"]
     assert client.get("/api/outlets/BLR-701").status_code == 200
 
-    # Step 5: Simulate fixing Beat 4 route and Beat 7 SKU push + ASM Dispatch
+    # Step 5: Simulate fixing Beat 4 route (bounded by actual beat outlets and leakage) + ASM Dispatch
+    sim = client.post("/api/beats/BLR-B04/simulate").json()
+    beat_outlets = [o for o in client.get("/api/outlets?beat=BLR-B04").json()]
+    assert 1 <= sim["after"]["reactivated_zero_billing_outlets"] <= len(beat_outlets)
+    assert 0 < sim["after"]["projected_monthly_recovery_inr"] <= sim["before"]["monthly_leakage_inr"]
+
     r5 = client.post("/api/chat", json={"message": "Simulate fixing Beat 4 route and Beat 7 SKU push"})
     assert r5.status_code == 200
-    assert "18.5L" in r5.json()["response"] and "32" in r5.json()["response"]
+    assert "BLR-B04" in r5.json()["response"] and "reactivated" in r5.json()["response"]
 
     r5b = client.post("/api/beats/BLR-B04/dispatch", json={"note": "Storyboard Step 5"})
     assert r5b.status_code == 200

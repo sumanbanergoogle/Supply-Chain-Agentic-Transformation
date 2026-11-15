@@ -114,11 +114,13 @@ def _deterministic_turn(
         tool_calls.append({"name": "simulate_beat_rebalance", "args": {"beat_id": bid}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
         actions.append({"kind": "ui", "source_tool": "ui_control", "command": {"action": "focus_city", "value": res["city"]}})
         actions.append({"kind": "navigate", "screen": "beat_simulator", "city": res["city"], "beat_id": bid, "source_tool": "simulate_beat_rebalance"})
+        rec_inr = res["after"]["projected_monthly_recovery_inr"]
+        rec_fmt = f"₹{rec_inr / 100000:.2f}L/month" if rec_inr >= 100000 else f"₹{rec_inr:,.0f}/month"
         msg = (
-            f"Simulated {bid} route rebalance & Beat 7 Hero SKU push: travel time drops {res['after']['travel_time_reduction_pct']}% "
+            f"Simulated {bid} route rebalance ({res['target_transfer_beat']}): travel time drops {res['after']['travel_time_reduction_pct']}% "
             f"(distance {res['before']['distance_km']} km → {res['after']['distance_km']} km, all outlets covered before {res['after']['finish_time']}). "
-            f"Projected impact: +{res['after']['reactivated_zero_billing_outlets']} zero-billing outlets reactivated, +{res['after']['projected_lspc_uplift']} LSPC, "
-            f"and ₹{res['after']['projected_monthly_recovery_inr'] / 100000:.1f}L/month estimated recovery."
+            f"Projected impact on {bid}: +{res['after']['reactivated_zero_billing_outlets']} zero-billing outlets reactivated, +{res['after']['projected_lspc_uplift']} LSPC, "
+            f"and {rec_fmt} estimated recovery (from ₹{res['before']['monthly_leakage_inr']:,.0f}/mo leakage)."
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
@@ -131,7 +133,7 @@ def _deterministic_turn(
         actions.append({"kind": "navigate", "screen": "outlet", "view": "vision", "outlet_id": o["outlet_id"], "city": o["city"], "source_tool": "get_outlet_profile"})
         msg = (
             f"Storefront Vision Audit on {o['name']} ({o['outlet_id']}): {o['storefront_vision_note']} "
-            f"Opening Vision & Shelf Potential view now — expected recovery +₹1,18,000/month with Savlon, Fiama & Classmate multipacks."
+            f"Opening Vision & Shelf Potential view now — expected recovery +₹{int(o['revenue_leakage_monthly_inr']):,}/month with Savlon, Fiama & Classmate multipacks."
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 

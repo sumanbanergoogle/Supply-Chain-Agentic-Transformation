@@ -112,14 +112,15 @@ class BeatAnalyticsEngine:
         self.interventions = repo.intervention_history.copy()
         self.dispatched_tickets: list[dict[str, Any]] = []
 
-        y = (self.outlets["health_status"] != "healthy").astype(int).values
+        y = (self.outlets["health_status"] == "critical").astype(int).values
         X = self.outlets[FEATURE_COLS].values
         self.scaler = StandardScaler().fit(X)
         self.clf = GradientBoostingClassifier(
-            n_estimators=70, max_depth=3, learning_rate=0.08, random_state=42
+            n_estimators=35, max_depth=2, learning_rate=0.06, random_state=42
         )
         self.clf.fit(self.scaler.transform(X), y)
-        self.outlets["churn_prob"] = np.round(self.clf.predict_proba(self.scaler.transform(X))[:, 1], 3)
+        raw_p = self.clf.predict_proba(self.scaler.transform(X))[:, 1]
+        self.outlets["churn_prob"] = np.round(np.clip(raw_p, 0.04, 0.94), 3)
 
         lats = self.outlets["lat"].values
         lngs = self.outlets["lng"].values
@@ -421,15 +422,20 @@ class BeatAnalyticsEngine:
         new_dist = round(old_dist * 0.72, 1)  # 28% travel time/distance cut!
         old_visit = round(float(np.mean([o["avg_visit_duration_min"] for o in outlets_list])), 1) if outlets_list else 4.0
         new_visit = round(min(9.8, old_visit + 3.6), 1)
-        is_south_cluster_demo = norm in ("BLR-B04", "BLR-B07")
-        recovered_monthly = 1850000.0 if is_south_cluster_demo else round(total_leak * 0.65, 0)
+        critical_on_beat = int((beat_outlets["health_status"] == "critical").sum())
+        at_risk_on_beat = int((beat_outlets["health_status"] != "healthy").sum())
+        reactivated_stores = max(1, min(len(outlets_list), critical_on_beat if critical_on_beat > 0 else at_risk_on_beat))
+        recovery_ratio = 0.78 if beat["beat_mode"] == "traffic_cutoff" else 0.70
+        recovered_monthly = round(total_leak * recovery_ratio, 0)
+        avg_lspc_gap = float((beat_outlets["target_lspc"] - beat_outlets["current_lspc"]).clip(lower=0.0).mean()) if outlets_list else 1.5
+        lspc_uplift = round(max(0.6, min(2.2, avg_lspc_gap * 0.55)), 1)
 
         return {
             "beat_id": beat["beat_id"],
             "city": beat["city"],
             "zone": beat["zone"],
             "salesman_name": beat["salesman_name"],
-            "target_transfer_beat": "BLR-B04B (Balanced Split)" if norm == "BLR-B04" else adj_beat["beat_id"],
+            "target_transfer_beat": f"{beat['beat_id']}B (Balanced Split via {adj_beat['beat_id']})" if norm == "BLR-B04" else adj_beat["beat_id"],
             "target_transfer_salesman": adj_beat["salesman_name"],
             "before": {
                 "distance_km": old_dist,
@@ -444,9 +450,9 @@ class BeatAnalyticsEngine:
                 "avg_visit_duration_min": new_visit,
                 "beat_load_index": round(max(0.84, beat["beat_load_index"] * 0.72), 2),
                 "finish_time": "4:20 PM (100% outlets covered)",
-                "reactivated_zero_billing_outlets": 32 if is_south_cluster_demo else max(3, len(reassigned)),
+                "reactivated_zero_billing_outlets": reactivated_stores,
                 "projected_monthly_recovery_inr": recovered_monthly,
-                "projected_lspc_uplift": 1.1 if is_south_cluster_demo else 1.4,
+                "projected_lspc_uplift": lspc_uplift,
             },
             "reassigned_outlets": [
                 {"outlet_id": o["outlet_id"], "name": o["name"], "leakage_inr": o["revenue_leakage_monthly_inr"]}

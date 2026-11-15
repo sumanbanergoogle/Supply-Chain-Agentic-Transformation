@@ -459,7 +459,10 @@ export const BeatSimulatorView: React.FC<{
                 <div>
                   <div className="text-textMuted text-[10px]">Monthly Recovery</div>
                   <div className="text-emerald-400 font-bold text-sm flex items-center gap-1">
-                    <TrendingUp className="w-3.5 h-3.5" /> ₹{(sim.after.projected_monthly_recovery_inr / 100000).toFixed(1)}L
+                    <TrendingUp className="w-3.5 h-3.5" />{' '}
+                    {sim.after.projected_monthly_recovery_inr >= 100000
+                      ? `₹${(sim.after.projected_monthly_recovery_inr / 100000).toFixed(2)}L`
+                      : `₹${Math.round(sim.after.projected_monthly_recovery_inr).toLocaleString()}`}
                   </div>
                 </div>
               </div>
