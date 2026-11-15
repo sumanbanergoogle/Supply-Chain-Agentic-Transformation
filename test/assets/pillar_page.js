@@ -101,7 +101,6 @@ window.renderPillarPage = function (pillarId, prevUrl, nextUrl) {
               '<div class="card card-top-accent">' +
                 '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">' +
                   '<span style="font:600 11px var(--font-mono);color:var(--text-muted);">' + item.id + '</span>' +
-                  '<span class="badge-pill">' + item.buildMode + '</span>' +
                 '</div>' +
                 '<h3 style="margin:0 0 6px;font:600 17px/1.25 var(--font-display);"><a href="../pages/persona_dossier.html?id=' + encodeURIComponent(item.id) + '" style="color:inherit;text-decoration:none;">' + item.persona + ' &rarr;</a></h3>' +
                 '<p style="margin:0 0 14px;font-size:13.5px;line-height:1.45;color:var(--text-muted);">' + item.mandate + '</p>' +
