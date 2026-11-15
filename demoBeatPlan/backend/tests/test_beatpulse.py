@@ -12,6 +12,7 @@ os.environ.setdefault("BEATPULSE_LIVE_OFFLINE", "1")
 from app.main import app  # noqa: E402
 from app.analytics.generator import generate_dataset  # noqa: E402
 from app.analytics.ml_engine import get_engine  # noqa: E402
+from app.agent import rbac  # noqa: E402
 from app.agent.ui_control import validate_ui_command  # noqa: E402
 
 
@@ -24,6 +25,17 @@ def test_dataset_and_cities_integrity():
     assert cities == {"Bangalore", "Hyderabad", "Chennai"}
     assert "BLR-701" in set(eng.outlets["outlet_id"])
     assert {"BLR-B04", "BLR-B07"}.issubset(set(eng.outlets["beat_id"]))
+    assert "sbu_line" in eng.outlets.columns
+    assert "zero_billing_type" in eng.outlets.columns
+    k = eng.kpis("ALL")
+    assert 0.0 < k["eco_pct"] <= 100.0
+    assert 0.0 < k["strike_rate_pct"] <= 100.0
+    assert k["avg_drop_size_inr"] > 0
+    # RBAC hierarchy & aliases
+    assert rbac.normalize_persona("VP_TMD") == "TMD_HEAD"
+    so_caps = rbac.capabilities_for("AREA_EXEC_SO")
+    assert "city.compare" not in so_caps["capabilities"]
+    assert "asm.dispatch" not in so_caps["capabilities"]
     # Realistic metro GT zero-billing rate (not >25% catastrophic failure)
     zero_billing_pct = 100.0 * (eng.outlets["health_status"] == "critical").mean()
     assert 5.0 <= zero_billing_pct <= 22.0

@@ -178,6 +178,11 @@ export const OutletDeepDiveDrawer: React.FC<{
           >
             {badgeStyle.label}
           </span>
+          {outlet.zero_billing_type && (
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800/80 text-slate-200 border border-border">
+              {outlet.zero_billing_type}
+            </span>
+          )}
           <button
             type="button"
             onClick={() => onOpenReport(outlet.outlet_id)}
@@ -187,7 +192,8 @@ export const OutletDeepDiveDrawer: React.FC<{
           </button>
         </div>
         <div className="text-xs font-mono text-textMuted mt-1">
-          {outlet.name} · {outlet.city} · Beat {outlet.beat_id} · WD {outlet.wd_name}
+          {outlet.name} · {outlet.city} · Beat {outlet.beat_id}
+          {outlet.sbu_line ? ` (${outlet.sbu_line})` : ''} · WD {outlet.wd_name}
         </div>
         <nav className="flex gap-3 mt-2.5 -mb-4 overflow-x-auto no-scrollbar">
           {TABS.map((t) => (
@@ -225,8 +231,11 @@ export const OutletDeepDiveDrawer: React.FC<{
                 <div className="text-lg font-mono font-bold text-amber-300">{Math.round(outlet.churn_prob * 100)}%</div>
               </div>
               <div className="bg-surface border border-border rounded-lg p-3">
-                <div className="text-[10px] font-mono text-textMuted uppercase">SFA GPS Check-in</div>
+                <div className="text-[10px] font-mono text-textMuted uppercase">Salesman SFA GPS</div>
                 <div className="text-xs font-mono font-bold text-white mt-1">{outlet.actual_gps_time}</div>
+                <div className="text-[10px] font-mono text-textMuted mt-0.5">
+                  Drop Size ₹{Number(outlet.current_weekly_nsv_inr || 0).toLocaleString()}/wk
+                </div>
               </div>
             </div>
 

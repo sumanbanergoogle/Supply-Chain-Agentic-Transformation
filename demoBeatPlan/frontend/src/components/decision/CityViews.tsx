@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGri
 import { ArrowRight, CheckCircle2, Loader2, Play, Send, Sparkles, TrendingUp, AlertTriangle } from 'lucide-react';
 import { tmdApi } from '../../api/client';
 import { BeatDiagnosisPayload, BeatInfo, BeatSimulation, CityBenchmark, CityName, OutletSummary } from '../../types/tmd';
+import { PERSONA_LIST, usePersona } from '../../state/persona';
 
 export const CityComparisonView: React.FC<{ onSelectCity: (c: CityName) => void }> = ({ onSelectCity }) => {
   const [rows, setRows] = useState<CityBenchmark[]>([]);
@@ -56,6 +57,16 @@ export const CityComparisonView: React.FC<{ onSelectCity: (c: CityName) => void 
                 <div className="text-sky-300 font-bold">
                   {c.avg_lspc} / {c.target_lspc}
                 </div>
+              </div>
+              <div>
+                <div className="text-[10px] text-textMuted">ECO / Strike Rate</div>
+                <div className="text-emerald-300 font-bold">
+                  {c.eco_pct ?? '--'}% · {c.strike_rate_pct ?? '--'}% PC
+                </div>
+              </div>
+              <div>
+                <div className="text-[10px] text-textMuted">Drop Size (Wk Call)</div>
+                <div className="text-white">₹{Number(c.avg_drop_size_inr || 0).toLocaleString()}</div>
               </div>
               <div>
                 <div className="text-[10px] text-textMuted">WD Fill Rate</div>
@@ -162,7 +173,20 @@ export const CityHealthPriorityView: React.FC<{
             </div>
             <div className="bg-surface border border-border/60 rounded p-2">
               <span className="text-rose-400 font-bold">● Zero-Billing: {summary.critical_count}</span>
-              <span className="block text-[10px] text-textMuted">₹{(summary.monthly_leakage_inr / 100000).toFixed(2)}L/mo at risk</span>
+              <span className="block text-[10px] text-textMuted">
+                {summary.coverage_miss_count ?? 0} Coverage Miss · {summary.zero_order_visit_count ?? 0} Zero-Order Visit
+              </span>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-2 font-mono text-[11px] pt-1 border-t border-border/50 text-textMuted">
+            <div>
+              ECO (Effective Coverage): <strong className="text-emerald-300">{summary.eco_pct ?? '--'}%</strong>
+            </div>
+            <div>
+              PC Strike Rate: <strong className="text-sky-300">{summary.strike_rate_pct ?? '--'}%</strong>
+            </div>
+            <div>
+              Avg Drop Size: <strong className="text-white">₹{Number(summary.avg_drop_size_inr || 0).toLocaleString()}</strong>
             </div>
           </div>
         </div>
@@ -211,6 +235,9 @@ export const CityHealthPriorityView: React.FC<{
                     >
                       {o.health_status === 'critical' ? 'ZERO-BILLING' : 'ATTENTION'}
                     </span>
+                    {o.zero_billing_type && (
+                      <div className="text-[10px] font-sans text-textMuted mt-0.5">{o.zero_billing_type}</div>
+                    )}
                   </td>
                   <td className="p-2.5 font-mono text-white">
                     {o.current_lspc} / <span className="text-textMuted">{o.target_lspc}</span>
@@ -275,10 +302,19 @@ export const BeatDiagnosisView: React.FC<{
     <div className="space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
-          <h2 className="text-base font-bold text-white">Beat Reality Check &amp; ML Diagnosis · {diag.beat.beat_id}</h2>
-          <p className="text-xs text-textMuted">
-            {diag.beat.zone} · Salesman: {diag.beat.salesman_name} · Visit Compliance:{' '}
-            <strong className="text-white">{diag.beat.visit_compliance_pct}%</strong>
+          <div className="flex items-center gap-2 flex-wrap">
+            <h2 className="text-base font-bold text-white">Beat Reality Check &amp; ML Diagnosis · {diag.beat.beat_id}</h2>
+            {diag.beat.sbu_line && (
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950/60 text-blue-300 border border-blue-700/50">
+                {diag.beat.sbu_line}
+              </span>
+            )}
+          </div>
+          <p className="text-xs text-textMuted mt-0.5">
+            {diag.beat.zone} · WD Pilot (DS): {diag.beat.salesman_name} · Visit Compliance:{' '}
+            <strong className="text-white">{diag.beat.visit_compliance_pct}%</strong> · ECO:{' '}
+            <strong className="text-emerald-300">{diag.eco_pct ?? '--'}%</strong> · Strike Rate:{' '}
+            <strong className="text-sky-300">{diag.strike_rate_pct ?? '--'}%</strong>
           </p>
         </div>
         <div className="flex items-center gap-1 font-mono text-xs flex-wrap">
@@ -364,6 +400,8 @@ export const BeatSimulatorView: React.FC<{
   const [sim, setSim] = useState<BeatSimulation | null>(null);
   const [ticket, setTicket] = useState<{ ticket_id: string; summary: string } | null>(null);
   const [loading, setLoading] = useState(false);
+  const { persona } = usePersona();
+  const canDispatch = (PERSONA_LIST.find((p) => p.id === persona) || PERSONA_LIST[0]).canDispatchAsm;
 
   useEffect(() => {
     tmdApi.beats(city).then((b) => {
@@ -500,10 +538,17 @@ export const BeatSimulatorView: React.FC<{
             </div>
             <button
               type="button"
+              disabled={!canDispatch}
               onClick={handleDispatch}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-[#0d1117] font-bold text-xs"
+              title={!canDispatch ? 'Beat split dispatch requires Branch / Area Manager (AM) approval' : undefined}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg font-bold text-xs ${
+                canDispatch
+                  ? 'bg-emerald-500 hover:bg-emerald-400 text-[#0d1117]'
+                  : 'bg-slate-800 text-textMuted border border-border cursor-not-allowed'
+              }`}
             >
-              <Send className="w-3.5 h-3.5" /> Send Beat Update &amp; Stock Alert to ASM
+              <Send className="w-3.5 h-3.5" />{' '}
+              {canDispatch ? 'Send Beat Update & Stock Alert to ASM' : 'AM Approval Required to Dispatch'}
             </button>
           </div>
 

@@ -36,8 +36,8 @@ INTERVENTION_CATALOG: dict[str, dict[str, Any]] = {
         "driver_key": "hero_sku_stockout",
         "sop_steps": [
             "Reserve 48h safety stock for Sunfeast Dark Fantasy, Bingo! & Aashirvaad Atta 5kg at parent WD.",
-            "Trigger automated replenishment push via DMS before next morning beat dispatch.",
-            "Confirm stock invoice clearance with WD supervisor.",
+            "Trigger automated replenishment push via WD DMS before next morning beat dispatch.",
+            "Confirm stock invoice clearance with WD supervisor and Sales Officer.",
         ],
     },
     "QCOM_COUNTER_SCHEME": {
@@ -48,48 +48,48 @@ INTERVENTION_CATALOG: dict[str, dict[str, Any]] = {
         "cost_band": "MEDIUM",
         "driver_key": "qcommerce_spillover",
         "sop_steps": [
-            "Unlock GT-exclusive 4% display-plus-slab trade margin on YiPPee! & Bingo! family packs.",
+            "Activate GT-focused Branch QPS display-plus-slab scheme on YiPPee! & Bingo! family packs.",
             "Deploy counter-top Impulse visibility hanger to capture evening walk-in baskets.",
-            "Bundle consumer promo QR to retain kirana shopper loyalty within 600m dark-store radius.",
+            "Enable eB2B Retailer App loyalty QR nudges within 600m dark-store radius.",
         ],
     },
     "BEAT_SPLIT": {
         "code": "BEAT_SPLIT",
-        "title": "Dynamic Beat Split (4A / 4B) & Extended Salesman Call Time",
-        "owner": "Area Sales Manager & SO",
+        "title": "Dynamic Beat Split (4A / 4B) & Extended DS Call Time",
+        "owner": "Branch / Area Mgr & SO",
         "sla_days": 4,
         "cost_band": "LOW",
         "driver_key": "beat_coverage_fatigue",
         "sop_steps": [
-            "Split overloaded Beat into balanced 4A / 4B sequence avoiding 4:15 PM Sony World bottleneck.",
-            "Cut beat travel time by 28% so every kirana is visited before 4:30 PM.",
-            "Enforce guided handheld order-pad LSPC checklist on every call.",
+            "Split overloaded Beat into balanced 4A / 4B sequence avoiding 4:15 PM bottleneck.",
+            "Cut beat travel time by 28% so every kirana is covered on the WD Pilot route before 4:30 PM.",
+            "Enforce guided Salesman SFA Order Pad LSPC checklist on every outlet call.",
         ],
     },
     "CREDIT_RESTRUCTURE": {
         "code": "CREDIT_RESTRUCTURE",
-        "title": "Rolling 7-Day Micro-Credit & Early-Pay Incentive",
-        "owner": "WD Commercial & Credit Desk",
+        "title": "WD Credit Cap Alert · QPS Slab Nudge & eB2B App",
+        "owner": "WD Commercial & Branch Finance",
         "sla_days": 2,
         "cost_band": "LOW",
         "driver_key": "credit_margin_squeeze",
         "sop_steps": [
-            "Split overdue invoice into 2 weekly tranches to unblock DMS billing immediately.",
-            "Activate 1.25% UPI instant-settlement trade rebate on next 3 invoices.",
-            "Set weekly credit cap alert at 75% utilization in salesman app.",
+            "Flag overdue invoice to parent WD Commercial Desk; align split collection with WD credit policy.",
+            "Activate Branch-approved QPS volume slab & eB2B Retailer App fast-turn pre-order checklist.",
+            "Set weekly credit utilization guard at 75% in WD DMS before salesman dispatch.",
         ],
     },
     "CROSS_SELL_BUNDLE": {
         "code": "CROSS_SELL_BUNDLE",
         "title": "Upgrade Tier + Savlon, Fiama & Classmate Campus Bundle",
-        "owner": "Sales Officer & Merchandiser",
+        "owner": "Area Exec (SO) & Merchandiser",
         "sla_days": 4,
         "cost_band": "MEDIUM",
         "driver_key": "assortment_tier_mismatch",
         "sop_steps": [
-            "Upgrade store tag from Legacy Tier-C to Self-Service Mini-Mart (Priority Rack).",
+            "Upgrade store tag from Legacy Tier-C to Self-Service Mini-Mart in WD DMS & SFA master.",
             "Reclaim eye-level Personal Care shelf facing with Savlon, Fiama Gel Bar & Classmate multipacks.",
-            "Audit shelf facing compliance via mobile storefront photo on Week 2 follow-up.",
+            "Verify shelf facing compliance via Salesman SFA photo capture on Week 2 follow-up.",
         ],
     },
 }
@@ -171,12 +171,27 @@ class BeatAnalyticsEngine:
         avg_lspc = float(df["current_lspc"].mean()) if total else 0.0
         target_lspc = float(df["target_lspc"].mean()) if total else 0.0
         avg_fill = float(df["wd_fill_rate"].mean()) if total else 0.0
+        productive = int((df["health_status"] != "critical").sum())
+        visited_df = df[df["visited_on_time"] == True]  # noqa: E712
+        visited_count = int(len(visited_df))
+        visited_productive = int((visited_df["health_status"] != "critical").sum())
+        eco_pct = round(100.0 * productive / max(1, total), 1)
+        strike_rate_pct = round(100.0 * visited_productive / max(1, visited_count), 1)
+        billing_df = df[df["current_weekly_nsv_inr"] > 0]
+        avg_drop_size_inr = round(float(billing_df["current_weekly_nsv_inr"].mean()), 0) if len(billing_df) else 0.0
+        coverage_miss = int((df["visited_on_time"] == False).sum())  # noqa: E712
+        zero_order_visit = int(((df["visited_on_time"] == True) & (df["health_status"] == "critical")).sum())  # noqa: E712
         return {
             "city": city,
             "total_outlets": total,
             "healthy_count": healthy,
             "warning_count": warning,
             "critical_count": critical,
+            "coverage_miss_count": coverage_miss,
+            "zero_order_visit_count": zero_order_visit,
+            "eco_pct": eco_pct,
+            "strike_rate_pct": strike_rate_pct,
+            "avg_drop_size_inr": avg_drop_size_inr,
             "monthly_leakage_inr": round(leakage, 0),
             "avg_lspc": round(avg_lspc, 1),
             "target_lspc": round(target_lspc, 1),
@@ -311,11 +326,22 @@ class BeatAnalyticsEngine:
                 for k, v in sorted(agg.items(), key=lambda kv: -kv[1])[:3]
             ]
 
+        visited_bo = bo[bo["visited_on_time"] == True]  # noqa: E712
+        prod_on_visit = int((visited_bo["health_status"] != "critical").sum())
+        productive_all = int((bo["health_status"] != "critical").sum())
+        eco_pct = round(100.0 * productive_all / max(1, len(bo)), 1)
+        strike_rate_pct = round(100.0 * prod_on_visit / max(1, len(visited_bo)), 1)
+        billing_bo = bo[bo["current_weekly_nsv_inr"] > 0]
+        avg_drop_size_inr = round(float(billing_bo["current_weekly_nsv_inr"].mean()), 0) if len(billing_bo) else 0.0
+
         return {
             "beat": beat,
             "outlets": bo.to_dict(orient="records"),
             "zero_billing_count": int((bo["health_status"] == "critical").sum()),
             "skipped_count": int((bo["skipped_weeks"] > 0).sum()),
+            "eco_pct": eco_pct,
+            "strike_rate_pct": strike_rate_pct,
+            "avg_drop_size_inr": avg_drop_size_inr,
             "total_monthly_leakage_inr": round(float(bo["revenue_leakage_monthly_inr"].sum()), 0),
             "avg_lspc": round(float(bo["current_lspc"].mean()), 1) if len(bo) else 0.0,
             "avg_gnn_spillover": round(float(bo["gnn_spillover_risk"].mean()), 3) if len(bo) else 0.0,

@@ -28,7 +28,7 @@ class BeatPulseRepository:
         else:
             # Auto-refresh if generated schema is from an earlier build (missing beat_seq / pois kind)
             om = pd.read_parquet(landing / "outlet_master.parquet")
-            if "beat_seq" not in om.columns or "BLR-701" not in set(om["outlet_id"]):
+            if "beat_seq" not in om.columns or "zero_billing_type" not in om.columns or "BLR-701" not in set(om["outlet_id"]):
                 generate_dataset(landing)
 
         self.wd_master: pd.DataFrame = pd.read_parquet(landing / "wd_master.parquet")

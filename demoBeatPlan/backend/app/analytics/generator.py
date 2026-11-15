@@ -156,6 +156,16 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
             outlets_in_beat = 8 if beat_id in ("BLR-B04", "BLR-B07") else 6
             overloaded = beat_mode == "traffic_cutoff"
             visit_compliance = 0.62 if overloaded else (0.95 if beat_mode == "stockout_qcom" else 0.96)
+            if beat_mode == "traffic_cutoff":
+                sbu_line = "Foods & Snacks (Dedicated DS Beat)"
+            elif beat_mode == "stockout_qcom":
+                sbu_line = "Composite GT Beat (Foods + PCPB + ESPB)"
+            else:
+                sbu_line = [
+                    "Foods & Impulse (DS Beat)",
+                    "PCPB & Stationery (ESPB Beat)",
+                    "Composite GT Beat (Foods + PCPB + ESPB)",
+                ][z_idx % 3]
 
             beat_rows.append(
                 {
@@ -164,6 +174,7 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                     "wd_id": wd_id,
                     "wd_name": wd_lookup[wd_id]["name"],
                     "zone": zone_name,
+                    "sbu_line": sbu_line,
                     "salesman_name": salesman,
                     "visit_day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][z_idx % 6],
                     "planned_outlets": outlets_in_beat,
@@ -335,6 +346,15 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                     else f"Facade audit: {channel} ({tier}); {'Classmate/Personal Care rack under-indexed' if dominant_cause == 'assortment_tier_mismatch' else 'Standard ITC front-bay visibility'}"
                 )
 
+                if not visited_on_time:
+                    zero_billing_type = "Coverage Miss (Not Visited)"
+                elif health_status == "critical":
+                    zero_billing_type = "Zero-Order Visit (Fill / Credit)"
+                elif health_status == "warning":
+                    zero_billing_type = "Low LSPC (Category Dormant)"
+                else:
+                    zero_billing_type = "Productive Core"
+
                 outlet_rows.append(
                     {
                         "outlet_id": oid,
@@ -342,6 +362,7 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                         "city": city,
                         "region": cfg["region"],
                         "zone": zone_name,
+                        "sbu_line": sbu_line,
                         "wd_id": wd_id,
                         "wd_name": wd_lookup[wd_id]["name"],
                         "beat_id": beat_id,
@@ -356,6 +377,7 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                         "lat": olat,
                         "lng": olng,
                         "health_status": health_status,
+                        "zero_billing_type": zero_billing_type,
                         "archetype": archetype,
                         "dominant_cause": dominant_cause,
                         "baseline_weekly_nsv_inr": round(baseline_4w_nsv, 0),

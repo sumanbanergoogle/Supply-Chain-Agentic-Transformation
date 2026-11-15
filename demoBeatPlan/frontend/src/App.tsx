@@ -15,6 +15,7 @@ import { FloatingAgent, AGENT_DOCK_WIDTH } from './components/agent/FloatingAgen
 import { tmdApi } from './api/client';
 import { BeatSimulation, ChatAction, CityFilter, CityKPIs, InfrastructurePayload, OutletSummary } from './types/tmd';
 import { dispatchUi, useUiCommands } from './agent/uiCommands';
+import { PERSONA_LIST, usePersona } from './state/persona';
 
 type ScreenTab = 'map' | 'city_compare' | 'city_health' | 'beat_diagnosis' | 'beat_simulator';
 
@@ -47,6 +48,14 @@ export function App() {
   const [agentDocked, setAgentDocked] = useState(true);
   const [reportOutletId, setReportOutletId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const { persona } = usePersona();
+  const personaMeta = PERSONA_LIST.find((p) => p.id === persona) || PERSONA_LIST[0];
+
+  useEffect(() => {
+    if (!personaMeta.canCompareCities && screenTab === 'city_compare') {
+      setScreenTab('city_health');
+    }
+  }, [personaMeta.canCompareCities, screenTab]);
 
   useEffect(() => {
     Promise.all([tmdApi.outlets('ALL'), tmdApi.kpis('ALL'), tmdApi.infrastructure('ALL')])
@@ -238,7 +247,16 @@ export function App() {
                   />
                 </div>
                 <div className="pointer-events-auto flex items-center gap-0.5 p-1 rounded-lg bg-black/45 backdrop-blur-sm border border-white/10 shadow-lg text-[11px] font-sans flex-wrap">
-                  {viewBtn('city_compare', 'Compare cities')}
+                  {personaMeta.canCompareCities ? (
+                    viewBtn('city_compare', 'Compare cities')
+                  ) : (
+                    <span
+                      className="px-2 py-1 rounded text-[10px] font-mono text-white/40 border border-white/10 cursor-not-allowed"
+                      title="Cross-city benchmark is scoped to TM&D Head / Circle Manager"
+                    >
+                      🔒 Compare cities
+                    </span>
+                  )}
                   {viewBtn('city_health', 'Health & priority')}
                   {viewBtn('beat_diagnosis', 'Beat Diagnosis')}
                   {viewBtn('beat_simulator', 'Beat Simulator')}
