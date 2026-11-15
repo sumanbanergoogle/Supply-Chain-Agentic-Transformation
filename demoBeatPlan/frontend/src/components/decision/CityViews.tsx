@@ -230,12 +230,25 @@ export const CityHealthPriorityView: React.FC<{
 };
 
 export const BeatDiagnosisView: React.FC<{
+  city?: string;
   beatId: string;
   onSelectBeat: (b: string) => void;
   onOpenOutlet: (id: string) => void;
-}> = ({ beatId, onSelectBeat, onOpenOutlet }) => {
+}> = ({ city = 'ALL', beatId, onSelectBeat, onOpenOutlet }) => {
   const [diag, setDiag] = useState<BeatDiagnosisPayload | null>(null);
+  const [cityBeats, setCityBeats] = useState<BeatInfo[]>([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    tmdApi.beats(city).then((list) => {
+      setCityBeats(list);
+      if (city !== 'ALL' && list.length > 0 && !list.some((b) => b.beat_id === beatId)) {
+        const prioritized =
+          list.find((b) => b.beat_mode === 'traffic_cutoff' || b.beat_mode === 'stockout_qcom') || list[0];
+        onSelectBeat(prioritized.beat_id);
+      }
+    });
+  }, [city]);
 
   useEffect(() => {
     setLoading(true);
@@ -253,6 +266,11 @@ export const BeatDiagnosisView: React.FC<{
     );
   }
 
+  const beatTabs =
+    city !== 'ALL' && cityBeats.length > 0
+      ? cityBeats.map((b) => b.beat_id)
+      : ['BLR-B04', 'BLR-B07', 'HYD-B01', 'CHN-B03'];
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-2">
@@ -263,8 +281,8 @@ export const BeatDiagnosisView: React.FC<{
             <strong className="text-white">{diag.beat.visit_compliance_pct}%</strong>
           </p>
         </div>
-        <div className="flex items-center gap-1 font-mono text-xs">
-          {['BLR-B04', 'BLR-B07', 'HYD-B01', 'CHN-B03'].map((b) => (
+        <div className="flex items-center gap-1 font-mono text-xs flex-wrap">
+          {beatTabs.map((b) => (
             <button
               key={b}
               type="button"
@@ -380,7 +398,7 @@ export const BeatSimulatorView: React.FC<{
   const handleDispatch = () => {
     if (!sim) return;
     tmdApi
-      .dispatchBeat(sim.beat_id, `Approved Beat ${sim.beat_id} split + Hero SKU replenishment push`)
+      .dispatchBeat(sim.beat_id, `Approved ${sim.beat_id} (${sim.city}) rebalance + priority SKU replenishment push`)
       .then(setTicket);
   };
 
@@ -476,7 +494,9 @@ export const BeatSimulatorView: React.FC<{
 
           <div className="bg-[#0d1117] border border-border rounded-lg p-4 flex items-center justify-between gap-3 flex-wrap">
             <div className="text-xs text-textMuted">
-              Ready to push {sim.beat_id} rebalance + HSR Beat 7 priority SKU replenishment to the Area Sales Manager &amp; WD DMS.
+              {sim.beat_id === 'BLR-B04' || sim.beat_id === 'BLR-B07'
+                ? `Ready to push ${sim.beat_id} rebalance + HSR Beat 7 priority SKU replenishment to the Bangalore Area Sales Manager & WD DMS.`
+                : `Ready to push ${sim.beat_id} (${sim.city}) rebalance + priority SKU replenishment alert to the ${sim.city} Area Sales Manager & WD DMS.`}
             </div>
             <button
               type="button"

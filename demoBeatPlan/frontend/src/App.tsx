@@ -240,7 +240,7 @@ export function App() {
                 <div className="pointer-events-auto flex items-center gap-0.5 p-1 rounded-lg bg-black/45 backdrop-blur-sm border border-white/10 shadow-lg text-[11px] font-sans flex-wrap">
                   {viewBtn('city_compare', 'Compare cities')}
                   {viewBtn('city_health', 'Health & priority')}
-                  {viewBtn('beat_diagnosis', 'Beat 4/7 Diagnosis')}
+                  {viewBtn('beat_diagnosis', 'Beat Diagnosis')}
                   {viewBtn('beat_simulator', 'Beat Simulator')}
                   <span className="text-white/15 px-0.5">|</span>
                   <button
@@ -323,6 +323,7 @@ export function App() {
               ) : screenTab === 'beat_diagnosis' ? (
                 <div className="flex-1 overflow-y-auto p-4 pt-12">
                   <BeatDiagnosisView
+                    city={cityFilter}
                     beatId={selectedBeatId}
                     onSelectBeat={(b) => {
                       setSelectedBeatId(b);

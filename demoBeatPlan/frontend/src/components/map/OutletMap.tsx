@@ -123,20 +123,19 @@ export const OutletMap: React.FC<OutletMapProps> = ({
       (['Bangalore', 'Hyderabad', 'Chennai'] as const).forEach((cname) => {
         const co = outlets.filter((o) => o.city === cname);
         const crit = co.filter((o) => o.health_status === 'critical').length;
+        const leakLakhs = (co.reduce((acc, o) => acc + (o.revenue_leakage_monthly_inr || 0), 0) / 100000).toFixed(2);
         const c = CITY_CENTERS[cname];
-        const isBlr = cname === 'Bangalore';
+        const isTopRisk = crit >= 8;
         const icon = L.divIcon({
           className: '',
-          html: `<div style="transform:translate(-50%,-50%);min-width:168px" class="bg-[#161b22]/95 border ${
-            isBlr ? 'border-rose-500 ring-2 ring-rose-500/30' : 'border-[#58a6ff]/70'
+          html: `<div style="transform:translate(-50%,-50%);min-width:176px" class="bg-[#161b22]/95 border ${
+            isTopRisk ? 'border-rose-500 ring-2 ring-rose-500/30' : 'border-[#58a6ff]/70'
           } rounded-xl px-3 py-2 shadow-2xl text-xs cursor-pointer">
             <div class="font-bold text-white flex items-center justify-between gap-2">
               <span>${cname}</span>
               <span style="color:#f85149;font-family:monospace">${crit} Zero-Bill</span>
             </div>
-            <div class="text-[10px] text-[#8b949e] font-mono mt-0.5">${co.length} outlets${
-              isBlr ? ' · South Cluster -14%' : ''
-            }</div>
+            <div class="text-[10px] text-[#8b949e] font-mono mt-0.5">${co.length} outlets · ₹${leakLakhs}L/mo risk</div>
           </div>`,
         });
         L.marker([c.lat, c.lng], { icon })
@@ -212,12 +211,18 @@ export const OutletMap: React.FC<OutletMapProps> = ({
           ).addTo(group);
         }
         if (skipped.length >= 1 && visited.length >= 1) {
+          const bid = sorted[0].beat_id;
+          const bInfo = infrastructure?.beats.find((b) => b.beat_id === bid);
+          const skipLabel =
+            bid === 'BLR-B04'
+              ? `${bid} · Sony World 4:15 PM cutoff — ${skipped.length} tail outlets skipped 3w`
+              : `${bid} (${bInfo?.zone || sorted[0].zone}) · ${skipped.length} tail outlet(s) skipped`;
           const tail = [visited[visited.length - 1], ...skipped];
           L.polyline(
             tail.map((o) => [o.lat, o.lng] as [number, number]),
             { color: '#f85149', weight: 2.6, opacity: 0.85, dashArray: '6 6' },
           )
-            .bindTooltip('Traffic cutoff after 4:15 PM · Tail outlets skipped 3w in a row')
+            .bindTooltip(skipLabel)
             .addTo(group);
         }
       });

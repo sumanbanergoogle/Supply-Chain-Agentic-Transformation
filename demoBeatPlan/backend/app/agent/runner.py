@@ -70,12 +70,17 @@ def _deterministic_turn(
 
     # Storyboard Step 5b: ASM Dispatch
     if any(w in q for w in ("send", "dispatch", "asm", "alert")) and any(w in q for w in ("beat", "stock", "update", "asm", "action")):
-        bid = target_beat or "BLR-B04"
+        bid = target_beat or ("BLR-B04" if (detected_city or "").lower() in ("bangalore", "") else f"{detected_city[:3].upper()}-B02")
         res = agent_tools.dispatch_asm_action(bid)["data"]
         tool_calls.append({"name": "dispatch_asm_action", "args": {"beat_id": bid}, "status": "OK", "duration_ms": int((time.perf_counter() - t0) * 1000)})
         actions.append({"kind": "ui", "source_tool": "ui_control", "command": {"action": "report", "value": "open", "outlet_id": target_outlet or "BLR-701"}})
+        detail = (
+            f"{bid} split plan + HSR Beat 7 priority Sunfeast/Bingo! stock alert queued."
+            if bid.startswith("BLR-")
+            else f"{bid} route rebalance plan + priority Hero SKU stock alert queued."
+        )
         return {
-            "response": f"Ticket {res['ticket_id']} dispatched to ASM & Distributor DMS: {bid} split plan + HSR Beat 7 priority Sunfeast/Bingo! stock alert queued.",
+            "response": f"Ticket {res['ticket_id']} dispatched to ASM & Distributor DMS: {detail}",
             "tool_calls": tool_calls,
             "artifacts": [],
             "actions": actions,
@@ -131,9 +136,14 @@ def _deterministic_turn(
         o = prof["data"]
         actions.append({"kind": "ui", "source_tool": "ui_control", "command": {"action": "focus_city", "value": o["city"]}})
         actions.append({"kind": "navigate", "screen": "outlet", "view": "vision", "outlet_id": o["outlet_id"], "city": o["city"], "source_tool": "get_outlet_profile"})
+        sku_pitch = (
+            "Savlon, Fiama & Classmate multipacks"
+            if o["dominant_cause"] == "assortment_tier_mismatch"
+            else ("Sunfeast Dark Fantasy, Bingo! & Aashirvaad 5kg" if o["dominant_cause"] == "hero_sku_stockout" else "tailored core-range ITC SKUs")
+        )
         msg = (
-            f"Storefront Vision Audit on {o['name']} ({o['outlet_id']}): {o['storefront_vision_note']} "
-            f"Opening Vision & Shelf Potential view now — expected recovery +₹{int(o['revenue_leakage_monthly_inr']):,}/month with Savlon, Fiama & Classmate multipacks."
+            f"Storefront Vision Audit on {o['name']} ({o['outlet_id']}, {o['city']}): {o['storefront_vision_note']} "
+            f"Opening Vision & Shelf Potential view now — expected recovery +₹{int(o['revenue_leakage_monthly_inr']):,}/month with {sku_pitch}."
         )
         return {"response": msg, "tool_calls": tool_calls, "artifacts": [], "actions": actions, "status": "ok", "engine": "deterministic-tools"}
 
