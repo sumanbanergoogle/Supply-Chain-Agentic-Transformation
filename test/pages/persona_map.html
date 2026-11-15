@@ -379,9 +379,9 @@
       : 'Manual reconciliation across disconnected systems introduces latency, blind spots, and reactive firefighting.';
     var agentDesc = (cell && cell.desc) ? cell.desc : prmt;
     var liveMap = window.SC_LIVE_AGENT_MAP || {};
-    var liveRec = liveMap[(cTitle || '').toLowerCase()] || liveMap[(r.agent || '').toLowerCase()] || null;
-    var geHref = (liveRec && liveRec.geUrl) ? liveRec.geUrl : 'https://vertexaisearch.cloud.google.com/';
-    var geLabel = (liveRec && liveRec.isItcTmd) ? 'Open ' + liveRec.geDisplayName : (liveRec ? 'Open live agent' : 'Open this agent');
+    var liveRec = liveMap[(cTitle || '').toLowerCase()] || null;
+    var geHref = (liveRec && liveRec.geUrl) ? liveRec.geUrl : '';
+    var geLabel = (liveRec && liveRec.isItcTmd) ? 'Open ' + liveRec.geDisplayName : (liveRec ? 'Open live agent' : '');
 
     panel.innerHTML =
       '<div class="d-head">' +
@@ -410,12 +410,14 @@
         '</div>' +
       '</div>' +
       '<div class="d-foot">' +
-        '<a class="ge-launch" href="' + geHref + '" target="_blank" rel="noopener noreferrer" title="Opens Gemini Enterprise">' +
-          '<img class="ge-mark" src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">' +
-          '<span class="ge-cta">' + geLabel + '</span>' +
-          '<span class="ge-arrow" aria-hidden="true">&#8599;</span>' +
-        '</a>' +
-        (liveRec ? '<a href="demo_stage.html?agent=' + encodeURIComponent(liveRec.id) + '" style="display:block;text-align:center;margin-top:8px;font:600 12px var(--font-display);color:var(--blue-ink);text-decoration:none;">&#9654; Watch Video &amp; Live Demo Stage &rarr;</a>' : '') +
+        (liveRec ? (
+          '<a class="ge-launch" href="' + geHref + '" target="_blank" rel="noopener noreferrer" title="Opens Gemini Enterprise">' +
+            '<img class="ge-mark" src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">' +
+            '<span class="ge-cta">' + geLabel + '</span>' +
+            '<span class="ge-arrow" aria-hidden="true">&#8599;</span>' +
+          '</a>' +
+          '<a href="demo_stage.html?agent=' + encodeURIComponent(liveRec.id) + '" style="display:block;width:100%;text-align:center;margin-top:6px;font:600 12px var(--font-display);color:var(--blue-ink);text-decoration:none;">&#9654; Watch Video &amp; Live Demo Stage &rarr;</a>'
+        ) : '<span style="font:500 11.5px var(--font-mono);color:var(--text-muted);">Blueprint · Not yet deployed in Gemini Enterprise</span>') +
       '</div>';
 
     var ub = document.getElementById('unpinBtn');
