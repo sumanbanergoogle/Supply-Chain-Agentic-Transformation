@@ -259,10 +259,11 @@
   </div>
 
   <div class="controls" style="margin-top:4px;">
-    <span style="font:600 11px var(--font-mono);color:var(--text-muted);text-transform:uppercase;">Highlight:</span>
+    <span style="font:600 11px var(--font-mono);color:var(--text-muted);text-transform:uppercase;">Build queue:</span>
     <button class="prio-pill active" data-prio="all">All Agents</button>
     <button class="prio-pill" data-prio="prio-first">Build First (Red)</button>
     <button class="prio-pill" data-prio="prio-next">Build Next (Yellow)</button>
+    <button class="prio-pill" data-prio="prio-routine">Routine Agentic (Blue)</button>
   </div>
 
   <div id="resultCount" style="font:500 12px var(--font-mono);color:var(--text-muted);margin-bottom:10px;">Showing 60 personas</div>
@@ -311,24 +312,27 @@
   }
 
   function buildCells(r) {
-    var prioCls = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'own-agentic prio-first' : 'own-agentic prio-next';
-    var prioLbl = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1) ? 'Agent Prepares (Build First)' : 'Agent Prepares (Build Next)';
+    var isFirst = (r.buildMode && r.buildMode.indexOf('Low-Code') !== -1);
+    var prioCls = isFirst ? 'own-agentic prio-first' : 'own-agentic prio-next';
+    var prioLbl = isFirst ? 'Agent Prepares (Build First)' : 'Agent Prepares (Build Next)';
+    var qLbl = isFirst ? 'Build First (Critical)' : 'Build Next (Friction)';
     var rowTag = 'A' + (r.rowNum < 10 ? '0' + r.rowNum : r.rowNum);
     if (r.tmAndDAgents && r.tmAndDAgents.length) {
       return r.tmAndDAgents.map(function (ag, idx) {
-        var c = 'own-agentic' + (ag.prio ? ' ' + ag.prio : '');
+        var c = 'own-agentic ' + (ag.prio ? ag.prio : 'prio-routine');
         var lbl = ag.prio === 'prio-first' ? 'Agent Prepares (Build First)' : (ag.prio === 'prio-next' ? 'Agent Prepares (Build Next)' : 'Routine Agentic');
+        var q = ag.prio === 'prio-first' ? 'Build First (Critical)' : (ag.prio === 'prio-next' ? 'Build Next (Friction)' : 'Routine Agentic');
         var wNum = idx + 1;
         var cellCode = rowTag + 'W' + (wNum < 10 ? '0' + wNum : wNum);
         return {
-          code: cellCode, cls: c, owner: lbl,
+          code: cellCode, cls: c, owner: lbl, queue: q,
           title: ag.name, today: ag.dailyTask || r.mandate, desc: ag.desc || ag.dailyTask,
           impact: ag.impact || r.impact, sources: ag.sources || r.sources, prompt: ag.promptHint || r.promptHint
         };
       });
     }
     return [
-      { code: rowTag + 'W01', cls: prioCls, owner: prioLbl, title: r.agent, today: r.mandate, desc: r.promptHint, impact: r.impact, sources: r.sources, prompt: r.promptHint }
+      { code: rowTag + 'W01', cls: prioCls, owner: prioLbl, queue: qLbl, title: r.agent, today: r.mandate, desc: r.promptHint, impact: r.impact, sources: r.sources, prompt: r.promptHint }
     ];
   }
 
@@ -375,6 +379,7 @@
         '<div class="d-block"><div class="d-k">Value impact</div><div class="d-v"><b>' + imp + '</b></div></div>' +
         '<div class="d-block"><div class="d-k">System of record</div><div class="d-v muted">' + srcs.join(' · ') + '</div></div>' +
         '<div class="d-spec">' +
+          '<div class="d-spec-row"><span class="d-spec-k">Build Queue</span><span class="d-spec-v">' + (cell && cell.queue ? cell.queue : 'Build First (Critical)') + '</span></div>' +
           '<div class="d-spec-row"><span class="d-spec-k">Sub-Process</span><span class="d-spec-v">' + r.subprocess + '</span></div>' +
           '<div class="d-spec-row"><span class="d-spec-k">Status</span><span class="d-spec-v">' + (isPin ? 'Pinned (click ✕ or another square)' : 'Hovering (click square to pin)') + '</span></div>' +
         '</div>' +
