@@ -261,8 +261,9 @@
           '<div class="flow-arr">···</div>' +
           '<div class="flow-step"><div class="flow-num">03</div><div><b>' + p.persona + ' Approves in 1 Click</b><span>' + p.notOwned + '</span></div></div>' +
         '</div>' +
-        '<div class="sec-head"><h2>Agentic Suite (' + p.suiteNames.length + ' Agents)</h2><span style="font:600 12px var(--mono);color:var(--text-muted);">Click any agent card to open full architecture &amp; live links</span></div>' +
-        '<div class="suite-grid">' + cardsHtml + '</div>';
+        '<div class="sec-head"><h2 style="display:flex;align-items:center;gap:8px;"><img src="../assets/media/models/gemini-color.svg" alt="" style="width:18px;height:18px;"><span>Agentic Suite (' + p.suiteNames.length + ' Agents)</span></h2><span style="font:600 12px var(--mono);color:var(--text-muted);">Click any agent card to open full architecture &amp; live links</span></div>' +
+        '<div class="suite-grid">' + cardsHtml + '</div>' +
+        '<footer class="deck-footer" style="margin-top:32px;"><span>Persona Dossier &amp; Agent Suite</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>';
     }
 
     paintRoster();

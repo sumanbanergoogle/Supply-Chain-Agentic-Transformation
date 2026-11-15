@@ -58,6 +58,7 @@
     '.mc-plot', '.mc-side > *',
     '.gv-lane', '.gv-low > *',
     '.sf-core', '.sf-list > *', '.sf-stage',
+    '.card', '.thesis-card', '.kpi-card', '.arch-card', '.panel', '.flow-bar', '.flow-step', '.ab-kpi', '.kpi-box', '.demo-box', '.spine-card', '.b-row', '.deck-footer',
     '#citeGrid > article', 'main > section > article', '#plan100 > div'
   ];
 
@@ -111,7 +112,9 @@
     scopedSelector('from-up')    + ' { animation: cpgEnterUp 280ms cubic-bezier(0.22, 1, 0.36, 1) both; will-change: transform, opacity; }',
     scopedSelector('matrix')     + ' { animation: cpgEnterMatrix 310ms cubic-bezier(0.22, 1, 0.36, 1) both; will-change: transform, opacity; }',
     staggerRules,
-    '@media (prefers-reduced-motion: reduce) { html[data-flow-dir] * { animation: none !important; } }'
+    '.card, .thesis-card, .arch-card, .panel, .kpi-box, .ab-kpi, .demo-box, .spine-card { transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1), border-color 200ms ease; }',
+    '.card:hover, .thesis-card:hover, .arch-card:hover, .kpi-box:hover, .ab-kpi:hover, .demo-box:hover, .spine-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08); }',
+    '@media (prefers-reduced-motion: reduce) { html[data-flow-dir] * { animation: none !important; transition: none !important; } }'
   ].join('\n');
 
   var styleEl = document.createElement('style');

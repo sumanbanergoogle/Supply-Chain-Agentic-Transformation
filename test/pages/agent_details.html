@@ -173,12 +173,12 @@
           '<div class="ab-kpi"><b style="font-size:15px;">' + ag.model + '</b><span>Global Endpoint</span></div>' +
         '</div>' +
       '</section>' +
-      '<h2 class="sec-title">4-Stage Runtime Architecture &amp; Coexistence Boundary</h2>' +
+      '<h2 class="sec-title" style="display:flex;align-items:center;gap:8px;"><img src="../assets/media/models/gemini-color.svg" alt="" style="width:18px;height:18px;"><span>4-Stage Runtime Architecture &amp; Coexistence Boundary</span></h2>' +
       '<div class="arch-grid">' +
-        '<div class="arch-card" style="--sc:#3186FF;"><div class="arch-num">01 · READS</div><h3 class="arch-h">Enterprise Signals</h3><p class="arch-p">' + ag.reads + '</p></div>' +
-        '<div class="arch-card" style="--sc:#4B31E3;"><div class="arch-num">02 · REASONS &amp; SOLVES</div><h3 class="arch-h">Deterministic Math</h3><p class="arch-p">' + ag.does + '</p></div>' +
-        '<div class="arch-card" style="--sc:#00AF57;"><div class="arch-num">03 · RETURNS</div><h3 class="arch-h">Actionable Output</h3><p class="arch-p">' + ag.returns + '</p></div>' +
-        '<div class="arch-card" style="--sc:#FC413D;"><div class="arch-num">04 · STOPS AT</div><h3 class="arch-h">Human Sign-Off Gate</h3><p class="arch-p">' + ag.stopsAt + '</p></div>' +
+        '<div class="arch-card" style="--sc:#3186FF;"><div class="arch-num" style="display:flex;align-items:center;justify-content:space-between;"><span>01 · READS</span><img src="../assets/media/gcp/BigQuery.svg" alt="BigQuery" style="width:18px;height:18px;"></div><h3 class="arch-h">Enterprise Signals</h3><p class="arch-p">' + ag.reads + '</p></div>' +
+        '<div class="arch-card" style="--sc:#4B31E3;"><div class="arch-num" style="display:flex;align-items:center;justify-content:space-between;"><span>02 · REASONS &amp; SOLVES</span><img src="../assets/media/gcp/VertexAI.svg" alt="Vertex AI" style="width:18px;height:18px;"></div><h3 class="arch-h">Deterministic Math</h3><p class="arch-p">' + ag.does + '</p></div>' +
+        '<div class="arch-card" style="--sc:#00AF57;"><div class="arch-num" style="display:flex;align-items:center;justify-content:space-between;"><span>03 · RETURNS</span><img src="../assets/media/gcp/Agents.svg" alt="Agents" style="width:18px;height:18px;"></div><h3 class="arch-h">Actionable Output</h3><p class="arch-p">' + ag.returns + '</p></div>' +
+        '<div class="arch-card" style="--sc:#FC413D;"><div class="arch-num" style="display:flex;align-items:center;justify-content:space-between;"><span>04 · STOPS AT</span><img src="../assets/media/gcp/SecurityCommandCenter.svg" alt="Security" style="width:18px;height:18px;"></div><h3 class="arch-h">Human Sign-Off Gate</h3><p class="arch-p">' + ag.stopsAt + '</p></div>' +
       '</div>' +
       '<div class="tech-grid">' +
         '<div class="panel">' +
@@ -193,7 +193,8 @@
           '<p style="margin:0 0 8px;font-size:13px;color:var(--text-muted);"><b>Safety Envelope:</b> ' + ag.safetyEnvelope + '</p>' +
           '<p style="margin:0;font-size:13px;color:var(--text-muted);"><b>Execution Runtime:</b> Vertex AI Agent Engine + Gemini Enterprise (Global `location="global"`)</p>' +
         '</div>' +
-      '</div>';
+      '</div>' +
+      '<footer class="deck-footer" style="margin-top:32px;"><span>Agent Architecture &amp; Tech Details</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>';
 
     root.querySelectorAll('.prompt-btn').forEach(function (b) {
       b.addEventListener('click', function () {
