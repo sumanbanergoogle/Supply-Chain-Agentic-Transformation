@@ -99,13 +99,13 @@
   <span class="mast-sp"></span>
   <div class="mast-nav" id="mastSlideNav">
     <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
-    <a class="btn-ghost" id="backPersonaBtn" href="persona_map.html">← Persona Dossier</a>
   </div>
 </header>
 
 <section class="suite-switcher">
-  <div class="wrap">
-    <div class="sw-row" id="suiteSwitcher"></div>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+    <div class="sw-row" id="suiteSwitcher" style="flex:1;"></div>
+    <a class="btn-ghost" id="backPersonaBtn" href="persona_map.html" style="white-space:nowrap;">← Back to Persona Dossier</a>
   </div>
 </section>
 
@@ -128,9 +128,11 @@
       });
       ag = foundKey ? ADETAILS[foundKey] : ADETAILS[Object.keys(ADETAILS)[0]];
     }
-    var p = PDETAILS[reqPer || ag.personaId] || PDETAILS[Object.keys(PDETAILS)[0]];
-    if (p) {
-      document.getElementById('backPersonaBtn').href = 'persona_dossier.html?id=' + encodeURIComponent(p.id);
+    var p = PDETAILS[reqPer || (ag && ag.personaId)] || PDETAILS[Object.keys(PDETAILS)[0]];
+    var backBtn = document.getElementById('backPersonaBtn');
+    if (p && backBtn) {
+      backBtn.href = 'persona_dossier.html?id=' + encodeURIComponent(p.id);
+      backBtn.textContent = '← ' + p.persona + ' Dossier';
     }
 
     var swEl = document.getElementById('suiteSwitcher');
