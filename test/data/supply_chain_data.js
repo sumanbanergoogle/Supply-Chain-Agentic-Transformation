@@ -38,11 +38,56 @@ window.SUPPLY_CHAIN_DATA = {
               sources: ["BigQuery POS", "Weather API", "SAP IBP"],
               promptHint: "Correlate regional POS velocity with 14-day weather & promo calendars to flag SKU-level demand inflections.",
               tmAndDAgents: [
-                { name: "Demand Sensing Agent", mode: "Low-Code Agent Studio", prio: "prio-first", desc: "Synthesizes secondary POS velocity, monsoon/weather anomalies, and festive calendars to detect regional demand shifts 7–14 days earlier." },
-                { name: "Secondary-to-Primary Translation Agent", mode: "Low-Code Agent Studio", prio: "prio-first", desc: "Bridges Wholesale Dealer (WD) secondary depletion and closing stock with CFA primary indents to eliminate bullwhip distortion." },
-                { name: "Trade Scheme & Promo Lift Forecaster", mode: "No-Code Gemini Gem", prio: "prio-next", desc: "Models incremental volume lift and post-scheme pantry-loading dip for GT & MT trade promotions before scheme circular release." },
-                { name: "Channel-Mix & Q-Comm Spike Predictor", mode: "Low-Code Agent Studio", prio: "prio-next", desc: "Separates General Trade, Modern Trade, and Quick Commerce dark-store velocity spikes for accurate branch-level replenishment." },
-                { name: "Forecast Bias & CFA Stock-Out Sentinel", mode: "No-Code Gemini Gem", prio: "", desc: "Flags recurring SKU-branch forecast bias and alerts ASMs & CS&L before regional CFAs breach safety stock." }
+                {
+                  name: "Demand Sensing Agent",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-first",
+                  impact: "Detects demand shifts 7–14 days earlier",
+                  sources: ["BigQuery POS", "Weather API", "SAP IBP"],
+                  dailyTask: "Scans overnight regional secondary sales, monsoon anomalies, and local festival calendars every morning at 08:00 AM.",
+                  desc: "Synthesizes secondary POS velocity, monsoon/weather anomalies, and festive calendars to detect regional demand shifts 7–14 days earlier.",
+                  promptHint: "Correlate regional POS velocity with 14-day weather & festival calendars to flag branch-level demand inflections."
+                },
+                {
+                  name: "Secondary-to-Primary Translation Agent",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-first",
+                  impact: "Cuts WD-to-CFA bullwhip distortion by 18%",
+                  sources: ["DMS Secondary", "WD Closing Stock", "CFA Indents"],
+                  dailyTask: "Reconciles Wholesale Dealer closing stock & secondary depletion against primary indents before morning CFA allocation.",
+                  desc: "Bridges Wholesale Dealer (WD) secondary depletion and closing stock with CFA primary indents to eliminate bullwhip distortion.",
+                  promptHint: "Compare WD closing stock days-on-hand against trailing 14-day secondary velocity to normalize primary indent spikes."
+                },
+                {
+                  name: "Trade Scheme & Promo Lift Forecaster",
+                  mode: "No-Code Gemini Gem",
+                  prio: "prio-next",
+                  impact: "+12% incremental trade scheme ROI",
+                  sources: ["Scheme Circulars", "Historical Promo Lift", "Margin Tables"],
+                  dailyTask: "Simulates GT/MT scheme uplift and post-promo pantry-loading dip prior to monthly trade circular release.",
+                  desc: "Models incremental volume lift and post-scheme pantry-loading dip for GT & MT trade promotions before scheme circular release.",
+                  promptHint: "Estimate net incremental volume and post-scheme dip for proposed GT slab discounts using historical branch elasticity."
+                },
+                {
+                  name: "Channel-Mix & Q-Comm Spike Predictor",
+                  mode: "Low-Code Agent Studio",
+                  prio: "prio-next",
+                  impact: "Protects 98.5%+ Q-Comm & MT OTIF",
+                  sources: ["Q-Comm Dark Stores", "MT POS", "GT Beat Sales"],
+                  dailyTask: "Separates Blinkit/Zepto/MT dark-store flash spikes from steady General Trade baseline demand for branch replenishment.",
+                  desc: "Separates General Trade, Modern Trade, and Quick Commerce dark-store velocity spikes for accurate branch-level replenishment.",
+                  promptHint: "Decompose branch demand into GT, MT, and Q-Comm signals so dark-store promo spikes do not distort GT safety stock."
+                },
+                {
+                  name: "Forecast Bias & CFA Stock-Out Sentinel",
+                  mode: "No-Code Gemini Gem",
+                  prio: "",
+                  impact: "20% fewer regional CFA stock-outs",
+                  sources: ["SAP IBP Bias", "CFA ATP", "ASM Alerts"],
+                  dailyTask: "Flags persistent SKU-branch over/under-forecasting and pushes proactive alerts to ASMs & CS&L before safety-stock breach.",
+                  desc: "Flags recurring SKU-branch forecast bias and alerts ASMs & CS&L before regional CFAs breach safety stock.",
+                  promptHint: "Identify top 10 SKU-CFA pairs with >15% 4-week forecast bias and alert CS&L with recommended STO adjustments."
+                }
               ]
             },
             {

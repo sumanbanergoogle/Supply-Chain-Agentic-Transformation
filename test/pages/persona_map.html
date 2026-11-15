@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css">
 <link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-<script src="../assets/deck_nav.js?v=12"></script>
-<script src="../data/supply_chain_data.js?v=12"></script>
+<script src="../assets/deck_nav.js?v=13"></script>
+<script src="../data/supply_chain_data.js?v=13"></script>
 <style>
   :root {
     --base-bg: #EDF0F6;
@@ -329,6 +329,39 @@
       row.appendChild(pCol);
       row.appendChild(tilesWrap);
       grid.appendChild(row);
+
+      if (r.tmAndDAgents && r.tmAndDAgents.length) {
+        var spot = document.createElement('div');
+        spot.className = r.cssClass;
+        spot.style.cssText = 'background:color-mix(in srgb,var(--g-blue) 5%,var(--surface));border:1px solid color-mix(in srgb,var(--g-blue) 30%,transparent);border-left:4px solid var(--g-blue);border-radius:12px;padding:14px 16px;margin:-2px 0 6px;';
+        spot.innerHTML =
+          '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;">' +
+            '<span style="font:700 11px var(--font-mono);letter-spacing:1px;text-transform:uppercase;color:var(--blue-ink);">✦ TM&amp;D Leadership Spotlight · ' + r.persona + ' Daily Agents (' + r.tmAndDAgents.length + ')</span>' +
+            '<span style="font:500 11.5px var(--font-mono);color:var(--text-muted);">Click any agent card to inspect prompt &amp; data grounding</span>' +
+          '</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;" class="tmd-spot-grid"></div>';
+        var sg = spot.querySelector('.tmd-spot-grid');
+        r.tmAndDAgents.forEach(function (ag, idx) {
+          var card = document.createElement('div');
+          var rail = ag.prio === 'prio-first' ? 'var(--g-red)' : (ag.prio === 'prio-next' ? 'var(--g-yellow)' : 'var(--g-blue)');
+          card.style.cssText = 'background:var(--surface);border:1px solid var(--border-subtle);border-left:3.5px solid ' + rail + ';border-radius:10px;padding:12px;cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:transform .12s,box-shadow .12s;';
+          card.innerHTML =
+            '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;">' +
+              '<span style="font:700 10.5px var(--font-mono);color:var(--text-muted);">A0' + (idx + 1) + ' · ' + ag.mode + '</span>' +
+            '</div>' +
+            '<div style="font:600 14px/1.25 var(--font-display);color:var(--blue-ink);">⚡ ' + ag.name + '</div>' +
+            '<div style="font-size:12px;line-height:1.45;color:var(--text-muted);">' + (ag.dailyTask || ag.desc) + '</div>' +
+            '<div style="font:600 12px var(--font-display);color:var(--green-ink);margin-top:auto;padding-top:4px;">Impact: ' + (ag.impact || r.impact) + '</div>' +
+            '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:2px;">' +
+              (ag.sources || r.sources).map(function (s) { return '<span style="font:500 10px var(--font-mono);padding:2px 6px;border-radius:5px;background:var(--surface-sunk);border:1px solid var(--border-subtle);">' + s + '</span>'; }).join('') +
+            '</div>';
+          card.addEventListener('click', function () {
+            openDrawer(r, { code: 'A0' + (idx + 1), owner: ag.mode, title: ag.name, detail: ag.desc + (ag.impact ? ' — Impact: ' + ag.impact : '') });
+          });
+          sg.appendChild(card);
+        });
+        grid.appendChild(spot);
+      }
     });
   }
 
