@@ -2,59 +2,31 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>08 · Non-Invasive Google Cloud Reference Architecture</title>
+<title>08 · Reference Architecture — Supply Chain Agentic Transformation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-<script src="../assets/deck_nav.js?v=17"></script>
-<style>
-  .arch-top { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 18px; margin-top: 20px; align-items: stretch; }
-  .arch-fig { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 14px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 8px; }
-  .arch-fig img { width: 100%; height: 290px; object-fit: contain; border-radius: 12px; background: #fff; border: 1px solid var(--border-subtle); padding: 6px; display: block; }
-  .arch-layers { display: grid; gap: 10px; }
-  .layer { background: var(--surface); border: 1px solid var(--border-subtle); border-left: 4px solid var(--lc, var(--g-blue)); border-radius: 15px; padding: 13px 16px; box-shadow: var(--shadow-sm); }
-  .layer-lbl { font: 700 10.5px var(--font-mono); text-transform: uppercase; letter-spacing: 1px; color: var(--li, var(--blue-ink)); margin-bottom: 7px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
-  .chip { padding: 5px 11px; border-radius: 9px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); font: 600 12px var(--font-display); color: var(--text); }
-  @media(max-width:960px){ .arch-top { grid-template-columns: 1fr; } }
-</style>
+<script src="../assets/deck_nav.js?v=18"></script>
+<style>.arch-layers{display:grid;gap:14px;margin-top:20px;}.layer{background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;padding:18px 22px;display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:center;}.layer-lbl{font:600 12px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--blue-ink);}.chips{display:flex;flex-wrap:wrap;gap:8px;}.chip{padding:6px 12px;border-radius:10px;background:var(--surface-sunk);border:1px solid var(--border-subtle);font:500 13px var(--font-display);}@media(max-width:780px){.layer{grid-template-columns:1fr;}}</style>
 </head>
 <body>
 <header class="mast">
-  <a href="../index.html" style="display:flex;align-items:center;gap:12px;"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">08 · Google Cloud Architecture</span></a>
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">08 · Architecture</span></a>
   <span class="mast-sp"></span>
   <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 <main class="page-wrap">
   <div class="page-kick"><i></i>From Personas to Production</div>
-  <h1 class="page-h1">Non-Invasive Google Cloud Overlay</h1>
+  <h1 class="page-h1">Non-Invasive Google Cloud Overlay Architecture</h1>
+  <p class="page-lede">After walking through the business story and demos, here is the single holistic stack: agents sit <b>above SAP, DMS, SFA, WMS, and TMS</b>—connecting BigQuery, Vertex AI Search, and Google Maps Platform to internal teams, CFAs, and Wholesale Dealers without rip-and-replace.</p>
 
-  <section class="arch-top">
-    <div class="arch-fig">
-      <div style="display:flex;justify-content:space-between;align-items:center;"><span class="badge-pill">Unified 4-Layer Overlay</span><span style="font:600 10.5px var(--font-mono);color:var(--green-ink);">ZERO ERP REPLACEMENT</span></div>
-      <img src="../assets/media/story/story_holistic_google_spine.jpg" alt="4-layer Google Cloud architecture diagram">
-    </div>
+  <div class="arch-layers">
+    <div class="layer"><div class="layer-lbl">4 · Surfaces (Employees, CFAs &amp; WDs)</div><div class="chips"><span class="chip">Gemini Enterprise Web</span><span class="chip">Google Workspace (Sheets / Docs / Chat)</span><span class="chip">Indic Mobile &amp; SFA Voice (Wohlig)</span><span class="chip">BeatPulse &amp; FleetFlow Control Tower</span></div></div>
+    <div class="layer"><div class="layer-lbl">3 · Agent Orchestration</div><div class="chips"><span class="chip">Gemini Enterprise Agent Studio</span><span class="chip">Vertex AI Agent Engine (ADK)</span><span class="chip">A2A (Agent-to-Agent) Protocol</span><span class="chip">Human-in-the-Loop Approval Gates</span></div></div>
+    <div class="layer"><div class="layer-lbl">2 · Google Cloud Knowledge &amp; Telemetry</div><div class="chips"><span class="chip">Gemini 3.8 Live / Flash · 3.1 Pro</span><span class="chip">BigQuery Supply Chain Cortex</span><span class="chip">Vertex AI Search (Schemes, PODs, Contracts)</span><span class="chip">Google Maps Live Traffic &amp; Curfews</span></div></div>
+    <div class="layer"><div class="layer-lbl">1 · Systems of Record (Preserved)</div><div class="chips"><span class="chip">SAP S/4HANA / IBP / DMS</span><span class="chip">WMS, SFA &amp; Factory SCADA</span><span class="chip">TMS &amp; Carrier FASTag / EDI</span><span class="chip">POS, Cold-Chain IoT &amp; RFID</span></div></div>
+  </div>
 
-    <div class="arch-layers">
-      <div class="layer" style="--lc:var(--g-green);--li:var(--green-ink);">
-        <div class="layer-lbl">4 · Engagement Surfaces (Employees · CFAs · WDs)</div>
-        <div class="chips"><span class="chip">Gemini Enterprise</span><span class="chip">Indic Mobile Voice (Wohlig)</span><span class="chip">BeatPulse / FleetFlow Cockpit</span><span class="chip">Workspace Sheets &amp; Chat</span></div>
-      </div>
-      <div class="layer" style="--lc:var(--g-purple);--li:var(--purple-ink);">
-        <div class="layer-lbl">3 · Autonomous Agent Layer</div>
-        <div class="chips"><span class="chip">Agent Studio + ADK</span><span class="chip">A2A Multi-Agent Handoffs</span><span class="chip">Human Sign-Off Gates</span><span class="chip">Write-Back APIs</span></div>
-      </div>
-      <div class="layer" style="--lc:var(--g-blue);--li:var(--blue-ink);">
-        <div class="layer-lbl">2 · Google Cloud Knowledge &amp; Maps Spine</div>
-        <div class="chips"><span class="chip">Gemini 3.8 Live / Flash / 3.1 Pro</span><span class="chip">BigQuery Supply Cortex</span><span class="chip">Vertex AI Search</span><span class="chip">Google Maps Live Traffic</span></div>
-      </div>
-      <div class="layer" style="--lc:var(--text-dim);--li:var(--text-muted);">
-        <div class="layer-lbl">1 · Systems of Record (Untouched)</div>
-        <div class="chips"><span class="chip">SAP S/4HANA &amp; DMS</span><span class="chip">Sales Force Automation (SFA)</span><span class="chip">WMS &amp; Plant SCADA</span><span class="chip">TMS &amp; Carrier FASTag</span></div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="deck-footer"><span>Slide 08 · Enterprise Reference Architecture</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+  <footer class="deck-footer"><span>08 · Enterprise Reference Architecture</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
 </main>
 <script>initDeckChrome({ root: '../' });</script>
 </body></html>

@@ -3,257 +3,244 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>04 · Live Demo Stage (CEO · Hub OTIF · Dispatch Rerouter)</title>
+<title>04 · Live Demo Stage (Demo 1 &amp; Demo 2) — Agentic Supply Chain Transformation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css">
 <link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-<script src="../assets/deck_nav.js?v=17"></script>
+<script src="../assets/deck_nav.js?v=18"></script>
 <script src="../data/live_agents_registry.js?v=2"></script>
 <style>
-  .demo-wrap { max-width: 1460px; margin: 0 auto; padding: 20px max(24px, 4vw) 64px; }
-  .head-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 16px; align-items: center; margin-bottom: 16px; }
-  .headline { font: 700 clamp(24px, 2.5vw, 34px)/1.12 var(--font-display); letter-spacing: -0.7px; margin: 4px 0 0; color: var(--text); }
-  .head-photo { width: 100%; height: 112px; object-fit: cover; border-radius: 14px; border: 1px solid var(--border-subtle); display: block; }
+  .demo-wrap { max-width: 1440px; margin: 0 auto; padding: 24px max(24px, 4vw) 72px; }
+  .head-bar { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+  .headline { font: 700 clamp(24px, 2.5vw, 36px)/1.12 var(--font-display); letter-spacing: -0.8px; margin: 4px 0 6px; color: var(--text); }
+  .sub { margin: 0; font: 400 14.5px/1.45 var(--font-body); color: var(--text-muted); max-width: 74ch; }
 
-  .tri-demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; align-items: stretch; }
-  @media (max-width: 1180px) { .tri-demo-grid, .head-grid { grid-template-columns: 1fr; } }
+  .dual-demo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+  @media (max-width: 1024px) { .dual-demo-grid { grid-template-columns: 1fr; } }
 
   .demo-box {
     background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
-    padding: 15px; box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 9px;
+    padding: 18px; box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 12px;
     border-top: 4px solid var(--box-accent, var(--g-blue));
   }
-  .demo-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .demo-badge { font: 700 10px var(--font-mono); letter-spacing: .9px; text-transform: uppercase; color: var(--box-ink, var(--blue-ink)); }
-  .demo-ico { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--box-accent) 12%, var(--surface)); color: var(--box-ink); }
-  .demo-box-title { margin: 0; font: 700 17.5px/1.2 var(--font-display); color: var(--text); }
+  .demo-box-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .demo-badge { font: 700 11px var(--font-mono); letter-spacing: 1.1px; text-transform: uppercase; color: var(--box-accent, var(--blue-ink)); }
+  .demo-box-title { margin: 4px 0 2px; font: 700 20px/1.2 var(--font-display); color: var(--text); }
+  .demo-box-sub { margin: 0; font: 400 13px/1.4 var(--font-body); color: var(--text-muted); }
 
-  .sra-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
-  .sra-pill { padding: 7px 8px; border-radius: 10px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); font: 500 11px/1.25 var(--font-body); color: var(--text); }
-  .sra-pill b { display: block; font: 700 9.5px var(--font-mono); text-transform: uppercase; margin-bottom: 2px; color: var(--blue-ink); }
-  .sra-pill.act b { color: var(--green-ink); }
+  .demo-select {
+    padding: 7px 11px; border-radius: 9px; border: 1px solid var(--border-strong);
+    background: var(--surface-sunk); color: var(--text); font: 600 12px var(--font-display); max-width: 260px;
+  }
 
-  .lang-bar { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; padding: 6px 9px; border-radius: 10px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); }
-  .lang-lbl { font: 700 10px var(--font-mono); color: var(--text-muted); margin-right: 2px; text-transform: uppercase; }
-  .lang-btn { padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text); font: 600 11px var(--font-display); cursor: pointer; }
-  .lang-btn.is-on { background: var(--g-blue); border-color: var(--g-blue); color: #FFF; }
-  .lang-quote { width: 100%; margin-top: 4px; font: 500 11.5px/1.35 var(--font-body); color: var(--text); padding-top: 4px; border-top: 1px dashed var(--border-subtle); }
-
-  .video-frame { position: relative; border-radius: 12px; overflow: hidden; background: #0d111a; height: 168px; border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; }
+  .video-frame {
+    position: relative; border-radius: 12px; overflow: hidden; background: #0d111a;
+    height: clamp(220px, 34vh, 320px); border: 1px solid var(--border-subtle);
+    display: flex; align-items: center; justify-content: center;
+  }
   .video-frame video { width: 100%; height: 100%; object-fit: contain; display: none; }
-  .video-empty { text-align: center; padding: 12px; color: #94a3b8; display: flex; flex-direction: column; align-items: center; gap: 5px; }
-  .video-empty-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 14px; color: #e2e8f0; }
-  .video-empty strong { font: 600 12px var(--font-display); color: #f8fafc; }
+  .video-empty {
+    text-align: center; padding: 24px; color: #94a3b8; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .video-empty-icon {
+    width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
+    display: flex; align-items: center; justify-content: center; font-size: 20px; color: #e2e8f0;
+  }
+  .video-empty strong { font: 600 14px var(--font-display); color: #f8fafc; }
+  .video-empty span { font: 400 12px var(--font-body); color: #94a3b8; }
 
-  .upload-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 9px; border-radius: 9px; background: var(--surface-sunk); border: 1px dashed var(--border-strong); }
-  .up-label { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px; background: var(--g-blue); color: #fff; font: 600 11px var(--font-display); cursor: pointer; }
-  .up-reset { padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); font: 600 10.5px var(--font-display); cursor: pointer; }
+  .upload-bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    padding: 8px 12px; border-radius: 10px; background: var(--surface-sunk); border: 1px dashed var(--border-strong);
+  }
+  .up-label {
+    display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px;
+    background: var(--g-blue); color: #fff; font: 600 11.5px var(--font-display); cursor: pointer;
+  }
+  .up-reset {
+    padding: 5px 10px; border-radius: 999px; border: 1px solid var(--border-strong);
+    background: var(--surface); color: var(--text-muted); font: 600 11px var(--font-display); cursor: pointer;
+  }
 
-  .gemini-btn { margin-top: auto; background: var(--gemini-spark); color: #FFF; font: 700 13px var(--font-display); padding: 10px 14px; border-radius: 999px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-sm); }
+  .gemini-btn {
+    background: var(--gemini-spark); color: #FFF; font: 700 13.5px var(--font-display);
+    padding: 11px 16px; border-radius: 999px; text-decoration: none;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    box-shadow: var(--shadow-sm); transition: transform .15s, filter .15s;
+  }
   .gemini-btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
 
-  .prompt-chip { display: block; width: 100%; text-align: left; padding: 5px 8px; border-radius: 7px; border: 1px solid var(--border-subtle); background: var(--surface-sunk); color: var(--text); font: 500 11px/1.3 var(--font-body); cursor: pointer; }
+  .prompt-box {
+    background: var(--surface-sunk); border-radius: 10px; padding: 10px 12px; border: 1px solid var(--border-subtle);
+  }
+  .prompt-chip {
+    display: block; width: 100%; text-align: left; padding: 6px 9px; border-radius: 8px;
+    border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text);
+    font: 400 11.5px/1.35 var(--font-body); cursor: pointer; margin-top: 6px; transition: border-color .15s;
+  }
   .prompt-chip:hover { border-color: var(--g-blue); }
-
-  .ge-launcher { margin-top: 16px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 12px 16px; box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .demo-select { padding: 7px 11px; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--surface-sunk); color: var(--text); font: 600 12.5px var(--font-display); min-width: 280px; }
 </style>
 </head>
 <body>
 
 <header class="mast">
   <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
-    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">04 · Live Demo Stage</span>
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+    <span class="mast-rule"></span>
+    <span class="mast-tag">06 · Live Demo Stage</span>
   </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
+  <div class="mast-nav" id="mastSlideNav">
+    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+  </div>
 </header>
 
 <main class="demo-wrap">
-  <section class="head-grid">
+  <div class="head-bar">
     <div>
-      <div class="page-kick" style="margin-bottom:4px;"><i></i>Slide 04 · Live Demos (Moved Upfront)</div>
-      <h1 class="headline">3 Live Demos: CEO Pulse · Hub OTIF · Dispatch Rerouter</h1>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">
+        <span style="width:22px;height:3px;border-radius:2px;background:var(--gemini-spark);"></span>
+        <span style="font:700 11.5px var(--font-mono);color:var(--green-ink);letter-spacing:1.2px;text-transform:uppercase;">SLIDE 04 · LIVE IN GEMINI ENTERPRISE &amp; CLOUD RUN (BEFORE SLIDE 05)</span>
+      </div>
+      <h1 class="headline">Live Demo Stage: Demo 1 &amp; Demo 2</h1>
+      <p class="sub">Demo 1 showcases TM&amp;D CEO insight-to-action on BeatPulse (Sense → Reason → Log Ticket via Google Maps); Demo 2 separates FleetFlow into Hub CEO OTIF Diagnostics, Dispatcher 3D Co-Loading, and Indic Voice Rerouting.</p>
     </div>
-    <img class="head-photo" src="../assets/media/story/story_control_tower_action.jpg" alt="Control tower team reviewing live fleet and map routes">
-  </section>
+  </div>
 
-  <section class="tri-demo-grid">
-    <!-- DEMO 1 -->
-    <article class="demo-box" style="--box-accent:var(--g-blue);--box-ink:var(--blue-ink);">
-      <div class="demo-top">
-        <span class="demo-badge">DEMO 01 · TM&amp;D CEO</span>
-        <div class="demo-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-      </div>
-      <h2 class="demo-box-title">BeatPulse AI · GT Leakage &amp; Split Ticket</h2>
-
-      <div class="sra-strip">
-        <div class="sra-pill"><b>Sense</b>Maps Sony World 4:15 PM cutoff</div>
-        <div class="sra-pill"><b>Reason</b>BLRB04 LSPC 0.7 · ₹3.75L/mo</div>
-        <div class="sra-pill act"><b>Act</b>Logged Split Ticket (+₹59k/mo)</div>
+  <div class="dual-demo-grid">
+    <!-- DEMO 1 BOX -->
+    <section class="demo-box" style="--box-accent: var(--g-blue);" id="box1">
+      <div class="demo-box-top">
+        <div>
+          <div class="demo-badge">DEMO 01 · TM&amp;D CEO (SENSE → REASON → ACT)</div>
+          <h2 class="demo-box-title" id="title1">Demo 1</h2>
+          <p class="demo-box-sub" id="sub1">Select or launch Demo 1 agent in Gemini Enterprise.</p>
+        </div>
+        <select class="demo-select" id="sel1" aria-label="Select Agent for Demo 1"></select>
       </div>
 
-      <div class="lang-bar" id="lang1Bar">
-        <span class="lang-lbl">Voice:</span>
-        <button type="button" class="lang-btn is-on" onclick="setLang(1,'en',this)">EN</button>
-        <button type="button" class="lang-btn" onclick="setLang(1,'hinglish',this)">Hinglish</button>
-        <button type="button" class="lang-btn" onclick="setLang(1,'hi',this)">Hindi</button>
-        <button type="button" class="lang-btn" onclick="setLang(1,'kn',this)">Kannada</button>
-        <div class="lang-quote" id="lang1Out">"27 healthy / 8 critical outlets in Bengaluru. Split beat BLRB04 to cut travel 28%."</div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:8px 10px;border-radius:10px;background:var(--surface-sunk);border:1px solid var(--border-subtle);font-size:11.5px;line-height:1.35;">
+        <div><b style="display:block;font:700 9.5px var(--font-mono);color:var(--blue-ink);">SENSE (GOOGLE MAPS)</b>Sony World 4:15 PM traffic snarl + DMS velocity</div>
+        <div><b style="display:block;font:700 9.5px var(--font-mono);color:var(--purple-ink);">REASON (ATTRIBUTION)</b>BLRB04 LSPC 0.7 · 8 critical outlets (₹3.75L/mo)</div>
+        <div><b style="display:block;font:700 9.5px var(--font-mono);color:var(--green-ink);">ACT (BOUNDED WRITE)</b>Logs Split-Beat Ticket → -28% travel, +₹59k/mo</div>
       </div>
 
       <div class="video-frame">
         <video id="player1" controls playsinline preload="metadata"></video>
-        <div class="video-empty" id="empty1"><div class="video-empty-icon">&#9654;</div><strong>Demo 1 · CEO BeatPulse Video</strong></div>
+        <div class="video-empty" id="empty1">
+          <div class="video-empty-icon">&#9654;</div>
+          <strong>Demo 1 Video Slot (Empty)</strong>
+          <span>Upload your Demo 1 recording (.mp4 / .webm) below when ready.</span>
+        </div>
       </div>
+
       <div class="upload-bar">
-        <label class="up-label"><span>&#128228; Upload</span><input type="file" id="upload1" accept="video/*" hidden></label>
-        <span style="font:600 10.5px var(--font-mono);color:var(--text-muted);" id="status1">No video</span>
-        <button type="button" class="up-reset" id="reset1" hidden>Clear</button>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <label class="up-label">
+            <span>&#128228; Upload Demo 1 Video</span>
+            <input type="file" id="upload1" accept="video/*" hidden>
+          </label>
+          <button type="button" class="up-reset" id="reset1" hidden>Clear Video</button>
+        </div>
+        <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="status1">No video loaded yet</span>
       </div>
 
-      <button type="button" class="prompt-chip" onclick="copyTxt(this)">Prompt: "Why is Nagage Traders BLRB04 losing lines? Split beat &amp; log ticket."</button>
-
-      <a class="gemini-btn" target="_blank" rel="noopener noreferrer" href="https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12500816117565423338/session/-?mods=">
-        <img src="../assets/media/gemini_enterprise_logo.svg" alt="" style="width:15px;height:15px;filter:brightness(0) invert(1);">
-        <span>Open BeatPulse Gem in GE &#8599;</span>
+      <a class="gemini-btn" id="geBtn1" target="_blank" rel="noopener noreferrer" href="#">
+        <img src="../assets/media/gemini_enterprise_logo.svg" alt="" style="width:17px;height:17px;filter:brightness(0) invert(1);">
+        <span>Open Demo 1 in Gemini Enterprise &#8599;</span>
       </a>
-    </article>
 
-    <!-- DEMO 2 -->
-    <article class="demo-box" style="--box-accent:var(--g-purple);--box-ink:var(--purple-ink);">
-      <div class="demo-top">
-        <span class="demo-badge">DEMO 02 · HUB OPERATIONS CEO</span>
-        <div class="demo-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="prompt-box">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font:700 10px var(--font-mono);color:var(--blue-ink);">DEMO 1 STARTER PROMPTS (CLICK TO COPY)</span>
+          <span id="toast1" style="font:600 10px var(--font-mono);color:var(--green-ink);display:none;">Copied!</span>
+        </div>
+        <div id="prompts1"></div>
       </div>
-      <h2 class="demo-box-title">FleetFlow Audit · 12-State OTIF &amp; Margin</h2>
+    </section>
 
-      <div class="sra-strip">
-        <div class="sra-pill"><b>Sense</b>88.7% Bengaluru OTIF (3 yrs)</div>
-        <div class="sra-pill"><b>Reason</b>55.1% dock wait vs 19.8% traffic</div>
-        <div class="sra-pill act"><b>Act</b>-51.7% Cost/Case · ₹1.35L/d saved</div>
+    <!-- DEMO 2 BOX -->
+    <section class="demo-box" style="--box-accent: var(--g-green);" id="box2">
+      <div class="demo-box-top">
+        <div>
+          <div class="demo-badge" style="color:var(--green-ink);">DEMO 02 · HUB CEO AUDIT + DISPATCHER 3D &amp; INDIC VOICE</div>
+          <h2 class="demo-box-title" id="title2">Demo 2 · FleetFlow CPG</h2>
+          <p class="demo-box-sub" id="sub2">FleetFlow CPG (12 states, 500+ outlets, 3 yrs telemetry) split into 3 persona segments: Hub CEO OTIF root-cause audit, Dispatcher 3D co-loading, and Kaveri Gemini 3.8 Live Indic voice rerouting.</p>
+        </div>
+        <select class="demo-select" id="sel2" aria-label="Select Agent for Demo 2"></select>
       </div>
 
-      <div class="lang-bar">
-        <span class="lang-lbl">3-Step Fix:</span>
-        <span style="font:600 11px var(--font-mono);color:var(--purple-ink);">2-hr Early ASN · 6:30 AM Dispatch · GPS Dispute</span>
+      <div style="padding:8px 10px;border-radius:10px;background:var(--surface-sunk);border:1px solid var(--border-subtle);">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:5px;">
+          <span style="font:700 10px var(--font-mono);color:var(--green-ink);text-transform:uppercase;margin-right:4px;">Logical Segments:</span>
+          <button type="button" class="up-reset" style="background:var(--g-green);color:#fff;border-color:var(--g-green);" onclick="setFfSeg('ceo', this)">A · Hub CEO Audit</button>
+          <button type="button" class="up-reset" onclick="setFfSeg('pack', this)">B · 3D Dispatch Pack</button>
+          <button type="button" class="up-reset" onclick="setFfSeg('voice', this)">C · Indic Rerouter</button>
+        </div>
+        <div id="ffSegText" style="font-size:12px;line-height:1.4;color:var(--text);"><b>Segment A (Hub CEO):</b> Bengaluru OTIF is 88.7% — <b>55.1%</b> of misses happen at store docks &amp; GRN queues vs 19.8% traffic. Approves 2-hr early ASN + 6:30 AM dispatch, saving <b>₹1.35L/day</b> detention.</div>
       </div>
 
       <div class="video-frame">
         <video id="player2" controls playsinline preload="metadata"></video>
-        <div class="video-empty" id="empty2"><div class="video-empty-icon">&#9654;</div><strong>Demo 2 · Hub CEO Audit Video</strong></div>
+        <div class="video-empty" id="empty2">
+          <div class="video-empty-icon">&#9654;</div>
+          <strong>Demo 2 Video Slot (Empty)</strong>
+          <span>Upload your Demo 2 recording (.mp4 / .webm) below when ready.</span>
+        </div>
       </div>
+
       <div class="upload-bar">
-        <label class="up-label" style="background:var(--g-purple);"><span>&#128228; Upload</span><input type="file" id="upload2" accept="video/*" hidden></label>
-        <span style="font:600 10.5px var(--font-mono);color:var(--text-muted);" id="status2">No video</span>
-        <button type="button" class="up-reset" id="reset2" hidden>Clear</button>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <label class="up-label" style="background:var(--g-green);">
+            <span>&#128228; Upload Demo 2 Video</span>
+            <input type="file" id="upload2" accept="video/*" hidden>
+          </label>
+          <button type="button" class="up-reset" id="reset2" hidden>Clear Video</button>
+        </div>
+        <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="status2">No video loaded yet</span>
       </div>
 
-      <button type="button" class="prompt-chip" onclick="copyTxt(this)">Prompt: "Show H1 Bengaluru OTIF drivers &amp; approve 3-step recovery."</button>
-
-      <a class="gemini-btn" target="_blank" rel="noopener noreferrer" href="https://fleetflow-cpg-tmd-632239123109.us-central1.run.app">
-        <img src="../assets/media/gemini_enterprise_logo.svg" alt="" style="width:15px;height:15px;filter:brightness(0) invert(1);">
-        <span>Open FleetFlow Hub Audit &#8599;</span>
+      <a class="gemini-btn" id="geBtn2" target="_blank" rel="noopener noreferrer" href="https://fleetflow-cpg-tmd-632239123109.us-central1.run.app">
+        <img src="../assets/media/gemini_enterprise_logo.svg" alt="" style="width:17px;height:17px;filter:brightness(0) invert(1);">
+        <span>Click to open the Agent &#8599;</span>
       </a>
-    </article>
 
-    <!-- DEMO 3 -->
-    <article class="demo-box" style="--box-accent:var(--g-green);--box-ink:var(--green-ink);">
-      <div class="demo-top">
-        <span class="demo-badge">DEMO 03 · CFA &amp; FLEET DISPATCHER</span>
-        <div class="demo-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="15" height="11" rx="1"/><path d="M16 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg></div>
+      <div class="prompt-box">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font:700 10px var(--font-mono);color:var(--green-ink);">DEMO 2 STARTER PROMPTS (CLICK TO COPY)</span>
+          <span id="toast2" style="font:600 10px var(--font-mono);color:var(--green-ink);display:none;">Copied!</span>
+        </div>
+        <div id="prompts2"></div>
       </div>
-      <h2 class="demo-box-title">Kaveri Live · 3D Load &amp; Indic Rerouter</h2>
-
-      <div class="sra-strip">
-        <div class="sra-pill"><b>Sense</b>Truck 1 Indiranagar closure</div>
-        <div class="sra-pill"><b>Reason</b>47 cartons · 120 cm odor gap</div>
-        <div class="sra-pill act"><b>Act</b>Rerouted + Hinglish driver alert</div>
-      </div>
-
-      <div class="lang-bar" id="lang3Bar">
-        <span class="lang-lbl">Voice:</span>
-        <button type="button" class="lang-btn is-on" onclick="setLang(3,'hinglish',this)">Hinglish</button>
-        <button type="button" class="lang-btn" onclick="setLang(3,'hi',this)">Hindi</button>
-        <button type="button" class="lang-btn" onclick="setLang(3,'ta',this)">Tamil</button>
-        <button type="button" class="lang-btn" onclick="setLang(3,'kn',this)">Kannada</button>
-        <button type="button" class="lang-btn" onclick="setLang(3,'en',this)">EN</button>
-        <div class="lang-quote" id="lang3Out">"Nilesh ji, agla road band hai—nayi bypass route map par bhej di hai."</div>
-      </div>
-
-      <div class="video-frame">
-        <video id="player3" controls playsinline preload="metadata"></video>
-        <div class="video-empty" id="empty3"><div class="video-empty-icon">&#9654;</div><strong>Demo 3 · Dispatcher 3D Video</strong></div>
-      </div>
-      <div class="upload-bar">
-        <label class="up-label" style="background:var(--g-green);"><span>&#128228; Upload</span><input type="file" id="upload3" accept="video/*" hidden></label>
-        <span style="font:600 10.5px var(--font-mono);color:var(--text-muted);" id="status3">No video</span>
-        <button type="button" class="up-reset" id="reset3" hidden>Clear</button>
-      </div>
-
-      <button type="button" class="prompt-chip" onclick="copyTxt(this)">Prompt: "Open Truck 1 3D Studio &amp; reroute Nilesh in Hinglish."</button>
-
-      <a class="gemini-btn" target="_blank" rel="noopener noreferrer" href="https://fleetflow-cpg-tmd-632239123109.us-central1.run.app">
-        <img src="../assets/media/gemini_enterprise_logo.svg" alt="" style="width:15px;height:15px;filter:brightness(0) invert(1);">
-        <span>Launch Kaveri Live Tower &#8599;</span>
-      </a>
-    </article>
-  </section>
-
-  <section class="ge-launcher">
-    <div style="font:600 14px var(--font-display);color:var(--text);"><b style="color:var(--blue-ink);">49 Live GE Agents</b> · Quick Direct Launch</div>
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-      <select class="demo-select" id="anyAgentSel" aria-label="Select any live Gemini Enterprise agent"></select>
-      <a class="btn-cta" id="anyAgentGo" target="_blank" rel="noopener noreferrer" href="#">Open in GE &#8599;</a>
-    </div>
-  </section>
-
-  <footer class="deck-footer" style="margin-top:20px;">
-    <span>Slide 04 · Live Demo Stage</span>
-    <span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
-  </footer>
+    </section>
+  </div>
+  <footer class="deck-footer" style="margin-top:28px;"><span>Slide 04 · Live Demo Stage</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
 </main>
 
 <script>
   initDeckChrome({ root: '../' });
-  var LANG_LINES = {
-    1: {
-      en: '"27 healthy / 8 critical outlets in Bengaluru. Split beat BLRB04 to cut travel 28%."',
-      hinglish: '"Bengaluru mein 27 healthy aur 8 critical outlets. Beat BLRB04 split se ₹59k/mo bachega."',
-      hi: '"बेंगलुरु में 27 आउटलेट स्वस्थ और 8 गंभीर हैं। BLRB04 विभाजन से ₹59k/माह बचेंगे।"',
-      kn: '"ಬೆಂಗಳೂರಿನಲ್ಲಿ 27 ಮಳಿಗೆಗಳು ಉತ್ತಮ, 8 ತುರ್ತು. BLRB04 ವಿಭಜನೆಯಿಂದ ₹59k/ತಿಂಗಳು ಉಳಿತಾಯ."'
-    },
-    3: {
-      hinglish: '"Nilesh ji, agla road band hai—nayi bypass route map par bhej di hai."',
-      hi: '"नीलेश जी, आगे का रास्ता बंद है—नया रूट मैप पर भेज दिया है।"',
-      ta: '"நிலேஷ், சாலை மூடப்பட்டுள்ளது—புதிய வழி வரைபடத்தில் உள்ளது."',
-      kn: '"ನಿಲೇಶ್ ಅವರೇ, ಮುಂದಿನ ರಸ್ತೆ ಮುಚ್ಚಿದೆ—ಹೊಸ ಮಾರ್ಗ ನಕ್ಷೆಯಲ್ಲಿದೆ."',
-      en: '"Nilesh, road closure ahead—bypass pushed to Maps (22 min ETA)."'
-    }
+
+  window.setFfSeg = function (k, btn) {
+    var box = btn && btn.parentElement;
+    if (box) box.querySelectorAll('button').forEach(function (b) {
+      b.style.background = 'var(--surface)'; b.style.color = 'var(--text-muted)'; b.style.borderColor = 'var(--border-strong)';
+    });
+    if (btn) { btn.style.background = 'var(--g-green)'; btn.style.color = '#fff'; btn.style.borderColor = 'var(--g-green)'; }
+    var TXT = {
+      ceo: '<b>Segment A (Hub CEO):</b> Bengaluru OTIF is 88.7% — <b>55.1%</b> of misses happen at store docks &amp; GRN queues vs 19.8% traffic. Approves 2-hr early ASN + 6:30 AM dispatch, saving <b>₹1.35L/day</b> detention.',
+      pack: '<b>Segment B (Depot Dispatcher 3D):</b> Co-loads heavy Staples under bulky Snacks (47 cartons across 5 drops, 120 cm food/non-food odor buffer) — cutting cost/case <b>51.7% (₹84.35 → ₹40.70)</b>.',
+      voice: '<b>Segment C (Live GPS &amp; Indic Voice):</b> Tracks Truck 1 (Driver Nilesh Kulkarni, Indiranagar) and pushes dynamic road-closure bypass instructions in <b>Hinglish, Hindi, Tamil, or Kannada</b> via Gemini 3.8 Live.'
+    };
+    document.getElementById('ffSegText').innerHTML = TXT[k] || TXT.ceo;
   };
-  window.setLang = function (slot, code, btn) {
-    document.getElementById('lang' + slot + 'Bar').querySelectorAll('.lang-btn').forEach(function (b) { b.classList.remove('is-on'); });
-    btn.classList.add('is-on');
-    document.getElementById('lang' + slot + 'Out').textContent = (LANG_LINES[slot] && LANG_LINES[slot][code]) || '';
-  };
-  window.copyTxt = function (btn) {
-    var txt = (btn.textContent || '').replace(/^Prompt:\s*"|"$/g, '');
-    if (navigator.clipboard && txt) navigator.clipboard.writeText(txt);
-    var prev = btn.textContent; btn.textContent = '✓ Copied prompt'; setTimeout(function () { btn.textContent = prev; }, 1000);
-  };
+
   (function () {
     var liveAgents = window.SC_LIVE_AGENTS || [];
-    var sel = document.getElementById('anyAgentSel'), go = document.getElementById('anyAgentGo');
-    if (sel && go && liveAgents.length) {
-      sel.innerHTML = liveAgents.map(function (a) {
-        return '<option value="' + a.id + '">' + (a.isItcTmd ? a.geDisplayName : (a.name + ' (' + a.pillar + ')')) + '</option>';
-      }).join('');
-      function syncGo() { go.href = (liveAgents.find(function (a) { return a.id === sel.value; }) || liveAgents[0]).geUrl || 'https://vertexaisearch.cloud.google.com/'; }
-      sel.addEventListener('change', syncGo); syncGo();
-    }
-    var DB_NAME = 'sc_tri_demo_stage_videos_v1';
+    if (!liveAgents.length) return;
+
+    var DB_NAME = 'sc_dual_demo_stage_videos_v1';
     function openDb() {
       return new Promise(function (resolve, reject) {
         if (!window.indexedDB) return reject(new Error('IndexedDB unavailable'));
@@ -263,22 +250,135 @@
         req.onerror = function (e) { reject(e.target.error); };
       });
     }
-    function getSavedVideo(k) { return openDb().then(function (db) { return new Promise(function (res) { var tx = db.transaction('videos','readonly').objectStore('videos').get(k); tx.onsuccess = function () { res(tx.result || null); }; tx.onerror = function () { res(null); }; }); }).catch(function () { return null; }); }
-    function saveVideo(k, rec) { return openDb().then(function (db) { return new Promise(function (res, rej) { var tx = db.transaction('videos','readwrite'); tx.objectStore('videos').put(rec, k); tx.oncomplete = res; tx.onerror = rej; }); }); }
-    function deleteSavedVideo(k) { return openDb().then(function (db) { return new Promise(function (res) { var tx = db.transaction('videos','readwrite'); tx.objectStore('videos').delete(k); tx.oncomplete = res; }); }); }
-    [1, 2, 3].forEach(function (n) {
-      var k = 'demo_tri_' + n, pl = document.getElementById('player' + n), em = document.getElementById('empty' + n), st = document.getElementById('status' + n), rs = document.getElementById('reset' + n), up = document.getElementById('upload' + n), u = null;
-      function load() {
-        if (u) { URL.revokeObjectURL(u); u = null; }
-        getSavedVideo(k).then(function (rec) {
-          if (rec && rec.blob) { u = URL.createObjectURL(rec.blob); pl.src = u; pl.style.display = 'block'; em.style.display = 'none'; st.textContent = rec.name; rs.hidden = false; }
-          else { pl.removeAttribute('src'); pl.style.display = 'none'; em.style.display = 'flex'; st.textContent = 'No video'; rs.hidden = true; }
+    function getSavedVideo(k) {
+      return openDb().then(function (db) {
+        return new Promise(function (resolve) {
+          var tx = db.transaction('videos', 'readonly').objectStore('videos').get(k);
+          tx.onsuccess = function () { resolve(tx.result || null); };
+          tx.onerror = function () { resolve(null); };
+        });
+      }).catch(function () { return null; });
+    }
+    function saveVideo(k, rec) {
+      return openDb().then(function (db) {
+        return new Promise(function (resolve, reject) {
+          var tx = db.transaction('videos', 'readwrite');
+          tx.objectStore('videos').put(rec, k);
+          tx.oncomplete = resolve; tx.onerror = reject;
+        });
+      });
+    }
+    function deleteSavedVideo(k) {
+      return openDb().then(function (db) {
+        return new Promise(function (resolve) {
+          var tx = db.transaction('videos', 'readwrite');
+          tx.objectStore('videos').delete(k);
+          tx.oncomplete = resolve;
+        });
+      });
+    }
+
+    function setupDemoSlot(slotNum, defaultIndex) {
+      var slotKey = 'demo_slot_' + slotNum;
+      var sel = document.getElementById('sel' + slotNum);
+      var titleEl = document.getElementById('title' + slotNum);
+      var subEl = document.getElementById('sub' + slotNum);
+      var geBtn = document.getElementById('geBtn' + slotNum);
+      var promptsEl = document.getElementById('prompts' + slotNum);
+      var toastEl = document.getElementById('toast' + slotNum);
+
+      var player = document.getElementById('player' + slotNum);
+      var emptyEl = document.getElementById('empty' + slotNum);
+      var statusEl = document.getElementById('status' + slotNum);
+      var resetBtn = document.getElementById('reset' + slotNum);
+      var uploadEl = document.getElementById('upload' + slotNum);
+      var activeBlobUrl = null;
+
+      var FLEETFLOW_CPG = {
+        id: 'fleetflow_cpg',
+        name: 'FleetFlow CPG',
+        geDisplayName: 'FleetFlow CPG',
+        persona: 'Voice-First CPG TM&D Control Tower (Kaveri AI Assistant)',
+        outcome: 'FleetFlow CPG is a voice-first Consumer Packaged Goods (CPG) Trade Marketing and Distribution (TM&D) control tower. Its AI agent, Kaveri AI Assistant, runs on Gemini 3.8 Live (with real-time bidirectional voice, multilingual/Hinglish support, and live screen sharing) alongside Gemini 3.8 Flash and Google Maps.',
+        geUrl: 'https://fleetflow-cpg-tmd-632239123109.us-central1.run.app',
+        starterPrompts: [
+          'Kaveri, show live vehicle dispatches across our CFAs and flag any route delays on Google Maps.',
+          'Check 3D load consolidation and dock-slot utilization for today\'s outbound TM&D fleet.',
+          'Brief me in Hinglish on at-risk deliveries requiring immediate rerouting.'
+        ]
+      };
+      var slotAgents = slotNum === 2 ? [FLEETFLOW_CPG].concat(liveAgents) : liveAgents;
+
+      var qs = new URLSearchParams(location.search);
+      var paramId = qs.get('demo' + slotNum) || (slotNum === 1 ? qs.get('agent') : null);
+      var savedAgentId = null;
+      try { savedAgentId = localStorage.getItem('sc_demo_agent_' + slotNum); } catch (e) {}
+
+      var initialAg = slotNum === 2
+        ? (slotAgents.find(function (a) { return a.id === paramId; }) || FLEETFLOW_CPG)
+        : (slotAgents.find(function (a) { return a.id === (paramId || savedAgentId); }) || slotAgents[defaultIndex % slotAgents.length]);
+
+      sel.innerHTML = slotAgents.map(function (a) {
+        var lbl = a.isItcTmd ? a.geDisplayName : (a.pillar ? a.name + ' (' + a.pillar + ')' : a.name);
+        return '<option value="' + a.id + '"' + (a.id === initialAg.id ? ' selected' : '') + '>' + lbl + '</option>';
+      }).join('');
+
+      function paintAgent(ag) {
+        titleEl.textContent = 'Demo ' + slotNum + ' · ' + (ag.geDisplayName || ag.name);
+        subEl.textContent = ag.id === 'fleetflow_cpg' ? ag.outcome : (ag.persona + ' — ' + (ag.outcome || ''));
+        geBtn.href = slotNum === 2 ? 'https://fleetflow-cpg-tmd-632239123109.us-central1.run.app' : (ag.geUrl || 'https://vertexaisearch.cloud.google.com/');
+        var prompts = (ag.starterPrompts && ag.starterPrompts.length) ? ag.starterPrompts : (ag.samplePrompt ? [ag.samplePrompt] : []);
+        promptsEl.innerHTML = prompts.map(function (p, idx) {
+          return '<button type="button" class="prompt-chip" data-idx="' + idx + '">"' + p + '"</button>';
+        }).join('');
+        promptsEl.querySelectorAll('.prompt-chip').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var txt = prompts[Number(btn.dataset.idx)] || '';
+            if (navigator.clipboard && txt) navigator.clipboard.writeText(txt);
+            toastEl.style.display = 'inline';
+            setTimeout(function () { toastEl.style.display = 'none'; }, 1400);
+          });
         });
       }
-      load();
-      up.addEventListener('change', function (e) { if (e.target.files && e.target.files[0]) saveVideo(k, { name: e.target.files[0].name, type: e.target.files[0].type, blob: e.target.files[0] }).then(load); });
-      rs.addEventListener('click', function () { deleteSavedVideo(k).then(load); });
-    });
+
+      sel.addEventListener('change', function () {
+        var chosen = slotAgents.find(function (a) { return a.id === sel.value; }) || slotAgents[0];
+        try { localStorage.setItem('sc_demo_agent_' + slotNum, chosen.id); } catch (e) {}
+        paintAgent(chosen);
+      });
+      paintAgent(initialAg);
+
+      function loadVideo() {
+        if (activeBlobUrl) { URL.revokeObjectURL(activeBlobUrl); activeBlobUrl = null; }
+        getSavedVideo(slotKey).then(function (rec) {
+          if (rec && rec.blob) {
+            activeBlobUrl = URL.createObjectURL(rec.blob);
+            player.src = activeBlobUrl;
+            player.style.display = 'block';
+            emptyEl.style.display = 'none';
+            statusEl.textContent = rec.name + ' (' + (rec.blob.size / 1e6).toFixed(1) + ' MB)';
+            resetBtn.hidden = false;
+          } else {
+            player.removeAttribute('src');
+            player.style.display = 'none';
+            emptyEl.style.display = 'flex';
+            statusEl.textContent = 'Empty — ready for Demo ' + slotNum + ' video';
+            resetBtn.hidden = true;
+          }
+        });
+      }
+
+      loadVideo();
+      uploadEl.addEventListener('change', function (e) {
+        var file = e.target.files && e.target.files[0];
+        if (!file) return;
+        saveVideo(slotKey, { name: file.name, type: file.type, blob: file }).then(loadVideo);
+      });
+      resetBtn.addEventListener('click', function () { deleteSavedVideo(slotKey).then(loadVideo); });
+    }
+
+    setupDemoSlot(1, 0);
+    setupDemoSlot(2, 11);
   })();
 </script>
 </body>

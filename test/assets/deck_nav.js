@@ -16,20 +16,20 @@
 })();
 
 window.SC_SLIDE_DECK = [
-  { num: "01", title: "India Supply Chain & Holistic TM&D Blueprint", path: "slides/slide_01.html" },
-  { num: "02", title: "TM&D North Star, Global OSA Proof & Challenges", path: "slides/slide_02.html" },
-  { num: "03", title: "Sense → Reason → Act: Why Google Cloud", path: "slides/slide_03.html" },
-  { num: "04", title: "Live Demo Stage: CEO · Hub OTIF · Dispatch", path: "pages/demo_stage.html" },
-  { num: "05", title: "Frontline Worker: A Day in the Life (5 Roles)", path: "slides/slide_flw_day.html" },
-  { num: "06", title: "From 3 Demos to a 60-Role Agentic Enterprise", path: "slides/slide_04.html" },
-  { num: "07", title: "Persona Map: 60 Supply Chain & TM&D Roles", path: "pages/persona_map.html" },
-  { num: "08", title: "Non-Invasive Google Cloud Architecture", path: "pages/build_02_arch.html" },
+  { num: "01", title: "Why Agentic Transformation for Supply Chains in India & TM&D", path: "slides/slide_01.html" },
+  { num: "02", title: "The TM&D Value Tree (North Star & Global OSA Proof)", path: "slides/slide_03_value_tree.html" },
+  { num: "03", title: "TM&D Reality: Correlated Challenges & How Agents Seal Gaps", path: "slides/slide_02.html" },
+  { num: "04", title: "Live Demo Stage: Demo 1 & Demo 2", path: "pages/demo_stage.html" },
+  { num: "05", title: "The Plug Is an Agent (Power of Agents & Frontline Day)", path: "slides/slide_03.html" },
+  { num: "06", title: "From Two Agents to an Agentic Organisation", path: "slides/slide_04.html" },
+  { num: "07", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
+  { num: "08", title: "Non-Invasive Reference Architecture", path: "pages/build_02_arch.html" },
   { num: "09", title: "How Agents Are Built (Gemini Enterprise)", path: "pages/build_01_how.html" },
-  { num: "10", title: "Model Choice (Pro · Flash · Indic Live)", path: "pages/build_03_models.html" },
-  { num: "11", title: "Governance & Human Approval Gates", path: "pages/build_04_govern.html" },
+  { num: "10", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
+  { num: "11", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
   { num: "12", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
-  { num: "13", title: "Why Google Cloud: Full Stack & Gartner", path: "pages/build_07_why_google.html" },
-  { num: "14", title: "ITC TM&D × Google — 5 Active Workstreams", path: "slides/slide_06_tmd_partnership.html" }
+  { num: "13", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" },
+  { num: "14", title: "ITC TM&D × Google — Strategic Partnership", path: "slides/slide_06_tmd_partnership.html" }
 ];
 
 window.initDeckChrome = function (opts) {
