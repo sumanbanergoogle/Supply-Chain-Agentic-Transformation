@@ -271,6 +271,7 @@
     <button class="filter-pill" data-filter="warehousing">04 Warehousing (9)</button>
     <button class="filter-pill" data-filter="distribution">05 Distribution (12)</button>
     <button class="filter-pill" data-filter="reverse">06 Reverse (9)</button>
+    <button class="filter-pill" data-filter="frontline">Frontline Roles (9)</button>
     <input class="search-box" id="searchBox" type="search" placeholder="Search persona, agent, or KPI...">
   </div>
 
@@ -433,10 +434,16 @@
     }
   }
 
+  var FRONTLINE_IDS = { 'SC-35': 1, 'SC-36': 1, 'SC-37': 1, 'SC-41': 1, 'SC-43': 1, 'SC-45': 1, 'SC-47': 1, 'SC-48': 1, 'SC-49': 1 };
+
   function render() {
     var q = searchQuery.trim().toLowerCase();
     var filtered = allRows.filter(function (r) {
-      if (activeFilter !== 'all' && r.pillarId !== activeFilter) return false;
+      if (activeFilter === 'frontline') {
+        if (!FRONTLINE_IDS[r.id]) return false;
+      } else if (activeFilter !== 'all' && r.pillarId !== activeFilter) {
+        return false;
+      }
       if (!q) return true;
       var agTxt = (r.tmAndDAgents || []).map(function (a) { return a.name + ' ' + a.desc; }).join(' ');
       return (r.persona + ' ' + r.agent + ' ' + r.mandate + ' ' + r.impact + ' ' + r.subprocess + ' ' + agTxt).toLowerCase().indexOf(q) !== -1;
