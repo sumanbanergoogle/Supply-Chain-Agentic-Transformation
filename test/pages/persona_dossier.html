@@ -114,7 +114,16 @@
   .ag-desc { font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.48; }
   .ag-box { padding: 10px 12px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); font-size: 12.5px; line-height: 1.46; color: var(--text); }
   .ag-box b { display: block; font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ac); margin-bottom: 3px; }
-  .ag-foot { margin-top: auto; padding-top: 8px; display: flex; align-items: center; justify-content: space-between; font: 700 12.5px var(--font); color: var(--ac); }
+  .ag-foot { margin-top: auto; padding-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; font: 700 12.5px var(--font); color: var(--ac); }
+  .ag-btn-details { color: var(--ac); text-decoration: none; font: 700 12.5px var(--font); }
+  .ag-btn-details:hover { text-decoration: underline; }
+  .ag-btn-ge {
+    display: inline-flex; align-items: center; gap: 5px; text-decoration: none;
+    padding: 6px 12px; border-radius: 999px; font: 700 11.5px var(--font);
+    background: linear-gradient(135deg, #3186FF 0%, #4B31E3 100%); color: #fff;
+    box-shadow: 0 4px 12px rgba(49,134,255,.22); transition: transform .15s;
+  }
+  .ag-btn-ge:hover { transform: translateY(-1px); }
 </style>
 </head>
 <body>
@@ -218,7 +227,7 @@
         var isLive = Boolean(a.liveInGE);
         var pCls = (a.priority || '').indexOf('P0') === 0 ? 'p0' : 'p1';
         var href = 'agent_details.html?agent=' + encodeURIComponent(aname) + '&persona=' + encodeURIComponent(p.id);
-        return '<a class="ag-card" style="--ac:' + ac + ';" href="' + href + '">' +
+        return '<div class="ag-card" style="--ac:' + ac + ';" onclick="window.location.href=\'' + href.replace(/'/g, "\\'") + '\'">' +
           '<div class="ag-top">' +
             '<div class="ag-badges">' +
               '<span class="pill ' + pCls + '">' + (a.priority || 'P1 · Build Next') + '</span>' +
@@ -229,8 +238,11 @@
           '<p class="ag-desc">' + (a.sumanImpact || a.outcome || a.problem || '') + '</p>' +
           '<div class="ag-box"><b>How It Works</b>' + (a.does || '') + '</div>' +
           '<div class="ag-box"><b>Human Sign-Off Gate</b>' + (a.stopsAt || '') + '</div>' +
-          '<div class="ag-foot"><span>Open Agent Architecture &amp; Tech Details</span><span>&rarr;</span></div>' +
-        '</a>';
+          '<div class="ag-foot">' +
+            '<a class="ag-btn-details" href="' + href + '" onclick="event.stopPropagation();">Open Architecture &amp; Details &rarr;</a>' +
+            (isLive && a.geUrl ? '<a class="ag-btn-ge" href="' + a.geUrl + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Open in GE &#8599;</a>' : '') +
+          '</div>' +
+        '</div>';
       }).join('');
 
       root.innerHTML =
