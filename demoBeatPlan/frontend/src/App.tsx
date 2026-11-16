@@ -15,6 +15,7 @@ import { FloatingAgent, AGENT_DOCK_WIDTH } from './components/agent/FloatingAgen
 import { tmdApi } from './api/client';
 import { BeatSimulation, ChatAction, CityFilter, CityKPIs, InfrastructurePayload, OutletSummary } from './types/tmd';
 import { dispatchUi, useUiCommands } from './agent/uiCommands';
+import { PERSONA_LIST, usePersona } from './state/persona';
 
 type ScreenTab = 'map' | 'city_compare' | 'city_health' | 'beat_diagnosis' | 'beat_simulator';
 
@@ -41,11 +42,20 @@ export function App() {
   const [selectedBeatId, setSelectedBeatId] = useState<string>('BLR-B04');
   const [simulatedBeat, setSimulatedBeat] = useState<BeatSimulation | null>(null);
   const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [walkthroughOpen, setWalkthroughOpen] = useState(false);
   const [middleExpanded, setMiddleExpanded] = useState(false);
   const [mapFullscreen, setMapFullscreen] = useState(false);
   const [agentDocked, setAgentDocked] = useState(true);
   const [reportOutletId, setReportOutletId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const { persona } = usePersona();
+  const personaMeta = PERSONA_LIST.find((p) => p.id === persona) || PERSONA_LIST[0];
+
+  useEffect(() => {
+    if (!personaMeta.canCompareCities && screenTab === 'city_compare') {
+      setScreenTab('city_health');
+    }
+  }, [personaMeta.canCompareCities, screenTab]);
 
   useEffect(() => {
     Promise.all([tmdApi.outlets('ALL'), tmdApi.kpis('ALL'), tmdApi.infrastructure('ALL')])
@@ -237,30 +247,52 @@ export function App() {
                   />
                 </div>
                 <div className="pointer-events-auto flex items-center gap-0.5 p-1 rounded-lg bg-black/45 backdrop-blur-sm border border-white/10 shadow-lg text-[11px] font-sans flex-wrap">
-                  {viewBtn('city_compare', 'Compare cities')}
-                  {viewBtn('city_health', 'Health & priority')}
-                  {viewBtn('beat_diagnosis', 'Beat 4/7 Diagnosis')}
-                  {viewBtn('beat_simulator', 'Beat Simulator')}
-                </div>
-                <div className="pointer-events-auto flex items-center gap-1 p-1 rounded-lg bg-black/55 backdrop-blur-sm border border-emerald-500/30 shadow-lg text-[10px] font-mono flex-wrap">
-                  <span className="px-1.5 text-emerald-300 font-bold flex items-center gap-1">
-                    <Play className="w-2.5 h-2.5" /> 5-Min Storyboard:
-                  </span>
-                  {STORYBOARD_STEPS.map((s) => (
-                    <button
-                      key={s.step}
-                      type="button"
-                      onClick={() => triggerStoryboardStep(s.step, s.prompt)}
-                      className={`px-2 py-0.5 rounded transition-colors ${
-                        activeStep === s.step
-                          ? 'bg-emerald-500 text-[#0d1117] font-bold'
-                          : 'text-white/80 hover:text-white hover:bg-white/10'
-                      }`}
+                  {personaMeta.canCompareCities ? (
+                    viewBtn('city_compare', 'Compare cities')
+                  ) : (
+                    <span
+                      className="px-2 py-1 rounded text-[10px] font-mono text-white/40 border border-white/10 cursor-not-allowed"
+                      title="Cross-city benchmark is scoped to TM&D Head / Circle Manager"
                     >
-                      {s.label}
-                    </button>
-                  ))}
+                      🔒 Compare cities
+                    </span>
+                  )}
+                  {viewBtn('city_health', 'Health & priority')}
+                  {viewBtn('beat_diagnosis', 'Beat Diagnosis')}
+                  {viewBtn('beat_simulator', 'Beat Simulator')}
+                  <span className="text-white/15 px-0.5">|</span>
+                  <button
+                    type="button"
+                    onClick={() => setWalkthroughOpen((v) => !v)}
+                    className={`px-2 py-1 rounded transition-colors flex items-center gap-1 font-mono text-[10px] ${
+                      walkthroughOpen
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                        : 'text-white/65 hover:text-white hover:bg-white/10'
+                    }`}
+                    title="Toggle guided executive walkthrough prompts"
+                  >
+                    <Play className="w-2.5 h-2.5" />
+                    <span>Walkthrough {walkthroughOpen ? '▾' : '▸'}</span>
+                  </button>
                 </div>
+                {walkthroughOpen && (
+                  <div className="pointer-events-auto flex items-center gap-1 p-1 rounded-lg bg-black/60 backdrop-blur-sm border border-emerald-500/30 shadow-lg text-[10px] font-mono flex-wrap">
+                    {STORYBOARD_STEPS.map((s) => (
+                      <button
+                        key={s.step}
+                        type="button"
+                        onClick={() => triggerStoryboardStep(s.step, s.prompt)}
+                        className={`px-2 py-0.5 rounded transition-colors ${
+                          activeStep === s.step
+                            ? 'bg-emerald-500 text-[#0d1117] font-bold'
+                            : 'text-white/80 hover:text-white hover:bg-white/10'
+                        }`}
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </section>
@@ -309,6 +341,7 @@ export function App() {
               ) : screenTab === 'beat_diagnosis' ? (
                 <div className="flex-1 overflow-y-auto p-4 pt-12">
                   <BeatDiagnosisView
+                    city={cityFilter}
                     beatId={selectedBeatId}
                     onSelectBeat={(b) => {
                       setSelectedBeatId(b);

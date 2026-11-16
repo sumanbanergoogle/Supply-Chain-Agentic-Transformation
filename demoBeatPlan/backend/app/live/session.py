@@ -17,7 +17,7 @@ from app.live import fallback, voice_tools
 
 logger = logging.getLogger("beatpulse.live.session")
 
-DEFAULT_LIVE_MODEL = "gemini-3.1-flash-live-preview"
+DEFAULT_LIVE_MODEL = "gemini-3.8-live"
 DEFAULT_LIVE_LOCATION = "us-central1"
 MAX_CONSECUTIVE_FAILURES = 1
 LANGUAGES = ("english", "hinglish", "hindi")
@@ -262,7 +262,7 @@ async def run_resilient_live(
                         "status": "fallback",
                         "model": "text",
                         "memory": False,
-                        "message": f"Vertex Live ADC unavailable ({type(e).__name__}) — using tool-grounded text & browser speech mode.",
+                        "message": f"Live voice audio unavailable ({type(e).__name__}) — using tool-grounded text & browser speech mode.",
                     },
                 )
                 await run_fallback_session(websocket, inbound, state)
@@ -409,7 +409,7 @@ async def run_fallback_session(websocket: WebSocket, inbound: asyncio.Queue, sta
                     websocket,
                     {
                         "type": "error",
-                        "message": "Vertex Gemini Live ADC unavailable — raw PCM audio cannot be streamed; use browser Speech Recognition or type your query.",
+                        "message": "Direct PCM audio stream unavailable — use browser voice input or type your query.",
                     },
                 )
             continue

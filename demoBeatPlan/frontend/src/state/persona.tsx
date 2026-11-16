@@ -1,23 +1,31 @@
 import React, { createContext, useContext, useState } from 'react';
 
-export type Persona = 'VP_TMD' | 'BRANCH_MANAGER' | 'FIELD_SO';
+export type Persona = 'TMD_HEAD' | 'BRANCH_AM' | 'AREA_EXEC_SO';
 
 const STORAGE_KEY = 'beatpulse.persona';
 
-export const PERSONA_LIST: { id: Persona; label: string }[] = [
-  { id: 'VP_TMD', label: 'VP TM&D' },
-  { id: 'BRANCH_MANAGER', label: 'Branch Mgr' },
-  { id: 'FIELD_SO', label: 'Sales Officer' },
+export const PERSONA_LIST: { id: Persona; label: string; scopeBadge: string; canCompareCities: boolean; canDispatchAsm: boolean }[] = [
+  { id: 'TMD_HEAD', label: 'TM&D Head / Circle', scopeBadge: '3-City Exec', canCompareCities: true, canDispatchAsm: true },
+  { id: 'BRANCH_AM', label: 'Branch / Area Mgr (AM)', scopeBadge: 'AM · DMS Dispatch', canCompareCities: false, canDispatchAsm: true },
+  { id: 'AREA_EXEC_SO', label: 'Area Exec / SO (WD Pilot)', scopeBadge: 'Field Execution', canCompareCities: false, canDispatchAsm: false },
 ];
+
+function mapLegacyPersona(v: string | null): Persona | null {
+  if (v === 'TMD_HEAD' || v === 'VP_TMD') return 'TMD_HEAD';
+  if (v === 'BRANCH_AM' || v === 'BRANCH_MANAGER') return 'BRANCH_AM';
+  if (v === 'AREA_EXEC_SO' || v === 'FIELD_SO') return 'AREA_EXEC_SO';
+  return null;
+}
 
 let currentPersona: Persona = (() => {
   try {
     const v = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null;
-    if (v === 'VP_TMD' || v === 'BRANCH_MANAGER' || v === 'FIELD_SO') return v;
+    const mapped = mapLegacyPersona(v);
+    if (mapped) return mapped;
   } catch {
     /* ignore */
   }
-  return 'VP_TMD';
+  return 'TMD_HEAD';
 })();
 
 const listeners = new Set<(p: Persona) => void>();
@@ -47,7 +55,7 @@ function installFetchWrapper() {
 installFetchWrapper();
 
 const Ctx = createContext<{ persona: Persona; setPersona: (p: Persona) => void }>({
-  persona: 'VP_TMD',
+  persona: 'TMD_HEAD',
   setPersona: () => {},
 });
 

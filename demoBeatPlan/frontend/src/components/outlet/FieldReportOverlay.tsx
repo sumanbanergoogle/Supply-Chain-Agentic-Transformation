@@ -91,6 +91,11 @@ export const FieldReportOverlay: React.FC<{
                 </ul>
               </div>
             </div>
+
+            <div className="border-t pt-3 flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span>Sources: WD DMS Secondary Billing · SFA GPS Telemetry · eB2B App · 600m Q-Com Proximity Graph</span>
+              <span>Cadence: Daily Sync</span>
+            </div>
           </div>
         )}
       </div>

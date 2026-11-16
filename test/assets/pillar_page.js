@@ -221,14 +221,13 @@ window.renderPillarPage = function (pillarId, prevUrl, nextUrl) {
         '<span class="badge-pill">' + it.id + ' · ' + entry.sub + '</span>' +
         '<h2 style="margin:10px 0 4px;font:600 22px var(--font-display);">' + it.persona + '</h2>' +
         '<p style="color:var(--text-muted);margin:0 0 18px;font-size:14px;">' + it.mandate + '</p>' +
-        '<div style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--ti);margin-bottom:12px;">Agentic Journey in a Day · Built with Gemini Enterprise (Low-Code / No-Code)</div>' +
+        '<div style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--ti);margin-bottom:12px;">Agentic Journey in a Day · Built with Gemini Enterprise</div>' +
         '<div style="display:grid;gap:12px;">' +
           it.dayJourney.map(function (step) {
             return (
               '<div style="padding:14px 16px;border-radius:14px;background:var(--surface-sunk);border:1px solid var(--border-subtle);border-left:4px solid var(--tc);">' +
                 '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">' +
                   '<span style="font:600 12px var(--font-mono);color:var(--text);">' + step.time + '</span>' +
-                  '<span class="badge-pill">' + step.mode + '</span>' +
                 '</div>' +
                 '<div style="font:600 15px var(--font-display);color:var(--ti);margin-bottom:4px;">⚡ ' + step.agent + '</div>' +
                 '<div style="font-size:13.5px;line-height:1.5;color:var(--text);">' + step.desc + '</div>' +

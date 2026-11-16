@@ -8,6 +8,11 @@ export interface CityKPIs {
   healthy_count: number;
   warning_count: number;
   critical_count: number;
+  coverage_miss_count?: number;
+  zero_order_visit_count?: number;
+  eco_pct?: number;
+  strike_rate_pct?: number;
+  avg_drop_size_inr?: number;
   monthly_leakage_inr: number;
   avg_lspc: number;
   target_lspc: number;
@@ -28,6 +33,7 @@ export interface OutletSummary {
   city: CityName;
   region: string;
   zone: string;
+  sbu_line?: string;
   wd_id: string;
   wd_name: string;
   beat_id: string;
@@ -42,6 +48,7 @@ export interface OutletSummary {
   lat: number;
   lng: number;
   health_status: HealthStatus;
+  zero_billing_type?: string;
   dominant_cause: string;
   baseline_weekly_nsv_inr: number;
   current_weekly_nsv_inr: number;
@@ -169,6 +176,7 @@ export interface BeatInfo {
   wd_id: string;
   wd_name: string;
   zone: string;
+  sbu_line?: string;
   salesman_name: string;
   visit_day: string;
   planned_outlets: number;
@@ -184,6 +192,9 @@ export interface BeatDiagnosisPayload {
   outlets: OutletSummary[];
   zero_billing_count: number;
   skipped_count: number;
+  eco_pct?: number;
+  strike_rate_pct?: number;
+  avg_drop_size_inr?: number;
   total_monthly_leakage_inr: number;
   avg_lspc: number;
   avg_gnn_spillover: number;
@@ -194,9 +205,11 @@ export interface BeatSimulation {
   beat_id: string;
   city: CityName;
   zone: string;
+  sbu_line?: string;
   salesman_name: string;
   target_transfer_beat: string;
   target_transfer_salesman: string;
+  capacity_source?: string;
   before: {
     distance_km: number;
     avg_visit_duration_min: number;

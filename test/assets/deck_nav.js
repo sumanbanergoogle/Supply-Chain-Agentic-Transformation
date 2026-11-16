@@ -65,6 +65,16 @@ window.initDeckChrome = function (opts) {
   var curStr = curIdx !== -1 ? String(curIdx + 1).padStart(2, '0') : '••';
   var totStr = String(totalCount).padStart(2, '0');
 
+  if (curIdx !== -1) {
+    var mastTag = document.querySelector('.mast-tag');
+    if (mastTag) {
+      mastTag.textContent = curStr + ' · ' + window.SC_SLIDE_DECK[curIdx].title;
+    }
+    document.querySelectorAll('[data-bnum]').forEach(function (el) {
+      el.textContent = curStr + ' / ' + totStr;
+    });
+  }
+
   // Populate Top Masthead Slide Nav
   var mastSlideNav = document.getElementById('mastSlideNav');
   if (mastSlideNav) {

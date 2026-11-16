@@ -156,6 +156,16 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
             outlets_in_beat = 8 if beat_id in ("BLR-B04", "BLR-B07") else 6
             overloaded = beat_mode == "traffic_cutoff"
             visit_compliance = 0.62 if overloaded else (0.95 if beat_mode == "stockout_qcom" else 0.96)
+            if beat_mode == "traffic_cutoff":
+                sbu_line = "Foods & Snacks (Dedicated DS Beat)"
+            elif beat_mode == "stockout_qcom":
+                sbu_line = "Composite GT Beat (Foods + PCPB + ESPB)"
+            else:
+                sbu_line = [
+                    "Foods & Impulse (DS Beat)",
+                    "PCPB & Stationery (ESPB Beat)",
+                    "Composite GT Beat (Foods + PCPB + ESPB)",
+                ][z_idx % 3]
 
             beat_rows.append(
                 {
@@ -164,6 +174,7 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                     "wd_id": wd_id,
                     "wd_name": wd_lookup[wd_id]["name"],
                     "zone": zone_name,
+                    "sbu_line": sbu_line,
                     "salesman_name": salesman,
                     "visit_day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][z_idx % 6],
                     "planned_outlets": outlets_in_beat,
@@ -182,21 +193,25 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                     outlet_seq += 1
 
                 # Tail-end outlets on traffic-cutoff beats get skipped after 4:15 PM!
-                tail_skipped = overloaded and local_i >= (outlets_in_beat - 3)
+                cutoff_tail = 3 if beat_id == "BLR-B04" else 1
+                tail_skipped = overloaded and local_i >= (outlets_in_beat - cutoff_tail)
                 if is_lakshmi_mart:
-                    archetype = "critical_zero_billing"
+                    archetype = "attention_erosion"
                     dominant_cause = "assortment_tier_mismatch"
                 elif tail_skipped:
                     archetype = "critical_zero_billing"
                     dominant_cause = "beat_coverage_fatigue"
                 elif beat_mode == "stockout_qcom":
-                    if local_i in (1, 2, 3):
+                    stockout_indices = (1, 2) if beat_id == "BLR-B07" else (0,)
+                    qcom_indices = (3, 4) if beat_id == "BLR-B07" else (1,)
+                    assort_indices = (5,) if beat_id == "BLR-B07" else (2,)
+                    if local_i in stockout_indices:
                         archetype = "critical_zero_billing"
                         dominant_cause = "hero_sku_stockout"
-                    elif local_i in (4, 5):
+                    elif local_i in qcom_indices:
                         archetype = "attention_erosion"
                         dominant_cause = "qcommerce_spillover"
-                    elif local_i == 6:
+                    elif local_i in assort_indices:
                         archetype = "attention_erosion"
                         dominant_cause = "assortment_tier_mismatch"
                     else:
@@ -204,10 +219,10 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                         dominant_cause = "none"
                 else:
                     roll = rng.random()
-                    if roll < 0.58:
+                    if roll < 0.78:
                         archetype = "healthy_core"
                         dominant_cause = "none"
-                    elif roll < 0.84:
+                    elif roll < 0.93:
                         archetype = "attention_erosion"
                         dominant_cause = ROOT_CAUSE_PROFILES[int(rng.integers(0, len(ROOT_CAUSE_PROFILES)))]
                     else:
@@ -238,16 +253,16 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
 
                 channel = "Modern Mini-Mart" if is_lakshmi_mart else CHANNEL_TYPES[(z_idx + local_i) % len(CHANNEL_TYPES)]
                 tier = "Tier-C (Legacy) → Modern Self-Service" if is_lakshmi_mart else ("Platinum" if local_i % 4 == 0 else ("Gold" if local_i % 2 == 0 else "Silver"))
-                base_nsv = 39500.0 if is_lakshmi_mart else ({"Platinum": 42000.0, "Gold": 27000.0, "Silver": 16500.0}[tier] * rng.uniform(0.9, 1.15))
+                base_nsv = 21500.0 if is_lakshmi_mart else ({"Platinum": 18500.0, "Gold": 10500.0, "Silver": 5500.0}[tier] * rng.uniform(0.9, 1.15))
                 target_lspc = 8.0 if is_lakshmi_mart else (10.0 if "Platinum" in tier else (8.0 if "Gold" in tier else 5.0))
 
-                fill_rate = 0.69 if dominant_cause == "hero_sku_stockout" else (wd_lookup[wd_id]["fill_rate_base"] - 0.02)
+                fill_rate = 0.89 if is_lakshmi_mart else (0.69 if dominant_cause == "hero_sku_stockout" else (wd_lookup[wd_id]["fill_rate_base"] - 0.02))
                 fill_rate = round(float(np.clip(fill_rate + rng.normal(0, 0.02), 0.55, 0.98)), 3)
 
-                visit_dur_min = 1.8 if tail_skipped else (8.6 if beat_mode == "stockout_qcom" else (9.1 if archetype == "healthy_core" else 4.9))
+                visit_dur_min = 8.4 if is_lakshmi_mart else (1.8 if tail_skipped else (8.6 if beat_mode == "stockout_qcom" else (9.1 if archetype == "healthy_core" else 5.2)))
                 visit_dur_min = round(float(np.clip(visit_dur_min + rng.normal(0, 0.4), 1.2, 13.5)), 1)
 
-                credit_overdue_days = 32 if dominant_cause == "credit_margin_squeeze" else (5 if archetype == "healthy_core" else int(rng.integers(8, 22)))
+                credit_overdue_days = 5 if is_lakshmi_mart else (32 if dominant_cause == "credit_margin_squeeze" else (5 if archetype == "healthy_core" else int(rng.integers(6, 18))))
                 vision_shelf_gap = 0.68 if is_lakshmi_mart or dominant_cause == "assortment_tier_mismatch" else (0.10 if archetype == "healthy_core" else float(rng.uniform(0.22, 0.44)))
 
                 if is_lakshmi_mart:
@@ -313,13 +328,13 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                 current_4w_lspc = float(np.mean([r["lspc"] for r in w_records[-4:]]))
                 zero_bill_streak = sum(1 for r in w_records[-4:] if r["nsv_inr"] == 0)
                 if is_lakshmi_mart:
-                    revenue_at_risk_monthly = 118000.0
+                    revenue_at_risk_monthly = 48000.0
                     health_status = "warning"
                 else:
                     revenue_at_risk_monthly = round(max(0.0, (baseline_4w_nsv - current_4w_nsv) * 4.0), 0)
-                    if zero_bill_streak >= 2 or tail_skipped or current_4w_lspc < 3.4:
+                    if zero_bill_streak >= 2 or tail_skipped:
                         health_status = "critical"
-                    elif current_4w_lspc < target_lspc * 0.75 or current_4w_nsv < baseline_4w_nsv * 0.75:
+                    elif current_4w_lspc < target_lspc * 0.78 or current_4w_nsv < baseline_4w_nsv * 0.78 or archetype == "attention_erosion":
                         health_status = "warning"
                     else:
                         health_status = "healthy"
@@ -331,6 +346,15 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                     else f"Facade audit: {channel} ({tier}); {'Classmate/Personal Care rack under-indexed' if dominant_cause == 'assortment_tier_mismatch' else 'Standard ITC front-bay visibility'}"
                 )
 
+                if not visited_on_time:
+                    zero_billing_type = "Coverage Miss (Not Visited)"
+                elif health_status == "critical":
+                    zero_billing_type = "Zero-Order Visit (Fill / Credit)"
+                elif health_status == "warning":
+                    zero_billing_type = "Low LSPC (Category Dormant)"
+                else:
+                    zero_billing_type = "Productive Core"
+
                 outlet_rows.append(
                     {
                         "outlet_id": oid,
@@ -338,6 +362,7 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                         "city": city,
                         "region": cfg["region"],
                         "zone": zone_name,
+                        "sbu_line": sbu_line,
                         "wd_id": wd_id,
                         "wd_name": wd_lookup[wd_id]["name"],
                         "beat_id": beat_id,
@@ -352,6 +377,7 @@ def generate_dataset(output_dir: Path | None = None, seed: int = 2026) -> dict[s
                         "lat": olat,
                         "lng": olng,
                         "health_status": health_status,
+                        "zero_billing_type": zero_billing_type,
                         "archetype": archetype,
                         "dominant_cause": dominant_cause,
                         "baseline_weekly_nsv_inr": round(baseline_4w_nsv, 0),

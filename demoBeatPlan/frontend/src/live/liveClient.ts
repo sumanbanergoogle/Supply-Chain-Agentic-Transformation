@@ -202,7 +202,7 @@ export class LiveClient {
   private async connectDirectAiStudio(apiKey: string): Promise<void> {
     this.explicitDisconnect = false;
     this.directMode = true;
-    this.setStatus('connecting', { model: 'gemini-3.1-flash-live-preview' });
+    this.setStatus('connecting', { model: 'gemini-3.8-live' });
 
     let decls: any[] = [];
     try {
@@ -219,13 +219,15 @@ export class LiveClient {
     const sock = new WebSocket(url);
     this.ws = sock;
     let outputCap = '';
+    let turnOutput = false;
+    let toolSinceOutput = false;
 
     sock.onopen = () => {
       if (this.ws !== sock) return;
       sock.send(
         JSON.stringify({
           setup: {
-            model: 'models/gemini-3.1-flash-live-preview',
+            model: 'models/gemini-3.8-live',
             generationConfig: {
               responseModalities: ['AUDIO'],
               speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Aoede' } } },
@@ -262,12 +264,13 @@ export class LiveClient {
       }
 
       if (msg.setupComplete) {
-        this.setStatus('connected', { model: 'gemini-live-direct' });
+        this.setStatus('connected', { model: 'gemini-3.8-live' });
         this.handlers.onVoiceState?.('idle');
         return;
       }
 
       if (msg.toolCall?.functionCalls) {
+        toolSinceOutput = true;
         this.handlers.onVoiceState?.('thinking');
         const responses: any[] = [];
         for (const fc of msg.toolCall.functionCalls) {
@@ -304,17 +307,22 @@ export class LiveClient {
         this.handlers.onInputTranscript?.(sc.inputTranscription.text);
       }
       if (sc.outputTranscription?.text) {
+        turnOutput = true;
         outputCap += sc.outputTranscription.text;
         this.handlers.onCaptionDelta?.(sc.outputTranscription.text);
       }
       const parts = sc.modelTurn?.parts || [];
       for (const p of parts) {
         if (p.inlineData?.data && p.inlineData?.mimeType?.startsWith('audio/')) {
+          turnOutput = true;
           this.handlers.onVoiceState?.('speaking');
           audioPlayer.playPcmChunk(base64ToArrayBuffer(p.inlineData.data));
         }
       }
       if (sc.turnComplete) {
+        if (!turnOutput && toolSinceOutput) return;
+        turnOutput = false;
+        toolSinceOutput = false;
         this.handlers.onTurnComplete?.(outputCap.trim());
         outputCap = '';
         this.handlers.onVoiceState?.('idle');

@@ -30,6 +30,98 @@ const TABS: { key: CanvasView; label: string }[] = [
   { key: 'nearby', label: 'Nearby' },
 ];
 
+interface VisionShelfPlan {
+  bayTitle: string;
+  eyeLevelLabel: string;
+  eyeLevelAlert: boolean;
+  waistLabel: string;
+  counterLabel: string;
+  skus: { name: string; tag: string }[];
+}
+
+function visionPlanForOutlet(cause: string): VisionShelfPlan {
+  switch (cause) {
+    case 'assortment_tier_mismatch':
+      return {
+        bayTitle: 'Self-Service Gondola Audit · Tier Upgrade',
+        eyeLevelLabel: '91% conf · Competitor Personal Care Bay',
+        eyeLevelAlert: true,
+        waistLabel: '96% conf · ITC Foods & Matches (Active)',
+        counterLabel: 'Campus Footfall · Stationery Rack Gap',
+        skus: [
+          { name: 'Savlon Multipack', tag: 'High-Confidence' },
+          { name: 'Fiama Gel Bar', tag: 'Eye-Level Reclaim' },
+          { name: 'Classmate Campus', tag: 'Student Footfall' },
+        ],
+      };
+    case 'hero_sku_stockout':
+      return {
+        bayTitle: 'Hero SKU Facing Audit · WD Fill-Rate Gap',
+        eyeLevelLabel: '89% conf · Empty Sunfeast & Bingo! Facings',
+        eyeLevelAlert: true,
+        waistLabel: '84% conf · Low Aashirvaad 5kg Stack',
+        counterLabel: 'Priority WD Replenishment Buffer (48h)',
+        skus: [
+          { name: 'Sunfeast Dark Fantasy', tag: '48h Buffer Push' },
+          { name: 'Bingo! Mad Angles', tag: 'OOS Facing Gap' },
+          { name: 'Aashirvaad Atta 5kg', tag: 'Core Replenish' },
+        ],
+      };
+    case 'qcommerce_spillover':
+      return {
+        bayTitle: 'Walk-In Impulse & Counter Audit · Q-Com Zone',
+        eyeLevelLabel: '88% conf · Evening Pack Visibility Lost',
+        eyeLevelAlert: true,
+        waistLabel: '92% conf · Core Staples Retained',
+        counterLabel: '600m Dark-Store Radius · Counter Hanger',
+        skus: [
+          { name: 'YiPPee! Family Pack', tag: '4% Counter Slab' },
+          { name: 'Bingo! Impulse Strip', tag: 'Checkout Grab' },
+          { name: "Sunfeast Mom's Magic", tag: 'Loyalty QR Pack' },
+        ],
+      };
+    case 'beat_coverage_fatigue':
+      return {
+        bayTitle: 'Tail-Beat Stock Audit · Skipped Visit Recovery',
+        eyeLevelLabel: '86% conf · Stale Planogram / Missing Replenish',
+        eyeLevelAlert: true,
+        waistLabel: '90% conf · Partial Carryover Stock',
+        counterLabel: 'Post-4:15 PM Cutoff · Beat Split Priority',
+        skus: [
+          { name: 'Sunfeast Core Combo', tag: 'Pre-4 PM Visit' },
+          { name: 'Bingo! Value Packs', tag: 'Guided Order Pad' },
+          { name: 'Mangaldeep Agarbatti', tag: 'High-Turn Fill' },
+        ],
+      };
+    case 'credit_margin_squeeze':
+      return {
+        bayTitle: 'Fast-Turn Replenishment Audit · Credit Unblock',
+        eyeLevelLabel: '87% conf · Throttled Multi-Category Order',
+        eyeLevelAlert: true,
+        waistLabel: '93% conf · Cash-Pay Essentials Only',
+        counterLabel: '7-Day Micro-Tranche + Fast-Pay Unlock',
+        skus: [
+          { name: 'Sunfeast Fast-Turn', tag: 'Weekly Tranche' },
+          { name: 'YiPPee! Singles Box', tag: 'Quick Cash Turn' },
+          { name: 'Aim & Homelites', tag: 'High-Margin Core' },
+        ],
+      };
+    default:
+      return {
+        bayTitle: 'Compliant ITC Storefront · Benchmark Outlet',
+        eyeLevelLabel: '95% conf · ITC Personal Care Eye-Level',
+        eyeLevelAlert: false,
+        waistLabel: '97% conf · Full Foods & Staples Facing',
+        counterLabel: 'Compliant Front-Bay Visibility (8+ LSPC)',
+        skus: [
+          { name: 'Aashirvaad & Sunfeast', tag: 'Core Compliant' },
+          { name: 'Savlon & Fiama', tag: 'Eye-Level Held' },
+          { name: 'Classmate & Mangaldeep', tag: 'Active LSPC' },
+        ],
+      };
+  }
+}
+
 export const OutletDeepDiveDrawer: React.FC<{
   outletId: string;
   view: CanvasView;
@@ -86,6 +178,11 @@ export const OutletDeepDiveDrawer: React.FC<{
           >
             {badgeStyle.label}
           </span>
+          {outlet.zero_billing_type && (
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800/80 text-slate-200 border border-border">
+              {outlet.zero_billing_type}
+            </span>
+          )}
           <button
             type="button"
             onClick={() => onOpenReport(outlet.outlet_id)}
@@ -95,7 +192,8 @@ export const OutletDeepDiveDrawer: React.FC<{
           </button>
         </div>
         <div className="text-xs font-mono text-textMuted mt-1">
-          {outlet.name} · {outlet.city} · Beat {outlet.beat_id} · WD {outlet.wd_name}
+          {outlet.name} · {outlet.city} · Beat {outlet.beat_id}
+          {outlet.sbu_line ? ` (${outlet.sbu_line})` : ''} · WD {outlet.wd_name}
         </div>
         <nav className="flex gap-3 mt-2.5 -mb-4 overflow-x-auto no-scrollbar">
           {TABS.map((t) => (
@@ -133,8 +231,11 @@ export const OutletDeepDiveDrawer: React.FC<{
                 <div className="text-lg font-mono font-bold text-amber-300">{Math.round(outlet.churn_prob * 100)}%</div>
               </div>
               <div className="bg-surface border border-border rounded-lg p-3">
-                <div className="text-[10px] font-mono text-textMuted uppercase">SFA GPS Check-in</div>
+                <div className="text-[10px] font-mono text-textMuted uppercase">Salesman SFA GPS</div>
                 <div className="text-xs font-mono font-bold text-white mt-1">{outlet.actual_gps_time}</div>
+                <div className="text-[10px] font-mono text-textMuted mt-0.5">
+                  Drop Size ₹{Number(outlet.current_weekly_nsv_inr || 0).toLocaleString()}/wk
+                </div>
               </div>
             </div>
 
@@ -148,48 +249,100 @@ export const OutletDeepDiveDrawer: React.FC<{
                 <strong className="text-purple-300">{outlet.qc_dark_store_dist_km} km</strong> away (GNN Spillover:{' '}
                 {Math.round(outlet.gnn_spillover_risk * 100)}%).
               </p>
+              <div className="pt-2 border-t border-border/60 text-[10px] font-mono text-textMuted">
+                Data Sync: WD DMS Secondary Billing · SFA GPS Check-ins · eB2B Order Signals · 600m Q-Com Graph · Daily Refresh
+              </div>
             </div>
           </>
         )}
 
-        {view === 'vision' && (
-          <div className="space-y-4">
-            <div className="bg-surface border border-border rounded-lg p-4 space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-accent uppercase flex items-center gap-1.5">
-                  <Camera className="w-3.5 h-3.5" /> Multimodal Storefront &amp; Shelf Inspection
-                </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/70 text-amber-300 border border-amber-700/60">
-                  Shelf Gap Score: {Math.round(outlet.vision_shelf_gap_score * 100)}%
-                </span>
-              </div>
-
-              {/* Visual Shelf Audit Schematic */}
-              <div className="bg-[#0d1117] border border-border rounded-lg p-4 grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
-                <div className="flex flex-col items-center justify-center p-3 rounded bg-slate-900 border border-border/80">
-                  <Store className="w-10 h-10 text-sky-400 mb-1" />
-                  <span className="text-xs font-bold text-white text-center">{outlet.name}</span>
-                  <span className="text-[10px] font-mono text-amber-300 mt-0.5">{outlet.tier}</span>
+        {view === 'vision' && (() => {
+          const vp = visionPlanForOutlet(outlet.dominant_cause);
+          return (
+            <div className="space-y-4">
+              <div className="bg-surface border border-border rounded-lg p-4 space-y-3">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <span className="text-xs font-mono text-accent uppercase flex items-center gap-1.5">
+                    <Camera className="w-3.5 h-3.5" /> Multimodal Storefront &amp; Shelf Inspection
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/70 text-amber-300 border border-amber-700/60">
+                    Shelf Gap Score: {Math.round(outlet.vision_shelf_gap_score * 100)}%
+                  </span>
                 </div>
-                <div className="md:col-span-2 space-y-2 text-xs">
-                  <div className="font-semibold text-white">Gemini Multimodal Vision Reasoning:</div>
-                  <p className="text-textMain leading-relaxed">{outlet.storefront_vision_note}</p>
-                  <div className="grid grid-cols-3 gap-2 pt-1 font-mono text-[11px]">
-                    <div className="bg-emerald-950/40 border border-emerald-700/50 rounded p-2 text-emerald-300">
-                      ✔ Savlon Multipack<br /><span className="text-[10px] text-textMuted">High-Confidence</span>
+
+                {/* Annotated Kirana Shelf Planogram & Vision Bounding Boxes */}
+                <div className="bg-[#0d1117] border border-border rounded-lg p-4 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                  <div className="flex flex-col p-3 rounded-lg bg-slate-950 border border-border/80 space-y-2">
+                    <div className="flex items-center justify-between text-[10px] font-mono text-textMuted">
+                      <span className="flex items-center gap-1 text-sky-300 font-semibold">
+                        <Store className="w-3.5 h-3.5" /> {outlet.channel_type}
+                      </span>
+                      <span>CV AUDIT</span>
                     </div>
-                    <div className="bg-emerald-950/40 border border-emerald-700/50 rounded p-2 text-emerald-300">
-                      ✔ Fiama Gel Bar<br /><span className="text-[10px] text-textMuted">Eye-level Reclaim</span>
+                    <svg viewBox="0 0 220 132" className="w-full h-auto rounded border border-slate-800 bg-[#080c12]">
+                      {/* Shelf frame */}
+                      <rect x="8" y="8" width="204" height="116" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="1.5" />
+                      {/* Eye-Level Bay */}
+                      <rect
+                        x="14"
+                        y="14"
+                        width="192"
+                        height="32"
+                        rx="3"
+                        fill={vp.eyeLevelAlert ? 'rgba(248,81,73,0.14)' : 'rgba(46,160,67,0.16)'}
+                        stroke={vp.eyeLevelAlert ? '#f85149' : '#2ea043'}
+                        strokeWidth="1.4"
+                        strokeDasharray={vp.eyeLevelAlert ? '4 2' : undefined}
+                      />
+                      <text x="20" y="27" fill={vp.eyeLevelAlert ? '#fda4af' : '#86efac'} fontSize="8" fontFamily="monospace" fontWeight="bold">
+                        EYE-LEVEL BAY
+                      </text>
+                      <text x="20" y="39" fill="#e2e8f0" fontSize="7.5" fontFamily="sans-serif">
+                        {vp.eyeLevelLabel.slice(0, 36)}
+                      </text>
+                      {/* Waist-Level Bay */}
+                      <rect x="14" y="52" width="192" height="30" rx="3" fill="rgba(56,139,253,0.12)" stroke="#388bfd" strokeWidth="1.2" />
+                      <text x="20" y="64" fill="#93c5fd" fontSize="8" fontFamily="monospace" fontWeight="bold">
+                        CORE SHELF
+                      </text>
+                      <text x="20" y="75" fill="#e2e8f0" fontSize="7.5" fontFamily="sans-serif">
+                        {vp.waistLabel.slice(0, 36)}
+                      </text>
+                      {/* Counter / Front Bay */}
+                      <rect x="14" y="88" width="192" height="28" rx="3" fill="rgba(210,153,34,0.12)" stroke="#d29922" strokeWidth="1.2" />
+                      <text x="20" y="100" fill="#fcd34d" fontSize="8" fontFamily="monospace" fontWeight="bold">
+                        COUNTER / FRONT BAY
+                      </text>
+                      <text x="20" y="111" fill="#e2e8f0" fontSize="7.5" fontFamily="sans-serif">
+                        {vp.counterLabel.slice(0, 36)}
+                      </text>
+                    </svg>
+                    <div className="text-center">
+                      <span className="text-xs font-bold text-white block truncate">{outlet.name}</span>
+                      <span className="text-[10px] font-mono text-amber-300">{outlet.tier} · {outlet.city}</span>
                     </div>
-                    <div className="bg-emerald-950/40 border border-emerald-700/50 rounded p-2 text-emerald-300">
-                      ✔ Classmate Campus<br /><span className="text-[10px] text-textMuted">Student Footfall</span>
+                  </div>
+
+                  <div className="md:col-span-2 space-y-2.5 text-xs">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <div className="font-semibold text-white">Gemini Multimodal Vision Reasoning · {vp.bayTitle}</div>
+                    </div>
+                    <p className="text-textMain leading-relaxed">{outlet.storefront_vision_note}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-mono text-[11px]">
+                      {vp.skus.map((sku) => (
+                        <div key={sku.name} className="bg-emerald-950/40 border border-emerald-700/50 rounded p-2 text-emerald-300">
+                          ✔ {sku.name}
+                          <br />
+                          <span className="text-[10px] text-textMuted">{sku.tag}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {view === 'telemetry' && (
           <div className="space-y-4">
