@@ -2,67 +2,64 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>01 · Supply Chain Story &amp; Holistic Agentic Blueprint for TM&amp;D</title>
+<title>01 · India Supply Chain Story &amp; Holistic TM&amp;D Blueprint</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
 <script src="../assets/deck_nav.js?v=17"></script>
 <style>
-  .story-hero {
-    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 22px; margin-top: 20px; align-items: stretch;
+  .story-2col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; align-items: stretch;
   }
-  .story-visual {
+  .vis-panel {
     background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
-    padding: 16px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px;
+    padding: 16px 18px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 12px;
+    position: relative; overflow: hidden;
   }
-  .story-visual img {
-    width: 100%; height: 245px; object-fit: cover; border-radius: 12px; display: block;
-    border: 1px solid var(--border-subtle);
+  .vis-panel.holistic { border-top: 4px solid var(--g-blue); box-shadow: var(--shadow-md); }
+  .vis-panel.physical { border-top: 4px solid var(--g-green); }
+  .vis-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .vis-head h2 { margin: 0; font: 600 18px var(--font-display); color: var(--text); }
+  .vis-img {
+    width: 100%; height: 230px; object-fit: contain; border-radius: 12px; background: #fff;
+    border: 1px solid var(--border-subtle); padding: 6px; display: block;
   }
-  .node-row {
-    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
+  .icon-nodes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .i-node {
+    padding: 9px 8px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+    text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px;
   }
-  .node-chip {
-    padding: 8px 10px; border-radius: 10px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-    font-size: 11.5px; line-height: 1.35;
-  }
-  .node-chip b { display: block; font: 700 11px var(--font-mono); color: var(--blue-ink); text-transform: uppercase; }
+  .i-node svg { width: 22px; height: 22px; color: var(--blue-ink); }
+  .i-node b { font: 700 11px var(--font-display); color: var(--text); }
+  .i-node span { font: 500 10.5px var(--font-mono); color: var(--text-muted); }
 
-  .blueprint-card {
-    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
-    padding: 18px 20px; box-shadow: var(--shadow-md); position: relative; overflow: hidden;
-    display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+  .layer-rails { display: grid; gap: 7px; }
+  .rail-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 9px 12px; border-radius: 11px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+    border-left: 4px solid var(--rc, var(--g-blue));
   }
-  .blueprint-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
-  .layer-stack { display: grid; gap: 9px; }
-  .bp-layer {
-    padding: 10px 13px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-    border-left: 4px solid var(--lc, var(--g-blue)); cursor: pointer; transition: transform .15s, border-color .15s, background .15s;
-  }
-  .bp-layer:hover, .bp-layer.is-on {
-    background: color-mix(in srgb, var(--lc, var(--g-blue)) 7%, var(--surface));
-    border-color: color-mix(in srgb, var(--lc, var(--g-blue)) 40%, var(--border-subtle));
-    transform: translateX(2px);
-  }
-  .bp-layer-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-  .bp-layer-k { font: 700 10.5px var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--li, var(--blue-ink)); }
-  .bp-layer h3 { margin: 3px 0 2px; font: 600 15px/1.25 var(--font-display); color: var(--text); }
-  .bp-layer p { margin: 0; font-size: 12.5px; line-height: 1.4; color: var(--text-muted); }
+  .rail-left { display: flex; align-items: center; gap: 9px; }
+  .rail-left svg { width: 18px; height: 18px; color: var(--ri, var(--blue-ink)); flex-shrink: 0; }
+  .rail-left b { font: 600 13.5px var(--font-display); color: var(--text); }
+  .rail-tag { font: 600 10.5px var(--font-mono); color: var(--text-muted); white-space: nowrap; }
 
-  .proxy-strip {
-    margin-top: 20px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 18px;
-    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
-    padding: 16px 20px; box-shadow: var(--shadow-sm); align-items: center;
+  .scope-bar {
+    margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
   }
-  .proxy-img { width: 100%; height: 175px; object-fit: contain; border-radius: 12px; background: #fff; padding: 6px; border: 1px solid var(--border-subtle); }
-  .boundary-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-  .b-pill {
-    padding: 10px 12px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-    font-size: 12.5px; line-height: 1.4;
+  .sc-chip {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 14px;
+    padding: 12px 14px; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 11px;
   }
-  .b-pill b { display: block; font: 600 11.5px var(--font-mono); margin-bottom: 3px; }
+  .sc-ico {
+    width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--c, var(--g-blue)) 12%, var(--surface)); color: var(--ci, var(--blue-ink)); flex-shrink: 0;
+  }
+  .sc-chip b { display: block; font: 600 13.5px var(--font-display); color: var(--text); }
+  .sc-chip span { display: block; font: 500 11.5px var(--font-body); color: var(--text-muted); margin-top: 1px; }
+
   @media (max-width: 1020px) {
-    .story-hero, .proxy-strip, .boundary-pills { grid-template-columns: 1fr; }
-    .node-row { grid-template-columns: repeat(2, 1fr); }
+    .story-2col, .scope-bar { grid-template-columns: 1fr; }
+    .icon-nodes { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -70,80 +67,101 @@
 <header class="mast">
   <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
     <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
-    <span class="mast-tag">01 · Story &amp; Holistic Blueprint</span>
+    <span class="mast-tag">01 · Supply Chain Story &amp; Holistic Blueprint</span>
   </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav">
-    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
-  </div>
+  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 
 <main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 01 · From Supply Chain Flow to Holistic TM&amp;D Transformation</div>
-  <h1 class="page-h1">One Connected Spine Over Existing Systems—No Piecemeal Bots</h1>
-  <p class="page-lede">Across Consumer Packaged Goods (CPG), ITC’s supply chain connects <b>manufacturing plants, State Carrying &amp; Forwarding Agents (CFAs), Wholesale Dealers (WDs), and ~7M retail outlets</b>. Rather than buying isolated bots for sales, dispatch, or control towers, <b>one unified Google Cloud layer</b> turns live signals into bounded execution.</p>
+  <div class="page-kick"><i></i>Slide 01 · The Story &amp; Upfront Holistic Blueprint</div>
+  <h1 class="page-h1">One Unified TM&amp;D Spine—Not Piecemeal Bots</h1>
+  <p class="page-lede">Connect <b>Plants, CFAs &amp; 7M+ Kiranas</b> onto one Google Cloud intelligence spine without replacing SAP or DMS.</p>
 
-  <section class="story-hero">
-    <div class="story-visual">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <span class="badge-pill">End-to-End Physical Network · ITC Supply Chain to TM&amp;D</span>
-        <span style="font:600 11px var(--font-mono);color:var(--green-ink);">NO ERP REPLACEMENT</span>
+  <section class="story-2col">
+    <div class="vis-panel physical">
+      <div class="vis-head">
+        <h2>Physical Supply Chain Flow</h2>
+        <span class="badge-pill">~7M+ Outlets · India Scale</span>
       </div>
-      <img src="../assets/media/story/story_india_tmd_network.jpg" alt="Plant to State CFA to Wholesale Dealer to Kirana and Modern Trade distribution flow">
-      <div class="node-row">
-        <div class="node-chip"><b>01 · Plant</b>Production &amp; primary stock transfer orders</div>
-        <div class="node-chip"><b>02 · State CFA</b>Proxy to Modern Trade &amp; Blinkit / Zepto docks</div>
-        <div class="node-chip"><b>03 · Wholesale</b>Distributor stock allocation &amp; claim audit</div>
-        <div class="node-chip"><b>04 · Last Mile</b>7M+ Kirana beats, display &amp; zero-billing checks</div>
+      <img class="vis-img" src="../assets/media/story/story_india_tmd_network.jpg" alt="Plant to CFA to Wholesale Dealer to Kirana and Modern Trade flow">
+      <div class="icon-nodes">
+        <div class="i-node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V9l6 4V9l6 4V4h8v16H2z"/></svg>
+          <b>01 · Plant</b><span>ICML Production</span>
+        </div>
+        <div class="i-node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg>
+          <b>02 · State CFA</b><span>Q-Comm Proxy</span>
+        </div>
+        <div class="i-node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="15" height="11" rx="1"/><path d="M16 10h4l3 3v4h-7V10z"/><circle cx="6" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
+          <b>03 · Wholesale</b><span>WD Distribution</span>
+        </div>
+        <div class="i-node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l2-5h14l2 5M4 9v11h16V9M9 20v-6h6v6"/></svg>
+          <b>04 · Retail</b><span>Kirana + MT</span>
+        </div>
       </div>
     </div>
 
-    <div class="blueprint-card">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-        <span class="badge-pill badge-solid">Holistic 4-Layer Architecture · Built Together</span>
-        <span style="font:600 11px var(--font-mono);color:var(--blue-ink);">UNIFIES ALL 5 TM&amp;D WORKSTREAMS</span>
+    <div class="vis-panel holistic">
+      <div class="vis-head">
+        <h2>Holistic 4-Layer Architecture</h2>
+        <span class="badge-pill badge-solid">Zero Rip &amp; Replace</span>
       </div>
-      <div class="layer-stack">
-        <div class="bp-layer is-on" style="--lc:var(--g-green);--li:var(--green-ink);" onclick="selectBp(this)">
-          <div class="bp-layer-top"><span class="bp-layer-k">Layer 4 · Where Work Happens (Internal &amp; Partner)</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">GE · Mobile · Maps</span></div>
-          <h3>TM&amp;D Leadership · Dispatchers · CFAs / WDs · Field Sales</h3>
-          <p>Exposed directly to CEO control towers, Kamaatura / Mahindra CFA dispatchers, WDs, and Frontline Sales Reps.</p>
+      <img class="vis-img" src="../assets/media/story/story_holistic_google_spine.jpg" alt="4-layer Google Cloud architecture from existing systems through context layer and agents to field users">
+      <div class="layer-rails">
+        <div class="rail-item" style="--rc:var(--g-green);--ri:var(--green-ink);">
+          <div class="rail-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+            <b>4 · Users &amp; Partners</b>
+          </div>
+          <span class="rail-tag">CEO · Dispatch · CFAs · WDs · DSRs</span>
         </div>
-        <div class="bp-layer" style="--lc:var(--g-purple);--li:var(--purple-ink);" onclick="selectBp(this)">
-          <div class="bp-layer-top"><span class="bp-layer-k">Layer 3 · Autonomous Agent Fleet (Sense · Reason · Act)</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">Gemini + ADK</span></div>
-          <h3>Governed Workflow Agents Over Every TM&amp;D Handover</h3>
-          <p>Fair-share rationing, BeatPulse split-beat ticketing, FleetFlow 3D load planning, and vision claim audits—never isolated silos.</p>
+        <div class="rail-item" style="--rc:var(--g-purple);--ri:var(--purple-ink);">
+          <div class="rail-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+            <b>3 · Autonomous Agent Layer</b>
+          </div>
+          <span class="rail-tag">Sense → Reason → Act</span>
         </div>
-        <div class="bp-layer" style="--lc:var(--g-blue);--li:var(--blue-ink);" onclick="selectBp(this)">
-          <div class="bp-layer-top"><span class="bp-layer-k">Layer 2 · Google Cloud Knowledge &amp; Context Spine</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">BigQuery · Maps · Search</span></div>
-          <h3>Live Enterprise Telemetry + Geospatial + Policy Context</h3>
-          <p>Correlates POS velocity, scheme PDFs, Google Maps traffic bottlenecks, and weather without fragmenting data copies.</p>
+        <div class="rail-item" style="--rc:var(--g-blue);--ri:var(--blue-ink);">
+          <div class="rail-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            <b>2 · Knowledge &amp; Maps Spine</b>
+          </div>
+          <span class="rail-tag">BigQuery + Maps + Search</span>
         </div>
-        <div class="bp-layer" style="--lc:var(--text-dim);--li:var(--text-muted);" onclick="selectBp(this)">
-          <div class="bp-layer-top"><span class="bp-layer-k">Layer 1 · Existing Systems of Record (Untouched)</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">SAP · DMS · SFA · WMS</span></div>
-          <h3>SAP ERP · SAP DMS · Sales Force Automation · WMS · TMS</h3>
-          <p>Core transactional truth stays untouched; agents read signals and write approved tickets, routes, and indents back via API.</p>
+        <div class="rail-item" style="--rc:var(--text-dim);--ri:var(--text-muted);">
+          <div class="rail-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="7" rx="1"/><rect x="2" y="14" width="20" height="7" rx="1"/></svg>
+            <b>1 · Core Systems Preserved</b>
+          </div>
+          <span class="rail-tag">SAP · DMS · SFA · WMS · TMS</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="proxy-strip">
-    <img class="proxy-img" src="../assets/media/story/story_holistic_google_spine.jpg" alt="Holistic layered architecture rising from existing enterprise systems through knowledge layer and modular agents to employee devices">
-    <div>
-      <div style="font:700 11px var(--font-mono);letter-spacing:.9px;text-transform:uppercase;color:var(--blue-ink);">Clear Scope Boundary · Who Uses These Agents Today</div>
-      <h2 style="margin:6px 0 8px;font:600 20px/1.25 var(--font-display);color:var(--text);">Internal TM&amp;D Teams &amp; Channel Partners (CFAs &amp; WDs)—Proxying Q-Comm</h2>
-      <p style="margin:0;font-size:13.5px;line-height:1.5;color:var(--text-muted);">Our agents do <b>not</b> require integration inside third-party customer dark stores like Blinkit or Zepto. Instead, <b>State CFAs</b> (such as Kamadhenu / Mahindra Logistics hubs) and <b>Wholesale Dealers</b> act as the live operational proxy—sensing Purchase Orders, protecting Minimum Remaining Shelf-Life (MRSL), and locking receiving slots.</p>
-      <div class="boundary-pills">
-        <div class="b-pill" style="border-left:3px solid var(--g-green);">
-          <b style="color:var(--green-ink);">IN SCOPE · INTERNAL + CHANNEL</b>
-          TM&amp;D Leadership, Area Managers, Field Sales, State CFAs &amp; Wholesale Dealers
-        </div>
-        <div class="b-pill" style="border-left:3px solid var(--g-blue);">
-          <b style="color:var(--blue-ink);">CONNECTED · EXTERNAL SLAs</b>
-          Dark-Store &amp; Modern Trade portals connected via CFA EDI, PO &amp; slot telemetry
-        </div>
+  <section class="scope-bar">
+    <div class="sc-chip">
+      <div class="sc-ico" style="--c:var(--g-green);--ci:var(--green-ink);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
+      <div><b>CFA &amp; WD Proxy Scope</b><span>Works with CFAs (Kamadhenu, Mahindra) &amp; WDs</span></div>
+    </div>
+    <div class="sc-chip">
+      <div class="sc-ico" style="--c:var(--g-blue);--ci:var(--blue-ink);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div><b>Zero Dark-Store Lock-In</b><span>Proxies Blinkit / Zepto SLAs via CFA EDI</span></div>
+    </div>
+    <div class="sc-chip">
+      <div class="sc-ico" style="--c:var(--g-purple);--ci:var(--purple-ink);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+      </div>
+      <div><b>5 Workstreams · 1 Spine</b><span>SFA Voice, Control Tower, GE, LMD, FLW</span></div>
     </div>
   </section>
 
@@ -155,12 +173,5 @@
     </span>
   </footer>
 </main>
-
-<script>
-  initDeckChrome({ root: '../' });
-  window.selectBp = function (el) {
-    document.querySelectorAll('.bp-layer').forEach(function (x) { x.classList.remove('is-on'); });
-    el.classList.add('is-on');
-  };
-</script>
+<script>initDeckChrome({ root: '../' });</script>
 </body></html>

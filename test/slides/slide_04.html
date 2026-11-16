@@ -12,73 +12,53 @@
 <link rel="stylesheet" href="../assets/deck_nav.css?v=2">
 <script src="../assets/deck_nav.js?v=17"></script>
 <style>
-  .om-wrap {
-    max-width: 1120px; margin: 0 auto; text-align: center;
-    display: flex; flex-direction: column; align-items: center; gap: 18px;
-  }
-  .om-wrap h1 { font-size: clamp(32px, 3.4vw, 50px); margin: 0; font-weight: 600; line-height: 1.12; letter-spacing: -0.8px; color: var(--text); }
+  .om-wrap { max-width: 1080px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .om-wrap h1 { font-size: clamp(32px, 3.6vw, 52px); margin: 0; font-weight: 600; line-height: 1.12; letter-spacing: -0.8px; color: var(--text); }
   .om-wrap h1 span { color: var(--blue-ink); }
-  .om-sub { font-size: 17px; line-height: 1.5; max-width: 78ch; margin: 0 auto; color: var(--text-muted); }
-  .bridge-3 {
-    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%; text-align: left; margin-top: 6px;
-  }
+  .bridge-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%; }
   .br-card {
-    background: var(--surface); border: 1px solid var(--border-subtle); border-top: 3px solid var(--bc, var(--g-blue));
-    border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow-sm);
+    background: var(--surface); border: 1px solid var(--border-subtle); border-top: 4px solid var(--bc, var(--g-blue));
+    border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow-sm); text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
   }
-  .br-card small { font: 700 10.5px var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--bi, var(--blue-ink)); }
-  .br-card h3 { margin: 6px 0 4px; font: 600 16px var(--font-display); color: var(--text); }
-  .br-card p { margin: 0; font-size: 13px; line-height: 1.45; color: var(--text-muted); }
-  .om-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--g-blue); color: #FFF; font: 600 15px var(--font-display); padding: 13px 26px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-md); transition: filter .15s, transform .15s; margin-top: 6px; }
+  .br-card b { font: 700 30px/1 var(--font-mono); color: var(--bi, var(--blue-ink)); }
+  .br-card h3 { margin: 2px 0 0; font: 600 17px var(--font-display); color: var(--text); }
+  .br-card span { font: 500 12px var(--font-body); color: var(--text-muted); }
+  .om-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--g-blue); color: #FFF; font: 600 15px var(--font-display); padding: 13px 26px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-md); }
   .om-btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
   @media (max-width: 900px) { .bridge-3 { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-
 <header class="mast">
   <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
-    <img src="../assets/media/wip/image25.png" alt="Google Cloud">
-    <span class="mast-rule"></span>
-    <span class="mast-tag">06 · From 3 Demos to 60 Roles</span>
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">06 · From 3 Demos to 60 Roles</span>
   </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav">
-    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
-  </div>
+  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 
 <main class="bx om" style="display:flex; align-items:center; justify-content:center; min-height: calc(100vh - 140px); padding: 36px max(24px, 4vw);">
   <div class="om-wrap">
-    <span class="badge-pill badge-solid">Connecting Demos to Persona Transformation</span>
-    <h1>What you saw was <span>3 workflows</span>.<br>TM&amp;D runs across <span>60 supply chain roles</span>.</h1>
-    <p class="om-sub">In a truly agentic enterprise, specialized agents work across every planning, procurement, factory, warehouse, TM&amp;D dispatch, and reverse-claims persona—coordinating over one Google Cloud spine while keeping humans in charge.</p>
+    <span class="badge-pill badge-solid">Scale Across the Value Stream</span>
+    <h1>What you saw was <span>3 workflows</span>.<br>TM&amp;D scales across <span>60 supply chain roles</span>.</h1>
 
     <div class="bridge-3">
       <div class="br-card" style="--bc:var(--g-blue);--bi:var(--blue-ink);">
-        <small>What We Just Showed</small>
-        <h3>3 Live Role Journeys</h3>
-        <p>TM&amp;D CEO (BeatPulse), Hub Operations CEO (FleetFlow OTIF Audit), and Dispatch / 5 Frontline Workers.</p>
+        <b>3</b><h3>Live Demos</h3><span>CEO Pulse · Hub OTIF · Dispatch + FLW</span>
       </div>
       <div class="br-card" style="--bc:var(--g-green);--bi:var(--green-ink);">
-        <small>Inside TM&amp;D Pillar 05</small>
-        <h3>12 Dedicated Distribution Roles</h3>
-        <p>Primary Transport Planners, State CFA Managers, CS&amp;L Leads, Area Managers &amp; Wholesale Ops—all live in Gemini Enterprise.</p>
+        <b>12</b><h3>TM&amp;D Pillar 05 Roles</h3><span>CFA · CS&amp;L · Route-to-Market (All Live)</span>
       </div>
       <div class="br-card" style="--bc:var(--g-purple);--bi:var(--purple-ink);">
-        <small>End-to-End Value Stream</small>
-        <h3>60 Personas · 300 Workflows</h3>
-        <p>Demand Planners, Buyers, ICML Schedulers &amp; Reverse Claims Leads connected on one shared architecture.</p>
+        <b>60</b><h3>Enterprise Roles</h3><span>Plan · Source · Make · Store · Deliver · Reverse</span>
       </div>
     </div>
 
-    <a class="om-btn" href="../pages/persona_map.html">Explore All 60 Personas &amp; Live Agents →</a>
+    <a class="om-btn" href="../pages/persona_map.html">Explore 60 Personas &amp; Live Agents →</a>
   </div>
 </main>
-<footer class="deck-footer" style="max-width:1380px;margin:0 auto;padding:0 max(24px,4vw) 24px;"><span>Slide 06 · From 3 Demos to an Agentic Enterprise</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
-
-<script>
-  initDeckChrome({ root: '../' });
-</script>
+<footer class="deck-footer" style="max-width:1380px;margin:0 auto;padding:0 max(24px,4vw) 24px;"><span>Slide 06 · Agentic Organisation</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+<script>initDeckChrome({ root: '../' });</script>
 </body>
 </html>

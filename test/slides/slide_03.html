@@ -7,56 +7,51 @@
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
 <script src="../assets/deck_nav.js?v=17"></script>
 <style>
-  .act-loop {
-    margin-top: 20px; display: grid; grid-template-columns: 1fr 24px 1fr 24px 1.2fr; gap: 10px; align-items: stretch;
+  .act-flow {
+    margin-top: 20px; display: grid; grid-template-columns: 1fr 22px 1fr 22px 1.15fr; gap: 10px; align-items: stretch;
   }
-  .loop-arrow { display: flex; align-items: center; justify-content: center; font: 700 20px var(--font-mono); color: var(--text-muted); }
-  .loop-card {
+  .arr { display: flex; align-items: center; justify-content: center; font: 700 20px var(--font-mono); color: var(--text-muted); }
+  .step-card {
     background: var(--surface); border: 1px solid var(--border-subtle); border-top: 4px solid var(--lc);
     border-radius: 16px; padding: 18px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 8px;
   }
-  .loop-card.hero-act {
-    background: color-mix(in srgb, var(--g-green) 6%, var(--surface));
-    border: 2px solid var(--g-green);
-    box-shadow: var(--shadow-md);
-  }
-  .loop-k { font: 700 10.5px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--li); }
-  .loop-card h3 { margin: 0; font: 600 18px/1.2 var(--font-display); color: var(--text); }
-  .loop-card p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
-  .loop-ex {
+  .step-card.hero-act { border: 2px solid var(--g-green); background: color-mix(in srgb, var(--g-green) 6%, var(--surface)); box-shadow: var(--shadow-md); }
+  .st-ico { display: flex; align-items: center; justify-content: space-between; }
+  .st-ico svg { width: 26px; height: 26px; color: var(--li); }
+  .st-ico span { font: 700 10.5px var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--li); }
+  .step-card h3 { margin: 2px 0 0; font: 600 19px var(--font-display); color: var(--text); }
+  .step-pill {
     margin-top: auto; padding: 8px 10px; border-radius: 10px; background: var(--surface-sunk);
-    border: 1px solid var(--border-subtle); font: 500 11.5px/1.4 var(--font-mono); color: var(--text);
+    border: 1px solid var(--border-subtle); font: 600 11.5px var(--font-mono); color: var(--text);
   }
 
-  .why-gc-grid {
-    margin-top: 20px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
-  }
-  .gc-card {
+  .gc-3 { margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .gc-tile {
     background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 16px;
-    padding: 16px 18px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 8px;
+    padding: 16px 18px; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 14px;
   }
-  .gc-top { display: flex; align-items: center; gap: 10px; }
-  .gc-top img { width: 26px; height: 26px; }
-  .gc-card h4 { margin: 0; font: 600 15.5px var(--font-display); color: var(--text); }
-  .gc-card p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
-  .gc-card b { color: var(--text); }
+  .gc-tile img { width: 34px; height: 34px; flex-shrink: 0; }
+  .gc-tile h4 { margin: 0 0 3px; font: 600 16px var(--font-display); color: var(--text); }
+  .gc-tile span { font: 500 12px var(--font-mono); color: var(--blue-ink); }
 
-  .demo-teeup {
-    margin-top: 20px; background: var(--surface); border: 1.5px solid var(--g-blue);
-    border-radius: 18px; padding: 16px 22px; box-shadow: var(--shadow-md);
-    display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+  .tee-banner {
+    margin-top: 18px; background: var(--surface); border: 1.5px solid var(--g-blue);
+    border-radius: 18px; padding: 14px 18px; box-shadow: var(--shadow-md);
+    display: grid; grid-template-columns: 160px 1fr auto; gap: 18px; align-items: center;
     position: relative; overflow: hidden;
   }
-  .demo-teeup::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
-  .cta-demo {
+  .tee-banner::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
+  .tee-banner img { width: 160px; height: 86px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-subtle); display: block; }
+  .cta-btn {
     display: inline-flex; align-items: center; gap: 8px; background: var(--g-blue); color: #FFF;
-    font: 600 14px var(--font-display); padding: 11px 20px; border-radius: 999px; box-shadow: var(--shadow-sm);
+    font: 600 14px var(--font-display); padding: 12px 22px; border-radius: 999px; box-shadow: var(--shadow-sm); white-space: nowrap;
   }
-  .cta-demo:hover { filter: brightness(1.06); transform: translateY(-1px); }
+  .cta-btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
 
-  @media (max-width: 1020px) {
-    .act-loop, .why-gc-grid { grid-template-columns: 1fr; }
-    .loop-arrow { transform: rotate(90deg); height: 22px; }
+  @media (max-width: 980px) {
+    .act-flow, .gc-3, .tee-banner { grid-template-columns: 1fr; }
+    .arr { transform: rotate(90deg); height: 22px; }
+    .tee-banner img { width: 100%; height: 140px; }
   }
 </style>
 </head>
@@ -71,59 +66,68 @@
 </header>
 
 <main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 03 · Closing the Last Mile From Insight to Action</div>
-  <h1 class="page-h1">Agents Don’t Stop at Dashboards—They Take Bounded Action</h1>
-  <p class="page-lede">Dashboards only sense problems. True <b>Agentic TM&amp;D</b> closes the loop—correlating live enterprise and Google Maps telemetry, reasoning across shelf-life and route economics, and writing real operational actions back into ERP, Transportation Management Systems (TMS), and beat tickets.</p>
+  <div class="page-kick"><i></i>Slide 03 · Beyond Dashboards</div>
+  <h1 class="page-h1">Agents Act—Powered Exclusively by the Google Cloud Stack</h1>
 
-  <section class="act-loop">
-    <article class="loop-card" style="--lc:var(--g-blue);--li:var(--blue-ink);">
-      <span class="loop-k">01 · Sense Telemetry</span>
-      <h3>Live Market &amp; Physical Signals</h3>
-      <p>Watches secondary Distributor Management System (DMS) stock, Google Maps urban traffic bottlenecks, gate queues, and e-Way Bills continuously.</p>
-      <div class="loop-ex">Ex: Detects Sony World 4:15 PM cutoff throttling beat BLRB04</div>
+  <section class="act-flow">
+    <article class="step-card" style="--lc:var(--g-blue);--li:var(--blue-ink);">
+      <div class="st-ico">
+        <span>01 · Sense</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+      </div>
+      <h3>Live Market &amp; Traffic Telemetry</h3>
+      <div class="step-pill">DMS Stock + Google Maps 4:15 PM Snarl</div>
     </article>
-    <div class="loop-arrow">→</div>
-    <article class="loop-card" style="--lc:var(--g-purple);--li:var(--purple-ink);">
-      <span class="loop-k">02 · Reason &amp; Optimize</span>
-      <h3>Root-Cause &amp; Constraint Math</h3>
-      <p>Decomposes revenue leakage (Tree SHAP) &amp; solves 3D axle-safe co-loading and Fair-Share allocation within policy limits.</p>
-      <div class="loop-ex">Ex: Proves 55.1% OTIF misses occur at store docks, not highway</div>
+
+    <div class="arr">→</div>
+
+    <article class="step-card" style="--lc:var(--g-purple);--li:var(--purple-ink);">
+      <div class="st-ico">
+        <span>02 · Reason</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+      </div>
+      <h3>Root-Cause &amp; 3D Constraint Math</h3>
+      <div class="step-pill">55.1% Dock Wait vs. 19.8% Road Traffic</div>
     </article>
-    <div class="loop-arrow">→</div>
-    <article class="loop-card hero-act" style="--lc:var(--g-green);--li:var(--green-ink);">
-      <span class="loop-k">03 · Execute Bounded Action</span>
-      <h3>Write-Back Into Systems (With Human Sign-Off)</h3>
-      <p>Executes approved beat splits, early Advanced Shipping Notices (ASNs), GPS chargeback disputes, and Indic voice driver reroutes directly in DMS/TMS.</p>
-      <div class="loop-ex">Action: Logged Ticket BLRB04 + 6:30 AM ASN + Route Override</div>
+
+    <div class="arr">→</div>
+
+    <article class="step-card hero-act" style="--lc:var(--g-green);--li:var(--green-ink);">
+      <div class="st-ico">
+        <span>03 · Bounded Act</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <h3>Write-Backs With Human Sign-Off</h3>
+      <div class="step-pill">Beat Split Ticket + 2-Hr Early ASN + Reroute</div>
     </article>
   </section>
 
-  <section class="why-gc-grid">
-    <article class="gc-card">
-      <div class="gc-top"><img src="../assets/media/gcp/Compute.svg" alt=""><h4>Google Maps Real-Time Grounding</h4></div>
-      <p>Why Google wins last mile: live evening traffic bottlenecks (e.g., Koramangala / Sony World cutoff), municipal no-entry curfews, and accurate kirana geocoding power route &amp; beat physics natively.</p>
+  <section class="gc-3">
+    <article class="gc-tile">
+      <img src="../assets/media/gcp/Compute.svg" alt="Google Maps Platform">
+      <div><h4>Google Maps Telemetry</h4><span>Live bottlenecks · Curfews · Geocodes</span></div>
     </article>
-    <article class="gc-card">
-      <div class="gc-top"><img src="../assets/media/models/gemini-color.svg" alt=""><h4>Gemini Live Indic Voice &amp; Vision</h4></div>
-      <p>Native voice understanding in <b>English, Hinglish, Hindi, Kannada, Tamil &amp; Telugu</b> for field salesmen and fleet drivers—plus camera Optical Character Recognition (OCR) for damaged pods and shelf displays.</p>
+    <article class="gc-tile">
+      <img src="../assets/media/models/gemini-color.svg" alt="Gemini Live Indic">
+      <div><h4>Gemini Indic Voice &amp; Vision</h4><span>EN · Hinglish · Hindi · Kannada · Shelf OCR</span></div>
     </article>
-    <article class="gc-card">
-      <div class="gc-top"><img src="../assets/media/gcp/BigQuery.svg" alt=""><h4>Zero-Copy BigQuery + SAP Coexistence</h4></div>
-      <p>Joins SAP DMS, WMS, and carrier FASTag streams without replacing ERPs, enforcing Role-Based Access Control (RBAC) and human approval before cash or stock moves.</p>
+    <article class="gc-tile">
+      <img src="../assets/media/gcp/BigQuery.svg" alt="BigQuery and SAP">
+      <div><h4>Zero-Copy BigQuery + SAP</h4><span>Reads ERP/DMS · No rip &amp; replace</span></div>
     </article>
   </section>
 
-  <section class="demo-teeup">
+  <section class="tee-banner">
+    <img src="../assets/media/story/story_control_tower_action.jpg" alt="Live Control Tower">
     <div>
-      <div style="font:700 10.5px var(--font-mono);color:var(--green-ink);text-transform:uppercase;letter-spacing:.9px;">Up Next · Slide 04 · Live In Action</div>
-      <h2 style="margin:4px 0 2px;font:600 19px var(--font-display);color:var(--text);">See Three Live Demos: CEO Control Tower, Hub OTIF Audit &amp; Dispatch Rerouter</h2>
-      <p style="margin:0;font-size:13px;color:var(--text-muted);">Compare CEO diagnostic action (<b>BeatPulse</b> &amp; <b>FleetFlow Hub Audit</b>) with hands-on Dispatch 3D Cargo &amp; Hinglish voice rerouting (<b>Kaveri Live</b>).</p>
+      <div style="font:700 10.5px var(--font-mono);color:var(--green-ink);text-transform:uppercase;">Slide 04 · Live Interactive Demos</div>
+      <h2 style="margin:3px 0 0;font:600 19px var(--font-display);color:var(--text);">See 3 Persona Demos: TM&amp;D CEO · Hub OTIF CEO · Fleet Dispatcher</h2>
     </div>
-    <a class="cta-demo" href="../pages/demo_stage.html">Launch Live Demo Stage (Slide 04) →</a>
+    <a class="cta-btn" href="../pages/demo_stage.html">Launch Demo Stage →</a>
   </section>
 
   <footer class="deck-footer">
-    <span>Slide 03 · Sense → Reason → Act on Google Cloud</span>
+    <span>Slide 03 · Sense → Reason → Act</span>
     <span class="footer-brand">
       <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span>
       <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">

@@ -7,59 +7,48 @@
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
 <script src="../assets/deck_nav.js?v=17"></script>
 <style>
-  .flw-hero-banner {
-    margin-top: 18px; background: var(--surface); border: 1px solid var(--border-subtle);
-    border-radius: 18px; padding: 14px; box-shadow: var(--shadow-sm);
+  .flw-banner {
+    margin-top: 16px; background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 18px; padding: 10px; box-shadow: var(--shadow-sm);
   }
-  .flw-hero-banner img {
-    width: 100%; height: 220px; object-fit: cover; border-radius: 12px; display: block;
-    border: 1px solid var(--border-subtle);
-  }
-  .flw-tabs {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
-  }
+  .flw-banner img { width: 100%; height: 225px; object-fit: cover; border-radius: 12px; display: block; border: 1px solid var(--border-subtle); }
+
+  .flw-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
   .flw-tab {
-    padding: 9px 15px; border-radius: 999px; border: 1px solid var(--border-subtle);
-    background: var(--surface); color: var(--text); font: 600 13px var(--font-display); cursor: pointer;
-    transition: all .15s;
+    display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 999px;
+    border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text);
+    font: 600 13px var(--font-display); cursor: pointer; transition: all .15s;
   }
   .flw-tab:hover { border-color: var(--g-blue); }
   .flw-tab.active { background: var(--g-blue); border-color: var(--g-blue); color: #FFF; }
+  .flw-tab svg { width: 16px; height: 16px; }
 
   .flw-stage {
-    margin-top: 14px; background: var(--surface); border: 1px solid var(--border-subtle);
-    border-top: 4px solid var(--tc, var(--g-blue)); border-radius: 18px; padding: 20px 22px;
-    box-shadow: var(--shadow-md);
+    margin-top: 12px; background: var(--surface); border: 1px solid var(--border-subtle);
+    border-top: 4px solid var(--tc, var(--g-blue)); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow-md);
   }
-  .flw-top {
-    display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap;
-    padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);
-  }
-  .flw-top h2 { margin: 4px 0 4px; font: 600 22px var(--font-display); color: var(--text); }
-  .flw-top p { margin: 0; font-size: 13.5px; color: var(--text-muted); max-width: 70ch; }
+  .flw-top { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); }
+  .flw-top h2 { margin: 2px 0 0; font: 600 20px var(--font-display); color: var(--text); }
   .flw-impact {
-    padding: 10px 14px; border-radius: 12px; background: color-mix(in srgb, var(--g-green) 8%, var(--surface));
-    border: 1px solid color-mix(in srgb, var(--g-green) 35%, transparent); text-align: right; min-width: 180px;
+    padding: 8px 14px; border-radius: 12px; background: color-mix(in srgb, var(--g-green) 8%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--g-green) 35%, transparent); text-align: right;
   }
-  .flw-impact b { display: block; font: 700 20px var(--font-mono); color: var(--green-ink); }
-  .flw-impact span { font: 500 11.5px var(--font-body); color: var(--text-muted); }
+  .flw-impact b { display: block; font: 700 20px/1.1 var(--font-mono); color: var(--green-ink); }
+  .flw-impact span { font: 500 11px var(--font-body); color: var(--text-muted); }
 
-  .flw-cols {
-    display: grid; grid-template-columns: 0.95fr 1.15fr 0.9fr; gap: 14px; margin-top: 16px;
-  }
-  .flw-box {
-    padding: 15px 16px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-  }
+  .flw-cols { display: grid; grid-template-columns: 0.85fr 1.25fr 0.9fr; gap: 12px; margin-top: 14px; }
+  .flw-box { padding: 13px 14px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); }
   .flw-box.pain { border-left: 4px solid var(--g-red); }
   .flw-box.life { border-left: 4px solid var(--g-blue); background: color-mix(in srgb, var(--g-blue) 5%, var(--surface)); }
   .flw-box.lang { border-left: 4px solid var(--g-green); }
-  .flw-box-k { font: 700 10.5px var(--font-mono); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 8px; }
-  .timeline { display: grid; gap: 8px; font-size: 12.8px; line-height: 1.45; color: var(--text); }
-  .tl-item b { font: 700 11.5px var(--font-mono); color: var(--blue-ink); margin-right: 6px; }
-  .voice-quote {
-    padding: 10px 12px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border-subtle);
-    font: 500 12.5px/1.45 var(--font-body); color: var(--text); margin-bottom: 8px;
+  .flw-k { font: 700 10.5px var(--font-mono); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+  .tl-grid { display: grid; gap: 7px; }
+  .tl-chip {
+    display: flex; align-items: center; gap: 9px; padding: 7px 10px; border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--border-subtle); font: 600 12.5px var(--font-display); color: var(--text);
   }
+  .tl-chip b { font: 700 11px var(--font-mono); color: var(--blue-ink); min-width: 58px; }
+  .voice-q { padding: 9px 11px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border-subtle); font: 500 12.5px/1.35 var(--font-body); color: var(--text); }
   @media (max-width: 980px) { .flw-cols { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -74,30 +63,36 @@
 </header>
 
 <main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 05 · People First · Frontline Worker (FLW) Enablement</div>
-  <h1 class="page-h1">A Day in the Life: Removing Frontline App Fatigue with Voice &amp; Vision</h1>
-  <p class="page-lede">Rather than forcing crews through extra enterprise forms, Gemini Live acts inside existing handheld workflows across <b>5 real ITC frontline personas</b>—in regional Indian languages.</p>
+  <div class="page-kick"><i></i>Slide 05 · People First · Zero App Fatigue</div>
+  <h1 class="page-h1">A Day in the Life: 5 Frontline Personas</h1>
 
-  <div class="flw-hero-banner">
-    <img src="../assets/media/story/story_flw_day_in_life.jpg" alt="Five Indian CPG frontline roles: Field Sales Rep, Trade Merchandiser, Warehouse Picker, Plant Line Operator, Field Agronomist">
+  <div class="flw-banner">
+    <img src="../assets/media/story/story_flw_day_in_life.jpg" alt="Sales Rep, Trade Merchandiser, Warehouse Picker, Line Operator, Field Agronomist">
   </div>
 
-  <div class="flw-tabs" id="flwTabs">
-    <button class="flw-tab active" onclick="showFlw('dsr', this)">1. Sales Representative (DSR)</button>
-    <button class="flw-tab" onclick="showFlw('merch', this)">2. Trade Merchandiser</button>
-    <button class="flw-tab" onclick="showFlw('picker', this)">3. Warehouse Picker (CFA)</button>
-    <button class="flw-tab" onclick="showFlw('line', this)">4. Line Operator (ICML)</button>
-    <button class="flw-tab" onclick="showFlw('agro', this)">5. Field Agronomist (MAARS)</button>
+  <div class="flw-tabs">
+    <button class="flw-tab active" onclick="showFlw('dsr', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l2-5h14l2 5M4 9v11h16V9"/></svg>1. Sales Rep (DSR)
+    </button>
+    <button class="flw-tab" onclick="showFlw('merch', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/></svg>2. Merchandiser
+    </button>
+    <button class="flw-tab" onclick="showFlw('picker', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>3. Warehouse Picker
+    </button>
+    <button class="flw-tab" onclick="showFlw('line', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V9l6 4V9l6 4V4h8v16H2z"/></svg>4. Line Operator
+    </button>
+    <button class="flw-tab" onclick="showFlw('agro', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8M12 8C12 4 7 2 3 2c0 4 2 9 9 6zm0 0c0-4 5-6 9-6 0 4-2 9-9 6z"/></svg>5. Agronomist
+    </button>
   </div>
 
   <section class="flw-stage" id="flwStage"></section>
 
   <footer class="deck-footer">
-    <span>Slide 05 · Frontline Worker (FLW): A Day in the Life</span>
-    <span class="footer-brand">
-      <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span>
-      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
-    </span>
+    <span>Slide 05 · Frontline Worker: A Day in the Life</span>
+    <span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
   </footer>
 </main>
 
@@ -107,87 +102,82 @@
     dsr: {
       accent: 'var(--g-blue)',
       role: 'Beat Sales Representative (DSR)',
-      setting: '38–45 General Trade Kirana Outlets / Day · Low-End Android SFA',
+      setting: '38–45 Kirana Stores / Day · Android SFA',
       impact: '+18% LSPC',
-      impactSub: 'Zero manual post-visit SFA logging',
-      painTitle: 'Existing SFA Limitation',
-      pain: '60+ SKUs buried in rigid Sales Force Automation (SFA) dropdowns; reps visit in <3 mins under evening traffic cutoffs and only punch fast movers—skipping scheme nudges and high-margin Stock Keeping Units (SKUs).',
+      impactSub: 'Zero manual SFA punch-in',
+      pain: '60+ cluttered Sales Force Automation (SFA) menus miss schemes & focus SKUs.',
       timeline: [
-        ['08:30 AM · Gate Huddle', 'Audio brief lists today’s 4 at-risk zero-billing outlets and top 2 focus SKUs to pitch.'],
-        ['11:15 AM · Kirana Store', 'Agent whispers missed biscuit scheme & pending ₹4,200 credit before shopkeeper conversation ends.'],
-        ['04:00 PM · Beat Cutoff', 'Voice order in Hinglish updates SAP DMS order draft + UNNATI invoice link in 4 seconds.']
+        ['08:30 AM', 'Voice Gate Huddle: top 4 at-risk kiranas'],
+        ['11:15 AM', 'Store Nudge: Dark Fantasy ₹50 scheme prompt'],
+        ['04:00 PM', 'Hinglish Voice Order → Draft SAP DMS']
       ],
-      langLabel: 'Indic Voice Pitch · Hindi / Hinglish',
-      quote: '"Gupta ji, iss hafte Sunfeast Dark Fantasy par ₹50 scheme active hai—pichli baar 2 box liya tha, aaj 4 add karein?"',
-      actionNote: 'Agent Action: Drafted SAP DMS Order #40892 & cleared offline queue via Wohlig voice connector.'
+      lang: 'Hindi / Hinglish Voice',
+      quote: '"Gupta ji, Dark Fantasy ₹50 scheme active hai—4 box add karein?"',
+      action: '✓ Drafted DMS Order #40892 (Wohlig API)'
     },
     merch: {
       accent: 'var(--g-purple)',
       role: 'Trade & Window-Display Merchandiser',
-      setting: 'Modern Trade Supermarkets & Tier-1 General Trade Windows',
+      setting: 'Modern Trade & Tier-1 Kirana Displays',
       impact: '21d → 2h',
-      impactSub: 'Display claim verification turnaround',
-      painTitle: 'Existing Audit Limitation',
-      pain: 'Merchandisers snap static photos that sit unverified in email/Drive folders for weeks, causing disputed trade payouts and unnoticed competitor shelf takeovers.',
+      impactSub: 'Display payout turnaround',
+      pain: 'Static Drive photos sit unverified for weeks causing claim disputes.',
       timeline: [
-        ['09:30 AM · End-Cap Check', 'Camera frames shelf in 1 tap; Gemini Vision verifies 62% Share-of-Shelf compliance & Planogram layout.'],
-        ['01:20 PM · Pricing Audit', 'Flags missing price-tag strip and competitor promo adjacency inside Modern Trade aisle.'],
-        ['05:30 PM · Payout Settlement', 'Validates geo-tagged window display and auto-queues distributor credit note for approval.']
+        ['09:30 AM', '1-Tap Shelf Photo: 62% Share-of-Shelf audit'],
+        ['01:20 PM', 'Flag missing price strip & rival facings'],
+        ['05:30 PM', 'Auto-release verified ₹1,200 display credit']
       ],
-      langLabel: 'Multimodal Shelf Copilot · Marathi / English',
-      quote: '"Rack 3 par Classmate & Bingo face-up verify ho gaya (62% share). Display payout ₹1,200 approved for audit release."',
-      actionNote: 'Agent Action: Logged Storefront Vision verification + generated clean Trade Claim payout batch.'
+      lang: 'Multimodal Shelf Camera',
+      quote: '"Rack 3 par Classmate & Bingo verify (62%). ₹1,200 credit queued."',
+      action: '✓ Approved geo-tagged display claim'
     },
     picker: {
-      accent: 'var(--g-amber)',
-      role: 'CFA Warehouse Picker & Dock Associate',
-      setting: 'State Carrying & Forwarding Agent (CFA) Hub · Early Morning Dispatch Waves',
-      impact: '<0.5% MRSL Reject',
-      impactSub: 'Protects Quick-Commerce 75% shelf-life rule',
-      painTitle: 'Existing WMS Limitation',
-      pain: 'Paper picklists force pickers to hunt batch dates manually; sending 65% shelf-life cartons to Blinkit/Zepto triggers instant dock rejection and return freight loss.',
+      accent: 'var(--g-yellow)',
+      role: 'CFA Warehouse Picker & Dock Lead',
+      setting: 'State CFA Morning Dispatch Waves',
+      impact: '<0.5% Reject',
+      impactSub: 'Protects 75% Q-Comm shelf-life',
+      pain: 'Manual paper picklists send older batches to Blinkit/Zepto docks.',
       timeline: [
-        ['05:45 AM · Wave Assignment', 'Handheld groups Blinkit/Zepto orders separately and locks Minimum Remaining Shelf-Life (MRSL) >= 75% batches.'],
-        ['07:10 AM · Pallet Load', 'Guides FIFO/First-Expired-First-Out (FEFO) pull & co-loads heavy Staples under fragile Snacks.'],
-        ['09:00 AM · Gate Release', 'Prints verified e-Way Bill & transmits Advance Shipping Notice (ASN) 2 hrs ahead of arrival.']
+        ['05:45 AM', 'Lock ≥75% Minimum Remaining Shelf-Life (MRSL) wave'],
+        ['07:10 AM', 'Co-load heavy Atta under light Biscuits'],
+        ['09:00 AM', 'Print e-Way Bill & send 2-hr early ASN']
       ],
-      langLabel: 'Bay Audio Guidance · Kannada / Telugu',
-      quote: '"Bay 4 se B-049 batch pick karo — Blinkit wave ke liye 82% shelf-life valid hai. Older batch WD route mein shift kiya."',
-      actionNote: 'Agent Action: Reserved compliant FEFO batch in WMS & dispatched ASN to dark-store dock.'
+      lang: 'Kannada / Hindi Bay Voice',
+      quote: '"Bay 4 se B-049 pick karo — Blinkit wave 82% shelf-life valid."',
+      action: '✓ Locked FEFO batch & sent ASN'
     },
     line: {
       accent: 'var(--g-green)',
-      role: 'ICML Factory Line & Packaging Operator',
-      setting: 'Integrated Consumer Goods Manufacturing & Logistics (ICML) Shift Floor',
+      role: 'ICML Factory Line & QA Operator',
+      setting: 'Integrated Plant Packaging Lines',
       impact: '+4.2% OEE',
-      impactSub: 'Faster format changeover & zero seal recalls',
-      painTitle: 'Existing MES Limitation',
-      pain: 'Operators dig through PDF Standard Operating Procedures (SOPs) during allergen washdowns or date-code printer jams while micro-stops erode Overall Equipment Effectiveness (OEE).',
+      impactSub: 'Faster changeover & seal quality',
+      pain: 'Paper SOP manuals delay allergen washdowns & hide wrapper defects.',
       timeline: [
-        ['06:00 AM · Shift Handover', 'Summarizes overnight downtime causes & sequences SKU flavors cleanly to cut changeover washdowns.'],
-        ['12:40 PM · Camera Alert', 'Vision flags induction foil seal wrinkle; guides torque recalibration on touch terminal.'],
-        ['02:15 PM · Batch Trace', 'Auto-tags lot genealogy before cartons hit primary truck staging bays.']
+        ['06:00 AM', 'Optimal flavor run queue (min washdowns)'],
+        ['12:40 PM', 'Vision alert on foil seal heat drift'],
+        ['02:15 PM', 'Auto-tag lot genealogy before truck bay']
       ],
-      langLabel: 'Shop-Floor Voice SOP · Bengali / Gujarati',
-      quote: '"Line 2 seal head temperature 4°C high — heater zone 2 adjust karke quarantine bin verify karein."',
-      actionNote: 'Agent Action: Logged SAP Quality Management (QM) hold ticket & adjusted changeover queue.'
+      lang: 'Bengali / Gujarati Line Voice',
+      quote: '"Line 2 seal head +4°C high — adjust heater zone 2 now."',
+      action: '✓ Logged SAP QM hold & adjusted run'
     },
     agro: {
-      accent: 'var(--g-teal)',
-      role: 'Field Agronomist (ITC MAARS & e-Choupal)',
-      setting: 'Village Procurement Clusters & Wheat / Potato Contract Belts',
-      impact: '+11% Grade Yield',
-      impactSub: 'Direct multilingual farmer & sourcing sync',
-      painTitle: 'Existing Field App Limitation',
-      pain: 'Regional crop photos, soil moisture logs, and mandi quality disputes wait days for central lab review—delaying spray advisories and ICML procurement grading.',
+      accent: '#0097A7',
+      role: 'Field Agronomist (ITC MAARS)',
+      setting: 'Village Wheat & Agri Sourcing Clusters',
+      impact: '+11% Grade',
+      impactSub: 'Vernacular farm advisory speed',
+      pain: 'Leaf/soil photos wait days for lab grading & language translation.',
       timeline: [
-        ['07:30 AM · Farm Plot Visit', 'Farmer/agronomist snaps leaf photo; Gemini Vision identifies rust early and advises exact dosage.'],
-        ['11:00 AM · Mandi Grading', 'Estimates moisture/grain size consistently and pairs procurement schedule with plant demand.'],
-        ['04:45 PM · Cluster Brief', 'Sends vernacular voice advisory to 120 subscribed farmers via ITC MAARS channel.']
+        ['07:30 AM', 'Farmer snaps leaf photo → instant rust check'],
+        ['11:00 AM', 'Standardize moisture & mandi grade intake'],
+        ['04:45 PM', 'Broadcast voice spray alert to 120 farms']
       ],
-      langLabel: 'Vernacular Agri Voice · Hindi / Punjabi',
-      quote: '"Is gehun ke plot mein yellow rust ke shuruati sanket hain—agle 48 ghante mein foliar spray schedule karein."',
-      actionNote: 'Agent Action: Dispatched regional advisory + updated ICML wheat cluster ETA forecast.'
+      lang: 'Hindi / Punjabi Agri Voice',
+      quote: '"Gehun mein yellow rust ke sanket hain — 48h mein spray karein."',
+      action: '✓ Sent MAARS voice advisory + ETA'
     }
   };
 
@@ -195,32 +185,19 @@
     document.querySelectorAll('.flw-tab').forEach(function (b) { b.classList.remove('active'); });
     if (btn) btn.classList.add('active');
     var d = FLW[key];
-    var stage = document.getElementById('flwStage');
-    stage.style.setProperty('--tc', d.accent);
-    stage.innerHTML =
+    var st = document.getElementById('flwStage');
+    st.style.setProperty('--tc', d.accent);
+    st.innerHTML =
       '<div class="flw-top">' +
-        '<div>' +
-          '<div style="font:700 11px var(--font-mono);color:var(--blue-ink);text-transform:uppercase;">' + d.setting + '</div>' +
-          '<h2>' + d.role + '</h2>' +
-        '</div>' +
+        '<div><div style="font:700 10.5px var(--font-mono);color:var(--blue-ink);text-transform:uppercase;">' + d.setting + '</div><h2>' + d.role + '</h2></div>' +
         '<div class="flw-impact"><b>' + d.impact + '</b><span>' + d.impactSub + '</span></div>' +
       '</div>' +
       '<div class="flw-cols">' +
-        '<div class="flw-box pain">' +
-          '<div class="flw-box-k" style="color:var(--red-ink);">' + d.painTitle + '</div>' +
-          '<p style="margin:0;font-size:13px;line-height:1.5;color:var(--text);">' + d.pain + '</p>' +
-        '</div>' +
-        '<div class="flw-box life">' +
-          '<div class="flw-box-k" style="color:var(--blue-ink);">Hour-by-Hour Agentic Day</div>' +
-          '<div class="timeline">' + d.timeline.map(function (t) {
-            return '<div class="tl-item"><b>' + t[0] + '</b><span>' + t[1] + '</span></div>';
-          }).join('') + '</div>' +
-        '</div>' +
-        '<div class="flw-box lang">' +
-          '<div class="flw-box-k" style="color:var(--green-ink);">' + d.langLabel + '</div>' +
-          '<div class="voice-quote">' + d.quote + '</div>' +
-          '<div style="font:600 11.5px/1.4 var(--font-mono);color:var(--green-ink);">' + d.actionNote + '</div>' +
-        '</div>' +
+        '<div class="flw-box pain"><div class="flw-k" style="color:var(--red-ink);">Legacy App Pain</div><div style="font:600 13.5px/1.4 var(--font-display);color:var(--text);">' + d.pain + '</div></div>' +
+        '<div class="flw-box life"><div class="flw-k" style="color:var(--blue-ink);">Shift Flow with AI</div><div class="tl-grid">' + d.timeline.map(function (t) {
+          return '<div class="tl-chip"><b>' + t[0] + '</b><span>' + t[1] + '</span></div>';
+        }).join('') + '</div></div>' +
+        '<div class="flw-box lang"><div class="flw-k" style="color:var(--green-ink);">' + d.lang + '</div><div class="voice-q">' + d.quote + '</div><div style="margin-top:8px;font:700 11.5px var(--font-mono);color:var(--green-ink);">' + d.action + '</div></div>' +
       '</div>';
   };
   showFlw('dsr');
