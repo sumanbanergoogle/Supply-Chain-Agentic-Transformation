@@ -160,8 +160,8 @@
       <div class="demo-box-top">
         <div>
           <div class="demo-badge" style="color:var(--green-ink);">DEMO 02</div>
-          <h2 class="demo-box-title" id="title2">Demo 2</h2>
-          <p class="demo-box-sub" id="sub2">Select or launch Demo 2 agent in Gemini Enterprise.</p>
+          <h2 class="demo-box-title" id="title2">Demo 2 · FleetFlow CPG</h2>
+          <p class="demo-box-sub" id="sub2">FleetFlow CPG is a voice-first Consumer Packaged Goods (CPG) Trade Marketing and Distribution (TM&amp;D) control tower. Its AI agent, Kaveri AI Assistant, runs on Gemini 3.8 Live (with real-time bidirectional voice, multilingual/Hinglish support, and live screen sharing) alongside Gemini 3.8 Flash and Google Maps.</p>
         </div>
         <select class="demo-select" id="sel2" aria-label="Select Agent for Demo 2"></select>
       </div>
@@ -264,21 +264,38 @@
       var uploadEl = document.getElementById('upload' + slotNum);
       var activeBlobUrl = null;
 
+      var FLEETFLOW_CPG = {
+        id: 'fleetflow_cpg',
+        name: 'FleetFlow CPG',
+        geDisplayName: 'FleetFlow CPG',
+        persona: 'Voice-First CPG TM&D Control Tower (Kaveri AI Assistant)',
+        outcome: 'FleetFlow CPG is a voice-first Consumer Packaged Goods (CPG) Trade Marketing and Distribution (TM&D) control tower. Its AI agent, Kaveri AI Assistant, runs on Gemini 3.8 Live (with real-time bidirectional voice, multilingual/Hinglish support, and live screen sharing) alongside Gemini 3.8 Flash and Google Maps.',
+        geUrl: 'https://fleetflow-cpg-tmd-632239123109.us-central1.run.app',
+        starterPrompts: [
+          'Kaveri, show live vehicle dispatches across our CFAs and flag any route delays on Google Maps.',
+          'Check 3D load consolidation and dock-slot utilization for today\'s outbound TM&D fleet.',
+          'Brief me in Hinglish on at-risk deliveries requiring immediate rerouting.'
+        ]
+      };
+      var slotAgents = slotNum === 2 ? [FLEETFLOW_CPG].concat(liveAgents) : liveAgents;
+
       var qs = new URLSearchParams(location.search);
       var paramId = qs.get('demo' + slotNum) || (slotNum === 1 ? qs.get('agent') : null);
       var savedAgentId = null;
       try { savedAgentId = localStorage.getItem('sc_demo_agent_' + slotNum); } catch (e) {}
 
-      var initialAg = liveAgents.find(function (a) { return a.id === (paramId || savedAgentId); }) || liveAgents[defaultIndex % liveAgents.length];
+      var initialAg = slotNum === 2
+        ? (slotAgents.find(function (a) { return a.id === paramId; }) || FLEETFLOW_CPG)
+        : (slotAgents.find(function (a) { return a.id === (paramId || savedAgentId); }) || slotAgents[defaultIndex % slotAgents.length]);
 
-      sel.innerHTML = liveAgents.map(function (a) {
-        var lbl = a.isItcTmd ? a.geDisplayName : (a.name + ' (' + a.pillar + ')');
+      sel.innerHTML = slotAgents.map(function (a) {
+        var lbl = a.isItcTmd ? a.geDisplayName : (a.pillar ? a.name + ' (' + a.pillar + ')' : a.name);
         return '<option value="' + a.id + '"' + (a.id === initialAg.id ? ' selected' : '') + '>' + lbl + '</option>';
       }).join('');
 
       function paintAgent(ag) {
         titleEl.textContent = 'Demo ' + slotNum + ' · ' + (ag.geDisplayName || ag.name);
-        subEl.textContent = ag.persona + ' — ' + (ag.outcome || '');
+        subEl.textContent = ag.id === 'fleetflow_cpg' ? ag.outcome : (ag.persona + ' — ' + (ag.outcome || ''));
         geBtn.href = slotNum === 2 ? 'https://fleetflow-cpg-tmd-632239123109.us-central1.run.app' : (ag.geUrl || 'https://vertexaisearch.cloud.google.com/');
         var prompts = (ag.starterPrompts && ag.starterPrompts.length) ? ag.starterPrompts : (ag.samplePrompt ? [ag.samplePrompt] : []);
         promptsEl.innerHTML = prompts.map(function (p, idx) {
@@ -295,7 +312,7 @@
       }
 
       sel.addEventListener('change', function () {
-        var chosen = liveAgents.find(function (a) { return a.id === sel.value; }) || liveAgents[0];
+        var chosen = slotAgents.find(function (a) { return a.id === sel.value; }) || slotAgents[0];
         try { localStorage.setItem('sc_demo_agent_' + slotNum, chosen.id); } catch (e) {}
         paintAgent(chosen);
       });
