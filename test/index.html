@@ -96,8 +96,27 @@
   .track:hover { border-color: var(--tc); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
   .flow.hl .track { opacity: .45; }
   .flow.hl .track.on { opacity: 1; }
-  .t-photo { position: relative; height: 112px; display: block; overflow: hidden; background: var(--bg-grad); }
+  .t-photo { position: relative; height: 122px; display: block; overflow: hidden; background: var(--bg-grad); }
+  .t-photo img.t-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .48; mix-blend-mode: luminosity; transition: transform .4s, opacity .3s; }
+  .track:hover .t-photo img.t-bg { transform: scale(1.04); opacity: .62; }
   .t-photo svg.bg-art { position: absolute; right: -8px; top: -8px; width: 140px; height: 140px; opacity: .18; color: #FFF; transition: transform .4s; }
+  .track:hover .t-photo svg.bg-art { transform: scale(1.06) rotate(-2deg); }
+
+  /* story-first 5-act strip in Stage 1 */
+  .story-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; width: 100%; }
+  .st-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 16px;
+    overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+    transition: transform .18s, box-shadow .18s, border-color .18s; position: relative;
+  }
+  .st-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--g-blue); }
+  .st-card img { width: 100%; height: 92px; object-fit: cover; display: block; border-bottom: 1px solid var(--border-subtle); }
+  .st-body { padding: 11px 12px 13px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .st-num { font: 700 10.5px var(--font-mono); color: var(--blue-ink); text-transform: uppercase; letter-spacing: .06em; }
+  .st-body h3 { margin: 0; font: 600 14px/1.25 var(--font-display); color: var(--text); }
+  .st-body p { margin: 0; font-size: 11.8px; line-height: 1.4; color: var(--text-muted); }
+  @media (max-width: 1100px) { .story-strip { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .story-strip { grid-template-columns: 1fr; } }
   .track:hover .t-photo svg.bg-art { transform: scale(1.06) rotate(-2deg); }
   .t-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,19,23,.08) 0%, rgba(18,19,23,.52) 100%); }
   .t-photo .lbl { position: absolute; left: 18px; bottom: 13px; right: 18px; z-index: 1; color: #FFF; }
@@ -195,26 +214,50 @@
 
   <section class="hero">
     <div>
-      <div class="kick"><i></i>Briefing map · End-to-End Value Stream</div>
-      <h1>Agentic Transformation for Modern Supply Chains</h1>
-      <p class="lede">One executive blueprint spanning the entire supply chain value stream. <b>Everyone starts together</b>, explores the <b>6 core operating pillars</b> with live agentic war-rooms, and <b>converges</b> on the 60-persona agentic workforce built with Gemini Enterprise.</p>
+      <div class="kick"><i></i>ITC Limited TM&amp;D Briefing · Executive Storyline Blueprint</div>
+      <h1>From Supply Chain Context to TM&amp;D Demos, Frontline Personas &amp; Cloud Spine</h1>
+      <p class="lede">Start with the <b>holistic Google Cloud &amp; TM&amp;D narrative (Slides 01–03)</b>, jump straight into <b>3 Live Persona Demos before Slide 05</b>, experience a <b>Day in the Life across 5 Frontline Workers</b>, explore all <b>60 Supply Chain &amp; 49 Live Gemini Enterprise roles</b>, and review the unified Google Cloud architecture.</p>
     </div>
   </section>
 
   <div class="flow" id="flow">
     <svg id="lines" aria-hidden="true"></svg>
 
-    <!-- ── 1 · COMMON START ─────────────────────────────────────────────── -->
+    <!-- ── 1 · STORYLINE FIRST & LIVE DEMOS EARLY ───────────────────────── -->
     <div class="stage">
-      <div class="sl"><div class="n">STAGE 1</div><h2>Everyone starts here</h2><p>The strategic thesis across all six pillars.</p></div>
-      <a class="start" id="nStart" href="slides/slide_01.html" data-start>
-        <span class="num">00</span>
-        <div><h3>Executive Overview &amp; Value Stream Spine</h3><p>Shifting from siloed ERP, WMS, and TMS dashboards to an autonomous, connected 6-pillar supply chain powered by Gemini Enterprise.</p></div>
-        <span class="go">Open →</span>
-      </a>
+      <div class="sl"><div class="n">ACT 1 · STORY &amp; DEMOS</div><h2>Start with the Story</h2><p>Holistic schematic, correlated TM&amp;D value, and 3 live demos upfront.</p></div>
+      <div style="display:grid;gap:14px;">
+        <a class="start" id="nStart" href="slides/slide_01.html" data-start>
+          <span class="num">01</span>
+          <div><h3>India Supply Chain Reality &amp; Holistic TM&amp;D Blueprint</h3><p>End-to-end physical network + the 4-layer Google Cloud schematic unifying SAP/DMS, Maps, and Agents (proxied via CFAs &amp; WDs).</p></div>
+          <span class="go">Start Story →</span>
+        </a>
+        <div class="story-strip">
+          <a class="st-card" href="slides/slide_01.html">
+            <img src="assets/media/story/story_india_tmd_network.jpg" alt="Plant to Kirana network">
+            <div class="st-body"><span class="st-num">01 · Holistic Spine</span><h3>Network &amp; 4-Layer Blueprint</h3><p>Unified architecture over existing ERP/DMS systems.</p></div>
+          </a>
+          <a class="st-card" href="slides/slide_02.html">
+            <img src="assets/media/story/story_kirana_store.jpg" alt="Kirana shelf execution">
+            <div class="st-body"><span class="st-num">02 · North Star &amp; OSA</span><h3>TM&amp;D Value &amp; Correlations</h3><p>NIQ/McKinsey OSA proof &amp; 1-to-1 gap attribution.</p></div>
+          </a>
+          <a class="st-card" href="slides/slide_03.html">
+            <img src="assets/media/story/story_warroom.jpg" alt="Control tower execution">
+            <div class="st-body"><span class="st-num">03 · Agentic Litmus</span><h3>Sense → Reason → Act</h3><p>Why Google Maps, Gemini Voice &amp; write-backs win.</p></div>
+          </a>
+          <a class="st-card" href="pages/demo_stage.html">
+            <img src="assets/media/story/story_control_tower_action.jpg" alt="Control tower live demos">
+            <div class="st-body"><span class="st-num">04 · Live Stage</span><h3>CEO · Hub OTIF · Dispatch</h3><p>3 persona demos + Hinglish/Indic voice switcher.</p></div>
+          </a>
+          <a class="st-card" href="slides/slide_flw_day.html">
+            <img src="assets/media/story/story_flw_day_in_life.jpg" alt="Five frontline worker personas">
+            <div class="st-body"><span class="st-num">05 · People First</span><h3>FLW Day in the Life</h3><p>Sales Rep, Merchandiser, Picker, Line &amp; Agronomist.</p></div>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div class="gap"><span class="sp"></span><span class="note"><b>The value stream forks</b> · explore the 6 core operating pillars</span></div>
+    <div class="gap"><span class="sp"></span><span class="note"><b>Explore across 6 operating pillars</b> · every role linked from Plant to Kirana</span></div>
 
     <!-- ── 2 · SIX OPERATING PILLARS ────────────────────────────────────── -->
     <div class="stage">
@@ -224,6 +267,7 @@
         <!-- Pillar 01: Planning & Strategy -->
         <section class="track p-plan" data-track="planning">
           <a class="t-photo" href="pillars/01_planning.html" data-domain="planning">
+            <img class="t-bg" src="assets/media/story/story_warroom.jpg" alt="">
             <svg class="bg-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><polyline points="10,75 35,48 58,60 88,22"/><circle cx="35" cy="48" r="5" fill="currentColor"/><circle cx="58" cy="60" r="5" fill="currentColor"/><circle cx="88" cy="22" r="5" fill="currentColor"/></svg>
             <span class="lbl"><small>Pillar 01 · 12 Personas</small><strong>Planning &amp; Strategy</strong></span><span class="bar"></span>
           </a>
@@ -240,6 +284,7 @@
         <!-- Pillar 02: Sourcing & Procurement -->
         <section class="track p-proc" data-track="procurement">
           <a class="t-photo" href="pillars/02_procurement.html" data-domain="procurement">
+            <img class="t-bg" src="assets/media/story/story_global_corridor.jpg" alt="">
             <svg class="bg-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><circle cx="25" cy="50" r="14"/><circle cx="75" cy="25" r="10"/><circle cx="75" cy="75" r="10"/><line x1="38" y1="44" x2="65" y2="29"/><line x1="38" y1="56" x2="65" y2="71"/></svg>
             <span class="lbl"><small>Pillar 02 · 9 Personas</small><strong>Sourcing &amp; Procurement</strong></span><span class="bar"></span>
           </a>
@@ -255,6 +300,7 @@
         <!-- Pillar 03: Manufacturing & Production -->
         <section class="track p-mfg" data-track="manufacturing">
           <a class="t-photo" href="pillars/03_manufacturing.html" data-domain="manufacturing">
+            <img class="t-bg" src="assets/media/story/story_flw_day_in_life.jpg" alt="">
             <svg class="bg-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><rect x="14" y="42" width="72" height="40" rx="6"/><path d="M26 42V22h16v20M58 42V28h16v14"/><circle cx="34" cy="62" r="7"/><circle cx="66" cy="62" r="7"/></svg>
             <span class="lbl"><small>Pillar 03 · 9 Personas</small><strong>Manufacturing &amp; Production</strong></span><span class="bar"></span>
           </a>
@@ -270,6 +316,7 @@
         <!-- Pillar 04: Inventory & Warehousing -->
         <section class="track p-inv" data-track="warehousing">
           <a class="t-photo" href="pillars/04_warehousing.html" data-domain="warehousing">
+            <img class="t-bg" src="assets/media/story/story_warehouse_hub.jpg" alt="">
             <svg class="bg-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><polygon points="50,14 86,32 86,78 14,78 14,32"/><rect x="30" y="48" width="16" height="16"/><rect x="54" y="48" width="16" height="16"/><rect x="42" y="30" width="16" height="14"/></svg>
             <span class="lbl"><small>Pillar 04 · 9 Personas</small><strong>Inventory &amp; Warehousing</strong></span><span class="bar"></span>
           </a>
@@ -285,8 +332,9 @@
         <!-- Pillar 05: Distribution & Logistics -->
         <section class="track p-dist" data-track="distribution">
           <a class="t-photo" href="pillars/05_distribution.html" data-domain="distribution">
+            <img class="t-bg" src="assets/media/story/story_cfa_dock.jpg" alt="">
             <svg class="bg-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><rect x="10" y="34" width="52" height="34" rx="4"/><path d="M62 44h18l10 12v12H62z"/><circle cx="28" cy="72" r="8"/><circle cx="76" cy="72" r="8"/></svg>
-            <span class="lbl"><small>Pillar 05 · 12 Personas</small><strong>Distribution &amp; Logistics</strong></span><span class="bar"></span>
+            <span class="lbl"><small>Pillar 05 · 12 Personas (ITC TM&amp;D Core)</small><strong>Distribution &amp; Logistics</strong></span><span class="bar"></span>
           </a>
           <div class="t-for"><b>CPG Route-to-Market</b> · Plant → CFA → WD → Trade</div>
           <ol class="steps">
@@ -301,6 +349,7 @@
         <!-- Pillar 06: Returns & Reverse Logistics -->
         <section class="track p-rev" data-track="reverse">
           <a class="t-photo" href="pillars/06_reverse.html" data-domain="reverse">
+            <img class="t-bg" src="assets/media/story/story_modern_trade.jpg" alt="">
             <svg class="bg-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><path d="M72 32A28 28 0 1 0 78 58"/><polyline points="62,32 74,32 74,20"/><circle cx="50" cy="50" r="10"/></svg>
             <span class="lbl"><small>Pillar 06 · 9 Personas</small><strong>Returns &amp; Reverse Logistics</strong></span><span class="bar"></span>
           </a>
@@ -325,14 +374,14 @@
         <div class="col-a">
           <div class="grp-h">Agentic workflows &amp; workforce</div>
           <a class="tile" href="pages/demo_stage.html" data-shared>
-            <div class="top"><span class="num">06</span><span class="badge soft">2 Live Demos</span></div>
-            <h4>Live Demo Stage: Demo 1 &amp; Demo 2</h4>
-            <p>Two dedicated demo video stages paired with live Gemini Enterprise agents and starter prompts.</p>
+            <div class="top"><span class="num">04</span><span class="badge soft">3 Live Demos</span></div>
+            <h4>Live Demo Stage: CEO · Hub OTIF · Dispatch</h4>
+            <p>BeatPulse CEO ticket action, FleetFlow OTIF diagnostic, and 3D Indic-voice dispatcher.</p>
           </a>
-          <a class="tile" href="pages/one_to_many.html" data-shared>
-            <div class="top"><span class="num">07</span><img src="assets/media/gcp/Agents.svg" alt=""></div>
-            <h4>From two agents to an agentic organisation</h4>
-            <p>Each pillar demo is one workflow; 60 specialized agents coordinate across the end-to-end value stream.</p>
+          <a class="tile" href="slides/slide_04.html" data-shared>
+            <div class="top"><span class="num">06</span><img src="assets/media/gcp/Agents.svg" alt=""></div>
+            <h4>From 3 demos to a 60-role agentic enterprise</h4>
+            <p>Each demo is one workflow; 60 specialized agents coordinate across all 6 value-stream pillars.</p>
           </a>
           <div class="tile feature" data-shared>
             <a href="pages/persona_map.html" style="display:flex;flex-direction:column;gap:8px;">
@@ -345,7 +394,7 @@
                 <span class="av" style="background:#0097A7;">DC</span>
                 <span class="av" style="background:#E65100;">FL</span>
                 <span class="av" style="background:#C62828;">CX</span>
-                <span class="lbl-txt">All 60 personas &amp; agents</span>
+                <span class="lbl-txt">All 60 personas &amp; agents (49 Live)</span>
               </div>
             </a>
             <div class="pills">
@@ -359,17 +408,17 @@
           </div>
         </div>
         <div>
-          <div class="grp-h">From personas to production</div>
+          <div class="grp-h">From personas to Google Cloud production</div>
           <div class="grid-b">
-            <a class="tile" href="pages/build_01_how.html" data-shared><div class="top"><span class="num">08</span><img src="assets/media/gcp/AIMachineLearning.svg" alt=""></div><h4>How agents are built</h4><p>No-code Gems, low-code Agent Studio, high-code ADK.</p></a>
-            <a class="tile" href="pages/build_02_arch.html" data-shared><div class="top"><span class="num">09</span><img src="assets/media/gcp/HybridMulticloud.svg" alt=""></div><h4>Architecture</h4><p>Grounds across SAP, WMS, TMS, EDI, and POS.</p><span class="badge soft">Interactive</span></a>
-            <a class="tile" href="pages/build_03_models.html" data-shared><div class="top"><span class="num">10</span><img src="assets/media/gcp/VertexAI.svg" alt=""></div><h4>Model choice</h4><p>Gemini Pro, Flash &amp; Vision matched to task.</p><span class="badge soft">Interactive</span></a>
-            <a class="tile" href="pages/build_04_govern.html" data-shared><div class="top"><span class="num">11</span><img src="assets/media/gcp/SecurityIdentity.svg" alt=""></div><h4>Governance</h4><p>Identity, policy, human approval, audit trails.</p><span class="badge soft">Interactive</span></a>
-            <a class="tile" href="pages/build_05_surface.html" data-shared><div class="top"><span class="num">12</span><img src="assets/media/gcp/CloudRun.svg" alt=""></div><h4>Where people meet the agent</h4><p>Built once, used across mobile, Workspace &amp; control tower.</p></a>
-            <a class="tile" href="pages/build_06_resilience.html" data-shared><div class="top"><span class="num">13</span><img src="assets/media/gcp/Observability.svg" alt=""></div><h4>Structural resilience</h4><p>Supply chains that absorb shocks without manual chaos.</p></a>
-            <a class="tile" href="pages/build_07_why_google.html" data-shared><div class="top"><span class="num">14</span><img src="assets/media/gcp/Compute.svg" alt=""></div><h4>Why Google</h4><p>Gemini Enterprise + BigQuery + Google Maps Platform.</p></a>
-            <a class="tile" href="pages/build_08_100_days.html" data-shared><div class="top"><span class="num">15</span><img src="assets/media/gcp/Marketplace.svg" alt=""></div><h4>100 days to proof of value</h4><p>Phased pilot-to-production roadmap across pillars.</p></a>
-            <a class="tile" href="slides/slide_06_tmd_partnership.html" data-shared><div class="top"><span class="num">16</span><img src="assets/media/gcp/VertexAI.svg" alt=""></div><h4>Strategic AI &amp; Distribution Partnership</h4><p>4 active joint workstreams, status &amp; next steps (Nov 2026).</p><span class="badge soft">Executive</span></a>
+            <a class="tile" href="pages/build_02_arch.html" data-shared><div class="top"><span class="num">08</span><img src="assets/media/gcp/HybridMulticloud.svg" alt=""></div><h4>Google Cloud Architecture</h4><p>Non-invasive overlay over SAP, DMS, SFA, WMS &amp; TMS.</p><span class="badge soft">Interactive</span></a>
+            <a class="tile" href="pages/build_01_how.html" data-shared><div class="top"><span class="num">09</span><img src="assets/media/gcp/AIMachineLearning.svg" alt=""></div><h4>How agents are built</h4><p>Gems, Agent Studio &amp; ADK agents unified on one spine.</p></a>
+            <a class="tile" href="pages/build_03_models.html" data-shared><div class="top"><span class="num">10</span><img src="assets/media/gcp/VertexAI.svg" alt=""></div><h4>Model choice</h4><p>Gemini Pro, Flash &amp; Live Indic voice matched to task.</p><span class="badge soft">Interactive</span></a>
+            <a class="tile" href="pages/build_04_govern.html" data-shared><div class="top"><span class="num">11</span><img src="assets/media/gcp/SecurityIdentity.svg" alt=""></div><h4>Governance</h4><p>RBAC, policy guardrails, human veto &amp; audit trails.</p><span class="badge soft">Interactive</span></a>
+            <a class="tile" href="pages/build_06_resilience.html" data-shared><div class="top"><span class="num">12</span><img src="assets/media/gcp/Observability.svg" alt=""></div><h4>Structural resilience</h4><p>Supply chains that absorb shocks without manual chaos.</p></a>
+            <a class="tile" href="pages/build_07_why_google.html" data-shared><div class="top"><span class="num">13</span><img src="assets/media/gcp/Compute.svg" alt=""></div><h4>Why Google Cloud</h4><p>6-layer first-party stack + 2026 Gartner Leader.</p></a>
+            <a class="tile" href="pages/build_05_surface.html" data-shared><div class="top"><span class="num">13B</span><img src="assets/media/gcp/CloudRun.svg" alt=""></div><h4>Where people meet the agent</h4><p>Built once, used across mobile, Workspace &amp; control tower.</p></a>
+            <a class="tile" href="pages/build_08_100_days.html" data-shared><div class="top"><span class="num">13C</span><img src="assets/media/gcp/Marketplace.svg" alt=""></div><h4>100 days to value</h4><p>Phased pilot-to-production roadmap across pillars.</p></a>
+            <a class="tile" href="slides/slide_06_tmd_partnership.html" data-shared><div class="top"><span class="num">14</span><img src="assets/media/gcp/VertexAI.svg" alt=""></div><h4>5 Joint Workstreams</h4><p>SFA Voice, Q-Comm Control Tower, GE Cohort, LMD &amp; FLW.</p><span class="badge soft">Executive</span></a>
           </div>
         </div>
       </div>

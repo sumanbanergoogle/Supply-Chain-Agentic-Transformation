@@ -2,59 +2,215 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>04 · Why TM&amp;D Execution Is Critical &amp; Core Challenges</title>
+<title>02 · TM&amp;D North Star, Global OSA Benchmarks &amp; Core Challenges</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-<script src="../assets/deck_nav.js?v=15"></script>
+<script src="../assets/deck_nav.js?v=17"></script>
 <style>
-  .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;}
-  .ex-strip{margin-top:20px;padding:18px 22px;border-radius:16px;background:var(--surface);border:1px solid var(--border-subtle);border-left:4px solid var(--g-blue);box-shadow:var(--shadow-sm);}
-  @media(max-width:960px){.grid-3{grid-template-columns:1fr;}}
+  .vt-banner {
+    margin-top: 18px; background: var(--surface); border: 1.5px solid var(--g-blue);
+    border-radius: 18px; padding: 16px 22px; box-shadow: var(--shadow-md);
+    display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .vt-banner::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
+  .vt-banner small { font: 700 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--blue-ink); }
+  .vt-banner h2 { margin: 4px 0 0; font: 600 20px/1.2 var(--font-display); color: var(--text); }
+  .scope-note {
+    font-size: 12.5px; line-height: 1.45; color: var(--text-muted); max-width: 48ch;
+    padding: 8px 12px; border-radius: 10px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+  }
+  .scope-note b { color: var(--text); }
+
+  .levers-4 {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 14px;
+  }
+  .lv-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-top: 3px solid var(--tc);
+    border-radius: 14px; padding: 14px 15px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 6px;
+  }
+  .lv-k { font: 700 10px var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--ti); }
+  .lv-card h3 { margin: 0; font: 600 15.5px/1.25 var(--font-display); color: var(--text); }
+  .lv-card p { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--text-muted); }
+
+  .corr-section { margin-top: 20px; }
+  .sec-lbl { font: 700 11px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 10px; }
+  .corr-rows { display: grid; gap: 10px; }
+  .corr-row {
+    display: grid; grid-template-columns: 1.05fr 180px 0.95fr 1.05fr; gap: 12px; align-items: center;
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 16px;
+    padding: 13px 16px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--rc, var(--g-blue));
+  }
+  .corr-prob h4 { margin: 0 0 3px; font: 600 15px var(--font-display); color: var(--text); }
+  .corr-prob p { margin: 0; font-size: 12.5px; line-height: 1.4; color: var(--text-muted); }
+  .corr-stat {
+    text-align: center; padding: 8px 10px; border-radius: 12px; background: var(--surface-sunk);
+    border: 1px solid var(--border-subtle);
+  }
+  .corr-stat b { display: block; font: 700 22px/1.1 var(--font-mono); color: var(--ri, var(--blue-ink)); }
+  .corr-stat span { display: block; margin-top: 3px; font: 500 11px var(--font-body); color: var(--text-muted); line-height: 1.25; }
+  .corr-fix { font-size: 12.5px; line-height: 1.45; color: var(--text); }
+  .corr-fix b { display: block; font: 600 12.5px var(--font-display); color: var(--green-ink); margin-bottom: 2px; }
+  .corr-img { width: 100%; height: 92px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border-subtle); display: block; }
+
+  .osa-strip {
+    margin-top: 20px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 16px 20px; box-shadow: var(--shadow-sm);
+  }
+  .osa-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
+  .osa-box {
+    padding: 12px 14px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+  }
+  .osa-box small { font: 700 10.5px var(--font-mono); color: var(--blue-ink); text-transform: uppercase; }
+  .osa-box b { display: block; font: 700 18px/1.2 var(--font-display); color: var(--text); margin: 4px 0; }
+  .osa-box p { margin: 0; font-size: 12px; line-height: 1.4; color: var(--text-muted); }
+
+  @media (max-width: 1020px) {
+    .levers-4, .osa-grid { grid-template-columns: repeat(2, 1fr); }
+    .corr-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) { .levers-4, .osa-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <header class="mast">
-  <a href="../index.html" style="display:flex;align-items:center;gap:12px;"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">04 · TM&amp;D Core Challenges</span></a>
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
+    <span class="mast-tag">02 · TM&amp;D North Star &amp; Reality</span>
+  </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
+  <div class="mast-nav" id="mastSlideNav">
+    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+  </div>
 </header>
+
 <main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 04 · TM&amp;D Operational Reality</div>
-  <h1 class="page-h1">Why TM&amp;D Execution Is Mission-Critical—And Where Friction Creeps In</h1>
-  <p class="page-lede">Across a multi-category FMCG portfolio (Foods, Personal Care, Stationery, Tobacco) moving from <b>Plant → CFA → Wholesale Dealer → 7M+ Kirana, Modern Trade &amp; Q-Commerce outlets</b>, even a <b>1–2% gap in fill rate or trade spend efficiency</b> directly impacts revenue and margin.</p>
+  <div class="page-kick"><i></i>Slide 02 · Clarified TM&amp;D Value Tree · 1-to-1 Challenge Correlation</div>
+  <h1 class="page-h1">Where Margin &amp; Availability Leak in TM&amp;D—And What Seals Each Gap</h1>
+  <p class="page-lede">Every percentage benchmark maps directly to a concrete operational bottleneck across <b>Trade Marketing &amp; Distribution (TM&amp;D)</b> execution and its global On-Shelf Availability (OSA) benchmark.</p>
 
-  <div class="kpi-strip">
-    <div class="kpi-box"><b>15–20%</b><span>Kirana Out-of-Stock (OOS) recoverable via predictive replenishment</span></div>
-    <div class="kpi-box"><b>12–15%</b><span>Trade scheme &amp; display claim leakage from manual POD/photo audits</span></div>
-    <div class="kpi-box"><b>4–6 Days</b><span>Working capital locked in imbalanced CFA &amp; Wholesale Dealer stock</span></div>
-  </div>
-
-  <div class="grid-3">
-    <div class="card card-top-accent p-blue">
-      <span class="badge-pill">Challenge 01 · Beat &amp; Assortment Execution</span>
-      <h3 style="margin:10px 0 8px;font:600 18px var(--font-display);">Kirana OOS &amp; SFA App Fatigue</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;">DSRs carry 60+ SKUs across cluttered SFA screens and default to top-3 fast movers—missing high-margin NPD &amp; focus-SKU placement. ASMs spend 90+ mins daily slicing MIS sheets.</p>
+  <div class="vt-banner">
+    <div>
+      <small>TM&amp;D Leadership North Star (Bounded to Distribution Execution)</small>
+      <h2>Profitable Revenue Recovery &amp; Capital Efficiency across ITC TM&amp;D</h2>
     </div>
-    <div class="card card-top-accent p-amber">
-      <span class="badge-pill">Challenge 02 · CFA Allocation &amp; Channel SLAs</span>
-      <h3 style="margin:10px 0 8px;font:600 18px var(--font-display);">CFA Rationing &amp; Q-Comm Penalties</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;">One branch faces short-dated SLOB write-offs while a neighboring CFA rations stock. Meanwhile, Blinkit, Zepto, and DMart enforce strict &gt;75% shelf-life and dock-slot OTIF penalties.</p>
-    </div>
-    <div class="card card-top-accent p-red">
-      <span class="badge-pill">Challenge 03 · Trade Claims &amp; Freight Audit</span>
-      <h3 style="margin:10px 0 8px;font:600 18px var(--font-display);">Claims, Window Displays &amp; Detention</h3>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.5;">Paper PODs, damaged biscuit/soap returns, window-display proofs, and transporter detention claims take weeks to reconcile—creating WD friction and silent margin leakage.</p>
+    <div class="scope-note">
+      <b>Role Clarity vs. Brand Managers:</b> Brand teams own product innovation &amp; consumer mix. <b>TM&amp;D owns physical shelf availability, outlet assortment fill, trade spend realization, and cost-to-serve</b> across ~7M outlets.
     </div>
   </div>
 
-  <div class="ex-strip">
-    <div style="font:600 11px var(--font-mono);letter-spacing:1.1px;text-transform:uppercase;color:var(--blue-ink);margin-bottom:6px;">TM&amp;D Leadership Example · Pre-Festive North &amp; West Branch Surge</div>
-    <div style="font-size:14px;line-height:1.55;color:var(--text);">
-      Ahead of Diwali, secondary demand for <b>5kg Atta &amp; Premium Biscuits</b> spikes +22% in Lucknow while Pune holds 18 days of excess stock. Today, Area Managers, CS&amp;L, and Branch Finance spend days on calls and spreadsheets to re-allocate CFA stock, protect Modern Trade slots, and settle WD claims—whereas an <b>Agentic TM&amp;D overlay</b> detects the shift 7–14 days early, proposes fair-share WD splits, and verifies display/POD claims in hours.
+  <div class="levers-4">
+    <div class="lv-card p-blue">
+      <span class="lv-k">01 · TM&amp;D Shelf Execution</span>
+      <h3>On-Shelf Availability &amp; Line Count</h3>
+      <p>Eliminates kirana zero-billing &amp; focus Stock Keeping Unit (SKU) gaps through beat-level availability execution.</p>
+    </div>
+    <div class="lv-card p-purple">
+      <span class="lv-k">02 · Trade Spend Realization</span>
+      <h3>Targeted Schemes &amp; Clean Claims</h3>
+      <p>Replaces blanket trade rebates with verified window-display &amp; distributor payout checks.</p>
+    </div>
+    <div class="lv-card p-amber">
+      <span class="lv-k">03 · Distribution Cost</span>
+      <h3>Cube Fill &amp; OTIF Penalty Defense</h3>
+      <p>Protects On-Time In-Full (OTIF) across Blinkit, Zepto, DMart &amp; primary CFA lanes.</p>
+    </div>
+    <div class="lv-card p-green">
+      <span class="lv-k">04 · Working Capital</span>
+      <h3>Distributor Cash &amp; Field Time</h3>
+      <p>Releases stock trapped at CFAs/Wholesale Dealers and hands hours back to Sales Reps.</p>
     </div>
   </div>
 
-  <footer class="deck-footer"><span>Slide 04 · Why TM&amp;D Execution Is Critical &amp; Core Challenges</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+  <section class="corr-section">
+    <div class="sec-lbl">1-to-1 Direct Correlation · Operational Root Cause → Financial Benchmark → Agent Fix</div>
+    <div class="corr-rows">
+      <article class="corr-row" style="--rc:var(--g-blue);--ri:var(--blue-ink);">
+        <div class="corr-prob">
+          <h4>1. Kirana Out-of-Stock &amp; SFA App Fatigue</h4>
+          <p>Salesmen skip cluttered Sales Force Automation (SFA) tabs under tight evening route cutoffs, underselling hero &amp; high-margin SKUs.</p>
+        </div>
+        <div class="corr-stat">
+          <b>15–20%</b>
+          <span>Recoverable Kirana Out-of-Stock &amp; LSPC leakage</span>
+        </div>
+        <div class="corr-fix">
+          <b>Fixed by · BeatPulse &amp; Vernacular SFA Voice</b>
+          Detects Length of Sales Point Coverage (LSPC) drop, splits congested beats, &amp; briefs reps in Hindi/regional voice.
+        </div>
+        <img class="corr-img" src="../assets/media/story/story_kirana_store.jpg" alt="Indian neighborhood Kirana store shelf inventory">
+      </article>
+
+      <article class="corr-row" style="--rc:var(--g-yellow);--ri:var(--amber-ink);">
+        <div class="corr-prob">
+          <h4>2. CFA Rationing &amp; Q-Comm Slot / Shelf-Life Fines</h4>
+          <p>First-In-First-Out ERP dispatch starves smaller Wholesale Dealers while Quick Commerce hubs reject pallets under 75% remaining shelf life.</p>
+        </div>
+        <div class="corr-stat">
+          <b>4–6 Days</b>
+          <span>Trapped CFA &amp; WD working capital + OTIF chargebacks</span>
+        </div>
+        <div class="corr-fix">
+          <b>Fixed by · Fair-Share Allocator &amp; FleetFlow</b>
+          Reserves First-Expired-First-Out (FEFO) batches for dark stores, co-loads heavy Staples with light Snacks, &amp; shifts dock slots early.
+        </div>
+        <img class="corr-img" src="../assets/media/story/story_qcomm_darkstore.jpg" alt="Quick commerce dark store fulfillment and scooter riders">
+      </article>
+
+      <article class="corr-row" style="--rc:var(--g-red);--ri:var(--red-ink);">
+        <div class="corr-prob">
+          <h4>3. Paper PODs, Display Proofs &amp; Detention Claims</h4>
+          <p>Manual photo checks for kirana window displays, damaged returns, and carrier detention slips take 2–3 weeks and invite silent overpayment.</p>
+        </div>
+        <div class="corr-stat">
+          <b>12–15%</b>
+          <span>Scheme, display &amp; freight accessorial claim leakage</span>
+        </div>
+        <div class="corr-fix">
+          <b>Fixed by · Multimodal Vision &amp; GPS Audit Agent</b>
+          Reads Proof of Delivery (POD) scans, cross-checks FASTag/GPS dwell at store gates, and disputes false OTIF chargebacks automatically.
+        </div>
+        <img class="corr-img" src="../assets/media/story/story_cfa_dock.jpg" alt="State CFA warehouse dock bay scanning freight cartons">
+      </article>
+    </div>
+  </section>
+
+  <section class="osa-strip">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <span class="badge-pill">Global Industry Benchmarks · Why On-Shelf Availability Drives ITC Growth</span>
+      <span style="font:600 11px var(--font-mono);color:var(--text-muted);">SOURCES: NIQ BAROMETER · MCKINSEY · P&amp;G · UNILEVER</span>
+    </div>
+    <div class="osa-grid">
+      <div class="osa-box">
+        <small>NielsenIQ (NIQ)</small>
+        <b>5–10% Global OOS Rate</b>
+        <p>Spikes to 12–15% in promotional peaks; <b>30–40% of shoppers</b> switch brands permanently when a shelf slot is empty.</p>
+      </div>
+      <div class="osa-box">
+        <small>McKinsey Benchmark</small>
+        <b>Up to 50% Lower Error</b>
+        <p>Machine-learning demand sensing over downstream Point-of-Sale &amp; DMS signals cuts forecast errors &amp; buffer stockouts sharply.</p>
+      </div>
+      <div class="osa-box">
+        <small>Procter &amp; Gamble (P&amp;G)</small>
+        <b>On-Shelf Telemetry Loop</b>
+        <p>Pairs real-time secondary sell-through with distributor inventory to trigger replenishment days before physical shelves empty.</p>
+      </div>
+      <div class="osa-box">
+        <small>Unilever Operations</small>
+        <b>Core-SKU Focus</b>
+        <p>Uses ML demand signals to prioritize high-velocity core packs across factories and depots, keeping hero items in stock.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="deck-footer">
+    <span>Slide 02 · TM&amp;D North Star, Global OSA Benchmarks &amp; Challenges</span>
+    <span class="footer-brand">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span>
+      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
+    </span>
+  </footer>
 </main>
 <script>initDeckChrome({ root: '../' });</script>
 </body></html>

@@ -2,39 +2,75 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>01 · Why Agentic Transformation for Supply Chains in India</title>
+<title>01 · Supply Chain Story &amp; Holistic Agentic Blueprint for TM&amp;D</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-<script src="../assets/deck_nav.js?v=15"></script>
+<script src="../assets/deck_nav.js?v=17"></script>
 <style>
-  .page-lede { max-width: 100%; }
-  .why-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 22px 0; }
-  .why-card { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
-  .why-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--tc); }
-  .why-card .k { font: 600 11px var(--font-mono); letter-spacing: 1.1px; text-transform: uppercase; color: var(--ti); }
-  .why-card h3 { margin: 8px 0 8px; font: 600 17.5px/1.25 var(--font-display); color: var(--text); }
-  .why-card p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
+  .story-hero {
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 22px; margin-top: 20px; align-items: stretch;
+  }
+  .story-visual {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 16px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px;
+  }
+  .story-visual img {
+    width: 100%; height: 245px; object-fit: cover; border-radius: 12px; display: block;
+    border: 1px solid var(--border-subtle);
+  }
+  .node-row {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
+  }
+  .node-chip {
+    padding: 8px 10px; border-radius: 10px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+    font-size: 11.5px; line-height: 1.35;
+  }
+  .node-chip b { display: block; font: 700 11px var(--font-mono); color: var(--blue-ink); text-transform: uppercase; }
 
-  .inflect { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 22px 24px; box-shadow: var(--shadow-md); margin: 20px 0 0; position: relative; overflow: hidden; }
-  .inflect::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
-  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
-  .q-pill { font: 500 12.5px var(--font-display); padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text); cursor: pointer; }
-  .q-pill.active { background: var(--g-blue); color: #FFF; border-color: var(--g-blue); }
+  .blueprint-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 18px 20px; box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+  }
+  .blueprint-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--gemini-spark); }
+  .layer-stack { display: grid; gap: 9px; }
+  .bp-layer {
+    padding: 10px 13px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+    border-left: 4px solid var(--lc, var(--g-blue)); cursor: pointer; transition: transform .15s, border-color .15s, background .15s;
+  }
+  .bp-layer:hover, .bp-layer.is-on {
+    background: color-mix(in srgb, var(--lc, var(--g-blue)) 7%, var(--surface));
+    border-color: color-mix(in srgb, var(--lc, var(--g-blue)) 40%, var(--border-subtle));
+    transform: translateX(2px);
+  }
+  .bp-layer-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .bp-layer-k { font: 700 10.5px var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--li, var(--blue-ink)); }
+  .bp-layer h3 { margin: 3px 0 2px; font: 600 15px/1.25 var(--font-display); color: var(--text); }
+  .bp-layer p { margin: 0; font-size: 12.5px; line-height: 1.4; color: var(--text-muted); }
 
-  .vs-grid { display: grid; grid-template-columns: 1fr 1fr 0.75fr; gap: 14px; }
-  .vs-box { padding: 15px 16px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); }
-  .vs-box.agentic { background: color-mix(in srgb, var(--g-blue) 7%, var(--surface)); border-color: color-mix(in srgb, var(--g-blue) 35%, transparent); }
-  .vs-box.impact { background: color-mix(in srgb, var(--g-green) 8%, var(--surface)); border-color: color-mix(in srgb, var(--g-green) 35%, transparent); display: flex; flex-direction: column; justify-content: center; }
-  .vs-lbl { font: 600 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
-  .vs-txt { font-size: 13.5px; line-height: 1.5; color: var(--text); }
-  @media(max-width:900px){ .why-3, .vs-grid{ grid-template-columns: 1fr; } }
+  .proxy-strip {
+    margin-top: 20px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 18px;
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 16px 20px; box-shadow: var(--shadow-sm); align-items: center;
+  }
+  .proxy-img { width: 100%; height: 175px; object-fit: contain; border-radius: 12px; background: #fff; padding: 6px; border: 1px solid var(--border-subtle); }
+  .boundary-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .b-pill {
+    padding: 10px 12px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+    font-size: 12.5px; line-height: 1.4;
+  }
+  .b-pill b { display: block; font: 600 11.5px var(--font-mono); margin-bottom: 3px; }
+  @media (max-width: 1020px) {
+    .story-hero, .proxy-strip, .boundary-pills { grid-template-columns: 1fr; }
+    .node-row { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
 <header class="mast">
   <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
     <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
-    <span class="mast-tag">01 · Why Agentic, Why Now</span>
+    <span class="mast-tag">01 · Story &amp; Holistic Blueprint</span>
   </a>
   <span class="mast-sp"></span>
   <div class="mast-nav" id="mastSlideNav">
@@ -43,95 +79,88 @@
 </header>
 
 <main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 01 · Executive Briefing for TM&amp;D Head</div>
-  <h1 class="page-h1">Why Agentic Transformation for Supply Chains in India</h1>
-  <p class="page-lede">India’s supply chains operate at unmatched physical complexity—from <b>12M+ kiranas and multi-tier CFAs</b> to <b>10-minute Quick Commerce</b>. Dashboards already tell us <i>what</i> broke yesterday; <b>Agentic AI</b> turns live signals into coordinated execution <i>today</i>.</p>
+  <div class="page-kick"><i></i>Slide 01 · From Supply Chain Flow to Holistic TM&amp;D Transformation</div>
+  <h1 class="page-h1">One Connected Spine Over Existing Systems—No Piecemeal Bots</h1>
+  <p class="page-lede">Across Consumer Packaged Goods (CPG), ITC’s supply chain connects <b>manufacturing plants, State Carrying &amp; Forwarding Agents (CFAs), Wholesale Dealers (WDs), and ~7M retail outlets</b>. Rather than buying isolated bots for sales, dispatch, or control towers, <b>one unified Google Cloud layer</b> turns live signals into bounded execution.</p>
 
-  <div class="why-3">
-    <div class="why-card p-blue">
-      <div class="k">01 · Market Velocity</div>
-      <h3>Channel Speed Outpaces Manual Planning</h3>
-      <p>Quick Commerce SLAs, Modern Trade OTIF penalties, and hyper-local festive surges require real-time reallocation—not weekly spreadsheet war-rooms.</p>
-    </div>
-    <div class="why-card p-green">
-      <div class="k">02 · Digital Readiness</div>
-      <h3>The Data Spine Already Exists</h3>
-      <p>Indian enterprises already run SAP, DMS/SFA, FASTag/GPS, and e-Way Bills—creating the live telemetry needed for autonomous execution without replacing core ERPs.</p>
-    </div>
-    <div class="why-card p-purple">
-      <div class="k">03 · Enterprise AI Maturity</div>
-      <h3>From Passive Insights to Bounded Action</h3>
-      <p>Reasoning across cost, shelf-life, and channel SLAs—combined with vision for PODs/shelves and 12+ Indian vernacular voices—is now production-ready at scale.</p>
-    </div>
-  </div>
-
-  <div class="inflect">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-      <span class="badge-pill badge-solid">India Supply Chain Decision Velocity · Legacy vs. Agentic</span>
-      <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="inflectTag">CLICK A REAL-WORLD SCENARIO TO COMPARE</span>
-    </div>
-    <div class="pill-row">
-      <button class="q-pill active" onclick="setScenario('festive', this)">Festive &amp; Monsoon Demand Surge</button>
-      <button class="q-pill" onclick="setScenario('qcomm', this)">10-Min Q-Commerce &amp; MT SLAs</button>
-      <button class="q-pill" onclick="setScenario('transit', this)">Highway Closure &amp; Fleet Detention</button>
-      <button class="q-pill" onclick="setScenario('claims', this)">Distributor Claims &amp; POD Audits</button>
-    </div>
-    <div class="vs-grid">
-      <div class="vs-box">
-        <div class="vs-lbl" style="color:var(--red-ink);">Today · Manual War-Room</div>
-        <div class="vs-txt" id="vsLegacy">Weekly Excel S&amp;OP reviews spot regional POS spikes 10–14 days late, leaving high-velocity CFAs stocked out while neighboring depots hold excess.</div>
+  <section class="story-hero">
+    <div class="story-visual">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span class="badge-pill">End-to-End Physical Network · ITC Supply Chain to TM&amp;D</span>
+        <span style="font:600 11px var(--font-mono);color:var(--green-ink);">NO ERP REPLACEMENT</span>
       </div>
-      <div class="vs-box agentic">
-        <div class="vs-lbl" style="color:var(--blue-ink);">With Agentic AI · Bounded Action</div>
-        <div class="vs-txt" id="vsAgentic">Continuously correlates POS velocity, weather, and regional calendars—pre-computing fair-share CFA allocations and inter-depot transfers in minutes.</div>
-      </div>
-      <div class="vs-box impact">
-        <div class="vs-lbl" style="color:var(--green-ink);">Business Outcome</div>
-        <div style="font:600 22px/1.15 var(--font-display);color:var(--text);" id="vsMetric">7–14 Days Earlier</div>
-        <div style="font-size:12.5px;color:var(--text-muted);margin-top:4px;" id="vsSub">Demand shift detection &amp; shelf availability</div>
+      <img src="../assets/media/story/story_india_tmd_network.jpg" alt="Plant to State CFA to Wholesale Dealer to Kirana and Modern Trade distribution flow">
+      <div class="node-row">
+        <div class="node-chip"><b>01 · Plant</b>Production &amp; primary stock transfer orders</div>
+        <div class="node-chip"><b>02 · State CFA</b>Proxy to Modern Trade &amp; Blinkit / Zepto docks</div>
+        <div class="node-chip"><b>03 · Wholesale</b>Distributor stock allocation &amp; claim audit</div>
+        <div class="node-chip"><b>04 · Last Mile</b>7M+ Kirana beats, display &amp; zero-billing checks</div>
       </div>
     </div>
-  </div>
 
-  <footer class="deck-footer"><span>Slide 01 · Why Agentic Transformation for Supply Chains in India</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+    <div class="blueprint-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <span class="badge-pill badge-solid">Holistic 4-Layer Architecture · Built Together</span>
+        <span style="font:600 11px var(--font-mono);color:var(--blue-ink);">UNIFIES ALL 5 TM&amp;D WORKSTREAMS</span>
+      </div>
+      <div class="layer-stack">
+        <div class="bp-layer is-on" style="--lc:var(--g-green);--li:var(--green-ink);" onclick="selectBp(this)">
+          <div class="bp-layer-top"><span class="bp-layer-k">Layer 4 · Where Work Happens (Internal &amp; Partner)</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">GE · Mobile · Maps</span></div>
+          <h3>TM&amp;D Leadership · Dispatchers · CFAs / WDs · Field Sales</h3>
+          <p>Exposed directly to CEO control towers, Kamaatura / Mahindra CFA dispatchers, WDs, and Frontline Sales Reps.</p>
+        </div>
+        <div class="bp-layer" style="--lc:var(--g-purple);--li:var(--purple-ink);" onclick="selectBp(this)">
+          <div class="bp-layer-top"><span class="bp-layer-k">Layer 3 · Autonomous Agent Fleet (Sense · Reason · Act)</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">Gemini + ADK</span></div>
+          <h3>Governed Workflow Agents Over Every TM&amp;D Handover</h3>
+          <p>Fair-share rationing, BeatPulse split-beat ticketing, FleetFlow 3D load planning, and vision claim audits—never isolated silos.</p>
+        </div>
+        <div class="bp-layer" style="--lc:var(--g-blue);--li:var(--blue-ink);" onclick="selectBp(this)">
+          <div class="bp-layer-top"><span class="bp-layer-k">Layer 2 · Google Cloud Knowledge &amp; Context Spine</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">BigQuery · Maps · Search</span></div>
+          <h3>Live Enterprise Telemetry + Geospatial + Policy Context</h3>
+          <p>Correlates POS velocity, scheme PDFs, Google Maps traffic bottlenecks, and weather without fragmenting data copies.</p>
+        </div>
+        <div class="bp-layer" style="--lc:var(--text-dim);--li:var(--text-muted);" onclick="selectBp(this)">
+          <div class="bp-layer-top"><span class="bp-layer-k">Layer 1 · Existing Systems of Record (Untouched)</span><span style="font:600 11px var(--font-mono);color:var(--text-muted);">SAP · DMS · SFA · WMS</span></div>
+          <h3>SAP ERP · SAP DMS · Sales Force Automation · WMS · TMS</h3>
+          <p>Core transactional truth stays untouched; agents read signals and write approved tickets, routes, and indents back via API.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proxy-strip">
+    <img class="proxy-img" src="../assets/media/story/story_holistic_google_spine.jpg" alt="Holistic layered architecture rising from existing enterprise systems through knowledge layer and modular agents to employee devices">
+    <div>
+      <div style="font:700 11px var(--font-mono);letter-spacing:.9px;text-transform:uppercase;color:var(--blue-ink);">Clear Scope Boundary · Who Uses These Agents Today</div>
+      <h2 style="margin:6px 0 8px;font:600 20px/1.25 var(--font-display);color:var(--text);">Internal TM&amp;D Teams &amp; Channel Partners (CFAs &amp; WDs)—Proxying Q-Comm</h2>
+      <p style="margin:0;font-size:13.5px;line-height:1.5;color:var(--text-muted);">Our agents do <b>not</b> require integration inside third-party customer dark stores like Blinkit or Zepto. Instead, <b>State CFAs</b> (such as Kamadhenu / Mahindra Logistics hubs) and <b>Wholesale Dealers</b> act as the live operational proxy—sensing Purchase Orders, protecting Minimum Remaining Shelf-Life (MRSL), and locking receiving slots.</p>
+      <div class="boundary-pills">
+        <div class="b-pill" style="border-left:3px solid var(--g-green);">
+          <b style="color:var(--green-ink);">IN SCOPE · INTERNAL + CHANNEL</b>
+          TM&amp;D Leadership, Area Managers, Field Sales, State CFAs &amp; Wholesale Dealers
+        </div>
+        <div class="b-pill" style="border-left:3px solid var(--g-blue);">
+          <b style="color:var(--blue-ink);">CONNECTED · EXTERNAL SLAs</b>
+          Dark-Store &amp; Modern Trade portals connected via CFA EDI, PO &amp; slot telemetry
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="deck-footer">
+    <span>Slide 01 · Supply Chain Flow &amp; Holistic Blueprint</span>
+    <span class="footer-brand">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span>
+      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
+    </span>
+  </footer>
 </main>
 
 <script>
   initDeckChrome({ root: '../' });
-  var SCENARIOS = {
-    festive: {
-      legacy: 'Weekly Excel S&amp;OP reviews spot regional POS spikes 10–14 days late, leaving high-velocity CFAs stocked out while neighboring depots hold excess.',
-      agentic: 'Continuously correlates POS velocity, weather, and regional calendars—pre-computing fair-share CFA allocations and inter-depot transfers in minutes.',
-      metric: '7–14 Days Earlier',
-      sub: 'Demand shift detection &amp; shelf availability'
-    },
-    qcomm: {
-      legacy: 'Strict &gt;75% shelf-life rules and missed dark-store dock slots result in automatic PO rejections and steep OTIF penalties.',
-      agentic: 'Screens POs against batch FEFO expiry at order entry, flags transit delays early, and proactively reschedules dock appointment slots.',
-      metric: '98.5%+ OTIF',
-      sub: 'Modern Trade &amp; Quick Commerce compliance'
-    },
-    transit: {
-      legacy: 'Highway bottlenecks, city no-entry curfews, and plant gate queues cause 3–4 hour truck detention before dispatchers react.',
-      agentic: 'Monitors live GPS/FASTag and traffic feeds, dynamically reroutes multi-drop trucks, and rebalances plant loading bays in real time.',
-      metric: '6–10% Fuel Saved',
-      sub: '40% lower plant &amp; depot truck detention'
-    },
-    claims: {
-      legacy: 'Paper PODs, damaged return cartons, and trade scheme circulars take weeks to audit manually—creating distributor friction and margin leakage.',
-      agentic: 'Reads scanned PODs, photos, and scheme PDFs automatically—reconciling valid claims in hours and blocking duplicate or invalid deductions.',
-      metric: '3–7% Recovered',
-      sub: 'In overbilled freight &amp; trade claim leakage'
-    }
-  };
-  window.setScenario = function (k, btn) {
-    document.querySelectorAll('.q-pill').forEach(function (b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    var s = SCENARIOS[k];
-    document.getElementById('vsLegacy').innerHTML = s.legacy;
-    document.getElementById('vsAgentic').innerHTML = s.agentic;
-    document.getElementById('vsMetric').innerHTML = s.metric;
-    document.getElementById('vsSub').innerHTML = s.sub;
+  window.selectBp = function (el) {
+    document.querySelectorAll('.bp-layer').forEach(function (x) { x.classList.remove('is-on'); });
+    el.classList.add('is-on');
   };
 </script>
 </body></html>
