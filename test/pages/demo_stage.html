@@ -186,9 +186,9 @@
         <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="status2">No video loaded yet</span>
       </div>
 
-      <a class="gemini-btn" id="geBtn2" target="_blank" rel="noopener noreferrer" href="#">
+      <a class="gemini-btn" id="geBtn2" target="_blank" rel="noopener noreferrer" href="https://fleetflow-cpg-tmd-632239123109.us-central1.run.app">
         <img src="../assets/media/gemini_enterprise_logo.svg" alt="" style="width:17px;height:17px;filter:brightness(0) invert(1);">
-        <span>Open Demo 2 in Gemini Enterprise &#8599;</span>
+        <span>Click to open the Agent &#8599;</span>
       </a>
 
       <div class="prompt-box">
@@ -279,7 +279,7 @@
       function paintAgent(ag) {
         titleEl.textContent = 'Demo ' + slotNum + ' · ' + (ag.geDisplayName || ag.name);
         subEl.textContent = ag.persona + ' — ' + (ag.outcome || '');
-        geBtn.href = ag.geUrl || 'https://vertexaisearch.cloud.google.com/';
+        geBtn.href = slotNum === 2 ? 'https://fleetflow-cpg-tmd-632239123109.us-central1.run.app' : (ag.geUrl || 'https://vertexaisearch.cloud.google.com/');
         var prompts = (ag.starterPrompts && ag.starterPrompts.length) ? ag.starterPrompts : (ag.samplePrompt ? [ag.samplePrompt] : []);
         promptsEl.innerHTML = prompts.map(function (p, idx) {
           return '<button type="button" class="prompt-chip" data-idx="' + idx + '">"' + p + '"</button>';
