@@ -2082,7 +2082,7 @@ window.SC_AGENT_DETAILS = {
       "Compare our baseline plan against constrained options in demand forecasting this week and recommend where to adjust for best margin and service."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=",
     "geDisplayName": "Demand Sensing Agent",
     "liveId": "demand_sensing_agent",
     "sumanImpact": "Detects demand shifts 7–14 days earlier"
@@ -2604,7 +2604,7 @@ window.SC_AGENT_DETAILS = {
       "What critical trade promotion risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=",
     "geDisplayName": "Promo ROI Simulator",
     "liveId": "promo_lift_simulator",
     "sumanImpact": "Prevents break-even trade leakage"
@@ -3126,7 +3126,7 @@ window.SC_AGENT_DETAILS = {
       "Compare our baseline plan against constrained options in s&op / ibp this week and recommend where to adjust for best margin and service."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=",
     "geDisplayName": "Consensus & Gap Agent",
     "liveId": "sop_scenario_weaver",
     "sumanImpact": "Highlights margin-dilutive imbalances"
@@ -3300,7 +3300,7 @@ window.SC_AGENT_DETAILS = {
       "What critical s&op / ibp risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=",
     "geDisplayName": "Digital War-Room Agent",
     "liveId": "disruption_war_room_orchestrator",
     "sumanImpact": "Rapid OTIF impact scenario brief"
@@ -3474,7 +3474,7 @@ window.SC_AGENT_DETAILS = {
       "Compare our baseline plan against constrained options in s&op / ibp this week and recommend where to adjust for best margin and service."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=",
     "geDisplayName": "Executive Copilot",
     "liveId": "csco_control_tower_copilot",
     "sumanImpact": "Reduces deck preparation by days"
@@ -3648,7 +3648,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open portfolio & sku records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=",
     "geDisplayName": "SKU Pruning Agent",
     "liveId": "working_capital_cash_bridge",
     "sumanImpact": "Unlocks tail working capital"
@@ -4170,7 +4170,7 @@ window.SC_AGENT_DETAILS = {
       "What critical supplier network risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=",
     "geDisplayName": "Disruption Sensing Agent",
     "liveId": "tier_n_risk_sentinel",
     "sumanImpact": "2–3 week advance disruption warning"
@@ -4518,7 +4518,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open supplier network records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=",
     "geDisplayName": "ESG & Scope 3 Auditor",
     "liveId": "carbon_scope3_ledger",
     "sumanImpact": "Automates Scope 3 disclosure audits"
@@ -4866,7 +4866,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open material & packaging records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=",
     "geDisplayName": "Dynamic Should-Cost Agent",
     "liveId": "rfq_should_cost_agent",
     "sumanImpact": "Fact-based margin leverage in RFPs"
@@ -5562,7 +5562,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open contract & po mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=",
     "geDisplayName": "Three-Way Match Dispute",
     "liveId": "three_way_match_dispute",
     "sumanImpact": "Prevents vendor holds & saves discounts"
@@ -5736,7 +5736,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open production scheduling records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=",
     "geDisplayName": "Changeover Optimizer",
     "liveId": "finite_production_scheduler",
     "sumanImpact": "Cuts sanitation downtime by 15–25%"
@@ -6258,7 +6258,7 @@ window.SC_AGENT_DETAILS = {
       "What critical capacity planning risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=",
     "geDisplayName": "Bottleneck Diagnostic",
     "liveId": "predictive_oee_sentinel",
     "sumanImpact": "Flags facility constraints 3–6 mos out"
@@ -6780,7 +6780,7 @@ window.SC_AGENT_DETAILS = {
       "What critical quality & compliance risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=",
     "geDisplayName": "Visual Defect Triager",
     "liveId": "inline_yield_guardian",
     "sumanImpact": "Prevents full pallet scrap & holds"
@@ -7302,7 +7302,7 @@ window.SC_AGENT_DETAILS = {
       "Compare our baseline plan against constrained options in positioning & optimization this week and recommend where to adjust for best margin and service."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=",
     "geDisplayName": "Safety Stock Agent",
     "liveId": "meio_safety_stock_agent",
     "sumanImpact": "Cuts working capital by 10–18%"
@@ -7824,7 +7824,7 @@ window.SC_AGENT_DETAILS = {
       "Which active warehouse operations bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=",
     "geDisplayName": "Dynamic Slotting Agent",
     "liveId": "warehouse_slotting_agent",
     "sumanImpact": "Reduces picker transit time by 15–30%"
@@ -8520,7 +8520,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open omnichannel visibility records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=",
     "geDisplayName": "SFS / BOPIS Sourcing",
     "liveId": "atp_order_promising_agent",
     "sumanImpact": "Lowers parcel costs & split rates"
@@ -8870,7 +8870,7 @@ window.SC_AGENT_DETAILS = {
       "Prepare the consolidated truck loading plan for the Sanand and Dankuni lanes so I can review and release the indents."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=",
     "geDisplayName": "Load Consolidation Agent (ITC TMD)",
     "liveId": "itc_load_consolidation_agent",
     "sumanImpact": "12–18% higher primary FTL fill rate"
@@ -9081,7 +9081,7 @@ window.SC_AGENT_DETAILS = {
       "Reassign the delayed trailers from blocked doors to open bays and queue the yard move instructions for sign-off."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=",
     "geDisplayName": "Yard Disruption & Detention Sentinel (ITC TMD)",
     "liveId": "itc_yard_disruption_detention_sentinel",
     "sumanImpact": "Cuts plant truck detention by 40%"
@@ -9257,7 +9257,7 @@ window.SC_AGENT_DETAILS = {
       "Hold the affected pallets in quarantine and prepare the carrier spoilage claim packet for quality sign-off."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=",
     "geDisplayName": "Cold-Chain Thermal Auditor (ITC TMD)",
     "liveId": "itc_cold_chain_thermal_auditor",
     "sumanImpact": "Prevents perishable FMCG spoilage"
@@ -9468,7 +9468,7 @@ window.SC_AGENT_DETAILS = {
       "Swap those older compliant batches to General Trade beats, rebalance the pickers across bays, and stage the updated wave plan."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2773771553799396308/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2773771553799396308/session/-?mods=",
     "geDisplayName": "CFA Wave & Bay Orchestrator (ITC TMD)",
     "liveId": "itc_cfa_wave_bay_orchestrator",
     "sumanImpact": "30% faster CFA dock turnaround"
@@ -9609,7 +9609,7 @@ window.SC_AGENT_DETAILS = {
       "Hold the fair-share channel split in SAP for my review so neither Blinkit nor our Karnataka wholesale dealers get starved."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9202118731352281302/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9202118731352281302/session/-?mods=",
     "geDisplayName": "Fair-Share Stock Allocation Agent (ITC TMD)",
     "liveId": "itc_fair_share_stock_allocation_agent",
     "sumanImpact": "Protects distributor fill-rate equity"
@@ -9820,7 +9820,7 @@ window.SC_AGENT_DETAILS = {
       "Clear the fixable SAP delivery, e-Invoice, and E-Way Bill errors for my sign-off and flag the overdue account to Finance."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230909732670915574/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230909732670915574/session/-?mods=",
     "geDisplayName": "EOD Billing & Cutoff Closer Agent (ITC TMD)",
     "liveId": "itc_eod_billing_cutoff_closer_agent",
     "sumanImpact": "99.2% same-day primary billing"
@@ -9961,7 +9961,7 @@ window.SC_AGENT_DETAILS = {
       "Move the delayed dispatches to the next open portal slots and swap the short-dated Zepto batch before the truck is sealed."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=",
     "geDisplayName": "MT / Q-Comm Slot & OTIF Copilot (ITC TMD)",
     "liveId": "itc_mt_qcomm_slot_otif_copilot",
     "sumanImpact": "98.5%+ MT & Q-Comm OTIF compliance"
@@ -10102,7 +10102,7 @@ window.SC_AGENT_DETAILS = {
       "Draft quick 8 AM priorities for my Area Sales Executives so they cover the weak beats and push active trade schemes today."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/1654916665580027546/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/1654916665580027546/session/-?mods=",
     "geDisplayName": "Territory RTM Morning Pulse Gem (ITC TMD)",
     "liveId": "itc_territory_rtm_morning_pulse_gem",
     "sumanImpact": "+4% secondary distribution reach"
@@ -10313,7 +10313,7 @@ window.SC_AGENT_DETAILS = {
       "Prepare the primary replenishment orders and FinAgg credit drawdowns for dealer confirmation."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9152999501602931019/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9152999501602931019/session/-?mods=",
     "geDisplayName": "Predictive WD Reorder & Dispatch Agent (ITC TMD)",
     "liveId": "itc_predictive_wd_reorder_dispatch_agent",
     "sumanImpact": "4–6 days reduction in WD DSI"
@@ -10489,7 +10489,7 @@ window.SC_AGENT_DETAILS = {
       "Send the diversion routes, charger stop, and E-Way Bill extension request to the control tower queue for approval."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=",
     "geDisplayName": "Dynamic Rerouter (ITC TMD)",
     "liveId": "itc_dynamic_rerouter",
     "sumanImpact": "Protects multi-drop delivery SLAs"
@@ -10630,7 +10630,7 @@ window.SC_AGENT_DETAILS = {
       "Prepare compliance notes for the skipped waterfall lanes and flag chronic rejection lanes for rate review."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=",
     "geDisplayName": "Routing Guide Compliance Agent (ITC TMD)",
     "liveId": "itc_routing_guide_compliance_agent",
     "sumanImpact": "Flags lane tender failures 24h earlier"
@@ -10806,7 +10806,7 @@ window.SC_AGENT_DETAILS = {
       "Block the duplicate bill and stage short-pay vouchers deducting the unverified detention and damaged Dark Fantasy cartons."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=",
     "geDisplayName": "Freight Bill Audit Agent (ITC TMD)",
     "liveId": "itc_freight_bill_audit_agent",
     "sumanImpact": "80% faster POD discrepancy extraction"
@@ -10980,7 +10980,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open returns & claims mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=",
     "geDisplayName": "Return Fraud Sentinel",
     "liveId": "reverse_rma_optimizer",
     "sumanImpact": "Cuts returns fraud abuse by 25–40%"
@@ -11154,7 +11154,7 @@ window.SC_AGENT_DETAILS = {
       "Compare our baseline plan against constrained options in returns & claims mgmt this week and recommend where to adjust for best margin and service."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=",
     "geDisplayName": "Keep-It & Routing Advisor",
     "liveId": "keep_it_routing_advisor",
     "sumanImpact": "Lowers net return costs by 15–22%"
@@ -11328,7 +11328,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open returns & claims mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=",
     "geDisplayName": "OS&D Freight Claims",
     "liveId": "osd_freight_claims_agent",
     "sumanImpact": "Resolves carrier claims in <72 hours"
@@ -11502,7 +11502,7 @@ window.SC_AGENT_DETAILS = {
       "What critical expiry & markdowns risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=",
     "geDisplayName": "Dynamic Markdown Agent",
     "liveId": "dynamic_markdown_agent",
     "sumanImpact": "Cuts perishable scrap by 20–35%"
@@ -11676,7 +11676,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open expiry & markdowns records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=",
     "geDisplayName": "Short-Dated Redistributor",
     "liveId": "short_dated_redistributor",
     "sumanImpact": "Diverts bulk perishables from landfill"
@@ -11850,7 +11850,7 @@ window.SC_AGENT_DETAILS = {
       "Audit our open expiry & markdowns records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=",
     "geDisplayName": "Food Waste & ESG Copilot",
     "liveId": "food_waste_esg_copilot",
     "sumanImpact": "Automates annual circularity reporting"
@@ -12024,7 +12024,7 @@ window.SC_AGENT_DETAILS = {
       "Compare our baseline plan against constrained options in pallet & tote reclamation this week and recommend where to adjust for best margin and service."
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=",
     "geDisplayName": "RTI Balance Reconciler",
     "liveId": "rti_balance_reconciler",
     "sumanImpact": "Eliminates 30% in non-return fee fines"
@@ -12198,7 +12198,7 @@ window.SC_AGENT_DETAILS = {
       "Which active pallet & tote reclamation bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=",
     "geDisplayName": "Milk-Run Consolidation",
     "liveId": "intermodal_rail_linehaul_agent",
     "sumanImpact": "Boosts backhaul fill rate by 25–40%"
@@ -12372,7 +12372,7 @@ window.SC_AGENT_DETAILS = {
       "What critical pallet & tote reclamation risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
     ],
     "liveInGE": true,
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=",
     "geDisplayName": "Sanitation & Health Agent",
     "liveId": "sanitation_health_agent",
     "sumanImpact": "Extends reusable lifecycle by 15–20%"

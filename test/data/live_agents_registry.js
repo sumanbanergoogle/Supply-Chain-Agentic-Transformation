@@ -11,7 +11,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 29.4,
     "outcome": "ITC ICML mega-plants ship both high-density Staples (Aashirvaad Atta at ~600 kg/m3, weighting out a 32-ft MXL truck at 45% volume) and ultra-light fragile Foods (Bingo! chips & Sunfeast biscuits at ~90-180 kg/m3, cubing out at 25% payload). Dispatching single-category trucks wastes 28-36% of primary freight spend.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Check today's staged Ranjangaon and Khordha dispatches. Where are we sending half-empty Atta or Bingo! trucks that can be combined?",
@@ -31,7 +31,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 20.9,
     "outcome": "At peak shift handovers, 32-ft containers and frozen reefers queue at ICML weighbridges and blocked stretch-wrap doors beyond the 120-minute free-time slab\u2014triggering Rs 850-Rs 1,350/hr carrier detention charges and diesel burn on waiting reefers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Which trucks waiting at Ranjangaon, Kapurthala, and Panchla gates are close to breaching free detention time right now?",
@@ -51,7 +51,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 22.6,
     "outcome": "ITC Master Chef frozen snacks (-18C), Aashirvaad Svasti paneer/curd (2-8C), and Fabelle luxury chocolates (16-20C) suffer mid-highway compressor slips or driver fuel-saving switch-offs. Simple min/max alerts miss cumulative Arrhenius kinetic heat damage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Review our inbound Master Chef frozen, Svasti dairy, and Fabelle chocolate reefers. Did any load suffer heat damage in transit?",
@@ -71,7 +71,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 21.1,
     "outcome": "State CFAs simultaneously pick rapid Quick-Commerce waves (strict 75% Minimum Remaining Shelf-Life gate, 10:30 cutoff), Modern Trade pallets, and General Trade Wholesale Dealer loads (55% MRSL gate). Unbalanced bays miss morning cutoffs while blind picking sends older batches to Quick-Commerce.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2773771553799396308/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2773771553799396308/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "How are morning pick waves and loading bays tracking at Bhiwandi and Kundli, and will any wave miss its dispatch cutoff?",
@@ -91,7 +91,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 27.4,
     "outcome": "When a high-velocity SKU like Sunfeast Dark Fantasy 300g is short at a State CFA (2,400 cases available vs 3,650 ordered), standard SAP First-In-First-Out lets early Modern Trade bulk orders consume 100% of stock\u2014starving 18 General Trade Wholesale Dealers and UNNATI kiranas.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9202118731352281302/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9202118731352281302/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "We are short on Sunfeast Dark Fantasy 300g at Nelamangala depot. How should we split the 2,400 available cases across channels?",
@@ -111,7 +111,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 29.8,
     "outcome": "Every evening before the 21:00 IST gate lock, loaded trucks sit trapped at CFA gates because SAP outbound deliveries (`VL02N`) fail Post Goods Issue or `VF01` billing due to FEFO batch-split variances, unsynced FinAgg dealer credit drawdowns, or hyphen typos in NIC E-Way Bill Part-B vehicle numbers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230909732670915574/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230909732670915574/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Which loaded trucks at our depots are still unbilled before tonight's 9 PM SAP cutoff, and what is holding each one up?",
@@ -131,7 +131,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 28.4,
     "outcome": "Blinkit, Zepto, Swiggy Instamart, DMart, and Reliance enforce 15-to-30-minute dock arrival tolerances and strict 75% Minimum Remaining Shelf-Life gates. Missing a slot by 20 minutes or sending a 68%-MRSL batch triggers full truck turn-away and 5-10% PO chargebacks.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Which Blinkit, Zepto, Instamart, or DMart trucks are running late for their dock slot today or carrying short-shelf-life stock?",
@@ -151,7 +151,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.8-flash",
     "annualValueCr": 19.8,
     "outcome": "Area Distribution Managers start every morning juggling four disconnected trackers: overnight UNNATI kirana app orders, yesterday's Vajra salesman beat strike rates, Wholesale Dealer stockout lines, and active trade schemes\u2014missing urgent beat course-corrections before 08:30.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/1654916665580027546/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/1654916665580027546/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Give me this morning's territory pulse. Where did overnight UNNATI kirana orders jump and where did salesman beat productivity dip yesterday?",
@@ -171,7 +171,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 32.6,
     "outcome": "Wholesale Dealers frequently under-order core staples during UNNATI scheme surges (causing kirana stockouts within 48 hours) or hit credit-limit walls mid-week despite having approved FinAgg/SBI supply-chain credit headroom.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9152999501602931019/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9152999501602931019/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Which wholesale dealers have dropped below four days of stock on fast-moving SKUs and risk running dry in the next 48 hours?",
@@ -191,7 +191,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 22.0,
     "outcome": "En-route highway landslides (NH-48 Khandala Ghat), urban waterlogging (Bengaluru ORR), police heavy-vehicle curfews, commercial EV low battery State-of-Charge, and expiring midnight NIC E-Way Bills cause severe delivery misses and Section 129 GST transit penalties.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which primary trucks and city EV vans are stuck in highway blockages, waterlogging, or police no-entry curfews right now?",
@@ -211,7 +211,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.8-flash",
     "annualValueCr": 16.9,
     "outcome": "ITC negotiates annual L1/L2/L3 waterfall rate cards across hundreds of ICML-to-CFA lanes, yet local dispatchers frequently bypass L2 backup carriers during evening rush and book ad-hoc spot-market brokers at 28-40% freight premiums.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Where did we overspend on spot-market trucks this month instead of using our contracted L1 and L2 transporters?",
@@ -231,7 +231,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 25.5,
     "outcome": "Indian CPG freight settlement requires reconciling paper-heavy Lorry Receipts (Bilty), rubber-stamped CFA Proof-of-Delivery (POD) slips with handwritten wet/crushed carton remarks, contracted diesel escalation pegs, and GPS-verified gate detention hours.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit this week's pending transporter freight bills. Where do billed rates, fuel surcharges, or detention hours disagree with our contracts and GPS logs?",
@@ -251,7 +251,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Fuses daily POS sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%\u201335% and reduce safety-stock buffers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in demand forecasting this week and recommend where to adjust for best margin and service."
@@ -269,7 +269,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed\u2014blocking unprofitable events.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=",
     "videoSrc": "assets/media/video/promo_lift_simulator_demo.mp4",
     "starterPrompts": [
       "What critical trade promotion risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -287,7 +287,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in s&op / ibp this week and recommend where to adjust for best margin and service."
@@ -305,7 +305,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "What critical s&op / ibp risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -323,7 +323,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in s&op / ibp this week and recommend where to adjust for best margin and service."
@@ -341,7 +341,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost\u2014unlocking trapped working capital from the long tail.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Audit our open portfolio & sku records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -359,7 +359,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Continuously monitors sub-tier financial, geopolitical, weather, and port signals\u2014triggering alternate allocations weeks before line stoppage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "What critical supplier network risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -377,7 +377,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Replaces coarse spend-based averages with primary supplier + lane emissions\u2014preventing EU CBAM penalties and cutting external assurance fees.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open supplier network records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -395,7 +395,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin\u2014arming buyers with hard clean-sheet leverage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open material & packaging records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -413,7 +413,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open contract & po mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -431,7 +431,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Solves finite-capacity campaign wheels across allergens, colors, and pack formats\u2014cutting sanitation/changeover downtime by 15%\u201325%.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open production scheduling records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -449,7 +449,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "What critical capacity planning risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -467,7 +467,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.8-flash",
     "annualValueCr": 8.5,
     "outcome": "Detects seal, fill, label, and surface defects inline in milliseconds\u2014halting drift before whole pallets turn into scrap or rework.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "What critical quality & compliance risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -485,7 +485,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs\u2014freeing 12%\u201322% in working capital while lifting fill rates.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in positioning & optimization this week and recommend where to adjust for best margin and service."
@@ -503,7 +503,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths\u2014boosting DC throughput with $0 automation CapEx.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Which active warehouse operations bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -521,7 +521,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Audit our open omnichannel visibility records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -539,7 +539,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Solves 3D bin-packing, bridge-formula axle weights, and LIFO stop unloading order\u2014shipping the same volume in 10%\u201315% fewer trucks.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/17846204712745878596/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/17846204712745878596/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in first & mid-mile this week and recommend where to adjust for best margin and service."
@@ -557,7 +557,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Synchronizes live carrier GPS ETAs, yard jockey moves, and dock door crew capacity to eliminate gate queues, detention fees, and plant starvation.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13894952638038502510/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13894952638038502510/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active first & mid-mile bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -575,7 +575,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Monitors continuous IoT temperature/humidity and calculates Mean Kinetic Temperature (MKT) in transit\u2014intervening before perishable or pharma loads spoil.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/5823400487531018226/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/5823400487531018226/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Audit our open first & mid-mile records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -593,7 +593,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics\u2014slashing in-store restocking labor by 20%\u201335%.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4425840194449317295/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4425840194449317295/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Audit our open store replenishment records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -611,7 +611,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor\u2014preventing overflow and damage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9877222810170171439/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9877222810170171439/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active store replenishment bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -629,7 +629,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/200992941311882772/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/200992941311882772/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active store replenishment bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -647,7 +647,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Validates address rooftop/loading-bay coordinates and driver access notes before dispatch\u2014eliminating $15\u2013$18 failed-delivery redelivery costs.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7088606266716503770/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7088606266716503770/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in last-mile delivery this week and recommend where to adjust for best margin and service."
@@ -665,7 +665,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9650827414407796887/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9650827414407796887/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active last-mile delivery bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -683,7 +683,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Detects mid-route parcel and retail-delivery delays early, triggers carrier rescue or proactive customer self-rescheduling, and cuts WISMO cost.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3661643723290218713/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3661643723290218713/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in last-mile delivery this week and recommend where to adjust for best margin and service."
@@ -701,7 +701,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Predicts primary carrier tender rejections by lane and cascades early to contracted Tier-2/3 carriers before loads leak onto expensive spot markets.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10313484596104664959/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10313484596104664959/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active route & carrier bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -719,7 +719,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.8-flash",
     "annualValueCr": 8.5,
     "outcome": "Scores return requests against serial history, account abuse patterns, and item telemetry\u2014blocking fraudulent RMAs without friction for loyal buyers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open returns & claims mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -737,7 +737,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Calculates reverse shipping + grading cost vs. resale recovery in real time\u2014routing items to store, refurb hub, outlet, or Keep-It credit.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in returns & claims mgmt this week and recommend where to adjust for best margin and service."
@@ -755,7 +755,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open returns & claims mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -773,7 +773,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity\u2014clearing stock at higher margin with less waste.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "What critical expiry & markdowns risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -791,7 +791,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open expiry & markdowns records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -809,7 +809,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open expiry & markdowns records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -827,7 +827,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers\u2014slashing pool rental fines and replacement CapEx.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in pallet & tote reclamation this week and recommend where to adjust for best margin and service."
@@ -845,7 +845,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs\u2014eliminating dedicated reverse freight.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Which active pallet & tote reclamation bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -863,7 +863,7 @@ window.SC_LIVE_AGENTS = [
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container\u2014extending asset life while guaranteeing safety.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "What critical pallet & tote reclamation risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -883,7 +883,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 29.4,
     "outcome": "ITC ICML mega-plants ship both high-density Staples (Aashirvaad Atta at ~600 kg/m3, weighting out a 32-ft MXL truck at 45% volume) and ultra-light fragile Foods (Bingo! chips & Sunfeast biscuits at ~90-180 kg/m3, cubing out at 25% payload). Dispatching single-category trucks wastes 28-36% of primary freight spend.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Check today's staged Ranjangaon and Khordha dispatches. Where are we sending half-empty Atta or Bingo! trucks that can be combined?",
@@ -903,7 +903,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 20.9,
     "outcome": "At peak shift handovers, 32-ft containers and frozen reefers queue at ICML weighbridges and blocked stretch-wrap doors beyond the 120-minute free-time slab\u2014triggering Rs 850-Rs 1,350/hr carrier detention charges and diesel burn on waiting reefers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Which trucks waiting at Ranjangaon, Kapurthala, and Panchla gates are close to breaching free detention time right now?",
@@ -923,7 +923,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 22.6,
     "outcome": "ITC Master Chef frozen snacks (-18C), Aashirvaad Svasti paneer/curd (2-8C), and Fabelle luxury chocolates (16-20C) suffer mid-highway compressor slips or driver fuel-saving switch-offs. Simple min/max alerts miss cumulative Arrhenius kinetic heat damage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Review our inbound Master Chef frozen, Svasti dairy, and Fabelle chocolate reefers. Did any load suffer heat damage in transit?",
@@ -943,7 +943,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 21.1,
     "outcome": "State CFAs simultaneously pick rapid Quick-Commerce waves (strict 75% Minimum Remaining Shelf-Life gate, 10:30 cutoff), Modern Trade pallets, and General Trade Wholesale Dealer loads (55% MRSL gate). Unbalanced bays miss morning cutoffs while blind picking sends older batches to Quick-Commerce.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2773771553799396308/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2773771553799396308/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "How are morning pick waves and loading bays tracking at Bhiwandi and Kundli, and will any wave miss its dispatch cutoff?",
@@ -963,7 +963,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 27.4,
     "outcome": "When a high-velocity SKU like Sunfeast Dark Fantasy 300g is short at a State CFA (2,400 cases available vs 3,650 ordered), standard SAP First-In-First-Out lets early Modern Trade bulk orders consume 100% of stock\u2014starving 18 General Trade Wholesale Dealers and UNNATI kiranas.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9202118731352281302/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9202118731352281302/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "We are short on Sunfeast Dark Fantasy 300g at Nelamangala depot. How should we split the 2,400 available cases across channels?",
@@ -983,7 +983,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 29.8,
     "outcome": "Every evening before the 21:00 IST gate lock, loaded trucks sit trapped at CFA gates because SAP outbound deliveries (`VL02N`) fail Post Goods Issue or `VF01` billing due to FEFO batch-split variances, unsynced FinAgg dealer credit drawdowns, or hyphen typos in NIC E-Way Bill Part-B vehicle numbers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230909732670915574/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230909732670915574/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Which loaded trucks at our depots are still unbilled before tonight's 9 PM SAP cutoff, and what is holding each one up?",
@@ -1003,7 +1003,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 28.4,
     "outcome": "Blinkit, Zepto, Swiggy Instamart, DMart, and Reliance enforce 15-to-30-minute dock arrival tolerances and strict 75% Minimum Remaining Shelf-Life gates. Missing a slot by 20 minutes or sending a 68%-MRSL batch triggers full truck turn-away and 5-10% PO chargebacks.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Which Blinkit, Zepto, Instamart, or DMart trucks are running late for their dock slot today or carrying short-shelf-life stock?",
@@ -1023,7 +1023,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.8-flash",
     "annualValueCr": 19.8,
     "outcome": "Area Distribution Managers start every morning juggling four disconnected trackers: overnight UNNATI kirana app orders, yesterday's Vajra salesman beat strike rates, Wholesale Dealer stockout lines, and active trade schemes\u2014missing urgent beat course-corrections before 08:30.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/1654916665580027546/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/1654916665580027546/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Give me this morning's territory pulse. Where did overnight UNNATI kirana orders jump and where did salesman beat productivity dip yesterday?",
@@ -1043,7 +1043,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 32.6,
     "outcome": "Wholesale Dealers frequently under-order core staples during UNNATI scheme surges (causing kirana stockouts within 48 hours) or hit credit-limit walls mid-week despite having approved FinAgg/SBI supply-chain credit headroom.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9152999501602931019/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9152999501602931019/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Which wholesale dealers have dropped below four days of stock on fast-moving SKUs and risk running dry in the next 48 hours?",
@@ -1063,7 +1063,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 22.0,
     "outcome": "En-route highway landslides (NH-48 Khandala Ghat), urban waterlogging (Bengaluru ORR), police heavy-vehicle curfews, commercial EV low battery State-of-Charge, and expiring midnight NIC E-Way Bills cause severe delivery misses and Section 129 GST transit penalties.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which primary trucks and city EV vans are stuck in highway blockages, waterlogging, or police no-entry curfews right now?",
@@ -1083,7 +1083,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.8-flash",
     "annualValueCr": 16.9,
     "outcome": "ITC negotiates annual L1/L2/L3 waterfall rate cards across hundreds of ICML-to-CFA lanes, yet local dispatchers frequently bypass L2 backup carriers during evening rush and book ad-hoc spot-market brokers at 28-40% freight premiums.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Where did we overspend on spot-market trucks this month instead of using our contracted L1 and L2 transporters?",
@@ -1103,7 +1103,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 25.5,
     "outcome": "Indian CPG freight settlement requires reconciling paper-heavy Lorry Receipts (Bilty), rubber-stamped CFA Proof-of-Delivery (POD) slips with handwritten wet/crushed carton remarks, contracted diesel escalation pegs, and GPS-verified gate detention hours.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit this week's pending transporter freight bills. Where do billed rates, fuel surcharges, or detention hours disagree with our contracts and GPS logs?",
@@ -1123,7 +1123,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Fuses daily POS sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%\u201335% and reduce safety-stock buffers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in demand forecasting this week and recommend where to adjust for best margin and service."
@@ -1141,7 +1141,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed\u2014blocking unprofitable events.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=",
     "videoSrc": "assets/media/video/promo_lift_simulator_demo.mp4",
     "starterPrompts": [
       "What critical trade promotion risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -1159,7 +1159,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in s&op / ibp this week and recommend where to adjust for best margin and service."
@@ -1177,7 +1177,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "What critical s&op / ibp risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -1195,7 +1195,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in s&op / ibp this week and recommend where to adjust for best margin and service."
@@ -1213,7 +1213,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost\u2014unlocking trapped working capital from the long tail.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=",
     "videoSrc": "assets/media/video/demand_sensing_demo.mp4",
     "starterPrompts": [
       "Audit our open portfolio & sku records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1231,7 +1231,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Continuously monitors sub-tier financial, geopolitical, weather, and port signals\u2014triggering alternate allocations weeks before line stoppage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "What critical supplier network risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -1249,7 +1249,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Replaces coarse spend-based averages with primary supplier + lane emissions\u2014preventing EU CBAM penalties and cutting external assurance fees.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open supplier network records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1267,7 +1267,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin\u2014arming buyers with hard clean-sheet leverage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open material & packaging records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1285,7 +1285,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open contract & po mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1303,7 +1303,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Solves finite-capacity campaign wheels across allergens, colors, and pack formats\u2014cutting sanitation/changeover downtime by 15%\u201325%.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit our open production scheduling records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1321,7 +1321,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "What critical capacity planning risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -1339,7 +1339,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.8-flash",
     "annualValueCr": 8.5,
     "outcome": "Detects seal, fill, label, and surface defects inline in milliseconds\u2014halting drift before whole pallets turn into scrap or rework.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "What critical quality & compliance risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -1357,7 +1357,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs\u2014freeing 12%\u201322% in working capital while lifting fill rates.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in positioning & optimization this week and recommend where to adjust for best margin and service."
@@ -1375,7 +1375,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths\u2014boosting DC throughput with $0 automation CapEx.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Which active warehouse operations bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -1393,7 +1393,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Audit our open omnichannel visibility records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1411,7 +1411,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 29.4,
     "outcome": "ITC ICML mega-plants ship both high-density Staples (Aashirvaad Atta at ~600 kg/m3, weighting out a 32-ft MXL truck at 45% volume) and ultra-light fragile Foods (Bingo! chips & Sunfeast biscuits at ~90-180 kg/m3, cubing out at 25% payload). Dispatching single-category trucks wastes 28-36% of primary freight spend.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Check today's staged Ranjangaon and Khordha dispatches. Where are we sending half-empty Atta or Bingo! trucks that can be combined?",
@@ -1431,7 +1431,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 20.9,
     "outcome": "At peak shift handovers, 32-ft containers and frozen reefers queue at ICML weighbridges and blocked stretch-wrap doors beyond the 120-minute free-time slab\u2014triggering Rs 850-Rs 1,350/hr carrier detention charges and diesel burn on waiting reefers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4795666764246492206/session/-?mods=",
     "videoSrc": "assets/media/video/smart_warehouse_demo.mp4",
     "starterPrompts": [
       "Which trucks waiting at Ranjangaon, Kapurthala, and Panchla gates are close to breaching free detention time right now?",
@@ -1451,7 +1451,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 22.6,
     "outcome": "ITC Master Chef frozen snacks (-18C), Aashirvaad Svasti paneer/curd (2-8C), and Fabelle luxury chocolates (16-20C) suffer mid-highway compressor slips or driver fuel-saving switch-offs. Simple min/max alerts miss cumulative Arrhenius kinetic heat damage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Review our inbound Master Chef frozen, Svasti dairy, and Fabelle chocolate reefers. Did any load suffer heat damage in transit?",
@@ -1471,7 +1471,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics\u2014slashing in-store restocking labor by 20%\u201335%.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4425840194449317295/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4425840194449317295/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Audit our open store replenishment records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1489,7 +1489,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor\u2014preventing overflow and damage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9877222810170171439/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9877222810170171439/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active store replenishment bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -1507,7 +1507,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/200992941311882772/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/200992941311882772/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active store replenishment bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -1525,7 +1525,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Validates address rooftop/loading-bay coordinates and driver access notes before dispatch\u2014eliminating $15\u2013$18 failed-delivery redelivery costs.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7088606266716503770/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7088606266716503770/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in last-mile delivery this week and recommend where to adjust for best margin and service."
@@ -1543,7 +1543,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9650827414407796887/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9650827414407796887/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which active last-mile delivery bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -1561,7 +1561,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 28.4,
     "outcome": "Blinkit, Zepto, Swiggy Instamart, DMart, and Reliance enforce 15-to-30-minute dock arrival tolerances and strict 75% Minimum Remaining Shelf-Life gates. Missing a slot by 20 minutes or sending a 68%-MRSL batch triggers full truck turn-away and 5-10% PO chargebacks.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14366296034264623629/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Which Blinkit, Zepto, Instamart, or DMart trucks are running late for their dock slot today or carrying short-shelf-life stock?",
@@ -1581,7 +1581,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.8-flash",
     "annualValueCr": 16.9,
     "outcome": "ITC negotiates annual L1/L2/L3 waterfall rate cards across hundreds of ICML-to-CFA lanes, yet local dispatchers frequently bypass L2 backup carriers during evening rush and book ad-hoc spot-market brokers at 28-40% freight premiums.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Where did we overspend on spot-market trucks this month instead of using our contracted L1 and L2 transporters?",
@@ -1601,7 +1601,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.8-flash",
     "annualValueCr": 8.5,
     "outcome": "Scores return requests against serial history, account abuse patterns, and item telemetry\u2014blocking fraudulent RMAs without friction for loyal buyers.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open returns & claims mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1619,7 +1619,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Calculates reverse shipping + grading cost vs. resale recovery in real time\u2014routing items to store, refurb hub, outlet, or Keep-It credit.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in returns & claims mgmt this week and recommend where to adjust for best margin and service."
@@ -1637,7 +1637,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open returns & claims mgmt records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1655,7 +1655,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity\u2014clearing stock at higher margin with less waste.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "What critical expiry & markdowns risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -1673,7 +1673,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open expiry & markdowns records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1691,7 +1691,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Audit our open expiry & markdowns records this week, show where money is leaking or blocked, and flag what needs immediate release or recovery."
@@ -1709,7 +1709,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers\u2014slashing pool rental fines and replacement CapEx.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Compare our baseline plan against constrained options in pallet & tote reclamation this week and recommend where to adjust for best margin and service."
@@ -1727,7 +1727,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs\u2014eliminating dedicated reverse freight.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Which active pallet & tote reclamation bottlenecks need immediate floor or dispatch reassignment right now to protect On-Time In-Full (OTIF) delivery?"
@@ -1745,7 +1745,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 8.5,
     "outcome": "Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container\u2014extending asset life while guaranteeing safety.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "What critical pallet & tote reclamation risks or threshold breaches should we contain today, and what preventive steps keep operations protected?"
@@ -1763,7 +1763,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 29.4,
     "outcome": "ITC ICML mega-plants ship both high-density Staples (Aashirvaad Atta at ~600 kg/m3, weighting out a 32-ft MXL truck at 45% volume) and ultra-light fragile Foods (Bingo! chips & Sunfeast biscuits at ~90-180 kg/m3, cubing out at 25% payload). Dispatching single-category trucks wastes 28-36% of primary freight spend.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/41610693945890168/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Check today's staged Ranjangaon and Khordha dispatches. Where are we sending half-empty Atta or Bingo! trucks that can be combined?",
@@ -1783,7 +1783,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 22.6,
     "outcome": "ITC Master Chef frozen snacks (-18C), Aashirvaad Svasti paneer/curd (2-8C), and Fabelle luxury chocolates (16-20C) suffer mid-highway compressor slips or driver fuel-saving switch-offs. Simple min/max alerts miss cumulative Arrhenius kinetic heat damage.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/15505209197662230344/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Review our inbound Master Chef frozen, Svasti dairy, and Fabelle chocolate reefers. Did any load suffer heat damage in transit?",
@@ -1803,7 +1803,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 22.0,
     "outcome": "En-route highway landslides (NH-48 Khandala Ghat), urban waterlogging (Bengaluru ORR), police heavy-vehicle curfews, commercial EV low battery State-of-Charge, and expiring midnight NIC E-Way Bills cause severe delivery misses and Section 129 GST transit penalties.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7796378644329947655/session/-?mods=",
     "videoSrc": "assets/media/video/fleetflow_dispatch_demo.mp4",
     "starterPrompts": [
       "Which primary trucks and city EV vans are stuck in highway blockages, waterlogging, or police no-entry curfews right now?",
@@ -1823,7 +1823,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.8-flash",
     "annualValueCr": 16.9,
     "outcome": "ITC negotiates annual L1/L2/L3 waterfall rate cards across hundreds of ICML-to-CFA lanes, yet local dispatchers frequently bypass L2 backup carriers during evening rush and book ad-hoc spot-market brokers at 28-40% freight premiums.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13477844154945305896/session/-?mods=",
     "videoSrc": "assets/media/video/f2f_fleet_demo.mp4",
     "starterPrompts": [
       "Where did we overspend on spot-market trucks this month instead of using our contracted L1 and L2 transporters?",
@@ -1843,7 +1843,7 @@ window.SC_LIVE_AGENT_MAP = {
     "model": "gemini-3.1-pro-preview",
     "annualValueCr": 25.5,
     "outcome": "Indian CPG freight settlement requires reconciling paper-heavy Lorry Receipts (Bilty), rubber-stamped CFA Proof-of-Delivery (POD) slips with handwritten wet/crushed carton remarks, contracted diesel escalation pegs, and GPS-verified gate detention hours.",
-    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=&authuser=admin@zuhaibp.altostrat.com",
+    "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3118104517465970888/session/-?mods=",
     "videoSrc": "assets/media/video/o2d_suite_demo.mp4",
     "starterPrompts": [
       "Audit this week's pending transporter freight bills. Where do billed rates, fuel surcharges, or detention hours disagree with our contracts and GPS logs?",
