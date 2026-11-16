@@ -484,7 +484,7 @@
           '<div class="b-name">' + r.persona + '</div>' +
           '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>' +
         '</div>' +
-        (rowLiveRec ? '<a class="plive" href="' + rowLiveRec.geUrl + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Open ' + (rowLiveRec.geDisplayName || rowLiveRec.name) + ' in Gemini Enterprise">Live</a>' : '');
+        (rowLiveRec ? '<span class="plive" style="cursor:default;" title="Includes live agent(s) in Gemini Enterprise">Live</span>' : '');
       pCol.title = 'Open Persona Dossier & Agent Suite';
       pCol.addEventListener('click', function () { window.location.href = 'persona_dossier.html?id=' + encodeURIComponent(r.id); });
 
