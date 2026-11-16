@@ -18,9 +18,9 @@
 window.SC_SLIDE_DECK = [
   { num: "01", title: "Why 'Agentic' Now for TM&D?", path: "slides/slide_02_hook.html" },
   { num: "02", title: "TM&D Operational Reality & Core Challenges", path: "slides/slide_02.html" },
-  { num: "03", title: "Why Agentic Transformation for Supply Chains in India", path: "slides/slide_01.html" },
-  { num: "04", title: "The TM&D Value Tree (CEO Metrics)", path: "slides/slide_03_value_tree.html" },
-  { num: "05", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
+  { num: "03", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
+  { num: "04", title: "Why Agentic Transformation for Supply Chains in India", path: "slides/slide_01.html" },
+  { num: "05", title: "The TM&D Value Tree (CEO Metrics)", path: "slides/slide_03_value_tree.html" },
   { num: "06", title: "Live Demo Stage: Demo 1 & Demo 2", path: "pages/demo_stage.html" },
   { num: "07", title: "From Two Agents to an Agentic Organisation", path: "slides/slide_04.html" },
   { num: "08", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
