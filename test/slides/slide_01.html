@@ -61,7 +61,7 @@
     <div class="why-card p-purple">
       <div class="k">03 · Enterprise AI Maturity</div>
       <h3>From Passive Insights to Bounded Action</h3>
-      <p>Reasoning across cost, shelf-life, and channel SLAs—combined with vision for PODs/shelves and 12+ Indian vernacular voices—is now production-ready at scale.</p>
+      <p>Reasoning across cost, shelf-life, and channel SLAs—combined with vision for PODs/shelves and 12+ Indian vernacular voices—is now production-ready at scale, putting real-time coaching into the hands of <b>TM&amp;D frontline DSRs, merchandisers, and CFA/WD supervisors</b> on everyday low-end Android devices.</p>
     </div>
   </div>
 
@@ -75,6 +75,7 @@
       <button class="q-pill" onclick="setScenario('qcomm', this)">10-Min Q-Commerce &amp; MT SLAs</button>
       <button class="q-pill" onclick="setScenario('transit', this)">Highway Closure &amp; Fleet Detention</button>
       <button class="q-pill" onclick="setScenario('claims', this)">Distributor Claims &amp; POD Audits</button>
+      <button class="q-pill" onclick="setScenario('frontline', this)">TM&amp;D Frontline DSR &amp; Kirana Beat</button>
     </div>
     <div class="vs-grid">
       <div class="vs-box">
@@ -122,6 +123,12 @@
       agentic: 'Reads scanned PODs, photos, and scheme PDFs automatically—reconciling valid claims in hours and blocking duplicate or invalid deductions.',
       metric: '3–7% Recovered',
       sub: 'In overbilled freight &amp; trade claim leakage'
+    },
+    frontline: {
+      legacy: 'DSRs tap through 60+ Foods, Personal Care &amp; Stationery SKUs on cluttered SFA screens after each kirana visit, missing focus-SKU &amp; scheme cross-sells.',
+      agentic: 'Offline-resilient vernacular voice captures the store-front pitch on low-end Android SFA and nudges missed hero SKUs &amp; trade schemes in real time.',
+      metric: '+15–20% Selling Time',
+      sub: 'Higher Lines Per Call (LPC) &amp; Kirana OSA'
     }
   };
   window.setScenario = function (k, btn) {
