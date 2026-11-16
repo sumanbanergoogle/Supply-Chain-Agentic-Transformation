@@ -9,62 +9,44 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="../assets/aurora.css">
   <style>
-    .sathi-wrap { max-width: 1360px; margin: 0 auto; padding: 24px max(24px, 4vw) 56px; }
-    .sathi-card {
-      background: var(--surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-    }
-    .top-bar { display: grid; grid-template-columns: repeat(4, 1fr); height: 6px; width: 100%; }
-    .sathi-inner { padding: 24px 26px; display: flex; flex-direction: column; gap: 18px; }
-    .sathi-head {
-      display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap;
-      border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;
-    }
-    .sathi-kick { font: 700 11.5px var(--font-mono); letter-spacing: 1.1px; text-transform: uppercase; color: var(--blue-ink); margin: 0 0 6px; }
-    .sathi-h1 { font: 700 clamp(21px, 2.2vw, 28px)/1.2 var(--font-display); letter-spacing: -0.5px; color: var(--text); margin: 0 0 6px; }
-    .sathi-sub { font: 400 13.5px/1.45 var(--font-body); color: var(--text-muted); margin: 0; }
-    .sathi-sub code { font: 600 11.5px var(--font-mono); padding: 2px 6px; border-radius: 6px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); color: var(--text); }
-
     .col-headers, .persona-row {
       display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;
     }
     .col-h {
-      padding: 9px 14px; border-radius: 10px; font: 700 11px var(--font-mono); letter-spacing: .7px; text-transform: uppercase;
+      padding: 10px 14px; border-radius: 10px; font: 700 11px var(--font-mono); letter-spacing: .7px; text-transform: uppercase;
       border: 1px solid var(--border-subtle); background: var(--surface-sunk); color: var(--text);
     }
     .col-h.red { background: rgba(234, 67, 53, .10); border-color: rgba(234, 67, 53, .30); color: var(--red-ink); }
     .col-h.blue { background: rgba(66, 133, 244, .10); border-color: rgba(66, 133, 244, .30); color: var(--blue-ink); }
     .col-h.green { background: rgba(52, 168, 83, .10); border-color: rgba(52, 168, 83, .30); color: var(--green-ink); }
 
-    .rows-stack { display: flex; flex-direction: column; gap: 11px; }
+    .rows-stack { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
     .cell {
-      border-radius: 12px; padding: 13px 14px; border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 14px 16px; border: 1px solid var(--border-subtle);
+      background: var(--surface); box-shadow: var(--shadow-sm);
       display: flex; flex-direction: column; justify-content: center;
     }
-    .cell.who { background: var(--surface-sunk); border-left: 4px solid var(--accent, var(--g-blue)); }
-    .cell.who h2 { margin: 0; font: 700 14px/1.3 var(--font-display); color: var(--text); }
-    .cell.who p { margin: 3px 0 0; font: 500 12px var(--font-body); color: var(--text-muted); }
+    .cell.who { border-left: 4px solid var(--accent, var(--g-blue)); }
+    .cell.who h2 { margin: 0; font: 600 15px/1.3 var(--font-display); color: var(--text); }
+    .cell.who p { margin: 4px 0 0; font: 500 12px var(--font-body); color: var(--text-muted); }
 
-    .cell.chal { background: rgba(234, 67, 53, .05); border-color: rgba(234, 67, 53, .22); }
-    .cell.demo { background: rgba(66, 133, 244, .05); border-color: rgba(66, 133, 244, .22); }
-    .cell.imp  { background: rgba(52, 168, 83, .05); border-color: rgba(52, 168, 83, .22); }
+    .cell.chal { background: color-mix(in srgb, var(--g-red) 5%, var(--surface)); border-color: color-mix(in srgb, var(--g-red) 25%, transparent); }
+    .cell.demo { background: color-mix(in srgb, var(--g-blue) 5%, var(--surface)); border-color: color-mix(in srgb, var(--g-blue) 25%, transparent); }
+    .cell.imp  { background: color-mix(in srgb, var(--g-green) 5%, var(--surface)); border-color: color-mix(in srgb, var(--g-green) 25%, transparent); }
 
-    .cell p { margin: 0; font: 400 12.5px/1.5 var(--font-body); color: var(--text); }
-    .cell.demo .demo-title { font: 700 12.5px var(--font-display); color: var(--blue-ink); margin-bottom: 3px; }
+    .cell p { margin: 0; font: 400 13px/1.5 var(--font-body); color: var(--text); }
+    .cell.demo .demo-title { font: 600 13.5px var(--font-display); color: var(--blue-ink); margin-bottom: 4px; }
     .cell.demo .demo-flow { font: 500 12px/1.4 var(--font-body); color: var(--text-muted); }
     .mob-lbl { display: none; font: 700 10px var(--font-mono); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
 
-    .sathi-foot {
-      border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-      border-left: 4px solid var(--g-blue); padding: 12px 16px;
-      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; font-size: 12.5px;
+    .sathi-trust {
+      margin-top: 20px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--g-blue); padding: 14px 18px; box-shadow: var(--shadow-sm);
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px;
     }
-    .sathi-foot .trust b { color: var(--blue-ink); }
-    .sathi-foot .trust code { font: 600 11.5px var(--font-mono); }
-    .sathi-foot .roi { font: 700 12.5px var(--font-display); color: var(--green-ink); }
+    .sathi-trust .trust b { color: var(--blue-ink); }
+    .sathi-trust .trust code { font: 600 11.5px var(--font-mono); padding: 1px 5px; border-radius: 5px; background: var(--surface-sunk); }
+    .sathi-trust .roi { font: 700 13px var(--font-display); color: var(--green-ink); }
 
     @media (max-width: 980px) {
       .col-headers { display: none; }
@@ -74,7 +56,6 @@
     @media print {
       @page { size: landscape; margin: 0.25in; }
       .mast, .no-print { display: none !important; }
-      .sathi-wrap { padding: 0; }
     }
   </style>
 </head>
@@ -94,151 +75,143 @@
   </div>
 </header>
 
-<main class="sathi-wrap">
-  <div class="sathi-card">
-    <div class="top-bar">
-      <div style="background:#4285F4;"></div>
-      <div style="background:#EA4335;"></div>
-      <div style="background:#FBBC04;"></div>
-      <div style="background:#34A853;"></div>
-    </div>
+<main class="page-wrap">
+  <div class="page-kick"><i></i>ITC TM&amp;D Executive Briefing · Frontline AI Transformation</div>
+  <h1 class="page-h1">AI Sathi Resolves Frontline Friction Across All 5 ITC Operational Personas</h1>
+  <p class="page-lede">Embedded inside existing ITC partner apps via <b>Phone + OTP</b> (no <code>@itc.in</code> email) · <b>6 vernacular languages</b> · Live <b>DMS, SAP, WMS &amp; e-Choupal</b> integration.</p>
 
-    <div class="sathi-inner">
-      <header class="sathi-head">
-        <div>
-          <p class="sathi-kick">ITC TM&amp;D Executive Briefing · Frontline AI Transformation</p>
-          <h1 class="sathi-h1">AI Sathi Resolves Frontline Friction Across All 5 ITC Operational Personas</h1>
-          <p class="sathi-sub">
-            Embedded inside existing ITC partner apps via Phone + OTP (no <code>@itc.in</code> email) · 6 vernacular languages · Live DMS, SAP, WMS &amp; e-Choupal integration
-          </p>
-        </div>
-      </header>
+  <div class="col-headers">
+    <div class="col-h">Frontline Persona &amp; App</div>
+    <div class="col-h red">Current ITC Challenge</div>
+    <div class="col-h blue">Demo Use Case (4-Step Flow)</div>
+    <div class="col-h green">How AI Sathi Resolves It &amp; Impact</div>
+  </div>
 
-      <div class="col-headers">
-        <div class="col-h">Frontline Persona &amp; App</div>
-        <div class="col-h red">Current ITC Challenge</div>
-        <div class="col-h blue">Demo Use Case (4-Step Flow)</div>
-        <div class="col-h green">How AI Sathi Resolves It &amp; Impact</div>
+  <section class="rows-stack">
+    <!-- Row 1: Beat Sales Rep -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-blue);">
+        <h2>1. Beat Sales Rep (DSR)</h2>
+        <p>ITC Vajra SFA · 36 Kiranas · Beat B-07</p>
       </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Manual Beat B-07 prep misses overdue alerts &amp; credit caps; slow screen typing limits order speed &amp; scheme upsells.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Vernacular Voice Order &amp; Upsell</div>
+        <div class="demo-flow">Beat Brief → Voice Order → Smart Upsell → SAP Sync (+ Master-O A2A)</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <p>Hindi/Hinglish voice cart in DMS, automated +4.5% YiPPee! scheme margin &amp; instant SAP S/4HANA billing.</p>
+      </div>
+    </article>
 
-      <section class="rows-stack">
-        <!-- Row 1: Beat Sales Rep -->
-        <article class="persona-row">
-          <div class="cell who" style="--accent:#4285F4;">
-            <h2>1. Beat Sales Rep (DSR)</h2>
-            <p>ITC Vajra SFA · 36 Kiranas · Beat B-07</p>
-          </div>
-          <div class="cell chal">
-            <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
-            <p>Manual Beat B-07 prep misses overdue alerts &amp; credit caps; slow screen typing limits order speed &amp; scheme upsells.</p>
-          </div>
-          <div class="cell demo">
-            <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
-            <div class="demo-title">Vernacular Voice Order &amp; Upsell</div>
-            <div class="demo-flow">Beat Brief → Voice Order → Smart Upsell → SAP Sync (+ Master-O A2A)</div>
-          </div>
-          <div class="cell imp">
-            <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-            <p>Hindi/Hinglish voice cart in DMS, automated +4.5% YiPPee! scheme margin &amp; instant SAP S/4HANA billing.</p>
-          </div>
-        </article>
+    <!-- Row 2: Trade Merchandiser -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-red);">
+        <h2>2. Trade Merchandiser</h2>
+        <p>ITC Modern Trade Execution · Bay G-04</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Manual shelf audits are slow &amp; error-prone; competitor encroachment and facing stockouts hurt contracted OSA.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Visual Planogram &amp; Shelf Audit</div>
+        <div class="demo-flow">Shelf Snap → Vision Audit → Clutter Alert → Push Ticket</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <p>Gemini 2.5 Flash lifts compliance (71.4% to 96.4%), flags rival soap in slots B12–B14 &amp; dispatches Floor Supervisor restock ticket.</p>
+      </div>
+    </article>
 
-        <!-- Row 2: Trade Merchandiser -->
-        <article class="persona-row">
-          <div class="cell who" style="--accent:#EA4335;">
-            <h2>2. Trade Merchandiser</h2>
-            <p>ITC Modern Trade Execution · Bay G-04</p>
-          </div>
-          <div class="cell chal">
-            <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
-            <p>Manual shelf audits are slow &amp; error-prone; competitor encroachment and facing stockouts hurt contracted OSA.</p>
-          </div>
-          <div class="cell demo">
-            <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
-            <div class="demo-title">Visual Planogram &amp; Shelf Audit</div>
-            <div class="demo-flow">Shelf Snap → Vision Audit → Clutter Alert → Push Ticket</div>
-          </div>
-          <div class="cell imp">
-            <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-            <p>Gemini 2.5 Flash lifts compliance (71.4% to 96.4%), flags rival soap in slots B12–B14 &amp; dispatches Floor Supervisor restock ticket.</p>
-          </div>
-        </article>
+    <!-- Row 3: Line Operator & Tech -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-yellow);">
+        <h2>3. Line Operator &amp; Tech</h2>
+        <p>ICML Smart Plant · Biscuits Line 3</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Unplanned stoppages (ERR-E409), searching bulky OEM PDFs during faults &amp; delayed SAP PM breakdown closure.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Visual SOP &amp; Machine Diagnostics</div>
+        <div class="demo-flow">Fault Alert → Panel Scan → OEM Manual → SAP PM Log</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <p>Camera spots +3.5 mm belt drift, pulls LOTO &amp; 18.5 N·m torque spec from OEM PDF, and voice-closes SAP PM (9m downtime).</p>
+      </div>
+    </article>
 
-        <!-- Row 3: Line Operator & Tech -->
-        <article class="persona-row">
-          <div class="cell who" style="--accent:#FBBC04;">
-            <h2>3. Line Operator &amp; Tech</h2>
-            <p>ICML Smart Plant · Biscuits Line 3</p>
-          </div>
-          <div class="cell chal">
-            <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
-            <p>Unplanned stoppages (ERR-E409), searching bulky OEM PDFs during faults &amp; delayed SAP PM breakdown closure.</p>
-          </div>
-          <div class="cell demo">
-            <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
-            <div class="demo-title">Visual SOP &amp; Machine Diagnostics</div>
-            <div class="demo-flow">Fault Alert → Panel Scan → OEM Manual → SAP PM Log</div>
-          </div>
-          <div class="cell imp">
-            <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-            <p>Camera spots +3.5 mm belt drift, pulls LOTO &amp; 18.5 N·m torque spec from OEM PDF, and voice-closes SAP PM (9m downtime).</p>
-          </div>
-        </article>
+    <!-- Row 4: Warehouse Picker -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-green);">
+        <h2>4. Warehouse Picker</h2>
+        <p>Mother DC WMS · Hands-Free · Dock 09</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Handheld taps slow picking; subjective damaged-carton holds, FEFO expiry risks &amp; manual e-Way manifest delays.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Hands-Free Dispatch &amp; Validation</div>
+        <div class="demo-flow">Wave Route → Damage Scan → WMS Swap → Manifest Pass</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <p>Audio FEFO picking, camera crush triage (28mm &gt; 12mm hold), auto 90d+ batch swap &amp; instant NIC GST e-Way slip.</p>
+      </div>
+    </article>
 
-        <!-- Row 4: Warehouse Picker -->
-        <article class="persona-row">
-          <div class="cell who" style="--accent:#34A853;">
-            <h2>4. Warehouse Picker</h2>
-            <p>Mother DC WMS · Hands-Free · Dock 09</p>
-          </div>
-          <div class="cell chal">
-            <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
-            <p>Handheld taps slow picking; subjective damaged-carton holds, FEFO expiry risks &amp; manual e-Way manifest delays.</p>
-          </div>
-          <div class="cell demo">
-            <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
-            <div class="demo-title">Hands-Free Dispatch &amp; Validation</div>
-            <div class="demo-flow">Wave Route → Damage Scan → WMS Swap → Manifest Pass</div>
-          </div>
-          <div class="cell imp">
-            <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-            <p>Audio FEFO picking, camera crush triage (28mm &gt; 12mm hold), auto 90d+ batch swap &amp; instant NIC GST e-Way slip.</p>
-          </div>
-        </article>
+    <!-- Row 5: Field Agronomist -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-purple);">
+        <h2>5. Field Agronomist</h2>
+        <p>ITCMAARS · e-Choupal 4.0 · Sehore Hub</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Subjective manual wheat grading causes mandi disputes; delayed payout quotes &amp; vernacular gaps in farmer advisories.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Farm-to-Gate Grade Estimation</div>
+        <div class="demo-flow">Lot Arrival → Tray Scan → Grade Band → Farmer SMS</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <p>Macro grain scan scores moisture/chaff objectively, queues same-day NEFT (₹1,20,312.50) &amp; sends Hindi WhatsApp tips.</p>
+      </div>
+    </article>
+  </section>
 
-        <!-- Row 5: Field Agronomist -->
-        <article class="persona-row">
-          <div class="cell who" style="--accent:#9334E6;">
-            <h2>5. Field Agronomist</h2>
-            <p>ITCMAARS · e-Choupal 4.0 · Sehore Hub</p>
-          </div>
-          <div class="cell chal">
-            <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
-            <p>Subjective manual wheat grading causes mandi disputes; delayed payout quotes &amp; vernacular gaps in farmer advisories.</p>
-          </div>
-          <div class="cell demo">
-            <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
-            <div class="demo-title">Farm-to-Gate Grade Estimation</div>
-            <div class="demo-flow">Lot Arrival → Tray Scan → Grade Band → Farmer SMS</div>
-          </div>
-          <div class="cell imp">
-            <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-            <p>Macro grain scan scores moisture/chaff objectively, queues same-day NEFT (₹1,20,312.50) &amp; sends Hindi WhatsApp tips.</p>
-          </div>
-        </article>
-      </section>
-
-      <footer class="sathi-foot">
-        <div class="trust">
-          <b>Enterprise Trust &amp; Architecture:</b>
-          Phone OTP → Workforce Identity Federation (STS) · Headless <code>streamAssist</code> · MCP / A2A / Apigee · Model Armor (Zero ITC Data Training)
-        </div>
-        <div class="roi">
-          Indicative ROI: ~₹10/active worker/day · +₹22.32 Cr/yr net value (50k workers)
-        </div>
-      </footer>
+  <div class="sathi-trust">
+    <div class="trust">
+      <b>Enterprise Trust &amp; Architecture:</b>
+      Phone OTP → Workforce Identity Federation (STS) · Headless <code>streamAssist</code> · MCP / A2A / Apigee · Model Armor (Zero ITC Data Training)
+    </div>
+    <div class="roi">
+      Indicative ROI: ~₹10/active worker/day · +₹22.32 Cr/yr net value (50k workers)
     </div>
   </div>
+
+  <footer class="deck-footer">
+    <span>ITC OneField · AI Sathi — Frontline Challenges &amp; Demo Impact</span>
+    <span class="footer-brand">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+      <span style="width:1px;height:16px;background:#DADCE0;"></span>
+      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
+    </span>
+  </footer>
 </main>
 
 <script>
