@@ -241,10 +241,10 @@
 <div class="bx-in">
   <div class="bx-kick"><i></i>From personas to production · How agents are built</div>
   <h1>Horses for courses: how a portfolio of agents will be built for agentic workflows.</h1>
-  <p class="bx-sub">A portfolio approach to the agentic workforce — <b>no-code, low-code and high-code, each matched to the job</b>. Most agents are easy to build right in Gemini Enterprise: open Agents, describe what you need, and it is built, published and governed in one place.</p>
+  <p class="bx-sub">A portfolio approach to the agentic workforce — <b>describe it, design it, or engineer it, each matched to the job</b>. Most agents are easy to build right in Gemini Enterprise: open Agents, describe what you need, and it is built, published and governed in one place.</p>
   <div class="hb-cols">
     <div class="hb-pane">
-      <div class="hb-ph" style="--pc:var(--blue-ink);--pb:var(--g-blue)"><div class="k2"><i></i>No-code</div><h2>Describe it</h2><p>Open Agents in Gemini Enterprise, say what you need. Gemini builds it.</p></div>
+      <div class="hb-ph" style="--pc:var(--blue-ink);--pb:var(--g-blue)"><div class="k2"><i></i>Self-Service</div><h2>Describe it</h2><p>Open Agents in Gemini Enterprise, say what you need. Gemini builds it.</p></div>
       <div class="hb-win" data-loop="describe" title="Click to replay">
         <div class="hb-wbar"><span class="dots"><i></i><i></i><i></i></span><span class="t" id="geTitle">New tab</span></div>
         <div class="hb-scene ge" id="geScene">
@@ -296,7 +296,7 @@
       <dl class="hb-facts"><dt>Who</dt><dd>The expert — the persona themselves</dd><dt>Time</dt><dd>Minutes to hours</dd><dt>With</dt><dd><span class="bx-ge mini"><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span> Agent Designer</dd></dl>
     </div>
     <div class="hb-pane">
-      <div class="hb-ph" style="--pc:var(--purple-ink);--pb:var(--g-purple)"><div class="k2"><i></i>Low-code</div><h2>Design it</h2><p>Power users lay out the steps, the checks and the approval.</p></div>
+      <div class="hb-ph" style="--pc:var(--purple-ink);--pb:var(--g-purple)"><div class="k2"><i></i>Workflow</div><h2>Design it</h2><p>Power users lay out the steps, the checks and the approval.</p></div>
       <div class="hb-win" data-loop="design" title="Click to replay">
         <div class="hb-wbar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Agent Designer · Workflow</span></div>
         <div class="hb-scene">
@@ -315,7 +315,7 @@
       <dl class="hb-facts"><dt>Who</dt><dd>Power users and the digital CoE</dd><dt>Time</dt><dd>Days</dd><dt>With</dt><dd><span class="bx-ge mini"><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span> Agent Designer · Agent Studio</dd></dl>
     </div>
     <div class="hb-pane">
-      <div class="hb-ph" style="--pc:var(--green-ink);--pb:var(--g-green)"><div class="k2"><i></i>High-code</div><h2>Engineer it</h2><p>Your teams or partners build physics-grounded agents in code.</p></div>
+      <div class="hb-ph" style="--pc:var(--green-ink);--pb:var(--g-green)"><div class="k2"><i></i>Custom</div><h2>Engineer it</h2><p>Your teams or partners build physics-grounded agents in code.</p></div>
       <div class="hb-win" data-loop="engineer" title="Click to replay">
         <div class="hb-wbar"><span class="dots"><i></i><i></i><i></i></span><span class="t">agent.py · Agent Development Kit</span></div>
         <div class="hb-scene">
@@ -336,7 +336,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
   /* soft tints so the bar supports the page instead of dominating it */
-  var SEG = [["No-code · describe it", 35, "30–40 %", "rgba(49,134,255,.14)", "var(--blue-ink)"], ["Low-code · design it", 25, "20–30 %", "rgba(75,49,227,.12)", "var(--purple-ink)"], ["High-code · engineer it", 25, "20–30 %", "rgba(0,175,87,.13)", "var(--green-ink)"], ["Ready-made", 15, "10–20 %", "var(--surface-sunk)", "var(--text-muted)"]];
+  var SEG = [["Describe it", 35, "30–40 %", "rgba(49,134,255,.14)", "var(--blue-ink)"], ["Design it", 25, "20–30 %", "rgba(75,49,227,.12)", "var(--purple-ink)"], ["Engineer it", 25, "20–30 %", "rgba(0,175,87,.13)", "var(--green-ink)"], ["Ready-made", 15, "10–20 %", "var(--surface-sunk)", "var(--text-muted)"]];
   $("hbBar").innerHTML = SEG.map(function (sg) { return '<div class="hb-seg2" style="flex:' + sg[1] + ';background:' + sg[3] + ';color:' + sg[4] + '"><span>' + sg[0] + '</span><b>' + sg[2] + '</b></div>'; }).join("");
   var shelf = $("hbShelf"), have = {};
   function addTile(t, key) {
@@ -346,10 +346,10 @@
     d.innerHTML = "<i>" + t[0] + "</i><span>" + t[1] + "<small>" + t[2] + "</small></span>"; shelf.appendChild(d);
   }
   addTile(["DR", "Deep Research", "ready-made · from Google", "var(--border-strong)"], "ready");
-  addTile(["CA", "Corrosion Analytics", "high-code · partner-built", "var(--g-green)"], "partner");
-  var TILE = { describe: ["U3", "Unit 3 Handover Agent", "no-code · a shift supervisor", "var(--g-blue)"],
-               design: ["QH", "Off-spec Hold Workflow", "low-code · the quality team", "var(--g-purple)"],
-               engineer: ["UO", "Unit Optimiser", "high-code · the digital CoE", "var(--g-green)"] };
+  addTile(["CA", "Corrosion Analytics", "partner-built", "var(--g-green)"], "partner");
+  var TILE = { describe: ["U3", "Unit 3 Handover Agent", "describe it · a shift supervisor", "var(--g-blue)"],
+               design: ["QH", "Off-spec Hold Workflow", "design it · the quality team", "var(--g-purple)"],
+               engineer: ["UO", "Unit Optimiser", "engineer it · the digital CoE", "var(--g-green)"] };
   var PROMPT = "Every morning, read last night's shift logs and alarms for Unit 3, flag anything unusual, and draft a five-line handover.";
   var CODE = ['<span class="k">from</span> google.adk.agents <span class="k">import</span> Agent', '', 'optimiser = <span class="fn">Agent</span>(',
     '    name=<span class="st">"unit_optimiser"</span>,', '    model=<span class="st">"gemini-2.5-pro"</span>,', '    tools=[soft_sensor, spread_gate,',

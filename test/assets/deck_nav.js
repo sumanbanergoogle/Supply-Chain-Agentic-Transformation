@@ -5,6 +5,13 @@
       document.documentElement.classList.add('theme-dark');
       document.documentElement.classList.remove('theme-light');
     }
+    var cs = document.currentScript && document.currentScript.src;
+    if (cs && !document.querySelector('script[data-cpg-transitions]')) {
+      var s = document.createElement('script');
+      s.src = cs.replace(/deck_nav\.js.*$/, 'ios_transitions.js?v=1');
+      s.setAttribute('data-cpg-transitions', '1');
+      document.head.appendChild(s);
+    }
   } catch (e) {}
 })();
 
@@ -14,14 +21,15 @@ window.SC_SLIDE_DECK = [
   { num: "03", title: "The TM&D Value Tree (CEO Metrics)", path: "slides/slide_03_value_tree.html" },
   { num: "04", title: "TM&D Operational Reality & Core Challenges", path: "slides/slide_02.html" },
   { num: "05", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
-  { num: "06", title: "From One Agent to an Agentic Organisation", path: "slides/slide_04.html" },
-  { num: "07", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
-  { num: "08", title: "How Agents Are Built (Gemini Enterprise)", path: "pages/build_01_how.html" },
-  { num: "09", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
-  { num: "10", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
-  { num: "11", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
-  { num: "12", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" },
-  { num: "13", title: "ITC TM&D × Google — Strategic Partnership", path: "slides/slide_06_tmd_partnership.html" }
+  { num: "06", title: "Live Demo Stage: Demo 1 & Demo 2", path: "pages/demo_stage.html" },
+  { num: "07", title: "From Two Agents to an Agentic Organisation", path: "slides/slide_04.html" },
+  { num: "08", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
+  { num: "09", title: "How Agents Are Built (Gemini Enterprise)", path: "pages/build_01_how.html" },
+  { num: "10", title: "Model Choice (Pro · Flash · Vision)", path: "pages/build_03_models.html" },
+  { num: "11", title: "Governance & Human Approval", path: "pages/build_04_govern.html" },
+  { num: "12", title: "Structural Resilience", path: "pages/build_06_resilience.html" },
+  { num: "13", title: "Why Google Cloud: The Full AI Stack", path: "pages/build_07_why_google.html" },
+  { num: "14", title: "ITC TM&D × Google — Strategic Partnership", path: "slides/slide_06_tmd_partnership.html" }
 ];
 
 window.initDeckChrome = function (opts) {
@@ -121,7 +129,7 @@ window.initDeckChrome = function (opts) {
   menu.style.cssText = 'position:fixed;bottom:72px;right:24px;width:360px;max-height:72vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;box-shadow:var(--shadow-lg);padding:10px;z-index:9991;display:none;';
   menu.innerHTML =
     '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 8px 8px;border-bottom:1px solid var(--border-subtle);margin-bottom:6px;">' +
-      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">Supply Chain Slides (01–13)</span>' +
+      '<span style="font:600 11px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">Supply Chain Slides (01–14)</span>' +
       '<a href="' + rootPrefix + 'index.html" style="font:600 12px var(--font-display);color:var(--blue-ink);">Briefing Map ↗</a>' +
     '</div>' +
     window.SC_SLIDE_DECK.map(function (s, idx) {

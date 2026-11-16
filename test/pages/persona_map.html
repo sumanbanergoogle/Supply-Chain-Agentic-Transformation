@@ -419,7 +419,8 @@
             '<img class="ge-mark" src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">' +
             '<span class="ge-cta">' + geLabel + '</span>' +
             '<span class="ge-arrow" aria-hidden="true">&#8599;</span>' +
-          '</a>'
+          '</a>' +
+          '<a href="demo_stage.html?agent=' + encodeURIComponent(liveRec.id) + '" style="display:block;width:100%;text-align:center;margin-top:6px;font:600 12px var(--font-display);color:var(--blue-ink);text-decoration:none;">&#9654; Watch Video &amp; Live Demo Stage &rarr;</a>'
         ) : '<span style="display:block;font:500 11.5px var(--font-mono);color:var(--text-muted);">Blueprint · Not yet deployed in Gemini Enterprise</span>') +
       '</div>';
 
@@ -483,7 +484,7 @@
           '<div class="b-name">' + r.persona + '</div>' +
           '<div class="b-impact">' + r.subprocess + ' · <b>' + r.impact + '</b></div>' +
         '</div>' +
-        (rowLiveRec ? '<a class="plive" href="' + rowLiveRec.geUrl + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Open ' + (rowLiveRec.geDisplayName || rowLiveRec.name) + ' in Gemini Enterprise">Live</a>' : '');
+        (rowLiveRec ? '<span class="plive" style="cursor:default;" title="Includes live agent(s) in Gemini Enterprise">Live</span>' : '');
       pCol.title = 'Open Persona Dossier & Agent Suite';
       pCol.addEventListener('click', function () { window.location.href = 'persona_dossier.html?id=' + encodeURIComponent(r.id); });
 
