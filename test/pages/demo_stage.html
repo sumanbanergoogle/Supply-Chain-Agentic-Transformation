@@ -141,9 +141,9 @@
         <span style="font:600 11px var(--font-mono);color:var(--text-muted);" id="status1">No video loaded yet</span>
       </div>
 
-      <a class="gemini-btn" id="geBtn1" target="_blank" rel="noopener noreferrer" href="#">
+      <a class="gemini-btn" id="geBtn1" target="_blank" rel="noopener noreferrer" href="http://sumcl.c.googlers.com:8095">
         <img src="../assets/media/gemini_enterprise_logo.svg" alt="" style="width:17px;height:17px;filter:brightness(0) invert(1);">
-        <span>Open Demo 1 in Gemini Enterprise &#8599;</span>
+        <span>Open Demo 1 · Sahayak AI BeatPulse &#8599;</span>
       </a>
 
       <div class="prompt-box">
@@ -264,6 +264,19 @@
       var uploadEl = document.getElementById('upload' + slotNum);
       var activeBlobUrl = null;
 
+      var SAHAYAK_BEATPULSE = {
+        id: 'sahayak_beatpulse',
+        name: 'Sahayak AI · BeatPulse',
+        geDisplayName: 'Sahayak AI · TM&D BeatPulse',
+        persona: 'Frontline Beat Execution & Kirana OSA Copilot',
+        outcome: 'Sahayak AI (TM&D BeatPulse) is a live frontline execution & beat-intelligence cockpit for Area Sales Managers (ASMs) and DSRs—combining outlet-level geospatial beat mapping, vernacular Hindi/Devanagari nudges, kirana On-Shelf Availability (OSA) alerts, and active trade-scheme recommendations in real time.',
+        geUrl: 'http://sumcl.c.googlers.com:8095',
+        starterPrompts: [
+          'Show today\'s priority kirana beats with slipping hero-SKU On-Shelf Availability (OSA).',
+          'Generate a 60-second morning gate-meeting brief for ASMs with focus SKUs and overdue collections.',
+          'Suggest vernacular pitch nudges for outlets missing active biscuit & atta trade schemes.'
+        ]
+      };
       var FLEETFLOW_CPG = {
         id: 'fleetflow_cpg',
         name: 'FleetFlow CPG',
@@ -277,16 +290,16 @@
           'Brief me in Hinglish on at-risk deliveries requiring immediate rerouting.'
         ]
       };
-      var slotAgents = slotNum === 2 ? [FLEETFLOW_CPG].concat(liveAgents) : liveAgents;
+      var slotAgents = slotNum === 1 ? [SAHAYAK_BEATPULSE].concat(liveAgents) : [FLEETFLOW_CPG].concat(liveAgents);
 
       var qs = new URLSearchParams(location.search);
       var paramId = qs.get('demo' + slotNum) || (slotNum === 1 ? qs.get('agent') : null);
       var savedAgentId = null;
       try { savedAgentId = localStorage.getItem('sc_demo_agent_' + slotNum); } catch (e) {}
 
-      var initialAg = slotNum === 2
-        ? (slotAgents.find(function (a) { return a.id === paramId; }) || FLEETFLOW_CPG)
-        : (slotAgents.find(function (a) { return a.id === (paramId || savedAgentId); }) || slotAgents[defaultIndex % slotAgents.length]);
+      var initialAg = slotNum === 1
+        ? (slotAgents.find(function (a) { return a.id === paramId; }) || SAHAYAK_BEATPULSE)
+        : (slotAgents.find(function (a) { return a.id === paramId; }) || FLEETFLOW_CPG);
 
       sel.innerHTML = slotAgents.map(function (a) {
         var lbl = a.isItcTmd ? a.geDisplayName : (a.pillar ? a.name + ' (' + a.pillar + ')' : a.name);
@@ -295,8 +308,8 @@
 
       function paintAgent(ag) {
         titleEl.textContent = 'Demo ' + slotNum + ' · ' + (ag.geDisplayName || ag.name);
-        subEl.textContent = ag.id === 'fleetflow_cpg' ? ag.outcome : (ag.persona + ' — ' + (ag.outcome || ''));
-        geBtn.href = slotNum === 2 ? 'https://fleetflow-cpg-tmd-632239123109.us-central1.run.app' : (ag.geUrl || 'https://vertexaisearch.cloud.google.com/');
+        subEl.textContent = (ag.id === 'fleetflow_cpg' || ag.id === 'sahayak_beatpulse') ? ag.outcome : (ag.persona + ' — ' + (ag.outcome || ''));
+        geBtn.href = slotNum === 1 ? 'http://sumcl.c.googlers.com:8095' : (slotNum === 2 ? 'https://fleetflow-cpg-tmd-632239123109.us-central1.run.app' : (ag.geUrl || 'https://vertexaisearch.cloud.google.com/'));
         var prompts = (ag.starterPrompts && ag.starterPrompts.length) ? ag.starterPrompts : (ag.samplePrompt ? [ag.samplePrompt] : []);
         promptsEl.innerHTML = prompts.map(function (p, idx) {
           return '<button type="button" class="prompt-chip" data-idx="' + idx + '">"' + p + '"</button>';
