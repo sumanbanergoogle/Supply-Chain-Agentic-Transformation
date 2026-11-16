@@ -2083,7 +2083,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4275760174019143309/session/-?mods=",
-    "geDisplayName": "Demand Sensing Agent",
+    "geDisplayName": "Demand Sensing Agent (01 · Planning & Strategy · Demand Forecasting)",
     "liveId": "demand_sensing_agent",
     "sumanImpact": "Detects demand shifts 7–14 days earlier"
   },
@@ -2605,7 +2605,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/7230495950759747643/session/-?mods=",
-    "geDisplayName": "Promo ROI Simulator",
+    "geDisplayName": "Promo ROI Simulator (01 · Planning & Strategy · Trade Promotion)",
     "liveId": "promo_lift_simulator",
     "sumanImpact": "Prevents break-even trade leakage"
   },
@@ -3127,7 +3127,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9189674696747625515/session/-?mods=",
-    "geDisplayName": "Consensus & Gap Agent",
+    "geDisplayName": "Consensus & Gap Agent (01 · Planning & Strategy · S&OP / IBP)",
     "liveId": "sop_scenario_weaver",
     "sumanImpact": "Highlights margin-dilutive imbalances"
   },
@@ -3301,7 +3301,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4685464268735078343/session/-?mods=",
-    "geDisplayName": "Digital War-Room Agent",
+    "geDisplayName": "Digital War-Room Agent (01 · Planning & Strategy · S&OP / IBP)",
     "liveId": "disruption_war_room_orchestrator",
     "sumanImpact": "Rapid OTIF impact scenario brief"
   },
@@ -3475,7 +3475,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/4015823380636158533/session/-?mods=",
-    "geDisplayName": "Executive Copilot",
+    "geDisplayName": "Executive Copilot (01 · Planning & Strategy · S&OP / IBP)",
     "liveId": "csco_control_tower_copilot",
     "sumanImpact": "Reduces deck preparation by days"
   },
@@ -3649,7 +3649,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14094336958774128849/session/-?mods=",
-    "geDisplayName": "SKU Pruning Agent",
+    "geDisplayName": "SKU Pruning Agent (01 · Planning & Strategy · Portfolio & SKU)",
     "liveId": "working_capital_cash_bridge",
     "sumanImpact": "Unlocks tail working capital"
   },
@@ -4171,7 +4171,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6167693086894539620/session/-?mods=",
-    "geDisplayName": "Disruption Sensing Agent",
+    "geDisplayName": "Disruption Sensing Agent (02 · Sourcing & Procurement · Supplier Network)",
     "liveId": "tier_n_risk_sentinel",
     "sumanImpact": "2–3 week advance disruption warning"
   },
@@ -4519,7 +4519,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12043431535905541673/session/-?mods=",
-    "geDisplayName": "ESG & Scope 3 Auditor",
+    "geDisplayName": "ESG & Scope 3 Auditor (02 · Sourcing & Procurement · Supplier Network)",
     "liveId": "carbon_scope3_ledger",
     "sumanImpact": "Automates Scope 3 disclosure audits"
   },
@@ -4867,7 +4867,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/18006815538360774894/session/-?mods=",
-    "geDisplayName": "Dynamic Should-Cost Agent",
+    "geDisplayName": "Dynamic Should-Cost Agent (02 · Sourcing & Procurement · Material & Packaging)",
     "liveId": "rfq_should_cost_agent",
     "sumanImpact": "Fact-based margin leverage in RFPs"
   },
@@ -5563,7 +5563,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3963067958567898860/session/-?mods=",
-    "geDisplayName": "Three-Way Match Dispute",
+    "geDisplayName": "Three-Way Match Dispute (02 · Sourcing & Procurement · Contract & PO Mgmt)",
     "liveId": "three_way_match_dispute",
     "sumanImpact": "Prevents vendor holds & saves discounts"
   },
@@ -5737,7 +5737,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16838162618721244143/session/-?mods=",
-    "geDisplayName": "Changeover Optimizer",
+    "geDisplayName": "Changeover Optimizer (03 · Manufacturing & Production · Production Scheduling)",
     "liveId": "finite_production_scheduler",
     "sumanImpact": "Cuts sanitation downtime by 15–25%"
   },
@@ -6259,7 +6259,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/12855910931272362848/session/-?mods=",
-    "geDisplayName": "Bottleneck Diagnostic",
+    "geDisplayName": "Bottleneck Diagnostic (03 · Manufacturing & Production · Capacity Planning)",
     "liveId": "predictive_oee_sentinel",
     "sumanImpact": "Flags facility constraints 3–6 mos out"
   },
@@ -6781,7 +6781,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/14928798980920927172/session/-?mods=",
-    "geDisplayName": "Visual Defect Triager",
+    "geDisplayName": "Visual Defect Triager (03 · Manufacturing & Production · Quality & Compliance)",
     "liveId": "inline_yield_guardian",
     "sumanImpact": "Prevents full pallet scrap & holds"
   },
@@ -7303,7 +7303,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/9879109757966221077/session/-?mods=",
-    "geDisplayName": "Safety Stock Agent",
+    "geDisplayName": "Safety Stock Agent (04 · Inventory & Warehousing · Positioning & Optimization)",
     "liveId": "meio_safety_stock_agent",
     "sumanImpact": "Cuts working capital by 10–18%"
   },
@@ -7825,7 +7825,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/680853864033816982/session/-?mods=",
-    "geDisplayName": "Dynamic Slotting Agent",
+    "geDisplayName": "Dynamic Slotting Agent (04 · Inventory & Warehousing · Warehouse Operations)",
     "liveId": "warehouse_slotting_agent",
     "sumanImpact": "Reduces picker transit time by 15–30%"
   },
@@ -8521,7 +8521,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/6469216377587188453/session/-?mods=",
-    "geDisplayName": "SFS / BOPIS Sourcing",
+    "geDisplayName": "SFS / BOPIS Sourcing (04 · Inventory & Warehousing · Omnichannel Visibility)",
     "liveId": "atp_order_promising_agent",
     "sumanImpact": "Lowers parcel costs & split rates"
   },
@@ -10981,7 +10981,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/2869479596817501852/session/-?mods=",
-    "geDisplayName": "Return Fraud Sentinel",
+    "geDisplayName": "Return Fraud Sentinel (06 · Returns & Reverse Logistics · Returns & Claims Mgmt)",
     "liveId": "reverse_rma_optimizer",
     "sumanImpact": "Cuts returns fraud abuse by 25–40%"
   },
@@ -11155,7 +11155,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/3851887269918555105/session/-?mods=",
-    "geDisplayName": "Keep-It & Routing Advisor",
+    "geDisplayName": "Keep-It & Routing Advisor (06 · Returns & Reverse Logistics · Returns & Claims Mgmt)",
     "liveId": "keep_it_routing_advisor",
     "sumanImpact": "Lowers net return costs by 15–22%"
   },
@@ -11329,7 +11329,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11604346230811147054/session/-?mods=",
-    "geDisplayName": "OS&D Freight Claims",
+    "geDisplayName": "OS&D Freight Claims (06 · Returns & Reverse Logistics · Returns & Claims Mgmt)",
     "liveId": "osd_freight_claims_agent",
     "sumanImpact": "Resolves carrier claims in <72 hours"
   },
@@ -11503,7 +11503,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11982871860095077801/session/-?mods=",
-    "geDisplayName": "Dynamic Markdown Agent",
+    "geDisplayName": "Dynamic Markdown Agent (06 · Returns & Reverse Logistics · Expiry & Markdowns)",
     "liveId": "dynamic_markdown_agent",
     "sumanImpact": "Cuts perishable scrap by 20–35%"
   },
@@ -11677,7 +11677,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/374272156355245468/session/-?mods=",
-    "geDisplayName": "Short-Dated Redistributor",
+    "geDisplayName": "Short-Dated Redistributor (06 · Returns & Reverse Logistics · Expiry & Markdowns)",
     "liveId": "short_dated_redistributor",
     "sumanImpact": "Diverts bulk perishables from landfill"
   },
@@ -11851,7 +11851,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/10037702925741270884/session/-?mods=",
-    "geDisplayName": "Food Waste & ESG Copilot",
+    "geDisplayName": "Food Waste & ESG Copilot (06 · Returns & Reverse Logistics · Expiry & Markdowns)",
     "liveId": "food_waste_esg_copilot",
     "sumanImpact": "Automates annual circularity reporting"
   },
@@ -12025,7 +12025,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/16699165381032264857/session/-?mods=",
-    "geDisplayName": "RTI Balance Reconciler",
+    "geDisplayName": "RTI Balance Reconciler (06 · Returns & Reverse Logistics · Pallet & Tote Reclamation)",
     "liveId": "rti_balance_reconciler",
     "sumanImpact": "Eliminates 30% in non-return fee fines"
   },
@@ -12199,7 +12199,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/13844457953454901577/session/-?mods=",
-    "geDisplayName": "Milk-Run Consolidation",
+    "geDisplayName": "Milk-Run Consolidation (06 · Returns & Reverse Logistics · Pallet & Tote Reclamation)",
     "liveId": "intermodal_rail_linehaul_agent",
     "sumanImpact": "Boosts backhaul fill rate by 25–40%"
   },
@@ -12373,7 +12373,7 @@ window.SC_AGENT_DETAILS = {
     ],
     "liveInGE": true,
     "geUrl": "https://vertexaisearch.cloud.google.com/home/cid/47d2d150-f788-4afc-af12-df8dd05ed34a/r/agent/11114379190038719987/session/-?mods=",
-    "geDisplayName": "Sanitation & Health Agent",
+    "geDisplayName": "Sanitation & Health Agent (06 · Returns & Reverse Logistics · Pallet & Tote Reclamation)",
     "liveId": "sanitation_health_agent",
     "sumanImpact": "Extends reusable lifecycle by 15–20%"
   },
