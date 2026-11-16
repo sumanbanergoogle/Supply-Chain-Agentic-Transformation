@@ -6,27 +6,689 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
 <script src="../assets/deck_nav.js?v=19"></script>
-<style>.arch-layers{display:grid;gap:14px;margin-top:20px;}.layer{background:var(--surface);border:1px solid var(--border-subtle);border-radius:16px;padding:18px 22px;display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:center;}.layer-lbl{font:600 12px var(--font-mono);text-transform:uppercase;letter-spacing:1px;color:var(--blue-ink);}.chips{display:flex;flex-wrap:wrap;gap:8px;}.chip{padding:6px 12px;border-radius:10px;background:var(--surface-sunk);border:1px solid var(--border-subtle);font:500 13px var(--font-display);}@media(max-width:780px){.layer{grid-template-columns:1fr;}}</style>
+<style>
+  .arch-wrap { max-width: 1460px; margin: 0 auto; padding: 28px max(24px, 4vw) 72px; }
+  .ar-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 18px 0 18px; }
+  .ar-lbl { font: 600 11px var(--font-mono); letter-spacing: 1.2px; text-transform: uppercase; color: var(--dim-ink); }
+  .ar-seg {
+    display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px;
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 999px; box-shadow: var(--shadow-sm);
+  }
+  .ar-seg button {
+    font: 500 13px var(--font-display); color: var(--text-muted);
+    background: none; border: 0; border-radius: 999px; padding: 7px 14px;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all .16s;
+  }
+  .ar-seg button img { width: 18px; height: 18px; flex: none; }
+  .ar-seg button:hover { color: var(--text); }
+  .ar-seg button[aria-pressed="true"] { background: var(--g-blue); color: #FFF; }
+  .ar-trace {
+    font: 600 13px var(--font-display); color: var(--blue-ink);
+    background: var(--surface); border: 1.5px solid var(--g-blue);
+    border-radius: 999px; padding: 8px 16px; cursor: pointer; transition: all .16s;
+  }
+  .ar-trace:hover { background: var(--g-blue); color: #FFF; }
+
+  .ar-grid { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 20px; align-items: start; }
+  .ar-env { position: relative; border-radius: 22px; padding: 2px; background: var(--boundary-grad); box-shadow: var(--shadow-sm); }
+  .ar-env-in { border-radius: 20px; background: var(--surface); padding: 8px 20px 10px; }
+  .ar-env-tag {
+    position: absolute; top: -11px; right: 20px;
+    font: 600 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase;
+    color: var(--purple-ink); background: var(--canvas); padding: 3px 10px;
+    border-radius: 999px; border: 1px solid var(--border-subtle);
+  }
+
+  .ar-lane {
+    display: grid; grid-template-columns: 185px minmax(0, 1fr);
+    gap: 16px; align-items: center; padding: 13px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .ar-lane:last-child { border-bottom: 0; }
+  .ar-ln { font: 600 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--lc, var(--blue-ink)); }
+  .ar-lt { font: 600 15px/1.25 var(--font-display); color: var(--text); margin-top: 2px; }
+  .ar-ls { font-size: 12px; color: var(--text-muted); line-height: 1.35; margin-top: 2px; }
+
+  .ar-nodes {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px; align-items: stretch;
+  }
+  .ar-node {
+    display: flex; align-items: center; gap: 9px; min-width: 0;
+    padding: 8px 10px; border-radius: 13px; border: 1px solid var(--border-subtle);
+    background: var(--surface-sunk); color: var(--text); font: inherit;
+    text-align: left; cursor: pointer; transition: all .18s ease;
+  }
+  .ar-node:hover, .ar-node.sel {
+    background: var(--surface); border-color: var(--g-blue);
+    box-shadow: var(--shadow-sm); transform: translateY(-1px);
+  }
+  .ar-node.hot {
+    background: color-mix(in srgb, var(--g-blue) 9%, var(--surface));
+    border-color: var(--g-blue); box-shadow: 0 0 0 3px rgba(49, 134, 255, .2);
+  }
+  .ar-node img { width: 28px; height: 28px; flex: none; object-fit: contain; }
+  .ar-node b { display: block; font: 600 12.5px/1.2 var(--font-display); color: var(--text); }
+  .ar-node small { display: block; font: 400 11px/1.25 var(--font-body); color: var(--text-muted); margin-top: 2px; }
+  .ar-node.ar-ge { justify-content: center; }
+  .ar-ge-mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #FFFFFF; border: 1px solid #E2E6F0; border-radius: 8px;
+    padding: 6px 10px; max-width: 100%;
+  }
+  .ar-ge-mark img { width: auto !important; height: 15px !important; }
+  .ar-monos { display: flex; flex: none; }
+  .ar-mono {
+    width: 24px; height: 24px; border-radius: 7px; margin-left: -6px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font: 600 10px var(--font-mono); color: var(--purple-ink);
+    border: 1.5px solid var(--g-purple); background: var(--surface);
+  }
+  .ar-mono:first-child { margin-left: 0; }
+  .ar-mg-logos { display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+  .ar-mg-logos img { width: 14px !important; height: 14px !important; }
+  .ar-run { transition: opacity .18s ease; }
+  .ar-run.fade { opacity: .15; }
+
+  .ar-side { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 14px; }
+  .ar-card {
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow-sm);
+  }
+  .ar-card h3 {
+    margin: 0 0 6px; font: 600 16px/1.25 var(--font-display); color: var(--text);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .ar-card h3 img { width: 26px; height: 26px; flex: none; object-fit: contain; }
+  .ar-card p { margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
+  .ar-card .why {
+    margin-top: 12px; padding-left: 12px; border-left: 3px solid var(--g-green);
+    font-size: 13px; color: var(--text); line-height: 1.45;
+  }
+  .ar-card .prod {
+    display: inline-block; margin-top: 10px;
+    font: 600 11px var(--font-mono); color: var(--blue-ink);
+  }
+
+  .ar-gov { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .ar-gov li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; font-size: 12.5px; line-height: 1.4; color: var(--text-muted); }
+  .ar-gov li img { width: 22px; height: 22px; }
+  .ar-gov li b { color: var(--text); font-weight: 600; }
+  .ar-gov-ic {
+    width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--g-green);
+    color: var(--green-ink); font: 700 11px/19px var(--font-display); text-align: center;
+  }
+
+  .ar-steps { counter-reset: s; list-style: none; margin: 10px 0 0; padding: 0; font-size: 12.5px; color: var(--text-dim); }
+  .ar-steps li { padding: 5px 0 5px 28px; position: relative; transition: color .2s; line-height: 1.35; }
+  .ar-steps li::before {
+    counter-increment: s; content: counter(s); position: absolute; left: 0; top: 4px;
+    width: 19px; height: 19px; border-radius: 50%; border: 1px solid var(--border-strong);
+    font: 600 10.5px/17px var(--font-mono); text-align: center;
+  }
+  .ar-steps li.on { color: var(--text); font-weight: 500; }
+  .ar-steps li.on::before { background: var(--g-blue); border-color: var(--g-blue); color: #FFF; }
+
+  @media (max-width: 1180px) {
+    .ar-grid { grid-template-columns: 1fr; }
+    .ar-side { position: static; }
+  }
+  @media (max-width: 960px) {
+    .ar-lane { grid-template-columns: 1fr; gap: 10px; }
+    .ar-nodes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .ar-nodes { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 <header class="mast">
-  <a href="../index.html" style="display:flex;align-items:center;gap:12px;"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">08 · Architecture</span></a>
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
+    <span class="mast-tag">08 · Reference Architecture</span>
+  </a>
   <span class="mast-sp"></span>
   <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
-<main class="page-wrap">
+
+<main class="arch-wrap">
   <div class="page-kick"><i></i>From Personas to Production</div>
   <h1 class="page-h1">Non-Invasive Google Cloud Overlay Architecture</h1>
-  <p class="page-lede">After walking through the business story and demos, here is the single holistic stack: agents sit <b>above SAP, DMS, SFA, WMS, and TMS</b>—connecting BigQuery, Vertex AI Search, and Google Maps Platform to internal teams, CFAs, and Wholesale Dealers without rip-and-replace.</p>
+  <p class="page-lede">Agents sit non-invasively above <b>SAP S/4HANA, Distributor Management Systems (DMS), Sales Force Automation (SFA), Warehouse Management Systems (WMS), and Transportation Management Systems (TMS)</b>, uniting BigQuery, Vertex AI Search, and Google Maps Platform across internal teams, Carrying &amp; Forwarding Agents (CFAs), and Wholesale Dealers (WDs).</p>
 
-  <div class="arch-layers">
-    <div class="layer"><div class="layer-lbl">4 · Surfaces (Employees, CFAs &amp; WDs)</div><div class="chips"><span class="chip">Gemini Enterprise Web</span><span class="chip">Google Workspace (Sheets / Docs / Chat)</span><span class="chip">Indic Mobile &amp; SFA Voice (Wohlig)</span><span class="chip">BeatPulse &amp; FleetFlow Control Tower</span></div></div>
-    <div class="layer"><div class="layer-lbl">3 · Agent Orchestration</div><div class="chips"><span class="chip">Gemini Enterprise Agent Studio</span><span class="chip">Vertex AI Agent Engine (ADK)</span><span class="chip">A2A (Agent-to-Agent) Protocol</span><span class="chip">Human-in-the-Loop Approval Gates</span></div></div>
-    <div class="layer"><div class="layer-lbl">2 · Google Cloud Knowledge &amp; Telemetry</div><div class="chips"><span class="chip">Gemini 3.8 Live / Flash · 3.1 Pro</span><span class="chip">BigQuery Supply Chain Cortex</span><span class="chip">Vertex AI Search (Schemes, PODs, Contracts)</span><span class="chip">Google Maps Live Traffic &amp; Curfews</span></div></div>
-    <div class="layer"><div class="layer-lbl">1 · Systems of Record (Preserved)</div><div class="chips"><span class="chip">SAP S/4HANA / IBP / DMS</span><span class="chip">WMS, SFA &amp; Factory SCADA</span><span class="chip">TMS &amp; Carrier FASTag / EDI</span><span class="chip">POS, Cold-Chain IoT &amp; RFID</span></div></div>
+  <div class="ar-bar">
+    <span class="ar-lbl">Runs on</span>
+    <div class="ar-seg" role="group" aria-label="Deployment runtime">
+      <button type="button" data-rt="gc" aria-pressed="true"><img src="../assets/media/gcp/VertexAI.svg" alt="">Google Cloud</button>
+      <button type="button" data-rt="op" aria-pressed="false"><img src="../assets/media/gcp/DistributedCloud.svg" alt="">Factory &amp; Depot Edge</button>
+      <button type="button" data-rt="mc" aria-pressed="false"><img src="../assets/media/gcp/HybridMulticloud.svg" alt="">Multi-Cloud Hybrid</button>
+    </div>
+    <button type="button" class="ar-trace" id="arTrace">&#9654; Trace a live request</button>
   </div>
 
-  <footer class="deck-footer"><span>08 · Enterprise Reference Architecture</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+  <div class="ar-grid">
+    <div class="ar-env">
+      <span class="ar-env-tag">Governed End to End</span>
+      <div class="ar-env-in">
+
+        <div class="ar-lane" style="--lc: var(--blue-ink);">
+          <div>
+            <div class="ar-ln">01 · EXPERIENCE</div>
+            <div class="ar-lt">Engagement Surfaces</div>
+            <div class="ar-ls">Employees, CFAs &amp; WDs</div>
+          </div>
+          <div class="ar-nodes">
+            <button type="button" class="ar-node ar-ge" data-k="ge">
+              <span class="ar-ge-mark"><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
+            </button>
+            <button type="button" class="ar-node" data-k="tower">
+              <img src="../assets/media/gcp/CloudRun.svg" alt="">
+              <span><b>Control Tower</b><small>BeatPulse &amp; FleetFlow</small></span>
+            </button>
+            <button type="button" class="ar-node" data-k="voice">
+              <img src="../assets/media/brand/gemini_spark_fullcolor_768.png" alt="">
+              <span><b>Indic Voice &amp; Mobile</b><small>Hindi &amp; regional mobile</small></span>
+            </button>
+            <button type="button" class="ar-node" data-k="embed">
+              <img src="../assets/media/gcp/IntegrationServices.svg" alt="">
+              <span><b>In-System Embeds</b><small>SAP, DMS &amp; Workspace</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="ar-lane" style="--lc: var(--purple-ink);">
+          <div>
+            <div class="ar-ln">02 · ORCHESTRATION</div>
+            <div class="ar-lt">Agent Workforce</div>
+            <div class="ar-ls">Plan, coordinate &amp; reason</div>
+          </div>
+          <div class="ar-nodes">
+            <button type="button" class="ar-node" data-k="orch">
+              <img src="../assets/media/gcp/Agents.svg" alt="">
+              <span><b>Agent Studio &amp; ADK</b><small>Orchestration engine</small></span>
+            </button>
+            <button type="button" class="ar-node" data-k="fleet">
+              <span class="ar-monos"><span class="ar-mono">P</span><span class="ar-mono">M</span><span class="ar-mono">D</span></span>
+              <span><b>60-Role Fleet</b><small>Plan · Make · Deliver</small></span>
+            </button>
+            <button type="button" class="ar-node" data-k="model">
+              <img src="../assets/media/brand/gemini_spark_fullcolor_768.png" alt="">
+              <span><b>Model Garden</b>
+                <span class="ar-mg-logos">
+                  <img src="../assets/media/models/gemini-color.svg" alt="Gemini">
+                  <img src="../assets/media/models/claude-color.svg" alt="Claude">
+                  <img src="../assets/media/models/gemma-color.svg" alt="Gemma">
+                </span>
+              </span>
+            </button>
+            <button type="button" class="ar-node" data-k="a2a">
+              <img src="../assets/media/gcp/VertexAI.svg" alt="">
+              <span><b>Agent2Agent &amp; Memory</b><small>Cross-pillar handoffs</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="ar-lane" style="--lc: var(--green-ink);">
+          <div>
+            <div class="ar-ln">03 · INTELLIGENCE</div>
+            <div class="ar-lt">Solvers &amp; Search</div>
+            <div class="ar-ls">Verified math &amp; policy</div>
+          </div>
+          <div class="ar-nodes">
+            <button type="button" class="ar-node" data-k="ml">
+              <img src="../assets/media/gcp/AIMachineLearning.svg" alt="">
+              <span><b>TimesFM &amp; BigQuery ML</b><small>Demand &amp; stockout ML</small></span>
+            </button>
+            <button type="button" class="ar-node" data-k="opt">
+              <img src="../assets/media/gcp/Compute.svg" alt="">
+              <span><b>OR-Tools &amp; Maps</b><small>3D load &amp; route curfews</small></span>
+            </button>
+            <button type="button" class="ar-node" data-k="rag">
+              <img src="../assets/media/gcp/VertexAI.svg" alt="">
+              <span><b>Vertex AI Search</b><small>Schemes, PODs &amp; SOPs</small></span>
+            </button>
+            <button type="button" class="ar-node" data-k="api">
+              <img src="../assets/media/gcp/Apigee.svg" alt="">
+              <span><b>Apigee &amp; MCP</b><small>Governed write-backs</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="ar-lane" style="--lc: var(--cyan-ink);">
+          <div>
+            <div class="ar-ln">04 · DATA FLOOR</div>
+            <div class="ar-lt">Preserved Systems</div>
+            <div class="ar-ls">Zero rip-and-replace</div>
+          </div>
+          <div class="ar-nodes ar-run" id="arData"></div>
+        </div>
+
+        <div class="ar-lane" style="--lc: var(--blue-ink);">
+          <div>
+            <div class="ar-ln">05 · RUNTIME</div>
+            <div class="ar-lt" id="arRtTitle">Google Cloud</div>
+            <div class="ar-ls">Same agent, same policy</div>
+          </div>
+          <div class="ar-nodes ar-run" id="arRun"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <aside class="ar-side">
+      <div class="ar-card" id="arDetail"></div>
+
+      <div class="ar-card">
+        <h3>Governance Across Every Layer</h3>
+        <ul class="ar-gov">
+          <li>
+            <img src="../assets/media/gcp/SecurityIdentity.svg" alt="">
+            <span><b>Scoped Identity</b> — Least-privilege access per plant, Carrying &amp; Forwarding Agent (CFA), and Wholesale Dealer (WD).</span>
+          </li>
+          <li>
+            <img src="../assets/media/gcp/SecurityCommandCenter.svg" alt="">
+            <span><b>Prompt &amp; Data Safety</b> — Model Armor, Sensitive Data Protection (DLP), and VPC Service Controls.</span>
+          </li>
+          <li>
+            <span class="ar-gov-ic" aria-hidden="true">&#10003;</span>
+            <span><b>Human Approval Gate</b> — Named manager sign-off required before any Purchase Order (PO), Stock Transfer Order (STO), or claim payout.</span>
+          </li>
+          <li>
+            <img src="../assets/media/gcp/Observability.svg" alt="">
+            <span><b>Full Audit Trail</b> — Every recommendation links to its BigQuery query, contract clause, and Cloud Audit Log.</span>
+          </li>
+          <li id="arGovRt" class="ar-run" hidden></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="deck-footer">
+    <span>08 · Enterprise Reference Architecture</span>
+    <span class="footer-brand">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+      <span style="width:1px;height:16px;background:#DADCE0;"></span>
+      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
+    </span>
+  </footer>
 </main>
+
+<script>
+(function () {
+  var G = '../assets/media/gcp/', M = '../assets/media/';
+  var RT = {
+    gc: {
+      t: 'Google Cloud',
+      g: '',
+      d: [
+        ['Databases.svg', 'SAP, DMS, SFA & TMS', 'Systems of record intact', 'sor'],
+        ['BigQuery.svg', 'BigQuery Cortex', 'POS, stock & transit feeds', 'bq'],
+        ['Cloud_Storage.svg', 'Cloud Storage', 'POD scans & shelf photos', 'gcs'],
+        ['Networking.svg', 'Google Maps & Weather', 'Live traffic & curfews', 'maps']
+      ],
+      n: [
+        ['VertexAI.svg', 'Agent Engine', 'Serverless agent host', 'rt_ae'],
+        ['CloudRun.svg', 'Cloud Run', 'MCP & UI microservices', 'rt_cr'],
+        ['GKE.svg', 'GKE', 'Solver & route compute', 'rt_gke'],
+        ['SecurityIdentity.svg', 'Zero-Trust IAM', 'Perimeter & audit keys', 'rt_sec']
+      ]
+    },
+    op: {
+      t: 'Factory & Depot Edge',
+      g: '<b>Edge Resilience</b> — Identity, guardrails, and telemetry run locally inside the factory or cold-chain hub, syncing summaries to the Control Tower.',
+      d: [
+        ['Databases.svg', 'SCADA & Yard Gates', 'Sub-50ms site telemetry', 'sor_op'],
+        ['Cloud_Storage.svg', 'Edge Object Store', 'Inline inspection frames', 'gcs_op'],
+        ['AlloyDB.svg', 'AlloyDB Omni', 'Local SOP & allergen index', 'alloy'],
+        ['brand/gemini_spark_fullcolor_768.png', 'On-Site Grounding', 'Offline compliance lookup', 'rag_op']
+      ],
+      n: [
+        ['DistributedCloud.svg', 'Distributed Cloud', 'Plant & cold-hub edge', 'rt_gdc'],
+        ['GKE.svg', 'GKE on Edge', 'Containerized workflows', 'rt_gke'],
+        ['#gemma', 'Local Gemma', 'On-premises model inference', 'rt_local'],
+        ['Observability.svg', 'Central Telemetry', 'Fleet observability sync', 'rt_obs']
+      ]
+    },
+    mc: {
+      t: 'Multi-Cloud Hybrid',
+      g: '<b>Cross-Cloud Policy</b> — Unified Identity, Data Loss Prevention (DLP), and SQL governance extend across AWS and Azure without copying datasets.',
+      d: [
+        ['Databases.svg', 'Existing ERP & WMS', 'Remains where hosted', 'sor'],
+        ['HybridMulticloud.svg', 'AWS & Azure Lakes', 'Zero data migration', 'mc_data'],
+        ['BigQuery.svg', 'BigQuery Omni', 'Unified cross-cloud SQL', 'bq_omni'],
+        ['VertexAI.svg', 'RAG Grounding', 'Schemes, contracts & audits', 'rag']
+      ],
+      n: [
+        ['HybridMulticloud.svg', 'GKE Enterprise', 'Single multi-cloud fleet', 'rt_mc'],
+        ['GKE.svg', 'Portable Containers', 'Identical agent image', 'rt_gke'],
+        ['Marketplace.svg', 'Model Garden', 'Centralized model routing', 'model'],
+        ['SecurityCommandCenter.svg', 'Unified Guardrails', 'Policy across clouds', 'rt_sec']
+      ]
+    }
+  };
+
+  var D = {
+    intro: {
+      img: M + 'brand/gemini_spark_fullcolor_768.png',
+      t: 'Non-invasive by design',
+      p: 'Click or hover any block in the architecture to inspect how Google Cloud connects existing SAP, Distributor Management Systems (DMS), Sales Force Automation (SFA), and Transportation Management Systems (TMS) without replacing them.',
+      why: 'Deterministic solvers compute every number; Gemini reasons across documents and context; a named manager approves every execution step.',
+      prod: 'Interactive Blueprint · Click any component'
+    },
+    ge: {
+      img: M + 'gemini_enterprise_logo.svg', whiteBg: 1,
+      t: 'Gemini Enterprise',
+      p: 'Single governed entry point for internal planners, Carrying & Forwarding Agent (CFA) leads, and Wholesale Dealers (WDs) across Web and Google Workspace.',
+      why: 'Users ask plain-English business questions without learning internal table schemas or code.',
+      prod: 'Gemini Enterprise'
+    },
+    tower: {
+      img: G + 'CloudRun.svg',
+      t: 'BeatPulse & FleetFlow Control Tower',
+      p: 'Purpose-built interactive command screens for outlet coverage, On-Time In-Full (OTIF) delivery diagnostics, and 3D truck load verification.',
+      why: 'Gives city dispatchers and Sales Operations leads live map, bin-packing, and stockout visibility in one pane.',
+      prod: 'Cloud Run · Google Maps Platform'
+    },
+    voice: {
+      img: M + 'brand/gemini_spark_fullcolor_768.png',
+      t: 'Indic Voice & Frontline Mobile',
+      p: 'Low-latency conversational voice and photo workflows in Hindi, Hinglish, and regional Indian languages integrated alongside mobile field apps.',
+      why: 'Eliminates manual dropdown fatigue for Delivery Sales Representatives (DSRs), drivers, and merchandisers in the field.',
+      prod: 'Gemini Live · Android & Messaging Channels'
+    },
+    embed: {
+      img: G + 'IntegrationServices.svg',
+      t: 'In-System & Workspace Embeds',
+      p: 'Side-panel copilots inside Google Sheets, Docs, Chat, SAP screens, and Dealer Management portals.',
+      why: 'Meets teams where they already work instead of forcing another standalone dashboard.',
+      prod: 'Application Integration · Google Workspace'
+    },
+    orch: {
+      img: G + 'Agents.svg',
+      t: 'Gemini Enterprise Agent Studio & ADK',
+      p: 'Combines no-code Agent Designer for self-service workflows with code-first Agent Development Kit (ADK) orchestrators for multi-step operations.',
+      why: 'Lets analysts configure routine checks quickly while engineering teams govern complex multi-echelon solvers.',
+      prod: 'Agent Studio · Agent Development Kit (ADK)'
+    },
+    fleet: {
+      img: G + 'Agents.svg',
+      t: '60-Role Supply Chain Workforce',
+      p: 'Specialized agent squads across Planning, Procurement, Manufacturing, Warehousing, Distribution, and Reverse Logistics.',
+      why: 'Each agent owns narrow domain logic, making accuracy easy to test, measure, and audit.',
+      prod: 'Vertex AI Agent Engine'
+    },
+    model: {
+      img: M + 'models/gemini-color.svg',
+      t: 'Vertex AI Model Garden (Pro · Flash · Live)',
+      p: 'Routes each step to the right tier: Gemini Pro for complex Sales & Operations Planning (S&OP) trade-offs, Gemini Flash for high-volume scheme and stock checks, Gemini Live for Indic voice, plus open-weight Gemma.',
+      why: 'Matches reasoning depth and cost to each step without vendor lock-in.',
+      prod: 'Gemini Pro · Flash · Live · Vertex AI Model Garden'
+    },
+    a2a: {
+      img: G + 'VertexAI.svg',
+      t: 'Agent2Agent (A2A) & Session Memory',
+      p: 'Open Agent2Agent (A2A) protocol passes structured context between Demand, Inventory, and Dispatch agents while retaining prior approval constraints.',
+      why: 'Prevents local route or allocation fixes from creating downstream stockouts.',
+      prod: 'Agent2Agent (A2A) · Vertex AI Memory Bank'
+    },
+    ml: {
+      img: G + 'AIMachineLearning.svg',
+      t: 'TimesFM & BigQuery ML',
+      p: 'Statistical and time-series forecasting models compute SKU-level velocity, festive surges, and stockout risk deterministically.',
+      why: 'Language models never guess numbers; certified forecasting models calculate every baseline.',
+      prod: 'Vertex AI · BigQuery ML'
+    },
+    opt: {
+      img: G + 'Compute.svg',
+      t: 'OR-Tools & Google Maps Platform',
+      p: 'Operations Research solvers compute weight/volume 3D truck packing and multi-drop beat routes around municipal no-entry curfews.',
+      why: 'Guarantees physically valid load plans and realistic arrival windows.',
+      prod: 'Google OR-Tools · Google Maps Routes API'
+    },
+    rag: {
+      img: G + 'VertexAI.svg',
+      t: 'Vertex AI Search (Schemes, PODs & SOPs)',
+      p: 'Indexes Proof of Delivery (POD) documents, wholesale scheme circulars, rate cards, and quality Standard Operating Procedures (SOPs) with exact citations.',
+      why: 'Reconciles claim disputes in hours with verifiable document proof.',
+      prod: 'Vertex AI Search · RAG Engine'
+    },
+    api: {
+      img: G + 'Apigee.svg',
+      t: 'Apigee & Model Context Protocol (MCP)',
+      p: 'Rate-limited, OAuth-scoped API gateway and standardized MCP tool connectors mediating every read and staged write-back to ERP and DMS systems.',
+      why: 'Prevents unauthorized bulk writes and gives IT full schema control.',
+      prod: 'Apigee · Model Context Protocol (MCP)'
+    },
+    sor: {
+      img: G + 'Databases.svg',
+      t: 'SAP, DMS, SFA & TMS (Preserved)',
+      p: 'Core transactional systems remain the authoritative system of record; agents read deltas and submit staged drafts for approval.',
+      why: 'Delivers agentic automation in weeks without touching core ERP migrations.',
+      prod: 'SAP S/4HANA · DMS · SFA · WMS · TMS'
+    },
+    bq: {
+      img: G + 'BigQuery.svg',
+      t: 'BigQuery Supply Chain Cortex',
+      p: 'Unified analytical layer harmonizing primary factory dispatches, secondary distributor sales, Point of Sale (POS) off-take, and Cold-Chain IoT telemetry.',
+      why: 'Creates one source of truth shared across demand, inventory, and fleet agents.',
+      prod: 'BigQuery · Google Cloud Cortex Framework'
+    },
+    gcs: {
+      img: G + 'Cloud_Storage.svg',
+      t: 'Cloud Storage Multimodal Store',
+      p: 'Stores retail planogram photos, damaged-carton evidence, signed Proof of Delivery (POD) scans, and interactive HTML briefings.',
+      why: 'Enables multimodal scheme audits and dispute evidence review.',
+      prod: 'Google Cloud Storage'
+    },
+    maps: {
+      img: G + 'Networking.svg',
+      t: 'Google Maps Traffic, Curfews & Weather',
+      p: 'Live highway congestion, municipal heavy-vehicle curfews, Modern Trade (MT) dock windows, and monsoon weather signals.',
+      why: 'Turns static route plans into adaptive city-level execution.',
+      prod: 'Google Maps Platform · Weather APIs'
+    },
+    rt_ae: {
+      img: G + 'VertexAI.svg',
+      t: 'Vertex AI Agent Engine',
+      p: 'Managed serverless runtime hosting ADK agents with built-in session state, evaluation traces, and autoscaling.',
+      why: 'Zero server administration across peak seasonal demand spikes.',
+      prod: 'Vertex AI Agent Engine'
+    },
+    rt_cr: {
+      img: G + 'CloudRun.svg',
+      t: 'Cloud Run Services',
+      p: 'Hosts MCP connectors, webhook listeners, and control tower web APIs with scale-to-zero efficiency.',
+      why: 'Fast deployment of lightweight integration microservices.',
+      prod: 'Google Cloud Run'
+    },
+    rt_gke: {
+      img: G + 'GKE.svg',
+      t: 'Google Kubernetes Engine (GKE)',
+      p: 'Portable container platform running high-throughput route optimization and batch replenishment workloads.',
+      why: 'Consistent container runtime across cloud and edge environments.',
+      prod: 'Google Kubernetes Engine (GKE)'
+    },
+    rt_sec: {
+      img: G + 'SecurityIdentity.svg',
+      t: 'IAM, VPC-SC & Model Armor',
+      p: 'Enforces role-based access per region and dealer tier, VPC Service Controls perimeters, and prompt-injection filtering.',
+      why: 'Keeps proprietary trade schemes and dealer pricing strictly isolated.',
+      prod: 'Cloud IAM · Model Armor · VPC Service Controls'
+    },
+    sor_op: {
+      img: G + 'Databases.svg',
+      t: 'Line SCADA & Gate Cameras',
+      p: 'Captures bottling/packaging line sensors, conveyor status, and plant gate turnarounds locally.',
+      why: 'Maintains real-time quality alerting even across intermittent WAN links.',
+      prod: 'Google Distributed Cloud Edge Connectors'
+    },
+    gcs_op: {
+      img: G + 'Cloud_Storage.svg',
+      t: 'Local Object Storage',
+      p: 'Buffers high-speed camera inspection frames and packaging logs on site.',
+      why: 'Avoids pushing raw video streams across factory uplinks.',
+      prod: 'Distributed Cloud Storage'
+    },
+    alloy: {
+      img: G + 'AlloyDB.svg',
+      t: 'AlloyDB Omni',
+      p: 'Sub-millisecond relational and vector lookups for changeover Standard Operating Procedures (SOPs) on factory hardware.',
+      why: 'Recommends compliant line changeovers in seconds.',
+      prod: 'AlloyDB Omni'
+    },
+    rag_op: {
+      img: M + 'brand/gemini_spark_fullcolor_768.png',
+      t: 'On-Site Grounding',
+      p: 'Local retrieval over quality specifications and safety permits inside the plant fence.',
+      why: 'Zero downtime if external connectivity drops.',
+      prod: 'Gemini on Distributed Cloud'
+    },
+    rt_gdc: {
+      img: G + 'DistributedCloud.svg',
+      t: 'Google Distributed Cloud',
+      p: 'Runs managed Kubernetes and AI workloads directly at manufacturing plants or regional cold-storage hubs.',
+      why: 'Deterministic low-latency execution at the physical edge.',
+      prod: 'Google Distributed Cloud'
+    },
+    rt_local: {
+      img: M + 'models/gemma-color.svg',
+      t: 'On-Premises Gemma Models',
+      p: 'Open-weight models tuned for local triage and multilingual shift summaries inside the facility.',
+      why: 'Sensitive plant recipes never leave on-premises hardware.',
+      prod: 'Gemma on Distributed Cloud'
+    },
+    rt_obs: {
+      img: G + 'Observability.svg',
+      t: 'Centralized Fleet Observability',
+      p: 'Synchronizes audit summaries and health metrics cleanly to the enterprise control tower.',
+      why: 'Single governance pane across factories and cloud.',
+      prod: 'Cloud Monitoring & Audit Logs'
+    },
+    mc_data: {
+      img: G + 'HybridMulticloud.svg',
+      t: 'AWS & Azure Data Lakes',
+      p: 'Reads existing cloud storage tables in place without forcing ETL duplication into Google Cloud.',
+      why: 'Enables 100-day pilots immediately over existing cloud estates.',
+      prod: 'BigQuery Omni'
+    },
+    bq_omni: {
+      img: G + 'BigQuery.svg',
+      t: 'BigQuery Omni Cross-Cloud SQL',
+      p: 'Executes federated queries and joins directly where multi-cloud data lives.',
+      why: 'One SQL and governance model across every cloud.',
+      prod: 'BigQuery Omni'
+    },
+    rt_mc: {
+      img: G + 'HybridMulticloud.svg',
+      t: 'GKE Enterprise',
+      p: 'Deploys consistent containerized agents and policy configurations across Google Cloud, AWS, and on-premises clusters.',
+      why: 'Build once, run wherever the data and latency require.',
+      prod: 'GKE Enterprise'
+    }
+  };
+
+  var detail = document.getElementById('arDetail');
+  function show(k) {
+    var d = D[k] || D.intro;
+    detail.innerHTML =
+      '<h3><img src="' + d.img + '" alt=""' + (d.whiteBg ? ' style="background:#FFFFFF;border:1px solid #E2E6F0;border-radius:7px;padding:4px;width:90px;height:24px;"' : '') + '>' + d.t + '</h3>' +
+      '<p>' + d.p + '</p>' +
+      '<div class="why"><b>Why it matters:</b> ' + d.why + '</div>' +
+      '<span class="prod">' + d.prod + '</span>';
+    document.querySelectorAll('.ar-node.sel').forEach(function (n) { n.classList.remove('sel'); });
+    document.querySelectorAll('[data-k="' + k + '"]').forEach(function (n) { n.classList.add('sel'); });
+  }
+
+  function bind(root) {
+    root.querySelectorAll('[data-k]').forEach(function (n) {
+      n.addEventListener('click', function () { show(n.dataset.k); });
+      n.addEventListener('mouseenter', function () { show(n.dataset.k); });
+    });
+  }
+
+  var runEl = document.getElementById('arRun');
+  var dataEl = document.getElementById('arData');
+  var govRtEl = document.getElementById('arGovRt');
+
+  function renderNodes(list) {
+    return list.map(function (n) {
+      var src = n[0] === '#gemma' ? M + 'models/gemma-color.svg' : (n[0].indexOf('/') > -1 ? M + n[0] : G + n[0]);
+      return '<button type="button" class="ar-node" data-k="' + n[3] + '"><img src="' + src + '" alt=""><span><b>' + n[1] + '</b><small>' + n[2] + '</small></span></button>';
+    }).join('');
+  }
+
+  function setRuntime(key) {
+    document.querySelectorAll('.ar-seg button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.rt === key));
+    });
+    runEl.classList.add('fade');
+    dataEl.classList.add('fade');
+    govRtEl.classList.add('fade');
+    setTimeout(function () {
+      document.getElementById('arRtTitle').textContent = RT[key].t;
+      dataEl.innerHTML = renderNodes(RT[key].d);
+      runEl.innerHTML = renderNodes(RT[key].n);
+      govRtEl.innerHTML = RT[key].g ? '<span class="ar-gov-ic" aria-hidden="true">&#8635;</span><span>' + RT[key].g + '</span>' : '';
+      govRtEl.hidden = !RT[key].g;
+      bind(dataEl);
+      bind(runEl);
+      dataEl.classList.remove('fade');
+      runEl.classList.remove('fade');
+      govRtEl.classList.remove('fade');
+    }, 160);
+  }
+
+  document.querySelectorAll('.ar-seg button').forEach(function (b) {
+    b.addEventListener('click', function () { setRuntime(b.dataset.rt); });
+  });
+
+  bind(document);
+  setRuntime('gc');
+  show('intro');
+
+  var traceTimerIds = [];
+  var STEPS = [
+    ['ge', 'Planner asks in Gemini Enterprise: festive stockout risk and OTIF recovery'],
+    ['orch', 'Agent Studio & ADK decomposes across Demand, Inventory & Dispatch'],
+    ['ml', 'TimesFM & BigQuery ML quantify outlet depletion across regions'],
+    ['opt', 'OR-Tools & Google Maps compute 3D co-load and curfew bypass routes'],
+    ['bq|bq_omni|alloy', 'BigQuery Cortex verifies live CFA stock, transit ETAs, and constraints'],
+    ['rag|rag_op', 'Vertex AI Search attaches scheme eligibility and contract clauses'],
+    ['api', 'Apigee & MCP stages Draft Stock Transfer Order without touching core ERP'],
+    ['ge', 'TM&D Operations Lead reviews citations and approves in 1 click']
+  ];
+
+  document.getElementById('arTrace').addEventListener('click', function () {
+    traceTimerIds.forEach(clearTimeout);
+    traceTimerIds = [];
+    detail.innerHTML =
+      '<h3><img src="' + G + 'Agents.svg" alt="">Live TM&amp;D Request Trace</h3>' +
+      '<p>Watch one end-to-end replenishment &amp; dispatch cycle traverse every architecture layer.</p>' +
+      '<ol class="ar-steps">' + STEPS.map(function (s) { return '<li>' + s[1] + '</li>'; }).join('') + '</ol>';
+    var lis = detail.querySelectorAll('li');
+    STEPS.forEach(function (s, i) {
+      var id = setTimeout(function () {
+        document.querySelectorAll('.ar-node.hot').forEach(function (n) { n.classList.remove('hot'); });
+        s[0].split('|').some(function (k) {
+          var n = document.querySelector('.ar-node[data-k="' + k + '"]');
+          if (n) n.classList.add('hot');
+          return !!n;
+        });
+        lis.forEach(function (l, j) { l.classList.toggle('on', j <= i); });
+        if (i === STEPS.length - 1) {
+          var endId = setTimeout(function () {
+            document.querySelectorAll('.ar-node.hot').forEach(function (x) { x.classList.remove('hot'); });
+          }, 1400);
+          traceTimerIds.push(endId);
+        }
+      }, 150 + i * 750);
+      traceTimerIds.push(id);
+    });
+  });
+})();
+</script>
 <script>initDeckChrome({ root: '../' });</script>
-</body></html>
+</body>
+</html>
