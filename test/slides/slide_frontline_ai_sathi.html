@@ -38,6 +38,14 @@
     .cell p { margin: 0; font: 400 13px/1.5 var(--font-body); color: var(--text); }
     .cell.demo .demo-title { font: 600 13.5px var(--font-display); color: var(--blue-ink); margin-bottom: 4px; }
     .cell.demo .demo-flow { font: 500 12px/1.4 var(--font-body); color: var(--text-muted); }
+    .cell.imp .imp-res { font: 400 12.5px/1.45 var(--font-body); color: var(--text); margin-bottom: 6px; }
+    .cell.imp .imp-tag {
+      display: inline-block; align-self: flex-start;
+      font: 700 11px var(--font-mono); color: var(--green-ink);
+      background: color-mix(in srgb, var(--g-green) 12%, var(--surface));
+      border: 1px solid color-mix(in srgb, var(--g-green) 28%, transparent);
+      padding: 3px 8px; border-radius: 999px;
+    }
     .mob-lbl { display: none; font: 700 10px var(--font-mono); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
 
     .sathi-trust {
@@ -106,7 +114,8 @@
       </div>
       <div class="cell imp">
         <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-        <p>Hindi/Hinglish voice cart in DMS, automated +4.5% YiPPee! scheme margin &amp; instant SAP S/4HANA billing.</p>
+        <div class="imp-res">Builds the DMS cart from Hindi/Hinglish voice, surfaces overdue/credit guardrails &amp; syncs straight to SAP S/4HANA.</div>
+        <span class="imp-tag">↑ Order Speed &amp; +4.5% Scheme Margin</span>
       </div>
     </article>
 
@@ -127,7 +136,8 @@
       </div>
       <div class="cell imp">
         <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-        <p>Gemini 2.5 Flash lifts compliance (71.4% to 96.4%), flags rival soap in slots B12–B14 &amp; dispatches Floor Supervisor restock ticket.</p>
+        <div class="imp-res">Audits shelf photos in seconds, flags rival clutter (slots B12–B14) &amp; auto-dispatches supervisor restock tickets.</div>
+        <span class="imp-tag">Compliance 71.4% → 96.4% · Higher OSA</span>
       </div>
     </article>
 
@@ -148,7 +158,8 @@
       </div>
       <div class="cell imp">
         <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-        <p>Camera spots +3.5 mm belt drift, pulls LOTO &amp; 18.5 N·m torque spec from OEM PDF, and voice-closes SAP PM (9m downtime).</p>
+        <div class="imp-res">Diagnoses +3.5 mm belt drift from camera, pulls exact LOTO/torque spec from OEM PDF &amp; voice-closes SAP PM logs.</div>
+        <span class="imp-tag">9-Min Downtime · Faster MTTR</span>
       </div>
     </article>
 
@@ -169,7 +180,8 @@
       </div>
       <div class="cell imp">
         <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-        <p>Audio FEFO picking, camera crush triage (28mm &gt; 12mm hold), auto 90d+ batch swap &amp; instant NIC GST e-Way slip.</p>
+        <div class="imp-res">Guides hands-free audio FEFO picking, scores carton crush via camera, auto-swaps 90d+ lots &amp; clears GST e-Way bills.</div>
+        <span class="imp-tag">Zero Damaged/Expired Dispatches</span>
       </div>
     </article>
 
@@ -190,7 +202,8 @@
       </div>
       <div class="cell imp">
         <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
-        <p>Macro grain scan scores moisture/chaff objectively, queues same-day NEFT (₹1,20,312.50) &amp; sends Hindi WhatsApp tips.</p>
+        <div class="imp-res">Scores moisture/chaff objectively via macro scan, queues transparent NEFT quotes &amp; sends Hindi WhatsApp tips.</div>
+        <span class="imp-tag">Zero Mandi Disputes · Same-Day Payout</span>
       </div>
     </article>
   </section>
