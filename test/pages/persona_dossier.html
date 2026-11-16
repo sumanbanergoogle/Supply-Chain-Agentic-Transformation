@@ -110,10 +110,18 @@
   .plive::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #FFF; animation: livePulse 1.6s ease-in-out infinite; }
   @keyframes livePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,.9); } 50% { box-shadow: 0 0 0 4px rgba(255,255,255,0); } }
 
-  .ag-name { font-size: 18px; font-weight: 700; margin: 0; line-height: 1.25; color: var(--text); }
-  .ag-desc { font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.48; }
-  .ag-box { padding: 10px 12px; border-radius: 12px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); font-size: 12.5px; line-height: 1.46; color: var(--text); }
-  .ag-box b { display: block; font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ac); margin-bottom: 3px; }
+  .ag-name { font-size: 17px; font-weight: 700; margin: 0; line-height: 1.25; color: var(--text); }
+  .ag-desc {
+    font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.48;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .ag-icon-wrap {
+    width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--ac) 12%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--ac) 26%, transparent);
+  }
+  .ag-icon-wrap img { width: 20px; height: 20px; display: block; }
   .ag-foot { margin-top: auto; padding-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; font: 700 12.5px var(--font); color: var(--ac); }
   .ag-btn-details { color: var(--ac); text-decoration: none; font: 700 12.5px var(--font); }
   .ag-btn-details:hover { text-decoration: underline; }
@@ -221,25 +229,37 @@
       var p = PDETAILS[reqId];
       if (!p) return;
       var root = document.getElementById('dossierRoot');
+      var ICONS = [
+        '../assets/media/models/gemini-color.svg',
+        '../assets/media/gcp/Agents.svg',
+        '../assets/media/gcp/VertexAI.svg',
+        '../assets/media/gcp/BigQuery.svg',
+        '../assets/media/gcp/IntegrationServices.svg',
+        '../assets/media/gcp/Observability.svg'
+      ];
       var cardsHtml = (p.suiteNames || []).map(function (aname, idx) {
         var a = ADETAILS[aname.toLowerCase()] || {};
         var ac = ACCENTS[idx % ACCENTS.length];
+        var iconSrc = ICONS[idx % ICONS.length];
         var isLive = Boolean(a.liveInGE);
         var pCls = (a.priority || '').indexOf('P0') === 0 ? 'p0' : 'p1';
         var href = 'agent_details.html?agent=' + encodeURIComponent(aname) + '&persona=' + encodeURIComponent(p.id);
+        var oneLine = (a.sumanImpact || a.outcome || a.does || '').split(/\.(\s|$)/)[0].trim();
+        if (oneLine && !/[.!?]$/.test(oneLine)) oneLine += '.';
         return '<div class="ag-card" style="--ac:' + ac + ';" onclick="window.location.href=\'' + href.replace(/'/g, "\\'") + '\'">' +
           '<div class="ag-top">' +
-            '<div class="ag-badges">' +
-              '<span class="pill ' + pCls + '">' + (a.priority || 'P1 · Build Next') + '</span>' +
-              (isLive ? '<span class="plive">Live</span>' : '') +
+            '<div style="display:flex;align-items:center;gap:10px;">' +
+              '<span class="ag-icon-wrap"><img src="' + iconSrc + '" alt=""></span>' +
+              '<div class="ag-badges">' +
+                '<span class="pill ' + pCls + '">' + (a.priority || 'P1 · Build Next') + '</span>' +
+                (isLive ? '<span class="plive">Live</span>' : '') +
+              '</div>' +
             '</div>' +
           '</div>' +
           '<h3 class="ag-name">' + (a.geDisplayName || aname) + '</h3>' +
-          '<p class="ag-desc">' + (a.sumanImpact || a.outcome || a.problem || '') + '</p>' +
-          '<div class="ag-box"><b>How It Works</b>' + (a.does || '') + '</div>' +
-          '<div class="ag-box"><b>Human Sign-Off Gate</b>' + (a.stopsAt || '') + '</div>' +
+          '<p class="ag-desc">' + oneLine + '</p>' +
           '<div class="ag-foot">' +
-            '<a class="ag-btn-details" href="' + href + '" onclick="event.stopPropagation();">Open Architecture &amp; Details &rarr;</a>' +
+            '<a class="ag-btn-details" href="' + href + '" onclick="event.stopPropagation();">View Details &rarr;</a>' +
             (isLive && a.geUrl ? '<a class="ag-btn-ge" href="' + a.geUrl + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Open in GE &#8599;</a>' : '') +
           '</div>' +
         '</div>';
