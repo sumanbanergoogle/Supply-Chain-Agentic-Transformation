@@ -16,11 +16,11 @@
 })();
 
 window.SC_SLIDE_DECK = [
-  { num: "01", title: "Why Agentic Transformation for Supply Chains in India & TM&D", path: "slides/slide_01.html" },
-  { num: "02", title: "The TM&D Value Tree (North Star & Global OSA Proof)", path: "slides/slide_03_value_tree.html" },
-  { num: "03", title: "TM&D Reality: Correlated Challenges & How Agents Seal Gaps", path: "slides/slide_02.html" },
-  { num: "04", title: "Live Demo Stage: Demo 1 & Demo 2", path: "pages/demo_stage.html" },
-  { num: "05", title: "The Plug Is an Agent (Power of Agents & Frontline Day)", path: "slides/slide_03.html" },
+  { num: "01", title: "India Supply Chain & TM&D Context (Rule of Three)", path: "slides/slide_01.html" },
+  { num: "02", title: "Where Value Leaks: TM&D Challenges & Barrier Gaps", path: "slides/slide_02.html" },
+  { num: "03", title: "The Value Case & TM&D North Star", path: "slides/slide_03_value_tree.html" },
+  { num: "04", title: "Agents Are the Answer: Holistic Coexistence & FLW", path: "slides/slide_03.html" },
+  { num: "05", title: "Live Demo Stage: Demo 1 & Demo 2", path: "pages/demo_stage.html" },
   { num: "06", title: "From Two Agents to an Agentic Organisation", path: "slides/slide_04.html" },
   { num: "07", title: "Persona Map: 60 CPG Supply Chain Roles", path: "pages/persona_map.html" },
   { num: "08", title: "Non-Invasive Reference Architecture", path: "pages/build_02_arch.html" },

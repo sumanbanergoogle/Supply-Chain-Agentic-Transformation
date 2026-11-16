@@ -1,151 +1,155 @@
 <!DOCTYPE html>
 <html lang="en" class="theme-light">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>03 · The Value Tree</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · The Value Case &amp; TM&amp;D North Star</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="../assets/aurora.css">
-<link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-<script src="../assets/deck_nav.js?v=18"></script>
+<link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<script src="../assets/deck_nav.js?v=19"></script>
 <style>
-  .vt-root {
-    max-width: 680px; margin: 22px auto 0; text-align: center;
-    background: var(--surface); border: 2px solid var(--g-blue);
-    border-radius: 18px; padding: 18px 24px; box-shadow: var(--shadow-md);
-    position: relative;
+  /* VALUE FIRST: Big validated commercial outcomes before North Star tree */
+  .val-hero {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px;
   }
-  .vt-root::before {
-    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px;
-    border-radius: 16px 16px 0 0; background: var(--gemini-spark);
+  .val-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-top: 4px solid var(--tc);
+    border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: 6px;
   }
-  .vt-root small { font: 600 11px var(--font-mono); letter-spacing: 1.3px; text-transform: uppercase; color: var(--blue-ink); }
-  .vt-root h2 { margin: 6px 0 0; font: 600 22px/1.2 var(--font-display); color: var(--text); }
+  .val-big { font: 700 clamp(28px, 3vw, 38px)/1.05 var(--font-mono); color: var(--ti); }
+  .val-card h3 { margin: 4px 0 2px; font: 600 17px var(--font-display); color: var(--text); }
+  .val-proof { font: 500 12px/1.4 var(--font-body); color: var(--text-muted); }
 
-  .vt-stem { width: 2px; height: 22px; background: var(--border-strong); margin: 0 auto; }
-  .vt-bar { height: 2px; background: var(--border-strong); margin: 0 12.5%; }
-  .vt-branches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-  .vt-col { display: flex; flex-direction: column; align-items: center; }
-  .vt-tick { width: 2px; height: 18px; background: var(--border-strong); }
+  /* NORTH STAR DESTINATION */
+  .ns-wrap {
+    margin-top: 24px; background: var(--surface); border: 2px solid var(--g-blue);
+    border-radius: 20px; padding: 20px 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+  }
+  .ns-wrap::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--gemini-spark); }
+  .ns-top {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);
+  }
+  .ns-top small { font: 700 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--blue-ink); }
+  .ns-top h2 { margin: 4px 0 0; font: 600 22px var(--font-display); color: var(--text); }
+  .scope-pill {
+    padding: 7px 13px; border-radius: 999px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+    font: 500 12px var(--font-display); color: var(--text);
+  }
+  .scope-pill b { color: var(--blue-ink); }
 
-  .vt-card {
-    width: 100%; flex: 1;
-    background: var(--surface); border: 1px solid var(--border-subtle);
-    border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow-sm);
-    position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px;
-    transition: transform .16s, border-color .16s, box-shadow .16s;
+  .levers-4 {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px;
   }
-  .vt-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--tc); }
-  .vt-card:hover { transform: translateY(-2px); border-color: var(--tc); box-shadow: var(--shadow-md); }
-  .vt-num { font: 600 11px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--ti); }
-  .vt-card h3 { margin: 0; font: 600 17.5px/1.25 var(--font-display); color: var(--text); }
-  .vt-card p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--text-muted); }
-  .vt-pill {
-    margin-top: auto; align-self: flex-start;
-    font: 600 11px var(--font-mono); padding: 4px 10px; border-radius: 999px;
-    background: color-mix(in srgb, var(--tc) 11%, var(--surface));
-    color: var(--ti);
+  .lv {
+    padding: 13px 14px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
+    border-left: 4px solid var(--tc); cursor: pointer; transition: transform .15s, border-color .15s;
+  }
+  .lv:hover, .lv.is-on { transform: translateY(-2px); background: var(--surface); border-color: var(--tc); box-shadow: var(--shadow-sm); }
+  .lv span { font: 700 10px var(--font-mono); text-transform: uppercase; color: var(--ti); }
+  .lv h4 { margin: 4px 0; font: 600 15px/1.25 var(--font-display); color: var(--text); }
+  .lv b { font: 700 12px var(--font-mono); color: var(--ti); }
+
+  .lv-detail {
+    margin-top: 12px; padding: 11px 14px; border-radius: 12px;
+    background: color-mix(in srgb, var(--g-blue) 6%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--g-blue) 25%, transparent);
+    font-size: 13px; color: var(--text); display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap;
   }
 
-  @media (max-width: 1020px) {
-    .vt-bar, .vt-tick, .vt-stem { display: none; }
-    .vt-branches { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
-  }
-  @media (max-width: 640px) {
-    .vt-branches { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 960px) { .val-hero, .levers-4 { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-
 <header class="mast">
   <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
-    <img src="../assets/media/wip/image25.png" alt="Google Cloud">
-    <span class="mast-rule"></span>
-    <span class="mast-tag">02 · Value Tree</span>
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
+    <span class="mast-tag">03 · Value Case &amp; North Star</span>
   </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav">
-    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
-  </div>
+  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 
 <main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 02 · Aligning on ITC TM&amp;D Outcomes &amp; Global OSA Proof</div>
-  <h1 class="page-h1">The TM&amp;D Value Tree</h1>
-  <p class="page-lede">After India’s supply chain spine comes <b>ITC Trade Marketing &amp; Distribution (TM&amp;D)</b>: we anchor on the <b>4 operational &amp; P&amp;L levers</b> within TM&amp;D’s execution span across General Trade, Rural, Modern Trade, and Quick Commerce—grounded in global On-Shelf Availability (OSA) benchmarks.</p>
+  <div class="page-kick"><i></i>Act 03 · Quantified Business Value First</div>
+  <h1 class="page-h1">Sealing Those Leaks Unlocks Measurable TM&amp;D Value</h1>
+  <p class="page-lede">Validated against global Consumer Packaged Goods (CPG) benchmarks—these three recoveries roll up straight into the <b>TM&amp;D North Star</b>.</p>
 
-  <div class="vt-root">
-    <small>ITC TM&amp;D North Star Outcome (Bounded to Execution &amp; Availability)</small>
-    <h2>Profitable Revenue Growth &amp; Capital Efficiency across TM&amp;D</h2>
-    <p style="margin:6px 0 0;font-size:12.5px;color:var(--text-muted);"><b>Role Scope vs. Brand Managers:</b> Brand teams own product mix &amp; pricing; <b>TM&amp;D owns physical shelf availability, outlet execution, trade spend effectiveness, and cost-to-serve</b>.</p>
-  </div>
-  <div class="vt-stem"></div>
-  <div class="vt-bar"></div>
+  <!-- VALUE FIRST -->
+  <section class="val-hero">
+    <div class="val-card p-blue">
+      <div class="val-big">+15–20%</div>
+      <h3>Recoverable On-Shelf Availability</h3>
+      <div class="val-proof">Global Proof: NIQ shows 5–10% baseline retail OOS (12–15% peaks) drives ~30–40% brand switching; McKinsey ML sensing cuts error up to 50%.</div>
+    </div>
 
-  <div class="vt-branches">
-    <div class="vt-col">
-      <div class="vt-tick"></div>
-      <div class="vt-card p-blue">
-        <span class="vt-num">Lever 01 · Execution Assortment &amp; Availability</span>
-        <h3>On-Shelf Availability &amp; Beat Assortment</h3>
-        <p>Eliminating Kirana zero-billing, improving outlet line-count (LSPC), and speeding new-launch execution across <b>GT, Rural, MT, and Q-Com</b>.</p>
-        <span class="vt-pill">↑ Secondary Sales &amp; LSPC</span>
+    <div class="val-card p-green">
+      <div class="val-big">4–6 Days</div>
+      <h3>Working Capital &amp; Fleet Savings</h3>
+      <div class="val-proof">Unilever &amp; P&amp;G telemetry benchmarks protect core SKUs and slash empty miles while eliminating Quick Commerce &lt;75% MRSL fines.</div>
+    </div>
+
+    <div class="val-card p-purple">
+      <div class="val-big">12–15%</div>
+      <h3>Trade &amp; Claim Leakage Reclaimed</h3>
+      <div class="val-proof">Stops blanket scheme waste, Q-Comm OOS ad burn, and unverified window-display &amp; carrier detention payouts.</div>
+    </div>
+  </section>
+
+  <!-- NORTH STAR TREE -->
+  <section class="ns-wrap">
+    <div class="ns-top">
+      <div>
+        <small>Where It All Adds Up · TM&amp;D North Star Outcome</small>
+        <h2>Profitable Revenue Growth &amp; Capital Efficiency across TM&amp;D</h2>
+      </div>
+      <span class="scope-pill"><b>Brand</b> owns Portfolio Mix · <b>TM&amp;D</b> owns Shelf Availability, Fill &amp; Cost-to-Serve</span>
+    </div>
+
+    <div class="levers-4">
+      <div class="lv p-blue is-on" onclick="pickLever('rev', this)">
+        <span>Lever 01 · Topline</span>
+        <h4>OSA &amp; Beat Assortment</h4>
+        <b>↑ OSA, Secondary Sales &amp; LSPC</b>
+      </div>
+      <div class="lv p-purple" onclick="pickLever('margin', this)">
+        <span>Lever 02 · Gross Margin</span>
+        <h4>Targeted Trade Spend</h4>
+        <b>↑ Promo ROI &amp; Realization</b>
+      </div>
+      <div class="lv p-amber" onclick="pickLever('cost', this)">
+        <span>Lever 03 · Logistics Cost</span>
+        <h4>Truck Fill &amp; OTIF</h4>
+        <b>↑ OTIF &amp; ↓ Freight %</b>
+      </div>
+      <div class="lv p-green" onclick="pickLever('cash', this)">
+        <span>Lever 04 · Capital &amp; Time</span>
+        <h4>WD Cash &amp; Selling Time</h4>
+        <b>↓ Stock Days &amp; ↑ Hours</b>
       </div>
     </div>
 
-    <div class="vt-col">
-      <div class="vt-tick"></div>
-      <div class="vt-card p-purple">
-        <span class="vt-num">Lever 02 · Gross Margin</span>
-        <h3>Trade Spend &amp; Margin Effectiveness</h3>
-        <p>Moving from blanket schemes to hyper-targeted promotions—eliminating window-display leakage and boosting <b>incremental ROI per rupee</b> of trade spend.</p>
-        <span class="vt-pill">↑ Promo ROI &amp; Realization</span>
-      </div>
+    <div class="lv-detail">
+      <span id="lvMsg"><b>Lever 01 Detail:</b> Higher On-Shelf Availability (OSA), sharp outlet cross-sell, and faster new-launch placement across GT, Rural, MT &amp; Q-Com.</span>
+      <a class="btn-cta" href="slide_03.html" style="padding:7px 14px;font-size:12.5px;white-space:nowrap;">How We Achieve This: Agents →</a>
     </div>
+  </section>
 
-    <div class="vt-col">
-      <div class="vt-tick"></div>
-      <div class="vt-card p-amber">
-        <span class="vt-num">Lever 03 · Cost-to-Serve</span>
-        <h3>Distribution &amp; Logistics Cost Efficiency</h3>
-        <p>Higher truck cube/weight fill rates, lower freight % of sales, reduced <b>MT/Q-Com fill-rate penalties</b>, and lower expiry &amp; write-offs.</p>
-        <span class="vt-pill">↓ Freight % &amp; OTIF Fines</span>
-      </div>
-    </div>
-
-    <div class="vt-col">
-      <div class="vt-tick"></div>
-      <div class="vt-card p-green">
-        <span class="vt-num">Lever 04 · Cash &amp; Productivity</span>
-        <h3>Working Capital &amp; Field/Back-Office Productivity</h3>
-        <p>Faster distributor cash-to-cash, automated claim &amp; freight settlement, and <b>more selling time</b> for field reps and managers.</p>
-        <span class="vt-pill">↓ DSI &amp; ↑ Selling Hours</span>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:20px;padding:14px 18px;border-radius:16px;background:var(--surface);border:1px solid var(--border-subtle);border-left:4px solid var(--g-green);box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;">
-    <div><div style="font:700 10.5px var(--font-mono);color:var(--green-ink);text-transform:uppercase;">Global OSA Proof · NIQ</div><div style="font:600 14px var(--font-display);margin-top:2px;">5–10% Baseline OOS</div><div style="font-size:12px;color:var(--text-muted);">Spikes to 12–15% in promos; ~30–40% of shoppers switch brands.</div></div>
-    <div><div style="font:700 10.5px var(--font-mono);color:var(--blue-ink);text-transform:uppercase;">McKinsey Supply Chain</div><div style="font:600 14px var(--font-display);margin-top:2px;">Up to -50% Error</div><div style="font-size:12px;color:var(--text-muted);">ML demand sensing over live DMS/POS cuts stockouts.</div></div>
-    <div><div style="font:700 10.5px var(--font-mono);color:var(--purple-ink);text-transform:uppercase;">Procter &amp; Gamble</div><div style="font:600 14px var(--font-display);margin-top:2px;">On-Shelf Telemetry</div><div style="font-size:12px;color:var(--text-muted);">Links daily store sell-through to trigger restocking early.</div></div>
-    <div><div style="font:700 10.5px var(--font-mono);color:var(--amber-ink);text-transform:uppercase;">Unilever Operations</div><div style="font:600 14px var(--font-display);margin-top:2px;">ML Core-SKU Focus</div><div style="font-size:12px;color:var(--text-muted);">Protects factory &amp; depot supply on high-velocity SKUs.</div></div>
-  </div>
-
-  <footer class="deck-footer">
-    <span>Slide 02 · The TM&amp;D Value Tree</span>
-    <span class="footer-brand">
-      <img src="../assets/media/wip/image25.png" alt="Google Cloud">
-      <span style="width:1px;height:16px;background:#DADCE0;"></span>
-      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
-    </span>
-  </footer>
+  <footer class="deck-footer" style="margin-top:24px;"><span>Slide 03 · The Value Case &amp; TM&amp;D North Star</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
 </main>
 
 <script>
   initDeckChrome({ root: '../' });
+  var LVD = {
+    rev: '<b>Lever 01 Detail:</b> Higher On-Shelf Availability (OSA), zero-billing kirana recovery, and focus-SKU placement across GT, Rural, MT &amp; Q-Com—within TM&amp;D’s execution control.',
+    margin: '<b>Lever 02 Detail:</b> Shift from blanket schemes to hyper-targeted promotions, stop Q-Comm Out-of-Stock (OOS) ad burn, and audit display claims in hours.',
+    cost: '<b>Lever 03 Detail:</b> Co-load Staples and Snacks, lift truck fill rates, protect &gt;75% MRSL batches, and avoid Modern Trade dock OTIF penalties.',
+    cash: '<b>Lever 04 Detail:</b> Free 4–6 days of trapped CFA/Wholesale Dealer stock and hand selling hours back to DSRs and Area Managers.'
+  };
+  window.pickLever = function (k, el) {
+    document.querySelectorAll('.lv').forEach(function (x) { x.classList.remove('is-on'); });
+    if (el) el.classList.add('is-on');
+    document.getElementById('lvMsg').innerHTML = LVD[k] || LVD.rev;
+  };
 </script>
-</body>
-</html>
+</body></html>
