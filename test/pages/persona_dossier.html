@@ -291,7 +291,7 @@
           '<div class="flow-arr">···</div>' +
           '<div class="flow-step"><div class="flow-num">02</div><div><b>' + p.suiteNames.length + ' Specialized Agents Coordinate</b><span>Sense exceptions, run deterministic math &amp; prepare drafts</span></div></div>' +
           '<div class="flow-arr">···</div>' +
-          '<div class="flow-step"><div class="flow-num">03</div><div><b>' + p.persona + ' Approves in 1 Click</b><span>' + p.notOwned + '</span></div></div>' +
+          '<div class="flow-step"><div class="flow-num">03</div><div><b>' + p.persona + ' Approves in 1 Click</b><span>' + (Array.isArray(p.notOwned) ? p.notOwned.map(function (x) { return (x && x.task) ? x.task : String(x); }).join(' · ') : String(p.notOwned || '')) + '</span></div></div>' +
         '</div>' +
         '<div class="sec-head"><h2 style="display:flex;align-items:center;gap:8px;"><img src="../assets/media/models/gemini-color.svg" alt="" style="width:18px;height:18px;"><span>Agentic Suite (' + p.suiteNames.length + ' Agents)</span></h2><span style="font:600 12px var(--mono);color:var(--text-muted);">Click any agent card to open full architecture &amp; live links</span></div>' +
         '<div class="suite-grid">' + cardsHtml + '</div>' +
