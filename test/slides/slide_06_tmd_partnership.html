@@ -2,389 +2,201 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>14 · ITC TM&amp;D × Google — Strategic AI &amp; Distribution Partnership</title>
+<title>14 · ITC TM&amp;D × Google — Strategic Partnership</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css">
 <link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/story_minimal.css?v=1">
 <script src="../assets/deck_nav.js?v=19"></script>
 <style>
-  .takeaway-banner {
-    background: color-mix(in srgb, var(--g-blue) 8%, var(--surface));
-    border: 1px solid color-mix(in srgb, var(--g-blue) 28%, transparent);
-    border-left: 4px solid var(--g-blue);
-    border-radius: 14px;
-    padding: 16px 20px;
-    margin: 18px 0 22px;
-    font-size: 15px;
-    line-height: 1.55;
-    color: var(--text);
-  }
-  .takeaway-banner b { color: var(--blue-ink); }
-
-  .kpi-strip {
+  .ws-row {
+    background: color-mix(in srgb, var(--tc, var(--g-blue)) 4%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--tc, var(--g-blue)) 20%, var(--border-subtle));
+    border-left: 4px solid var(--tc, var(--g-blue));
+    border-radius: 15px;
+    padding: 12px 16px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 22px;
-  }
-  .kpi-tile {
-    background: var(--surface);
-    border: 1px solid var(--border-subtle);
-    border-radius: 14px;
-    padding: 16px 18px;
-    box-shadow: var(--shadow-sm);
-  }
-  .kpi-tile b {
-    display: block;
-    font: 700 24px/1.15 var(--font-display);
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-  .kpi-tile span {
-    font: 500 12px var(--font-body);
-    color: var(--text-muted);
-  }
-
-  .ws-table-wrap {
-    background: var(--surface);
-    border: 1px solid var(--border-subtle);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 26px;
-  }
-  .ws-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-  .ws-table th {
-    font: 600 11px var(--font-mono);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    background: var(--surface-sunk);
-    padding: 13px 18px;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-  .ws-table td {
-    padding: 16px 18px;
-    vertical-align: top;
-    border-bottom: 1px solid var(--border-subtle);
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--text);
-  }
-  .ws-table tr:last-child td { border-bottom: 0; }
-  .ws-table tr:hover td { background: color-mix(in srgb, var(--g-blue) 3%, var(--surface)); }
-  .ws-name {
-    font: 600 14.5px/1.35 var(--font-display);
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-  .ws-pill {
-    display: inline-flex;
+    grid-template-columns: minmax(210px, 0.32fr) minmax(0, 0.44fr) minmax(170px, 0.24fr);
+    gap: 14px;
     align-items: center;
-    gap: 5px;
-    font: 600 10.5px var(--font-mono);
-    text-transform: uppercase;
-    letter-spacing: .04em;
-    padding: 3px 9px;
-    border-radius: 999px;
-    border: 1px solid transparent;
-  }
-  .ws-pill.blue  { color: var(--blue-ink);  background: rgba(49,134,255,.10); border-color: rgba(49,134,255,.32); }
-  .ws-pill.amber { color: #9A5B00;          background: rgba(254,199,0,.18);  border-color: rgba(254,199,0,.45); }
-  .ws-pill.green { color: var(--green-ink); background: rgba(0,175,87,.10);  border-color: rgba(0,175,87,.32); }
-
-  .sec-head {
-    font: 600 12px var(--font-mono);
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin: 6px 0 12px;
-  }
-
-  .ws-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .ws-card {
-    background: var(--surface);
-    border: 1px solid var(--border-subtle);
-    border-top: 3px solid var(--g-blue);
-    border-radius: 16px;
-    padding: 20px 22px;
+    cursor: pointer;
     box-shadow: var(--shadow-sm);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
+    animation: smBandRise .4s ease both;
   }
-  .ws-card.c-green { border-top-color: var(--g-green); }
-  .ws-card.c-amber { border-top-color: var(--g-yellow); }
-  .ws-card.c-cyan  { border-top-color: #00ACC1; }
-
-  .ws-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
+  .ws-row:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  .ws-row.is-active {
+    background: color-mix(in srgb, var(--tc, var(--g-blue)) 9%, var(--surface));
+    border-color: var(--tc, var(--g-blue));
+    box-shadow: var(--shadow-md);
   }
-  .ws-card-num {
-    font: 700 11px var(--font-mono);
-    color: var(--text-muted);
-    letter-spacing: .08em;
-    text-transform: uppercase;
+  .ws-badge {
+    display: inline-block; font: 700 10px var(--font-mono); text-transform: uppercase;
+    letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; margin-bottom: 4px;
+    color: var(--ti); background: color-mix(in srgb, var(--tc) 14%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--tc) 34%, transparent);
   }
-  .ws-card h3 {
-    margin: 3px 0 0;
-    font: 600 17px/1.3 var(--font-display);
-    color: var(--text);
+  .ws-name { font: 700 14.5px/1.25 var(--font-display); color: var(--text); }
+  .ws-mid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ws-mini {
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 10px; padding: 8px 10px; font: 400 12px/1.35 var(--font-body); color: var(--text);
   }
-  .ws-detail-list {
-    margin: 0;
-    padding-left: 18px;
-    display: grid;
-    gap: 6px;
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: var(--text-muted);
+  .ws-mini small {
+    display: block; font: 700 9.5px var(--font-mono); text-transform: uppercase;
+    letter-spacing: .4px; color: var(--text-muted); margin-bottom: 2px;
   }
-  .ws-detail-list b { color: var(--text); }
-  .ws-next {
-    margin-top: auto;
-    padding: 10px 13px;
-    border-radius: 10px;
-    background: var(--surface-sunk);
-    border: 1px solid var(--border-subtle);
-    font-size: 13px;
-    line-height: 1.45;
-    color: var(--text);
+  .ws-next-box {
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 10px; padding: 8px 11px; font: 600 12px/1.35 var(--font-display); color: var(--ti);
   }
-  .ws-next strong {
-    font: 600 10.5px var(--font-mono);
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    color: var(--blue-ink);
-    display: block;
-    margin-bottom: 2px;
+  .ws-next-box small {
+    display: block; font: 700 9.5px var(--font-mono); text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 2px;
   }
-
   @media (max-width: 960px) {
-    .kpi-strip { grid-template-columns: repeat(2, 1fr); }
-    .ws-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 680px) {
-    .kpi-strip { grid-template-columns: 1fr; }
-    .ws-table-wrap { overflow-x: auto; }
+    .ws-row { grid-template-columns: 1fr; }
+    .ws-mid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
-
 <header class="mast">
   <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
-    <img src="../assets/media/wip/image25.png" alt="Google Cloud">
-    <span class="mast-rule"></span>
-    <span class="mast-tag">13 · Strategic Partnership</span>
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
+    <span class="mast-tag">14 · Strategic Partnership</span>
   </a>
   <span class="mast-sp"></span>
-  <div class="mast-nav" id="mastSlideNav">
-    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
-  </div>
+  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 
-<main class="page-wrap">
-  <div class="page-kick"><i></i>Slide 14 · Active Joint Workstreams, Current Status &amp; Next Steps · November 2026</div>
-  <h1 class="page-h1">ITC TM&amp;D × Google — Strategic AI &amp; Distribution Partnership</h1>
-  <p class="page-lede">Executive alignment view unifying all <b>5 active joint initiatives</b> over one holistic Google Cloud knowledge &amp; agentic spine across last-mile logistics, frontline SFA voice, Q-Com/E-Com optimization, Frontline Worker personas, and Gemini Enterprise scale-up.</p>
+<main class="sm-wrap">
+  <header class="sm-hero">
+    <span class="sm-kick" style="--ki:var(--blue-ink);">Slide 14 · Trade Marketing &amp; Distribution (TM&amp;D) × Google · November 2026</span>
+    <h1 class="sm-h1">ITC TM&amp;D × Google: Strategic Partnership</h1>
+    <div class="sm-rule"></div>
+    <p class="sm-lede">Five active joint initiatives converging onto one shared Google Cloud backbone—click any workstream to inspect milestones.</p>
+  </header>
 
-  <div class="takeaway-banner">
-    <b>Key Takeaway:</b> Rather than piecemeal tools, ITC TM&amp;D and Google are connecting <b>5 joint workstreams</b> onto one shared backbone (<b>SAP / DMS / SFA / WMS / TMS → BigQuery + Maps → Gemini Enterprise</b>) across logistics, frontline voice, Q-Com optimization, FLW personas, and builder cohorts.
+  <section class="sm-flow" style="gap:0;">
+    <!-- Top Shared Backbone Equation Band -->
+    <div class="sm-band is-highlight p-blue delay-1">
+      <div>
+        <div class="sm-b-eye">Unified Architecture</div>
+        <div class="sm-b-val" style="font-size:22px;">1 Shared Backbone</div>
+        <div class="sm-b-sub">Rather than isolated pilots, all five streams share one spine.</div>
+      </div>
+      <div class="sm-eq" style="--ri:var(--blue-ink);">
+        <div class="sm-eq-term">SAP · DMS · SFA · WMS · TMS<small>Existing core systems</small></div>
+        <span class="sm-eq-op">→</span>
+        <div class="sm-eq-term">BigQuery + Google Maps<small>Unified telemetry &amp; truth</small></div>
+        <span class="sm-eq-op">→</span>
+        <div class="sm-eq-res">Gemini Enterprise<small>5 live TM&amp;D workstreams</small></div>
+      </div>
+    </div>
+
+    <div class="sm-bridge delay-1">
+      <span class="sm-arr">↓</span>
+      <span>Active joint workstreams executing across this backbone today</span>
+      <span class="sm-arr">↓</span>
+    </div>
+
+    <!-- Clean 5 Horizontal Workstream Bands -->
+    <div style="display:grid;gap:9px;">
+      <article class="ws-row p-amber is-active" onclick="pickWs(0, this)">
+        <div>
+          <span class="ws-badge">POC Execution Next</span>
+          <div class="ws-name">1. Offline Salesman Pitch (SFA Voice)</div>
+        </div>
+        <div class="ws-mid">
+          <div class="ws-mini"><small>Objective</small>Capture kirana pitches on Android SFA &amp; nudge missed SKUs.</div>
+          <div class="ws-mini"><small>Status</small>Architecture agreed · Partner: <b>Wohlig Transformations</b></div>
+        </div>
+        <div class="ws-next-box"><small>Next Step →</small>Execute field POC &amp; latency validation</div>
+      </article>
+
+      <article class="ws-row p-teal" onclick="pickWs(1, this)">
+        <div>
+          <span class="ws-badge">SOW &amp; Design Ready</span>
+          <div class="ws-name">2. AI Control Tower (Q-Com / E-Com)</div>
+        </div>
+        <div class="ws-mid">
+          <div class="ws-mini"><small>Objective</small>Stop OOS ad burn &amp; unify spend (“One Wallet”).</div>
+          <div class="ws-mini"><small>Status</small>Tech syncs done · Solution Design draft completed</div>
+        </div>
+        <div class="ws-next-box"><small>Next Step →</small>Finalize SOW &amp; lock Q-Com connectors</div>
+      </article>
+
+      <article class="ws-row p-green" onclick="pickWs(2, this)">
+        <div>
+          <span class="ws-badge">Cohort Live · 74%+ Retention</span>
+          <div class="ws-name">3. Gemini Enterprise &amp; Sales Enablement</div>
+        </div>
+        <div class="ws-mid">
+          <div class="ws-mini"><small>Objective</small>Scale daily workflows &amp; scheme role-play across teams.</div>
+          <div class="ws-mini"><small>Status</small><b>400+ custom agents</b> built across ITC cohort</div>
+        </div>
+        <div class="ws-next-box"><small>Next Step →</small>Hold regional TM&amp;D adoption rollouts</div>
+      </article>
+
+      <article class="ws-row p-blue" onclick="pickWs(3, this)">
+        <div>
+          <span class="ws-badge">Deep-Dive Syncs</span>
+          <div class="ws-name">4. Last-Mile Delivery &amp; Load Optim.</div>
+        </div>
+        <div class="ws-mid">
+          <div class="ws-mini"><small>Objective</small>Maximize 3D truck fill-rate &amp; D+1 delivery SLA.</div>
+          <div class="ws-mini"><small>Status</small>ITC briefing note &amp; Google POV reviewed</div>
+        </div>
+        <div class="ws-next-box"><small>Next Step →</small>Select target pilot depot(s) &amp; lane KPIs</div>
+      </article>
+
+      <article class="ws-row p-green" onclick="pickWs(4, this)">
+        <div>
+          <span class="ws-badge">5 Personas Mapped</span>
+          <div class="ws-name">5. Frontline Worker (FLW) Copilot</div>
+        </div>
+        <div class="ws-mid">
+          <div class="ws-mini"><small>Objective</small>Voice &amp; vision workflows across 5 frontline roles.</div>
+          <div class="ws-mini"><small>Status</small>Grounded on BigQuery + Gemini Live layer</div>
+        </div>
+        <div class="ws-next-box"><small>Next Step →</small>Pick 2 priority roles for bilingual field pilot</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Single-Line Expandable Detail Bar -->
+  <div class="sm-drawer" id="wsDrawer" style="--dc:var(--g-yellow);--di:var(--amber-ink);">
+    <div class="sm-drawer-txt" id="wsMsg">
+      <b>Workstream 01 Detail:</b> Offline-resilient vernacular voice capture on low-end Android Sales Force Automation (SFA) handsets gives real-time nudges on hero Stock Keeping Units (SKUs) and active trade schemes with zero post-visit manual logging; integration active with Wohlig Transformations.
+    </div>
+    <a class="btn-cta" href="../index.html" style="white-space:nowrap;">Briefing Map ↻</a>
   </div>
 
-  <div class="sec-head">Active Joint Workstreams — Executive Summary</div>
-  <div class="ws-table-wrap">
-    <table class="ws-table">
-      <thead>
-        <tr>
-          <th style="width:27%;">Workstream</th>
-          <th style="width:33%;">Business Objective</th>
-          <th style="width:40%;">Current Status &amp; Next Step</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="ws-name">1. Offline Salesman Pitch (SFA Voice)</div>
-            <span class="ws-pill amber">POC Execution Next</span>
-          </td>
-          <td>Capture store-front pitches on low-end Android SFA; nudge on missed SKUs &amp; schemes.</td>
-          <td>
-            Architecture shared and agreed; discussion with partner <b>Wohlig Transformations</b>.<br>
-            <b>Next:</b> Execution of the POC.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="ws-name">2. AI Control Tower (E-Com / Q-Com Planning)</div>
-            <span class="ws-pill blue">Solution Design Ready</span>
-          </td>
-          <td>Eliminate Q-Com OOS ad waste &amp; unify marketing/supply budgets (“One Wallet”).</td>
-          <td>
-            SOW &amp; tech alignment held ; Solution Design draft ready.<br>
-            <b>Next:</b> Finalize SOW response &amp; pilot.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="ws-name">3. Gemini Enterprise (GE) &amp; Sales Enablement</div>
-            <span class="ws-pill green">Cohort Live · 74%+ Retention</span>
-          </td>
-          <td>Scale AI workflows across TM&amp;D &amp; enable sales workforce training.</td>
-          <td>
-            Gamethon &amp; cohort live (400+ custom agents built across ITC, 74%+ weekly retention); Sales Enablement outreach.<br>
-            <b>Next:</b> Discussion with TM&amp;D teams.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="ws-name">4. Last-Mile Delivery (LMD) &amp; Route/Load Optimization</div>
-            <span class="ws-pill blue">Deep-Dive Syncs Underway</span>
-          </td>
-          <td>Maximize truck fill-rate, D+1 SLA compliance &amp; depot-to-retail efficiency.</td>
-          <td>
-            Briefing note shared by ITC ; POV shared by Google.<br>
-            <b>Next:</b> Next set of discussions.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="ws-name">5. Frontline Worker (FLW) 5-Persona Copilot</div>
-            <span class="ws-pill green">Day-in-the-Life Mapped</span>
-          </td>
-          <td>Eliminate app fatigue for DSR, Trade Merchandiser, Warehouse Picker, Line Operator &amp; Field Agronomist.</td>
-          <td>
-            Persona journeys mapped across Indic voice &amp; shelf/POD vision on the shared spine.<br>
-            <b>Next:</b> Select 2 flagship frontline roles for bilingual pilot validation.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sec-head">Workstream Deep-Dive: Operational Scope &amp; Immediate Next Steps</div>
-  <div class="ws-grid">
-    <article class="ws-card c-amber">
-      <div class="ws-card-top">
-        <div>
-          <div class="ws-card-num">Workstream 01 · Frontline Field Force</div>
-          <h3>Offline Salesman Pitch (SFA Voice)</h3>
-        </div>
-        <span class="ws-pill amber">Partner: Wohlig</span>
-      </div>
-      <ul class="ws-detail-list">
-        <li><b>Focus Areas:</b> Offline-resilient vernacular voice capture on low-end Android SFA handsets during store-front kirana and outlet visits.</li>
-        <li><b>Value Levers:</b> Real-time salesman nudges on missed hero SKUs and active trade schemes, higher line-per-call conversion, and zero manual post-visit logging.</li>
-        <li><b>Milestones:</b> Reference architecture shared and agreed; integration alignment active with implementation partner <b>Wohlig Transformations</b>.</li>
-      </ul>
-      <div class="ws-next">
-        <strong>Immediate Next Step</strong>
-        Execute the field POC on target low-end Android SFA devices and validate vernacular pitch-to-nudge latency.
-      </div>
-    </article>
-
-    <article class="ws-card c-cyan">
-      <div class="ws-card-top">
-        <div>
-          <div class="ws-card-num">Workstream 02 · Digital Commerce</div>
-          <h3>AI Control Tower (E-Com / Q-Com Planning)</h3>
-        </div>
-        <span class="ws-pill blue">SOW &amp; Design Ready</span>
-      </div>
-      <ul class="ws-detail-list">
-        <li><b>Focus Areas:</b> Dark-store and marketplace stock-out sensing coupled with automated ad-spend throttling to stop out-of-stock (OOS) media burn.</li>
-        <li><b>Value Levers:</b> Unified marketing &amp; supply budget governance (<b>“One Wallet”</b>), higher ROAS, and protected Blinkit/Zepto/Instamart availability.</li>
-        <li><b>Milestones:</b> SOW &amp; technical alignment sessions held; Solution Design draft completed and ready for review.</li>
-      </ul>
-      <div class="ws-next">
-        <strong>Immediate Next Step</strong>
-        Finalize SOW commercial/technical response, lock data feed connectors, and kick off the Q-Com / E-Com pilot.
-      </div>
-    </article>
-
-    <article class="ws-card c-green">
-      <div class="ws-card-top">
-        <div>
-          <div class="ws-card-num">Workstream 03 · Workforce Scale &amp; Adoption</div>
-          <h3>Gemini Enterprise (GE) &amp; Sales Enablement</h3>
-        </div>
-        <span class="ws-pill green">400+ Agents Live</span>
-      </div>
-      <ul class="ws-detail-list">
-        <li><b>Focus Areas:</b> Scaling daily AI workflows across ASMs, DSRs, CFA operations, and CS&amp;L planners alongside role-play &amp; scheme-mastery sales training.</li>
-        <li><b>Value Levers:</b> Rapid citizen-builder momentum with <b>400+ custom agents built across ITC</b> and sustained <b>74%+ weekly cohort retention</b>.</li>
-        <li><b>Milestones:</b> Gamethon &amp; builder cohort actively running; dedicated Sales Enablement outreach initiated.</li>
-      </ul>
-      <div class="ws-next">
-        <strong>Immediate Next Step</strong>
-        Hold focused adoption and training rollout discussions with TM&amp;D regional and functional teams.
-      </div>
-    </article>
-
-    <article class="ws-card">
-      <div class="ws-card-top">
-        <div>
-          <div class="ws-card-num">Workstream 04 · Logistics &amp; Secondary Dispatch</div>
-          <h3>Last-Mile Delivery (LMD) &amp; Route/Load Optimization</h3>
-        </div>
-        <span class="ws-pill blue">Nov Syncs</span>
-      </div>
-      <ul class="ws-detail-list">
-        <li><b>Focus Areas:</b> Depot-to-retail and WD beat sequencing, multi-SKU vehicle cube/weight utilization, and D+1 delivery SLA adherence across high-density routes.</li>
-        <li><b>Value Levers:</b> Higher truck fill-rates, reduced empty-mile/drop cost per case, and fewer missed retail delivery windows.</li>
-        <li><b>Milestones:</b> Briefing note shared by ITC; POV discussed by Google.</li>
-      </ul>
-      <div class="ws-next">
-        <strong>Immediate Next Step</strong>
-        Finalize target pilot depot(s), lane scope, and baseline fill-rate / D+1 KPIs for pilot execution.
-      </div>
-    </article>
-
-    <article class="ws-card c-green" style="grid-column: 1 / -1;">
-      <div class="ws-card-top">
-        <div>
-          <div class="ws-card-num">Workstream 05 · Frontline Workforce Across 5 Personas</div>
-          <h3>Frontline Worker (FLW) Voice &amp; Vision Copilot</h3>
-        </div>
-        <span class="ws-pill green">5 Personas Mapped</span>
-      </div>
-      <ul class="ws-detail-list">
-        <li><b>Focus Areas:</b> Day-in-the-life copilots for <b>Sales Representative, Trade Merchandiser, Warehouse Picker, Plant Line Operator &amp; Field Agronomist</b> in vernacular Indian languages.</li>
-        <li><b>Value Levers:</b> Removes SFA app fatigue, cuts display claim audit from weeks to hours, enforces &gt;75% Q-Comm FEFO compliance, and connects rural farmgate sourcing.</li>
-        <li><b>Milestones:</b> All 5 persona journeys grounded on the shared BigQuery + Gemini Live layer (Slide 05).</li>
-      </ul>
-      <div class="ws-next">
-        <strong>Immediate Next Step</strong>
-        Align with TM&amp;D sponsors to pick 2 priority frontline roles for bilingual field pilot execution.
-      </div>
-    </article>
-  </div>
-
-  <footer class="deck-footer">
-    <span>Slide 14 · ITC TM&amp;D × Google — Strategic AI &amp; Distribution Partnership</span>
-    <span class="footer-brand">
-      <img src="../assets/media/wip/image25.png" alt="Google Cloud">
-      <span style="width:1px;height:16px;background:#DADCE0;"></span>
-      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
-    </span>
+  <footer class="deck-footer" style="margin-top:24px;">
+    <span>Slide 14 · ITC TM&amp;D × Google — Strategic Partnership</span>
+    <span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
   </footer>
 </main>
 
 <script>
   initDeckChrome({ root: '../' });
+  var WS = [
+    ['var(--g-yellow)', 'var(--amber-ink)', '<b>Workstream 01 Detail:</b> Offline-resilient vernacular voice capture on low-end Android Sales Force Automation (SFA) handsets gives real-time nudges on hero Stock Keeping Units (SKUs) and active trade schemes with zero post-visit manual logging; integration active with Wohlig Transformations.'],
+    ['var(--g-blue)', 'var(--blue-ink)', '<b>Workstream 02 Detail:</b> Dark-store &amp; marketplace stock-out sensing coupled with automated ad-spend throttling (“One Wallet”) protects Return on Ad Spend (ROAS) and Blinkit, Zepto, and Instamart shelf availability.'],
+    ['var(--g-green)', 'var(--green-ink)', '<b>Workstream 03 Detail:</b> Citizen-builder Gamethon momentum has delivered 400+ custom agents across ITC with 74%+ weekly retention, pairing daily ASMs/DSRs/CFA workflows with scheme-mastery training.'],
+    ['var(--g-blue)', 'var(--blue-ink)', '<b>Workstream 04 Detail:</b> Depot-to-retail and Wholesale Dealer (WD) beat sequencing optimizes vehicle cube/weight co-loading, cuts empty-mile cost per case, and protects D+1 delivery windows.'],
+    ['var(--g-green)', 'var(--green-ink)', '<b>Workstream 05 Detail:</b> Day-in-the-life copilots for Sales Rep, Trade Merchandiser, Warehouse Picker, Plant Line Operator, and Field Agronomist cut display audit lag from 21 days to 2 hours and enforce &gt;75% First-Expired First-Out (FEFO) compliance.']
+  ];
+  window.pickWs = function (idx, el) {
+    document.querySelectorAll('.ws-row').forEach(function (r) { r.classList.remove('is-active'); });
+    if (el) el.classList.add('is-active');
+    var d = WS[idx] || WS[0];
+    var dr = document.getElementById('wsDrawer');
+    dr.style.setProperty('--dc', d[0]);
+    dr.style.setProperty('--di', d[1]);
+    document.getElementById('wsMsg').innerHTML = d[2];
+  };
 </script>
 </body>
 </html>

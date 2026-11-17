@@ -2,136 +2,157 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>02 · Where Value Leaks: TM&amp;D Execution Gaps</title>
+<title>02 · Where Value Leaks Across TM&amp;D</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/story_minimal.css?v=1">
 <script src="../assets/deck_nav.js?v=19"></script>
 <style>
-  .leak-grid {
-    display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 20px; margin-top: 22px; align-items: stretch;
-  }
-  .barrier-panel {
-    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px;
-    padding: 16px 18px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px;
-  }
   .barrier-stage {
-    position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle);
-    background: #fff; height: 220px;
+    position: relative; height: 158px; border-radius: 12px; overflow: hidden;
+    background: #FFFFFF; border: 1px solid var(--border-subtle);
   }
-  .barrier-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 6px; transition: opacity .35s ease; }
-  .seg-btns { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface-sunk); border: 1px solid var(--border-subtle); align-self: flex-start; }
-  .seg-b { border: none; background: transparent; padding: 5px 12px; border-radius: 999px; font: 600 11.5px var(--font-display); color: var(--text-muted); cursor: pointer; }
-  .seg-b.active.bad { background: var(--surface); color: var(--red-ink); box-shadow: var(--shadow-sm); }
-  .seg-b.active.good { background: var(--surface); color: var(--green-ink); box-shadow: var(--shadow-sm); }
-
-  .leak-stack { display: grid; gap: 10px; }
-  .leak-card {
-    background: var(--surface); border: 1px solid var(--border-subtle); border-left: 4px solid var(--lc);
-    border-radius: 14px; padding: 14px 16px; box-shadow: var(--shadow-sm); cursor: pointer;
-    display: grid; grid-template-columns: 125px 1fr; gap: 14px; align-items: center;
-    transition: transform .15s, border-color .15s;
+  .barrier-stage img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: contain; padding: 6px; transition: opacity .35s ease;
   }
-  .leak-card:hover, .leak-card.is-on { transform: translateX(3px); border-color: var(--lc); background: color-mix(in srgb, var(--lc) 5%, var(--surface)); }
-  .leak-stat b { display: block; font: 700 24px/1 var(--font-mono); color: var(--li); }
-  .leak-stat span { display: block; margin-top: 3px; font: 600 10.5px var(--font-mono); text-transform: uppercase; color: var(--text-muted); }
-  .leak-card h3 { margin: 0 0 3px; font: 600 15.5px var(--font-display); color: var(--text); }
-  .leak-card p { margin: 0; font-size: 12.8px; line-height: 1.4; color: var(--text-muted); }
-
-  .story-bar {
-    margin-top: 18px; padding: 14px 18px; border-radius: 16px; background: var(--surface);
-    border: 1px solid var(--border-subtle); border-left: 4px solid var(--g-blue); box-shadow: var(--shadow-sm);
-    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  }
-  @media (max-width: 960px) { .leak-grid, .leak-card { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <header class="mast">
-  <a href="../index.html" style="display:flex;align-items:center;gap:12px;"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span><span class="mast-tag">02 · Where Value Leaks</span></a>
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
+    <span class="mast-tag">02 · Where Value Leaks</span>
+  </a>
   <span class="mast-sp"></span>
   <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 
-<main class="page-wrap">
-  <div class="page-kick"><i></i>Act 02 · The Problem Journey · Disconnected Handoffs</div>
-  <h1 class="page-h1">Where Revenue &amp; Margin Leak Across TM&amp;D Today</h1>
-  <p class="page-lede">Like holes aligning across silos, three day-to-day operational breakdowns quietly erode shelf availability and working capital.</p>
+<main class="sm-wrap">
+  <header class="sm-hero">
+    <span class="sm-kick" style="--ki:var(--red-ink);">Act 02 · The Problem Journey · Disconnected Handoffs</span>
+    <h1 class="sm-h1">Where Value Leaks Across TM&amp;D Today</h1>
+    <div class="sm-rule"></div>
+    <p class="sm-lede">Like aligned holes across silos, three operational breakdowns quietly erode shelf availability and lock working capital.</p>
+  </header>
 
-  <section class="leak-grid">
-    <div class="barrier-panel">
-      <div class="seg-btns">
-        <button type="button" id="bLow" class="seg-b active bad" onclick="toggleLeak(false)">⚠ Today: Aligned Silo Gaps</button>
-        <button type="button" id="bFix" class="seg-b" onclick="toggleLeak(true)">🛡 Target: Sealed Handovers</button>
+  <section class="sm-flow">
+    <!-- Top Visual Model Band: Baseline Silos vs Sealed Handovers -->
+    <div class="sm-band p-red delay-1" id="barrierBand" style="--tc:var(--g-red);--ti:var(--red-ink);">
+      <div>
+        <div class="sm-b-eye">Structural Root Cause</div>
+        <div class="sm-b-val" id="barTitle" style="font-size:21px;">Aligned Silo Gaps</div>
+        <div class="sm-b-sub" id="barCap" style="margin-bottom:10px;">Unconnected beats, depots, and claim checks let revenue escape.</div>
+        <div class="sm-tabs">
+          <button type="button" id="bLow" class="sm-tab is-on" style="--tc:var(--g-red);" onclick="toggleLeak(false)">⚠ Silo Gaps</button>
+          <button type="button" id="bFix" class="sm-tab" style="--tc:var(--g-green);" onclick="toggleLeak(true)">🛡 Sealed</button>
+        </div>
       </div>
       <div class="barrier-stage">
-        <img id="imgBase" src="../assets/media/story/sc_barriers_baseline_light.jpg" alt="Baseline aligned gaps across disconnected silos">
-        <img id="imgFort" src="../assets/media/story/sc_barriers_fortified_light.jpg" alt="Sealed barriers blocking leakage" style="opacity:0;pointer-events:none;">
-      </div>
-      <div style="font-size:13px;line-height:1.48;color:var(--text-muted);" id="barCap">
-        <b style="color:var(--red-ink);">Why small gaps turn into lost margin:</b> App fatigue on the beat, rigid CFA stock allocation, and slow manual claim reconciliation combine into missed sales and avoidable penalties.
+        <img id="imgBase" src="../assets/media/story/sc_barriers_baseline_light.jpg" alt="Baseline aligned silo gaps">
+        <img id="imgFort" src="../assets/media/story/sc_barriers_fortified_light.jpg" alt="Sealed agentic barriers blocking leakage" style="opacity:0;pointer-events:none;">
       </div>
     </div>
 
-    <div class="leak-stack">
-      <article class="leak-card is-on" style="--lc:var(--g-blue);--li:var(--blue-ink);" onclick="selectLeak('oos', this)">
-        <div class="leak-stat"><b>15–20%</b><span>Kirana OOS</span></div>
-        <div>
-          <h3>Leak 1 · Kirana Out-of-Stock &amp; SFA App Fatigue</h3>
-          <p>Sales reps carry 60+ SKUs across cluttered Sales Force Automation (SFA) apps, defaulting to top-3 items while hero SKUs go unbilled.</p>
-        </div>
-      </article>
+    <div class="sm-bridge delay-1">
+      <span class="sm-arr">↓</span>
+      <span>Every day, those gaps turn into three measurable Trade Marketing &amp; Distribution (TM&amp;D) leaks</span>
+      <span class="sm-arr">↓</span>
+    </div>
 
-      <article class="leak-card" style="--lc:var(--g-yellow);--li:var(--amber-ink);" onclick="selectLeak('cfa', this)">
-        <div class="leak-stat"><b>4–6 Days</b><span>Locked Cash</span></div>
-        <div>
-          <h3>Leak 2 · CFA Rationing &amp; Q-Comm SLAs</h3>
-          <p>Excess stock sits in one depot while another rations Wholesale Dealers; meanwhile Blinkit, Zepto &amp; DMart penalize &lt;75% shelf-life and missed dock slots.</p>
-        </div>
-      </article>
+    <!-- Leak 1 -->
+    <div class="sm-band p-blue is-clickable is-active delay-2" id="lkOos" onclick="selectLeak('oos', this)">
+      <div>
+        <div class="sm-b-eye">Leak 01 · Kirana Out-of-Stock</div>
+        <div class="sm-b-val">15–20%</div>
+        <div class="sm-b-sub">Recoverable shelf loss from beat app fatigue.</div>
+      </div>
+      <div class="sm-tiles cols-3">
+        <div class="sm-tile"><small>Cause</small><b>60+ SKUs in SFA</b><span class="sm-tile-note">Cluttered Sales Force screens</span></div>
+        <div class="sm-tile"><small>Behavior</small><b>Top-3 Default</b><span class="sm-tile-note">Hero &amp; new SKUs skipped</span></div>
+        <div class="sm-tile"><small>Field Example</small><b>Lucknow +22%</b><span class="sm-tile-note">Pre-Diwali Atta spike missed</span></div>
+      </div>
+    </div>
 
-      <article class="leak-card" style="--lc:var(--g-red);--li:var(--red-ink);" onclick="selectLeak('claims', this)">
-        <div class="leak-stat"><b>12–15%</b><span>Claim Leakage</span></div>
-        <div>
-          <h3>Leak 3 · Window Displays, PODs &amp; Freight Detention</h3>
-          <p>Paper Proofs of Delivery (PODs), scheme payout proofs, and carrier detention slips take weeks to audit manually.</p>
-        </div>
-      </article>
+    <div style="height:10px;"></div>
+
+    <!-- Leak 2 -->
+    <div class="sm-band p-amber is-clickable delay-3" id="lkCfa" onclick="selectLeak('cfa', this)">
+      <div>
+        <div class="sm-b-eye">Leak 02 · Locked Cash &amp; Fines</div>
+        <div class="sm-b-val">4–6 Days</div>
+        <div class="sm-b-sub">Rigid depot stock allocation &amp; SLA rejects.</div>
+      </div>
+      <div class="sm-tiles cols-3">
+        <div class="sm-tile"><small>Imbalance</small><b>Pune: 18d Excess</b><span class="sm-tile-note">While North WDs ration</span></div>
+        <div class="sm-tile"><small>Q-Commerce</small><b>&lt;75% MRSL</b><span class="sm-tile-note">Blinkit &amp; Zepto dock rejects</span></div>
+        <div class="sm-tile"><small>Impact</small><b>OTIF Penalties</b><span class="sm-tile-note">Missed Modern Trade slots</span></div>
+      </div>
+    </div>
+
+    <div style="height:10px;"></div>
+
+    <!-- Leak 3 -->
+    <div class="sm-band p-red is-clickable delay-4" id="lkClaims" onclick="selectLeak('claims', this)">
+      <div>
+        <div class="sm-b-eye">Leak 03 · Claim Leakage</div>
+        <div class="sm-b-val">12–15%</div>
+        <div class="sm-b-sub">Unverified scheme &amp; freight payouts.</div>
+      </div>
+      <div class="sm-tiles cols-3">
+        <div class="sm-tile"><small>Schemes</small><b>Display Photos</b><span class="sm-tile-note">Unverified in chat/folders</span></div>
+        <div class="sm-tile"><small>Logistics</small><b>Paper PODs</b><span class="sm-tile-note">Detention slips un-audited</span></div>
+        <div class="sm-tile"><small>Delay</small><b>Weeks to Clear</b><span class="sm-tile-note">Erodes distributor trust</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="story-bar">
-    <div style="max-width:78ch;">
-      <div style="font:700 10.5px var(--font-mono);color:var(--blue-ink);text-transform:uppercase;margin-bottom:3px;" id="sbTag">REAL-WORLD EXAMPLE · PRE-DIWALI DEMAND SPIKE</div>
-      <div style="font-size:13.5px;line-height:1.45;color:var(--text);" id="sbTxt">Secondary demand for <b>5kg Atta &amp; Premium Biscuits</b> jumps +22% in Lucknow while Pune holds 18 days of excess—yet Area Managers spend days reconciling Excel &amp; phone calls.</div>
+  <!-- Animated Single-Line Real-World Spotlight -->
+  <div class="sm-drawer" id="leakDrawer" style="--dc:var(--g-blue);--di:var(--blue-ink);">
+    <div class="sm-drawer-txt" id="sbTxt">
+      <b>Diwali Demand Example:</b> Secondary demand for <b>5kg Atta &amp; Premium Biscuits</b> jumps +22% in Lucknow while Pune holds 18 days of excess—Area Managers spend days reconciling Excel &amp; phone calls.
     </div>
-    <a class="btn-cta" href="slide_03_value_tree.html" style="white-space:nowrap;">See What Fixing This Is Worth →</a>
-  </section>
+    <a class="btn-cta" href="slide_03_value_tree.html" style="white-space:nowrap;">What Fixing This Is Worth →</a>
+  </div>
 
-  <footer class="deck-footer" style="margin-top:24px;"><span>Slide 02 · Where Value Leaks Across TM&amp;D</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+  <footer class="deck-footer" style="margin-top:24px;">
+    <span>Slide 02 · Where Value Leaks Across TM&amp;D</span>
+    <span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
+  </footer>
 </main>
 
 <script>
   initDeckChrome({ root: '../' });
   window.toggleLeak = function (fixed) {
-    document.getElementById('bLow').className = 'seg-b' + (!fixed ? ' active bad' : '');
-    document.getElementById('bFix').className = 'seg-b' + (fixed ? ' active good' : '');
+    document.getElementById('bLow').classList.toggle('is-on', !fixed);
+    document.getElementById('bFix').classList.toggle('is-on', fixed);
     document.getElementById('imgBase').style.opacity = fixed ? '0' : '1';
     document.getElementById('imgFort').style.opacity = fixed ? '1' : '0';
-    document.getElementById('barCap').innerHTML = fixed
-      ? '<b style="color:var(--green-ink);">What sealing the seams changes:</b> Each barrier catches stock-outs, shelf-life mismatches, and claim leakage early—before revenue or cash escapes.'
-      : '<b style="color:var(--red-ink);">Why small gaps turn into lost margin:</b> App fatigue on the beat, rigid CFA stock allocation, and slow manual claim reconciliation combine into missed sales and avoidable penalties.';
+    var band = document.getElementById('barrierBand');
+    band.style.setProperty('--tc', fixed ? 'var(--g-green)' : 'var(--g-red)');
+    band.style.setProperty('--ti', fixed ? 'var(--green-ink)' : 'var(--red-ink)');
+    document.getElementById('barTitle').textContent = fixed ? 'Sealed Agentic Barriers' : 'Aligned Silo Gaps';
+    document.getElementById('barCap').textContent = fixed
+      ? 'Continuous agents catch stockouts, shelf-life risks, and claim mismatches before cash leaks.'
+      : 'Unconnected beats, depots, and claim checks let revenue escape.';
   };
   var LEAKS = {
-    oos: ['EXAMPLE · KIRANA OOS & SFA FATIGUE', 'During Diwali, secondary demand for <b>5kg Atta &amp; Premium Biscuits</b> surges +22% in Lucknow while crowded SFA screens hide zero-billing outlets on afternoon beats.'],
-    cfa: ['EXAMPLE · CFA RATIONING & Q-COMM PENALTIES', 'Pune CFA holds 18 days of excess stock while North depots ration Wholesale Dealers—risking Blinkit &amp; DMart <b>&lt;75% shelf-life</b> rejections and OTIF fines.'],
-    claims: ['EXAMPLE · DISPLAY CLAIMS & DETENTION AUDITS', 'Manual audits of kirana window-display photos, damaged return cartons, and carrier detention slips lock distributor trust and leak 12–15% of scheme spend.']
+    oos: ['var(--g-blue)', 'var(--blue-ink)', '<b>Diwali Demand Example:</b> Secondary demand for <b>5kg Atta &amp; Premium Biscuits</b> jumps +22% in Lucknow while crowded Sales Force Automation (SFA) screens hide zero-billing outlets on afternoon beats.'],
+    cfa: ['var(--g-yellow)', 'var(--amber-ink)', '<b>Depot &amp; Q-Comm Example:</b> Pune Carrying &amp; Forwarding Agent (CFA) holds 18 days of stock while North depots ration Wholesale Dealers—risking Blinkit &amp; DMart <b>&lt;75% Minimum Remaining Shelf-Life (MRSL)</b> fines.'],
+    claims: ['var(--g-red)', 'var(--red-ink)', '<b>Claim Audit Example:</b> Manual review of kirana window-display photos, paper Proofs of Delivery (PODs), and carrier detention slips ties up distributor working capital and leaks 12–15% of scheme spend.']
   };
   window.selectLeak = function (k, el) {
-    document.querySelectorAll('.leak-card').forEach(function (c) { c.classList.remove('is-on'); });
-    if (el) el.classList.add('is-on');
+    ['lkOos', 'lkCfa', 'lkClaims'].forEach(function (id) {
+      document.getElementById(id).classList.remove('is-active');
+    });
+    if (el) el.classList.add('is-active');
     var d = LEAKS[k] || LEAKS.oos;
-    document.getElementById('sbTag').textContent = d[0];
-    document.getElementById('sbTxt').innerHTML = d[1];
+    var dr = document.getElementById('leakDrawer');
+    dr.style.setProperty('--dc', d[0]);
+    dr.style.setProperty('--di', d[1]);
+    document.getElementById('sbTxt').innerHTML = d[2];
   };
 </script>
-</body></html>
+</body>
+</html>

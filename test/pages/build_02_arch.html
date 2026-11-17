@@ -5,6 +5,7 @@
 <title>08 · Reference Architecture — Supply Chain Agentic Transformation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/story_minimal.css?v=1">
 <script src="../assets/deck_nav.js?v=19"></script>
 <style>
   .arch-wrap { max-width: 1460px; margin: 0 auto; padding: 28px max(24px, 4vw) 72px; }
@@ -154,11 +155,14 @@
 </header>
 
 <main class="arch-wrap">
-  <div class="page-kick"><i></i>From Personas to Production</div>
-  <h1 class="page-h1">Non-Invasive Google Cloud Overlay Architecture</h1>
-  <p class="page-lede">Agents sit non-invasively above <b>SAP S/4HANA, Distributor Management Systems (DMS), Sales Force Automation (SFA), Warehouse Management Systems (WMS), and Transportation Management Systems (TMS)</b>, uniting BigQuery, Vertex AI Search, and Google Maps Platform across internal teams, Carrying &amp; Forwarding Agents (CFAs), and Wholesale Dealers (WDs).</p>
+  <header class="sm-hero" style="margin-bottom:18px;">
+    <span class="sm-kick" style="--ki:var(--blue-ink);">From Personas to Production · Reference Architecture</span>
+    <h1 class="sm-h1">Non-Invasive Google Cloud Overlay Architecture</h1>
+    <div class="sm-rule"></div>
+    <p class="sm-lede">Agents sit above <b>SAP S/4HANA, Distributor Management Systems (DMS), Sales Force Automation (SFA), Warehouse Management Systems (WMS), and Transportation Management Systems (TMS)</b> across internal teams, Carrying &amp; Forwarding Agents (CFAs), and Wholesale Dealers (WDs).</p>
+  </header>
 
-  <div class="ar-bar">
+  <div class="ar-bar" style="justify-content:center;">
     <span class="ar-lbl">Runs on</span>
     <div class="ar-seg" role="group" aria-label="Deployment runtime">
       <button type="button" data-rt="gc" aria-pressed="true"><img src="../assets/media/gcp/VertexAI.svg" alt="">Google Cloud</button>

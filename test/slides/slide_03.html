@@ -1,265 +1,168 @@
 <!DOCTYPE html>
 <html lang="en" class="theme-light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>04 · Agents Are the Answer — Holistic Coexistence &amp; Frontline</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="stylesheet" href="../assets/aurora.css">
-  <link rel="stylesheet" href="../assets/deck_nav.css?v=2">
-  <script src="../assets/deck_nav.js?v=19"></script>
-  <style>
-    .criteria-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px 18px 22px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      min-height: 172px;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-    .criteria-card:hover {
-      border-color: var(--text-dim);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(18,19,23,.14);
-    }
-    .coexist-box {
-      background: var(--surface-sunk);
-      border: 1px solid var(--border-strong);
-      border-radius: 12px;
-      padding: 20px 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      transition: all .3s ease;
-      min-height: 112px;
-    }
-    .coexist-box:hover {
-      border-color: var(--border-strong);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    .hero-agent-box {
-      background: rgba(0, 175, 87, 0.05);
-      border: 2px solid var(--g-green);
-      box-shadow: var(--shadow-md);
-    }
-    .payoff {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 22px 26px 24px;
-      box-shadow: var(--shadow-sm);
-    }
-    @media (max-width: 1100px) {
-      .crit-grid-5 { grid-template-columns: repeat(2, 1fr) !important; }
-      .coex-grid-5 { grid-template-columns: 1fr !important; }
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Agents Are the Answer — Coexistence &amp; Frontline</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/story_minimal.css?v=1">
+<script src="../assets/deck_nav.js?v=19"></script>
 </head>
-<body style="background: var(--canvas); color: var(--text-muted); font-family: var(--font-display); margin:0; padding:0; overflow-x:hidden;">
+<body>
+<header class="mast">
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud"><span class="mast-rule"></span>
+    <span class="mast-tag">04 · Agents Are the Answer</span>
+  </a>
+  <span class="mast-sp"></span>
+  <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
+</header>
 
-  <header class="mast">
-    <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
-      <img src="../assets/media/wip/image25.png" alt="Google Cloud">
-      <span class="mast-rule"></span>
-      <span class="mast-tag">05 · The Plug Is an Agent</span>
-    </a>
-    <span class="mast-sp"></span>
-    <div class="mast-nav" id="mastSlideNav">
-      <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
-    </div>
+<main class="sm-wrap">
+  <header class="sm-hero">
+    <span class="sm-kick" style="--ki:var(--purple-ink);">Act 04 · Sensing + Reasoning + Bounded Action</span>
+    <h1 class="sm-h1">Autonomous Agents Seal Gaps Over SAP &amp; DMS</h1>
+    <div class="sm-rule"></div>
+    <p class="sm-lede">Instead of replacing SAP ERP, Distributor Management Systems (DMS), Sales Force Automation (SFA), Warehouse (WMS), or Transport Systems (TMS), specialized agents sit cleanly on top to trigger approved frontline action.</p>
   </header>
 
-  <main style="padding: 34px max(24px,4vw) 72px;">
-    <div style="max-width:1440px; margin:0 auto; width:100%;">
-
-      <!-- Kicker -->
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;">
-        <span style="width:24px; height:3px; background: var(--gemini-spark); border-radius:2px;"></span>
-        <span style="color: var(--purple-ink); font-family: var(--font-display); font-size:13.5px; font-weight:800; letter-spacing:2px; text-transform:uppercase;">ACT 04 // THEREFORE, AGENTS ARE THE ANSWER</span>
-        <span style="color: var(--border-strong);">//</span>
-        <span style="color: var(--text-muted); font-family: var(--font-mono); font-size:13.5px; font-weight:700; letter-spacing:.5px;">SENSING + REASONING + BOUNDED ACTION</span>
+  <section class="sm-flow">
+    <!-- Band 1: The Coexistence Equation (Simple visual equation first!) -->
+    <div class="sm-band is-highlight p-green delay-1">
+      <div>
+        <div class="sm-b-eye">Coexistence Model</div>
+        <div class="sm-b-val" style="font-size:23px;">No Rip-and-Replace</div>
+        <div class="sm-b-sub">Agents complement enterprise truth with 24/7 execution.</div>
       </div>
-
-      <h1 style="font-family: var(--font-display); font-size: clamp(32px,3.4vw,46px); font-weight:800; line-height:1.12; letter-spacing:-1.2px; color: var(--text); max-width:1440px; margin:0 0 22px 0;">
-        <span class="au-display-grad">Autonomous Agents</span> seal the gaps—and act over SAP &amp; DMS.
-      </h1>
-
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
-        <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background: var(--gemini-spark);"></span>
-        <span style="font-family: var(--font-mono); font-size:11.5px; font-weight:800; color: var(--text-muted); letter-spacing:1.5px; text-transform:uppercase;">
-          THE FIVE DEFINING ATTRIBUTES // NON-NEGOTIABLE FOR MISSION-CRITICAL TM&amp;D OPERATIONS
-        </span>
+      <div class="sm-eq" style="--ri:var(--purple-ink);">
+        <div class="sm-eq-term">SAP · DMS · SFA · WMS · TMS<small>Preserved core logic &amp; data</small></div>
+        <span class="sm-eq-op">+</span>
+        <div class="sm-eq-term" style="color:var(--green-ink);">AI Agents<small>Seals OOS, OTIF &amp; trade margin gaps</small></div>
+        <span class="sm-eq-op">=</span>
+        <div class="sm-eq-res">Agentic TM&amp;D<small>Governed multi-agent workforce</small></div>
       </div>
-
-      <!-- ===== THE FIVE CRITERIA ===== -->
-      <div class="crit-grid-5" style="display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-bottom:26px;">
-
-        <div class="criteria-card" style="border-top:3px solid var(--g-blue); background: linear-gradient(rgba(49,134,255,.10), rgba(49,134,255,.10)), var(--surface);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--blue-ink); letter-spacing:1.2px;">01 // FOCUS</span>
-            <span style="font-family: var(--font-mono); font-size:14px; font-weight:900; color: var(--blue-ink); opacity:.92;">01</span>
-          </div>
-          <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); line-height:1.2; margin-bottom:10px;">Surgical</div>
-          <p style="font-size:13.5px; color: var(--text-muted); line-height:1.55; margin:0;">Targets the exact seam where CFA rationing, kirana OOS, or trade-claim leakage lives.</p>
-        </div>
-
-        <div class="criteria-card" style="border-top:3px solid var(--g-cyan); background: linear-gradient(rgba(18,181,203,.10), rgba(18,181,203,.10)), var(--surface);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--cyan-ink); letter-spacing:1.2px;">02 // TRIGGER</span>
-            <span style="font-family: var(--font-mono); font-size:14px; font-weight:900; color: var(--cyan-ink); opacity:.92;">02</span>
-          </div>
-          <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); line-height:1.2; margin-bottom:10px;">Autonomous</div>
-          <p style="font-size:13.5px; color: var(--text-muted); line-height:1.55; margin:0;">Triggers instantly on live DMS, SFA, and GPS/EDI feeds, guarding handovers 24/7 without manual war-rooms.</p>
-        </div>
-
-        <div class="criteria-card" style="border-top:3px solid var(--g-green); background: linear-gradient(rgba(0,175,87,.09), rgba(0,175,87,.09)), var(--surface);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--green-ink); letter-spacing:1.2px;">03 // CONTEXT</span>
-            <span style="font-family: var(--font-mono); font-size:14px; font-weight:900; color: var(--green-ink); opacity:.92;">03</span>
-          </div>
-          <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); line-height:1.2; margin-bottom:10px;">Intelligent</div>
-          <p style="font-size:13.5px; color: var(--text-muted); line-height:1.55; margin:0;">Understands TM&amp;D channel context—balancing General Trade, Modern Trade, and Quick Commerce SLAs.</p>
-        </div>
-
-        <div class="criteria-card" style="border-top:3px solid var(--g-yellow); background: linear-gradient(rgba(254,199,0,.06), rgba(254,199,0,.06)), var(--surface);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--amber-ink); letter-spacing:1.2px;">04 // CONTROL</span>
-            <span style="font-family: var(--font-mono); font-size:14px; font-weight:900; color: var(--amber-ink); opacity:.92;">04</span>
-          </div>
-          <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); line-height:1.2; margin-bottom:10px;">Governed</div>
-          <p style="font-size:13.5px; color: var(--text-muted); line-height:1.55; margin:0;">Role-based access, an immutable audit trail, and a human-in-the-loop veto for payouts and allocations.</p>
-        </div>
-
-        <div class="criteria-card" style="border-top:3px solid var(--g-purple); background: linear-gradient(rgba(75,49,227,.09), rgba(75,49,227,.09)), var(--surface);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--purple-ink); letter-spacing:1.2px;">05 // PRECISION</span>
-            <span style="font-family: var(--font-mono); font-size:14px; font-weight:900; color: var(--purple-ink); opacity:.92;">05</span>
-          </div>
-          <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); line-height:1.2; margin-bottom:10px;">Deterministic</div>
-          <p style="font-size:13.5px; color: var(--text-muted); line-height:1.55; margin:0;">Grounded in SAP/DMS truth, exact scheme slabs, shelf-life rules, and real-time route constraints.</p>
-        </div>
-
-      </div>
-
-      <!-- ===== THE PAYOFF: where it lives ===== -->
-      <div class="payoff">
-
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
-          <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background: var(--g-purple);"></span>
-          <span style="font-family: var(--font-mono); font-size:11.5px; font-weight:800; color: var(--purple-ink); letter-spacing:1.5px; text-transform:uppercase;">WHERE IT LIVES // THE COEXISTENCE PARADIGM</span>
-        </div>
-
-        <div style="font-family: var(--font-display); font-size: clamp(19px,1.85vw,27px); font-weight:800; color: var(--text); line-height:1.32; margin-bottom:18px; max-width:1240px;">
-          The future of TM&amp;D will be in the coexistence of core enterprise systems and AI Agents.
-        </div>
-
-        <div class="coex-grid-5" style="display:grid; grid-template-columns:1fr 46px 1.3fr 46px 1fr; align-items:center; gap:10px;">
-
-          <div class="coexist-box">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--text-dim); letter-spacing:1.2px; text-transform:uppercase; margin-bottom:7px;">PROVEN CORE SYSTEMS</span>
-            <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); margin-bottom:5px;">SAP · DMS · SFA · WMS · TMS</div>
-            <div style="font-family: var(--font-mono); font-size:11.5px; color: var(--text-dim);">Deep Domain Logic &amp; Enterprise Truth</div>
-          </div>
-
-          <div style="text-align:center;">
-            <span style="font-family: var(--font-display); font-size:30px; font-weight:900; color: var(--text-dim); opacity:.85;">+</span>
-          </div>
-
-          <div class="coexist-box hero-agent-box">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--green-ink); letter-spacing:1.2px; text-transform:uppercase; margin-bottom:7px;">TARGETED WORKFLOW INTELLIGENCE</span>
-            <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); margin-bottom:5px;">AI Agents</div>
-            <div style="font-family: var(--font-mono); font-size:12px; color: var(--green-ink); font-weight:600;">Sealing Execution Gaps, OTIF &amp; Trade Margin</div>
-          </div>
-
-          <div style="text-align:center;">
-            <span style="font-family: var(--font-display); font-size:30px; font-weight:900; color: var(--text-dim); opacity:.85;">=</span>
-          </div>
-
-          <div class="coexist-box" style="border-color: rgba(75,49,227,.30); background: rgba(75,49,227,.04);">
-            <span style="font-family: var(--font-mono); font-size:10.5px; font-weight:800; color: var(--purple-ink); letter-spacing:1.2px; text-transform:uppercase; margin-bottom:7px;">THE UNIFIED OPERATING MODEL</span>
-            <div style="font-family: var(--font-display); font-size:21px; font-weight:800; color: var(--text); margin-bottom:5px;">Agentic TM&amp;D</div>
-            <div style="font-family: var(--font-mono); font-size:11.5px; color: var(--purple-ink);">Governed Fleet of Specialized Agents</div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ===== FRONTLINE WORKER (FLW) 5-PERSONA DAY IN THE LIFE ===== -->
-      <div class="payoff" style="margin-top:20px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px;">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--g-green);"></span>
-            <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:800;color:var(--green-ink);letter-spacing:1.4px;text-transform:uppercase;">FRONTLINE WORKER (FLW) // A DAY IN THE LIFE ACROSS 5 PERSONAS</span>
-          </div>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;" id="flwBar">
-            <button type="button" class="btn-cta" style="padding:6px 12px;font-size:12px;" onclick="setFlw('dsr',this)">Sales Rep (DSR)</button>
-            <button type="button" class="btn-ghost" style="padding:6px 12px;font-size:12px;" onclick="setFlw('merch',this)">Trade Merchandiser</button>
-            <button type="button" class="btn-ghost" style="padding:6px 12px;font-size:12px;" onclick="setFlw('picker',this)">Warehouse Picker</button>
-            <button type="button" class="btn-ghost" style="padding:6px 12px;font-size:12px;" onclick="setFlw('line',this)">Line Operator</button>
-            <button type="button" class="btn-ghost" style="padding:6px 12px;font-size:12px;" onclick="setFlw('agro',this)">Field Agronomist</button>
-          </div>
-        </div>
-        <div id="flwOut" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;"></div>
-      </div>
-
-      <div style="margin-top:18px;display:flex;justify-content:flex-end;">
-        <a class="btn-cta" href="../pages/demo_stage.html" style="padding:11px 22px;font-size:14px;">See Agents in Action · Live Demo Stage (Slide 05) →</a>
-      </div>
-
     </div>
-  </main>
 
-  <script>
-    initDeckChrome({ root: '../' });
-    var FLW_DATA = {
-      dsr: [
-        ['Legacy App Limitation', '60+ cluttered Sales Force Automation (SFA) tabs cause visit fatigue under evening traffic cutoffs; salesmen stick to top-3 SKUs and miss new schemes.'],
-        ['Day in the Life · Morning → EOD', '08:30 AM gate voice brief flags zero-billing outlets; 11:30 AM store whisper nudges Sunfeast scheme; 4:00 PM Hinglish voice logs DMS order in 4 sec.'],
-        ['Outcome & Indic Support', '+18% Length of Sales Point Coverage (LSPC) · Works in Hindi, Hinglish & regional voice on existing Android SFA via Wohlig integration.']
-      ],
-      merch: [
-        ['Legacy App Limitation', 'Window-display and Modern Trade shelf photos sit unverified in Drive folders for 2–3 weeks, delaying payouts and hiding competitor out-of-stocks.'],
-        ['Day in the Life · Store Visits', 'Merchandiser snaps 1 aisle photo; Gemini Vision scores Share-of-Shelf (62%), checks price strips, and auto-queues verified display payout credits.'],
-        ['Outcome & Indic Support', '21 days → 2 hours display claim audit turnaround · Real-time camera feedback in Marathi, Hindi & English.']
-      ],
-      picker: [
-        ['Legacy App Limitation', 'Paper picklists at State CFAs fail to enforce Blinkit/Zepto >75% Minimum Remaining Shelf-Life (MRSL), causing dark-store dock rejections.'],
-        ['Day in the Life · Dawn Dispatch', 'Bay guide locks ≥75% FEFO batches for Q-Comm wave, directs mixed heavy Staples / light Snacks co-loading, and dispatches Advance Shipping Notice early.'],
-        ['Outcome & Indic Support', '<0.5% MRSL dock rejections · Regional bay audio guidance in Kannada, Hindi, Tamil & Telugu.']
-      ],
-      line: [
-        ['Legacy App Limitation', 'ICML plant line operators page through static PDF Standard Operating Procedures (SOPs) during allergen washdowns and induction-seal drifts.'],
-        ['Day in the Life · Shift Handover', 'Copilot sequences flavor runs to minimize washdown downtime, catches seal temperature drift via camera, and logs SAP QM lot genealogy.'],
-        ['Outcome & Indic Support', '+4.2% Overall Equipment Effectiveness (OEE) · Interactive shop-floor guidance in Bengali, Gujarati & Hindi.']
-      ],
-      agro: [
-        ['Legacy App Limitation', 'Field agronomists across ITC MAARS / e-Choupal clusters wait days for central lab review on wheat/potato leaf photos and moisture disputes.'],
-        ['Day in the Life · Mandi & Farm', 'Farmer snaps leaf photo for instant disease triage; mandi grading aligns moisture & quality intake with factory build plans.'],
-        ['Outcome & Indic Support', '+11% Procurement Grade Yield · Vernacular farm advisories broadcast to 120+ regional farmers in Hindi & Punjabi.']
-      ]
-    };
-    window.setFlw = function (k, btn) {
-      document.querySelectorAll('#flwBar button').forEach(function (b) { b.className = 'btn-ghost'; });
-      if (btn) btn.className = 'btn-cta';
-      var cols = FLW_DATA[k] || FLW_DATA.dsr;
-      document.getElementById('flwOut').innerHTML = cols.map(function (c, i) {
-        var border = i === 0 ? 'var(--g-red)' : (i === 1 ? 'var(--g-blue)' : 'var(--g-green)');
-        return '<div style="padding:13px 15px;border-radius:12px;background:var(--surface-sunk);border:1px solid var(--border-subtle);border-left:4px solid ' + border + ';">' +
-          '<div style="font:700 10.5px var(--font-mono);text-transform:uppercase;color:var(--text-muted);margin-bottom:5px;">' + c[0] + '</div>' +
-          '<div style="font-size:13px;line-height:1.48;color:var(--text);">' + c[1] + '</div>' +
-        '</div>';
-      }).join('');
-    };
-    setFlw('dsr', document.querySelector('#flwBar button'));
-  </script>
+    <div class="sm-bridge delay-1">
+      <span class="sm-arr">↓</span>
+      <span>Governed by five non-negotiable rules · click any attribute to inspect</span>
+      <span class="sm-arr">↓</span>
+    </div>
+
+    <!-- Band 2: Five Defining Attributes (Clean 5-tile row!) -->
+    <div class="sm-band p-purple delay-2" style="grid-template-columns: 1fr;">
+      <div class="sm-tiles cols-5">
+        <div class="sm-tile p-blue is-on" data-attr="0" onclick="pickAttr(0, this)">
+          <small>01 · Focus</small><b>Surgical</b><span class="sm-tile-note">Exact OOS &amp; claim seams</span>
+        </div>
+        <div class="sm-tile p-teal" data-attr="1" onclick="pickAttr(1, this)">
+          <small>02 · Trigger</small><b>Autonomous</b><span class="sm-tile-note">24/7 DMS, SFA &amp; GPS watch</span>
+        </div>
+        <div class="sm-tile p-green" data-attr="2" onclick="pickAttr(2, this)">
+          <small>03 · Context</small><b>Intelligent</b><span class="sm-tile-note">GT, MT &amp; Q-Comm aware</span>
+        </div>
+        <div class="sm-tile p-amber" data-attr="3" onclick="pickAttr(3, this)">
+          <small>04 · Control</small><b>Governed</b><span class="sm-tile-note">Human veto &amp; audit trail</span>
+        </div>
+        <div class="sm-tile p-purple" data-attr="4" onclick="pickAttr(4, this)">
+          <small>05 · Precision</small><b>Deterministic</b><span class="sm-tile-note">Exact SAP, slab &amp; MRSL math</span>
+        </div>
+      </div>
+      <div id="attrLine" style="margin-top:10px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--border-subtle);font:400 13px/1.4 var(--font-body);color:var(--text);">
+        <b style="color:var(--blue-ink);">01 Surgical:</b> Targets the exact operational seam where Carrying &amp; Forwarding Agent (CFA) rationing, kirana out-of-stocks, or claim leakage happens.
+      </div>
+    </div>
+
+    <div class="sm-bridge delay-2">
+      <span class="sm-arr">↓</span>
+      <span>Built around a real Day in the Life across five Frontline Worker (FLW) roles</span>
+      <span class="sm-arr">↓</span>
+    </div>
+
+    <!-- Band 3: FLW 5 Personas Day in the Life (Clean visual role flow) -->
+    <div class="sm-band p-green delay-3" style="grid-template-columns: 1fr;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+        <div>
+          <span class="sm-b-eye" style="color:var(--green-ink);margin:0;">Frontline Worker (FLW) · 5 Personas</span>
+        </div>
+        <div class="sm-tabs" id="flwBar">
+          <button type="button" class="sm-tab is-on" style="--tc:var(--g-green);" onclick="setFlw('dsr',this)">Sales Rep (DSR)</button>
+          <button type="button" class="sm-tab" style="--tc:var(--g-green);" onclick="setFlw('merch',this)">Trade Merchandiser</button>
+          <button type="button" class="sm-tab" style="--tc:var(--g-green);" onclick="setFlw('picker',this)">Warehouse Picker</button>
+          <button type="button" class="sm-tab" style="--tc:var(--g-green);" onclick="setFlw('line',this)">Line Operator</button>
+          <button type="button" class="sm-tab" style="--tc:var(--g-green);" onclick="setFlw('agro',this)">Field Agronomist</button>
+        </div>
+      </div>
+
+      <div class="sm-tiles cols-3" id="flwOut" style="text-align:left;"></div>
+    </div>
+  </section>
+
+  <div style="margin-top:18px;display:flex;justify-content:flex-end;">
+    <a class="btn-cta" href="../pages/demo_stage.html" style="padding:10px 20px;font-size:13.5px;">See Agents in Action · Live Demo Stage (Slide 05) →</a>
+  </div>
+
+  <footer class="deck-footer" style="margin-top:24px;">
+    <span>Slide 04 · Agents Are the Answer</span>
+    <span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
+  </footer>
+</main>
+
+<script>
+  initDeckChrome({ root: '../' });
+  var ATTRS = [
+    '<b style="color:var(--blue-ink);">01 Surgical:</b> Targets the exact operational seam where Carrying &amp; Forwarding Agent (CFA) rationing, kirana out-of-stocks, or claim leakage happens.',
+    '<b style="color:var(--cyan-ink);">02 Autonomous:</b> Triggers automatically 24/7 on live Distributor Management System (DMS), Sales Force Automation (SFA), and GPS/EDI feeds without manual war-rooms.',
+    '<b style="color:var(--green-ink);">03 Intelligent:</b> Understands Trade Marketing &amp; Distribution (TM&amp;D) nuances—balancing General Trade, Modern Trade, and Quick Commerce service levels.',
+    '<b style="color:var(--amber-ink);">04 Governed:</b> Enforces role-based permissions, an immutable audit log, and human approval before payouts or stock transfers execute.',
+    '<b style="color:var(--purple-ink);">05 Deterministic:</b> Anchors every recommendation in SAP and DMS truth, exact trade scheme slabs, shelf-life limits, and route constraints.'
+  ];
+  window.pickAttr = function (idx, el) {
+    document.querySelectorAll('[data-attr]').forEach(function (x) { x.classList.remove('is-on'); });
+    if (el) el.classList.add('is-on');
+    document.getElementById('attrLine').innerHTML = ATTRS[idx] || ATTRS[0];
+  };
+
+  var FLW_DATA = {
+    dsr: [
+      ['Today · App Fatigue', '60+ cluttered Sales Force Automation (SFA) tabs cause fatigue under evening cutoffs; reps default to top-3 SKUs.', 'var(--red-ink)'],
+      ['Agentic Day in the Life', '8:30 AM gate voice brief flags zero-billing stores; 11:30 AM nudge surfaces Sunfeast scheme; 4 PM Hinglish voice logs DMS order in 4 sec.', 'var(--blue-ink)'],
+      ['Verified Outcome', '+18% Length of Sales Point Coverage (LSPC) · Runs in Hindi, Hinglish & regional voice on Android SFA (Wohlig integration).', 'var(--green-ink)']
+    ],
+    merch: [
+      ['Today · Manual Folders', 'Window-display & Modern Trade shelf photos sit unverified for 2–3 weeks, slowing payouts and hiding out-of-stocks.', 'var(--red-ink)'],
+      ['Agentic Day in the Life', 'Merchandiser captures 1 aisle photo; Gemini Vision scores 62% Share-of-Shelf, validates price strips & queues claim credits.', 'var(--blue-ink)'],
+      ['Verified Outcome', '21 days → 2 hours display claim turnaround · Instant camera feedback in Marathi, Hindi & English.', 'var(--green-ink)']
+    ],
+    picker: [
+      ['Today · Paper Picklists', 'Manual picklists at State CFAs miss Blinkit & Zepto >75% Minimum Remaining Shelf-Life (MRSL), triggering dock rejections.', 'var(--red-ink)'],
+      ['Agentic Day in the Life', 'Bay guide locks ≥75% First-Expired First-Out (FEFO) batches, sequences heavy Staples/Snacks co-loads & sends early shipping notices.', 'var(--blue-ink)'],
+      ['Verified Outcome', '<0.5% MRSL dock rejections · Regional bay audio guidance in Kannada, Hindi, Tamil & Telugu.', 'var(--green-ink)']
+    ],
+    line: [
+      ['Today · Static PDF SOPs', 'Plant line operators search static PDF Standard Operating Procedures (SOPs) during allergen washdowns and seal drifts.', 'var(--red-ink)'],
+      ['Agentic Day in the Life', 'Copilot sequences flavor runs to cut washdown downtime, flags seal temp drifts via vision & logs SAP quality lots.', 'var(--blue-ink)'],
+      ['Verified Outcome', '+4.2% Overall Equipment Effectiveness (OEE) · Shop-floor voice & camera guidance in Bengali, Gujarati & Hindi.', 'var(--green-ink)']
+    ],
+    agro: [
+      ['Today · Lab Lag', 'Field agronomists across ITC MAARS & e-Choupal clusters wait days for lab reviews on crop photos and moisture checks.', 'var(--red-ink)'],
+      ['Agentic Day in the Life', 'Farmer snaps leaf photo for instant disease triage; mandi grading aligns moisture intake directly with factory schedules.', 'var(--blue-ink)'],
+      ['Verified Outcome', '+11% Procurement Grade Yield · Vernacular advisories across 120+ farmers in Hindi & Punjabi.', 'var(--green-ink)']
+    ]
+  };
+  window.setFlw = function (k, btn) {
+    document.querySelectorAll('#flwBar .sm-tab').forEach(function (b) { b.classList.remove('is-on'); });
+    if (btn) btn.classList.add('is-on');
+    var cols = FLW_DATA[k] || FLW_DATA.dsr;
+    document.getElementById('flwOut').innerHTML = cols.map(function (c) {
+      return '<div class="sm-tile" style="text-align:left;padding:13px 14px;cursor:default;">' +
+        '<small style="color:' + c[2] + ';margin-bottom:5px;">' + c[0] + '</small>' +
+        '<span style="display:block;font:400 12.8px/1.45 var(--font-body);color:var(--text);">' + c[1] + '</span>' +
+      '</div>';
+    }).join('');
+  };
+  setFlw('dsr', document.querySelector('#flwBar .sm-tab'));
+</script>
 </body>
 </html>

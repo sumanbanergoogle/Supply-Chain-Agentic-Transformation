@@ -2,42 +2,12 @@
 <html lang="en" class="theme-light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>01 · India Supply Chain &amp; TM&amp;D Context (Rule of Three)</title>
+<title>01 · India Supply Chain &amp; TM&amp;D Context</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/story_minimal.css?v=1">
 <script src="../assets/deck_nav.js?v=19"></script>
-<style>
-  .rule3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 26px; }
-  .focus-card {
-    background: var(--surface); border: 1.5px solid var(--border-subtle); border-top: 4px solid var(--tc);
-    border-radius: 18px; padding: 24px 22px; box-shadow: var(--shadow-sm); cursor: pointer;
-    transition: transform .18s, box-shadow .18s, border-color .18s; display: flex; flex-direction: column; gap: 10px;
-  }
-  .focus-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  .focus-card.is-on { border-color: var(--tc); box-shadow: var(--shadow-md); background: color-mix(in srgb, var(--tc) 4%, var(--surface)); }
-  .focus-num { font: 700 11px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--ti); }
-  .focus-big { font: 700 clamp(26px, 2.6vw, 34px)/1.05 var(--font-mono); color: var(--text); }
-  .focus-card h3 { margin: 2px 0 0; font: 600 18px/1.25 var(--font-display); color: var(--text); }
-  .focus-hint { margin-top: auto; padding-top: 8px; font: 600 11.5px var(--font-mono); color: var(--ti); }
-
-  /* Movable / Interactive Detail Card */
-  .drawer-stage {
-    margin-top: 22px; background: var(--surface); border: 1px solid var(--border-subtle);
-    border-left: 5px solid var(--dc, var(--g-blue)); border-radius: 18px;
-    padding: 20px 24px; box-shadow: var(--shadow-md); transition: all .22s ease;
-    display: grid; grid-template-columns: 1.15fr 0.85fr auto; gap: 22px; align-items: center;
-  }
-  .dw-k { font: 700 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--di, var(--blue-ink)); margin-bottom: 4px; }
-  .dw-title { margin: 0 0 6px; font: 600 19px var(--font-display); color: var(--text); }
-  .dw-body { margin: 0; font-size: 14px; line-height: 1.55; color: var(--text-muted); }
-  .dw-metric {
-    padding: 14px 16px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-  }
-  .dw-metric b { display: block; font: 700 16px var(--font-display); color: var(--text); margin-bottom: 4px; }
-  .dw-metric span { font: 500 12.5px/1.4 var(--font-body); color: var(--text-muted); }
-
-  @media (max-width: 960px) { .rule3, .drawer-stage { grid-template-columns: 1fr; } }
-</style>
 </head>
 <body>
 <header class="mast">
@@ -49,50 +19,99 @@
   <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 
-<main class="page-wrap">
-  <div class="page-kick"><i></i>Act 01 · What TM&amp;D Operates Today</div>
-  <h1 class="page-h1">India Supply Chain Complexity Meets TM&amp;D Execution</h1>
-  <p class="page-lede">Before AI agents, look at what runs today—<b>three foundational realities</b> across Plant, CFA, Wholesale Dealer, and 7M+ retail outlets. <i>Click any card to move the detail drawer.</i></p>
+<main class="sm-wrap">
+  <header class="sm-hero">
+    <span class="sm-kick" style="--ki:var(--blue-ink);">Act 01 · What TM&amp;D Operates Today</span>
+    <h1 class="sm-h1">Three Realities Running India TM&amp;D</h1>
+    <div class="sm-rule"></div>
+    <p class="sm-lede">Foods, Personal Care, Stationery, and Tobacco moving from factories to <b>7M+ General Trade, Modern Trade &amp; Quick Commerce outlets</b> across SAP ERP, Distributor Management Systems (DMS), and Sales Force Automation (SFA).</p>
+  </header>
 
-  <!-- RULE OF THREE FOCUS AREAS -->
-  <section class="rule3">
-    <article class="focus-card p-blue is-on" onclick="pickFocus('reach', this)">
-      <span class="focus-num">Focus 01 · Physical Scale</span>
-      <div class="focus-big">7M+ Outlets</div>
-      <h3>Unmatched Multi-Category Reach</h3>
-      <span class="focus-hint">Inspect channel flow →</span>
-    </article>
+  <section class="sm-flow">
+    <!-- Focus 01: Physical Network -->
+    <div class="sm-band p-blue is-clickable is-active delay-1" id="bandReach" onclick="pickFocus('reach')">
+      <div>
+        <div class="sm-b-eye">Focus 01 · Physical Reach</div>
+        <div class="sm-b-val">7M+ Outlets</div>
+        <div class="sm-b-sub">Within India's 12M+ kirana universe across channels.</div>
+      </div>
+      <div class="sm-tiles cols-4">
+        <div class="sm-tile p-blue is-on" data-t="reach" onclick="event.stopPropagation();pickFocus('reach',this)">
+          <small>Origin</small><b>Factories</b><span class="sm-tile-note">Multi-category output</span>
+        </div>
+        <div class="sm-tile p-blue" data-t="reach" onclick="event.stopPropagation();pickFocus('reach',this)">
+          <small>Depot Tier</small><b>State CFAs</b><span class="sm-tile-note">Kamadhenu · Mahindra</span>
+        </div>
+        <div class="sm-tile p-blue" data-t="reach" onclick="event.stopPropagation();pickFocus('reach',this)">
+          <small>Partner Tier</small><b>Wholesale Dealers</b><span class="sm-tile-note">WD &amp; dock proxy</span>
+        </div>
+        <div class="sm-tile p-blue" data-t="reach" onclick="event.stopPropagation();pickFocus('reach',this)">
+          <small>End Shelf</small><b>GT · MT · Q-Comm</b><span class="sm-tile-note">7M+ active stores</span>
+        </div>
+      </div>
+    </div>
 
-    <article class="focus-card p-green" onclick="pickFocus('spine', this)">
-      <span class="focus-num">Focus 02 · Digital Spine</span>
-      <div class="focus-big">SAP · DMS · SFA</div>
-      <h3>Core Systems Are Already Live</h3>
-      <span class="focus-hint">Inspect system reality →</span>
-    </article>
+    <div class="sm-bridge delay-1">
+      <span class="sm-arr">↓</span>
+      <span>Every factory dispatch, dealer invoice, and truck trip is already tracked live</span>
+      <span class="sm-arr">↓</span>
+    </div>
 
-    <article class="focus-card p-amber" onclick="pickFocus('speed', this)">
-      <span class="focus-num">Focus 03 · Channel Velocity</span>
-      <div class="focus-big">&gt;75% MRSL</div>
-      <h3>Q-Commerce &amp; Festive Speed</h3>
-      <span class="focus-hint">Inspect SLA pressure →</span>
-    </article>
+    <!-- Focus 02: Digital Spine -->
+    <div class="sm-band p-green is-clickable delay-2" id="bandSpine" onclick="pickFocus('spine')">
+      <div>
+        <div class="sm-b-eye">Focus 02 · Digital Spine</div>
+        <div class="sm-b-val">SAP · DMS · SFA</div>
+        <div class="sm-b-sub">Core systems are live today—zero rip-and-replace.</div>
+      </div>
+      <div class="sm-tiles cols-4">
+        <div class="sm-tile p-green" data-t="spine" onclick="event.stopPropagation();pickFocus('spine',this)">
+          <small>Planning &amp; Core</small><b>SAP ERP</b><span class="sm-tile-note">Source of truth</span>
+        </div>
+        <div class="sm-tile p-green" data-t="spine" onclick="event.stopPropagation();pickFocus('spine',this)">
+          <small>Secondary</small><b>DMS &amp; SFA</b><span class="sm-tile-note">Dealer &amp; beat orders</span>
+        </div>
+        <div class="sm-tile p-green" data-t="spine" onclick="event.stopPropagation();pickFocus('spine',this)">
+          <small>Execution</small><b>WMS &amp; TMS</b><span class="sm-tile-note">Depot &amp; fleet dispatch</span>
+        </div>
+        <div class="sm-tile p-green" data-t="spine" onclick="event.stopPropagation();pickFocus('spine',this)">
+          <small>Road Feed</small><b>FASTag &amp; e-Way</b><span class="sm-tile-note">In-transit signals</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sm-bridge delay-2">
+      <span class="sm-arr">↓</span>
+      <span>Yet dashboards report yesterday's problem while fast channel shifts outpace Excel</span>
+      <span class="sm-arr">↓</span>
+    </div>
+
+    <!-- Focus 03: Channel Speed Equation -->
+    <div class="sm-band p-amber is-clickable delay-3" id="bandSpeed" onclick="pickFocus('speed')">
+      <div>
+        <div class="sm-b-eye">Focus 03 · Channel Velocity</div>
+        <div class="sm-b-val">&gt;75% MRSL</div>
+        <div class="sm-b-sub">Quick Commerce shelf-life &amp; festive beat pressure.</div>
+      </div>
+      <div class="sm-eq" style="--ri:var(--amber-ink);">
+        <div class="sm-eq-term">7–14 Day Swings<small>Monsoon &amp; Diwali demand</small></div>
+        <span class="sm-eq-op">+</span>
+        <div class="sm-eq-term">60+ SKUs / Rep<small>Across 10-min Q-Comm &amp; GT</small></div>
+        <span class="sm-eq-op">=</span>
+        <div class="sm-eq-res">1–2% Margin Hit<small>On any fill-rate or OTIF slip</small></div>
+      </div>
+    </div>
   </section>
 
-  <!-- INTERACTIVE MOVABLE DETAIL CARD -->
-  <section class="drawer-stage" id="drawerStage">
-    <div>
-      <div class="dw-k" id="dwK">FOCUS 01 · PHYSICAL NETWORK REALITY</div>
-      <h2 class="dw-title" id="dwTitle">Plant → Carrying &amp; Forwarding Agent (CFA) → Wholesale Dealer → Kirana</h2>
-      <p class="dw-body" id="dwBody">India’s Trade Marketing &amp; Distribution (TM&amp;D) moves Foods, Personal Care, Stationery, and Tobacco across 12M+ kiranas, ~7M direct/indirect outlets, State CFAs (like Kamadhenu &amp; Mahindra Logistics), General Trade, Modern Trade, and Quick Commerce.</p>
+  <!-- Interactive Contextual Strip -->
+  <div class="sm-drawer" id="drawerStage" style="--dc:var(--g-blue);--di:var(--blue-ink);">
+    <div class="sm-drawer-txt" id="dwTxt">
+      <b>Channel Proxy Boundary:</b> Interactions stay with internal Trade Marketing &amp; Distribution (TM&amp;D) teams, Carrying &amp; Forwarding Agents (CFAs), and Wholesale Dealers (WDs), using CFAs and WDs as the operational proxy for Blinkit, Zepto, and DMart docks.
     </div>
-    <div class="dw-metric">
-      <b id="dwMetricHead">Where We Interact Today</b>
-      <span id="dwMetricBody">Internal TM&amp;D teams, State CFAs, Wholesale Dealers (WDs), and Field Sales—using CFAs &amp; WDs as our operational proxy for Q-Comm docks.</span>
-    </div>
-    <a class="btn-cta" href="slide_02.html" style="white-space:nowrap;">Where It Leaks →</a>
-  </section>
+    <a class="btn-cta" href="slide_02.html" style="white-space:nowrap;">Where Value Leaks →</a>
+  </div>
 
-  <footer class="deck-footer" style="margin-top:34px;">
+  <footer class="deck-footer" style="margin-top:26px;">
     <span>Slide 01 · India Supply Chain &amp; TM&amp;D Context</span>
     <span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
   </footer>
@@ -102,41 +121,31 @@
   initDeckChrome({ root: '../' });
   var FOCUS = {
     reach: {
-      c: 'var(--g-blue)', i: 'var(--blue-ink)',
-      k: 'FOCUS 01 · PHYSICAL NETWORK REALITY',
-      title: 'Plant → Carrying & Forwarding Agent (CFA) → Wholesale Dealer → Kirana',
-      body: 'Trade Marketing & Distribution (TM&D) moves Foods, Personal Care, Stationery, and Tobacco across 12M+ kiranas, ~7M outlets, State CFAs (e.g., Kamadhenu & Mahindra Logistics), Wholesale Dealers, Modern Trade, and Quick Commerce.',
-      mh: 'Channel Proxy Boundary',
-      mb: 'Decisions happen with internal TM&D teams, CFAs, and WDs—acting as the live proxy for Blinkit, Zepto & DMart docks.'
+      band: 'bandReach', c: 'var(--g-blue)', i: 'var(--blue-ink)',
+      html: '<b>Channel Proxy Boundary:</b> Interactions stay with internal Trade Marketing &amp; Distribution (TM&amp;D) teams, Carrying &amp; Forwarding Agents (CFAs), and Wholesale Dealers (WDs), using CFAs and WDs as the operational proxy for Blinkit, Zepto, and DMart docks.'
     },
     spine: {
-      c: 'var(--g-green)', i: 'var(--green-ink)',
-      k: 'FOCUS 02 · DIGITAL MATURITY VS. EXECUTION GAP',
-      title: 'Dashboards See Yesterday’s Problem—Humans Stitch Fixes Manually',
-      body: 'SAP ERP, Distributor Management Systems (DMS), Sales Force Automation (SFA), Warehouse/Transport Systems (WMS/TMS), FASTag, and e-Way Bills already run across India. Insight is automated; cross-system coordination is still manual.',
-      mh: 'Non-Invasive Spine',
-      mb: 'SAP, DMS & SFA stay untouched as the source of truth—zero rip-and-replace required.'
+      band: 'bandSpine', c: 'var(--g-green)', i: 'var(--green-ink)',
+      html: '<b>Non-Invasive Backbone:</b> SAP Enterprise Resource Planning (ERP), Distributor Management Systems (DMS), and Sales Force Automation (SFA) stay untouched as the source of truth; AI agents eliminate manual Excel stitching across them.'
     },
     speed: {
-      c: 'var(--g-yellow)', i: 'var(--amber-ink)',
-      k: 'FOCUS 03 · OMNI-CHANNEL & SEASONAL PRESSURE',
-      title: '7–14 Day Festive Shifts & 10-Min Q-Commerce SLAs Outpace Excel',
-      body: 'Quick Commerce requires >75% Minimum Remaining Shelf-Life (MRSL) and tight dock slots, while General Trade beat sales reps manage 60+ SKUs amidst regional monsoon and Diwali swings.',
-      mh: 'Cost of 1–2% Slippage',
-      mb: 'Even a 1–2% drop in fill rate or shelf availability directly hits secondary revenue and OTIF margin.'
+      band: 'bandSpeed', c: 'var(--g-yellow)', i: 'var(--amber-ink)',
+      html: '<b>High-Velocity Pressure:</b> Quick Commerce requires &gt;75% Minimum Remaining Shelf-Life (MRSL) and strict dock slots, so even a 1–2% drop in fill rate directly erodes secondary revenue and On-Time In-Full (OTIF) margin.'
     }
   };
-  window.pickFocus = function (key, card) {
-    document.querySelectorAll('.focus-card').forEach(function (x) { x.classList.remove('is-on'); });
-    if (card) card.classList.add('is-on');
+  window.pickFocus = function (key, tileEl) {
     var d = FOCUS[key] || FOCUS.reach;
-    var st = document.getElementById('drawerStage');
-    st.style.setProperty('--dc', d.c); st.style.setProperty('--di', d.i);
-    document.getElementById('dwK').textContent = d.k;
-    document.getElementById('dwTitle').textContent = d.title;
-    document.getElementById('dwBody').textContent = d.body;
-    document.getElementById('dwMetricHead').textContent = d.mh;
-    document.getElementById('dwMetricBody').textContent = d.mb;
+    ['bandReach', 'bandSpine', 'bandSpeed'].forEach(function (id) {
+      document.getElementById(id).classList.toggle('is-active', id === d.band);
+    });
+    document.querySelectorAll('.sm-tile').forEach(function (t) {
+      t.classList.toggle('is-on', t.dataset.t === key && (!tileEl || t === tileEl));
+    });
+    var dr = document.getElementById('drawerStage');
+    dr.style.setProperty('--dc', d.c);
+    dr.style.setProperty('--di', d.i);
+    document.getElementById('dwTxt').innerHTML = d.html;
   };
 </script>
-</body></html>
+</body>
+</html>

@@ -4,61 +4,10 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>03 · The Value Case &amp; TM&amp;D North Star</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="../assets/aurora.css"><link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+<link rel="stylesheet" href="../assets/story_minimal.css?v=1">
 <script src="../assets/deck_nav.js?v=19"></script>
-<style>
-  /* VALUE FIRST: Big validated commercial outcomes before North Star tree */
-  .val-hero {
-    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px;
-  }
-  .val-card {
-    background: var(--surface); border: 1px solid var(--border-subtle); border-top: 4px solid var(--tc);
-    border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow-sm);
-    display: flex; flex-direction: column; gap: 6px;
-  }
-  .val-big { font: 700 clamp(28px, 3vw, 38px)/1.05 var(--font-mono); color: var(--ti); }
-  .val-card h3 { margin: 4px 0 2px; font: 600 17px var(--font-display); color: var(--text); }
-  .val-proof { font: 500 12px/1.4 var(--font-body); color: var(--text-muted); }
-
-  /* NORTH STAR DESTINATION */
-  .ns-wrap {
-    margin-top: 24px; background: var(--surface); border: 2px solid var(--g-blue);
-    border-radius: 20px; padding: 20px 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden;
-  }
-  .ns-wrap::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--gemini-spark); }
-  .ns-top {
-    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
-    padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);
-  }
-  .ns-top small { font: 700 10.5px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--blue-ink); }
-  .ns-top h2 { margin: 4px 0 0; font: 600 22px var(--font-display); color: var(--text); }
-  .scope-pill {
-    padding: 7px 13px; border-radius: 999px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-    font: 500 12px var(--font-display); color: var(--text);
-  }
-  .scope-pill b { color: var(--blue-ink); }
-
-  .levers-4 {
-    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px;
-  }
-  .lv {
-    padding: 13px 14px; border-radius: 14px; background: var(--surface-sunk); border: 1px solid var(--border-subtle);
-    border-left: 4px solid var(--tc); cursor: pointer; transition: transform .15s, border-color .15s;
-  }
-  .lv:hover, .lv.is-on { transform: translateY(-2px); background: var(--surface); border-color: var(--tc); box-shadow: var(--shadow-sm); }
-  .lv span { font: 700 10px var(--font-mono); text-transform: uppercase; color: var(--ti); }
-  .lv h4 { margin: 4px 0; font: 600 15px/1.25 var(--font-display); color: var(--text); }
-  .lv b { font: 700 12px var(--font-mono); color: var(--ti); }
-
-  .lv-detail {
-    margin-top: 12px; padding: 11px 14px; border-radius: 12px;
-    background: color-mix(in srgb, var(--g-blue) 6%, var(--surface));
-    border: 1px solid color-mix(in srgb, var(--g-blue) 25%, transparent);
-    font-size: 13px; color: var(--text); display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap;
-  }
-
-  @media (max-width: 960px) { .val-hero, .levers-4 { grid-template-columns: 1fr; } }
-</style>
 </head>
 <body>
 <header class="mast">
@@ -70,86 +19,121 @@
   <div class="mast-nav" id="mastSlideNav"><button class="btn-ghost" id="themeToggle" type="button">Dark</button></div>
 </header>
 
-<main class="page-wrap">
-  <div class="page-kick"><i></i>Act 03 · Quantified Business Value First</div>
-  <h1 class="page-h1">Sealing Those Leaks Unlocks Measurable TM&amp;D Value</h1>
-  <p class="page-lede">Validated against global Consumer Packaged Goods (CPG) benchmarks—these three recoveries roll up straight into the <b>TM&amp;D North Star</b>.</p>
+<main class="sm-wrap">
+  <header class="sm-hero">
+    <span class="sm-kick" style="--ki:var(--green-ink);">Act 03 · Validated Business Value First</span>
+    <h1 class="sm-h1">Sealing Leaks Unlocks Quantified TM&amp;D Value</h1>
+    <div class="sm-rule"></div>
+    <p class="sm-lede"><b>Brand</b> owns Portfolio Mix; <b>Trade Marketing &amp; Distribution (TM&amp;D)</b> owns Shelf Availability, Fill Rate, and Cost-to-Serve.</p>
+  </header>
 
-  <!-- VALUE FIRST -->
-  <section class="val-hero">
-    <div class="val-card p-blue">
-      <div class="val-big">+15–20%</div>
-      <h3>Recoverable On-Shelf Availability</h3>
-      <div class="val-proof">Global Proof: NIQ shows 5–10% baseline retail OOS (12–15% peaks) drives ~30–40% brand switching; McKinsey ML sensing cuts error up to 50%.</div>
-    </div>
-
-    <div class="val-card p-green">
-      <div class="val-big">4–6 Days</div>
-      <h3>Working Capital &amp; Fleet Savings</h3>
-      <div class="val-proof">Unilever &amp; P&amp;G telemetry benchmarks protect core SKUs and slash empty miles while eliminating Quick Commerce &lt;75% MRSL fines.</div>
-    </div>
-
-    <div class="val-card p-purple">
-      <div class="val-big">12–15%</div>
-      <h3>Trade &amp; Claim Leakage Reclaimed</h3>
-      <div class="val-proof">Stops blanket scheme waste, Q-Comm OOS ad burn, and unverified window-display &amp; carrier detention payouts.</div>
-    </div>
-  </section>
-
-  <!-- NORTH STAR TREE -->
-  <section class="ns-wrap">
-    <div class="ns-top">
+  <section class="sm-flow">
+    <!-- Band 1: Validated Benchmarks First -->
+    <div class="sm-band p-green delay-1">
       <div>
-        <small>Where It All Adds Up · TM&amp;D North Star Outcome</small>
-        <h2>Profitable Revenue Growth &amp; Capital Efficiency across TM&amp;D</h2>
+        <div class="sm-b-eye">Global Benchmarks · CPG Proof</div>
+        <div class="sm-b-val">3 Value Pools</div>
+        <div class="sm-b-sub">Validated across NIQ, McKinsey, Unilever &amp; P&amp;G studies.</div>
       </div>
-      <span class="scope-pill"><b>Brand</b> owns Portfolio Mix · <b>TM&amp;D</b> owns Shelf Availability, Fill &amp; Cost-to-Serve</span>
-    </div>
-
-    <div class="levers-4">
-      <div class="lv p-blue is-on" onclick="pickLever('rev', this)">
-        <span>Lever 01 · Topline</span>
-        <h4>OSA &amp; Beat Assortment</h4>
-        <b>↑ OSA, Secondary Sales &amp; LSPC</b>
-      </div>
-      <div class="lv p-purple" onclick="pickLever('margin', this)">
-        <span>Lever 02 · Gross Margin</span>
-        <h4>Targeted Trade Spend</h4>
-        <b>↑ Promo ROI &amp; Realization</b>
-      </div>
-      <div class="lv p-amber" onclick="pickLever('cost', this)">
-        <span>Lever 03 · Logistics Cost</span>
-        <h4>Truck Fill &amp; OTIF</h4>
-        <b>↑ OTIF &amp; ↓ Freight %</b>
-      </div>
-      <div class="lv p-green" onclick="pickLever('cash', this)">
-        <span>Lever 04 · Capital &amp; Time</span>
-        <h4>WD Cash &amp; Selling Time</h4>
-        <b>↓ Stock Days &amp; ↑ Hours</b>
+      <div class="sm-tiles cols-3">
+        <div class="sm-tile p-blue" onclick="pickPool('osa', this)">
+          <small>Shelf Availability</small>
+          <b style="font-size:21px;color:var(--blue-ink);">+15–20%</b>
+          <span class="sm-tile-note">NIQ OOS &amp; McKinsey ML (-50% error)</span>
+        </div>
+        <div class="sm-tile p-green" onclick="pickPool('cash', this)">
+          <small>Capital &amp; Fleet</small>
+          <b style="font-size:21px;color:var(--green-ink);">4–6 Days</b>
+          <span class="sm-tile-note">Unilever &amp; P&amp;G telemetry + zero MRSL fines</span>
+        </div>
+        <div class="sm-tile p-purple" onclick="pickPool('claims', this)">
+          <small>Trade &amp; Claims</small>
+          <b style="font-size:21px;color:var(--purple-ink);">12–15%</b>
+          <span class="sm-tile-note">Stops OOS ad burn &amp; manual leakage</span>
+        </div>
       </div>
     </div>
 
-    <div class="lv-detail">
-      <span id="lvMsg"><b>Lever 01 Detail:</b> Higher On-Shelf Availability (OSA), sharp outlet cross-sell, and faster new-launch placement across GT, Rural, MT &amp; Q-Com.</span>
-      <a class="btn-cta" href="slide_03.html" style="padding:7px 14px;font-size:12.5px;white-space:nowrap;">How We Achieve This: Agents →</a>
+    <div class="sm-bridge delay-1">
+      <span class="sm-arr">↓</span>
+      <span>Four operational levers convert those value pools straight into TM&amp;D's North Star</span>
+      <span class="sm-arr">↓</span>
+    </div>
+
+    <!-- Band 2: TM&D North Star Highlight Band -->
+    <div class="sm-band is-highlight p-blue delay-2">
+      <div>
+        <div class="sm-b-eye">TM&amp;D North Star Outcome</div>
+        <div class="sm-b-val" style="font-size:22px;">Profitable Growth &amp; Capital Efficiency</div>
+        <div class="sm-b-sub">Click any lever to inspect its execution path.</div>
+      </div>
+      <div class="sm-tiles cols-4">
+        <div class="sm-tile p-blue is-on" data-lv="rev" onclick="pickLever('rev', this)">
+          <small>01 · Topline</small>
+          <b>↑ OSA &amp; LSPC</b>
+          <span class="sm-tile-note">Zero-billing kirana recovery</span>
+        </div>
+        <div class="sm-tile p-purple" data-lv="margin" onclick="pickLever('margin', this)">
+          <small>02 · Gross Margin</small>
+          <b>↑ Promo ROI</b>
+          <span class="sm-tile-note">Targeted schemes &amp; audits</span>
+        </div>
+        <div class="sm-tile p-amber" data-lv="cost" onclick="pickLever('cost', this)">
+          <small>03 · Logistics Cost</small>
+          <b>↑ OTIF ↓ Freight</b>
+          <span class="sm-tile-note">Co-load &amp; &gt;75% MRSL</span>
+        </div>
+        <div class="sm-tile p-green" data-lv="cash" onclick="pickLever('cash', this)">
+          <small>04 · Cash &amp; Time</small>
+          <b>↓ Stock Days</b>
+          <span class="sm-tile-note">Free DSR selling hours</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="deck-footer" style="margin-top:24px;"><span>Slide 03 · The Value Case &amp; TM&amp;D North Star</span><span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></footer>
+  <!-- Interactive Contextual Strip -->
+  <div class="sm-drawer" id="valDrawer" style="--dc:var(--g-blue);--di:var(--blue-ink);">
+    <div class="sm-drawer-txt" id="lvMsg">
+      <b>Lever 01 (Availability):</b> Higher On-Shelf Availability (OSA), zero-billing kirana recovery, and focus Stock Keeping Unit (SKU) placement across General Trade (GT), Rural, Modern Trade (MT), and Quick Commerce (Q-Comm).
+    </div>
+    <a class="btn-cta" href="slide_03.html" style="white-space:nowrap;">How Agents Achieve This →</a>
+  </div>
+
+  <footer class="deck-footer" style="margin-top:26px;">
+    <span>Slide 03 · The Value Case &amp; TM&amp;D North Star</span>
+    <span class="footer-brand"><img src="../assets/media/wip/image25.png" alt="Google Cloud"><span style="width:1px;height:16px;background:#DADCE0;"></span><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span>
+  </footer>
 </main>
 
 <script>
   initDeckChrome({ root: '../' });
-  var LVD = {
-    rev: '<b>Lever 01 Detail:</b> Higher On-Shelf Availability (OSA), zero-billing kirana recovery, and focus-SKU placement across GT, Rural, MT &amp; Q-Com—within TM&amp;D’s execution control.',
-    margin: '<b>Lever 02 Detail:</b> Shift from blanket schemes to hyper-targeted promotions, stop Q-Comm Out-of-Stock (OOS) ad burn, and audit display claims in hours.',
-    cost: '<b>Lever 03 Detail:</b> Co-load Staples and Snacks, lift truck fill rates, protect &gt;75% MRSL batches, and avoid Modern Trade dock OTIF penalties.',
-    cash: '<b>Lever 04 Detail:</b> Free 4–6 days of trapped CFA/Wholesale Dealer stock and hand selling hours back to DSRs and Area Managers.'
+  var DETAILS = {
+    rev: ['var(--g-blue)', 'var(--blue-ink)', '<b>Lever 01 (Availability):</b> Higher On-Shelf Availability (OSA), zero-billing kirana recovery, and higher Length of Sales Point Coverage (LSPC) across General Trade (GT), Rural, Modern Trade (MT), and Quick Commerce (Q-Comm).'],
+    margin: ['var(--g-purple)', 'var(--purple-ink)', '<b>Lever 02 (Gross Margin):</b> Shift from blanket schemes to targeted promotions, halt Quick Commerce out-of-stock ad burn, and audit display claims in hours instead of weeks.'],
+    cost: ['var(--g-yellow)', 'var(--amber-ink)', '<b>Lever 03 (Logistics Cost):</b> Co-load dense Staples with bulky Snacks, boost truck fill rates, protect &gt;75% Minimum Remaining Shelf-Life (MRSL) batches, and avoid On-Time In-Full (OTIF) fines.'],
+    cash: ['var(--g-green)', 'var(--green-ink)', '<b>Lever 04 (Capital &amp; Time):</b> Release 4–6 days of trapped Carrying &amp; Forwarding Agent (CFA) and Wholesale Dealer (WD) stock while handing selling hours back to Delivery Sales Representatives (DSRs).'],
+    osa: ['var(--g-blue)', 'var(--blue-ink)', '<b>Global Availability Proof:</b> NielsenIQ (NIQ) studies show 5–10% baseline retail out-of-stock (12–15% peaks) drives ~30–40% brand switching; McKinsey machine-learning demand sensing cuts forecast error up to 50%.'],
+    cash_pool: ['var(--g-green)', 'var(--green-ink)', '<b>Global Fleet &amp; Cash Proof:</b> Unilever and P&amp;G telemetry benchmarks cut empty truck miles and protect core SKUs across seasonal demand swings.'],
+    claims_pool: ['var(--g-purple)', 'var(--purple-ink)', '<b>Trade &amp; Claim Recovery:</b> Automated photo verification and Proof of Delivery (POD) matching stop unverified window-display payouts and carrier detention slippage.']
   };
+  function updateDrawer(key) {
+    var d = DETAILS[key] || DETAILS.rev;
+    var dr = document.getElementById('valDrawer');
+    dr.style.setProperty('--dc', d[0]);
+    dr.style.setProperty('--di', d[1]);
+    document.getElementById('lvMsg').innerHTML = d[2];
+  }
   window.pickLever = function (k, el) {
-    document.querySelectorAll('.lv').forEach(function (x) { x.classList.remove('is-on'); });
+    document.querySelectorAll('.sm-tile').forEach(function (x) { x.classList.remove('is-on'); });
     if (el) el.classList.add('is-on');
-    document.getElementById('lvMsg').innerHTML = LVD[k] || LVD.rev;
+    updateDrawer(k);
+  };
+  window.pickPool = function (k, el) {
+    document.querySelectorAll('.sm-tile').forEach(function (x) { x.classList.remove('is-on'); });
+    if (el) el.classList.add('is-on');
+    updateDrawer(k === 'cash' ? 'cash_pool' : (k === 'claims' ? 'claims_pool' : 'osa'));
   };
 </script>
-</body></html>
+</body>
+</html>
