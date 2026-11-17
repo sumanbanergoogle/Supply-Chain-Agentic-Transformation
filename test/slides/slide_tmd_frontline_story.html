@@ -109,6 +109,9 @@
   <span class="mast-sp"></span>
   <div class="mast-nav">
     <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+    <a class="btn-ghost" href="slide_frontline_ai_sathi.html">← Prev Slide</a>
+    <span class="btn-ghost" style="font-family:var(--font-mono);font-weight:700;color:var(--blue-ink);cursor:default;">02 / 02</span>
+    <span class="btn-ghost" style="opacity:.45;cursor:not-allowed;">Next Slide →</span>
     <button class="btn-ghost" onclick="window.print()" type="button">Print / PDF</button>
     <a class="btn-ghost" href="../index.html">Briefing Map ↗</a>
   </div>
@@ -258,6 +261,17 @@
         paint();
       });
     }
+    var hud = document.createElement('div');
+    hud.className = 'no-print';
+    hud.style.cssText = 'position:fixed;bottom:20px;right:24px;background:rgba(13,17,23,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.16);border-radius:30px;padding:6px 14px;display:flex;align-items:center;gap:10px;z-index:9990;box-shadow:0 10px 30px rgba(0,0,0,0.45);';
+    hud.innerHTML =
+      '<a href="slide_frontline_ai_sathi.html" style="color:#E2E8F0;text-decoration:none;font:600 13px var(--font-display);padding:5px 10px;border-radius:16px;background:rgba(255,255,255,0.08);">◀ Prev</a>' +
+      '<span style="color:#8AB4F8;font:700 13px var(--font-mono);min-width:56px;text-align:center;">02 / 02</span>' +
+      '<a href="slide_frontline_ai_sathi.html" style="color:#FFF;text-decoration:none;background:rgba(0,175,87,0.28);padding:5px 14px;border-radius:18px;border:1px solid #5BB974;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">Slide 1 ↻</a>';
+    document.body.appendChild(hud);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') window.location.href = 'slide_frontline_ai_sathi.html';
+    });
   })();
 </script>
 </body>
