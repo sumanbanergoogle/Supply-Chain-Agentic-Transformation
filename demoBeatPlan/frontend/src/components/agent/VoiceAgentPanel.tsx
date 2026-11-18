@@ -865,11 +865,10 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                 <button
                   type="button"
                   onClick={() => void stopAllSpeechAndMic()}
-                  disabled={!isOpenMic && !activeSpeaking && !activeThinking && !activeListening && !isTalking}
-                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold select-none transition-colors ${
+                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
                     isOpenMic || activeSpeaking || activeThinking || activeListening || isTalking
-                      ? 'bg-rose-950/70 text-rose-200 hover:bg-rose-900/80 border border-rose-500/70'
-                      : 'bg-[#0d1117] text-textMuted border border-border/50 opacity-50 cursor-not-allowed'
+                      ? 'bg-rose-600/25 text-rose-200 border border-rose-500'
+                      : 'bg-[#0d1117] text-rose-400 hover:text-white border border-rose-500/50'
                   }`}
                   title="Stop microphone and stop Live agent from speaking"
                 >
