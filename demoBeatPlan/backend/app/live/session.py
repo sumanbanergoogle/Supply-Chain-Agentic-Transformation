@@ -19,7 +19,7 @@ logger = logging.getLogger("beatpulse.live.session")
 
 DEFAULT_LIVE_MODEL = "gemini-3.8-live"
 DEFAULT_LIVE_LOCATION = "us-central1"
-MAX_CONSECUTIVE_FAILURES = 1
+MAX_CONSECUTIVE_FAILURES = 3
 LANGUAGES = ("english", "hinglish", "hindi")
 PROMPT_PATH = Path(__file__).with_name("live_prompt.md")
 LANGUAGE_MARKER = "## LANGUAGE BLOCKS"
@@ -164,7 +164,7 @@ async def handle_live_websocket(websocket: WebSocket, connect_factory: ConnectFa
     api_key = websocket.query_params.get("api_key")
     cfg = live_settings(api_key=api_key)
     inbound: asyncio.Queue = asyncio.Queue()
-    state: dict[str, Any] = {"handle": None, "resumable": False, "ui": initial_ui_from_query(websocket), "api_key": api_key}
+    state: dict[str, Any] = {"handle": None, "resumable": False, "closed": False, "ui": initial_ui_from_query(websocket), "api_key": api_key}
 
     async def browser_reader() -> None:
         try:
@@ -176,6 +176,7 @@ async def handle_live_websocket(websocket: WebSocket, connect_factory: ConnectFa
         except (WebSocketDisconnect, RuntimeError):
             pass
         finally:
+            state["closed"] = True
             await inbound.put(_CLOSED)
 
     reader_task = asyncio.create_task(browser_reader())
@@ -230,13 +231,16 @@ async def run_resilient_live(
     model = cfg["model"]
     failures = 0
     ever_connected = False
-    while True:
+    while not state.get("closed"):
         handle = state["handle"] if state["resumable"] else None
         resuming = ever_connected
-        await _send(websocket, {"type": "status", "status": "reconnecting" if resuming else "connecting", "model": model})
+        connected_this_turn = False
+        if not resuming or failures > 0:
+            await _send(websocket, {"type": "status", "status": "reconnecting" if resuming else "connecting", "model": model})
         try:
             config = build_live_config(types, build_system_prompt(state["ui"]), tools, handle, cfg["voice"])
             async with connect_factory(model, config) as session:
+                connected_this_turn = True
                 failures = 0
                 ever_connected = True
                 await _send(
@@ -249,9 +253,24 @@ async def run_resilient_live(
                     },
                 )
                 reason = await _run_bidi_stream(websocket, session, inbound, state, cfg)
-            if reason == "browser_closed":
+            if reason == "browser_closed" or state.get("closed"):
                 return
         except Exception as e:  # noqa: BLE001
+            if state.get("closed"):
+                return
+            err_msg = str(e).lower()
+            is_idle_or_goaway = connected_this_turn and any(
+                tok in err_msg for tok in ("inactivity", "1008", "1000", "1001", "going away", "closed", "timeout")
+            )
+            if is_idle_or_goaway:
+                logger.info("Gemini Live idle/session renewal (%s) — transparently resuming.", e)
+                failures = 0
+                await asyncio.sleep(0.15)
+                continue
+            if handle and not connected_this_turn:
+                # Clear potentially expired resumption handle before retrying with a fresh Live session.
+                state["handle"] = None
+                state["resumable"] = False
             failures += 1
             logger.warning("Gemini Live failure %d/%d: %s: %s", failures, MAX_CONSECUTIVE_FAILURES, type(e).__name__, e)
             if failures >= MAX_CONSECUTIVE_FAILURES:

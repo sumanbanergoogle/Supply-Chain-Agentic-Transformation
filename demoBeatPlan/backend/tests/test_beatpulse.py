@@ -178,3 +178,67 @@ def test_ws_live_mock_vertex_session():
         app.state.live_connect_factory = None
         if old_offline is not None:
             os.environ["BEATPULSE_LIVE_OFFLINE"] = old_offline
+
+
+def test_ws_live_idle_inactivity_transparently_resumes():
+    class IdleOnceSession:
+        def __init__(self, fail_idle: bool):
+            self.fail_idle = fail_idle
+
+        async def send_client_content(self, **_kwargs):
+            return None
+
+        async def send_realtime_input(self, **_kwargs):
+            return None
+
+        async def send_tool_response(self, **_kwargs):
+            return None
+
+        async def receive(self):
+            if self.fail_idle:
+                raise RuntimeError("1008 None. Session closed due to client inactivity.")
+            yield type(
+                "Resp",
+                (),
+                {
+                    "session_resumption_update": None,
+                    "go_away": None,
+                    "tool_call": None,
+                    "server_content": type(
+                        "SC",
+                        (),
+                        {
+                            "interrupted": False,
+                            "input_transcription": None,
+                            "output_transcription": type("OT", (), {"text": "Resumed cleanly."})(),
+                            "model_turn": None,
+                            "turn_complete": True,
+                        },
+                    )(),
+                },
+            )()
+
+    attempts = {"n": 0}
+
+    @asynccontextmanager
+    async def flaky_idle_factory(_model, _config):
+        attempts["n"] += 1
+        yield IdleOnceSession(fail_idle=(attempts["n"] == 1))
+
+    old_offline = os.environ.get("BEATPULSE_LIVE_OFFLINE")
+    os.environ["BEATPULSE_LIVE_OFFLINE"] = "0"
+    app.state.live_connect_factory = flaky_idle_factory
+    try:
+        client = TestClient(app)
+        with client.websocket_connect("/ws/live?city=Bangalore") as ws:
+            assert ws.receive_json()["status"] == "connecting"
+            assert ws.receive_json()["status"] == "connected"
+            m_resumed = ws.receive_json()
+            assert m_resumed["status"] == "resumed"
+            m_cap = ws.receive_json()
+            assert m_cap["type"] == "caption_delta"
+            assert m_cap["text"] == "Resumed cleanly."
+    finally:
+        app.state.live_connect_factory = None
+        if old_offline is not None:
+            os.environ["BEATPULSE_LIVE_OFFLINE"] = old_offline

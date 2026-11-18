@@ -264,6 +264,7 @@ export class LiveClient {
       }
 
       if (msg.setupComplete) {
+        this.reconnectAttempts = 0;
         this.setStatus('connected', { model: 'gemini-3.8-live' });
         this.handlers.onVoiceState?.('idle');
         return;
@@ -332,7 +333,19 @@ export class LiveClient {
     sock.onclose = () => {
       if (this.ws !== sock) return;
       this.ws = null;
-      if (!this.explicitDisconnect) this.setStatus('disconnected');
+      if (!this.explicitDisconnect) {
+        if (this.sessionApiKey && this.reconnectAttempts < 3) {
+          this.reconnectAttempts += 1;
+          this.reconnectTimer = window.setTimeout(() => {
+            this.reconnectTimer = null;
+            if (!this.explicitDisconnect && this.sessionApiKey) {
+              this.connectDirectAiStudio(this.sessionApiKey);
+            }
+          }, 1000);
+        } else {
+          this.setStatus('disconnected');
+        }
+      }
     };
 
     sock.onerror = () => {
