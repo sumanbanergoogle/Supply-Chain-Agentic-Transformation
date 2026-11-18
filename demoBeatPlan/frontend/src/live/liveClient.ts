@@ -73,6 +73,7 @@ export class LiveClient {
   private openMic = false;
   private sessionApiKey = '';
   private directMode = false;
+  private suppressOutput = false;
   private reconnectAttempts = 0;
   private reconnectTimer: number | null = null;
 
@@ -137,7 +138,7 @@ export class LiveClient {
     sock.onmessage = (ev: MessageEvent) => {
       if (this.ws !== sock) return;
       if (ev.data instanceof ArrayBuffer) {
-        audioPlayer.playPcmChunk(ev.data);
+        if (!this.suppressOutput) audioPlayer.playPcmChunk(ev.data);
         return;
       }
       try {
@@ -150,11 +151,16 @@ export class LiveClient {
           }
           this.setStatus(msg.status, { model: msg.model, message: msg.message });
         } else if (msg.type === 'voice_state') {
+          if (this.suppressOutput && msg.state === 'speaking') return;
           this.voiceState = msg.state;
           this.handlers.onVoiceState?.(msg.state);
         } else if (msg.type === 'input_transcript') this.handlers.onInputTranscript?.(msg.text || '');
-        else if (msg.type === 'caption_delta') this.handlers.onCaptionDelta?.(msg.text || '');
-        else if (msg.type === 'turn_complete') this.handlers.onTurnComplete?.(msg.full_text || '');
+        else if (msg.type === 'caption_delta') {
+          if (!this.suppressOutput) this.handlers.onCaptionDelta?.(msg.text || '');
+        } else if (msg.type === 'turn_complete') {
+          this.suppressOutput = false;
+          this.handlers.onTurnComplete?.(msg.full_text || '');
+        }
         else if (msg.type === 'tool_call') this.handlers.onToolCall?.(msg);
         else if (msg.type === 'action') this.handlers.onAction?.(msg.kind, msg.payload);
         else if (msg.type === 'fallback_reply') this.handlers.onFallbackReply?.(msg);
@@ -309,19 +315,24 @@ export class LiveClient {
       }
       if (sc.outputTranscription?.text) {
         turnOutput = true;
-        outputCap += sc.outputTranscription.text;
-        this.handlers.onCaptionDelta?.(sc.outputTranscription.text);
+        if (!this.suppressOutput) {
+          outputCap += sc.outputTranscription.text;
+          this.handlers.onCaptionDelta?.(sc.outputTranscription.text);
+        }
       }
       const parts = sc.modelTurn?.parts || [];
       for (const p of parts) {
         if (p.inlineData?.data && p.inlineData?.mimeType?.startsWith('audio/')) {
           turnOutput = true;
-          this.handlers.onVoiceState?.('speaking');
-          audioPlayer.playPcmChunk(base64ToArrayBuffer(p.inlineData.data));
+          if (!this.suppressOutput) {
+            this.handlers.onVoiceState?.('speaking');
+            audioPlayer.playPcmChunk(base64ToArrayBuffer(p.inlineData.data));
+          }
         }
       }
       if (sc.turnComplete) {
         if (!turnOutput && toolSinceOutput) return;
+        this.suppressOutput = false;
         turnOutput = false;
         toolSinceOutput = false;
         this.handlers.onTurnComplete?.(outputCap.trim());
@@ -380,6 +391,7 @@ export class LiveClient {
 
   public sendText(text: string): boolean {
     if (!this.ws || this.ws.readyState !== WebSocket.OPEN) return false;
+    this.suppressOutput = false;
     audioPlayer.interrupt();
     this.handlers.onVoiceState?.('thinking');
     if (this.directMode) {
@@ -418,7 +430,12 @@ export class LiveClient {
   }
 
   public async startTalking(): Promise<void> {
+    this.suppressOutput = false;
     if (this.voiceState === 'speaking' || audioPlayer.getIsPlaying()) this.interrupt();
+    this.suppressOutput = false;
+    if (!this.directMode && this.ws && this.ws.readyState === WebSocket.OPEN) {
+      this.ws.send(JSON.stringify({ type: 'resume_audio' }));
+    }
     if (!micCapture.isCapturing()) {
       await micCapture.start((buf) => this.sendAudioChunk(buf));
     } else {
@@ -430,16 +447,17 @@ export class LiveClient {
   public stopTalking(): void {
     if (this.openMic) return;
     micCapture.enable(false);
-    if (!this.directMode && this.ws && this.ws.readyState === WebSocket.OPEN) {
-      this.ws.send(JSON.stringify({ type: 'audio_end' }));
-    }
-    this.handlers.onVoiceState?.('thinking');
+    this.interrupt();
   }
 
   public async setOpenMic(on: boolean): Promise<void> {
     this.openMic = on;
     if (on) {
       if (this.voiceState === 'speaking' || audioPlayer.getIsPlaying()) this.interrupt();
+      this.suppressOutput = false;
+      if (!this.directMode && this.ws && this.ws.readyState === WebSocket.OPEN) {
+        this.ws.send(JSON.stringify({ type: 'resume_audio' }));
+      }
       if (!micCapture.isCapturing()) {
         await micCapture.start((buf) => this.sendAudioChunk(buf));
       } else {
@@ -448,18 +466,18 @@ export class LiveClient {
       this.handlers.onVoiceState?.('listening');
     } else {
       micCapture.enable(false);
-      if (!this.directMode && this.ws && this.ws.readyState === WebSocket.OPEN) {
-        this.ws.send(JSON.stringify({ type: 'audio_end' }));
-      }
-      this.handlers.onVoiceState?.('idle');
+      this.interrupt();
     }
   }
 
   public interrupt(): void {
+    this.suppressOutput = true;
     audioPlayer.interrupt();
     if (!this.directMode && this.ws && this.ws.readyState === WebSocket.OPEN) {
       this.ws.send(JSON.stringify({ type: 'interrupt' }));
     }
+    this.voiceState = 'idle';
+    this.handlers.onVoiceState?.('idle');
     this.handlers.onInterrupted?.();
   }
 }

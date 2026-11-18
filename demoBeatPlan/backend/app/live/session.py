@@ -164,7 +164,7 @@ async def handle_live_websocket(websocket: WebSocket, connect_factory: ConnectFa
     api_key = websocket.query_params.get("api_key")
     cfg = live_settings(api_key=api_key)
     inbound: asyncio.Queue = asyncio.Queue()
-    state: dict[str, Any] = {"handle": None, "resumable": False, "closed": False, "ui": initial_ui_from_query(websocket), "api_key": api_key}
+    state: dict[str, Any] = {"handle": None, "resumable": False, "closed": False, "suppress_audio": False, "ui": initial_ui_from_query(websocket), "api_key": api_key}
 
     async def browser_reader() -> None:
         try:
@@ -328,6 +328,7 @@ async def _run_bidi_stream(
                         turn_complete=False,
                     )
             elif mtype in ("prompt", "text"):
+                state["suppress_audio"] = False
                 text = str(data.get("text", ""))
                 await _send(websocket, {"type": "voice_state", "state": "thinking"})
                 line = _context_line(state["ui"])
@@ -336,11 +337,15 @@ async def _run_bidi_stream(
                     turns=[types.Content(role="user", parts=[types.Part.from_text(text=full)])],
                     turn_complete=True,
                 )
+            elif mtype == "resume_audio":
+                state["suppress_audio"] = False
             elif mtype == "audio_end":
                 await session.send_realtime_input(audio_stream_end=True)
             elif mtype == "interrupt":
+                state["suppress_audio"] = True
+                state["speaking"] = False
                 await _send(websocket, {"type": "interrupted"})
-                await _send(websocket, {"type": "voice_state", "state": "listening"})
+                await _send(websocket, {"type": "voice_state", "state": "idle"})
 
     async def gemini_to_client() -> str:
         caption: list[str] = []
@@ -377,12 +382,12 @@ async def _run_bidi_stream(
                 if it is not None and getattr(it, "text", None):
                     await _send(websocket, {"type": "input_transcript", "text": it.text})
                 ot = getattr(sc, "output_transcription", None)
-                if ot is not None and getattr(ot, "text", None):
+                if ot is not None and getattr(ot, "text", None) and not state.get("suppress_audio"):
                     turn_output = True
                     caption.append(ot.text)
                     await _send(websocket, {"type": "caption_delta", "text": ot.text, "role": "agent"})
                 mt = getattr(sc, "model_turn", None)
-                if mt is not None:
+                if mt is not None and not state.get("suppress_audio"):
                     for part in mt.parts or []:
                         inline = getattr(part, "inline_data", None)
                         if inline is not None and inline.data:
@@ -392,6 +397,14 @@ async def _run_bidi_stream(
                             turn_output = True
                             await websocket.send_bytes(inline.data)
                 if getattr(sc, "turn_complete", False):
+                    if state.get("suppress_audio"):
+                        state["suppress_audio"] = False
+                        turn_output = False
+                        tool_since_output = False
+                        state["speaking"] = False
+                        caption = []
+                        await _send(websocket, {"type": "voice_state", "state": "idle"})
+                        continue
                     if not turn_output and tool_since_output:
                         continue
                     turn_output = False

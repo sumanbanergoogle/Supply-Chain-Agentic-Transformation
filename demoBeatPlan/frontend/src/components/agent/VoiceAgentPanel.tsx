@@ -8,6 +8,7 @@ import {
   Radio,
   Send,
   Sparkles,
+  Square,
   User,
   Volume2,
   VolumeX,
@@ -518,59 +519,51 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
     }
   };
 
+  const stopAllSpeechAndMic = async () => {
+    setIsOpenMic(false);
+    isOpenMicRef.current = false;
+    setIsTalking(false);
+    setIsProcessing(false);
+    setLegacySpeaking(false);
+    setVoiceState('idle');
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    stopSpeechRecognition();
+    if (isLiveReady) {
+      await client.setOpenMic(false);
+    } else {
+      client.interrupt();
+    }
+  };
+
   const toggleOpenMic = async () => {
     const next = !isOpenMic;
-    setIsOpenMic(next);
-    isOpenMicRef.current = next;
+    if (!next) {
+      await stopAllSpeechAndMic();
+      return;
+    }
+    setIsOpenMic(true);
+    isOpenMicRef.current = true;
 
     if (isLiveReady) {
       if (!isMicSupported()) {
         setIsOpenMic(false);
+        isOpenMicRef.current = false;
         alert('Live PCM mic requires HTTPS or http://localhost.');
         return;
       }
       try {
-        await client.setOpenMic(next);
+        await client.setOpenMic(true);
       } catch {
         setIsOpenMic(false);
+        isOpenMicRef.current = false;
       }
       return;
     }
 
     // Fallback / Tool Mode -> Browser SpeechRecognition
-    if (next) startSpeechRecognition(true);
-    else stopSpeechRecognition();
-  };
-
-  const startHoldTalk = async () => {
-    if (isLiveReady) {
-      if (!isMicSupported()) return;
-      try {
-        await client.startTalking();
-        setIsTalking(true);
-      } catch {
-        setIsTalking(false);
-      }
-      return;
-    }
-    setIsTalking(true);
-    startSpeechRecognition(false);
-  };
-
-  const stopHoldTalk = () => {
-    if (isLiveReady) {
-      client.stopTalking();
-      setIsTalking(false);
-      return;
-    }
-    setIsTalking(false);
-    if (recognitionRef.current) {
-      try {
-        recognitionRef.current.stop();
-      } catch {
-        /* ignore */
-      }
-    }
+    startSpeechRecognition(true);
   };
 
   const st = !isLiveMode
@@ -867,24 +860,22 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                   }`}
                 >
                   <Mic className="w-3.5 h-3.5" />
-                  <span>{isOpenMic ? 'Listening · tap to stop' : 'Open mic'}</span>
+                  <span>{isOpenMic ? 'Stop Mic' : 'Open mic'}</span>
                 </button>
-                {!isOpenMic && (
-                  <button
-                    type="button"
-                    onPointerDown={startHoldTalk}
-                    onPointerUp={stopHoldTalk}
-                    onPointerLeave={stopHoldTalk}
-                    className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold select-none transition-colors ${
-                      isTalking
-                        ? 'bg-emerald-600 text-white border border-emerald-300 animate-pulse'
-                        : 'bg-[#0d1117] text-emerald-400 hover:text-white border border-emerald-500/50'
-                    }`}
-                  >
-                    <Mic className="w-3.5 h-3.5" />
-                    <span>{isTalking ? 'Listening...' : 'Hold to talk'}</span>
-                  </button>
-                )}
+                <button
+                  type="button"
+                  onClick={() => void stopAllSpeechAndMic()}
+                  disabled={!isOpenMic && !activeSpeaking && !activeThinking && !activeListening && !isTalking}
+                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold select-none transition-colors ${
+                    isOpenMic || activeSpeaking || activeThinking || activeListening || isTalking
+                      ? 'bg-rose-950/70 text-rose-200 hover:bg-rose-900/80 border border-rose-500/70'
+                      : 'bg-[#0d1117] text-textMuted border border-border/50 opacity-50 cursor-not-allowed'
+                  }`}
+                  title="Stop microphone and stop Live agent from speaking"
+                >
+                  <Square className="w-3 h-3 fill-current" />
+                  <span>Stop</span>
+                </button>
               </>
             )}
             <span className="ml-auto text-[10px] font-mono text-textMuted">Enter to send</span>

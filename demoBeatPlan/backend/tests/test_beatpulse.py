@@ -242,3 +242,89 @@ def test_ws_live_idle_inactivity_transparently_resumes():
         app.state.live_connect_factory = None
         if old_offline is not None:
             os.environ["BEATPULSE_LIVE_OFFLINE"] = old_offline
+
+
+def test_ws_live_interrupt_stops_agent_speaking():
+    import asyncio
+
+    class StreamingSession:
+        async def send_client_content(self, **_kwargs):
+            return None
+
+        async def send_realtime_input(self, **_kwargs):
+            return None
+
+        async def send_tool_response(self, **_kwargs):
+            return None
+
+        async def receive(self):
+            yield type(
+                "Resp",
+                (),
+                {
+                    "session_resumption_update": None,
+                    "go_away": None,
+                    "tool_call": None,
+                    "server_content": type(
+                        "SC",
+                        (),
+                        {
+                            "interrupted": False,
+                            "input_transcription": None,
+                            "output_transcription": type("OT", (), {"text": "First chunk"})(),
+                            "model_turn": None,
+                            "turn_complete": False,
+                        },
+                    )(),
+                },
+            )()
+            await asyncio.sleep(0.25)
+            yield type(
+                "Resp",
+                (),
+                {
+                    "session_resumption_update": None,
+                    "go_away": None,
+                    "tool_call": None,
+                    "server_content": type(
+                        "SC",
+                        (),
+                        {
+                            "interrupted": False,
+                            "input_transcription": None,
+                            "output_transcription": type("OT", (), {"text": "Suppressed trailing chunk"})(),
+                            "model_turn": None,
+                            "turn_complete": True,
+                        },
+                    )(),
+                },
+            )()
+
+    @asynccontextmanager
+    async def streaming_factory(_model, _config):
+        yield StreamingSession()
+
+    old_offline = os.environ.get("BEATPULSE_LIVE_OFFLINE")
+    os.environ["BEATPULSE_LIVE_OFFLINE"] = "0"
+    app.state.live_connect_factory = streaming_factory
+    try:
+        client = TestClient(app)
+        with client.websocket_connect("/ws/live?city=Bangalore") as ws:
+            assert ws.receive_json()["status"] == "connecting"
+            assert ws.receive_json()["status"] == "connected"
+            first = ws.receive_json()
+            assert first["type"] == "caption_delta"
+            assert first["text"] == "First chunk"
+            ws.send_json({"type": "interrupt"})
+            seen = []
+            for _ in range(5):
+                m = ws.receive_json()
+                seen.append(m)
+                if m.get("type") == "voice_state" and m.get("state") == "idle":
+                    break
+            assert any(m.get("type") == "interrupted" for m in seen)
+            assert not any(m.get("text") == "Suppressed trailing chunk" for m in seen)
+    finally:
+        app.state.live_connect_factory = None
+        if old_offline is not None:
+            os.environ["BEATPULSE_LIVE_OFFLINE"] = old_offline
