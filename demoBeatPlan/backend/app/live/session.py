@@ -319,9 +319,9 @@ async def _run_bidi_stream(
                 if line:
                     lang_now = norm_language(state["ui"].get("language"))
                     suffix = (
-                        f"\n[STRICT LANGUAGE SWITCH: From now on respond ONLY in {lang_now}.]\n{language_block(lang_now)}"
+                        f"\n[STRICT LANGUAGE SWITCH: Respond ONLY in {lang_now}. Only English, Hindi, and Hinglish are supported — NEVER Spanish or any other language.]\n{language_block(lang_now)}"
                         if lang_changed
-                        else ""
+                        else f"\n[ALLOWED LANGUAGES: English, Hindi, Hinglish ONLY; stay in {lang_now} and NEVER speak Spanish or any other language.]"
                     )
                     await session.send_client_content(
                         turns=[types.Content(role="user", parts=[types.Part.from_text(text=f"{line}{suffix}")])],
@@ -332,13 +332,29 @@ async def _run_bidi_stream(
                 text = str(data.get("text", ""))
                 await _send(websocket, {"type": "voice_state", "state": "thinking"})
                 line = _context_line(state["ui"])
-                full = f"{line}\n{text}" if line else text
+                lang_now = norm_language(state["ui"].get("language"))
+                guard = f"[STRICT LANGUAGE RULE: Reply ONLY in {lang_now}. Allowed languages are strictly English, Hindi, and Hinglish; NEVER Spanish or any other language.]"
+                full = f"{line}\n{guard}\n{text}" if line else f"{guard}\n{text}"
                 await session.send_client_content(
                     turns=[types.Content(role="user", parts=[types.Part.from_text(text=full)])],
                     turn_complete=True,
                 )
             elif mtype == "resume_audio":
                 state["suppress_audio"] = False
+                lang_now = norm_language(state["ui"].get("language"))
+                await session.send_client_content(
+                    turns=[
+                        types.Content(
+                            role="user",
+                            parts=[
+                                types.Part.from_text(
+                                    text=f"[MIC ACTIVE — ALLOWED LANGUAGES ONLY: Reply strictly in {lang_now}. Only English, Hindi, and Hinglish are supported; NEVER speak Spanish or any other language regardless of ambient noise.]"
+                                )
+                            ],
+                        )
+                    ],
+                    turn_complete=False,
+                )
             elif mtype == "audio_end":
                 await session.send_realtime_input(audio_stream_end=True)
             elif mtype == "interrupt":

@@ -74,6 +74,7 @@ _ALIASES: dict[str, dict[str, str]] = {
         "diagnose": "beat_diagnosis",
     },
     "basemap": {"dark": "street", "scada": "street", "satellite": "satellite", "sat": "satellite"},
+    "language": {"en": "english", "english": "english", "hi": "hindi", "hindi": "hindi", "hinglish": "hinglish"},
 }
 
 _OUTLET_RE = re.compile(r"\b(BLR|HYD|CHN)[-\s]?(\d{3})\b", re.IGNORECASE)
@@ -106,6 +107,11 @@ def validate_ui_command(
 
     allowed = UI_ACTIONS[act]
     if allowed is not None and val not in allowed:
+        if act == "language":
+            return {
+                "status": "ERROR",
+                "message": f"Unsupported language '{value}'. Only english, hindi, and hinglish are supported.",
+            }
         val = allowed[0]
 
     norm_outlet = normalize_outlet_id(outlet_id or (val if act in ("focus_outlet", "open_outlet") else None))

@@ -243,7 +243,9 @@ export class LiveClient {
             systemInstruction: {
               parts: [
                 {
-                  text: `You are Sahayak AI, the real-time executive voice copilot for ITC Limited TM&D across Bangalore, Hyderabad, and Chennai. The audience can ask ANY question. Always invoke tools first for exact numbers and drive the map/UI with ui_control. Reply concisely in 2-3 sentences in ${
+                  text: `You are Sahayak AI, the real-time executive voice copilot for ITC Limited TM&D across Bangalore, Hyderabad, and Chennai. STRICT ALLOWED-LANGUAGES RULE: You ONLY speak and support English, Hindi, and Hinglish. NEVER speak, translate into, or switch to Spanish or ANY other language under any circumstances (even if noisy mic audio sounds like another language or if asked). If asked in an unsupported language, reply in ${
+                    this.ctx.language || 'english'
+                  } stating that only English, Hindi, and Hinglish are supported. Always invoke tools first for exact numbers and drive the map/UI with ui_control. Reply concisely in 2-3 sentences strictly in ${
                     this.ctx.language || 'english'
                   }.`,
                 },
@@ -401,7 +403,11 @@ export class LiveClient {
             turns: [
               {
                 role: 'user',
-                parts: [{ text: `[UI context: city=${this.ctx.city || 'ALL'}, outlet=${this.ctx.outlet_id || 'none'}] ${text}` }],
+                parts: [
+                  {
+                    text: `[UI context: city=${this.ctx.city || 'ALL'}, outlet=${this.ctx.outlet_id || 'none'}, language=${this.ctx.language || 'english'}; ONLY English, Hindi, or Hinglish allowed — NEVER Spanish or any other language] ${text}`,
+                  },
+                ],
               },
             ],
             turnComplete: true,

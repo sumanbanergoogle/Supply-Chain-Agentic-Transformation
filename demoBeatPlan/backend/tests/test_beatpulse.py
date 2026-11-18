@@ -328,3 +328,16 @@ def test_ws_live_interrupt_stops_agent_speaking():
         app.state.live_connect_factory = None
         if old_offline is not None:
             os.environ["BEATPULSE_LIVE_OFFLINE"] = old_offline
+
+
+def test_allowed_languages_only_guardrail():
+    from app.live.session import build_system_prompt, norm_language
+
+    assert norm_language("spanish") == "english"
+    assert norm_language("french") == "english"
+    assert norm_language("hinglish") == "hinglish"
+    assert norm_language("hindi") == "hindi"
+    assert validate_ui_command("language", "spanish")["status"] == "ERROR"
+    assert validate_ui_command("language", "hinglish")["status"] == "OK"
+    prompt = build_system_prompt({"language": "spanish", "city": "Bangalore"})
+    assert "English, Hindi" in prompt and "Spanish" in prompt

@@ -30,11 +30,12 @@ _BEAT_RE = re.compile(r"\b(BLR|HYD|CHN)[-\s]?(B0[1-7])\b", re.IGNORECASE)
 
 
 def _language_instruction(lang: str) -> str:
+    allowed = "SUPPORTED LANGUAGES ONLY: English, Hindi, and Hinglish. NEVER speak or translate into Spanish or any other language."
     if lang == "hinglish":
-        return "Reply naturally and concisely in crisp executive Hinglish."
+        return f"{allowed} Reply naturally and concisely in crisp executive Hinglish."
     if lang == "hindi":
-        return "Reply concisely in clear Hindi (Devanagari) keeping ITC SKU names and IDs intact."
-    return "Respond strictly in 100% standard English ONLY. NEVER use any Hindi or Hinglish words. Keep it crisp (2-4 sentences citing exact INR, LSPC, and tool numbers)."
+        return f"{allowed} Reply concisely in clear Hindi (Devanagari) keeping ITC SKU names and IDs intact."
+    return f"{allowed} Respond strictly in 100% standard English ONLY. NEVER use Hindi, Hinglish, Spanish, or any other language words. Keep it crisp (2-4 sentences citing exact INR, LSPC, and tool numbers)."
 
 
 def _deterministic_turn(
