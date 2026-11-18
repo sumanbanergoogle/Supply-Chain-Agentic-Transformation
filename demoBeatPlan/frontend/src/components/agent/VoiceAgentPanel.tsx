@@ -8,7 +8,6 @@ import {
   Radio,
   Send,
   Sparkles,
-  Square,
   User,
   Volume2,
   VolumeX,
@@ -849,33 +848,18 @@ export const VoiceAgentPanel: React.FC<VoiceAgentPanelProps> = ({
                 <span>Mic needs localhost/HTTPS</span>
               </button>
             ) : (
-              <>
-                <button
-                  type="button"
-                  onClick={toggleOpenMic}
-                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
-                    isOpenMic
-                      ? 'bg-emerald-600/25 text-emerald-200 border border-emerald-500'
-                      : 'bg-[#0d1117] text-emerald-400 hover:text-white border border-emerald-500/50'
-                  }`}
-                >
-                  <Mic className="w-3.5 h-3.5" />
-                  <span>{isOpenMic ? 'Stop Mic' : 'Open mic'}</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => void stopAllSpeechAndMic()}
-                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
-                    isOpenMic || activeSpeaking || activeThinking || activeListening || isTalking
-                      ? 'bg-rose-600/25 text-rose-200 border border-rose-500'
-                      : 'bg-[#0d1117] text-rose-400 hover:text-white border border-rose-500/50'
-                  }`}
-                  title="Stop microphone and stop Live agent from speaking"
-                >
-                  <Square className="w-3 h-3 fill-current" />
-                  <span>Stop</span>
-                </button>
-              </>
+              <button
+                type="button"
+                onClick={toggleOpenMic}
+                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
+                  isOpenMic
+                    ? 'bg-emerald-600/25 text-emerald-200 border border-emerald-500'
+                    : 'bg-[#0d1117] text-emerald-400 hover:text-white border border-emerald-500/50'
+                }`}
+              >
+                <Mic className="w-3.5 h-3.5" />
+                <span>{isOpenMic ? 'Stop Mic' : 'Open mic'}</span>
+              </button>
             )}
             <span className="ml-auto text-[10px] font-mono text-textMuted">Enter to send</span>
           </div>
