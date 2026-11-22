@@ -17,7 +17,7 @@
 
 window.SC_SLIDE_DECK = [
   { num: "01", title: "The Plug is an Agent (5 Criteria)", path: "slides/slide_03.html" },
-  { num: "02", title: "Why 'Agentic' Now for TM&D?", path: "slides/slide_02_hook.html" },
+  { num: "02", title: "Why 'Agentic' Now for Supply Chain?", path: "slides/slide_02_hook.html" },
   { num: "03", title: "TM&D Operational Reality & Core Challenges", path: "slides/slide_02.html" },
   { num: "04", title: "Persona Map: 60 Supply Chain Roles", path: "pages/persona_map.html" },
   { num: "05", title: "Live Demo Stage: Demo 1 & Demo 2", path: "pages/demo_stage.html" },
