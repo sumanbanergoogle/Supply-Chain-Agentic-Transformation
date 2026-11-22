@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITC OneField · AI Sathi — Frontline Challenges &amp; Demo Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="../assets/aurora.css">
+  <link rel="stylesheet" href="../assets/deck_nav.css?v=2">
+  <style>
+    .col-headers, .persona-row {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;
+    }
+    .col-h {
+      padding: 10px 14px; border-radius: 10px; font: 700 11px var(--font-mono); letter-spacing: .7px; text-transform: uppercase;
+      border: 1px solid var(--border-subtle); background: var(--surface-sunk); color: var(--text);
+    }
+    .col-h.red { background: rgba(234, 67, 53, .10); border-color: rgba(234, 67, 53, .30); color: var(--red-ink); }
+    .col-h.blue { background: rgba(66, 133, 244, .10); border-color: rgba(66, 133, 244, .30); color: var(--blue-ink); }
+    .col-h.green { background: rgba(52, 168, 83, .10); border-color: rgba(52, 168, 83, .30); color: var(--green-ink); }
+
+    .rows-stack { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+    .cell {
+      border-radius: 14px; padding: 14px 16px; border: 1px solid var(--border-subtle);
+      background: var(--surface); box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .cell.who { border-left: 4px solid var(--accent, var(--g-blue)); }
+    .cell.who h2 { margin: 0; font: 600 15px/1.3 var(--font-display); color: var(--text); }
+    .cell.who p { margin: 4px 0 0; font: 500 12px var(--font-body); color: var(--text-muted); }
+
+    .cell.chal { background: color-mix(in srgb, var(--g-red) 5%, var(--surface)); border-color: color-mix(in srgb, var(--g-red) 25%, transparent); }
+    .cell.demo { background: color-mix(in srgb, var(--g-blue) 5%, var(--surface)); border-color: color-mix(in srgb, var(--g-blue) 25%, transparent); }
+    .cell.imp  { background: color-mix(in srgb, var(--g-green) 5%, var(--surface)); border-color: color-mix(in srgb, var(--g-green) 25%, transparent); }
+
+    .cell p { margin: 0; font: 400 13px/1.5 var(--font-body); color: var(--text); }
+    .cell.demo .demo-title { font: 600 13.5px var(--font-display); color: var(--blue-ink); margin-bottom: 4px; }
+    .cell.demo .demo-flow { font: 500 12px/1.4 var(--font-body); color: var(--text-muted); }
+    .cell.imp .imp-res { font: 400 12.5px/1.45 var(--font-body); color: var(--text); margin-bottom: 6px; }
+    .cell.imp .imp-tag {
+      display: inline-block; align-self: flex-start;
+      font: 700 11px var(--font-mono); color: var(--green-ink);
+      background: color-mix(in srgb, var(--g-green) 12%, var(--surface));
+      border: 1px solid color-mix(in srgb, var(--g-green) 28%, transparent);
+      padding: 3px 8px; border-radius: 999px;
+    }
+    .mob-lbl { display: none; font: 700 10px var(--font-mono); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
+
+    .sathi-trust {
+      margin-top: 20px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--g-blue); padding: 14px 18px; box-shadow: var(--shadow-sm);
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px;
+    }
+    .sathi-trust .trust b { color: var(--blue-ink); }
+    .sathi-trust .trust code { font: 600 11.5px var(--font-mono); padding: 1px 5px; border-radius: 5px; background: var(--surface-sunk); }
+    .sathi-trust .roi { font: 700 13px var(--font-display); color: var(--green-ink); }
+
+    @media (max-width: 980px) {
+      .col-headers { display: none; }
+      .persona-row { grid-template-columns: 1fr; }
+      .mob-lbl { display: block; }
+    }
+    @media print {
+      @page { size: landscape; margin: 0.25in; }
+      .mast, .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="mast no-print">
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+    <span class="mast-rule"></span>
+    <span class="mast-tag">ITC OneField · AI Sathi</span>
+  </a>
+  <span class="mast-sp"></span>
+  <div class="mast-nav">
+    <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+    <a class="btn-ghost" href="slide_tmd_frontline_story.html">← Prev Slide</a>
+    <span class="btn-ghost" style="font-family:var(--font-mono);font-weight:700;color:var(--blue-ink);cursor:default;">02 / 02</span>
+    <span class="btn-ghost" style="opacity:.45;cursor:not-allowed;">Next Slide →</span>
+    <button class="btn-ghost" onclick="window.print()" type="button">Print / PDF</button>
+    <a class="btn-ghost" href="../index.html">Briefing Map ↗</a>
+  </div>
+</header>
+
+<main class="page-wrap">
+  <div class="page-kick"><i></i>ITC TM&amp;D Executive Briefing · Frontline AI Transformation</div>
+  <h1 class="page-h1">AI Sathi Resolves Frontline Friction Across All 5 ITC Operational Personas</h1>
+  <p class="page-lede">Embedded inside existing ITC partner apps via <b>Phone + OTP</b> (no <code>@itc.in</code> email) · <b>6 vernacular languages</b> · Live <b>DMS, SAP, WMS &amp; e-Choupal</b> integration.</p>
+
+  <div class="col-headers">
+    <div class="col-h">Frontline Persona &amp; App</div>
+    <div class="col-h red">Current ITC Challenge</div>
+    <div class="col-h blue">Demo Use Case (4-Step Flow)</div>
+    <div class="col-h green">How AI Sathi Resolves It &amp; Impact</div>
+  </div>
+
+  <section class="rows-stack">
+    <!-- Row 1: Beat Sales Rep -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-blue);">
+        <h2>1. Beat Sales Rep (DSR)</h2>
+        <p>ITC Vajra SFA · 36 Kiranas · Beat B-07</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Manual Beat B-07 prep misses overdue alerts &amp; credit caps; slow screen typing limits order speed &amp; scheme upsells.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Vernacular Voice Order &amp; Upsell</div>
+        <div class="demo-flow">Beat Brief → Voice Order → Smart Upsell → SAP Sync (+ Master-O A2A)</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <div class="imp-res">Builds the DMS cart from Hindi/Hinglish voice, surfaces overdue/credit guardrails &amp; syncs straight to SAP S/4HANA.</div>
+        <span class="imp-tag">↑ Order Speed &amp; +4.5% Scheme Margin</span>
+      </div>
+    </article>
+
+    <!-- Row 2: Trade Merchandiser -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-red);">
+        <h2>2. Trade Merchandiser</h2>
+        <p>ITC Modern Trade Execution · Bay G-04</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Manual shelf audits are slow &amp; error-prone; competitor encroachment and facing stockouts hurt contracted OSA.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Visual Planogram &amp; Shelf Audit</div>
+        <div class="demo-flow">Shelf Snap → Vision Audit → Clutter Alert → Push Ticket</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <div class="imp-res">Audits shelf photos in seconds, flags rival clutter (slots B12–B14) &amp; auto-dispatches supervisor restock tickets.</div>
+        <span class="imp-tag">Compliance 71.4% → 96.4% · Higher OSA</span>
+      </div>
+    </article>
+
+    <!-- Row 3: Line Operator & Tech -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-yellow);">
+        <h2>3. Line Operator &amp; Tech</h2>
+        <p>ICML Smart Plant · Biscuits Line 3</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Unplanned stoppages (ERR-E409), searching bulky OEM PDFs during faults &amp; delayed SAP PM breakdown closure.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Visual SOP &amp; Machine Diagnostics</div>
+        <div class="demo-flow">Fault Alert → Panel Scan → OEM Manual → SAP PM Log</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <div class="imp-res">Diagnoses +3.5 mm belt drift from camera, pulls exact LOTO/torque spec from OEM PDF &amp; voice-closes SAP PM logs.</div>
+        <span class="imp-tag">9-Min Downtime · Faster MTTR</span>
+      </div>
+    </article>
+
+    <!-- Row 4: Warehouse Picker -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-green);">
+        <h2>4. Warehouse Picker</h2>
+        <p>Mother DC WMS · Hands-Free · Dock 09</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Handheld taps slow picking; subjective damaged-carton holds, FEFO expiry risks &amp; manual e-Way manifest delays.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Hands-Free Dispatch &amp; Validation</div>
+        <div class="demo-flow">Wave Route → Damage Scan → WMS Swap → Manifest Pass</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <div class="imp-res">Guides hands-free audio FEFO picking, scores carton crush via camera, auto-swaps 90d+ lots &amp; clears GST e-Way bills.</div>
+        <span class="imp-tag">Zero Damaged/Expired Dispatches</span>
+      </div>
+    </article>
+
+    <!-- Row 5: Field Agronomist -->
+    <article class="persona-row">
+      <div class="cell who" style="--accent:var(--g-purple);">
+        <h2>5. Field Agronomist</h2>
+        <p>ITCMAARS · e-Choupal 4.0 · Sehore Hub</p>
+      </div>
+      <div class="cell chal">
+        <span class="mob-lbl" style="color:var(--red-ink);">Current Challenge</span>
+        <p>Subjective manual wheat grading causes mandi disputes; delayed payout quotes &amp; vernacular gaps in farmer advisories.</p>
+      </div>
+      <div class="cell demo">
+        <span class="mob-lbl" style="color:var(--blue-ink);">Demo Use Case</span>
+        <div class="demo-title">Farm-to-Gate Grade Estimation</div>
+        <div class="demo-flow">Lot Arrival → Tray Scan → Grade Band → Farmer SMS</div>
+      </div>
+      <div class="cell imp">
+        <span class="mob-lbl" style="color:var(--green-ink);">Resolution &amp; Impact</span>
+        <div class="imp-res">Scores moisture/chaff objectively via macro scan, queues transparent NEFT quotes &amp; sends Hindi WhatsApp tips.</div>
+        <span class="imp-tag">Zero Mandi Disputes · Same-Day Payout</span>
+      </div>
+    </article>
+  </section>
+
+  <div class="sathi-trust">
+    <div class="trust">
+      <b>Enterprise Trust &amp; Architecture:</b>
+      Phone OTP → Workforce Identity Federation (STS) · Headless <code>streamAssist</code> · MCP / A2A / Apigee · Model Armor (Zero ITC Data Training)
+    </div>
+    <div class="roi">
+      Indicative ROI: ~₹10/active worker/day · +₹22.32 Cr/yr net value (50k workers)
+    </div>
+  </div>
+
+  <footer class="deck-footer">
+    <span>ITC OneField · AI Sathi — Frontline Challenges &amp; Demo Impact</span>
+    <span class="footer-brand">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud">
+      <span style="width:1px;height:16px;background:#DADCE0;"></span>
+      <img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise">
+    </span>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    try {
+      if ((localStorage.getItem('deck-theme') || 'light') === 'dark') {
+        document.documentElement.classList.add('theme-dark');
+        document.documentElement.classList.remove('theme-light');
+      }
+    } catch (e) {}
+    var btn = document.getElementById('themeToggle');
+    if (btn) {
+      function paint() {
+        btn.textContent = document.documentElement.classList.contains('theme-dark') ? 'Light' : 'Dark';
+      }
+      paint();
+      btn.addEventListener('click', function () {
+        var el = document.documentElement;
+        var dark = el.classList.toggle('theme-dark');
+        el.classList.toggle('theme-light', !dark);
+        try { localStorage.setItem('deck-theme', dark ? 'dark' : 'light'); } catch (e) {}
+        paint();
+      });
+    }
+    var hud = document.createElement('div');
+    hud.className = 'no-print';
+    hud.style.cssText = 'position:fixed;bottom:20px;right:24px;background:rgba(13,17,23,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.16);border-radius:30px;padding:6px 14px;display:flex;align-items:center;gap:10px;z-index:9990;box-shadow:0 10px 30px rgba(0,0,0,0.45);';
+    hud.innerHTML =
+      '<a href="slide_tmd_frontline_story.html" style="color:#E2E8F0;text-decoration:none;font:600 13px var(--font-display);padding:5px 10px;border-radius:16px;background:rgba(255,255,255,0.08);">◀ Prev</a>' +
+      '<span style="color:#8AB4F8;font:700 13px var(--font-mono);min-width:56px;text-align:center;">02 / 02</span>' +
+      '<a href="slide_tmd_frontline_story.html" style="color:#FFF;text-decoration:none;background:rgba(0,175,87,0.28);padding:5px 14px;border-radius:18px;border:1px solid #5BB974;font:700 13px var(--font-display);display:inline-flex;align-items:center;gap:4px;">Slide 1 ↻</a>';
+    document.body.appendChild(hud);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') window.location.href = 'slide_tmd_frontline_story.html';
+    });
+  })();
+</script>
+</body>
+</html>
